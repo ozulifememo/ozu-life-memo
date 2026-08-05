@@ -77,9 +77,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // News category tab filter
+  // News/Monthly category tab filter
   const tabs = document.querySelectorAll(".news-tab");
-  const rows = document.querySelectorAll(".news-cards .news-card[data-category]");
+  const rows = document.querySelectorAll(
+    ".news-cards .news-card[data-category], .monthly-list li[data-category]"
+  );
+  const monthlyCards = document.querySelectorAll(".monthly-card");
 
   tabs.forEach((tab) => {
     tab.addEventListener("click", () => {
@@ -93,6 +96,13 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
           row.style.display = "none";
         }
+      });
+
+      monthlyCards.forEach((card) => {
+        const items = card.querySelectorAll("li[data-category]");
+        if (items.length === 0) return;
+        const hasVisible = [...items].some((li) => li.style.display !== "none");
+        card.style.display = hasVisible ? "" : "none";
       });
     });
   });

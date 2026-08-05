@@ -97,22 +97,6 @@
   </div>
 </section>
 
-<section class="fun-corner-section">
-  <div class="wrap">
-    <div class="fun-corners">
-      <div class="fun-corner-card">
-        <h3>🔮 今月のラッキー大洲スポット</h3>
-        <p class="fun-main" id="fortune-spot"></p>
-        <p id="fortune-text"></p>
-      </div>
-      <div class="fun-corner-card">
-        <h3>📜 大洲まめ知識</h3>
-        <p id="trivia-text"></p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="latest-news">
   <div class="wrap">
     <h2 class="section-title">最新ニュース</h2>
@@ -146,30 +130,7 @@
 </div>
 
 <script src="assets/js/news-data.js"></script>
-<script src="assets/js/fun-corner-data.js"></script>
 <script src="assets/js/main.js"></script>
-<script>
-  (function renderFunCorners() {
-    const now = new Date();
-    const month = now.getMonth(); // 0-11
-
-    if (typeof OZU_FORTUNE_BY_MONTH !== "undefined") {
-      const fortune = OZU_FORTUNE_BY_MONTH[month % OZU_FORTUNE_BY_MONTH.length];
-      const spotEl = document.getElementById("fortune-spot");
-      const textEl = document.getElementById("fortune-text");
-      if (spotEl && textEl) {
-        spotEl.textContent = `${fortune.spot} ／ ${fortune.food}`;
-        textEl.textContent = fortune.note;
-      }
-    }
-
-    if (typeof OZU_TRIVIA_LIST !== "undefined") {
-      const trivia = OZU_TRIVIA_LIST[month % OZU_TRIVIA_LIST.length];
-      const triviaEl = document.getElementById("trivia-text");
-      if (triviaEl) triviaEl.textContent = trivia;
-    }
-  })();
-</script>
 <script>
   (function renderHomeLatestNews() {
     const list = document.getElementById("home-latest-news");

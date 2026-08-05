@@ -40,6 +40,12 @@
 
 <section>
   <div class="wrap">
+    <div class="news-tabs">
+      <button class="news-tab active" data-category="all">全般</button>
+      <button class="news-tab" data-category="ima">大洲のいま</button>
+      <button class="news-tab" data-category="kurashi">暮らしと防衛</button>
+      <button class="news-tab" data-category="shiten">大洲の視点</button>
+    </div>
     <div class="monthly-list" id="monthly-list"></div>
   </div>
 </section>
@@ -84,7 +90,7 @@
       const articleItems = articles
         .map(
           (item) => `
-        <li>
+        <li data-category="${item.category}">
           <span class="rdate">${item.date.replace(/-/g, "/")}</span>
           <span class="rtag">[${OZU_CATEGORY_LABELS[item.category]}]</span>
           <a href="../eachnews/${item.slug}.html">${item.title}</a>

@@ -67,7 +67,7 @@ ozu-life-memo/
   viewport指定がないと、スマホ実機では常にPC版レイアウトが縮小表示され、レスポンシブ用のCSSが一切機能しません
   （ローカルのブラウザ確認で発覚。今後もこの2つのmetaタグは削らないでください）
 - [x] 全ページにOGP(SNSシェア時のタイトル・説明・画像)タグを追加しました。ただし `og:url` と `og:image` の
-  ドメイン部分は `https://haradashingo0921.github.io/ozu-life-memo/` という仮の値になっています。
+  ドメイン部分は `https://ozulifememo.github.io/ozu-life-memo/` という仮の値になっています。
   GitHub Pagesを公開したら、実際のURL（例: `https://ユーザー名.github.io/ozu-life-memo/`）に全ファイル一括置換してください
 - [x] `news/index.html` のニュース一覧表が、スマホ幅で出典列がはみ出して横スクロールが発生する不具合を修正しました
   （640px以下では表を1行ずつ縦積みのカード風表示に切り替えています）

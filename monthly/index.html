@@ -1,0 +1,105 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>月間まとめ ｜ OZU LIFE MEMO</title>
+<meta name="description" content="大洲市であった出来事を、月に一度、原田なりの視点でまとめています。">
+<link rel="icon" href="../assets/img/favicon.svg">
+<link rel="stylesheet" href="../assets/css/style.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="OZU LIFE MEMO">
+<meta property="og:title" content="月間まとめ ｜ OZU LIFE MEMO">
+<meta property="og:description" content="大洲市であった出来事を、月に一度、原田なりの視点でまとめています。">
+<meta property="og:url" content="https://haradashingo0921.github.io/ozu-life-memo/monthly/">
+<meta property="og:image" content="https://haradashingo0921.github.io/ozu-life-memo/assets/img/real-photo-9.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="../" class="logo">OZU LIFE MEMO</a>
+    <nav class="main-nav">
+      <a href="../">HOME</a>
+      <a href="../concept/">サイト紹介</a>
+      <a href="../link/">リンク集</a>
+      <a href="../news/">大洲最新ニュース</a>
+      <a href="./" class="current">月間まとめ</a>
+      <a href="../photo/">フリー写真</a>
+      <a href="#" class="cta-btn" data-modal-open>お問い合わせ</a>
+    </nav>
+    <button class="nav-toggle" aria-label="メニューを開く"><span></span></button>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <h1>月間まとめ</h1>
+    <p>
+      大洲市であった出来事を、月に一度、原田なりの視点でまとめています。<br>
+      毎回すべてを追いきれているわけではありませんが、「大洲の今」の記録として残していきます。
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="monthly-list" id="monthly-list"></div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>OZU LIFE MEMO は個人運営の非公式サイトです。大洲市の公式情報ではありません。</p>
+    <p>&copy; 2026 OZU LIFE MEMO</p>
+  </div>
+</footer>
+
+<div class="modal-overlay" data-modal>
+  <div class="modal-box">
+    <button class="modal-close" data-modal-close aria-label="閉じる">&times;</button>
+    <h3>お問い合わせ・Googleフォームはこちら</h3>
+    <p class="modal-note">＼ 名前やメールアドレスの入力は一切不要です ／</p>
+    <p class="modal-warning">
+      <strong>【非公式・個人ボランティアです】</strong>
+      制度の詳細は必ず公式HPを確認してください。情報のまとめ・感想は個人の見解です。
+    </p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfevBytb8aZmkEUX9m5aC0EUHxDmmYM0jYog33aPFr8AT_OEA/viewform?usp=dialog" class="form-btn" target="_blank" rel="noopener">Google フォーム</a>
+  </div>
+</div>
+
+<script src="../assets/js/news-data.js"></script>
+<script src="../assets/js/monthly-data.js"></script>
+<script>
+  (function renderMonthlyList() {
+    const list = document.getElementById("monthly-list");
+    if (!list || typeof OZU_MONTHLY_NOTES === "undefined") return;
+
+    const monthLabel = (m) => {
+      const [y, mo] = m.split("-");
+      return `${y}年${parseInt(mo, 10)}月`;
+    };
+
+    list.innerHTML = OZU_MONTHLY_NOTES.map((entry) => {
+      const articles = OZU_NEWS.filter((item) => item.date.startsWith(entry.month)).sort((a, b) =>
+        a.date < b.date ? 1 : -1
+      );
+
+      const articleItems = articles
+        .map(
+          (item) => `
+        <li>
+          <span class="rdate">${item.date.replace(/-/g, "/")}</span>
+          <span class="rtag">[${OZU_CATEGORY_LABELS[item.category]}]</span>
+          <a href="../eachnews/${item.slug}.html">${item.title}</a>
+        </li>`
+        )
+        .join("");
+
+      return `
+      <article class="monthly-card">
+        <h2>${monthLabel(entry.month)}</h2>
+        <p class="monthly-headline">${entry.headline}</p>
+        <p class="monthly-comment">${entry.comment}</p>
+        <ul>${articleItems}</ul>
+      </article>`;
+    }).join("");
+  })();
+</script>
+<script src="../assets/js/main.js"></script>

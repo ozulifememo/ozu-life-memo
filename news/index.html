@@ -1,0 +1,105 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>大洲最新ニュース ｜ OZU LIFE MEMO</title>
+<meta name="description" content="市役所の発表やSNS、noteの記事から拾い上げた大洲の話題を、3つの視点で整理しています。">
+<link rel="icon" href="../assets/img/favicon.svg">
+<link rel="stylesheet" href="../assets/css/style.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="OZU LIFE MEMO">
+<meta property="og:title" content="大洲最新ニュース ｜ OZU LIFE MEMO">
+<meta property="og:description" content="市役所の発表やSNS、noteの記事から拾い上げた大洲の話題を、3つの視点で整理しています。">
+<meta property="og:url" content="https://haradashingo0921.github.io/ozu-life-memo/news/">
+<meta property="og:image" content="https://haradashingo0921.github.io/ozu-life-memo/assets/img/real-photo-9.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="../" class="logo">OZU LIFE MEMO</a>
+    <nav class="main-nav">
+      <a href="../">HOME</a>
+      <a href="../concept/">サイト紹介</a>
+      <a href="../link/">リンク集</a>
+      <a href="./" class="current">大洲最新ニュース</a>
+      <a href="../monthly/">月間まとめ</a>
+      <a href="../photo/">フリー写真</a>
+      <a href="#" class="cta-btn" data-modal-open>お問い合わせ</a>
+    </nav>
+    <button class="nav-toggle" aria-label="メニューを開く"><span></span></button>
+  </div>
+</header>
+
+<section class="page-hero" style="padding-bottom:0;">
+  <div class="wrap">
+    <h1>大洲最新ニュース</h1>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="news-categories">
+      <div class="news-category-card">
+        <h3>1. [大洲のいま]</h3>
+        <p>Yahoo!ニュースやX、市役所の発表などから拾い上げた現在進行形の街の動き。</p>
+      </div>
+      <div class="news-category-card">
+        <h3>2. [暮らしと防衛]</h3>
+        <p>市役所などの公的情報の中から良いと思ったものを厳選し、翻訳します。</p>
+      </div>
+      <div class="news-category-card">
+        <h3>3. [大洲の視点]</h3>
+        <p>noteの長文記事や市の施策など、僕なりの本音と考察を乗せて読み解くコラム。</p>
+      </div>
+    </div>
+
+    <div class="news-tabs">
+      <button class="news-tab active" data-category="all">全般</button>
+      <button class="news-tab" data-category="ima">大洲のいま</button>
+      <button class="news-tab" data-category="kurashi">暮らしと防衛</button>
+      <button class="news-tab" data-category="shiten">大洲の視点</button>
+    </div>
+
+    <div class="news-cards" id="news-table-body"></div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>OZU LIFE MEMO は個人運営の非公式サイトです。大洲市の公式情報ではありません。</p>
+    <p>&copy; 2026 OZU LIFE MEMO</p>
+  </div>
+</footer>
+
+<div class="modal-overlay" data-modal>
+  <div class="modal-box">
+    <button class="modal-close" data-modal-close aria-label="閉じる">&times;</button>
+    <h3>お問い合わせ・Googleフォームはこちら</h3>
+    <p class="modal-note">＼ 名前やメールアドレスの入力は一切不要です ／</p>
+    <p class="modal-warning">
+      <strong>【非公式・個人ボランティアです】</strong>
+      制度の詳細は必ず公式HPを確認してください。情報のまとめ・感想は個人の見解です。
+    </p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfevBytb8aZmkEUX9m5aC0EUHxDmmYM0jYog33aPFr8AT_OEA/viewform?usp=dialog" class="form-btn" target="_blank" rel="noopener">Google フォーム</a>
+  </div>
+</div>
+
+<script src="../assets/js/news-data.js"></script>
+<script>
+  (function renderNewsTable() {
+    const body = document.getElementById("news-table-body");
+    if (!body || typeof OZU_NEWS === "undefined") return;
+
+    const sorted = [...OZU_NEWS].sort((a, b) => (a.date < b.date ? 1 : -1));
+
+    body.innerHTML = sorted
+      .map(
+        (item) => `
+      <div class="news-card" data-category="${item.category}">
+        <span class="news-date">${item.date.replace(/-/g, "/")}</span>
+        <a class="news-title" href="../eachnews/${item.slug}.html">${item.title}</a>
+        <span class="news-source">${item.source}</span>
+      </div>`
+      )
+      .join("");
+  })();
+</script>
+<script src="../assets/js/main.js"></script>

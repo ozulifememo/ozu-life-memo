@@ -1,0 +1,8 @@
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+node_modules/
+
+# 個人的な運営メモ(非公開・GitHubには絶対に上げない)
+private-notes/

@@ -1,0 +1,193 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OZU LIFE MEMO ｜ おおず生活情報(非公式)</title>
+<meta name="description" content="大洲市役所の硬い資料やニュースを『翻訳』する、個人運営の非公式・大洲市生活情報サイトです。">
+<link rel="icon" href="assets/img/favicon.svg">
+<link rel="stylesheet" href="assets/css/style.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="OZU LIFE MEMO">
+<meta property="og:title" content="OZU LIFE MEMO ｜ おおず生活情報(非公式)">
+<meta property="og:description" content="大洲市役所の硬い資料やニュースを『翻訳』する、個人運営の非公式・大洲市生活情報サイトです。">
+<meta property="og:url" content="https://haradashingo0921.github.io/ozu-life-memo/">
+<meta property="og:image" content="https://haradashingo0921.github.io/ozu-life-memo/assets/img/real-photo-3.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="./" class="logo">OZU LIFE MEMO</a>
+    <nav class="main-nav">
+      <a href="./" class="current">HOME</a>
+      <a href="concept/">サイト紹介</a>
+      <a href="link/">リンク集</a>
+      <a href="news/">大洲最新ニュース</a>
+      <a href="monthly/">月間まとめ</a>
+      <a href="photo/">フリー写真</a>
+      <a href="history/">大洲の歴史</a>
+      <a href="#" class="cta-btn" data-modal-open>お問い合わせ</a>
+    </nav>
+    <button class="nav-toggle" aria-label="メニューを開く"><span></span></button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-text">
+      <h1>おおず生活情報<br>(非公式)</h1>
+      <p>市役所の硬い資料やニュースを、『翻訳』します。<br>
+      若者から高齢の方まで、大洲の生活がちょっと分かる非公式情報サイトです。</p>
+    </div>
+    <div class="hero-photo">
+      <img src="assets/img/real-photo-3.jpg" alt="山から見下ろす大洲の町並みと肱川" width="800" height="600">
+    </div>
+  </div>
+</section>
+
+<section class="featured-article">
+  <div class="wrap">
+    <a href="eachnews/shichosen-ryoheika.html" class="featured-card">
+      <img src="assets/img/real-photo-9.jpg" alt="ライトアップされた夜の大洲城">
+      <div class="featured-body">
+        <p class="featured-eyebrow">注目記事</p>
+        <h3>大洲市長選と両陛下が訪れる長高</h3>
+        <p>
+          天皇皇后両陛下が27年ぶりに愛媛入りし、長浜高校の水族館部をご視察されました。
+          同じ月にあった大洲市長選の結果とあわせて振り返ります。
+        </p>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section class="carousel-section">
+  <div class="wrap">
+    <div class="carousel">
+      <div class="carousel-track">
+        <img src="assets/img/real-photo-1.jpg" alt="鉄道の駅と菜の花畑">
+        <img src="assets/img/real-photo-2.jpg" alt="冨士山公園ふれあいの家">
+        <img src="assets/img/real-photo-4.jpg" alt="肱川沿いの道と橋、町並み">
+        <img src="assets/img/real-photo-5.jpg" alt="大洲の町並みの空撮">
+        <img src="assets/img/real-photo-6.jpg" alt="山あいの田園風景">
+      </div>
+      <div class="carousel-controls">
+        <button data-carousel-prev aria-label="前へ">‹</button>
+        <button data-carousel-pause aria-label="一時停止">❚❚</button>
+        <button data-carousel-next aria-label="次へ">›</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="style-intro">
+  <div class="wrap">
+    <h2 class="section-title">3つの発信スタイル</h2>
+    <div class="news-categories">
+      <div class="news-category-card">
+        <h3>1. 大洲のいま</h3>
+        <p>Yahoo!ニュースやX、市役所の発表などから拾い上げた現在進行形の街の動き。</p>
+      </div>
+      <div class="news-category-card">
+        <h3>2. 暮らしと防衛</h3>
+        <p>市役所などの公的情報の中から良いと思ったものを厳選し、翻訳します。</p>
+      </div>
+      <div class="news-category-card">
+        <h3>3. 大洲の視点</h3>
+        <p>noteの長文記事や市の施策など、僕なりの本音と考察を乗せて読み解くコラム。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="fun-corner-section">
+  <div class="wrap">
+    <div class="fun-corners">
+      <div class="fun-corner-card">
+        <h3>🔮 今月のラッキー大洲スポット</h3>
+        <p class="fun-main" id="fortune-spot"></p>
+        <p id="fortune-text"></p>
+      </div>
+      <div class="fun-corner-card">
+        <h3>📜 大洲まめ知識</h3>
+        <p id="trivia-text"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="latest-news">
+  <div class="wrap">
+    <h2 class="section-title">最新ニュース</h2>
+    <ul class="related-list-plain" id="home-latest-news">
+      <!-- JSで news-data.js から最新5件を描画 -->
+    </ul>
+    <p style="text-align:center;margin-top:24px;">
+      <a href="news/" class="cta-btn" style="background:var(--color-brand);">ニュース一覧をもっと見る</a>
+    </p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>OZU LIFE MEMO は個人運営の非公式サイトです。大洲市の公式情報ではありません。</p>
+    <p>&copy; 2026 OZU LIFE MEMO</p>
+  </div>
+</footer>
+
+<div class="modal-overlay" data-modal>
+  <div class="modal-box">
+    <button class="modal-close" data-modal-close aria-label="閉じる">&times;</button>
+    <h3>お問い合わせ・Googleフォームはこちら</h3>
+    <p class="modal-note">＼ 名前やメールアドレスの入力は一切不要です ／</p>
+    <p class="modal-warning">
+      <strong>【非公式・個人ボランティアです】</strong>
+      制度の詳細は必ず公式HPを確認してください。情報のまとめ・感想は個人の見解です。
+    </p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfevBytb8aZmkEUX9m5aC0EUHxDmmYM0jYog33aPFr8AT_OEA/viewform?usp=dialog" class="form-btn" target="_blank" rel="noopener">Google フォーム</a>
+  </div>
+</div>
+
+<script src="assets/js/news-data.js"></script>
+<script src="assets/js/fun-corner-data.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+  (function renderFunCorners() {
+    const now = new Date();
+    const month = now.getMonth(); // 0-11
+
+    if (typeof OZU_FORTUNE_BY_MONTH !== "undefined") {
+      const fortune = OZU_FORTUNE_BY_MONTH[month % OZU_FORTUNE_BY_MONTH.length];
+      const spotEl = document.getElementById("fortune-spot");
+      const textEl = document.getElementById("fortune-text");
+      if (spotEl && textEl) {
+        spotEl.textContent = `${fortune.spot} ／ ${fortune.food}`;
+        textEl.textContent = fortune.note;
+      }
+    }
+
+    if (typeof OZU_TRIVIA_LIST !== "undefined") {
+      const trivia = OZU_TRIVIA_LIST[month % OZU_TRIVIA_LIST.length];
+      const triviaEl = document.getElementById("trivia-text");
+      if (triviaEl) triviaEl.textContent = trivia;
+    }
+  })();
+</script>
+<script>
+  (function renderHomeLatestNews() {
+    const list = document.getElementById("home-latest-news");
+    if (!list || typeof OZU_NEWS === "undefined") return;
+
+    const latest = [...OZU_NEWS]
+      .sort((a, b) => (a.date < b.date ? 1 : -1))
+      .slice(0, 5);
+
+    list.innerHTML = latest
+      .map(
+        (item) => `
+      <li>
+        <span class="rdate">${item.date.replace(/-/g, "/")}</span>
+        <span class="rtag">[${OZU_CATEGORY_LABELS[item.category]}]</span>
+        <a href="eachnews/${item.slug}.html">${item.title}</a>
+      </li>`
+      )
+      .join("");
+  })();
+</script>

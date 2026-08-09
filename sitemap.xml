@@ -8,7 +8,11 @@
   <url><loc>https://ozulifememo.github.io/ozu-life-memo/photo/</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.4</priority></url>
   <url><loc>https://ozulifememo.github.io/ozu-life-memo/history/</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://ozulifememo.github.io/ozu-life-memo/map/</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://ozulifememo.github.io/ozu-life-memo/book/</loc><lastmod>2026-08-09</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
 
+  <url><loc>https://ozulifememo.github.io/ozu-life-memo/book/hon-ga-yomenai.html</loc><lastmod>2026-08-09</lastmod><priority>0.6</priority></url>
+  <url><loc>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-eemon-selection.html</loc><lastmod>2026-08-10</lastmod><priority>0.6</priority></url>
+  <url><loc>https://ozulifememo.github.io/ozu-life-memo/eachnews/shikoku-hachinoji-network.html</loc><lastmod>2026-08-10</lastmod><priority>0.6</priority></url>
   <url><loc>https://ozulifememo.github.io/ozu-life-memo/eachnews/hijikawa-nagare.html</loc><lastmod>2026-08-09</lastmod><priority>0.6</priority></url>
   <url><loc>https://ozulifememo.github.io/ozu-life-memo/eachnews/shichosen-vision.html</loc><lastmod>2026-05-20</lastmod><priority>0.6</priority></url>
   <url><loc>https://ozulifememo.github.io/ozu-life-memo/eachnews/chosei-cost.html</loc><lastmod>2026-04-25</lastmod><priority>0.6</priority></url>
@@ -42,4 +46,13 @@
   <url><loc>https://ozulifememo.github.io/ozu-life-memo/eachnews/jinko-vision-3man.html</loc><lastmod>2026-07-31</lastmod><priority>0.6</priority></url>
   <url><loc>https://ozulifememo.github.io/ozu-life-memo/eachnews/castle-stay-hyakuman.html</loc><lastmod>2026-08-01</lastmod><priority>0.6</priority></url>
   <url><loc>https://ozulifememo.github.io/ozu-life-memo/eachnews/yatsugi-akiya-saisei.html</loc><lastmod>2026-08-01</lastmod><priority>0.6</priority></url>
+  <url><loc>https://ozulifememo.github.io/ozu-life-memo/eachnews/nagahama-kihonkeikaku-nyusatsu.html</loc><lastmod>2026-08-08</lastmod><priority>0.6</priority></url>
+  <url><loc>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-555-project.html</loc><lastmod>2026-08-08</lastmod><priority>0.6</priority></url>
+  <url><loc>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-chiiki-okoshi-tai.html</loc><lastmod>2026-08-08</lastmod><priority>0.6</priority></url>
+  <url><loc>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kanko-jisseki-r7.html</loc><lastmod>2026-08-08</lastmod><priority>0.6</priority></url>
+  <url><loc>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-mizubusoku-shinso.html</loc><lastmod>2026-08-08</lastmod><priority>0.6</priority></url>
+  <url><loc>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-muryo-chushajo.html</loc><lastmod>2026-08-08</lastmod><priority>0.6</priority></url>
+  <url><loc>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-okashi-shigure.html</loc><lastmod>2026-08-08</lastmod><priority>0.6</priority></url>
+  <url><loc>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-shakyo-kessan.html</loc><lastmod>2026-08-08</lastmod><priority>0.6</priority></url>
+  <url><loc>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-toori-namae.html</loc><lastmod>2026-08-08</lastmod><priority>0.6</priority></url>
 </urlset>

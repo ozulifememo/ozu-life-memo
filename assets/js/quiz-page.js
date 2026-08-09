@@ -19,6 +19,10 @@ document.addEventListener("DOMContentLoaded", () => {
   let current = 0;
   let score = 0;
 
+  document.querySelectorAll("#quiz-total-1, #quiz-total-2").forEach((el) => {
+    el.textContent = OZU_QUIZ.length;
+  });
+
   function shuffledIndexes(n) {
     const arr = Array.from({ length: n }, (_, i) => i);
     for (let i = arr.length - 1; i > 0; i--) {
@@ -88,10 +92,11 @@ document.addEventListener("DOMContentLoaded", () => {
     gameScreen.style.display = "none";
     resultScreen.style.display = "block";
     scoreEl.textContent = score;
+    const rate = score / OZU_QUIZ.length;
     let comment;
     if (score === OZU_QUIZ.length) comment = "満点です。大洲マスター認定！";
-    else if (score >= 7) comment = "かなり大洲に詳しいですね。";
-    else if (score >= 4) comment = "まずまず。記事を読み返すと発見があるかも。";
+    else if (rate >= 0.7) comment = "かなり大洲に詳しいですね。";
+    else if (rate >= 0.4) comment = "まずまず。記事を読み返すと発見があるかも。";
     else comment = "これから大洲を知っていきましょう。";
     resultCommentEl.textContent = comment;
   }

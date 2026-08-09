@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>大洲検定(β版) ｜ OZU LIFE MEMO</title>
-<meta name="description" content="OZU LIFE MEMOのこれまでの記事から出題する、大洲市についての全10問クイズ。">
+<meta name="description" content="OZU LIFE MEMOのこれまでの記事から出題する、大洲市についての4択クイズ。">
 <link rel="icon" href="../assets/img/favicon.svg">
 <link rel="stylesheet" href="../assets/css/style.css">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="OZU LIFE MEMO">
 <meta property="og:title" content="大洲検定(β版) ｜ OZU LIFE MEMO">
-<meta property="og:description" content="OZU LIFE MEMOのこれまでの記事から出題する、大洲市についての全10問クイズ。">
+<meta property="og:description" content="OZU LIFE MEMOのこれまでの記事から出題する、大洲市についての4択クイズ。">
 <meta property="og:url" content="https://ozulifememo.github.io/ozu-life-memo/quiz/">
 <meta property="og:image" content="https://ozulifememo.github.io/ozu-life-memo/assets/img/real-photo-4.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -21,7 +21,7 @@
   "@type": "WebPage",
   "name": "大洲検定(β版) ｜ OZU LIFE MEMO",
   "url": "https://ozulifememo.github.io/ozu-life-memo/quiz/",
-  "description": "OZU LIFE MEMOのこれまでの記事から出題する、大洲市についての全10問クイズ。",
+  "description": "OZU LIFE MEMOのこれまでの記事から出題する、大洲市についての4択クイズ。",
   "isPartOf": {"@type": "WebSite", "name": "OZU LIFE MEMO", "url": "https://ozulifememo.github.io/ozu-life-memo/"}
 }
 </script>
@@ -61,6 +61,7 @@
       <a href="../monthly/">月間まとめ</a>
       <a href="../photo/">フリー写真</a>
       <a href="../history/">大洲の歴史</a>
+      <a href="../book/">大洲と読書</a>
       <a href="../map/">大洲の地図</a>
       <a href="./" class="current">大洲検定</a>
       <a href="#" class="cta-btn" data-modal-open>お問い合わせ</a>
@@ -72,14 +73,14 @@
 <section class="page-hero" style="padding-bottom:0;">
   <div class="wrap">
     <h1>大洲検定(β版)</h1>
-    <p style="color:var(--color-text-muted);">OZU LIFE MEMOのこれまでの記事から出題する、全10問。まずは第1弾です。</p>
+    <p style="color:var(--color-text-muted);">OZU LIFE MEMOのこれまでの記事から出題する、大洲市についての4択クイズです。</p>
   </div>
 </section>
 
 <section>
   <div class="wrap quiz-wrap">
     <div id="quiz-start" class="quiz-card quiz-start">
-      <p style="font-size:1.05rem;margin-bottom:20px;">大洲のこと、どれだけ知っていますか？<br>全10問、4択形式です。</p>
+      <p style="font-size:1.05rem;margin-bottom:20px;">大洲のこと、どれだけ知っていますか？<br>全<span id="quiz-total-1"></span>問、4択形式です。</p>
       <button id="quiz-start-btn" class="cta-btn" style="background:var(--color-brand);border:none;cursor:pointer;font-size:1rem;">はじめる</button>
     </div>
 
@@ -97,13 +98,13 @@
 
     <div id="quiz-result" class="quiz-card quiz-result" style="display:none;">
       <p>あなたの正解数</p>
-      <p class="quiz-result-score"><span id="quiz-score"></span> / 10</p>
+      <p class="quiz-result-score"><span id="quiz-score"></span> / <span id="quiz-total-2"></span></p>
       <p id="quiz-result-comment" style="color:var(--color-text-muted);margin-bottom:20px;"></p>
       <button id="quiz-retry-btn" class="cta-btn" style="background:var(--color-brand);border:none;cursor:pointer;">もう一度挑戦する</button>
     </div>
 
     <p class="stub-note" style="margin-top:24px;">
-      出題内容はOZU LIFE MEMOの掲載記事をもとにしています。第2弾も準備中です。
+      出題内容はOZU LIFE MEMOの掲載記事をもとにしています。
       「こんな問題も出してほしい」というリクエストがあれば、お問い合わせからどうぞ。
     </p>
   </div>

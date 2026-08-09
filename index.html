@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>OZU LIFE MEMO ｜ おおず生活情報(非公式)</title>
@@ -11,6 +14,19 @@
 <meta property="og:url" content="https://ozulifememo.github.io/ozu-life-memo/">
 <meta property="og:image" content="https://ozulifememo.github.io/ozu-life-memo/assets/img/real-photo-3.jpg">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://ozulifememo.github.io/ozu-life-memo/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "OZU LIFE MEMO",
+  "url": "https://ozulifememo.github.io/ozu-life-memo/",
+  "description": "大洲市役所の硬い資料やニュースを『翻訳』する、個人運営の非公式・大洲市生活情報サイトです。",
+  "publisher": {"@type": "Organization", "name": "OZU LIFE MEMO"}
+}
+</script>
+</head>
+<body>
 
 <header class="site-header">
   <div class="wrap">
@@ -19,10 +35,12 @@
       <a href="./" class="current">HOME</a>
       <a href="concept/">サイト紹介</a>
       <a href="link/">リンク集</a>
-      <a href="news/">大洲最新ニュース</a>
+      <a href="news/">大洲ノート</a>
       <a href="monthly/">月間まとめ</a>
       <a href="photo/">フリー写真</a>
       <a href="history/">大洲の歴史</a>
+      <a href="map/">大洲の地図</a>
+      <a href="quiz/">大洲検定</a>
       <a href="#" class="cta-btn" data-modal-open>お問い合わせ</a>
     </nav>
     <button class="nav-toggle" aria-label="メニューを開く"><span></span></button>
@@ -32,34 +50,50 @@
 <section class="hero">
   <div class="wrap">
     <div class="hero-text">
-      <h1>おおず生活情報<br>(非公式)</h1>
-      <p>市役所の硬い資料やニュースを、『翻訳』します。<br>
-      若者から高齢の方まで、大洲の生活がちょっと分かる非公式情報サイトです。</p>
+      <p class="hero-eyebrow">大洲市 非公式生活情報サイト</p>
+      <h1>大洲の「知りたい」を、<br>ふつうの言葉に翻訳する。</h1>
+      <p>
+        市役所や議会の硬い資料、SNSの断片的な話題を、1人の市民の目線で読み解いています。
+        制度の話も、まちの小さな発見も。
+      </p>
+      <div class="hero-ctas">
+        <a href="news/" class="primary">最新ニュースを見る</a>
+        <a href="quiz/">大洲検定に挑戦</a>
+        <a href="concept/">このサイトについて</a>
+      </div>
     </div>
     <div class="hero-photo">
-      <img src="assets/img/real-photo-3.jpg" alt="山から見下ろす大洲の町並みと肱川" width="800" height="600">
+      <img src="assets/img/real-photo-3.jpg" alt="山から見下ろす大洲の町並みと肱川" width="800" height="500">
     </div>
   </div>
 </section>
 
-<section class="featured-article">
+<section class="home-picks">
   <div class="wrap">
-    <a href="eachnews/shichosen-ryoheika.html" class="featured-card">
-      <img src="assets/img/real-photo-9.jpg" alt="ライトアップされた夜の大洲城">
-      <div class="featured-body">
-        <p class="featured-eyebrow">注目記事</p>
-        <h3>大洲市長選と両陛下が訪れる長高</h3>
-        <p>
-          天皇皇后両陛下が27年ぶりに愛媛入りし、長浜高校の水族館部をご視察されました。
-          同じ月にあった大洲市長選の結果とあわせて振り返ります。
-        </p>
-      </div>
-    </a>
+    <h2 class="section-title">読んでほしい記事</h2>
+    <div class="pick-cards" id="home-pick-cards"></div>
+  </div>
+</section>
+
+<section class="latest-news">
+  <div class="wrap">
+    <h2 class="section-title">最新ニュース</h2>
+    <div class="news-tabs">
+      <button class="news-tab active" data-category="all">全体</button>
+      <button class="news-tab" data-category="ima">大洲のいま</button>
+      <button class="news-tab" data-category="kurashi">暮らしと防衛</button>
+      <button class="news-tab" data-category="shiten">大洲の視点</button>
+    </div>
+    <div class="news-cards" id="home-latest-news"></div>
+    <p style="text-align:center;margin-top:24px;">
+      <a href="news/" class="cta-btn" style="background:var(--color-brand);">ニュース一覧をもっと見る</a>
+    </p>
   </div>
 </section>
 
 <section class="carousel-section">
   <div class="wrap">
+    <h2 class="section-title">大洲の風景</h2>
     <div class="carousel">
       <div class="carousel-track">
         <img src="assets/img/real-photo-1.jpg" alt="鉄道の駅と菜の花畑">
@@ -74,38 +108,6 @@
         <button data-carousel-next aria-label="次へ">›</button>
       </div>
     </div>
-  </div>
-</section>
-
-<section class="style-intro">
-  <div class="wrap">
-    <h2 class="section-title">3つの発信スタイル</h2>
-    <div class="news-categories">
-      <div class="news-category-card">
-        <h3>1. 大洲のいま</h3>
-        <p>Yahoo!ニュースやX、市役所の発表などから拾い上げた現在進行形の街の動き。</p>
-      </div>
-      <div class="news-category-card">
-        <h3>2. 暮らしと防衛</h3>
-        <p>市役所などの公的情報の中から良いと思ったものを厳選し、翻訳します。</p>
-      </div>
-      <div class="news-category-card">
-        <h3>3. 大洲の視点</h3>
-        <p>noteの長文記事や市の施策など、僕なりの本音と考察を乗せて読み解くコラム。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="latest-news">
-  <div class="wrap">
-    <h2 class="section-title">最新ニュース</h2>
-    <ul class="related-list-plain" id="home-latest-news">
-      <!-- JSで news-data.js から最新5件を描画 -->
-    </ul>
-    <p style="text-align:center;margin-top:24px;">
-      <a href="news/" class="cta-btn" style="background:var(--color-brand);">ニュース一覧をもっと見る</a>
-    </p>
   </div>
 </section>
 
@@ -130,25 +132,59 @@
 </div>
 
 <script src="assets/js/news-data.js"></script>
-<script src="assets/js/main.js"></script>
 <script>
-  (function renderHomeLatestNews() {
-    const list = document.getElementById("home-latest-news");
-    if (!list || typeof OZU_NEWS === "undefined") return;
+  (function renderHomePicks() {
+    const wrap = document.getElementById("home-pick-cards");
+    if (!wrap || typeof OZU_NEWS === "undefined") return;
 
-    const latest = [...OZU_NEWS]
-      .sort((a, b) => (a.date < b.date ? 1 : -1))
-      .slice(0, 5);
+    const picks = OZU_NEWS.filter((item) => item.pick).sort((a, b) => (a.date < b.date ? 1 : -1));
 
-    list.innerHTML = latest
+    wrap.innerHTML = picks
       .map(
         (item) => `
-      <li>
-        <span class="rdate">${item.date.replace(/-/g, "/")}</span>
-        <span class="rtag">[${OZU_CATEGORY_LABELS[item.category]}]</span>
-        <a href="eachnews/${item.slug}.html">${item.title}</a>
-      </li>`
+      <a class="pick-card" href="eachnews/${item.slug}.html">
+        <span class="pick-badge">${OZU_CATEGORY_LABELS[item.category]}</span>
+        <h3>${item.title}</h3>
+        <p>${item.pickNote || ""}</p>
+      </a>`
       )
       .join("");
   })();
+
+  (function renderHomeLatestNews() {
+    const wrap = document.getElementById("home-latest-news");
+    const tabs = document.querySelectorAll(".hero, .latest-news .news-tab");
+    if (!wrap || typeof OZU_NEWS === "undefined") return;
+
+    const sorted = [...OZU_NEWS].sort((a, b) => (a.date < b.date ? 1 : -1));
+
+    function render(category) {
+      const list = category === "all" ? sorted : sorted.filter((i) => i.category === category);
+      wrap.innerHTML = list
+        .slice(0, 9)
+        .map(
+          (item) => `
+        <div class="news-card">
+          <span class="news-date">${item.date.replace(/-/g, "/")}</span>
+          <a class="news-title" href="eachnews/${item.slug}.html">${item.title}</a>
+          <span class="news-source">${item.source}</span>
+        </div>`
+        )
+        .join("");
+    }
+
+    render("all");
+
+    document.querySelectorAll(".latest-news .news-tab").forEach((tab) => {
+      tab.addEventListener("click", () => {
+        document.querySelectorAll(".latest-news .news-tab").forEach((t) => t.classList.remove("active"));
+        tab.classList.add("active");
+        render(tab.dataset.category);
+      });
+    });
+  })();
 </script>
+<script src="assets/js/main.js"></script>
+<script data-goatcounter="https://ozulifememo.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

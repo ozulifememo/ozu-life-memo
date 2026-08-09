@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>大洲市の地図(地名がわかる地図) ｜ OZU LIFE MEMO</title>
+<meta name="description" content="徳森・平野町・西大洲など、住所には出てくるのに地元の人しか分からない大洲市の地名を、地図と一緒に解説。学区・橋・トンネルもまとめました。">
+<link rel="icon" href="../assets/img/favicon.svg">
+<link rel="stylesheet" href="../assets/css/style.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="OZU LIFE MEMO">
+<meta property="og:title" content="大洲市の地図(地名がわかる地図) ｜ OZU LIFE MEMO">
+<meta property="og:description" content="徳森・平野町・西大洲など、住所には出てくるのに地元の人しか分からない大洲市の地名を、地図と一緒に解説。学区・橋・トンネルもまとめました。">
+<meta property="og:url" content="https://ozulifememo.github.io/ozu-life-memo/map/">
+<meta property="og:image" content="https://ozulifememo.github.io/ozu-life-memo/assets/img/real-photo-4.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://ozulifememo.github.io/ozu-life-memo/map/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "大洲市の地図(地名がわかる地図) ｜ OZU LIFE MEMO",
+  "url": "https://ozulifememo.github.io/ozu-life-memo/map/",
+  "description": "徳森・平野町・西大洲など、住所には出てくるのに地元の人しか分からない大洲市の地名を、地図と一緒に解説。学区・橋・トンネルもまとめました。",
+  "isPartOf": {"@type": "WebSite", "name": "OZU LIFE MEMO", "url": "https://ozulifememo.github.io/ozu-life-memo/"}
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="../" class="logo">OZU LIFE MEMO</a>
+    <nav class="main-nav">
+      <a href="../">HOME</a>
+      <a href="../concept/">サイト紹介</a>
+      <a href="../link/">リンク集</a>
+      <a href="../news/">大洲ノート</a>
+      <a href="../monthly/">月間まとめ</a>
+      <a href="../photo/">フリー写真</a>
+      <a href="../history/">大洲の歴史</a>
+      <a href="./" class="current">大洲の地図</a>
+      <a href="../quiz/">大洲検定</a>
+      <a href="#" class="cta-btn" data-modal-open>お問い合わせ</a>
+    </nav>
+    <button class="nav-toggle" aria-label="メニューを開く"><span></span></button>
+  </div>
+</header>
+
+<section class="page-hero" style="padding-bottom:0;">
+  <div class="wrap">
+    <h1>大洲市の地図</h1>
+  </div>
+</section>
+
+<section style="padding-top:16px;">
+  <div class="wrap">
+    <div class="map-tabs" role="tablist">
+      <button class="map-tab active" data-tab="names">地名マップ</button>
+      <button class="map-tab" data-tab="ozuall">旧大洲市 全地区</button>
+      <button class="map-tab" data-tab="poster">地名ポスター</button>
+      <button class="map-tab" data-tab="schools">学校マップ</button>
+      <button class="map-tab" data-tab="bridges">橋・トンネル</button>
+    </div>
+
+    <div class="map-tab-panel active" data-panel="names">
+      <div id="map-names" class="ozu-map"></div>
+      <div class="map-legend">
+        <div class="map-legend-group">
+          <p class="map-legend-title">エリア(2005年合併前の旧市町村)</p>
+          <span class="legend-chip"><i class="legend-swatch" style="background:#2f6690"></i>大洲地域</span>
+          <span class="legend-chip"><i class="legend-swatch" style="background:#2ec4c4"></i>長浜地域</span>
+          <span class="legend-chip"><i class="legend-swatch" style="background:#e08a3c"></i>肱川地域</span>
+          <span class="legend-chip"><i class="legend-swatch" style="background:#8a63c2"></i>河辺地域</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="map-tab-panel" data-panel="ozuall">
+      <div id="map-ozuall" class="ozu-map"></div>
+      <p class="stub-note">旧・大洲市エリアの全地区名を表示しています。広い地区は枠内に、狭くて詰まっている地区は引き出し線で外に名前を出しています。</p>
+    </div>
+
+    <div class="map-tab-panel" data-panel="poster">
+      <div class="poster-select">
+        <button class="poster-btn active" data-poster="all">大洲市全体</button>
+        <button class="poster-btn" data-poster="ozu">大洲地域</button>
+        <button class="poster-btn" data-poster="nagahama">長浜地域</button>
+        <button class="poster-btn" data-poster="hijikawa">肱川地域</button>
+        <button class="poster-btn" data-poster="kawabe">河辺地域</button>
+      </div>
+      <div class="poster-frame">
+        <img id="poster-img" src="../assets/img/map-poster-all.png" alt="大洲市 全地区名ポスター(ふりがな付き)">
+      </div>
+      <p style="text-align:center;margin-top:16px;">
+        <a id="poster-download" href="../assets/img/map-poster-all.png" download class="cta-btn" style="background:var(--color-brand);">この画像をダウンロード</a>
+      </p>
+    </div>
+
+    <div class="map-tab-panel" data-panel="schools">
+      <div id="map-schools" class="ozu-map"></div>
+      <div class="map-legend">
+        <div class="map-legend-group">
+          <span class="legend-chip">🧸 幼稚園・保育所・こども園</span>
+          <span class="legend-chip">🎒 小学校</span>
+          <span class="legend-chip">📘 中学校</span>
+          <span class="legend-chip">🎓 高校</span>
+        </div>
+      </div>
+      <p class="stub-note">
+        マーカーの位置は住所の字(あざ)を中心にした概算です。同じ字に複数の施設がある場合は少しずらして表示しています。
+      </p>
+    </div>
+
+    <div class="map-tab-panel" data-panel="bridges">
+      <div id="map-bridges" class="ozu-map"></div>
+      <div class="map-legend">
+        <div class="map-legend-group">
+          <p class="map-legend-title">施設</p>
+          <span class="legend-chip"><i class="legend-dot" style="background:#d0453a"></i>橋</span>
+          <span class="legend-chip"><i class="legend-dot" style="background:#7a4fc9"></i>トンネル</span>
+        </div>
+        <div class="map-legend-group">
+          <p class="map-legend-title">道路(線にカーソルを合わせると号線名を表示)</p>
+          <span class="legend-chip"><i class="legend-swatch" style="background:#c0392b"></i>国道(太い赤線)</span>
+          <span class="legend-chip"><i class="legend-swatch" style="background:#d98c1f"></i>県道(オレンジ線)</span>
+        </div>
+      </div>
+      <p class="stub-note">国道・県道クラスの主要な橋・トンネルを大洲市全域から集めています。道路データはOpenStreetMapの登録状況をもとにしており、細かい経路・分岐が実際と異なる場合があります。正確な道路情報は国道の場合は大洲河川国道事務所、県道の場合は愛媛県にご確認ください。</p>
+    </div>
+
+    <p class="stub-note" style="margin-top:24px;">
+      地区の境界線は総務省統計局「令和2年国勢調査 小地域境界データ」、地名の読みは日本郵便の郵便番号データ、
+      施設・道路の情報は OpenStreetMap および大洲市公式サイトの公開情報をもとに作成しています。
+      行政区(自治会レベル)より細かい範囲は含んでいません。正確な地番・境界は大洲市役所にご確認ください。
+    </p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>OZU LIFE MEMO は個人運営の非公式サイトです。大洲市の公式情報ではありません。</p>
+    <p>&copy; 2026 OZU LIFE MEMO</p>
+  </div>
+</footer>
+
+<div class="modal-overlay" data-modal>
+  <div class="modal-box">
+    <button class="modal-close" data-modal-close aria-label="閉じる">&times;</button>
+    <h3>お問い合わせ・Googleフォームはこちら</h3>
+    <p class="modal-note">＼ 名前やメールアドレスの入力は一切不要です ／</p>
+    <p class="modal-warning">
+      <strong>【非公式・個人ボランティアです】</strong>
+      制度の詳細は必ず公式HPを確認してください。情報のまとめ・感想は個人の見解です。
+    </p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfevBytb8aZmkEUX9m5aC0EUHxDmmYM0jYog33aPFr8AT_OEA/viewform?usp=dialog" class="form-btn" target="_blank" rel="noopener">Google フォーム</a>
+  </div>
+</div>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="../assets/js/map-data.js"></script>
+<script src="../assets/js/map-page.js"></script>
+<script src="../assets/js/main.js"></script>
+<script data-goatcounter="https://ozulifememo.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

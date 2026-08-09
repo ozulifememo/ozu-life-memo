@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>大洲検定(β版) ｜ OZU LIFE MEMO</title>
+<meta name="description" content="OZU LIFE MEMOのこれまでの記事から出題する、大洲市についての全10問クイズ。">
+<link rel="icon" href="../assets/img/favicon.svg">
+<link rel="stylesheet" href="../assets/css/style.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="OZU LIFE MEMO">
+<meta property="og:title" content="大洲検定(β版) ｜ OZU LIFE MEMO">
+<meta property="og:description" content="OZU LIFE MEMOのこれまでの記事から出題する、大洲市についての全10問クイズ。">
+<meta property="og:url" content="https://ozulifememo.github.io/ozu-life-memo/quiz/">
+<meta property="og:image" content="https://ozulifememo.github.io/ozu-life-memo/assets/img/real-photo-4.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://ozulifememo.github.io/ozu-life-memo/quiz/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "大洲検定(β版) ｜ OZU LIFE MEMO",
+  "url": "https://ozulifememo.github.io/ozu-life-memo/quiz/",
+  "description": "OZU LIFE MEMOのこれまでの記事から出題する、大洲市についての全10問クイズ。",
+  "isPartOf": {"@type": "WebSite", "name": "OZU LIFE MEMO", "url": "https://ozulifememo.github.io/ozu-life-memo/"}
+}
+</script>
+<style>
+  .quiz-wrap { max-width: 640px; margin: 0 auto; }
+  .quiz-progress { text-align: center; color: var(--color-text-muted); font-size: 0.9rem; margin-bottom: 12px; }
+  .quiz-card { border: 1px solid var(--color-border); border-radius: 12px; padding: 24px; background: #fff; }
+  .quiz-question { font-size: 1.15rem; font-weight: 700; margin-bottom: 20px; line-height: 1.6; }
+  .quiz-choice {
+    display: block; width: 100%; text-align: left; padding: 14px 16px; margin-bottom: 10px;
+    border: 1px solid var(--color-border); border-radius: 8px; background: #fff; cursor: pointer;
+    font-size: 1rem; color: var(--color-text); transition: background 0.15s, border-color 0.15s;
+  }
+  .quiz-choice:hover { border-color: var(--color-brand); }
+  .quiz-choice.correct { background: #e6f4ea; border-color: #2e7d46; font-weight: 700; }
+  .quiz-choice.wrong { background: #fbe9e7; border-color: #c0392b; }
+  .quiz-choice[disabled] { cursor: default; }
+  .quiz-explain { margin-top: 16px; padding: 14px; background: var(--color-bg); border-radius: 8px; color: var(--color-text-muted); font-size: 0.92rem; line-height: 1.7; display: none; }
+  .quiz-explain.show { display: block; }
+  .quiz-next { display: none; margin-top: 16px; text-align: right; }
+  .quiz-next.show { display: block; }
+  .quiz-result { text-align: center; }
+  .quiz-result-score { font-size: 2.4rem; font-weight: 800; color: var(--color-brand); margin: 12px 0; }
+  .quiz-start { text-align: center; padding: 40px 20px; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="../" class="logo">OZU LIFE MEMO</a>
+    <nav class="main-nav">
+      <a href="../">HOME</a>
+      <a href="../concept/">サイト紹介</a>
+      <a href="../link/">リンク集</a>
+      <a href="../news/">大洲ノート</a>
+      <a href="../monthly/">月間まとめ</a>
+      <a href="../photo/">フリー写真</a>
+      <a href="../history/">大洲の歴史</a>
+      <a href="../map/">大洲の地図</a>
+      <a href="./" class="current">大洲検定</a>
+      <a href="#" class="cta-btn" data-modal-open>お問い合わせ</a>
+    </nav>
+    <button class="nav-toggle" aria-label="メニューを開く"><span></span></button>
+  </div>
+</header>
+
+<section class="page-hero" style="padding-bottom:0;">
+  <div class="wrap">
+    <h1>大洲検定(β版)</h1>
+    <p style="color:var(--color-text-muted);">OZU LIFE MEMOのこれまでの記事から出題する、全10問。まずは第1弾です。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap quiz-wrap">
+    <div id="quiz-start" class="quiz-card quiz-start">
+      <p style="font-size:1.05rem;margin-bottom:20px;">大洲のこと、どれだけ知っていますか？<br>全10問、4択形式です。</p>
+      <button id="quiz-start-btn" class="cta-btn" style="background:var(--color-brand);border:none;cursor:pointer;font-size:1rem;">はじめる</button>
+    </div>
+
+    <div id="quiz-game" style="display:none;">
+      <p class="quiz-progress"><span id="quiz-progress-text"></span></p>
+      <div class="quiz-card">
+        <p class="quiz-question" id="quiz-question"></p>
+        <div id="quiz-choices"></div>
+        <div class="quiz-explain" id="quiz-explain"></div>
+        <div class="quiz-next" id="quiz-next-wrap">
+          <button id="quiz-next-btn" class="cta-btn" style="background:var(--color-brand);border:none;cursor:pointer;">次へ →</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="quiz-result" class="quiz-card quiz-result" style="display:none;">
+      <p>あなたの正解数</p>
+      <p class="quiz-result-score"><span id="quiz-score"></span> / 10</p>
+      <p id="quiz-result-comment" style="color:var(--color-text-muted);margin-bottom:20px;"></p>
+      <button id="quiz-retry-btn" class="cta-btn" style="background:var(--color-brand);border:none;cursor:pointer;">もう一度挑戦する</button>
+    </div>
+
+    <p class="stub-note" style="margin-top:24px;">
+      出題内容はOZU LIFE MEMOの掲載記事をもとにしています。第2弾も準備中です。
+      「こんな問題も出してほしい」というリクエストがあれば、お問い合わせからどうぞ。
+    </p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>OZU LIFE MEMO は個人運営の非公式サイトです。大洲市の公式情報ではありません。</p>
+    <p>&copy; 2026 OZU LIFE MEMO</p>
+  </div>
+</footer>
+
+<div class="modal-overlay" data-modal>
+  <div class="modal-box">
+    <button class="modal-close" data-modal-close aria-label="閉じる">&times;</button>
+    <h3>お問い合わせ・Googleフォームはこちら</h3>
+    <p class="modal-note">＼ 名前やメールアドレスの入力は一切不要です ／</p>
+    <p class="modal-warning">
+      <strong>【非公式・個人ボランティアです】</strong>
+      制度の詳細は必ず公式HPを確認してください。情報のまとめ・感想は個人の見解です。
+    </p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfevBytb8aZmkEUX9m5aC0EUHxDmmYM0jYog33aPFr8AT_OEA/viewform?usp=dialog" class="form-btn" target="_blank" rel="noopener">Google フォーム</a>
+  </div>
+</div>
+
+<script src="../assets/js/quiz-data.js"></script>
+<script src="../assets/js/quiz-page.js"></script>
+<script src="../assets/js/main.js"></script>
+<script data-goatcounter="https://ozulifememo.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

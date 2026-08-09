@@ -1,16 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>大洲最新ニュース ｜ OZU LIFE MEMO</title>
+<title>大洲ノート ｜ OZU LIFE MEMO</title>
 <meta name="description" content="市役所の発表やSNS、noteの記事から拾い上げた大洲の話題を、3つの視点で整理しています。">
 <link rel="icon" href="../assets/img/favicon.svg">
 <link rel="stylesheet" href="../assets/css/style.css">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="OZU LIFE MEMO">
-<meta property="og:title" content="大洲最新ニュース ｜ OZU LIFE MEMO">
+<meta property="og:title" content="大洲ノート ｜ OZU LIFE MEMO">
 <meta property="og:description" content="市役所の発表やSNS、noteの記事から拾い上げた大洲の話題を、3つの視点で整理しています。">
 <meta property="og:url" content="https://ozulifememo.github.io/ozu-life-memo/news/">
 <meta property="og:image" content="https://ozulifememo.github.io/ozu-life-memo/assets/img/real-photo-9.jpg">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://ozulifememo.github.io/ozu-life-memo/news/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "大洲ノート ｜ OZU LIFE MEMO",
+  "url": "https://ozulifememo.github.io/ozu-life-memo/news/",
+  "description": "市役所の発表やSNS、noteの記事から拾い上げた大洲の話題を、3つの視点で整理しています。",
+  "isPartOf": {"@type": "WebSite", "name": "OZU LIFE MEMO", "url": "https://ozulifememo.github.io/ozu-life-memo/"}
+}
+</script>
+</head>
+<body>
 
 <header class="site-header">
   <div class="wrap">
@@ -19,10 +35,12 @@
       <a href="../">HOME</a>
       <a href="../concept/">サイト紹介</a>
       <a href="../link/">リンク集</a>
-      <a href="./" class="current">大洲最新ニュース</a>
+      <a href="./" class="current">大洲ノート</a>
       <a href="../monthly/">月間まとめ</a>
       <a href="../photo/">フリー写真</a>
       <a href="../history/">大洲の歴史</a>
+      <a href="../map/">大洲の地図</a>
+      <a href="../quiz/">大洲検定</a>
       <a href="#" class="cta-btn" data-modal-open>お問い合わせ</a>
     </nav>
     <button class="nav-toggle" aria-label="メニューを開く"><span></span></button>
@@ -31,7 +49,7 @@
 
 <section class="page-hero" style="padding-bottom:0;">
   <div class="wrap">
-    <h1>大洲最新ニュース</h1>
+    <h1>大洲ノート</h1>
   </div>
 </section>
 
@@ -58,6 +76,12 @@
       <button class="news-tab" data-category="kurashi">暮らしと防衛</button>
       <button class="news-tab" data-category="shiten">大洲の視点</button>
     </div>
+
+    <p class="tag-filter-label">テーマで絞り込む</p>
+    <div class="tag-filter" id="tag-filter"></div>
+
+    <p class="tag-filter-label">情報源で絞り込む</p>
+    <div class="tag-filter" id="source-filter"></div>
 
     <div class="news-cards" id="news-table-body"></div>
   </div>
@@ -92,15 +116,39 @@
     const sorted = [...OZU_NEWS].sort((a, b) => (a.date < b.date ? 1 : -1));
 
     body.innerHTML = sorted
-      .map(
-        (item) => `
-      <div class="news-card" data-category="${item.category}">
+      .map((item) => {
+        const sourceType = typeof ozuSourceType === "function" ? ozuSourceType(item.source) : "その他";
+        return `
+      <div class="news-card" data-category="${item.category}" data-tags="${(item.tags || []).join(",")}" data-source-type="${sourceType}">
         <span class="news-date">${item.date.replace(/-/g, "/")}</span>
         <a class="news-title" href="../eachnews/${item.slug}.html">${item.title}</a>
         <span class="news-source">${item.source}</span>
-      </div>`
-      )
+      </div>`;
+      })
       .join("");
+  })();
+
+  (function renderTagFilter() {
+    const wrap = document.getElementById("tag-filter");
+    if (!wrap || typeof OZU_TAGS === "undefined") return;
+
+    const chips = ['<button class="tag-chip active" data-tag="all">すべて</button>'].concat(
+      OZU_TAGS.map((tag) => `<button class="tag-chip" data-tag="${tag}">${tag}</button>`)
+    );
+    wrap.innerHTML = chips.join("");
+  })();
+
+  (function renderSourceFilter() {
+    const wrap = document.getElementById("source-filter");
+    if (!wrap || typeof OZU_SOURCE_TYPES === "undefined") return;
+
+    const chips = ['<button class="tag-chip active" data-source-type="all">すべて</button>'].concat(
+      OZU_SOURCE_TYPES.map((t) => `<button class="tag-chip" data-source-type="${t}">${t}</button>`)
+    );
+    wrap.innerHTML = chips.join("");
   })();
 </script>
 <script src="../assets/js/main.js"></script>
+<script data-goatcounter="https://ozulifememo.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

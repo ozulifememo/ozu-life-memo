@@ -77,33 +77,60 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // News/Monthly category tab filter
+  // News/Monthly category tab + tag chip + source-type chip filter
   const tabs = document.querySelectorAll(".news-tab");
+  const tagChips = document.querySelectorAll("#tag-filter .tag-chip");
+  const sourceChips = document.querySelectorAll("#source-filter .tag-chip");
   const rows = document.querySelectorAll(
     ".news-cards .news-card[data-category], .monthly-list li[data-category]"
   );
   const monthlyCards = document.querySelectorAll(".monthly-card");
 
+  let activeCategory = "all";
+  let activeTag = "all";
+  let activeSourceType = "all";
+
+  function applyNewsFilter() {
+    rows.forEach((row) => {
+      const categoryOk = activeCategory === "all" || row.dataset.category === activeCategory;
+      const rowTags = (row.dataset.tags || "").split(",").filter(Boolean);
+      const tagOk = activeTag === "all" || rowTags.includes(activeTag);
+      const sourceOk = activeSourceType === "all" || row.dataset.sourceType === activeSourceType;
+      row.style.display = categoryOk && tagOk && sourceOk ? "" : "none";
+    });
+
+    monthlyCards.forEach((card) => {
+      const items = card.querySelectorAll("li[data-category]");
+      if (items.length === 0) return;
+      const hasVisible = [...items].some((li) => li.style.display !== "none");
+      card.style.display = hasVisible ? "" : "none";
+    });
+  }
+
   tabs.forEach((tab) => {
     tab.addEventListener("click", () => {
       tabs.forEach((t) => t.classList.remove("active"));
       tab.classList.add("active");
-      const category = tab.dataset.category;
+      activeCategory = tab.dataset.category;
+      applyNewsFilter();
+    });
+  });
 
-      rows.forEach((row) => {
-        if (category === "all" || row.dataset.category === category) {
-          row.style.display = "";
-        } else {
-          row.style.display = "none";
-        }
-      });
+  tagChips.forEach((chip) => {
+    chip.addEventListener("click", () => {
+      tagChips.forEach((c) => c.classList.remove("active"));
+      chip.classList.add("active");
+      activeTag = chip.dataset.tag;
+      applyNewsFilter();
+    });
+  });
 
-      monthlyCards.forEach((card) => {
-        const items = card.querySelectorAll("li[data-category]");
-        if (items.length === 0) return;
-        const hasVisible = [...items].some((li) => li.style.display !== "none");
-        card.style.display = hasVisible ? "" : "none";
-      });
+  sourceChips.forEach((chip) => {
+    chip.addEventListener("click", () => {
+      sourceChips.forEach((c) => c.classList.remove("active"));
+      chip.classList.add("active");
+      activeSourceType = chip.dataset.sourceType;
+      applyNewsFilter();
     });
   });
 });

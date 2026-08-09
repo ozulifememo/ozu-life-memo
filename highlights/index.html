@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>とくにおすすめの記事 ｜ OZU LIFE MEMO</title>
+<meta name="description" content="運営者本人が「これは書けてよかった」と思う記事だけを集めたページ。">
+<link rel="icon" href="../assets/img/favicon.svg">
+<link rel="stylesheet" href="../assets/css/style.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="OZU LIFE MEMO">
+<meta property="og:title" content="とくにおすすめの記事 ｜ OZU LIFE MEMO">
+<meta property="og:description" content="運営者本人が「これは書けてよかった」と思う記事だけを集めたページ。">
+<meta property="og:url" content="https://ozulifememo.github.io/ozu-life-memo/highlights/">
+<meta property="og:image" content="https://ozulifememo.github.io/ozu-life-memo/assets/img/real-photo-9.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://ozulifememo.github.io/ozu-life-memo/highlights/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "とくにおすすめの記事 ｜ OZU LIFE MEMO",
+  "url": "https://ozulifememo.github.io/ozu-life-memo/highlights/",
+  "description": "運営者本人が「これは書けてよかった」と思う記事だけを集めたページ。",
+  "isPartOf": {"@type": "WebSite", "name": "OZU LIFE MEMO", "url": "https://ozulifememo.github.io/ozu-life-memo/"}
+}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="../" class="logo">OZU LIFE MEMO</a>
+    <nav class="main-nav">
+      <a href="../">HOME</a>
+      <a href="../concept/">サイト紹介</a>
+      <a href="../link/">リンク集</a>
+      <a href="../news/">大洲ノート</a>
+      <a href="../monthly/">月間まとめ</a>
+      <a href="../photo/">フリー写真</a>
+      <a href="../history/">大洲の歴史</a>
+      <a href="../map/">大洲の地図</a>
+      <a href="../quiz/">大洲検定</a>
+      <a href="#" class="cta-btn" data-modal-open>お問い合わせ</a>
+    </nav>
+    <button class="nav-toggle" aria-label="メニューを開く"><span></span></button>
+  </div>
+</header>
+
+<section class="page-hero" style="padding-bottom:0;">
+  <div class="wrap">
+    <h1>とくにおすすめの記事</h1>
+    <p style="color:var(--color-text-muted);">数ある記事の中から、運営者本人が「これは書けてよかった」と思うものだけを選んでいます。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="news-cards" id="highlights-body"></div>
+    <p class="stub-note" id="highlights-empty" style="display:none;">
+      まだ「おすすめ」に選ばれた記事はありません。記事を読んで「これは良かった」と思うものがあれば、
+      お問い合わせから教えてください。
+    </p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>OZU LIFE MEMO は個人運営の非公式サイトです。大洲市の公式情報ではありません。</p>
+    <p>&copy; 2026 OZU LIFE MEMO</p>
+  </div>
+</footer>
+
+<div class="modal-overlay" data-modal>
+  <div class="modal-box">
+    <button class="modal-close" data-modal-close aria-label="閉じる">&times;</button>
+    <h3>お問い合わせ・Googleフォームはこちら</h3>
+    <p class="modal-note">＼ 名前やメールアドレスの入力は一切不要です ／</p>
+    <p class="modal-warning">
+      <strong>【非公式・個人ボランティアです】</strong>
+      制度の詳細は必ず公式HPを確認してください。情報のまとめ・感想は個人の見解です。
+    </p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfevBytb8aZmkEUX9m5aC0EUHxDmmYM0jYog33aPFr8AT_OEA/viewform?usp=dialog" class="form-btn" target="_blank" rel="noopener">Google フォーム</a>
+  </div>
+</div>
+
+<script src="../assets/js/news-data.js"></script>
+<script>
+  (function renderHighlights() {
+    const body = document.getElementById("highlights-body");
+    const empty = document.getElementById("highlights-empty");
+    if (!body || typeof OZU_NEWS === "undefined") return;
+
+    const picked = OZU_NEWS.filter((item) => item.rating === "high").sort((a, b) => (a.date < b.date ? 1 : -1));
+
+    if (picked.length === 0) {
+      empty.style.display = "block";
+      return;
+    }
+
+    body.innerHTML = picked
+      .map(
+        (item) => `
+      <div class="news-card" data-category="${item.category}">
+        <span class="news-date">${item.date.replace(/-/g, "/")}</span>
+        <a class="news-title" href="../eachnews/${item.slug}.html">${item.title}</a>
+        <span class="news-source">${item.source}</span>
+      </div>`
+      )
+      .join("");
+  })();
+</script>
+<script src="../assets/js/main.js"></script>
+<script data-goatcounter="https://ozulifememo.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

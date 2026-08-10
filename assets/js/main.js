@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const tagChips = document.querySelectorAll("#tag-filter .tag-chip");
   const sourceChips = document.querySelectorAll("#source-filter .tag-chip");
   const rows = document.querySelectorAll(
-    ".news-cards .news-card[data-category], .monthly-list li[data-category]"
+    ".news-cards .news-card[data-category], .news-table .news-row[data-category], .monthly-list li[data-category]"
   );
   const monthlyCards = document.querySelectorAll(".monthly-card");
 

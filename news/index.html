@@ -71,20 +71,36 @@
       </div>
     </div>
 
-    <div class="news-tabs">
-      <button class="news-tab active" data-category="all">全般</button>
-      <button class="news-tab" data-category="ima">大洲のいま</button>
-      <button class="news-tab" data-category="kurashi">暮らしと防衛</button>
-      <button class="news-tab" data-category="shiten">大洲の視点</button>
+    <div class="news-layout">
+      <aside class="news-sidebar">
+        <div class="sidebar-filter-group">
+          <p class="tag-filter-label">カテゴリ</p>
+          <div class="news-tabs">
+            <button class="news-tab active" data-category="all">全般</button>
+            <button class="news-tab" data-category="ima">大洲のいま</button>
+            <button class="news-tab" data-category="kurashi">暮らしと防衛</button>
+            <button class="news-tab" data-category="shiten">大洲の視点</button>
+          </div>
+        </div>
+        <div class="sidebar-filter-group">
+          <p class="tag-filter-label">テーマで絞り込む</p>
+          <div class="tag-filter" id="tag-filter"></div>
+        </div>
+        <div class="sidebar-filter-group">
+          <p class="tag-filter-label">情報源で絞り込む</p>
+          <div class="tag-filter" id="source-filter"></div>
+        </div>
+      </aside>
+
+      <div class="news-main">
+        <div class="news-table">
+          <div class="news-table-head">
+            <span>タイトル</span><span>日付</span><span>参考元</span>
+          </div>
+          <div id="news-table-body"></div>
+        </div>
+      </div>
     </div>
-
-    <p class="tag-filter-label">テーマで絞り込む</p>
-    <div class="tag-filter" id="tag-filter"></div>
-
-    <p class="tag-filter-label">情報源で絞り込む</p>
-    <div class="tag-filter" id="source-filter"></div>
-
-    <div class="news-cards" id="news-table-body"></div>
   </div>
 </section>
 
@@ -120,9 +136,9 @@
       .map((item) => {
         const sourceType = typeof ozuSourceType === "function" ? ozuSourceType(item.source) : "その他";
         return `
-      <div class="news-card" data-category="${item.category}" data-tags="${(item.tags || []).join(",")}" data-source-type="${sourceType}">
-        <span class="news-date">${item.date.replace(/-/g, "/")}</span>
+      <div class="news-row" data-category="${item.category}" data-tags="${(item.tags || []).join(",")}" data-source-type="${sourceType}">
         <a class="news-title" href="../eachnews/${item.slug}.html">${item.title}</a>
+        <span class="news-date">${item.date.replace(/-/g, "/")}</span>
         <span class="news-source">${item.source}</span>
       </div>`;
       })

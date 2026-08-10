@@ -30,7 +30,8 @@
 }
 </script>
 <style>
-.book-meta { display:flex; gap:16px; align-items:flex-start; flex-wrap:wrap; margin-bottom:var(--space-5); padding:var(--space-4); background:var(--color-surface-alt); border-radius:var(--radius); }
+.book-meta { display:flex; gap:20px; align-items:flex-start; flex-wrap:wrap; margin-bottom:var(--space-5); padding:var(--space-4); background:var(--color-surface-alt); border-radius:var(--radius); }
+.book-cover-img { width:110px; height:auto; border-radius:var(--radius-sm); box-shadow:var(--shadow-md); flex-shrink:0; }
 .book-meta dl { margin:0; font-size:.85rem; color:var(--color-text-muted); line-height:1.8; }
 .book-meta dt { display:inline; font-weight:700; color:var(--color-text); }
 .book-meta dt::after { content:"："; }
@@ -69,6 +70,7 @@
     <h1>「半身で生きていこうや」と、大洲の隣町で本を読む高校生</h1>
 
     <div class="book-meta">
+      <img src="../assets/img/book/nazehatarai.jpg" alt="『なぜ働いていると本が読めなくなるのか』表紙" class="book-cover-img" width="110" height="177" loading="lazy">
       <dl>
         <dt>本のタイトル</dt><dd>なぜ働いていると本が読めなくなるのか</dd>
         <dt>著者</dt><dd>三宅香帆</dd>

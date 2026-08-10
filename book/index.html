@@ -27,8 +27,10 @@
 </script>
 <style>
 .book-cards { display:grid; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); gap:16px; }
-.book-card { background:var(--color-surface); border:1px solid var(--color-border); border-radius:var(--radius); padding:var(--space-4) var(--space-5); display:flex; flex-direction:column; gap:var(--space-1); box-shadow:var(--shadow-sm); transition:border-color .15s ease, box-shadow .15s ease, transform .15s ease; }
+.book-card { background:var(--color-surface); border:1px solid var(--color-border); border-radius:var(--radius); padding:var(--space-4) var(--space-5); display:flex; flex-direction:row; gap:var(--space-4); box-shadow:var(--shadow-sm); transition:border-color .15s ease, box-shadow .15s ease, transform .15s ease; }
 .book-card:hover { border-color:var(--color-brand); box-shadow:var(--shadow-md); transform:translateY(-2px); }
+.book-card .book-card-cover { width:56px; height:90px; object-fit:cover; border-radius:4px; box-shadow:var(--shadow-sm); flex-shrink:0; }
+.book-card .book-card-body { display:flex; flex-direction:column; gap:var(--space-1); min-width:0; }
 .book-card .book-author { color:var(--color-text-faint); font-size:var(--text-xs); }
 .book-card .book-title { font-weight:700; font-size:var(--text-base); line-height:1.55; margin-top:2px; }
 .book-card .book-title:hover { color:var(--color-brand); }
@@ -92,9 +94,12 @@
     <h2 style="margin-top:0;">これまでの記事</h2>
     <div class="book-cards">
       <a class="book-card" href="hon-ga-yomenai.html">
-        <span class="book-author">三宅香帆『なぜ働いていると本が読めなくなるのか』</span>
-        <span class="book-title">「半身で生きていこうや」と、大洲の隣町で本を読む高校生</span>
-        <span class="book-hook">2026/08/09 ・ 働くことと読書</span>
+        <img src="../assets/img/book/nazehatarai.jpg" alt="" class="book-card-cover" loading="lazy">
+        <span class="book-card-body">
+          <span class="book-author">三宅香帆『なぜ働いていると本が読めなくなるのか』</span>
+          <span class="book-title">「半身で生きていこうや」と、大洲の隣町で本を読む高校生</span>
+          <span class="book-hook">2026/08/09 ・ 働くことと読書</span>
+        </span>
       </a>
     </div>
   </div>

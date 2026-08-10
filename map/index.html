@@ -57,14 +57,14 @@
 <section style="padding-top:16px;">
   <div class="wrap">
     <div class="map-tabs" role="tablist">
-      <button class="map-tab active" data-tab="names">地名マップ</button>
-      <button class="map-tab" data-tab="ozuall">旧大洲市 全地区</button>
-      <button class="map-tab" data-tab="poster">地名ポスター</button>
-      <button class="map-tab" data-tab="schools">学校マップ</button>
-      <button class="map-tab" data-tab="bridges">橋・トンネル</button>
+      <button class="map-tab active" data-tab="names" role="tab" aria-selected="true">地名マップ</button>
+      <button class="map-tab" data-tab="ozuall" role="tab" aria-selected="false">旧大洲市 全地区</button>
+      <button class="map-tab" data-tab="poster" role="tab" aria-selected="false">地名ポスター</button>
+      <button class="map-tab" data-tab="schools" role="tab" aria-selected="false">学校マップ</button>
+      <button class="map-tab" data-tab="bridges" role="tab" aria-selected="false">橋・トンネル</button>
     </div>
 
-    <div class="map-tab-panel active" data-panel="names">
+    <div class="map-tab-panel active" data-panel="names" role="tabpanel">
       <div id="map-names" class="ozu-map"></div>
       <div class="map-legend">
         <div class="map-legend-group">
@@ -77,12 +77,12 @@
       </div>
     </div>
 
-    <div class="map-tab-panel" data-panel="ozuall">
+    <div class="map-tab-panel" data-panel="ozuall" role="tabpanel">
       <div id="map-ozuall" class="ozu-map"></div>
       <p class="stub-note">旧・大洲市エリアの全地区名を表示しています。広い地区は枠内に、狭くて詰まっている地区は引き出し線で外に名前を出しています。</p>
     </div>
 
-    <div class="map-tab-panel" data-panel="poster">
+    <div class="map-tab-panel" data-panel="poster" role="tabpanel">
       <div class="poster-select">
         <button class="poster-btn active" data-poster="all">大洲市全体</button>
         <button class="poster-btn" data-poster="ozu">大洲地域</button>
@@ -98,7 +98,7 @@
       </p>
     </div>
 
-    <div class="map-tab-panel" data-panel="schools">
+    <div class="map-tab-panel" data-panel="schools" role="tabpanel">
       <div id="map-schools" class="ozu-map"></div>
       <div class="map-legend">
         <div class="map-legend-group">
@@ -113,7 +113,7 @@
       </p>
     </div>
 
-    <div class="map-tab-panel" data-panel="bridges">
+    <div class="map-tab-panel" data-panel="bridges" role="tabpanel">
       <div id="map-bridges" class="ozu-map"></div>
       <div class="map-legend">
         <div class="map-legend-group">

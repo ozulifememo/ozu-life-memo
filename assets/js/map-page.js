@@ -306,7 +306,10 @@ document.addEventListener("DOMContentLoaded", () => {
   tabButtons.forEach((btn) => {
     btn.addEventListener("click", () => {
       const tab = btn.dataset.tab;
-      tabButtons.forEach((b) => b.classList.toggle("active", b === btn));
+      tabButtons.forEach((b) => {
+        b.classList.toggle("active", b === btn);
+        b.setAttribute("aria-selected", b === btn ? "true" : "false");
+      });
       panels.forEach((p) => p.classList.toggle("active", p.dataset.panel === tab));
 
       if (initFns[tab] && !initedTabs.has(tab)) {

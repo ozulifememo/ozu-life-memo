@@ -5,11 +5,13 @@
   --color-surface-alt: #eef2f4;
   --color-text: #16232f;
   --color-text-muted: #5b6673;
-  --color-text-faint: #8b93a0;
+  --color-text-faint: #656b78;
   --color-brand: #2a5b82;
   --color-brand-dark: #1e435f;
   --color-accent: #1fb3ac;
   --color-accent-dark: #158a85;
+  --color-accent-btn: #0f7d78;
+  --color-accent-btn-hover: #0c6560;
   --color-border: #e4e2dc;
   --color-border-strong: #d3d0c7;
   --color-warn-bg: #fdf1d6;
@@ -171,7 +173,7 @@ a {
 }
 
 .cta-btn {
-  background: var(--color-accent);
+  background: var(--color-accent-btn);
   color: #fff !important;
   padding: 11px 24px;
   border-radius: var(--radius-sm);
@@ -183,7 +185,7 @@ a {
 }
 
 .cta-btn:hover {
-  background: var(--color-accent-dark);
+  background: var(--color-accent-btn-hover);
   transform: translateY(-1px);
   box-shadow: var(--shadow-md);
 }
@@ -940,7 +942,7 @@ section {
 
 .form-btn {
   display: inline-block;
-  background: var(--color-accent);
+  background: var(--color-accent-btn);
   color: #fff !important;
   padding: 14px 32px;
   border-radius: 999px;
@@ -948,7 +950,7 @@ section {
 }
 
 .form-btn:hover {
-  background: var(--color-accent-dark);
+  background: var(--color-accent-btn-hover);
 }
 
 /* Concept page: disclaimer + icon rows */

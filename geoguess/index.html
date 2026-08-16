@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>大洲ジオゲッサー ｜ OZU LIFE MEMO</title>
+<meta name="description" content="大洲市内で撮影した実写真1枚から、撮影場所を地図上で当てるご当地ジオゲッサー。半径30m以内なら正解です。">
+<link rel="icon" href="../assets/img/favicon.svg">
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="OZU LIFE MEMO">
+<meta property="og:title" content="大洲ジオゲッサー ｜ OZU LIFE MEMO">
+<meta property="og:description" content="大洲市内で撮影した実写真1枚から、撮影場所を地図上で当てるご当地ジオゲッサー。半径30m以内なら正解です。">
+<meta property="og:url" content="https://ozulifememo.github.io/ozu-life-memo/geoguess/">
+<meta property="og:image" content="https://ozulifememo.github.io/ozu-life-memo/assets/img/real-photo-4.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://ozulifememo.github.io/ozu-life-memo/geoguess/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "大洲ジオゲッサー ｜ OZU LIFE MEMO",
+  "url": "https://ozulifememo.github.io/ozu-life-memo/geoguess/",
+  "description": "大洲市内で撮影した実写真1枚から、撮影場所を地図上で当てるご当地ジオゲッサー。半径30m以内なら正解です。",
+  "isPartOf": {"@type": "WebSite", "name": "OZU LIFE MEMO", "url": "https://ozulifememo.github.io/ozu-life-memo/"}
+}
+</script>
+<style>
+  .geo-wrap { max-width: 720px; margin: 0 auto; }
+  .geo-card { border: 1px solid var(--color-border); border-radius: 12px; padding: 24px; background: #fff; }
+  .geo-start { text-align: center; padding: 40px 20px; }
+  .geo-progress { text-align: center; color: var(--color-text-muted); font-size: 0.9rem; margin-bottom: 12px; }
+  .geo-photo-wrap { margin-bottom: 16px; }
+  .geo-photo-wrap img {
+    width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 10px; box-shadow: var(--shadow-md); display: block;
+  }
+  #geo-map { width: 100%; height: 360px; border-radius: 10px; margin-bottom: 14px; border: 1px solid var(--color-border); }
+  .geo-hint { text-align: center; color: var(--color-text-muted); font-size: 0.88rem; margin: 0 0 14px; }
+  .geo-guess-btn-wrap { text-align: center; }
+  .geo-round-result { margin-top: 16px; padding: 14px; background: var(--color-bg); border-radius: 8px; display: none; text-align: center; }
+  .geo-round-result.show { display: block; }
+  .geo-round-badge { font-weight: 800; font-size: 1.1rem; margin: 0 0 6px; }
+  .geo-round-badge.correct { color: #2e7d46; }
+  .geo-round-badge.wrong { color: #c0392b; }
+  .geo-answer-pin {
+    display: inline-block; background: #2e7d46; color: #fff; font-size: 0.75rem; font-weight: 700;
+    padding: 2px 8px; border-radius: 999px; white-space: nowrap; transform: translate(-50%, -140%);
+  }
+  .geo-next { display: none; margin-top: 16px; text-align: right; }
+  .geo-next.show { display: block; }
+  .geo-result { text-align: center; }
+  .geo-result-score { font-size: 2.4rem; font-weight: 800; color: var(--color-brand); margin: 12px 0; }
+  .geo-result-badge {
+    display: inline-block; font-size: 1.1rem; font-weight: 800; padding: 8px 24px; border-radius: 999px; margin-bottom: 14px;
+  }
+  .geo-result-badge.pass { background: #e6f4ea; color: #2e7d46; }
+  .geo-result-badge.fail { background: #fbe9e7; color: #c0392b; }
+  .geo-result-badge.perfect { background: #fdf1d6; color: #8a6d1d; }
+  .geo-review-list { text-align: left; margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--color-border); }
+  .geo-review-title { font-weight: 700; margin-bottom: 12px; color: var(--color-text); }
+  .geo-review-item { display: flex; align-items: center; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--color-border); font-size: 0.92rem; }
+  .geo-review-item:last-child { border-bottom: none; }
+  .geo-review-mark { flex-shrink: 0; font-weight: 800; font-size: 0.8rem; padding: 3px 10px; border-radius: 999px; }
+  .geo-review-item.correct .geo-review-mark { background: #e6f4ea; color: #2e7d46; }
+  .geo-review-item.wrong .geo-review-mark { background: #fbe9e7; color: #c0392b; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="../" class="logo">OZU LIFE MEMO</a>
+    <nav class="main-nav">
+      <a href="../">HOME</a>
+      <a href="../concept/">サイト紹介</a>
+      <a href="../link/">リンク集</a>
+      <a href="../news/">大洲ノート</a>
+      <a href="../monthly/">月間まとめ</a>
+      <a href="../photo/">フリー写真</a>
+      <a href="../history/">大洲の歴史</a>
+      <a href="../book/">大洲と読書</a>
+      <a href="../map/">大洲の地図</a>
+      <a href="../quiz/">大洲検定</a>
+      <a href="./" class="current">大洲ジオゲッサー</a>
+      <a href="#" class="cta-btn" data-modal-open>お問い合わせ</a>
+    </nav>
+    <button class="nav-toggle" aria-label="メニューを開く"><span></span></button>
+  </div>
+</header>
+
+<section class="page-hero" style="padding-bottom:0;">
+  <div class="wrap">
+    <h1>大洲ジオゲッサー</h1>
+    <p style="color:var(--color-text-muted);">大洲市内で撮影した実写真から、撮影場所を地図上で当てるゲームです。半径30m以内なら正解。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap geo-wrap">
+    <div id="geo-no-data" class="geo-card" style="display:none;text-align:center;">
+      <p>準備中です。写真データが揃い次第、遊べるようになります。</p>
+    </div>
+
+    <div id="geo-start" class="geo-card geo-start">
+      <p style="font-size:1.05rem;margin-bottom:20px;">大洲の街、どれだけ知っていますか？<br>写真を見て、地図上でクリックして場所を予想してください。<br>実際の撮影場所から半径30m以内なら正解です。</p>
+      <button id="geo-start-btn" class="cta-btn" style="background:var(--color-brand);border:none;cursor:pointer;font-size:1rem;">はじめる</button>
+    </div>
+
+    <div id="geo-game" style="display:none;">
+      <p class="geo-progress"><span id="geo-progress-text"></span></p>
+      <div class="geo-card">
+        <div class="geo-photo-wrap">
+          <img id="geo-photo" src="" alt="">
+        </div>
+        <div id="geo-map"></div>
+        <p class="geo-hint">地図をクリックして、この写真が撮影された場所にピンを置いてください。</p>
+        <div class="geo-guess-btn-wrap">
+          <button id="geo-guess-btn" class="cta-btn" style="background:var(--color-brand);border:none;cursor:pointer;" disabled>この場所で決定</button>
+        </div>
+        <div class="geo-round-result" id="geo-round-result">
+          <p class="geo-round-badge" id="geo-round-badge"></p>
+          <p id="geo-round-distance" style="color:var(--color-text-muted);margin:0;"></p>
+        </div>
+        <div class="geo-next" id="geo-next-wrap">
+          <button id="geo-next-btn" class="cta-btn" style="background:var(--color-brand);border:none;cursor:pointer;">次へ →</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="geo-result" class="geo-card geo-result" style="display:none;">
+      <p id="geo-final-badge" class="geo-result-badge"></p>
+      <p>あなたの正解数</p>
+      <p class="geo-result-score"><span id="geo-score"></span></p>
+      <p id="geo-final-comment" style="color:var(--color-text-muted);margin-bottom:20px;"></p>
+      <button id="geo-retry-btn" class="cta-btn" style="background:var(--color-brand);border:none;cursor:pointer;">もう一度挑戦する</button>
+      <div id="geo-review-list" class="geo-review-list"></div>
+    </div>
+
+    <p class="stub-note" style="margin-top:24px;">
+      使用している写真はすべてOZU LIFE MEMOが大洲市内で撮影したものです。地図は国土地理院タイルを使用しています。
+    </p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>OZU LIFE MEMO は個人運営の非公式サイトです。大洲市の公式情報ではありません。</p>
+    <p>&copy; 2026 OZU LIFE MEMO</p>
+  </div>
+</footer>
+
+<div class="modal-overlay" data-modal>
+  <div class="modal-box">
+    <button class="modal-close" data-modal-close aria-label="閉じる">&times;</button>
+    <h3>お問い合わせ・Googleフォームはこちら</h3>
+    <p class="modal-note">＼ 名前やメールアドレスの入力は一切不要です ／</p>
+    <p class="modal-warning">
+      <strong>【非公式・個人ボランティアです】</strong>
+      制度の詳細は必ず公式HPを確認してください。情報のまとめ・感想は個人の見解です。
+    </p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfevBytb8aZmkEUX9m5aC0EUHxDmmYM0jYog33aPFr8AT_OEA/viewform?usp=dialog" class="form-btn" target="_blank" rel="noopener">Google フォーム</a>
+  </div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="../assets/js/geoguess-data.js"></script>
+<script src="../assets/js/geoguess-page.js"></script>
+<script src="../assets/js/main.js"></script>
+<script data-goatcounter="https://ozulifememo.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

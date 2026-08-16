@@ -97,7 +97,20 @@ document.addEventListener("DOMContentLoaded", () => {
       correctAnswer: q.choices[q.answer],
     });
 
-    explainEl.textContent = q.explain;
+    explainEl.innerHTML = "";
+    const explainText = document.createElement("p");
+    explainText.className = "quiz-explain-text";
+    explainText.textContent = q.explain;
+    explainEl.appendChild(explainText);
+    if (q.url) {
+      const sourceLink = document.createElement("a");
+      sourceLink.href = q.url;
+      sourceLink.target = "_blank";
+      sourceLink.rel = "noopener";
+      sourceLink.className = "quiz-source-link";
+      sourceLink.textContent = "→ 出典(一次情報)を見る";
+      explainEl.appendChild(sourceLink);
+    }
     explainEl.classList.add("show");
     nextWrap.classList.add("show");
     nextBtn.textContent = current === QUIZ_LENGTH - 1 ? "結果を見る →" : "次へ →";

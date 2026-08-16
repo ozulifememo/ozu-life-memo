@@ -107,14 +107,6 @@ const OZU_NEWS = [
     tags: ["まちづくり", "観光"],
   },
   {
-    slug: "shichosen-vision",
-    date: "2026-05-20",
-    title: "市長選の争点。具体性かビジョンか",
-    category: "shiten",
-    source: "note",
-    tags: ["議会・行政"],
-  },
-  {
     slug: "chosei-cost",
     date: "2026-04-25",
     title: "地元企業の活力を支える調整コスト",
@@ -145,14 +137,6 @@ const OZU_NEWS = [
     category: "shiten",
     source: "note",
     tags: ["交通・インフラ", "人口減少"],
-  },
-  {
-    slug: "flower-park",
-    date: "2026-04-07",
-    title: "財政負担の真実とフラワーパーク",
-    category: "ima",
-    source: "X",
-    tags: ["財政・税金", "観光"],
   },
   {
     slug: "bukatsu-chiiki-ido",

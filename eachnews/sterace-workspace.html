@@ -34,26 +34,7 @@
 
 <body>
 
-<header class="site-header">
-  <div class="wrap">
-    <a href="../" class="logo">OZU LIFE MEMO</a>
-    <nav class="main-nav">
-      <a href="../">HOME</a>
-      <a href="../concept/">サイト紹介</a>
-      <a href="../link/">リンク集</a>
-      <a href="../news/">大洲ノート</a>
-      <a href="../monthly/">月間まとめ</a>
-      <a href="../photo/">フリー写真</a>
-      <a href="../history/">大洲の歴史</a>
-      <a href="../book/">大洲と読書</a>
-      <a href="../map/">大洲の地図</a>
-      <a href="../quiz/">大洲検定</a>
-      <a href="../geoguess/">大洲ジオゲッサー</a>
-      <a href="#" class="cta-btn" data-modal-open>お問い合わせ</a>
-    </nav>
-    <button class="nav-toggle" aria-label="メニューを開く"><span></span></button>
-  </div>
-</header>
+<div data-site-header data-prefix="../"></div>
 
 <section>
   <div class="wrap">
@@ -198,27 +179,11 @@
   </div>
 </section>
 
-<footer class="site-footer">
-  <div class="wrap">
-    <p>OZU LIFE MEMO は個人運営の非公式サイトです。大洲市の公式情報ではありません。</p>
-    <p class="footer-feedback">この記事の内容に誤りや古い情報があれば、ぜひ教えてください。感想やご指摘も大歓迎です。 <a href="#" data-modal-open>お問い合わせはこちら</a></p>
-    <p>&copy; 2026 OZU LIFE MEMO</p>
-  </div>
-</footer>
+<div data-site-footer="article"></div>
 
-<div class="modal-overlay" data-modal>
-  <div class="modal-box">
-    <button class="modal-close" data-modal-close aria-label="閉じる">&times;</button>
-    <h3>お問い合わせ・Googleフォームはこちら</h3>
-    <p class="modal-note">＼ 名前やメールアドレスの入力は一切不要です ／</p>
-    <p class="modal-warning">
-      <strong>【非公式・個人ボランティアです】</strong>
-      制度の詳細は必ず公式HPを確認してください。情報のまとめ・感想は個人の見解です。
-    </p>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfevBytb8aZmkEUX9m5aC0EUHxDmmYM0jYog33aPFr8AT_OEA/viewform?usp=dialog" class="form-btn" target="_blank" rel="noopener">Google フォーム</a>
-  </div>
-</div>
+<div data-site-modal></div>
 
+<script src="../assets/js/site-chrome.js"></script>
 <script src="../assets/js/news-data.js"></script>
 <script src="../assets/js/photos-data.js"></script>
 <script src="../assets/js/random-photo.js"></script>

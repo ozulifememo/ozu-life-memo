@@ -117,7 +117,7 @@ const OZU_NEWS = [
   {
     slug: "chimei-otsu-taisaku",
     date: "2026-04-25",
-    title: "大洲の地名と駅名は「大津」対策",
+    title: "大洲の地名と駅名は「大津」対策？ 由来を調べてみた",
     category: "ima",
     source: "X",
     tags: ["合併・地域"],

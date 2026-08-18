@@ -621,6 +621,87 @@ section {
   border-color: var(--color-brand);
 }
 
+/* タグクラウド(ホーム・データページ共通) */
+.tagcloud-panel {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-6) var(--space-5);
+  box-shadow: var(--shadow-sm);
+}
+
+.tagcloud-panel .panel-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  color: var(--color-text-faint);
+  margin: 0 0 20px;
+  text-transform: uppercase;
+}
+
+.tagcloud {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 22px;
+}
+
+.tagcloud a {
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--tag-c, var(--color-text-muted));
+  display: inline-flex;
+  align-items: baseline;
+  gap: 3px;
+  transition: transform 0.15s ease;
+}
+
+.tagcloud a::after {
+  content: "›";
+  font-size: 0.6em;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.tagcloud a:hover { transform: translateY(-2px); }
+.tagcloud a:hover::after { opacity: 0.8; transform: translateX(0); }
+.tagcloud .sz6 { font-size: 2.8rem; }
+.tagcloud .sz5 { font-size: 2.2rem; }
+.tagcloud .sz4 { font-size: 1.7rem; }
+.tagcloud .sz3 { font-size: 1.35rem; }
+.tagcloud .sz2 { font-size: 1.05rem; }
+.tagcloud .sz1 { font-size: 0.92rem; }
+
+.tagcloud-hint {
+  font-size: 0.78rem;
+  color: var(--color-text-faint);
+  margin-top: 18px;
+}
+
+.tagcloud-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin-top: var(--space-5);
+  justify-content: center;
+}
+
+.tagcloud-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+}
+
+.tagcloud-legend-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--tag-c);
+  flex: none;
+}
+
 /* News list: card grid (table+罫線は「壁」に見えるのでカード形式に統一) */
 .news-cards {
   display: grid;

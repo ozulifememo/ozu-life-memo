@@ -39,7 +39,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const pauseBtn = document.querySelector("[data-carousel-pause]");
 
   if (track) {
-    const scrollStep = () => track.clientWidth * 0.6;
+    // 写真1枚分(gap込み)の幅ぴったりで動かす。scroll-snap-type:x mandatory と
+    // 半端な量(clientWidthの割合など)を組み合わせると、ブラウザがスナップ位置に
+    // 強制補正するたびに移動量がバラつき、動きがガタつく不具合があったための対応。
+    const scrollStep = () => {
+      const item = track.querySelector("img");
+      if (!item) return track.clientWidth * 0.6;
+      const gap = parseFloat(getComputedStyle(track).columnGap || "0") || 0;
+      return item.getBoundingClientRect().width + gap;
+    };
     let autoplayId = null;
     let isPaused = false;
 

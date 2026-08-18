@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>データで見る大洲 ｜ OZU LIFE MEMO</title>
-<meta name="description" content="OZU LIFE MEMOの記事129本を集計したタグクラウードのページ。生の文章でワードクラウドを作るとどうなるかも比較しています。">
+<meta name="description" content="OZU LIFE MEMOの記事129本を集計したタグクラウードのページ。">
 <link rel="icon" href="../assets/img/favicon.svg">
 <link rel="stylesheet" href="../assets/css/style.css">
 <meta property="og:type" content="website">
@@ -29,33 +29,6 @@
   .stat-row { display:flex; flex-wrap:wrap; gap:12px; justify-content:center; margin:var(--space-5) 0; }
   .stat-pill { font-size:.85rem; color:var(--color-text-muted); background:var(--color-surface); border:1px solid var(--color-border); border-radius:10px; padding:8px 16px; }
   .stat-pill b { color:var(--color-text); font-size:1.05rem; font-variant-numeric:tabular-nums; }
-
-  .cloud-panel { background:var(--color-surface); border:1px solid var(--color-border); border-radius:var(--radius); padding:var(--space-6) var(--space-5); box-shadow:var(--shadow-sm); }
-  .cloud-panel .panel-label { font-size:.75rem; letter-spacing:.06em; color:var(--color-text-faint); margin:0 0 20px; text-transform:uppercase; }
-  .cloud { display:flex; flex-wrap:wrap; align-items:center; gap:10px 22px; }
-
-  .cloud.tag-cloud a { font-weight:600; text-decoration:none; color:var(--tag-c, var(--color-text-muted)); display:inline-flex; align-items:baseline; gap:3px; transition:transform .15s ease; }
-  .cloud.tag-cloud a::after { content:"›"; font-size:.6em; opacity:0; transform:translateX(-4px); transition:opacity .15s ease, transform .15s ease; }
-  .cloud.tag-cloud a:hover { transform:translateY(-2px); }
-  .cloud.tag-cloud a:hover::after { opacity:.8; transform:translateX(0); }
-  .cloud .sz6 { font-size:2.8rem; }
-  .cloud .sz5 { font-size:2.2rem; }
-  .cloud .sz4 { font-size:1.7rem; }
-  .cloud .sz3 { font-size:1.35rem; }
-  .cloud .sz2 { font-size:1.05rem; }
-  .cloud .sz1 { font-size:.92rem; }
-
-  .cloud.noisy span { font-weight:700; color:var(--color-text-muted); display:inline-block; }
-  .cloud.noisy .sz6 { color:var(--color-accent-dark); opacity:1; }
-  .cloud.noisy .sz5 { color:var(--color-accent-dark); opacity:.85; }
-  .cloud.noisy span:nth-child(3n) { transform:rotate(-3deg); }
-  .cloud.noisy span:nth-child(5n) { transform:rotate(2.5deg); }
-
-  .cloud-hint { font-size:.78rem; color:var(--color-text-faint); margin-top:18px; }
-
-  .legend { display:flex; flex-wrap:wrap; gap:8px 18px; margin-top:var(--space-5); justify-content:center; }
-  .legend-item { display:flex; align-items:center; gap:7px; font-size:.78rem; color:var(--color-text-muted); }
-  .legend-dot { width:9px; height:9px; border-radius:50%; background:var(--tag-c); flex:none; }
 
   .source-bars { display:flex; flex-direction:column; gap:8px; max-width:520px; margin:0 auto; }
   .source-bar-row { display:grid; grid-template-columns:120px 1fr 40px; align-items:center; gap:10px; font-size:.85rem; color:var(--color-text-muted); }
@@ -97,9 +70,9 @@
 
 <section>
   <div class="wrap">
-    <div class="cloud-panel">
+    <div class="tagcloud-panel">
       <p class="panel-label">Tag frequency ― 全129記事のテーマタグ集計</p>
-      <div class="cloud tag-cloud">
+      <div class="tagcloud">
         <a class="sz6" href="../news/?tag=%E8%A6%B3%E5%85%89" style="--tag-c:var(--color-tag-mikan)">観光<sup style="font-size:.4em;">28</sup></a>
         <a class="sz6" href="../news/?tag=%E3%81%BE%E3%81%A1%E3%81%A5%E3%81%8F%E3%82%8A" style="--tag-c:var(--color-tag-moss)">まちづくり<sup style="font-size:.4em;">27</sup></a>
         <a class="sz5" href="../news/?tag=%E8%B2%A1%E6%94%BF%E3%83%BB%E7%A8%8E%E9%87%91" style="--tag-c:var(--color-tag-slate)">財政・税金<sup style="font-size:.4em;">24</sup></a>
@@ -113,57 +86,17 @@
         <a class="sz2" href="../news/?tag=%E7%A9%BA%E3%81%8D%E5%AE%B6%E3%83%BB%E4%BD%8F%E5%AE%85" style="--tag-c:var(--color-tag-moss)">空き家・住宅<sup style="font-size:.4em;">8</sup></a>
         <a class="sz1" href="../news/?tag=%E5%90%88%E4%BD%B5%E3%83%BB%E5%9C%B0%E5%9F%9F" style="--tag-c:var(--color-tag-gold)">合併・地域<sup style="font-size:.4em;">5</sup></a>
       </div>
-      <p class="cloud-hint">数字は該当タグがついた記事数。クリックで一覧にジャンプします。</p>
-      <div class="legend">
-        <span class="legend-item"><span class="legend-dot" style="--tag-c:var(--color-tag-indigo)"></span>藍 = 議会・行政</span>
-        <span class="legend-item"><span class="legend-dot" style="--tag-c:var(--color-tag-mikan)"></span>蜜柑 = 観光</span>
-        <span class="legend-item"><span class="legend-dot" style="--tag-c:var(--color-tag-moss)"></span>若草 = まちづくり・空き家</span>
-        <span class="legend-item"><span class="legend-dot" style="--tag-c:var(--color-tag-gold)"></span>山吹 = 産業・合併地域</span>
-        <span class="legend-item"><span class="legend-dot" style="--tag-c:var(--color-tag-teal)"></span>水色 = 交通・インフラ</span>
-        <span class="legend-item"><span class="legend-dot" style="--tag-c:var(--color-tag-slate)"></span>鈍色 = 財政・人口</span>
-        <span class="legend-item"><span class="legend-dot" style="--tag-c:var(--color-tag-kakishibu)"></span>柿渋 = 防災</span>
-        <span class="legend-item"><span class="legend-dot" style="--tag-c:var(--color-tag-rose)"></span>紅樺 = 福祉・子育て</span>
+      <p class="tagcloud-hint">数字は該当タグがついた記事数。クリックで一覧にジャンプします。</p>
+      <div class="tagcloud-legend">
+        <span class="tagcloud-legend-item"><span class="tagcloud-legend-dot" style="--tag-c:var(--color-tag-indigo)"></span>藍 = 議会・行政</span>
+        <span class="tagcloud-legend-item"><span class="tagcloud-legend-dot" style="--tag-c:var(--color-tag-mikan)"></span>蜜柑 = 観光</span>
+        <span class="tagcloud-legend-item"><span class="tagcloud-legend-dot" style="--tag-c:var(--color-tag-moss)"></span>若草 = まちづくり・空き家</span>
+        <span class="tagcloud-legend-item"><span class="tagcloud-legend-dot" style="--tag-c:var(--color-tag-gold)"></span>山吹 = 産業・合併地域</span>
+        <span class="tagcloud-legend-item"><span class="tagcloud-legend-dot" style="--tag-c:var(--color-tag-teal)"></span>水色 = 交通・インフラ</span>
+        <span class="tagcloud-legend-item"><span class="tagcloud-legend-dot" style="--tag-c:var(--color-tag-slate)"></span>鈍色 = 財政・人口</span>
+        <span class="tagcloud-legend-item"><span class="tagcloud-legend-dot" style="--tag-c:var(--color-tag-kakishibu)"></span>柿渋 = 防災</span>
+        <span class="tagcloud-legend-item"><span class="tagcloud-legend-dot" style="--tag-c:var(--color-tag-rose)"></span>紅樺 = 福祉・子育て</span>
       </div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap content-block" style="max-width:820px;">
-    <h2>ちなみに、文章そのままだとどうなる?</h2>
-    <p style="color:var(--color-text-muted);">
-      見出しの文字を2文字ずつ区切って頻度を数えると、こうなります。同じ129記事から機械的に集計した、加工なしの実データです。
-    </p>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="cloud-panel">
-      <p class="panel-label">Raw text mining ― 見出しの文字2連続の頻度</p>
-      <div class="cloud noisy">
-        <span class="sz6">大洲</span>
-        <span class="sz6">洲市</span>
-        <span class="sz4">市の</span>
-        <span class="sz4">洲の</span>
-        <span class="sz3">った</span>
-        <span class="sz3">る大</span>
-        <span class="sz2">た大</span>
-        <span class="sz2">億円</span>
-        <span class="sz2">てい</span>
-        <span class="sz2">える</span>
-        <span class="sz2">から</span>
-        <span class="sz2">万円</span>
-        <span class="sz2">てみ</span>
-        <span class="sz2">みた</span>
-        <span class="sz2">だっ</span>
-        <span class="sz2">ない</span>
-        <span class="sz2">計画</span>
-        <span class="sz1">した</span>
-        <span class="sz1">人口</span>
-        <span class="sz1">実は</span>
-      </div>
-      <p class="cloud-hint">「大洲」「洲市」だけで記事総数(129)の半分以上を占め、他はほぼ助詞や語尾の断片。だからこのサイトでは、生の文章ではなくタグでクラウドを作っています。</p>
     </div>
   </div>
 </section>

@@ -90,6 +90,9 @@ document.addEventListener("DOMContentLoaded", () => {
   let activeTag = "all";
   let activeSourceType = "all";
 
+  // ?tag=観光 のようなURLで来たとき、該当のタグチップを自動選択する
+  const presetTag = new URLSearchParams(location.search).get("tag");
+
   function applyNewsFilter() {
     rows.forEach((row) => {
       const categoryOk = activeCategory === "all" || row.dataset.category === activeCategory;
@@ -124,6 +127,11 @@ document.addEventListener("DOMContentLoaded", () => {
       applyNewsFilter();
     });
   });
+
+  if (presetTag) {
+    const presetChip = [...tagChips].find((c) => c.dataset.tag === presetTag);
+    if (presetChip) presetChip.click();
+  }
 
   sourceChips.forEach((chip) => {
     chip.addEventListener("click", () => {

@@ -18,6 +18,16 @@
   --color-warn-text: #8a6d1d;
   --color-warn-border: #eddca0;
 
+  /* タグ・カテゴリの色分け(大洲にちなんだ8色) */
+  --color-tag-indigo: #2c4e7c;    /* 藍色 - 伝統・行政 */
+  --color-tag-mikan: #c97324;     /* 蜜柑色 - 観光・活気 */
+  --color-tag-moss: #55803a;      /* 若草色 - まちづくり・再生 */
+  --color-tag-gold: #a9822a;      /* 山吹金 - 産業・実り */
+  --color-tag-teal: #257167;      /* 肱川の水色 - インフラ・流れ */
+  --color-tag-slate: #4c6780;     /* 鈍色 - 財政・データ */
+  --color-tag-kakishibu: #a34e2a; /* 柿渋色 - 防災・警戒 */
+  --color-tag-rose: #8c4059;      /* 紅樺色 - 福祉・やさしさ */
+
   /* Typography scale (major third-ish, capped to a small set) */
   --font-sans: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", sans-serif;
   --text-xs: 0.8125rem;
@@ -621,6 +631,7 @@ section {
 .news-card {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
+  border-top: 3px solid var(--tag-c, var(--color-border-strong));
   border-radius: var(--radius);
   padding: var(--space-4) var(--space-5);
   display: flex;
@@ -628,6 +639,24 @@ section {
   gap: var(--space-1);
   box-shadow: var(--shadow-sm);
   transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.card-tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.card-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 999px;
+  color: var(--tag-c, var(--color-text-muted));
+  background: color-mix(in srgb, var(--tag-c, var(--color-text-muted)) 14%, var(--color-surface));
+  border: 1px solid color-mix(in srgb, var(--tag-c, var(--color-text-muted)) 30%, transparent);
 }
 
 .news-card:hover {
@@ -1239,6 +1268,7 @@ section {
   text-underline-offset: 2px;
   margin-bottom: var(--space-1);
   word-break: break-all;
+  font-size: var(--text-xs);
 }
 
 .article-page blockquote {

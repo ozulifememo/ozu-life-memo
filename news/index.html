@@ -75,12 +75,7 @@
       </aside>
 
       <div class="news-main">
-        <div class="news-table">
-          <div class="news-table-head">
-            <span>タイトル</span><span>日付</span><span>参考元</span>
-          </div>
-          <div id="news-table-body"></div>
-        </div>
+        <div class="news-cards" id="news-table-body"></div>
       </div>
     </div>
   </div>
@@ -92,6 +87,7 @@
 
 <script src="../assets/js/site-chrome.js"></script>
 <script src="../assets/js/news-data.js"></script>
+<script src="../assets/js/tag-colors.js"></script>
 <script>
   (function renderNewsTable() {
     const body = document.getElementById("news-table-body");
@@ -102,11 +98,15 @@
     body.innerHTML = sorted
       .map((item) => {
         const sourceType = typeof ozuSourceType === "function" ? ozuSourceType(item.source) : "その他";
+        const tags = (item.tags || [])
+          .map((t) => `<span class="card-tag" style="--tag-c:${ozuTagColorVar(t)}">${t}</span>`)
+          .join("");
         return `
-      <div class="news-row" data-category="${item.category}" data-tags="${(item.tags || []).join(",")}" data-source-type="${sourceType}">
-        <a class="news-title" href="../eachnews/${item.slug}.html">${item.title}</a>
+      <div class="news-card" data-category="${item.category}" data-tags="${(item.tags || []).join(",")}" data-source-type="${sourceType}" style="--tag-c:${ozuCategoryColorVar(item.category)}">
         <span class="news-date">${item.date.replace(/-/g, "/")}</span>
+        <a class="news-title" href="../eachnews/${item.slug}.html">${item.title}</a>
         <span class="news-source">${item.source}</span>
+        <div class="card-tags-row">${tags}</div>
       </div>`;
       })
       .join("");

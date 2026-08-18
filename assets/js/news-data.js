@@ -269,14 +269,6 @@ const OZU_NEWS = [
     tags: ["観光", "合併・地域"],
   },
   {
-    slug: "kouhou-2024-gappei20shunen",
-    date: "2026-07-28",
-    title: "合併20周年へ。2024年、大洲城で響いた歌声となわとび世界一",
-    category: "shiten",
-    source: "広報おおず",
-    tags: ["合併・地域"],
-  },
-  {
     slug: "ozu-arts-taiwan",
     date: "2026-07-28",
     title: "空き家を使ったアート実験。台湾とつながる「OZU ARTS and CRAFTS」",

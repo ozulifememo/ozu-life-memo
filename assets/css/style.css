@@ -1041,6 +1041,30 @@ section {
   margin: 36px 0 12px;
 }
 
+/* Source list, boxed like article-chart/article-diagram */
+.content-block.source-box {
+  background: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-4) var(--space-5);
+  margin: 0 auto var(--space-5);
+}
+
+.content-block.source-box h2 {
+  margin: 0 0 var(--space-3);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-text-muted);
+}
+
+.content-block.source-box .source-link {
+  margin-bottom: var(--space-2);
+}
+
+.content-block.source-box .source-link:last-child {
+  margin-bottom: 0;
+}
+
 .content-block p {
   color: var(--color-text-muted);
 }
@@ -1636,6 +1660,36 @@ section {
     width: 84px;
     font-size: var(--text-xs);
   }
+}
+
+/* Article self-made SVG diagram (no external images, no copyright risk) */
+.article-diagram {
+  background: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-4) var(--space-5);
+  margin: 0 0 var(--space-5);
+}
+
+.article-diagram .diagram-title {
+  font-weight: 700;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-3);
+}
+
+.article-diagram svg {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.article-diagram .diagram-note {
+  margin-top: var(--space-3);
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
 }
 
 /* Article single-stat callout */

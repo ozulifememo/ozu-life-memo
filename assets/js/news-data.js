@@ -749,7 +749,7 @@ const OZU_NEWS = [
   {
     slug: "shichosen-ryoheika",
     date: "2026-05-16",
-    title: "全国唯一「水族館部」の長浜高校、国際大会へ。両陛下もご視察に",
+    title: "全国でも珍しい「水族館部」の長浜高校、国際大会へ。両陛下もご視察に",
     category: "ima",
     source: "朝日新聞、愛媛新聞",
     tags: ["議会・行政", "観光"],

@@ -25,3 +25,12 @@ docs/
 # ヘッダー幅の計測・レイアウト比較に使った作業用ファイル(公開不要)
 # アンダースコア始まりのHTMLは検証用の使い捨てとして扱う
 /_*.html
+
+# 表記統一・段落分割の作業道具と進捗メモ(2026-08-19。公開不要)
+/_tools/
+/NOTION-SYNC-PROGRESS.md
+
+# Claude Codeの作業用ファイル(スキル定義以外はコミットしない)
+# settings.local.json / scheduled_tasks.lock / worktrees の漏洩防止
+/.claude/*
+!/.claude/skills/

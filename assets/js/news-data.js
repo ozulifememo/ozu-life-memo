@@ -1,5 +1,11 @@
 // OZU LIFE MEMO 記事データ（全ページ共通の単一ソース）
 // 新しい記事を追加するときは、この配列に1件足すだけでOK。
+//
+// date       … このサイトに掲載した日
+// sourceDate … 出典(参照した記事・資料)そのものの日付。各記事の出典欄に書かれた
+//              日付から拾っている。出典に日付が無い記事(市役所の制度ページなど)は
+//              このキーを持たない。記事一覧の並び替えに使う。
+// sourceDateKind … その日付が「更新」「発行」「策定」などどの種類かが判別できた場合のみ。
 // news一覧ページ・トップページの「最新ニュース」・各記事ページの「あわせて読みたい」に自動反映されます。
 
 const OZU_CATEGORY_LABELS = {
@@ -53,6 +59,7 @@ const OZU_NEWS = [
   {
     slug: "actopia-ozu-kaitai",
     date: "2026-08-18",
+    sourceDate: "2024-12-10",
     title: "アクトピア解体進む、フジグラン撤退は「30年契約満了」が引き金",
     category: "ima",
     source: "愛媛新聞/都市商業研究所/建通新聞",
@@ -69,6 +76,8 @@ const OZU_NEWS = [
   {
     slug: "akiya-441ko-kaitai-level",
     date: "2026-08-18",
+    sourceDate: "2018-08-01",
+    sourceDateKind: "策定",
     title: "大洲市の空き家1,969戸、うち441戸（22％）が解体レベルの老朽化",
     category: "shiten",
     source: "大洲市「空家等対策計画」(平成30年8月策定)",
@@ -77,6 +86,7 @@ const OZU_NEWS = [
   {
     slug: "bunka-kaikan-kibo-shukusho",
     date: "2026-08-18",
+    sourceDate: "2023-09-14",
     title: "大洲市民文化会館、建設費57億円→67億円に高騰し規模縮小した経緯と本体工事着工",
     category: "ima",
     source: "建通新聞/大洲市HP/日刊建設工業新聞",
@@ -85,6 +95,8 @@ const OZU_NEWS = [
   {
     slug: "furusato-nozei-r5-jisseki",
     date: "2026-08-18",
+    sourceDate: "2023-01-01",
+    sourceDateKind: "報告",
     title: "大洲市ふるさと納税、令和5年度実績は13,974件・3億4355万円",
     category: "ima",
     source: "大洲市「令和5年度大洲市ふるさと納税報告書」",
@@ -109,6 +121,8 @@ const OZU_NEWS = [
   {
     slug: "kokuritsu-seishonen-riyou-guide",
     date: "2026-08-18",
+    sourceDate: "2026-01-01",
+    sourceDateKind: "版",
     title: "国立大洲青少年交流の家、何ができる？料金は？実用ガイド",
     category: "kurashi",
     source: "国立大洲青少年交流の家「利用のてびき」令和8年度版",
@@ -117,6 +131,8 @@ const OZU_NEWS = [
   {
     slug: "kosodate-shien-ichiran",
     date: "2026-08-18",
+    sourceDate: "2026-01-01",
+    sourceDateKind: "版",
     title: "大洲市の子育て支援策、結婚〜新社会人まで一覧で見てみた",
     category: "kurashi",
     source: "大洲市「大洲市の子育て支援策一覧」(令和8年度版、R8.7.1現在)",
@@ -125,6 +141,8 @@ const OZU_NEWS = [
   {
     slug: "bosai-song",
     date: "2026-08-18",
+    sourceDate: "2026-07-15",
+    sourceDateKind: "更新",
     title: "大洲市オリジナルの「防災ソング」、アニメーション動画になった",
     category: "ima",
     source: "大洲市役所",
@@ -133,6 +151,8 @@ const OZU_NEWS = [
   {
     slug: "danjo-kyuyo-sai",
     date: "2026-08-18",
+    sourceDate: "2026-07-31",
+    sourceDateKind: "更新",
     title: "大洲市役所、職員の男女の給与差を毎年公表している話",
     category: "shiten",
     source: "大洲市役所",
@@ -141,6 +161,7 @@ const OZU_NEWS = [
   {
     slug: "seikatsuhogo-tsuika-kyufu",
     date: "2026-08-18",
+    sourceDate: "2026-08-03",
     title: "13年前の「合法」が、実は違法だった。生活保護基準改定、大洲市も追加給付へ",
     category: "shiten",
     source: "大洲市役所",
@@ -149,6 +170,8 @@ const OZU_NEWS = [
   {
     slug: "hochoki-jyosei",
     date: "2026-08-18",
+    sourceDate: "2026-07-21",
+    sourceDateKind: "更新",
     title: "65歳以上、聞こえにくさを感じたら。大洲市の補聴器助成、上限3万円",
     category: "kurashi",
     source: "大洲市役所",
@@ -157,7 +180,9 @@ const OZU_NEWS = [
   {
     slug: "cooling-shelter",
     date: "2026-08-18",
-    title: "大洲市に「暑さの避難所」が12箇所。マルナカや市庁舎も対象",
+    sourceDate: "2026-08-17",
+    sourceDateKind: "更新",
+    title: "大洲市の暑さ避難所は43か所。夜まで開いているのはマルナカ大洲店だけ",
     category: "kurashi",
     source: "大洲市役所",
     tags: ["防災"],
@@ -165,6 +190,8 @@ const OZU_NEWS = [
   {
     slug: "shoene-kaden-hojo",
     date: "2026-08-18",
+    sourceDate: "2026-08-19",
+    sourceDateKind: "更新",
     title: "エアコン・冷蔵庫の買い替えで補助金。大洲市の省エネ家電補助",
     category: "kurashi",
     source: "大洲市役所",
@@ -173,6 +200,7 @@ const OZU_NEWS = [
   {
     slug: "mosho-alert",
     date: "2026-08-18",
+    sourceDate: "2026-08-03",
     title: "大洲市37.6℃、17日連続の熱中症警戒アラート。県内14地点が猛暑日",
     category: "ima",
     source: "Yahoo!ニュース",
@@ -181,6 +209,7 @@ const OZU_NEWS = [
   {
     slug: "yakuzaishi-fusoku",
     date: "2026-08-18",
+    sourceDate: "2026-08-04",
     title: "大洲・八幡浜・宇和島・今治で「特に不足」。県が薬剤師確保へ本気の連携協定",
     category: "shiten",
     source: "Yahoo!ニュース",
@@ -189,6 +218,7 @@ const OZU_NEWS = [
   {
     slug: "minsei-hi-saidai",
     date: "2026-08-18",
+    sourceDate: "2026-01-01",
     title: "大洲市の予算、一番使われているのは「民生費」34.2%。教育費はまさかの3割減",
     category: "shiten",
     source: "大洲市役所",
@@ -197,6 +227,8 @@ const OZU_NEWS = [
   {
     slug: "nyusatsu-jitsurei",
     date: "2026-08-18",
+    sourceDate: "2026-03-16",
+    sourceDateKind: "公表",
     title: "大洲市の入札結果、出海漁港の防砂堤老朽化対策工事は1,237万円で落札",
     category: "shiten",
     source: "大洲市役所",
@@ -213,6 +245,8 @@ const OZU_NEWS = [
   {
     slug: "shiyuchi-baikyaku",
     date: "2026-08-18",
+    sourceDate: "2026-08-05",
+    sourceDateKind: "確認",
     title: "大洲市の「売却中の市有地」、今9件。46㎡〜902㎡、60万円から",
     category: "shiten",
     source: "大洲市役所",
@@ -229,6 +263,8 @@ const OZU_NEWS = [
   {
     slug: "shisho-kamon",
     date: "2026-08-18",
+    sourceDate: "2026-08-05",
+    sourceDateKind: "確認",
     title: "大洲市章のモチーフは、大洲藩主・加藤家の家紋だった",
     category: "shiten",
     source: "大洲市役所",
@@ -245,6 +281,8 @@ const OZU_NEWS = [
   {
     slug: "kanko-senryaku-chukan",
     date: "2026-08-18",
+    sourceDate: "2026-01-30",
+    sourceDateKind: "報告",
     title: "大洲城下、観光消費3.4億円。国交大臣賞も受賞した令和7年度の実績",
     category: "shiten",
     source: "大洲市役所",
@@ -253,6 +291,8 @@ const OZU_NEWS = [
   {
     slug: "kaso-keikaku-jinko",
     date: "2026-08-18",
+    sourceDate: "2026-03-19",
+    sourceDateKind: "策定",
     title: "昭和35年72,480人が、今は4万人台。過疎地域計画に見る大洲の危機感",
     category: "shiten",
     source: "大洲市役所",
@@ -261,6 +301,8 @@ const OZU_NEWS = [
   {
     slug: "setai-nenshu-200",
     date: "2026-08-18",
+    sourceDate: "2021-09-01",
+    sourceDateKind: "策定",
     title: "大洲市民、世帯年収200万円未満が4人に1人という数字",
     category: "kurashi",
     source: "大洲市役所",
@@ -269,6 +311,7 @@ const OZU_NEWS = [
   {
     slug: "ja-taiki-shisan",
     date: "2026-08-18",
+    sourceDate: "2025-03-01",
     title: "大洲の農協は、資産1,453億円の金融機関でもある",
     category: "shiten",
     source: "JA愛媛たいき",
@@ -277,6 +320,7 @@ const OZU_NEWS = [
   {
     slug: "ozu-castle-fund",
     date: "2026-08-18",
+    sourceDate: "2024-12-10",
     title: "大洲城下町の再生、12億円はどこから来たのか",
     category: "shiten",
     source: "DIG THE GREEN、国土交通省資料 ほか",
@@ -293,6 +337,8 @@ const OZU_NEWS = [
   {
     slug: "nagahama-umetate-pabukome",
     date: "2026-08-18",
+    sourceDate: "2024-03-08",
+    sourceDateKind: "実施",
     title: "長浜港埋立て、総事業費92.8億円。パブリックコメント64件が映した賛否",
     category: "shiten",
     source: "大洲市長浜港埋立て事業パブリックコメント/市政懇談会記録/検討会議事録",
@@ -301,6 +347,7 @@ const OZU_NEWS = [
   {
     slug: "gikai-ozukoko-teiinware",
     date: "2026-08-18",
+    sourceDate: "2026-06-01",
     title: "大洲高校の入学倍率0.51倍。定員割れの背景",
     category: "ima",
     source: "大洲市議会中継配信(YouTube)",
@@ -309,6 +356,7 @@ const OZU_NEWS = [
   {
     slug: "gikai-gururin-ozu-shushi",
     date: "2026-08-18",
+    sourceDate: "2026-06-01",
     title: "循環バス「グルリンおおず」、運賃収入は運行経費の3割程度という実態",
     category: "shiten",
     source: "大洲市議会中継配信(YouTube)",
@@ -317,6 +365,7 @@ const OZU_NEWS = [
   {
     slug: "gikai-kaimono-chiketto",
     date: "2026-08-18",
+    sourceDate: "2026-06-01",
     title: "「大洲買い物等割引きチケット」、なぜ現金ではなく500円券だったのか",
     category: "shiten",
     source: "大洲市議会中継配信(YouTube)",
@@ -325,6 +374,7 @@ const OZU_NEWS = [
   {
     slug: "gikai-neko-fusai-hojokin",
     date: "2026-08-18",
+    sourceDate: "2026-06-01",
     title: "猫の不妊手術補助、大洲市の単価は県内でも低い水準",
     category: "shiten",
     source: "大洲市議会中継配信(YouTube)",
@@ -333,6 +383,7 @@ const OZU_NEWS = [
   {
     slug: "gikai-bunka-kaikan-zaigen",
     date: "2026-08-18",
+    sourceDate: "2026-06-01",
     title: "大洲市民文化会館、64億円規模の建設事業の財源内訳",
     category: "ima",
     source: "大洲市議会中継配信(YouTube)",
@@ -341,6 +392,7 @@ const OZU_NEWS = [
   {
     slug: "gikai-minseiiin-nintesoku",
     date: "2026-08-18",
+    sourceDate: "2026-06-01",
     title: "大洲市の民生委員、充足率100%の裏にある担い手不足",
     category: "ima",
     source: "大洲市議会中継配信(YouTube)",
@@ -349,6 +401,7 @@ const OZU_NEWS = [
   {
     slug: "gikai-tsunami-sotei",
     date: "2026-08-18",
+    sourceDate: "2026-06-01",
     title: "南海トラフ地震の津波、大洲市長浜地区に約90分で到達するという想定",
     category: "ima",
     source: "大洲市議会中継配信(YouTube)",
@@ -357,6 +410,7 @@ const OZU_NEWS = [
   {
     slug: "gikai-futoko-suii",
     date: "2026-08-18",
+    sourceDate: "2026-06-01",
     title: "大洲市の不登校、令和8年5月末時点8人まで減少。前年同時期比6割減という数字",
     category: "ima",
     source: "大洲市議会中継配信(YouTube)",
@@ -365,6 +419,7 @@ const OZU_NEWS = [
   {
     slug: "gikai-dx-line",
     date: "2026-08-18",
+    sourceDate: "2026-06-01",
     title: "大洲市の公式LINE、他自治体との差を議会で問われる",
     category: "shiten",
     source: "大洲市議会中継配信(YouTube)",
@@ -373,6 +428,7 @@ const OZU_NEWS = [
   {
     slug: "nagahama-tsunami-takasa",
     date: "2026-08-18",
+    sourceDate: "2024-06-01",
     title: "長浜港埋立て、「T.P.+2.90m」と「3.8m」。二つの津波の高さを追う",
     category: "shiten",
     source: "大洲市「長浜港内港埋立事業基本計画」(令和6年6月)/パブリックコメント(令和6年3月8日〜4月6日)/市政懇談会記録/第3回検討会次第(令和6年5月17日)",
@@ -381,6 +437,7 @@ const OZU_NEWS = [
   {
     slug: "sogo-keikaku-d-hyoka",
     date: "2026-08-18",
+    sourceDate: "2024-01-01",
     title: "大洲市総合計画、「交流人口0人」「誘致企業0社」。D評価の中身を読む",
     category: "shiten",
     source: "大洲市「第2次大洲市総合計画後期基本計画進捗状況」(令和6年度末時点分、令和8年8月確認時点で最新)",
@@ -389,6 +446,7 @@ const OZU_NEWS = [
   {
     slug: "note-taiyou-konatsu-matome",
     date: "2026-08-18",
+    sourceDate: "2026-06-21",
     title: "大洲市議会を傍聴し発信し続けるnoteアカウントを紹介",
     category: "shiten",
     source: "noteアカウント「郷土愛は売るほどあるこなつ」の各投稿",
@@ -405,6 +463,7 @@ const OZU_NEWS = [
   {
     slug: "ozmesse-ja-history",
     date: "2026-08-18",
+    sourceDate: "2024-10-18",
     title: "オズメッセはJAのスーパーだった。オズグリーン・愛たい菜との関係",
     category: "shiten",
     source: "オズメッセ公式サイト、JA愛媛たいき公式サイト、愛媛新聞オンライン、Wikipedia",
@@ -413,6 +472,7 @@ const OZU_NEWS = [
   {
     slug: "chokai-shobun-kouhyo",
     date: "2026-08-18",
+    sourceDate: "2026-07-01",
     title: "大洲市職員の懲戒処分、なぜ公表される？制度の仕組みを読む",
     category: "shiten",
     source: "大洲市「職員の懲戒処分について」(環境商工部/市民福祉部/建設部)/人事院公表指針/品川区の運用例",
@@ -429,6 +489,8 @@ const OZU_NEWS = [
   {
     slug: "furusato-nozei-yukue",
     date: "2026-08-18",
+    sourceDate: "2025-01-01",
+    sourceDateKind: "版",
     title: "大洲市に届いた寄附は4.4億円。ふるさと納税の使い道を追ってみた",
     category: "ima",
     source: "大洲市ふるさと納税ページ/寄附及び活用状況(令和6年度実績)/総務省ふるさと納税ポータル/大洲市統計書",
@@ -437,6 +499,7 @@ const OZU_NEWS = [
   {
     slug: "shoene-hojo-keisan",
     date: "2026-08-18",
+    sourceDate: "2025-01-01",
     title: "エアコン買い替えで実質いくら得？大洲市の省エネ家電補助を計算してみた",
     category: "kurashi",
     source: "大洲市「省エネ家電への買い替え補助」/伊予市の同種制度/国交省・経産省・環境省「住宅省エネ2026キャンペーン」",
@@ -445,6 +508,7 @@ const OZU_NEWS = [
   {
     slug: "hijikawabashi-chobo-hiroba",
     date: "2026-08-18",
+    sourceDate: "2025-01-01",
     title: "大正2年の橋から113年、肱川橋眺望広場が生まれるまで",
     category: "shiten",
     source: "大洲市「肱川橋眺望広場の供用を開始しました」ページ、「肱川かわまちづくり計画について」ページ、国交省・報道記事",
@@ -453,6 +517,8 @@ const OZU_NEWS = [
   {
     slug: "chiseki-chosa-83pct",
     date: "2026-08-18",
+    sourceDate: "2024-06-26",
+    sourceDateKind: "実施",
     title: "大洲市の地籍調査、進捗率83.01%。全国平均を30ポイント上回る",
     category: "shiten",
     source: "大洲市「国土調査の実施状況」ページ、愛媛県・国土交通省の地籍調査関連資料",
@@ -469,6 +535,7 @@ const OZU_NEWS = [
   {
     slug: "sogo-kyoiku-kaigi-honne",
     date: "2026-08-18",
+    sourceDate: "2026-02-19",
     title: "「週74時間残業」も本音で語られた、大洲市総合教育会議の中身",
     category: "shiten",
     source: "大洲市「大洲市総合教育会議」ページ、令和7年度第1回・第2回会議録",
@@ -477,6 +544,8 @@ const OZU_NEWS = [
   {
     slug: "keijidosha-zei-hyojun",
     date: "2026-08-18",
+    sourceDate: "2026-04-01",
+    sourceDateKind: "更新",
     title: "大洲市の軽自動車税、実は市が決めていない金額だった",
     category: "shiten",
     source: "大洲市「令和8年度軽自動車税の税率について」、総務省の地方税制度資料",
@@ -485,6 +554,8 @@ const OZU_NEWS = [
   {
     slug: "danjo-kyuyo-naiwake",
     date: "2026-08-18",
+    sourceDate: "2026-07-31",
+    sourceDateKind: "公表",
     title: "大洲市職員の給与、女性は男性の84%。部局長・次長級は女性ゼロという実態",
     category: "shiten",
     source: "大洲市「職員の給与の男女の差異の情報公表」令和7年度・令和6年度PDF、内閣府男女共同参画局の公表資料",
@@ -493,6 +564,8 @@ const OZU_NEWS = [
   {
     slug: "aoshima-jinko-kakusa",
     date: "2026-08-18",
+    sourceDate: "2026-07-31",
+    sourceDateKind: "版",
     title: "大洲市の「猫の島」青島、住民はわずか6人。地区別データで見える人口の偏り",
     category: "shiten",
     source: "大洲市オープンデータ「地域・年齢別人口」(令和8年7月31日版)、青島に関する外部記事",
@@ -501,6 +574,8 @@ const OZU_NEWS = [
   {
     slug: "yosan-jishu-zaigen",
     date: "2026-08-18",
+    sourceDate: "2026-03-23",
+    sourceDateKind: "公表",
     title: "大洲市の予算502億円、一般会計は合併後最大に。でも自主財源はわずか3割",
     category: "shiten",
     source: "大洲市「令和7年度予算の概要」ページ、当初予算の概要PDF、市オープンデータの人口",
@@ -517,6 +592,7 @@ const OZU_NEWS = [
   {
     slug: "ozu-kanko-visitor-ranking",
     date: "2026-08-18",
+    sourceDate: "2017-01-01",
     title: "大洲市で一番来場者が多い観光施設は、実はお城じゃない",
     category: "shiten",
     source: "大洲市オープンデータ「主要観光施設入込み状況調」",
@@ -525,6 +601,8 @@ const OZU_NEWS = [
   {
     slug: "kokuritsu-seishonen-ozu",
     date: "2026-08-18",
+    sourceDate: "2026-01-01",
+    sourceDateKind: "版",
     title: "大洲市に、全国で11番目にできた国立の青少年施設がある",
     category: "shiten",
     source: "国立大洲青少年交流の家「利用のてびき」令和8年度版",
@@ -533,6 +611,8 @@ const OZU_NEWS = [
   {
     slug: "shakyo-magokoro-bank",
     date: "2026-08-18",
+    sourceDate: "2026-07-01",
+    sourceDateKind: "号",
     title: "大洲市社協の「まごころ銀行」、香典を地域の福祉に生かせる仕組み",
     category: "kurashi",
     source: "大洲市社会福祉協議会「社協だより」2026年7月号・8月号",
@@ -541,6 +621,7 @@ const OZU_NEWS = [
   {
     slug: "natsu-kion-20nen",
     date: "2026-08-18",
+    sourceDate: "2007-01-01",
     title: "大洲の夏は本当に暑くなったのか。気象庁データで検証する",
     category: "shiten",
     source: "気象庁「大洲」アメダス観測データ(1978〜2025年)、環境省熱中症予防情報サイト",
@@ -549,6 +630,8 @@ const OZU_NEWS = [
   {
     slug: "hijikawa-osanshouo-kaseki",
     date: "2026-08-18",
+    sourceDate: "2015-01-01",
+    sourceDateKind: "更新",
     title: "今はいないはずのオオサンショウウオ、大洲の化石から見つかる",
     category: "shiten",
     source: "群馬県立自然史博物館研究報告第19号(2015)",
@@ -557,6 +640,8 @@ const OZU_NEWS = [
   {
     slug: "bukatsu-chiiki-ido-kanu",
     date: "2026-08-18",
+    sourceDate: "2024-01-01",
+    sourceDateKind: "実施",
     title: "大洲市の中学生、12年後に45.5%減？肱川で始まった部活動の新しい形",
     category: "kurashi",
     source: "スポーツ庁",
@@ -565,6 +650,7 @@ const OZU_NEWS = [
   {
     slug: "gsi-shinsui-chizu",
     date: "2026-08-18",
+    sourceDate: "2018-07-01",
     title: "大洲市の\"5m浸水地帯\"、国土地理院の地図で見えてきた",
     category: "kurashi",
     source: "国土地理院",
@@ -573,6 +659,8 @@ const OZU_NEWS = [
   {
     slug: "nagahama-umetate-shisetsu",
     date: "2026-08-18",
+    sourceDate: "2024-06-01",
+    sourceDateKind: "策定",
     title: "長浜港の埋立地に、水族館と\"あらし\"展示施設ができるらしい",
     category: "ima",
     source: "愛媛県・大洲市(長浜港内港埋立事業説明資料)",
@@ -581,6 +669,8 @@ const OZU_NEWS = [
   {
     slug: "green-destinations-ginsho",
     date: "2026-08-18",
+    sourceDate: "2026-05-01",
+    sourceDateKind: "発行",
     title: "大洲市、\"世界の持続可能な観光地\"銀賞を受賞していた",
     category: "ima",
     source: "一般社団法人キタ・マネジメント",
@@ -589,6 +679,8 @@ const OZU_NEWS = [
   {
     slug: "hijikawa-okami-kaseki",
     date: "2026-08-18",
+    sourceDate: "2015-01-01",
+    sourceDateKind: "更新",
     title: "大洲市肱川町から、絶滅した大陸系オオカミの化石が出ていた",
     category: "shiten",
     source: "群馬県立自然史博物館研究報告第19号(2015)",
@@ -597,6 +689,8 @@ const OZU_NEWS = [
   {
     slug: "hijikawa-arashi-shohyo",
     date: "2026-08-18",
+    sourceDate: "2015-09-01",
+    sourceDateKind: "号",
     title: "「肱川あらし」の本、気象学会の学会誌で書評されていた",
     category: "shiten",
     source: "日本気象学会誌『天気』2015年9月号(書評)",
@@ -605,6 +699,7 @@ const OZU_NEWS = [
   {
     slug: "gomi-dashi-7bunbetsu",
     date: "2026-08-18",
+    sourceDate: "2026-01-01",
     title: "大洲市のごみ出しカレンダーを地区ごとに全部見てみた(7種分別)",
     category: "kurashi",
     source: "大洲市公式サイト(ごみ出しカレンダー・分別表) ほか",
@@ -621,6 +716,8 @@ const OZU_NEWS = [
   {
     slug: "ozu-keijoshushi-hiritsu",
     date: "2026-08-18",
+    sourceDate: "2023-01-01",
+    sourceDateKind: "版",
     title: "大洲市の「経常収支比率」99.7%を中高生でも分かるように読み解く",
     category: "shiten",
     source: "愛媛県公式サイト、大洲市長選公開討論会 ほか",
@@ -629,6 +726,7 @@ const OZU_NEWS = [
   {
     slug: "fuji-marunaka-aeon-keii",
     date: "2026-08-18",
+    sourceDate: "2024-12-10",
     title: "フジがイオンの傘下に？マルナカとの関係も含めて事実を調べた",
     category: "kurashi",
     source: "愛媛新聞オンライン、フジ公式発表 ほか",
@@ -637,6 +735,7 @@ const OZU_NEWS = [
   {
     slug: "kigyo-yuchi-kikuyocho-hikaku",
     date: "2026-08-18",
+    sourceDate: "2009-01-01",
     title: "企業誘致は絵空事か。人口ほぼ同じ菊陽町がTSMCを呼べた理由から、大洲の現実を考える",
     category: "shiten",
     source: "大洲市公式サイト、日本経済新聞 ほか",
@@ -645,6 +744,7 @@ const OZU_NEWS = [
   {
     slug: "ozu-kasseika-keikaku-kenshou",
     date: "2026-08-18",
+    sourceDate: "2025-12-01",
     title: "大洲の活性化計画は「絵に描いた餅」か。市が実際に進めている「攻め」と「守り」、2つの人口減少対策を検証する",
     category: "shiten",
     source: "大洲市公式サイト、内閣府 ほか",
@@ -653,6 +753,7 @@ const OZU_NEWS = [
   {
     slug: "kosodate-ranking-1i",
     date: "2026-08-16",
+    sourceDate: "2023-06-12",
     title: "大洲市は「子育てしやすい自治体」愛媛県1位。ランキングの中身を調べてみた",
     category: "ima",
     source: "大洲市ホームページ ほか",
@@ -661,6 +762,7 @@ const OZU_NEWS = [
   {
     slug: "frespo-ozu-hensen",
     date: "2026-08-16",
+    sourceDate: "2025-01-31",
     title: "フレスポ大洲ができる前、あの場所はどうだったのか調べてみた",
     category: "shiten",
     source: "愛媛新聞ONLINE ほか",
@@ -685,6 +787,8 @@ const OZU_NEWS = [
   {
     slug: "ozu-dx-suishin",
     date: "2026-08-15",
+    sourceDate: "2025-01-01",
+    sourceDateKind: "版",
     title: "大洲市のDX(デジタル化)、結局どこまで進んでいるの？",
     category: "shiten",
     source: "市役所HP",
@@ -709,6 +813,7 @@ const OZU_NEWS = [
   {
     slug: "kominkan-community-center-itsu",
     date: "2026-08-15",
+    sourceDate: "2023-11-21",
     title: "大洲市の「公民館」は、いつ「コミュニティセンター」になったのか",
     category: "shiten",
     source: "大洲市役所、愛媛新聞",
@@ -725,6 +830,8 @@ const OZU_NEWS = [
   {
     slug: "ukai-baru",
     date: "2026-08-15",
+    sourceDate: "2026-08-01",
+    sourceDateKind: "号",
     title: "「うかいばる」にいままで何人参加したの？大洲城下町の夜イベントを調べてみた",
     category: "ima",
     source: "OZU NEWS",
@@ -749,6 +856,7 @@ const OZU_NEWS = [
   {
     slug: "shichosen-ryoheika",
     date: "2026-05-16",
+    sourceDate: "2026-05-16",
     title: "全国でも珍しい「水族館部」の長浜高校、国際大会へ。両陛下もご視察に",
     category: "ima",
     source: "朝日新聞、愛媛新聞",
@@ -757,6 +865,7 @@ const OZU_NEWS = [
   {
     slug: "jr-akaji-jinko",
     date: "2026-04-09",
+    sourceDate: "2026-03-24",
     title: "JR赤字と人口減。大洲の生き残り",
     category: "shiten",
     source: "note",
@@ -765,6 +874,8 @@ const OZU_NEWS = [
   {
     slug: "bukatsu-chiiki-ido",
     date: "2026-04-06",
+    sourceDate: "2026-04-01",
+    sourceDateKind: "実施",
     title: "小中学校の働き方改革と部活動の地域移行",
     category: "kurashi",
     source: "大洲市役所",
@@ -773,6 +884,7 @@ const OZU_NEWS = [
   {
     slug: "aihara-san",
     date: "2026-04-05",
+    sourceDate: "2026-03-01",
     title: "16年間、無報酬で。行政相談委員の相原さんが総務大臣表彰",
     category: "shiten",
     source: "広報おおず",
@@ -781,6 +893,7 @@ const OZU_NEWS = [
   {
     slug: "machizukuri-hyosho",
     date: "2026-04-04",
+    sourceDate: "2026-04-01",
     title: "25年間ごみ拾い、30年以上ホタルの案内。地域づくり表彰の5組",
     category: "shiten",
     source: "広報おおず",
@@ -797,6 +910,8 @@ const OZU_NEWS = [
   {
     slug: "gouu-bosai",
     date: "2026-04-03",
+    sourceDate: "2026-03-18",
+    sourceDateKind: "判決",
     title: "豪雨訴訟が問う、今後の大洲の防災",
     category: "shiten",
     source: "note",
@@ -813,6 +928,7 @@ const OZU_NEWS = [
   {
     slug: "michi-ijihi",
     date: "2026-04-03",
+    sourceDate: "2026-03-01",
     title: "道が多すぎる大洲の維持費",
     category: "shiten",
     source: "note",
@@ -823,6 +939,8 @@ const OZU_NEWS = [
   {
     slug: "tokei-jinko",
     date: "2026-07-24",
+    sourceDate: "2025-01-01",
+    sourceDateKind: "版",
     title: "人口78,319人が40,575人に。統計書で見る大洲の1年",
     category: "shiten",
     source: "大洲市統計書",
@@ -831,6 +949,7 @@ const OZU_NEWS = [
   {
     slug: "akiya-taisaku-keikaku",
     date: "2026-07-24",
+    sourceDate: "2018-08-01",
     title: "空き家率19.2%の衝撃。空家等対策計画を読む",
     category: "kurashi",
     source: "大洲市役所",
@@ -839,6 +958,7 @@ const OZU_NEWS = [
   {
     slug: "nagahama-umetate-keii",
     date: "2026-07-25",
+    sourceDate: "2024-06-01",
     title: "長浜港の埋立、実は50年がかりの計画だった",
     category: "shiten",
     source: "大洲市役所",
@@ -847,6 +967,8 @@ const OZU_NEWS = [
   {
     slug: "sogo-keikaku-workshop",
     date: "2026-07-25",
+    sourceDate: "2026-01-18",
+    sourceDateKind: "報告",
     title: "「おおず版キッザニア」構想。総合計画ワークショップで出た若者のアイデア",
     category: "ima",
     source: "大洲市役所",
@@ -855,6 +977,7 @@ const OZU_NEWS = [
   {
     slug: "2005-gappei-kaiko",
     date: "2026-07-25",
+    sourceDate: "2005-01-01",
     title: "2005年、「新大洲市」が生まれた日。合併前最後の広報誌を読む",
     category: "shiten",
     source: "広報おおず",
@@ -863,6 +986,7 @@ const OZU_NEWS = [
   {
     slug: "ozu-kanko-5man-nin",
     date: "2026-07-26",
+    sourceDate: "2025-05-01",
     title: "大洲城・臥龍山荘、まさかの来館者5万人。19年ぶりの快挙",
     category: "ima",
     source: "OZU NEWS",
@@ -871,6 +995,7 @@ const OZU_NEWS = [
   {
     slug: "juki-jinko-chiku",
     date: "2026-07-27",
+    sourceDate: "2026-03-31",
     title: "住民票の人口は37,931人。地区別に見る大洲",
     category: "shiten",
     source: "大洲市役所",
@@ -879,6 +1004,8 @@ const OZU_NEWS = [
   {
     slug: "kanko-enquete-ondosa",
     date: "2026-07-27",
+    sourceDate: "2025-03-14",
+    sourceDateKind: "更新",
     title: "大洲城下の観光、市民はどう見てる？アンケートで見えた温度差",
     category: "shiten",
     source: "大洲市役所",
@@ -887,6 +1014,7 @@ const OZU_NEWS = [
   {
     slug: "kouhou-2022-seika-bansenso",
     date: "2026-07-27",
+    sourceDate: "2022-01-01",
     title: "2022年、大洲城下に灯った聖火と「盤泉荘」",
     category: "shiten",
     source: "広報おおず",
@@ -895,6 +1023,7 @@ const OZU_NEWS = [
   {
     slug: "ozu-arts-taiwan",
     date: "2026-07-28",
+    sourceDate: "2025-10-01",
     title: "空き家を使ったアート実験。台湾とつながる「OZU ARTS and CRAFTS」",
     category: "ima",
     source: "OZU NEWS",
@@ -903,6 +1032,8 @@ const OZU_NEWS = [
   {
     slug: "sora-tobu-kuruma",
     date: "2026-07-29",
+    sourceDate: "2025-01-01",
+    sourceDateKind: "報告",
     title: "空飛ぶクルマが伊予大洲に？観光戦略会議の令和7年度中間報告",
     category: "ima",
     source: "大洲市役所",
@@ -913,6 +1044,7 @@ const OZU_NEWS = [
   {
     slug: "kaso-chiiki-keikaku",
     date: "2026-07-29",
+    sourceDate: "2023-04-01",
     title: "大洲市は「過疎地域」。持続的発展計画が映す危機感",
     category: "kurashi",
     source: "大洲市役所",
@@ -921,6 +1053,8 @@ const OZU_NEWS = [
   {
     slug: "kamisuga-community-center",
     date: "2026-07-30",
+    sourceDate: "2026-04-01",
+    sourceDateKind: "号",
     title: "大洲市初のCLTパネル。上須戒コミュニティセンターが開館",
     category: "ima",
     source: "広報おおず",
@@ -929,6 +1063,8 @@ const OZU_NEWS = [
   {
     slug: "minkan-heli-bosai",
     date: "2026-07-30",
+    sourceDate: "2026-04-01",
+    sourceDateKind: "号",
     title: "民間ヘリで孤立集落へ。南海トラフ想定の防災訓練",
     category: "ima",
     source: "広報おおず",
@@ -937,6 +1073,8 @@ const OZU_NEWS = [
   {
     slug: "kenko-ishiki-enquete",
     date: "2026-07-31",
+    sourceDate: "2021-07-01",
+    sourceDateKind: "報告",
     title: "「健康はあまりよくない」16.7%。アンケートで見える大洲の生活習慣",
     category: "kurashi",
     source: "大洲市役所",
@@ -945,6 +1083,8 @@ const OZU_NEWS = [
   {
     slug: "jinko-vision-3man",
     date: "2026-07-31",
+    sourceDate: "2025-02-01",
+    sourceDateKind: "版",
     title: "2060年、大洲市の目標人口は「3万人」。総合戦略のKPIを追う",
     category: "shiten",
     source: "大洲市役所",
@@ -953,6 +1093,8 @@ const OZU_NEWS = [
   {
     slug: "castle-stay-hyakuman",
     date: "2026-08-01",
+    sourceDate: "2025-01-01",
+    sourceDateKind: "報告",
     title: "大洲城に泊まると160万円？「キャッスルステイ」の仕組みを読む",
     category: "shiten",
     source: "東京都立大学大学院 修士論文",
@@ -973,6 +1115,7 @@ const OZU_NEWS = [
   {
     slug: "ozu-toori-namae",
     date: "2026-08-08",
+    sourceDate: "2022-03-01",
     title: "「こぶし通り」の由来と、大洲の名前がついた道",
     category: "shiten",
     source: "大洲市公式観光情報VisitOzu ほか",
@@ -1005,6 +1148,8 @@ const OZU_NEWS = [
   {
     slug: "ozu-chiiki-okoshi-tai",
     date: "2026-08-08",
+    sourceDate: "2025-01-01",
+    sourceDateKind: "報告",
     title: "大洲の地域おこし協力隊、いま8人が活動中。何をしているのか調べてみた",
     category: "shiten",
     source: "大洲市ホームページ（地域振興課）",
@@ -1013,6 +1158,7 @@ const OZU_NEWS = [
   {
     slug: "ozu-shakyo-kessan",
     date: "2026-08-08",
+    sourceDate: "2026-08-01",
     title: "大洲市社協の収支は5.8億円。「介護保険事業」が52%を占める実態",
     category: "shiten",
     source: "社協だより2026年8月号（大洲市社会福祉協議会）",
@@ -1021,6 +1167,7 @@ const OZU_NEWS = [
   {
     slug: "ozu-kanko-jisseki-r7",
     date: "2026-08-08",
+    sourceDate: "2026-06-01",
     title: "大洲観光、インバウンド宿泊者が2年で5倍に。でも住民満足度はやや低下",
     category: "shiten",
     source: "一般社団法人キタ・マネジメント「令和7年度実績報告」",
@@ -1039,6 +1186,7 @@ const OZU_NEWS = [
   {
     slug: "ozu-555-project",
     date: "2026-08-08",
+    sourceDate: "2024-06-10",
     title: "「OZU 555 PROJECT」始動。2030年に5事例・50事業・500人雇用を目指す構想",
     category: "shiten",
     source: "キタ・マネジメント、バリューマネジメント、山陽新聞デジタル ほか",
@@ -1049,6 +1197,8 @@ const OZU_NEWS = [
   {
     slug: "nagahama-kihonkeikaku-nyusatsu",
     date: "2026-08-08",
+    sourceDate: "2023-01-01",
+    sourceDateKind: "公表",
     title: "長浜港埋立の基本計画策定、予定価格を100万円上回る1,595万円で落札",
     category: "shiten",
     source: "大洲市入札結果公表ページ",
@@ -1057,6 +1207,8 @@ const OZU_NEWS = [
   {
     slug: "ozu-eemon-selection",
     date: "2026-08-10",
+    sourceDate: "2012-10-01",
+    sourceDateKind: "号",
     title: "「大洲ええモンセレクション」は2012年生まれ。最初の11品目から今は72品目に",
     category: "shiten",
     source: "広報おおず2012年10月号(No.93)、大洲市ホームページ ほか",

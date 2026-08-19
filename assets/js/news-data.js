@@ -229,7 +229,7 @@ const OZU_NEWS = [
     date: "2026-08-18",
     sourceDate: "2026-03-16",
     sourceDateKind: "公表",
-    title: "大洲市の入札結果、出海漁港の防砂堤老朽化対策工事は1,237万円で落札",
+    title: "大洲市の入札結果を1件だけ開いてみた。6社の札が25万円の幅に並んでいた",
     category: "shiten",
     source: "大洲市役所",
     tags: ["財政・税金", "交通・インフラ"],

@@ -123,6 +123,14 @@ a {
 }
 
 /* Header */
+/* [data-site-header]は、site-chrome.jsがヘッダーHTMLを差し込む前の空のプレースホルダー。
+   高さを指定しないとJS実行までの一瞬ヘッダーが無い状態になり、実際の高さ(.wrapの76px)分
+   レイアウトがガクッとずれる(CLS)ので、あらかじめ同じ高さを確保しておく。 */
+[data-site-header] {
+  display: block;
+  min-height: 76px;
+}
+
 .site-header {
   position: sticky;
   top: 0;

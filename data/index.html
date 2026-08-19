@@ -30,11 +30,18 @@
   .stat-pill { font-size:.85rem; color:var(--color-text-muted); background:var(--color-surface); border:1px solid var(--color-border); border-radius:10px; padding:8px 16px; }
   .stat-pill b { color:var(--color-text); font-size:1.05rem; font-variant-numeric:tabular-nums; }
 
-  .source-bars { display:flex; flex-direction:column; gap:8px; max-width:520px; margin:0 auto; }
-  .source-bar-row { display:grid; grid-template-columns:120px 1fr 40px; align-items:center; gap:10px; font-size:.85rem; color:var(--color-text-muted); }
-  .source-bar-track { background:var(--color-surface-alt); border-radius:6px; height:10px; overflow:hidden; }
-  .source-bar-fill { background:var(--color-brand); height:100%; border-radius:6px; }
-  .source-bar-row .count { text-align:right; font-variant-numeric:tabular-nums; color:var(--color-text); }
+  .source-bars { display:flex; flex-direction:column; gap:10px; max-width:640px; margin:0 auto; }
+  .source-bar-row { display:grid; grid-template-columns:130px 1fr 92px; align-items:center; gap:14px; font-size:.85rem; color:var(--color-text-muted); }
+  .source-bar-track { display:block; background:var(--color-surface-alt); border-radius:7px; height:14px; overflow:hidden; }
+  /* spanは既定でdisplay:inlineなので、widthもheightも効かない。
+     これが指定されていなかったため、棒が1本も描かれていなかった。 */
+  .source-bar-fill { display:block; background:var(--color-brand); height:100%; border-radius:7px; min-width:4px; }
+  .source-bar-row .count { text-align:right; font-variant-numeric:tabular-nums; color:var(--color-text); white-space:nowrap; }
+  .source-bar-row .count .share { color:var(--color-text-faint); font-size:.78rem; margin-left:5px; }
+  .source-bar-note { max-width:640px; margin:14px auto 0; font-size:.78rem; color:var(--color-text-faint); }
+  @media (max-width:560px) {
+    .source-bar-row { grid-template-columns:104px 1fr 84px; gap:10px; font-size:.8rem; }
+  }
 </style>
 </head>
 <body>
@@ -106,15 +113,16 @@
     <h2>情報源の内訳</h2>
     <p style="color:var(--color-text-muted);">記事129本が、どこから拾ってきた話かの内訳です。</p>
     <div class="source-bars">
-      <div class="source-bar-row"><span>市役所HP</span><span class="source-bar-track"><span class="source-bar-fill" style="width:100%"></span></span><span class="count">70</span></div>
-      <div class="source-bar-row"><span>その他</span><span class="source-bar-track"><span class="source-bar-fill" style="width:29%"></span></span><span class="count">20</span></div>
-      <div class="source-bar-row"><span>市議会中継</span><span class="source-bar-track"><span class="source-bar-fill" style="width:16%"></span></span><span class="count">11</span></div>
-      <div class="source-bar-row"><span>新聞・報道</span><span class="source-bar-track"><span class="source-bar-fill" style="width:14%"></span></span><span class="count">10</span></div>
-      <div class="source-bar-row"><span>広報おおず</span><span class="source-bar-track"><span class="source-bar-fill" style="width:11%"></span></span><span class="count">8</span></div>
-      <div class="source-bar-row"><span>note</span><span class="source-bar-track"><span class="source-bar-fill" style="width:10%"></span></span><span class="count">7</span></div>
-      <div class="source-bar-row"><span>Yahoo!ニュース</span><span class="source-bar-track"><span class="source-bar-fill" style="width:3%"></span></span><span class="count">2</span></div>
-      <div class="source-bar-row"><span>X</span><span class="source-bar-track"><span class="source-bar-fill" style="width:1%"></span></span><span class="count">1</span></div>
+      <div class="source-bar-row"><span>市役所HP</span><span class="source-bar-track"><span class="source-bar-fill" style="width:100.0%"></span></span><span class="count">70本<span class="share">54%</span></span></div>
+      <div class="source-bar-row"><span>その他</span><span class="source-bar-track"><span class="source-bar-fill" style="width:28.6%"></span></span><span class="count">20本<span class="share">16%</span></span></div>
+      <div class="source-bar-row"><span>市議会中継</span><span class="source-bar-track"><span class="source-bar-fill" style="width:15.7%"></span></span><span class="count">11本<span class="share">9%</span></span></div>
+      <div class="source-bar-row"><span>新聞・報道</span><span class="source-bar-track"><span class="source-bar-fill" style="width:14.3%"></span></span><span class="count">10本<span class="share">8%</span></span></div>
+      <div class="source-bar-row"><span>広報おおず</span><span class="source-bar-track"><span class="source-bar-fill" style="width:11.4%"></span></span><span class="count">8本<span class="share">6%</span></span></div>
+      <div class="source-bar-row"><span>note</span><span class="source-bar-track"><span class="source-bar-fill" style="width:10.0%"></span></span><span class="count">7本<span class="share">5%</span></span></div>
+      <div class="source-bar-row"><span>Yahoo!ニュース</span><span class="source-bar-track"><span class="source-bar-fill" style="width:2.9%"></span></span><span class="count">2本<span class="share">2%</span></span></div>
+      <div class="source-bar-row"><span>X</span><span class="source-bar-track"><span class="source-bar-fill" style="width:1.4%"></span></span><span class="count">1本<span class="share">1%</span></span></div>
     </div>
+    <p class="source-bar-note">棒の長さは、最も多い「市役所HP」(70本)を基準にしています。%%は記事129本全体に対する割合です。</p>
   </div>
 </section>
 

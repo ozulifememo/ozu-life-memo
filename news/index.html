@@ -6,6 +6,9 @@
 <title>大洲ノート ｜ OZU LIFE MEMO</title>
 <meta name="description" content="市役所の発表やSNS、noteの記事から拾い上げた大洲の話題を、3つの視点で整理しています。">
 <link rel="icon" href="../assets/img/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link data-ozu-fonts rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;family=Shippori+Mincho+B1:wght@600;700&amp;display=swap">
 <link rel="stylesheet" href="../assets/css/style.css">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="OZU LIFE MEMO">
@@ -118,7 +121,10 @@
 <div data-site-modal></div>
 
 <script src="../assets/js/site-chrome.js"></script>
+<script src="../assets/js/photos-data.js"></script>
+<script src="../assets/js/article-images.js"></script>
 <script src="../assets/js/news-data.js"></script>
+<script src="../assets/js/article-card.js"></script>
 <script src="../assets/js/tag-colors.js"></script>
 <script>
   (function renderNewsTable() {
@@ -158,12 +164,19 @@
           const tags = (item.tags || [])
             .map((t) => `<span class="card-tag" style="--tag-c:${ozuTagColorVar(t)}">${t}</span>`)
             .join("");
+          // 記事に写真がひもづいていればサムネイルを出す。
+          // 無い記事は枠だけ残して空にする(列がずれると一覧がガタつくため)。
+          const photo = typeof OzuCard !== "undefined" ? OzuCard.articlePhoto(item.slug, "../") : null;
+          const thumb = photo
+            ? `<span class="news-thumb"><img src="${photo.src}" alt="${OzuCard.escapeHtml(photo.alt)}" loading="lazy" decoding="async"></span>`
+            : `<span class="news-thumb news-thumb--none" aria-hidden="true"></span>`;
           return `
       <div class="news-card" data-category="${item.category}" data-tags="${(item.tags || []).join(",")}" data-source-type="${sourceType}" style="--tag-c:${ozuCategoryColorVar(item.category)}">
         ${dateCell(item, mode)}
         <a class="news-title" href="../eachnews/${item.slug}.html">${item.title}</a>
         <span class="news-source">${item.source}</span>
         <div class="card-tags-row">${tags}</div>
+        ${thumb}
       </div>`;
         })
         .join("");

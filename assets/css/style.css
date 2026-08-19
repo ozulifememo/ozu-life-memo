@@ -18,18 +18,25 @@
   --color-warn-text: #8a6d1d;
   --color-warn-border: #eddca0;
 
-  /* タグ・カテゴリの色分け(大洲にちなんだ8色) */
-  --color-tag-indigo: #2c4e7c;    /* 藍色 - 伝統・行政 */
-  --color-tag-mikan: #c97324;     /* 蜜柑色 - 観光・活気 */
-  --color-tag-moss: #55803a;      /* 若草色 - まちづくり・再生 */
-  --color-tag-gold: #a9822a;      /* 山吹金 - 産業・実り */
-  --color-tag-teal: #257167;      /* 肱川の水色 - インフラ・流れ */
-  --color-tag-slate: #4c6780;     /* 鈍色 - 財政・データ */
-  --color-tag-kakishibu: #a34e2a; /* 柿渋色 - 防災・警戒 */
-  --color-tag-rose: #8c4059;      /* 紅樺色 - 福祉・やさしさ */
+  /* タグ・カテゴリの色分け。
+     もとは彩度の高い8色だったが、1画面に8色が同時に出ると
+     「配色が決まっていないサイト」に見えるため、明度をそろえ
+     彩度を落として、8色が1つの色群として読めるようにしている。
+     色そのものは大洲にちなんだ名前を引き継いでいる。 */
+  --color-tag-indigo: #3d5473;    /* 藍色 - 伝統・行政 */
+  --color-tag-mikan: #9a6238;     /* 蜜柑色 - 観光・活気 */
+  --color-tag-moss: #566b45;      /* 若草色 - まちづくり・再生 */
+  --color-tag-gold: #846f42;      /* 山吹金 - 産業・実り */
+  --color-tag-teal: #3a6a64;      /* 肱川の水色 - インフラ・流れ */
+  --color-tag-slate: #556678; /* 鈍色 - 財政・データ */
+  --color-tag-kakishibu: #8a5541; /* 柿渋色 - 防災・警戒 */
+  --color-tag-rose: #7b5060;      /* 紅樺色 - 福祉・やさしさ */
 
   /* Typography scale (major third-ish, capped to a small set) */
-  --font-sans: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", sans-serif;
+  /* 本文はゴシック、見出しは明朝。Webフォントは各HTMLの<head>で読み込んでいる。
+     未読み込み・読み込み失敗時はOS標準のフォントに落ちるようフォールバックを並べる。 */
+  --font-sans: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
+  --font-serif: "Shippori Mincho B1", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
   --text-xs: 0.8125rem;
   --text-sm: 0.875rem;
   --text-base: 1rem;
@@ -147,6 +154,27 @@ figcaption {
   word-break: auto-phrase;
 }
 
+/* ── 見出しは明朝 ────────────────────────────────────────────
+   本文と同じゴシックで見出しだけ極太にすると、どうしても
+   「テンプレートで組んだページ」の見え方になる。
+   見出しに明朝を当てると、同じ内容でも「編集された誌面」に見える。
+   UI(ナビ・ボタン・タブ・数字ラベル)はゴシックのままにして、
+   読み物の部分だけ書体を変えている。 */
+.hero h1,
+.page-hero h1,
+.article-page h1,
+.article-page h2,
+.section-title,
+.pick-card h3,
+.news-card .news-title,
+.lead-story-title,
+.kenkyu-list a,
+.featured-article h3,
+.monthly-headline {
+  font-family: var(--font-serif);
+  font-feature-settings: "palt" 1;
+}
+
 .wrap {
   max-width: var(--max-width);
   margin: 0 auto;
@@ -214,7 +242,7 @@ figcaption {
 }
 
 .logo {
-  font-weight: 800;
+  font-weight: 700;
   font-size: var(--text-md);
   letter-spacing: -0.01em;
   color: var(--color-brand-dark);
@@ -559,7 +587,7 @@ figcaption {
 
 .hero h1 {
   font-size: var(--text-3xl);
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1.3;
   letter-spacing: -0.01em;
   margin: 0 0 var(--space-4);
@@ -768,7 +796,7 @@ figcaption {
 /* Section titles */
 .section-title {
   font-size: var(--text-xl);
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.01em;
   margin: 0 0 var(--space-5);
   position: relative;
@@ -1221,7 +1249,7 @@ section {
 
 .page-hero h1 {
   font-size: var(--text-2xl);
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.01em;
   margin: 0 0 var(--space-3);
 }
@@ -1881,7 +1909,7 @@ section {
 
 .article-page h1 {
   font-size: var(--text-2xl);
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.01em;
   line-height: 1.45;
   margin: 0 0 var(--space-2);
@@ -2128,7 +2156,7 @@ section {
 .stat-callout .stat-number {
   display: block;
   font-size: var(--text-2xl);
-  font-weight: 800;
+  font-weight: 700;
   color: var(--color-brand-dark);
   letter-spacing: -0.02em;
   line-height: 1.2;
@@ -2730,4 +2758,651 @@ section {
   font-size: 0.85rem;
   color: var(--color-text-muted);
   line-height: 1.6;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   トップページ 2026-08 改修
+   ・SaaSのランディングページ風のヒーローをやめ、記事から始める構成に
+   ・記事カードに写真を入れる(写真が無い記事は文字だけのカードにする)
+   ・セクションごとに背景と組み方を変えて、上から下まで同じリズムが
+     続かないようにする
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── セクション共通 ───────────────────────────────── */
+.site-intro,
+.lead-section,
+.picks-section,
+.latest-section,
+.home-tags,
+.home-photos {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.lead-section,
+.latest-section {
+  background: var(--color-bg);
+}
+
+.picks-section,
+.home-tags,
+.home-photos {
+  background: var(--color-surface);
+}
+
+.lead-section,
+.picks-section,
+.latest-section,
+.home-tags,
+.home-photos {
+  padding: var(--space-8) 0;
+}
+
+.section-lead {
+  margin: calc(var(--space-4) * -1) 0 var(--space-6);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  max-width: 44em;
+}
+
+.section-more {
+  margin: var(--space-6) 0 0;
+  font-size: var(--text-sm);
+}
+
+.section-more a {
+  font-weight: 700;
+  color: var(--color-brand);
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+}
+
+.section-more a::after {
+  content: " →";
+}
+
+.section-more a:hover {
+  color: var(--color-brand-dark);
+}
+
+/* ── サイトの自己紹介の帯 ─────────────────────────── */
+.site-intro {
+  background: var(--color-surface);
+}
+
+.site-intro .wrap {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-5);
+  padding-top: var(--space-4);
+  padding-bottom: var(--space-4);
+}
+
+.site-intro-text {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+.site-intro-text strong {
+  color: var(--color-text);
+  font-weight: 700;
+}
+
+.site-intro-link {
+  flex-shrink: 0;
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-brand);
+  white-space: nowrap;
+}
+
+.site-intro-link::after {
+  content: " →";
+}
+
+/* ── 主役記事 ─────────────────────────────────── */
+.lead-story {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: var(--space-7);
+  align-items: center;
+}
+
+.lead-story--textonly {
+  grid-template-columns: 1fr;
+  max-width: 40em;
+}
+
+.lead-media {
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-alt);
+}
+
+.lead-media img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 8 / 5;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.lead-story:hover .lead-media img {
+  transform: scale(1.03);
+}
+
+.lead-story-title {
+  margin: var(--space-2) 0 var(--space-3);
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  line-height: 1.45;
+  letter-spacing: 0.01em;
+}
+
+.lead-story:hover .lead-story-title {
+  color: var(--color-brand);
+}
+
+.lead-note {
+  margin: 0 0 var(--space-4);
+  color: var(--color-text-muted);
+  font-size: var(--text-base);
+  line-height: 1.85;
+}
+
+/* ── 記事カード ────────────────────────────────── */
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6) var(--space-5);
+}
+
+.story-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.story-media {
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-alt);
+}
+
+.story-media img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.story-card:hover .story-media img {
+  transform: scale(1.04);
+}
+
+/* 写真が無い記事のカード。
+   写真の枠だけ空けると一覧の高さがそろわずガタガタになるので、
+   同じ大きさの色面を置いてカテゴリ名を大きく入れる。
+   「写真が用意できていない枠」ではなく「文字で見せるカード」に見せる。 */
+.story-media--none {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 3 / 2;
+  background: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+}
+
+.story-media--none span {
+  font-family: var(--font-serif);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--color-text-muted);
+  opacity: 0.75;
+}
+
+.story-card--textonly[data-category="ima"] .story-media--none { border-bottom: 3px solid var(--color-tag-mikan); }
+.story-card--textonly[data-category="kurashi"] .story-media--none { border-bottom: 3px solid var(--color-tag-teal); }
+.story-card--textonly[data-category="shiten"] .story-media--none { border-bottom: 3px solid var(--color-tag-indigo); }
+
+.story-cat {
+  display: block;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-2);
+}
+
+.story-title {
+  margin: 0 0 var(--space-2);
+  font-size: var(--text-md);
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.story-card:hover .story-title {
+  color: var(--color-brand);
+}
+
+.story-note {
+  margin: 0 0 var(--space-3);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  line-height: 1.8;
+}
+
+.story-meta {
+  display: block;
+  margin-top: auto;
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+}
+
+.story-ym {
+  margin-left: 0.7em;
+  padding-left: 0.7em;
+  border-left: 1px solid var(--color-border-strong);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── 新しい資料から(密なリスト) ──────────────────── */
+.home-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
+}
+
+.home-tab {
+  border: 1px solid var(--color-border-strong);
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+  border-radius: 999px;
+  padding: 7px 16px;
+  font-family: inherit;
+  font-size: var(--text-sm);
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.home-tab:hover {
+  border-color: var(--color-brand);
+  color: var(--color-brand);
+}
+
+.home-tab.active {
+  background: var(--color-brand);
+  border-color: var(--color-brand);
+  color: #fff;
+}
+
+/* カードを並べるのではなく、新聞の索引のように詰めて並べる。
+   上の写真カードとリズムを変えるのが狙い。 */
+.digest-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--color-border-strong);
+}
+
+.digest-item {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.digest-item a {
+  display: grid;
+  grid-template-columns: 5.5em 1fr 15em;
+  gap: var(--space-4);
+  align-items: baseline;
+  padding: var(--space-4) var(--space-2);
+  transition: background 0.15s ease;
+}
+
+.digest-item a:hover {
+  background: var(--color-surface);
+}
+
+.digest-ym {
+  font-size: var(--text-sm);
+  color: var(--color-text-faint);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+}
+
+.digest-title {
+  font-size: var(--text-base);
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.digest-item a:hover .digest-title {
+  color: var(--color-brand);
+}
+
+.digest-source {
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+  text-align: right;
+  line-height: 1.6;
+}
+
+/* ── 自由研究(反転セクション) ─────────────────────── */
+/* ページの真ん中に一度だけ濃い帯を入れて、上から下まで同じ明るさが
+   続かないようにしている。 */
+.home-kenkyu {
+  background: var(--color-brand-dark);
+  color: #eef2f6;
+  padding: var(--space-8) 0;
+  border-bottom: 1px solid var(--color-brand-dark);
+}
+
+.home-kenkyu .section-title {
+  color: #fff;
+}
+
+.home-kenkyu .section-title::before {
+  background: var(--color-accent);
+}
+
+.home-kenkyu-lead {
+  margin: calc(var(--space-4) * -1) 0 var(--space-6);
+  color: #c3d2df;
+  font-size: var(--text-sm);
+  max-width: 44em;
+  line-height: 1.9;
+}
+
+.home-kenkyu .kenkyu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0 var(--space-7);
+}
+
+.home-kenkyu .kenkyu-list li {
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.home-kenkyu .kenkyu-list a {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-4);
+  padding: var(--space-4) 0;
+  color: #eef2f6;
+  font-size: var(--text-base);
+  line-height: 1.6;
+}
+
+.home-kenkyu .kenkyu-list a:hover {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.home-kenkyu .kenkyu-no {
+  flex-shrink: 0;
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.home-kenkyu .section-more a {
+  color: #fff;
+}
+
+/* ── テーマで探す ───────────────────────────────── */
+/* 文字サイズを6段階に変えたタグクラウドをやめ、件数順のただの索引にした。
+   タグは色で区別せず、件数だけを添える。 */
+.tag-index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-3);
+}
+
+.tag-index-item {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.5em;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  padding: 9px 15px;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text);
+  background: var(--color-bg);
+  transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+}
+
+.tag-index-item:hover {
+  border-color: var(--color-brand);
+  color: var(--color-brand);
+  background: var(--color-surface);
+}
+
+.tag-index-count {
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── 写真の帯 ─────────────────────────────────── */
+/* 自動で流れるカルーセルをやめ、フリー写真ページへの導線に変えた。 */
+.photo-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-3);
+}
+
+.photo-strip img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  transition: opacity 0.2s ease;
+}
+
+.photo-strip a:hover img {
+  opacity: 0.82;
+}
+
+/* ── 画面が狭いとき ──────────────────────────────── */
+@media (max-width: 900px) {
+  .lead-story,
+  .lead-story--textonly {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+
+  .story-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .digest-item a {
+    grid-template-columns: 4.5em 1fr;
+    gap: var(--space-3);
+  }
+
+  .digest-source {
+    grid-column: 2;
+    text-align: left;
+  }
+
+  .home-kenkyu .kenkyu-list {
+    grid-template-columns: 1fr;
+  }
+
+  .photo-strip {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .site-intro .wrap {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+  }
+}
+
+@media (max-width: 600px) {
+  .story-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .photo-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .lead-story-title {
+    font-size: var(--text-xl);
+  }
+}
+
+/* ── 記事一覧のサムネイル ─────────────────────────────
+   一覧が文字だけだと、どの記事も同じ見た目になって選びづらい。
+   写真のある記事だけ小さく写真を添える。
+   写真が無い記事は枠(幅)だけ残して空にし、列がずれないようにしている。 */
+.news-card {
+  grid-template-columns: 96px minmax(0, 1fr) auto 104px;
+}
+
+.news-thumb {
+  grid-column: 4;
+  grid-row: 1 / span 2;
+  display: block;
+  width: 104px;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-alt);
+}
+
+.news-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.news-thumb--none {
+  background: none;
+}
+
+@media (max-width: 900px) {
+  .news-card {
+    grid-template-columns: 96px minmax(0, 1fr) 84px;
+  }
+  .news-thumb {
+    grid-column: 3;
+    width: 84px;
+  }
+  .news-card .card-tags-row {
+    grid-column: 2;
+    grid-row: 3;
+    justify-content: flex-start;
+    margin-top: 6px;
+  }
+}
+
+@media (max-width: 680px) {
+  .news-thumb {
+    display: none;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   記事ページ 2026-08 改修
+   ・冒頭の日付行から掲載日を外し、カテゴリと出典を主役にした
+   ・出典ボックスを本文の先頭から末尾へ移した
+     (読者が本文を1行も読まないうちに出典リンクの塊にぶつかっていた)
+   ・記事と関係のないランダム写真を廃止した
+   ══════════════════════════════════════════════════════════════ */
+
+/* 丸いバッジ状の日付行をやめ、罫線を1本引いただけの記名行にする。
+   バッジは情報量のわりに目立ちすぎ、記事の顔である見出しと競合していた。 */
+.article-date {
+  display: block;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--color-border-strong);
+  border-radius: 0;
+  padding: 0 0 var(--space-3);
+  margin: 0 0 var(--space-4);
+  font-size: var(--text-xs);
+  font-weight: 400;
+  color: var(--color-text-muted);
+  line-height: 1.8;
+}
+
+.article-date .article-cat {
+  font-weight: 700;
+  color: var(--color-brand-dark);
+  letter-spacing: 0.04em;
+}
+
+.article-date .article-srcdate {
+  display: inline-block;
+  margin-left: 0.4em;
+  color: var(--color-text-faint);
+  font-variant-numeric: tabular-nums;
+}
+
+/* 記事の顔になる写真。丸みと影を強く付けると写真そのものより
+   「枠」が目に付くので、角丸を抑えて影を外した。 */
+.article-hero-img {
+  margin: 0 0 var(--space-6);
+}
+
+.article-hero-img img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  box-shadow: none;
+  display: block;
+}
+
+.article-hero-img figcaption {
+  margin-top: 8px;
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+  text-align: left;
+  border-left: 2px solid var(--color-border-strong);
+  padding-left: 10px;
+}
+
+/* 末尾に移した出典ボックス。本文の一部ではなく「資料欄」として、
+   本文とははっきり違う見た目にする。 */
+.content-block.source-box {
+  margin-top: var(--space-8);
+  background: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-5);
+}
+
+.source-box-title {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-3);
+  padding: 0;
+  border: none;
+}
+
+.source-box-posted {
+  margin: var(--space-4) 0 0;
+  padding-top: var(--space-3);
+  border-top: 1px dashed var(--color-border-strong);
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
 }

@@ -62,6 +62,7 @@ const OZU_ARTICLE_IMAGES = {
 
   // ── 買い物・商業 ──────────────────────────────
   "gikai-kaimono-chiketto": { file: "photos/ozu-photo-33.jpg" },
+  "frespo-ozu-hensen": { file: "photos/ozu-photo-33.jpg" },
   "setai-nenshu-200": { file: "photos/ozu-photo-03.jpg" },
   "ozu-ben": { file: "real-photo-13.jpg" },
 
@@ -74,7 +75,7 @@ const OZU_ARTICLE_IMAGES = {
   "yatsugi-akiya-saisei": { file: "real-photo-10.jpg" },
   "castle-stay-hyakuman": { file: "real-photo-9.jpg" },
   "ozu-kanko-jisseki-r7": { file: "real-photo-14.jpg" },
-  "ozu-kanko-5man-nin": { file: "photos/ozu-photo-35.jpg" },
+  "ozu-kanko-5man-nin": { file: "photos/ozu-photo-05.jpg" },
   "kanko-senryaku-chukan": { file: "photos/ozu-photo-73.jpg" },
   "green-destinations-ginsho": { file: "photos/ozu-photo-68.jpg" },
   "ozu-muryo-chushajo": { file: "photos/ozu-photo-74.jpg" },
@@ -85,11 +86,12 @@ const OZU_ARTICLE_IMAGES = {
   // ── 歴史・寺社 ───────────────────────────────
   "shisho-kamon": { file: "photos/ozu-photo-50.jpg" },
   "nyohoji-kato-bosho": { file: "photos/ozu-photo-55.jpg" },
+  "sukunahikona-jinja": { file: "photos/ozu-photo-35.jpg" },
 
   // ── 肱川・水・防災 ─────────────────────────────
   "hijikawa-nagare": { file: "photos/ozu-photo-46.jpg" },
   "hijikawabashi-chobo-hiroba": { file: "photos/ozu-photo-69.jpg" },
-  "ozu-ukai-guide": { file: "photos/ozu-photo-39.jpg" },
+  "ozu-ukai-guide": { file: "photos/ozu-photo-73.jpg" },
   "ukai-seitaikei": { file: "photos/ozu-photo-39.jpg" },
   "bukatsu-chiiki-ido-kanu": { file: "photos/ozu-photo-39.jpg" },
   "hijikawa-osanshouo-kaseki": { file: "photos/ozu-photo-45.jpg" },
@@ -148,7 +150,7 @@ const OZU_ARTICLE_PHOTO_WANTED = [
   {
     theme: "スーパー・商業施設",
     subjects: "マルナカ大洲店の外観、フレスポ大洲、アクトピア大洲の解体現場・跡地、家電量販店。",
-    slugs: ["fuji-point", "fuji-marunaka-aeon-keii", "frespo-ozu-hensen", "actopia-ozu-kaitai",
+    slugs: ["fuji-point", "fuji-marunaka-aeon-keii", "actopia-ozu-kaitai",
             "shoene-kaden-hojo", "shoene-hojo-keisan"]
   },
   {
@@ -182,9 +184,9 @@ const OZU_ARTICLE_PHOTO_WANTED = [
     slugs: []
   },
   {
-    theme: "少彦名神社(菅田町)",
-    subjects: "鳥居、社殿、社号標。",
-    slugs: ["sukunahikona-jinja"]
+    theme: "臥龍山荘",
+    subjects: "臥龍山荘の外観・不老庵・庭。いま「臥龍山荘」として台帳に入れていた写真は、実際には少彦名神社の参籠殿だったため、臥龍山荘の写真は1枚も無い。",
+    slugs: []
   },
   {
     theme: "盤泉荘",

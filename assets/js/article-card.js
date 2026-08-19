@@ -1,0 +1,131 @@
+// 記事カードの共通描画。トップページとニュース一覧で同じ見た目を使う。
+//
+// 読み込み順: photos-data.js → article-images.js → news-data.js → このファイル
+//
+// prefix … そのページから見たサイトルートまでの相対パス("" か "../")
+
+(function (global) {
+  "use strict";
+
+  var MONTHS = "年";
+
+  // ── 写真 ──────────────────────────────────────────
+  // 記事にひもづいた写真を返す。無ければ null(ランダムな写真は絶対に出さない)。
+  function articlePhoto(slug, prefix) {
+    if (typeof OZU_ARTICLE_IMAGES === "undefined") return null;
+    var entry = OZU_ARTICLE_IMAGES[slug];
+    if (!entry) return null;
+    var meta = typeof OZU_PHOTO_BY_FILE !== "undefined" ? OZU_PHOTO_BY_FILE[entry.file] : null;
+    return {
+      src: (prefix || "") + "assets/img/" + entry.file,
+      alt: entry.caption || (meta ? meta.alt : "大洲市内で撮影した写真"),
+      caption: entry.caption || (meta ? meta.alt : "")
+    };
+  }
+
+  // ── 日付 ──────────────────────────────────────────
+  // 掲載日(date)は129記事のうち78件が同じ日に集まっていて、並べても意味がない。
+  // 表に出すのは「出典そのものの日付」にする。出典に日付が無い記事は日付を出さない。
+  function sourceDateLabel(item) {
+    if (!item.sourceDate) return "";
+    var p = item.sourceDate.split("-");
+    var kind = item.sourceDateKind || "";
+    return p[0] + MONTHS + Number(p[1]) + "月" + Number(p[2]) + "日" + (kind ? "  " + kind : "");
+  }
+
+  // 一覧の「いつの話か」を短く出す用(年月まで)
+  function sourceYearMonth(item) {
+    if (!item.sourceDate) return "";
+    var p = item.sourceDate.split("-");
+    return p[0] + "." + p[1];
+  }
+
+  // 一覧に縦に並べる用。年月だけだと同じ表示が続いてしまうので日まで出す。
+  function sourceYmd(item) {
+    if (!item.sourceDate) return "";
+    return item.sourceDate.replace(/-/g, ".");
+  }
+
+  function categoryLabel(item) {
+    return typeof OZU_CATEGORY_LABELS !== "undefined" ? OZU_CATEGORY_LABELS[item.category] || "" : "";
+  }
+
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"]/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
+    });
+  }
+
+  // ── 並び順 ─────────────────────────────────────────
+  // 出典の日付が新しい順。日付が無い記事は後ろへ。
+  function bySourceDateDesc(list) {
+    var withDate = list.filter(function (i) { return i.sourceDate; });
+    var without = list.filter(function (i) { return !i.sourceDate; });
+    withDate.sort(function (a, b) { return a.sourceDate < b.sourceDate ? 1 : -1; });
+    return withDate.concat(without);
+  }
+
+  // ── カード ─────────────────────────────────────────
+  // 写真のある記事は写真つき、無い記事は文字だけ。
+  // 文字だけのカードも「そういうデザイン」に見えるよう、別クラスで作り分ける。
+  function storyCard(item, prefix, opts) {
+    opts = opts || {};
+    var photo = articlePhoto(item.slug, prefix);
+    var href = (prefix || "") + "eachnews/" + item.slug + ".html";
+    var note = opts.showNote && item.pickNote ? item.pickNote : "";
+    var ym = sourceYearMonth(item);
+
+    // 写真のあるカードと無いカードが混ざると、写真の高さの分だけ
+    // 文字の開始位置がずれて一覧がガタガタになる。
+    // 写真が無いときは同じ大きさの色面を置き、カテゴリ名を大きく入れて
+    // 「そういうカード」として成立させる(欠けた枠には見せない)。
+    var media = photo
+      ? '<div class="story-media"><img src="' + photo.src + '" alt="' + escapeHtml(photo.alt) +
+        '" loading="lazy" decoding="async"></div>'
+      : '<div class="story-media story-media--none"><span>' + escapeHtml(categoryLabel(item)) + "</span></div>";
+
+    return (
+      '<a class="story-card' + (photo ? "" : " story-card--textonly") + '" href="' + href + '"' +
+      ' data-category="' + item.category + '">' +
+      media +
+      '<div class="story-body">' +
+      '<span class="story-cat">' + escapeHtml(categoryLabel(item)) + "</span>" +
+      '<h3 class="story-title">' + escapeHtml(item.title) + "</h3>" +
+      (note ? '<p class="story-note">' + escapeHtml(note) + "</p>" : "") +
+      '<span class="story-meta">' + escapeHtml(item.source) + (ym ? '<span class="story-ym">' + ym + "</span>" : "") + "</span>" +
+      "</div></a>"
+    );
+  }
+
+  // 主役記事(1本だけ大きく出す)
+  function leadStory(item, prefix) {
+    var photo = articlePhoto(item.slug, prefix);
+    var href = (prefix || "") + "eachnews/" + item.slug + ".html";
+    return (
+      '<a class="lead-story' + (photo ? "" : " lead-story--textonly") + '" href="' + href + '">' +
+      (photo
+        ? '<div class="lead-media"><img src="' + photo.src + '" alt="' + escapeHtml(photo.alt) +
+          '" width="1200" height="750" fetchpriority="high" decoding="async"></div>'
+        : "") +
+      '<div class="lead-body">' +
+      '<span class="story-cat">' + escapeHtml(categoryLabel(item)) + "</span>" +
+      '<h2 class="lead-story-title">' + escapeHtml(item.title) + "</h2>" +
+      (item.pickNote ? '<p class="lead-note">' + escapeHtml(item.pickNote) + "</p>" : "") +
+      '<span class="story-meta">' + escapeHtml(item.source) +
+      (sourceYearMonth(item) ? '<span class="story-ym">' + sourceYearMonth(item) + "</span>" : "") +
+      "</span>" +
+      "</div></a>"
+    );
+  }
+
+  global.OzuCard = {
+    articlePhoto: articlePhoto,
+    sourceDateLabel: sourceDateLabel,
+    sourceYearMonth: sourceYearMonth,
+    sourceYmd: sourceYmd,
+    bySourceDateDesc: bySourceDateDesc,
+    storyCard: storyCard,
+    leadStory: leadStory,
+    escapeHtml: escapeHtml
+  };
+})(window);

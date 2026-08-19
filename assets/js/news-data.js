@@ -209,10 +209,11 @@ const OZU_NEWS = [
   {
     slug: "yakuzaishi-fusoku",
     date: "2026-08-18",
-    sourceDate: "2026-08-04",
+    sourceDate: "2026-07-22",
+    sourceDateKind: "締結",
     title: "大洲・八幡浜・宇和島・今治で「特に不足」。県が薬剤師確保へ本気の連携協定",
     category: "shiten",
-    source: "Yahoo!ニュース",
+    source: "松山大学/愛媛大学医学部附属病院/厚生労働省(薬剤師偏在指標・需給推計・0402通知)",
     tags: ["医療・福祉"],
   },
   {

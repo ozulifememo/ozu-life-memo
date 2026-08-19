@@ -70,9 +70,14 @@
     };
 
     list.innerHTML = OZU_MONTHLY_NOTES.map((entry) => {
-      const articles = OZU_NEWS.filter((item) => item.date.startsWith(entry.month)).sort((a, b) =>
-        a.date < b.date ? 1 : -1
-      );
+      // 月内はほとんど同じ掲載日なので、出典が新しい順を第2キーにする
+      const articles = OZU_NEWS.filter((item) => item.date.startsWith(entry.month)).sort((a, b) => {
+        if (a.date !== b.date) return a.date < b.date ? 1 : -1;
+        const as = a.sourceDate || "";
+        const bs = b.sourceDate || "";
+        if (as !== bs) return as < bs ? 1 : -1;
+        return 0;
+      });
 
       const articleItems = articles
         .map(

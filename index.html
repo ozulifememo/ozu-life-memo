@@ -180,7 +180,15 @@
     const tabs = document.querySelectorAll(".hero, .latest-news .news-tab");
     if (!wrap || typeof OZU_NEWS === "undefined") return;
 
-    const sorted = [...OZU_NEWS].sort((a, b) => (a.date < b.date ? 1 : -1));
+    // 「最新」なので基準は掲載日。ただし掲載日が同じ記事が78件あるため、
+    // その中では出典が新しいものを先に出す(でないと順序が実質ランダムになる)。
+    const sorted = [...OZU_NEWS].sort((a, b) => {
+      if (a.date !== b.date) return a.date < b.date ? 1 : -1;
+      const as = a.sourceDate || "";
+      const bs = b.sourceDate || "";
+      if (as !== bs) return as < bs ? 1 : -1;
+      return 0;
+    });
 
     function render(category) {
       const list = category === "all" ? sorted : sorted.filter((i) => i.category === category);

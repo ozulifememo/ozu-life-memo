@@ -272,7 +272,8 @@ figcaption {
 }
 
 .nav-caret {
-  font-size: 0.65em;
+  /* 親の文字が0.86remまで縮む幅では0.65emで約9pxになり潰れて見えるので下限を置く */
+  font-size: max(0.72em, 11px);
   transition: transform 0.15s ease;
 }
 
@@ -1067,6 +1068,18 @@ section {
   color: var(--color-text-faint);
   font-size: var(--text-xs);
   font-variant-numeric: tabular-nums;
+  line-height: 1.5;
+}
+
+/* 日付が「出典そのものの日付」なのか「サイトに載せた日」なのかを、
+   数字の上に小さく出す。どちらの時系列を見ているのか分かるように。 */
+.news-card .date-kind {
+  display: block;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--color-accent-btn);
+  opacity: 0.85;
 }
 
 .news-card .news-title {

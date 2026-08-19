@@ -104,9 +104,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const tabs = document.querySelectorAll(".news-tab");
   const tagChips = document.querySelectorAll("#tag-filter .tag-chip");
   const sourceChips = document.querySelectorAll("#source-filter .tag-chip");
-  const rows = document.querySelectorAll(
-    ".news-cards .news-card[data-category], .news-table .news-row[data-category], .monthly-list li[data-category]"
-  );
+  // 記事一覧は並び替えのたびに作り直されるので、NodeListを最初に1回取ると
+  // 古い要素を掴んだままになり絞り込みが効かなくなる。毎回引き直す。
+  const ROW_SELECTOR =
+    ".news-cards .news-card[data-category], .news-table .news-row[data-category], .monthly-list li[data-category]";
+  const getRows = () => document.querySelectorAll(ROW_SELECTOR);
   const monthlyCards = document.querySelectorAll(".monthly-card");
 
   let activeCategory = "all";
@@ -117,7 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const presetTag = new URLSearchParams(location.search).get("tag");
 
   function applyNewsFilter() {
-    rows.forEach((row) => {
+    getRows().forEach((row) => {
       const categoryOk = activeCategory === "all" || row.dataset.category === activeCategory;
       const rowTags = (row.dataset.tags || "").split(",").filter(Boolean);
       const tagOk = activeTag === "all" || rowTags.includes(activeTag);
@@ -132,6 +134,9 @@ document.addEventListener("DOMContentLoaded", () => {
       card.style.display = hasVisible ? "" : "none";
     });
   }
+
+  // 記事一覧ページの並び替えスクリプトから、再描画のあとに呼んでもらう
+  window.ozuApplyNewsFilters = applyNewsFilter;
 
   tabs.forEach((tab) => {
     tab.addEventListener("click", () => {

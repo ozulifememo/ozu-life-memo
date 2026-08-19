@@ -56,6 +56,14 @@
     <div class="news-layout">
       <aside class="news-sidebar">
         <div class="sidebar-filter-group">
+          <p class="tag-filter-label">並び順</p>
+          <div class="tag-filter" id="sort-filter">
+            <button class="tag-chip active" data-sort="source-desc">出典が新しい順</button>
+            <button class="tag-chip" data-sort="source-asc">出典が古い順</button>
+            <button class="tag-chip" data-sort="posted">サイト掲載順</button>
+          </div>
+        </div>
+        <div class="sidebar-filter-group">
           <p class="tag-filter-label">カテゴリ</p>
           <div class="news-tabs">
             <button class="news-tab active" data-category="all">全般</button>
@@ -117,23 +125,61 @@
     const body = document.getElementById("news-table-body");
     if (!body || typeof OZU_NEWS === "undefined") return;
 
-    const sorted = [...OZU_NEWS].sort((a, b) => (a.date < b.date ? 1 : -1));
+    // 掲載日(date)は129記事のうち78件が同じ日に集まっており、一覧に並べても
+    // 順序の意味がほとんど無かった。そこで既定では「出典そのものの日付」
+    // (sourceDate)で並べる。出典に日付が無い記事(市役所の制度ページなど)は
+    // 順序を作れないので、掲載日順でうしろにまとめる。
+    const withSrc = OZU_NEWS.filter((i) => i.sourceDate);
+    const noSrc = OZU_NEWS.filter((i) => !i.sourceDate);
 
-    body.innerHTML = sorted
-      .map((item) => {
-        const sourceType = typeof ozuSourceType === "function" ? ozuSourceType(item.source) : "その他";
-        const tags = (item.tags || [])
-          .map((t) => `<span class="card-tag" style="--tag-c:${ozuTagColorVar(t)}">${t}</span>`)
-          .join("");
-        return `
+    function order(mode) {
+      if (mode === "posted") {
+        return [...OZU_NEWS].sort((a, b) => (a.date < b.date ? 1 : -1));
+      }
+      // 比較関数は「正なら後ろ」。新しい順(既定)は a<b のとき a を後ろへ回す。
+      const dir = mode === "source-asc" ? -1 : 1;
+      const head = [...withSrc].sort((a, b) => (a.sourceDate < b.sourceDate ? dir : -dir));
+      const tail = [...noSrc].sort((a, b) => (a.date < b.date ? 1 : -1));
+      return head.concat(tail);
+    }
+
+    function dateCell(item, mode) {
+      if (mode === "posted" || !item.sourceDate) {
+        return `<span class="news-date"><span class="date-kind">掲載</span>${item.date.replace(/-/g, "/")}</span>`;
+      }
+      const kind = item.sourceDateKind || "出典";
+      return `<span class="news-date"><span class="date-kind">${kind}</span>${item.sourceDate.replace(/-/g, "/")}</span>`;
+    }
+
+    function render(mode) {
+      body.innerHTML = order(mode)
+        .map((item) => {
+          const sourceType = typeof ozuSourceType === "function" ? ozuSourceType(item.source) : "その他";
+          const tags = (item.tags || [])
+            .map((t) => `<span class="card-tag" style="--tag-c:${ozuTagColorVar(t)}">${t}</span>`)
+            .join("");
+          return `
       <div class="news-card" data-category="${item.category}" data-tags="${(item.tags || []).join(",")}" data-source-type="${sourceType}" style="--tag-c:${ozuCategoryColorVar(item.category)}">
-        <span class="news-date">${item.date.replace(/-/g, "/")}</span>
+        ${dateCell(item, mode)}
         <a class="news-title" href="../eachnews/${item.slug}.html">${item.title}</a>
         <span class="news-source">${item.source}</span>
         <div class="card-tags-row">${tags}</div>
       </div>`;
-      })
-      .join("");
+        })
+        .join("");
+      // 並べ替えで作り直したので、いま効いている絞り込みをかけ直す
+      if (typeof window.ozuApplyNewsFilters === "function") window.ozuApplyNewsFilters();
+    }
+
+    render("source-desc");
+
+    document.querySelectorAll("#sort-filter [data-sort]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll("#sort-filter [data-sort]").forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        render(btn.dataset.sort);
+      });
+    });
   })();
 
   (function renderTagFilter() {

@@ -1,0 +1,29 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>measure</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head><body>
+<div data-site-header data-prefix=""></div>
+<script src="assets/js/site-chrome.js"></script>
+<script>
+setTimeout(function(){
+  var wrap=document.querySelector('.site-header .wrap');
+  var nav=document.querySelector('.main-nav');
+  var logo=document.querySelector('.logo');
+  var toggle=document.querySelector('.nav-toggle');
+  var hidden=getComputedStyle(nav).position==='fixed';
+  var items=[].slice.call(nav.children).map(function(c){
+    return (c.textContent||'').trim().slice(0,10)+':'+Math.round(c.getBoundingClientRect().width);
+  });
+  document.title='W='+window.innerWidth
+    +' | drawer='+hidden
+    +' | wrapClient='+wrap.clientWidth+' scroll='+wrap.scrollWidth
+    +' | logo='+Math.round(logo.getBoundingClientRect().width)
+    +' | nav='+Math.round(nav.getBoundingClientRect().width)
+    +' | navScroll='+nav.scrollWidth
+    +' | gap='+getComputedStyle(nav).gap
+    +' | fs='+getComputedStyle(nav.querySelector('a')).fontSize
+    +' | items='+items.join(', ');
+},300);
+</script>
+</body></html>

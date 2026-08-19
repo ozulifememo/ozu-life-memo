@@ -733,7 +733,7 @@ const OZU_NEWS = [
   {
     slug: "chosei-cost",
     date: "2026-04-25",
-    title: "地元企業の活力を支える調整コスト",
+    title: "ホテルの歯ブラシで国内シェア1位。その会社は大洲市新谷にある",
     category: "shiten",
     source: "note",
     tags: ["産業・農業", "財政・税金"],
@@ -773,7 +773,7 @@ const OZU_NEWS = [
   {
     slug: "aihara-san",
     date: "2026-04-05",
-    title: "行政相談委員・相原さんの功績",
+    title: "16年間、無報酬で。行政相談委員の相原さんが総務大臣表彰",
     category: "shiten",
     source: "広報おおず",
     tags: ["議会・行政"],
@@ -781,7 +781,7 @@ const OZU_NEWS = [
   {
     slug: "machizukuri-hyosho",
     date: "2026-04-04",
-    title: "大洲市地域づくり表彰(広報おおず)",
+    title: "25年間ごみ拾い、30年以上ホタルの案内。地域づくり表彰の5組",
     category: "shiten",
     source: "広報おおず",
     tags: ["まちづくり"],

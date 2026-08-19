@@ -56,6 +56,7 @@
   --shadow-lg: 0 16px 40px rgba(22, 35, 47, 0.12), 0 4px 10px rgba(22, 35, 47, 0.06);
 
   --max-width: 1160px;
+  --header-h: 76px;
   --radius-sm: 8px;
   --radius: 14px;
   --radius-lg: 20px;
@@ -124,11 +125,11 @@ a {
 
 /* Header */
 /* [data-site-header]は、site-chrome.jsがヘッダーHTMLを差し込む前の空のプレースホルダー。
-   高さを指定しないとJS実行までの一瞬ヘッダーが無い状態になり、実際の高さ(.wrapの76px)分
+   高さを指定しないとJS実行までの一瞬ヘッダーが無い状態になり、実際の高さ(--header-h)分
    レイアウトがガクッとずれる(CLS)ので、あらかじめ同じ高さを確保しておく。 */
 [data-site-header] {
   display: block;
-  min-height: 76px;
+  min-height: var(--header-h);
 }
 
 .site-header {
@@ -141,12 +142,21 @@ a {
   border-bottom: 1px solid var(--color-border);
 }
 
+/* ヘッダーだけは本文の枠(--max-width: 1160px)を使わず画面幅いっぱいに広げる。
+   本文は読みやすさ優先で幅を抑えたいが、ロゴとナビまで同じ幅に押し込めると
+   大きなモニターで「真ん中だけ窮屈」に見えてしまう。
+   中途半端な幅(1400px程度)は本文と微妙にズレて雑に見えるので、
+   ・ロゴ+ナビ … 画面左端に寄せる
+   ・お問い合わせボタン … 画面右端に寄せる(margin-left:auto)
+   と割り切って、意図的な全幅ヘッダーにしている。 */
 .site-header .wrap {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 28px;
-  height: 76px;
+  justify-content: flex-start;
+  gap: 36px;
+  height: var(--header-h);
+  max-width: none;
+  padding: 0 clamp(20px, 3vw, 56px);
 }
 
 .logo {
@@ -161,23 +171,14 @@ a {
 .main-nav {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 26px;
+  /* flex-shrink: 0 にして、狭い幅でも項目が潰れて重ならないようにする */
+  flex: 1 0 auto;
 }
 
-/* ナビ項目が増えて1行に収まりきらない幅では、間隔と文字サイズを詰めてロゴが
-   折り返さないようにする。コンテンツ幅は--max-width(1160px)で頭打ちなので、
-   ウィンドウがそれより広くても詰めたスタイルのままでよい(上限は設けない)。 */
-@media (min-width: 861px) {
-  .main-nav {
-    gap: 14px;
-  }
-  .main-nav a {
-    font-size: 0.83rem;
-  }
-  .cta-btn {
-    padding: 8px 16px;
-    font-size: 0.83rem;
-  }
+/* お問い合わせボタンだけ右端へ追い出す */
+.main-nav .cta-btn {
+  margin-left: auto;
 }
 
 .main-nav a {
@@ -288,6 +289,60 @@ a {
   box-shadow: var(--shadow-md);
 }
 
+/* ── ナビの段階的な圧縮 ──────────────────────────────
+   ナビは実寸で約790px、ロゴが約140px。画面が狭くなるにつれて
+   「余白 → 文字サイズ」の順に少しずつ削り、ハンバーガーに逃げるのを
+   できるだけ後(980px未満)まで引き延ばす。縦置きモニター(幅1080px前後)でも
+   メニューが全部見えるようにするための調整。
+   ※ここは基本スタイルより後ろに置くこと。前に置くと後の宣言に負けて効かない。 */
+@media (max-width: 1399px) {
+  .site-header .wrap {
+    gap: 30px;
+  }
+  .main-nav {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .site-header .wrap {
+    gap: 24px;
+    padding: 0 24px;
+  }
+  .main-nav {
+    gap: 14px;
+  }
+  .main-nav a,
+  .nav-dropdown-trigger {
+    font-size: 0.92rem;
+  }
+  .main-nav .cta-btn {
+    padding: 10px 18px;
+    font-size: 0.84rem;
+  }
+}
+
+@media (max-width: 1039px) {
+  .site-header .wrap {
+    gap: 20px;
+    padding: 0 20px;
+  }
+  .logo {
+    font-size: 1rem;
+  }
+  .main-nav {
+    gap: 10px;
+  }
+  .main-nav a,
+  .nav-dropdown-trigger {
+    font-size: 0.86rem;
+  }
+  .main-nav .cta-btn {
+    padding: 9px 14px;
+    font-size: 0.8rem;
+  }
+}
+
 .nav-toggle {
   display: none;
   background: none;
@@ -318,10 +373,10 @@ a {
   top: 7px;
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 979px) {
   .main-nav {
     position: fixed;
-    top: 72px;
+    top: var(--header-h);
     left: 0;
     right: 0;
     flex-direction: column;
@@ -336,7 +391,7 @@ a {
   }
 
   .main-nav.open {
-    max-height: calc(100vh - 72px);
+    max-height: calc(100vh - var(--header-h));
   }
 
   .main-nav a,
@@ -344,6 +399,17 @@ a {
     width: 100%;
     padding: 14px 24px;
     border-bottom: 1px solid var(--color-border);
+  }
+
+  /* 上の圧縮ルールで小さくした文字を、ドロワーでは読みやすい大きさに戻す */
+  .main-nav a,
+  .main-nav .cta-btn,
+  .nav-dropdown-trigger {
+    font-size: 0.95rem;
+  }
+
+  .logo {
+    font-size: var(--text-md);
   }
 
   .main-nav .cta-btn {

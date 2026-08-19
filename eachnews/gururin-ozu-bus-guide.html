@@ -6,6 +6,9 @@
 <title>大洲市の循環バス「ぐるりんおおず」、乗り方の実用ガイド ｜ OZU LIFE MEMO</title>
 <meta name="description" content="大洲市の循環バス「ぐるりんおおず」、運賃・本数・所要時間から行き先表示の見方まで、公開データから読み解いた乗り方ガイド。">
 <link rel="icon" href="../assets/img/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link data-ozu-fonts rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;family=Shippori+Mincho+B1:wght@600;700&amp;display=swap">
 <link rel="stylesheet" href="../assets/css/style.css">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="OZU LIFE MEMO">
@@ -47,7 +50,8 @@
       <h2 style="margin-top:0;">出典・参考にした資料</h2>
       <a class="source-link" href="https://www.city.ozu.ehime.jp/site/opendata/44871.html" target="_blank" rel="noopener">大洲市オープンデータ「循環バス『ぐるりんおおず』標準的なバス情報」（令和8年4月1日更新、GTFS-JPデータを全件解析）</a>
       <a class="source-link" href="https://www.pref.ehime.jp/opendata-catalog/dataset/2787.html" target="_blank" rel="noopener">愛媛県オープンデータカタログ「循環バス『ぐるりんおおず』標準的なバス情報フォーマット」</a>
-      <a class="source-link" href="https://www.city.ozu.ehime.jp/soshiki/fukkou/31044.html" target="_blank" rel="noopener">市内循環バス「ぐるりんおおず」（大洲市、データ内で事業者URLとして指定されているページ）</a>
+      <a class="source-link" href="https://www.city.ozu.ehime.jp/soshiki/chiikishinkou/31044.html" target="_blank" rel="noopener">市内循環バス「ぐるりんおおず」の運行について（大洲市地域振興課、2023年6月1日更新）</a>
+      <a class="source-link" href="https://www.city.ozu.ehime.jp/soshiki/chiikishinkou/68666.html" target="_blank" rel="noopener">ぐるりん1Dayチケットの販売を始めます（大洲市地域振興課）</a>
     </div>
 
     <p class="commentary">
@@ -60,20 +64,57 @@
       使ったのは<strong>令和8年4月1日から令和9年3月31日まで有効なデータ</strong>だ。市が更新するので、乗る前には最新の時刻表を確認してほしい。
     </p>
 
-    <h2>運賃はどこまで乗っても150円。ただし乗り継ぎ割引はない</h2>
+    <h2>運賃は「150円均一」ではなかった</h2>
     <p class="commentary">
-      運賃データを見ると、料金設定は1種類しかない。<strong>150円均一</strong>だ。距離も区間も関係ない。
+      運行データの運賃テーブルには<strong>150円</strong>が1種類だけ登録されている。それを見て「150円均一」と思い込みかけたのだが、市の運行案内を読んだら違った。
+    </p>
+    <ul style="color:var(--color-text-muted);line-height:1.9;">
+      <li>一般（中学生以上）: <strong>150円</strong></li>
+      <li>子ども（小学生以下）: <strong>100円</strong></li>
+      <li>障がい者: <strong>100円</strong></li>
+    </ul>
+    <p class="commentary">
+      データに載っていたのは大人運賃だけだった。<strong>子どもと障がい者は100円</strong>で、公開データだけを見ていると気づけない。ここは市のページを確認しないと分からない部分だ。
     </p>
     <p class="commentary">
-      あわせて、データには<strong>乗り継ぎ回数「0」</strong>と設定されている。<strong>乗り継ぎ割引はない</strong>ということで、別の便に乗り換えるとまた150円かかる。
+      距離による違いはないので、<strong>乗る区間を気にする必要はない</strong>という点は変わらない。市内のどこからどこまで乗っても同じ額だ。
+    </p>
+
+    <h2>病院に行くなら、帰りは50円引きになる</h2>
+    <p class="commentary">
+      いちばん見落とされていそうな制度がこれだった。
     </p>
     <p class="commentary">
-      なお、このバスの収支については<a href="gikai-gururin-ozu-shushi.html">別記事</a>で扱った。運賃で回収できているのは運行経費の3割ほどで、残りは市が負担している。150円という数字は、そういう前提の上に乗っている。
+      市の案内にはこう書かれている。<strong>「ぐるりんおおずを利用して、次の病院に来院した場合、帰りのぐるりんおおずで使用できる50円割引券を交付します」。</strong>
+    </p>
+    <p class="commentary">
+      対象は<strong>市立大洲病院・喜多医師会病院・大洲記念病院・大洲中央病院</strong>の4つ。<strong>往復で300円かかるところが、250円になる。</strong>
+    </p>
+    <p class="commentary">
+      通院で毎週使う人なら、年間で何千円か変わってくる。運行データの側には<strong>乗り継ぎ回数「0」</strong>としか書かれていないので、データだけ読んでいたら「割引は一切ない」と結論づけていた。危なかった。
+    </p>
+
+    <h2>1日3回乗るなら、1Dayチケットのほうが安い</h2>
+    <p class="commentary">
+      もう1つ、令和7年9月20日から<strong>「ぐるりん1Dayチケット」</strong>が販売されている。当日に限り何度でも乗り降りできる一日乗車券だ。
+    </p>
+    <ul style="color:var(--color-text-muted);line-height:1.9;">
+      <li>一般: <strong>300円</strong></li>
+      <li>子ども・障がい者: <strong>200円</strong></li>
+    </ul>
+    <p class="commentary">
+      計算するとはっきりする。一般は150円なので、<strong>2回乗ればちょうど同額、3回乗れば150円得</strong>になる。子どもは100円なので、こちらも<strong>2回で同額、3回で100円得</strong>だ。
+    </p>
+    <p class="commentary">
+      買い物と通院で2か所回って帰る、という使い方なら3回乗ることになる。<strong>「2か所以上寄るなら1Dayチケット」</strong>と覚えておけばよさそうだ。
+    </p>
+    <p class="commentary">
+      このバスの収支については<a href="gikai-gururin-ozu-shushi.html">別記事</a>で扱った。運賃で回収できているのは運行経費の3割ほどで、残りは市が負担している。150円という数字は、そういう前提の上に乗っている。1Dayチケットの販売実績もそちらで触れた。
     </p>
 
     <h2>「1日11本」という数え方が、実は誤解のもとだった</h2>
     <p class="commentary">
-      運行系統は4つに分かれている。右回り、左回り、そして「土日祝運休便」の右回りと左回りだ。便数を数えるとこうなる。
+      運行しているのは<strong>伊予鉄南予バス株式会社</strong>で、路線名は<strong>「東大洲右回り」と「東大洲左回り」</strong>の2つ。運行データ上はこれに「土日祝運休便」の右回り・左回りが加わって、4系統に分かれている。便数を数えるとこうなる。
     </p>
     <ul style="color:var(--color-text-muted);line-height:1.9;">
       <li>平日: <strong>11本</strong>（右回り6本＋左回り5本）</li>
@@ -184,7 +225,7 @@
         <tr><td>始発</td><td>7:15（大洲駅前発）</td><td>8:10（市立大洲病院発）</td></tr>
         <tr><td>最終便の発車</td><td>17:45（市立大洲病院発）</td><td>16:10（市立大洲病院発）</td></tr>
         <tr><td>最終便の到着</td><td><strong>18:40</strong>（大洲駅前）</td><td><strong>17:23</strong>（市立大洲病院）</td></tr>
-        <tr><td>運賃</td><td>150円均一</td><td>150円均一</td></tr>
+        <tr><td>運賃</td><td colspan="2">一般150円／子ども・障がい者100円（曜日による違いなし）</td></tr>
       </table>
     </div>
     <p class="commentary">

@@ -8,14 +8,25 @@
       '<a href="' + home + '">HOME</a>' +
       '<a href="' + prefix + 'concept/">サイト紹介</a>' +
       '<a href="' + prefix + 'link/">リンク集</a>' +
+      '<div class="nav-dropdown">' +
+      '<button type="button" class="nav-dropdown-trigger">読み物<span class="nav-caret">▾</span></button>' +
+      '<div class="nav-dropdown-menu">' +
       '<a href="' + prefix + 'news/">大洲ノート</a>' +
       '<a href="' + prefix + 'monthly/">月間まとめ</a>' +
-      '<a href="' + prefix + 'photo/">フリー写真</a>' +
       '<a href="' + prefix + 'history/">大洲の歴史</a>' +
       '<a href="' + prefix + 'book/">大洲と読書</a>' +
+      "</div>" +
+      "</div>" +
+      '<a href="' + prefix + 'photo/">フリー写真</a>' +
       '<a href="' + prefix + 'map/">大洲の地図</a>' +
+      '<div class="nav-dropdown">' +
+      '<button type="button" class="nav-dropdown-trigger">遊ぶ<span class="nav-caret">▾</span></button>' +
+      '<div class="nav-dropdown-menu">' +
       '<a href="' + prefix + 'quiz/">大洲検定</a>' +
       '<a href="' + prefix + 'geoguess/">大洲ジオゲッサー</a>' +
+      "</div>" +
+      "</div>" +
+      '<a href="' + prefix + 'interview/">大洲のとなり人</a>' +
       '<a href="#" class="cta-btn" data-modal-open>お問い合わせ</a>' +
       "</nav>" +
       '<button class="nav-toggle" aria-label="メニューを開く"><span></span></button>' +
@@ -56,7 +67,11 @@
       if (!href || href === "#") return;
       try {
         var resolved = new URL(href, location.href).pathname.replace(/index\.html$/, "");
-        if (resolved === here) a.classList.add("current");
+        if (resolved === here) {
+          a.classList.add("current");
+          var dropdown = a.closest(".nav-dropdown");
+          if (dropdown) dropdown.querySelector(".nav-dropdown-trigger").classList.add("current");
+        }
       } catch (e) {}
     });
   }

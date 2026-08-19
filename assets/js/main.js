@@ -8,6 +8,21 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Nav dropdown (タップ/クリックでも開閉できるように。hoverが効かないタッチ端末向け)
+  const dropdowns = document.querySelectorAll(".nav-dropdown");
+  dropdowns.forEach((dropdown) => {
+    const trigger = dropdown.querySelector(".nav-dropdown-trigger");
+    trigger?.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const isOpen = dropdown.classList.contains("open");
+      dropdowns.forEach((d) => d.classList.remove("open"));
+      if (!isOpen) dropdown.classList.add("open");
+    });
+  });
+  document.addEventListener("click", () => {
+    dropdowns.forEach((d) => d.classList.remove("open"));
+  });
+
   // Contact modal
   const modal = document.querySelector("[data-modal]");
   const openers = document.querySelectorAll("[data-modal-open]");

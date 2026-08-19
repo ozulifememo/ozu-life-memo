@@ -255,7 +255,7 @@ const OZU_NEWS = [
   {
     slug: "fuji-point",
     date: "2026-08-18",
-    title: "フジのポイント還元率、実は毎月20日・30日が本命。マルナカ大洲店で使える買い物術",
+    title: "大洲に「フジ」の店はもうない。マルナカ大洲店で5%引きになる日",
     category: "kurashi",
     source: "フジ",
     tags: ["産業・農業"],

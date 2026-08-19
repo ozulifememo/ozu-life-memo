@@ -35,18 +35,60 @@
     );
   }
 
-  var FOOTER_PLAIN =
-    '<div class="wrap">' +
-    "<p>OZU LIFE MEMO は個人運営の非公式サイトです。大洲市の公式情報ではありません。</p>" +
-    "<p>&copy; 2026 OZU LIFE MEMO</p>" +
-    "</div>";
+  // フッターは「2行だけ」だと、ページの終わりが唐突で作りかけに見える。
+  // サイトの中身が一望できる索引として組み直した。
+  // data-prefix はヘッダー側で持っているので、フッターも同じ値を使う。
+  function buildFooter(prefix, variant) {
+    var home = prefix === "" ? "./" : prefix;
+    var cols =
+      '<div class="footer-cols">' +
+      '<div class="footer-col footer-col--about">' +
+      '<p class="footer-logo">OZU LIFE MEMO</p>' +
+      "<p>大洲市の非公式生活情報サイト。市役所や議会の硬い資料、SNSの断片的な話題を、" +
+      "1人の市民の目線で読み解いています。</p>" +
+      '<p class="footer-note">個人運営の非公式サイトです。大洲市の公式情報ではありません。' +
+      "制度の詳細は必ず公式ホームページでご確認ください。</p>" +
+      "</div>" +
 
-  var FOOTER_ARTICLE =
-    '<div class="wrap">' +
-    "<p>OZU LIFE MEMO は個人運営の非公式サイトです。大洲市の公式情報ではありません。</p>" +
-    '<p class="footer-feedback">この記事の内容に誤りや古い情報があれば、ぜひ教えてください。感想やご指摘も大歓迎です。 <a href="#" data-modal-open>お問い合わせはこちら</a></p>' +
-    "<p>&copy; 2026 OZU LIFE MEMO</p>" +
-    "</div>";
+      '<div class="footer-col">' +
+      "<h3>読み物</h3>" +
+      '<a href="' + prefix + 'news/">大洲ノート</a>' +
+      '<a href="' + prefix + 'jiyu-kenkyu/">大洲の自由研究</a>' +
+      '<a href="' + prefix + 'monthly/">月間まとめ</a>' +
+      '<a href="' + prefix + 'history/">大洲の歴史</a>' +
+      '<a href="' + prefix + 'book/">大洲と読書</a>' +
+      '<a href="' + prefix + 'interview/">大洲のとなり人</a>' +
+      "</div>" +
+
+      '<div class="footer-col">' +
+      "<h3>調べる・遊ぶ</h3>" +
+      '<a href="' + prefix + 'map/">大洲の地図</a>' +
+      '<a href="' + prefix + 'photo/">フリー写真</a>' +
+      '<a href="' + prefix + 'link/">リンク集</a>' +
+      '<a href="' + prefix + 'quiz/">大洲検定</a>' +
+      '<a href="' + prefix + 'geoguess/">大洲ジオゲッサー</a>' +
+      "</div>" +
+
+      '<div class="footer-col">' +
+      "<h3>このサイトについて</h3>" +
+      '<a href="' + prefix + 'concept/">サイト紹介</a>' +
+      '<a href="' + home + '">トップページ</a>' +
+      '<a href="#" data-modal-open>お問い合わせ</a>' +
+      "</div>" +
+      "</div>";
+
+    var feedback =
+      variant === "article"
+        ? '<p class="footer-feedback">この記事の内容に誤りや古い情報があれば、ぜひ教えてください。' +
+          '感想やご指摘も大歓迎です。 <a href="#" data-modal-open>お問い合わせはこちら</a></p>'
+        : "";
+
+    return (
+      '<div class="wrap">' + cols + feedback +
+      '<p class="footer-copy">&copy; 2026 OZU LIFE MEMO</p>' +
+      "</div>"
+    );
+  }
 
   var MODAL_HTML =
     '<div class="modal-box">' +
@@ -86,8 +128,9 @@
   var footerEl = document.querySelector("[data-site-footer]");
   if (footerEl) {
     var variant = footerEl.getAttribute("data-site-footer");
-    footerEl.outerHTML =
-      '<footer class="site-footer">' + (variant === "article" ? FOOTER_ARTICLE : FOOTER_PLAIN) + "</footer>";
+    // フッターのリンクもヘッダーと同じ相対パスを使う
+    var footerPrefix = headerEl ? headerEl.getAttribute("data-prefix") || "" : "";
+    footerEl.outerHTML = '<footer class="site-footer">' + buildFooter(footerPrefix, variant) + "</footer>";
   }
 
   var modalEl = document.querySelector("[data-site-modal]");

@@ -81,6 +81,12 @@ body {
   line-height: 1.75;
   font-size: var(--text-base);
   -webkit-font-smoothing: antialiased;
+  /* 大洲検定・ジオゲッサー・データなど中身の短いページで、フッターが画面の
+     途中で終わって下に何もない帯ができてしまうのを防ぐ。
+     bodyを縦フレックスにして、フッターに margin-top:auto を効かせる。 */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 img {
@@ -91,6 +97,34 @@ img {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+/* ── 日本語の折り返しをきれいにする ────────────────────────────
+   日本語は英語と違って「どこでも改行できる」ので、放っておくと
+   「大洲市民の非公式情報サイ／ト」のように最後の1文字だけ次の行に
+   落ちて読みにくくなる。
+   ・word-break: auto-phrase … 文節(意味のまとまり)で改行してくれる
+   ・text-wrap: pretty      … 最後の行が極端に短くならないよう調整する
+   どちらも未対応ブラウザでは無視されるだけなので、害はない。
+   長い本文にかけると重いので、見出しや短い説明文だけに絞ってかける。 */
+h1, h2, h3, h4,
+.hero-text p,
+.page-hero p,
+.pick-card h3,
+.pick-card p,
+.news-title,
+.link-card strong,
+.link-card p,
+.icon-card,
+.monthly-headline,
+.monthly-comment,
+.featured-article .featured-body p,
+.fun-corner-card p,
+.sidebar-latest-list li a,
+.news-category-card p,
+figcaption {
+  word-break: auto-phrase;
+  text-wrap: pretty;
 }
 
 .wrap {
@@ -349,6 +383,8 @@ a {
   border: none;
   cursor: pointer;
   padding: 8px;
+  /* ヘッダーは左寄せ(flex-start)なので、ハンバーガーは自力で右端へ寄せる */
+  margin-left: auto;
 }
 
 .nav-toggle span,
@@ -585,14 +621,26 @@ a {
   .hero h1 { font-size: var(--text-2xl); }
 }
 
+/* スマホ幅では36pxだと「大洲の「知りたい」を、」が1行に収まらず、
+   意図した2行のキャッチコピーが4行に割れてしまうので一段小さくする */
+@media (max-width: 520px) {
+  .hero h1,
+  .page-hero h1,
+  .article-page h1 {
+    font-size: 1.8rem;
+  }
+}
+
 /* Home: クロコが選んだ記事のピックアップ */
 .home-picks {
   padding-top: 8px;
 }
 
+/* 4列(1枚あたり約250px)だとタイトルが「〜セレクシ／ョン」のように
+   1文字だけ次の行に落ちるので、1枚を広くして3列にする */
 .pick-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 18px;
 }
 
@@ -834,6 +882,16 @@ section {
   flex-wrap: wrap;
   align-items: center;
   gap: 10px 22px;
+}
+
+/* 記事件数の小さい数字。以前は各ページのHTML側で font-size:.4em を指定していて、
+   小さいタグでは6px程度になり数字が読めなかったので、下限をここで決める */
+.tagcloud sup {
+  font-size: 0.72rem;
+  font-weight: 700;
+  opacity: 0.75;
+  margin-left: 1px;
+  top: -0.15em;
 }
 
 .tagcloud a {
@@ -1101,10 +1159,14 @@ section {
   margin: 0 auto;
 }
 
+/* 各ページの中見出し。本文の太字(16px)とほぼ同じ大きさで区別がつかなかったので、
+   .article-page h2 と同じ大きさ・色に揃えて階層をはっきりさせる */
 .content-block h2 {
-  color: var(--color-brand);
-  font-size: 1.2rem;
-  margin: 36px 0 12px;
+  color: var(--color-brand-dark);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  line-height: 1.5;
+  margin: var(--space-7) 0 var(--space-3);
 }
 
 /* Source list, boxed like article-chart/article-diagram */
@@ -1129,6 +1191,23 @@ section {
 
 .content-block.source-box .source-link:last-child {
   margin-bottom: 0;
+}
+
+/* 出典が10件あると縦に長く、本文を読み始めるまで遠くなってしまう。
+   横幅に余裕がある画面では2列に流して、高さを半分に抑える。
+   ただし出典が4件以下の記事(全体の約7割)で2列にすると右半分が空いて
+   崩れて見えるので、:has() で「5件目がある記事」だけに限定する。 */
+@media (min-width: 700px) {
+  .content-block.source-box:has(.source-link:nth-of-type(5)) {
+    columns: 2;
+    column-gap: var(--space-5);
+  }
+  .content-block.source-box:has(.source-link:nth-of-type(5)) h2 {
+    column-span: all;
+  }
+  .content-block.source-box .source-link {
+    break-inside: avoid;
+  }
 }
 
 .content-block p {
@@ -1157,6 +1236,15 @@ section {
   border-color: var(--color-brand);
 }
 
+/* 大洲の自由研究(jiyu-kenkyu)のタイトル部分は各ページのHTMLに
+   style="max-width:820px" と直接書かれており、本文(.jk-section = 760px)と
+   左端が30pxずれて見えていた。記事は今後もテンプレートから増えるので、
+   ファイルを1つずつ直すのではなく、ここで本文幅に揃える。
+   (インラインstyleに勝つには !important が必要) */
+.jk-hero .wrap {
+  max-width: 760px !important;
+}
+
 /* Photo grid */
 .photo-grid {
   display: grid;
@@ -1164,7 +1252,22 @@ section {
   gap: 14px;
 }
 
+/* 各写真はクリックで元サイズを開けるリンクにしている(素材として持ち帰れるように) */
+.photo-item {
+  display: block;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.photo-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
 .photo-grid img {
+  width: 100%;
   border-radius: var(--radius);
   aspect-ratio: 4 / 3;
   object-fit: cover;
@@ -1172,6 +1275,8 @@ section {
 
 /* Footer */
 .site-footer {
+  /* 中身が短いページでも画面の一番下に居座らせる(bodyのflex-direction:columnと対) */
+  margin-top: auto;
   border-top: 1px solid var(--color-border);
   background: var(--color-surface-alt);
   padding: var(--space-7) 0 var(--space-6);
@@ -1366,8 +1471,11 @@ section {
 }
 
 .link-section-title {
-  font-size: 1.2rem;
-  margin: 0 0 20px;
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-brand-dark);
+  line-height: 1.5;
+  margin: 0 0 24px;
 }
 
 .link-card-grid {
@@ -1545,6 +1653,7 @@ section {
 .article-page h2 {
   font-size: var(--text-lg);
   font-weight: 700;
+  line-height: 1.5;
   color: var(--color-brand-dark);
   margin: var(--space-7) 0 var(--space-3);
 }
@@ -1566,7 +1675,8 @@ section {
   text-decoration: underline;
   text-underline-offset: 2px;
   margin-bottom: var(--space-1);
-  word-break: break-all;
+  /* break-all は1文字単位でぶつ切りになるので、必要なときだけ折る指定にする */
+  overflow-wrap: anywhere;
   font-size: var(--text-xs);
 }
 
@@ -1942,30 +2052,77 @@ section {
   margin: 0 0 18px;
 }
 
+/* 1か月に80件近く並ぶ月があり、1列の羅列だと「文字の壁」になって読めなかった。
+   広い画面では2列に分け、1行ずつ区切り線とホバーを付けて目で追えるようにする。 */
 .monthly-card ul {
   list-style: none;
   margin: 0;
   padding: 14px 0 0;
   border-top: 1px solid var(--color-border);
   display: grid;
-  gap: 8px;
+  /* min() を挟まないと、スマホ幅(1列に入りきらない幅)で330pxが下限になって横スクロールが出る */
+  grid-template-columns: repeat(auto-fill, minmax(min(330px, 100%), 1fr));
+  gap: 0 32px;
 }
 
 .monthly-card li {
-  display: flex;
-  gap: 10px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: baseline;
+  gap: 4px 10px;
+  padding: 7px 8px;
+  margin: 0 -8px;
+  border-radius: 6px;
+  border-bottom: 1px solid var(--color-border);
   font-size: 0.88rem;
-  flex-wrap: wrap;
+  line-height: 1.6;
+}
+
+.monthly-card li:hover {
+  background: var(--color-surface-alt);
 }
 
 .monthly-card .rdate {
-  color: var(--color-text-muted);
+  grid-row: 1;
+  color: var(--color-text-faint);
+  font-size: var(--text-xs);
   white-space: nowrap;
 }
 
+/* カテゴリは [大洲の視点] という素のテキストだったので、色付きのチップにして
+   ひと目でカテゴリが分かるようにする */
 .monthly-card .rtag {
-  color: var(--color-brand);
+  grid-row: 1;
+  justify-self: start;
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  font-size: var(--text-xs);
+  font-weight: 600;
   white-space: nowrap;
+}
+
+.monthly-card li[data-category="ima"] .rtag {
+  color: var(--color-tag-mikan);
+  border-color: color-mix(in srgb, var(--color-tag-mikan) 35%, transparent);
+}
+
+.monthly-card li[data-category="kurashi"] .rtag {
+  color: var(--color-tag-teal);
+  border-color: color-mix(in srgb, var(--color-tag-teal) 35%, transparent);
+}
+
+.monthly-card li[data-category="shiten"] .rtag {
+  color: var(--color-tag-indigo);
+  border-color: color-mix(in srgb, var(--color-tag-indigo) 35%, transparent);
+}
+
+.monthly-card li > a {
+  grid-column: 1 / -1;
+  font-weight: 600;
+  line-height: 1.55;
 }
 
 .monthly-card li a:hover {

@@ -78,7 +78,7 @@
         .map(
           (item) => `
         <li data-category="${item.category}">
-          <span class="rdate">${item.date.replace(/-/g, "/")}</span>
+          <span class="rdate">${item.date.slice(5).replace("-", "/")}</span>
           <span class="rtag">[${OZU_CATEGORY_LABELS[item.category]}]</span>
           <a href="../eachnews/${item.slug}.html">${item.title}</a>
         </li>`

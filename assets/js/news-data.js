@@ -1005,7 +1005,7 @@ const OZU_NEWS = [
   {
     slug: "ozu-chiiki-okoshi-tai",
     date: "2026-08-08",
-    title: "大洲の地域おこし協力隊。活動報告はあまり知られていない",
+    title: "大洲の地域おこし協力隊、いま8人が活動中。何をしているのか調べてみた",
     category: "shiten",
     source: "大洲市ホームページ（地域振興課）",
     tags: ["まちづくり", "議会・行政"],

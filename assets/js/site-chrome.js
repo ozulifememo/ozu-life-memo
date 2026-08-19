@@ -15,6 +15,7 @@
       '<a href="' + prefix + 'monthly/">月間まとめ</a>' +
       '<a href="' + prefix + 'history/">大洲の歴史</a>' +
       '<a href="' + prefix + 'book/">大洲と読書</a>' +
+      '<a href="' + prefix + 'jiyu-kenkyu/">大洲の自由研究</a>' +
       "</div>" +
       "</div>" +
       '<a href="' + prefix + 'photo/">フリー写真</a>' +

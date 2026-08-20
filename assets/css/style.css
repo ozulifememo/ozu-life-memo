@@ -3660,6 +3660,17 @@ section {
   letter-spacing: 0.04em;
 }
 
+/* トップのフッターに出す累計訪問数。
+   数字が取れないとき(GoatCounter側の設定OFF・広告ブロッカー等)は
+   hidden属性のまま行ごと消えるので、レイアウトは崩れない */
+.footer-stats {
+  margin: var(--space-4) 0 0;
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+  letter-spacing: 0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
 @media (max-width: 900px) {
   .footer-cols {
     grid-template-columns: 1fr 1fr;

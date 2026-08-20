@@ -83,8 +83,12 @@
           '感想やご指摘も大歓迎です。 <a href="#" data-modal-open>お問い合わせはこちら</a></p>'
         : "";
 
+    // 累計訪問数の行(トップページだけ。prefixが空=トップ)。
+    // 中身はGoatCounterのカウンターAPIから後で入れる。取れないときは隠れたまま。
+    var stats = prefix === "" ? '<p class="footer-stats" id="footer-stats" hidden></p>' : "";
+
     return (
-      '<div class="wrap">' + cols + feedback +
+      '<div class="wrap">' + cols + feedback + stats +
       '<p class="footer-copy">&copy; 2026 OZU LIFE MEMO</p>' +
       "</div>"
     );
@@ -139,4 +143,27 @@
   }
 
   markCurrentNav();
+
+  // ── 累計訪問数(トップページのフッターだけ) ──────────────
+  // GoatCounterの公式カウンターAPIで、サイト全体の累計訪問数を取って表示する。
+  // GoatCounter側の設定「Allow adding visitor counts on your website」がONのときだけ動く。
+  // 設定がOFF・広告ブロッカー・通信失敗のときは、行ごと隠れたままにする(何も壊れない)。
+  // 数字は最大4時間キャッシュされるので、リアルタイムではない。
+  var statsEl = document.getElementById("footer-stats");
+  if (statsEl && window.fetch) {
+    fetch("https://ozulifememo.goatcounter.com/counter/TOTAL.json")
+      .then(function (res) {
+        if (!res.ok) throw new Error("counter unavailable");
+        return res.json();
+      })
+      .then(function (data) {
+        var n = String(data.count || "").trim();
+        if (!n || n === "0") return;
+        // GoatCounterは桁区切りに細いスペースを使うので、コンマに直す
+        n = n.replace(/[\s  ]+/g, ",");
+        statsEl.textContent = "これまでの訪問: のべ" + n + "回(2026年8月からの累計)";
+        statsEl.hidden = false;
+      })
+      .catch(function () {});
+  }
 })();

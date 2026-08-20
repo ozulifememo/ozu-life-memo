@@ -55,6 +55,8 @@ CHROME_REQUIRED = [
 # 新方式が全記事に行き渡ったら、下の ARTICLE_PHOTO_OPTIONAL を必須へ移すこと。
 ARTICLE_REQUIRED = [
     ("source-box", "出典ブロックの装飾クラス"),
+    ("article-summary", "冒頭の要点3行ボックス"),
+    ("article-readtime", "読了時間の表示(tools/add_readtime.pyで入る)"),
     ("data-site-modal", "お問い合わせモーダル"),
     ("application/ld+json", "構造化データ(検索エンジン向け)"),
     ('rel="canonical"', "正規URL指定"),
@@ -585,6 +587,8 @@ BROKEN_REGISTRY = """const OZU_NEWS = [
 # わざと壊したページから、必ず見つかってほしい項目
 EXPECTED = [
     ("構造", "source-box"),
+    ("構造", "要点3行"),
+    ("構造", "読了時間"),
     ("構造", "photos-data.js"),
     ("構造", "article-related.js"),
     ("タグ", "div"),

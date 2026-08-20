@@ -3322,6 +3322,20 @@ section {
   .news-thumb {
     display: none;
   }
+
+  /* 上の900px向けの3列指定(96px 1fr 84px)が、前の方に書いてある
+     「スマホは1列に縦積み」の指定より後ろにあるため勝ってしまい、
+     タイトルが96pxの列に押し込まれて1行3〜4文字になっていた。
+     ここで改めて1列に戻す(実測: 記事一覧のタイトルが縦読み状態だった)。 */
+  .news-card {
+    grid-template-columns: 1fr;
+  }
+  .news-card .card-tags-row {
+    grid-column: 1;
+    grid-row: auto;
+    justify-content: flex-start;
+    margin-top: 6px;
+  }
 }
 
 /* ══════════════════════════════════════════════════════════════

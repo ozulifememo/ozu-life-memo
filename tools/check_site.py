@@ -310,6 +310,26 @@ def check_titles(path, html, registry, rep):
                 )
 
 
+def check_tables(path, html, rep):
+    """記事内の<table>がスクロール用の囲いに入っているか。
+
+    囲いが無い表は、スマホ幅で中身が入り切らないときにページ全体を
+    横に突き破る(2026-08-20のブラウザ点検で9記事が実際にはみ出していた)。
+    記事の表は <div style="overflow-x:auto;"> で包むのがこのサイトの決まり。
+    """
+    if page_type(path) not in ("article", "book", "kenkyu"):
+        return
+    body = body_only(html)
+    for m in re.finditer(r"<table\b", body):
+        before = body[max(0, m.start() - 250):m.start()]
+        if "overflow-x" not in before:
+            line = html[:html.find(body) + m.start()].count("\n") + 1
+            rep.error(rel(path), "表", f"スクロール用の囲いが無い表があります({line}行目付近)",
+                      "       スマホで表がページ幅を突き破る原因になります。\n"
+                      '       <div style="overflow-x:auto;"> で表を包んでください')
+            break   # 1ファイル1件で十分
+
+
 def check_anonymity(path, html, rep):
     """本文に個人が特定できる語が入っていないか"""
     text = strip_tags(body_only(html))
@@ -483,7 +503,7 @@ def print_report(rep, pages, registry, elapsed):
     for w in rep.warns:
         by_kind[w["kind"]][1] += 1
 
-    order = ["構造", "タグ", "タイトル", "台帳", "匿名性", "文字化け", "出典", "スタイル", "文体", "見出し", "sitemap", "リンク"]
+    order = ["構造", "タグ", "表", "タイトル", "台帳", "匿名性", "文字化け", "出典", "スタイル", "文体", "見出し", "sitemap", "リンク"]
     print()
     for kind in order:
         if kind not in by_kind and kind not in ("構造", "タイトル", "匿名性", "文字化け", "出典"):
@@ -547,6 +567,7 @@ BROKEN_SAMPLE = """<!DOCTYPE html>
   <a class="source-link" href="https://news.yahoo.co.jp/articles/xxxx" target="_blank">消えやすい出典</a>
 </div>
 <p>この記事にはダミー禁止語が入っています。文字化けもあります: �</p>
+<table><tr><td>スクロール用の囲いが無い表</td></tr></table>
 <div>閉じていないdiv
 <div data-site-footer="article"></div><div data-site-modal></div>
 <script src="../assets/js/site-chrome.js"></script>
@@ -567,6 +588,7 @@ EXPECTED = [
     ("構造", "photos-data.js"),
     ("構造", "article-related.js"),
     ("タグ", "div"),
+    ("表", "囲い"),
     ("タイトル", "news-data.js"),
     ("匿名性", "ダミー禁止語"),
     ("文字化け", "文字化け"),
@@ -603,6 +625,7 @@ def run_selftest() -> int:
                 html = read(p)
                 check_structure(p, html, rep)
                 check_tag_balance(p, html, rep)
+                check_tables(p, html, rep)
                 check_titles(p, html, registry, rep)
                 check_anonymity(p, html, rep)
                 check_mojibake(p, html, rep)
@@ -668,6 +691,7 @@ def main():
         html = read(p)
         check_structure(p, html, rep)
         check_tag_balance(p, html, rep)
+        check_tables(p, html, rep)
         check_titles(p, html, registry, rep)
         check_anonymity(p, html, rep)
         check_mojibake(p, html, rep)

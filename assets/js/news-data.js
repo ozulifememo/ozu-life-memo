@@ -10,7 +10,7 @@
 
 const OZU_CATEGORY_LABELS = {
   ima: "大洲のいま",
-  kurashi: "暮らしと防衛",
+  kurashi: "大洲の暮らし",
   shiten: "大洲の視点",
 };
 

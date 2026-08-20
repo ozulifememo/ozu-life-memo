@@ -3477,6 +3477,46 @@ section {
   font-variant-numeric: tabular-nums;
 }
 
+/* 読了時間(「約3分で読める」)。時間の見積もりを先に渡して、
+   忙しい読者が「読むかどうか」をすぐ決められるようにする */
+.article-readtime {
+  color: var(--color-accent-btn);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* ── 記事冒頭の「要点」ボックス ──────────────────────
+   新聞のリード文方式。急いでいる読者は3行だけ読んで帰れて、
+   読み飛ばされても要点は伝わる。本文の丁寧さはそのまま。 */
+.article-summary {
+  background: var(--color-surface-alt);
+  border-left: 4px solid var(--color-accent-btn);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: var(--space-4) var(--space-5);
+  margin: 0 0 var(--space-6);
+}
+
+.article-summary-label {
+  margin: 0 0 var(--space-2);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--color-accent-btn);
+}
+
+.article-summary ul {
+  margin: 0;
+  padding-left: 1.2em;
+  display: grid;
+  gap: 7px;
+}
+
+.article-summary li {
+  font-size: var(--text-base);
+  line-height: 1.7;
+  color: var(--color-text);
+}
+
 /* 記事の顔になる写真。丸みと影を強く付けると写真そのものより
    「枠」が目に付くので、角丸を抑えて影を外した。 */
 .article-hero-img {

@@ -12,25 +12,31 @@ MUTED = "#5b6673"
 img = Image.new("RGB", (W, H), BG)
 d = ImageDraw.Draw(img)
 
-# 上下の題字罫(サイトヘッダーの藍の線と同じ意匠)
-d.rectangle([0, 0, W, 14], fill=NAVY)
-d.rectangle([0, H - 14, W, H], fill=NAVY)
+# A案ロゴ(題字・明朝)に合わせた意匠(2026-08-21改定):
+# 上下とも太罫+細罫の二重、ワードマークは明朝、タグラインの両脇に蜜柑の小さい角
+d.rectangle([0, 0, W, 12], fill=NAVY)
+d.rectangle([0, 22, W, 25], fill=NAVY)
+d.rectangle([0, H - 25, W, H - 22], fill=NAVY)
+d.rectangle([0, H - 12, W, H], fill=NAVY)
 
-logo_font = ImageFont.truetype(r"C:\Windows\Fonts\YuGothB.ttc", 108, index=0)
+logo_font = ImageFont.truetype(r"C:\Windows\Fonts\yumindb.ttf", 116)
 sub_font = ImageFont.truetype(r"C:\Windows\Fonts\YuGothM.ttc", 42, index=0)
 
 def center_text(y, text, font, fill):
     bbox = d.textbbox((0, 0), text, font=font)
     w = bbox[2] - bbox[0]
     d.text(((W - w) / 2 - bbox[0], y), text, font=font, fill=fill)
-    return bbox[3] - bbox[1]
+    return w
 
-center_text(212, "OZU LIFE MEMO", logo_font, NAVY)
+center_text(196, "OZU LIFE MEMO", logo_font, NAVY)
 
-# 蜜柑色の短い罫
-d.rectangle([(W - 72) / 2, 388, (W + 72) / 2, 396], fill=MIKAN)
-
-center_text(432, "大洲市の非公式生活情報サイト", sub_font, MUTED)
+sub = "大洲市の非公式生活情報サイト"
+sub_w = center_text(422, sub, sub_font, MUTED)
+sq = 14
+sx0 = (W - sub_w) / 2 - 44
+sx1 = (W + sub_w) / 2 + 30
+d.rectangle([sx0, 422 + 18, sx0 + sq, 422 + 18 + sq], fill=MIKAN)
+d.rectangle([sx1, 422 + 18, sx1 + sq, 422 + 18 + sq], fill=MIKAN)
 
 out = r"c:\Users\ihfff\Desktop\ozu-life-memo\assets\img\ogp-card.png"
 img.save(out, "PNG", optimize=True)

@@ -1,4 +1,4 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
-<rect width="64" height="64" rx="14" fill="#2f6690"/>
-<text x="32" y="42" font-family="sans-serif" font-size="26" font-weight="700" fill="#ffffff" text-anchor="middle">大洲</text>
+<circle cx="32" cy="32" r="32" fill="#1e435f"/>
+<text x="32" y="43" font-family="'Yu Mincho','Hiragino Mincho ProN','Noto Serif JP',serif" font-size="27" font-weight="700" fill="#ffffff" text-anchor="middle">大洲</text>
 </svg>

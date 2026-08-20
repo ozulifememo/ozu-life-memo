@@ -264,9 +264,11 @@ figcaption {
 }
 
 .logo {
+  /* A案ロゴ(題字・明朝)に合わせた書体。最上部の藍罫3pxとセットで新聞の題字の意匠 */
+  font-family: "Shippori Mincho B1", "Yu Mincho", serif;
   font-weight: 700;
   font-size: var(--text-md);
-  letter-spacing: -0.01em;
+  letter-spacing: 0.02em;
   color: var(--color-brand-dark);
   white-space: nowrap;
   flex-shrink: 0;

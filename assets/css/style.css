@@ -431,9 +431,16 @@ figcaption {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 8px;
+  /* 指で押す前提なので当たり判定は44×44pxを確保する(見た目のアイコンは22pxのまま) */
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
   /* ヘッダーは左寄せ(flex-start)なので、ハンバーガーは自力で右端へ寄せる */
   margin-left: auto;
+  /* 当たり判定を広げた分、アイコンの右端が内側に入るのを打ち消す */
+  margin-right: -11px;
 }
 
 .nav-toggle span,
@@ -503,7 +510,7 @@ figcaption {
   }
 
   .nav-toggle {
-    display: block;
+    display: flex;
   }
 
   /* スマホのハンバーガーメニューでは、ホバーが使えないので
@@ -3555,4 +3562,16 @@ section {
 
 .link-card:hover h4 {
   color: var(--color-brand);
+}
+
+/* ── 大洲と読書: 「読んだ本」タグ+見出しの行 ─────────────────
+   各ページの<style>で display:flex になっているが、折り返しの指定が無く、
+   スマホ幅では h2 が縮めず右へはみ出していた(実測: 375px幅で399pxまで突き抜け)。
+   タグと見出しが入り切らない幅では素直に2行に折る。 */
+.book-section-title {
+  flex-wrap: wrap;
+}
+
+.book-section-title h2 {
+  min-width: 0;
 }

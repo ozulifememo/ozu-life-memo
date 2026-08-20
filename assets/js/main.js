@@ -32,6 +32,8 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.addEventListener("click", (e) => {
       e.preventDefault();
       modal?.classList.add("open");
+      // スマホのドロワーから開いたとき、後ろに開いたまま残るドロワーを閉じる
+      mainNav?.classList.remove("open");
     });
   });
 
@@ -44,7 +46,17 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") modal?.classList.remove("open");
+    if (e.key === "Escape") {
+      modal?.classList.remove("open");
+      mainNav?.classList.remove("open");
+    }
+  });
+
+  // ドロワーの外側(残り見えている本文)をタップしたら閉じる
+  document.addEventListener("click", (e) => {
+    if (!mainNav || !mainNav.classList.contains("open")) return;
+    if (e.target.closest(".main-nav") || e.target.closest(".nav-toggle")) return;
+    mainNav.classList.remove("open");
   });
 
   // Carousel

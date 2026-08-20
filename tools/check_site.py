@@ -174,7 +174,8 @@ def collect_pages() -> list[Path]:
     pages = []
     for p in REPO.rglob("*.html"):
         rp = p.relative_to(REPO).as_posix()
-        if rp.startswith((".claude/", "node_modules/", "docs/")):
+        # pr/ はSNS展開用の内部素材置き場(gitignore済み、GitHub Pagesに載らない)
+        if rp.startswith((".claude/", "node_modules/", "docs/", "pr/", "private-notes/")):
             continue
         if p.name.startswith("_"):      # _measure.html などの検証用
             continue

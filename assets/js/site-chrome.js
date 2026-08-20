@@ -12,6 +12,7 @@
       '<button type="button" class="nav-dropdown-trigger">読み物<span class="nav-caret">▾</span></button>' +
       '<div class="nav-dropdown-menu">' +
       '<a href="' + prefix + 'news/">大洲ノート</a>' +
+      '<a href="' + prefix + 'best/">おすすめ10選</a>' +
       '<a href="' + prefix + 'monthly/">月間まとめ</a>' +
       '<a href="' + prefix + 'history/">大洲の歴史</a>' +
       '<a href="' + prefix + 'book/">大洲と読書</a>' +
@@ -53,6 +54,7 @@
       '<div class="footer-col">' +
       "<h3>読み物</h3>" +
       '<a href="' + prefix + 'news/">大洲ノート</a>' +
+      '<a href="' + prefix + 'best/">おすすめ10選</a>' +
       '<a href="' + prefix + 'jiyu-kenkyu/">大洲の自由研究</a>' +
       '<a href="' + prefix + 'monthly/">月間まとめ</a>' +
       '<a href="' + prefix + 'history/">大洲の歴史</a>' +

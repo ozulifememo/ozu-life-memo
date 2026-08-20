@@ -1130,7 +1130,12 @@ section {
   line-height: 1.5;
 }
 
-/* 大洲ノート専用: 左サイドバー(フィルタ) + 右カラム(表形式一覧) */
+/* 大洲ノート専用: 左サイドバー(フィルタ) + 右カラム(表形式一覧)
+   以前はボタンを1個1列で縦積みにしていたが、それだと高さが約1400pxになり、
+   横長の画面では追従(sticky)したまま画面からはみ出して、下の「情報源」の
+   絞り込みがページ最下部まで見えなかった。チップを折り返しで詰めて高さを
+   半分以下にし、それでも収まらない画面ではサイドバーの中だけでスクロール
+   できるようにする(2026-08-21)。 */
 .news-layout {
   display: flex;
   align-items: flex-start;
@@ -1138,27 +1143,34 @@ section {
 }
 
 .news-sidebar {
-  flex: 0 0 210px;
+  flex: 0 0 230px;
   position: sticky;
-  top: 96px;
+  top: 88px;
+  max-height: calc(100vh - 104px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  padding-right: 6px;
 }
 
 .sidebar-filter-group {
-  margin-bottom: 28px;
+  margin-bottom: 18px;
 }
 
 .news-sidebar .news-tabs,
 .news-sidebar .tag-filter {
-  flex-direction: column;
-  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 6px;
   margin-bottom: 0;
 }
 
 .news-sidebar .news-tab,
 .news-sidebar .tag-chip {
-  width: 100%;
+  width: auto;
   text-align: left;
   border-radius: var(--radius-sm);
+  padding: 5px 11px;
+  font-size: 0.78rem;
 }
 
 .news-main {
@@ -1230,6 +1242,9 @@ section {
     position: static;
     flex: none;
     width: 100%;
+    max-height: none;
+    overflow-y: visible;
+    padding-right: 0;
   }
   .news-table-head {
     display: none;
@@ -1238,6 +1253,114 @@ section {
     grid-template-columns: 1fr;
     gap: 4px;
   }
+}
+
+/* おすすめ記事10選(/best/)。番号つきの一覧カード(2026-08-21新設) */
+.best-list {
+  list-style: none;
+  margin: var(--space-6) 0 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.best-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  padding: 18px 22px;
+}
+
+.best-no {
+  flex: 0 0 auto;
+  font-family: "Shippori Mincho B1", serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-tag-mikan);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.best-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.best-title {
+  display: block;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.best-title:hover {
+  color: var(--color-brand);
+}
+
+.best-blurb {
+  display: block;
+  color: var(--color-text-muted);
+  font-size: 0.86rem;
+  line-height: 1.7;
+  margin-top: 4px;
+}
+
+.best-cat {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 0.72rem;
+  color: var(--color-text-faint);
+  border: 1px solid var(--color-border);
+  padding: 2px 8px;
+}
+
+.best-note-link {
+  color: var(--color-accent-btn);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-size: 0.82rem;
+}
+
+.best-thumb {
+  flex: 0 0 132px;
+  height: 84px;
+  overflow: hidden;
+}
+
+.best-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 680px) {
+  .best-item {
+    gap: 14px;
+    padding: 14px 16px;
+  }
+  .best-thumb {
+    flex-basis: 88px;
+    height: 66px;
+  }
+}
+
+/* 大洲の自由研究: 脚注の出典リンク。サイト全体でリンクの下線を消しているため、
+   ここだけは「押せる」と分かる見た目に戻す(行全体をリンク化した 2026-08-21)。
+   scroll-margin は本文の脚注番号から飛んできたとき追従ヘッダーに隠れない余白。 */
+.jk-footnotes a {
+  color: var(--color-brand);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.jk-footnotes a:hover {
+  color: var(--color-brand-dark);
+}
+
+.jk-footnotes li {
+  scroll-margin-top: 96px;
 }
 
 /* Generic content page */

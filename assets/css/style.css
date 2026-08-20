@@ -1610,8 +1610,8 @@ section {
   border-left: 4px solid var(--color-accent-btn);
   border-radius: var(--radius);
   padding: var(--space-5);
-  position: sticky;
-  top: 100px;
+  /* 以前は position:sticky でスクロールに追いかけてきたが、
+     要約の枠が動き続けるのは落ち着かないという本人の指摘でやめた。 */
 }
 
 .disclaimer-summary-label {
@@ -2586,7 +2586,7 @@ section {
 /* Map page */
 .ozu-map {
   width: 100%;
-  height: 560px;
+  height: 640px;
   border-radius: var(--radius);
   border: 1px solid var(--color-border);
   background: var(--color-surface);
@@ -2594,8 +2594,51 @@ section {
 
 @media (max-width: 760px) {
   .ozu-map {
-    height: 420px;
+    height: 480px;
   }
+}
+
+/* 地名検索(地名マップの上) */
+.map-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.map-search input {
+  flex: 0 1 320px;
+  font: inherit;
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  padding: 9px 14px;
+}
+
+.map-search input:focus {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 1px;
+  border-color: var(--color-brand);
+}
+
+.map-search-hint {
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+}
+
+/* 引いて見ているときに出す、4地域の大きな名前ラベル */
+.region-label {
+  position: relative;
+  display: block;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+  text-shadow: 0 0 4px #fff, 0 0 4px #fff, 0 0 4px #fff, 0 0 8px #fff;
 }
 
 .map-legend {
@@ -2695,11 +2738,11 @@ section {
 }
 
 .aza-label {
-  background: rgba(255, 255, 255, 0.88);
+  background: rgba(255, 255, 255, 0.9);
   border: 1px solid var(--color-border);
-  border-radius: 6px;
-  padding: 1px 6px;
-  font-size: 0.78rem;
+  border-radius: 4px;
+  padding: 2px 7px;
+  font-size: 0.8rem;
   font-weight: 600;
   color: var(--color-text);
   box-shadow: none;
@@ -2809,6 +2852,11 @@ section {
   padding: var(--space-8) 0;
 }
 
+/* 主役記事はページの顔なので、上の余白だけ詰めて早く見せる */
+.lead-section {
+  padding-top: var(--space-6);
+}
+
 .section-lead {
   margin: calc(var(--space-4) * -1) 0 var(--space-6);
   color: var(--color-text-muted);
@@ -2839,6 +2887,10 @@ section {
 /* ── サイトの自己紹介の帯 ─────────────────────────── */
 .site-intro {
   background: var(--color-surface);
+  /* 汎用の section { padding: 48px 0 } を打ち消す。
+     この帯は1行の名刺なので、上下48pxも取ると
+     ヘッダーと主役記事の間が空白だらけになる(実際になっていた)。 */
+  padding: 0;
 }
 
 .site-intro .wrap {
@@ -2846,8 +2898,8 @@ section {
   align-items: baseline;
   justify-content: space-between;
   gap: var(--space-5);
-  padding-top: var(--space-4);
-  padding-bottom: var(--space-4);
+  padding-top: var(--space-3);
+  padding-bottom: var(--space-3);
 }
 
 .site-intro-text {
@@ -2874,16 +2926,19 @@ section {
   content: " →";
 }
 
-/* ── 主役記事 ─────────────────────────────────── */
-.lead-story {
+/* ── 主役記事(新聞の1面型: 大1本+サブ2本) ─────────────── */
+.lead-grid {
   display: grid;
-  grid-template-columns: 1.35fr 1fr;
-  gap: var(--space-7);
-  align-items: center;
+  grid-template-columns: 1.55fr 1fr;
+  gap: var(--space-6) var(--space-7);
+  align-items: start;
+}
+
+.lead-story {
+  display: block;
 }
 
 .lead-story--textonly {
-  grid-template-columns: 1fr;
   max-width: 40em;
 }
 
@@ -2896,13 +2951,25 @@ section {
 .lead-media img {
   width: 100%;
   height: auto;
-  aspect-ratio: 8 / 5;
   object-fit: cover;
   transition: transform 0.5s ease;
 }
 
+.lead-story--main .lead-media img {
+  aspect-ratio: 16 / 9;
+}
+
+/* サブは横長に切って、右の列に2本すっきり収める */
+.lead-story--sub .lead-media img {
+  aspect-ratio: 2 / 1;
+}
+
 .lead-story:hover .lead-media img {
   transform: scale(1.03);
+}
+
+.lead-body {
+  padding-top: var(--space-3);
 }
 
 .lead-story-title {
@@ -2913,8 +2980,25 @@ section {
   letter-spacing: 0.01em;
 }
 
+.lead-story-title--sub {
+  font-size: var(--text-md);
+  line-height: 1.55;
+  margin: var(--space-1) 0 var(--space-2);
+}
+
 .lead-story:hover .lead-story-title {
   color: var(--color-brand);
+}
+
+.lead-side {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.lead-story--sub + .lead-story--sub {
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-5);
 }
 
 .lead-note {
@@ -2989,6 +3073,12 @@ section {
   color: var(--color-text-muted);
   margin-bottom: var(--space-2);
 }
+
+/* カテゴリ名の小さなラベルに、カテゴリの色をそのまま使う。
+   タグ8色(和色)を本文側にも効かせて、灰色一辺倒の一覧に目印を作る。 */
+[data-category="ima"] .story-cat { color: var(--color-tag-mikan); }
+[data-category="kurashi"] .story-cat { color: var(--color-tag-teal); }
+[data-category="shiten"] .story-cat { color: var(--color-tag-indigo); }
 
 .story-title {
   margin: 0 0 var(--space-2);
@@ -3230,10 +3320,15 @@ section {
 
 /* ── 画面が狭いとき ──────────────────────────────── */
 @media (max-width: 900px) {
-  .lead-story,
-  .lead-story--textonly {
+  .lead-grid {
     grid-template-columns: 1fr;
-    gap: var(--space-5);
+    gap: var(--space-6);
+  }
+
+  /* スマホではサブ2本を先頭から罫線で区切る(大記事との切れ目を作る) */
+  .lead-side {
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--space-5);
   }
 
   .story-grid {
@@ -3274,7 +3369,8 @@ section {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .lead-story-title {
+  /* スマホでは1面トップの見出しを一段落とす(サブの見出しはそのまま) */
+  .lead-story--main .lead-story-title {
     font-size: var(--text-xl);
   }
 }

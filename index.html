@@ -145,19 +145,32 @@
   (function renderHome() {
     if (typeof OZU_NEWS === "undefined" || typeof OzuCard === "undefined") return;
 
-    // ── 主役1本 + 読んでほしい記事 ──────────────────────
-    // pick記事のうち、写真があって内容も強い1本を主役にする。
-    // 主役は写真ありを優先する(大きく出すので写真が無いと間が持たない)。
+    // ── 主役3本 + 読んでほしい記事 ──────────────────────
+    // pick記事のうち写真のあるものから3本、新聞の1面のように出す
+    // (1本目が大、2〜3本目がサブ)。写真が無い記事は大きく出しても
+    // 間が持たないので、主役には選ばない。
+    //
+    // どの3本を出すかは日替わり(日付で決まるローテーション)。
+    // 毎日トップの顔が変わるが、同じ日のあいだは何度開いても同じなので
+    // 「さっきと違う」というちらつきは起きない。
     var picks = OZU_NEWS.filter(function (i) { return i.pick; });
     picks = OzuCard.bySourceDateDesc(picks);
 
-    var leadIndex = picks.findIndex(function (i) { return OzuCard.articlePhoto(i.slug, ""); });
-    if (leadIndex < 0) leadIndex = 0;
-    var lead = picks[leadIndex];
-    var rest = picks.filter(function (i) { return i !== lead; });
+    var withPhoto = picks.filter(function (i) { return OzuCard.articlePhoto(i.slug, ""); });
+    var leads = [];
+    if (withPhoto.length) {
+      var now = new Date();
+      var dayIndex = Math.floor((now - new Date(now.getFullYear(), 0, 0)) / 86400000);
+      var start = dayIndex % withPhoto.length;
+      for (var k = 0; k < Math.min(3, withPhoto.length); k++) {
+        leads.push(withPhoto[(start + k) % withPhoto.length]);
+      }
+    }
+    if (!leads.length) leads = picks.slice(0, 1);
+    var rest = picks.filter(function (i) { return leads.indexOf(i) === -1; });
 
     var leadWrap = document.getElementById("home-lead");
-    if (leadWrap && lead) leadWrap.innerHTML = OzuCard.leadStory(lead, "");
+    if (leadWrap && leads.length) leadWrap.innerHTML = OzuCard.leadGrid(leads, "");
 
     var pickWrap = document.getElementById("home-pick-cards");
     if (pickWrap) {

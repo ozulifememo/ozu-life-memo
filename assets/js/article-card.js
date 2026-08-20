@@ -102,24 +102,50 @@
     );
   }
 
-  // 主役記事(1本だけ大きく出す)
-  function leadStory(item, prefix) {
+  // 主役記事のカード1枚。variant は "main"(1面トップ・大) か "sub"(サブ・中)。
+  function leadCard(item, prefix, variant) {
     var photo = articlePhoto(item.slug, prefix);
     var href = (prefix || "") + "eachnews/" + item.slug + ".html";
+    var isMain = variant === "main";
+    // トップの大写真は画質優先で元サイズ+先読み。サブ2本は軽量サムネイルで十分。
+    var img = photo
+      ? '<div class="lead-media"><img src="' + (isMain ? photo.src : photo.thumbSrc) +
+        '" alt="' + escapeHtml(photo.alt) +
+        (isMain
+          ? '" width="1200" height="675" fetchpriority="high" decoding="async">'
+          : '" loading="lazy" decoding="async">') +
+        "</div>"
+      : "";
     return (
-      '<a class="lead-story' + (photo ? "" : " lead-story--textonly") + '" href="' + href + '">' +
-      (photo
-        ? '<div class="lead-media"><img src="' + photo.src + '" alt="' + escapeHtml(photo.alt) +
-          '" width="1200" height="750" fetchpriority="high" decoding="async"></div>'
-        : "") +
+      '<a class="lead-story lead-story--' + variant + (photo ? "" : " lead-story--textonly") +
+      '" href="' + href + '" data-category="' + item.category + '">' +
+      img +
       '<div class="lead-body">' +
       '<span class="story-cat">' + escapeHtml(categoryLabel(item)) + "</span>" +
-      '<h2 class="lead-story-title">' + escapeHtml(item.title) + "</h2>" +
-      (item.pickNote ? '<p class="lead-note">' + escapeHtml(item.pickNote) + "</p>" : "") +
+      (isMain ? '<h2 class="lead-story-title">' : '<h3 class="lead-story-title lead-story-title--sub">') +
+      escapeHtml(item.title) +
+      (isMain ? "</h2>" : "</h3>") +
+      (isMain && item.pickNote ? '<p class="lead-note">' + escapeHtml(item.pickNote) + "</p>" : "") +
       '<span class="story-meta">' + escapeHtml(item.source) +
       (sourceYearMonth(item) ? '<span class="story-ym">' + sourceYearMonth(item) + "</span>" : "") +
       "</span>" +
       "</div></a>"
+    );
+  }
+
+  // 主役ブロック(新聞の1面のイメージ)。
+  // 1本目を大きく、2〜3本目を右の列(スマホでは下)に並べる。
+  // 「主役が1本だけだとトップの顔が毎回同じに見える」という本人の指摘で
+  // 3本構成にした(2026-08-20)。
+  function leadGrid(items, prefix) {
+    if (!items || !items.length) return "";
+    var main = leadCard(items[0], prefix, "main");
+    var subs = items.slice(1).map(function (i) { return leadCard(i, prefix, "sub"); }).join("");
+    return (
+      '<div class="lead-grid">' +
+      '<div class="lead-main">' + main + "</div>" +
+      (subs ? '<div class="lead-side">' + subs + "</div>" : "") +
+      "</div>"
     );
   }
 
@@ -130,7 +156,7 @@
     sourceYmd: sourceYmd,
     bySourceDateDesc: bySourceDateDesc,
     storyCard: storyCard,
-    leadStory: leadStory,
+    leadGrid: leadGrid,
     escapeHtml: escapeHtml
   };
 })(window);

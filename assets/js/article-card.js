@@ -18,6 +18,11 @@
     var meta = typeof OZU_PHOTO_BY_FILE !== "undefined" ? OZU_PHOTO_BY_FILE[entry.file] : null;
     return {
       src: (prefix || "") + "assets/img/" + entry.file,
+      // 一覧カード・サムネイル用の軽量版(横720px、元の1/4程度の重さ)。
+      // assets/img/thumbs/ 以下に元と同じ相対パスで置いてある。
+      // スマホ回線で一覧を開いたときに、元サイズ(200〜600KB)を
+      // 何十枚も読ませないための仕組み。
+      thumbSrc: (prefix || "") + "assets/img/thumbs/" + entry.file,
       alt: entry.caption || (meta ? meta.alt : "大洲市内で撮影した写真"),
       caption: entry.caption || (meta ? meta.alt : "")
     };
@@ -80,7 +85,7 @@
     // 写真が無いときは同じ大きさの色面を置き、カテゴリ名を大きく入れて
     // 「そういうカード」として成立させる(欠けた枠には見せない)。
     var media = photo
-      ? '<div class="story-media"><img src="' + photo.src + '" alt="' + escapeHtml(photo.alt) +
+      ? '<div class="story-media"><img src="' + photo.thumbSrc + '" alt="' + escapeHtml(photo.alt) +
         '" loading="lazy" decoding="async"></div>'
       : '<div class="story-media story-media--none"><span>' + escapeHtml(categoryLabel(item)) + "</span></div>";
 

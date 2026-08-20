@@ -168,7 +168,7 @@
           // 無い記事は枠だけ残して空にする(列がずれると一覧がガタつくため)。
           const photo = typeof OzuCard !== "undefined" ? OzuCard.articlePhoto(item.slug, "../") : null;
           const thumb = photo
-            ? `<span class="news-thumb"><img src="${photo.src}" alt="${OzuCard.escapeHtml(photo.alt)}" loading="lazy" decoding="async"></span>`
+            ? `<span class="news-thumb"><img src="${photo.thumbSrc}" alt="${OzuCard.escapeHtml(photo.alt)}" loading="lazy" decoding="async"></span>`
             : `<span class="news-thumb news-thumb--none" aria-hidden="true"></span>`;
           return `
       <div class="news-card" data-category="${item.category}" data-tags="${(item.tags || []).join(",")}" data-source-type="${sourceType}" style="--tag-c:${ozuCategoryColorVar(item.category)}">

@@ -8,8 +8,15 @@
   --color-text-faint: #656b78;
   --color-brand: #2a5b82;
   --color-brand-dark: #1e435f;
-  --color-accent: #1fb3ac;
-  --color-accent-dark: #158a85;
+  /* アクセントは肱川の深い青緑。
+     以前の #1fb3ac はCSSフレームワークの既定色そのままの明るいティールで、
+     藍・蜜柑・柿渋といった落ち着いた和色の中で1色だけ浮いていた。
+     タグ8色(--color-tag-*)と同じ彩度・明度帯にそろえている。 */
+  --color-accent: #2e7f78;
+  --color-accent-dark: #1f5f5a;
+  /* 濃紺の帯(.home-kenkyu)の上で使う明るめのアクセント。
+     #2e7f78 のままだと濃紺に沈んで読めないための専用色。 */
+  --color-accent-on-dark: #7fc4b9;
   --color-accent-btn: #0f7d78;
   --color-accent-btn-hover: #0c6560;
   --color-border: #e4e2dc;
@@ -64,9 +71,13 @@
 
   --max-width: 1160px;
   --header-h: 76px;
-  --radius-sm: 8px;
-  --radius: 14px;
-  --radius-lg: 20px;
+  /* 角丸は「かすかに面取りしてある」程度に抑える。
+     以前は 8/14/20px で、カードもタグも写真も全部丸く、
+     いかにも生成ツールの既定値という見え方だった。
+     読み物主体のサイトなので、印刷物寄りの硬い角に振る。 */
+  --radius-sm: 4px;
+  --radius: 6px;
+  --radius-lg: 8px;
 
   /* backward-compat aliases (specialised sections below still reference these) */
   --color-accent-dark-legacy: var(--color-accent-dark);
@@ -104,6 +115,12 @@ img {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+/* キーボード操作時にどこにいるか見えるようにする(マウス操作では出ない) */
+:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
 }
 
 /* ── 日本語の折り返しをきれいにする ────────────────────────────
@@ -181,8 +198,11 @@ figcaption {
   padding: 0 24px;
 }
 
-/* 共通カード演出: 罫線のみのフラットな見た目に、控えめな影と
-   ホバー時の浮き上がりを一律付与する(個別カードごとの再定義は不要) */
+/* 共通カード演出: 罫線1本のフラットな箱で統一する。
+   以前は全カードに影+ホバーで2px浮き上がる演出を付けていたが、
+   読み物サイトでカードが浮き沈みするのは広告サイトの動きで、
+   誌面らしさを消していた。ホバーは罫線の色が変わるだけにする。
+   (影は、本当に手前に重なる部品=ドロップダウンとモーダルだけに残す) */
 .news-category-card,
 .link-list a,
 .icon-card,
@@ -191,8 +211,7 @@ figcaption {
 .monthly-card,
 .featured-article a.featured-card,
 .fun-corner-card {
-  box-shadow: var(--shadow-sm);
-  transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+  transition: border-color 0.18s ease, background 0.18s ease;
 }
 
 .link-list a:hover,
@@ -201,8 +220,7 @@ figcaption {
 .monthly-card:hover,
 .featured-article a.featured-card:hover,
 .fun-corner-card:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
+  border-color: var(--color-brand);
 }
 
 /* Header */
@@ -211,16 +229,20 @@ figcaption {
    レイアウトがガクッとずれる(CLS)ので、あらかじめ同じ高さを確保しておく。 */
 [data-site-header] {
   display: block;
-  min-height: var(--header-h);
+  /* +3px は .site-header の上端の藍色の線の分 */
+  min-height: calc(var(--header-h) + 3px);
 }
 
 .site-header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(246, 245, 242, 0.85);
-  backdrop-filter: blur(10px) saturate(1.4);
-  -webkit-backdrop-filter: blur(10px) saturate(1.4);
+  /* すりガラス(backdrop-filter)はやめて、不透明のベタ塗りにする。
+     半透明で本文が透けるヘッダーは流行りのUIの既定演出で、
+     新聞・雑誌的な題字の据わりが出ない(97%でも本文がうっすら透けた)。
+     画面最上部の藍色の線は、紙面の題字罫のつもり。 */
+  background: var(--color-bg);
+  border-top: 3px solid var(--color-brand-dark);
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -362,14 +384,11 @@ figcaption {
   font-weight: 700;
   font-size: var(--text-sm);
   letter-spacing: 0.01em;
-  box-shadow: var(--shadow-sm);
-  transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+  transition: background 0.15s ease;
 }
 
 .cta-btn:hover {
   background: var(--color-accent-btn-hover);
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-md);
 }
 
 /* ── ナビの段階的な圧縮 ──────────────────────────────
@@ -551,12 +570,12 @@ figcaption {
 }
 
 /* Hero */
+/* 右上からティール色の光がにじむ radial-gradient は、
+   生成ツールが作るLPの定番演出だったので外した。白のベタ塗りにする。 */
 .hero {
   position: relative;
   padding: var(--space-8) 0 var(--space-7);
-  background:
-    radial-gradient(1100px 480px at 82% -10%, rgba(31, 179, 172, 0.10), transparent 60%),
-    linear-gradient(180deg, var(--color-surface) 0%, var(--color-bg) 100%);
+  background: var(--color-surface);
   border-bottom: 1px solid var(--color-border);
   overflow: hidden;
 }
@@ -568,27 +587,24 @@ figcaption {
   align-items: center;
 }
 
+/* 見出し上の小さなラベル。丸いバッジ(ピル)をやめて、
+   雑誌の柱のような字間の広い小さな見出しにする */
 .hero-eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: var(--color-brand-dark);
-  background: var(--color-surface-alt);
-  border: 1px solid var(--color-border);
-  border-radius: 999px;
-  padding: 5px 14px 5px 10px;
+  color: var(--color-accent-btn);
   font-weight: 700;
   font-size: var(--text-xs);
-  letter-spacing: 0.03em;
+  letter-spacing: 0.14em;
   margin: 0 0 var(--space-4);
 }
 
 .hero-eyebrow::before {
   content: "";
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--color-accent);
+  width: 8px;
+  height: 8px;
+  background: var(--color-accent-btn);
   flex-shrink: 0;
 }
 
@@ -627,13 +643,10 @@ figcaption {
   border: 1px solid var(--color-border-strong);
   color: var(--color-text);
   background: var(--color-surface);
-  box-shadow: var(--shadow-sm);
-  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+  transition: border-color 0.15s ease, background 0.15s ease;
 }
 
 .hero-ctas a:hover {
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-md);
   border-color: var(--color-brand);
 }
 
@@ -641,7 +654,6 @@ figcaption {
   background: var(--color-brand);
   color: #fff;
   border-color: var(--color-brand);
-  box-shadow: 0 8px 20px rgba(42, 91, 130, 0.28);
 }
 
 .hero-ctas a.primary:hover {
@@ -653,22 +665,14 @@ figcaption {
   position: relative;
 }
 
-.hero-photo::after {
-  content: "";
-  position: absolute;
-  inset: 14px -14px -14px 14px;
-  border-radius: var(--radius-lg);
-  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-brand) 100%);
-  opacity: 0.14;
-  z-index: -1;
-}
-
+/* 写真の背後に斜めグラデーションの色紙をずらして敷く演出は、
+   生成ツール製LPの典型だったので廃止。写真は写真としてそのまま置く。 */
 .hero-photo img {
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius);
   width: 100%;
   aspect-ratio: 16 / 10;
   object-fit: cover;
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-sm);
 }
 
 @media (max-width: 860px) {
@@ -709,14 +713,11 @@ figcaption {
   border-radius: var(--radius);
   padding: var(--space-5);
   text-decoration: none;
-  box-shadow: var(--shadow-sm);
-  transition: border-color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+  transition: border-color 0.18s ease;
 }
 
 .pick-card:hover {
   border-color: var(--color-brand);
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-md);
 }
 
 .pick-card .pick-badge {
@@ -726,7 +727,7 @@ figcaption {
   color: var(--color-brand-dark);
   background: var(--color-surface-alt);
   padding: 4px 12px;
-  border-radius: 999px;
+  border-radius: var(--radius-sm);
   margin-bottom: var(--space-3);
 }
 
@@ -817,7 +818,6 @@ figcaption {
   top: 0.15em;
   bottom: 0.15em;
   width: 4px;
-  border-radius: 999px;
   background: var(--color-accent);
 }
 
@@ -870,7 +870,7 @@ section {
   border: 1px solid var(--color-border);
   background: var(--color-surface);
   padding: 8px 18px;
-  border-radius: 999px;
+  border-radius: var(--radius-sm);
   font-size: var(--text-sm);
   font-weight: 600;
   cursor: pointer;
@@ -906,7 +906,7 @@ section {
   border: 1px solid var(--color-border);
   background: transparent;
   padding: 5px 14px;
-  border-radius: 999px;
+  border-radius: var(--radius-sm);
   font-size: 0.8rem;
   cursor: pointer;
   color: var(--color-text-muted);
@@ -924,7 +924,6 @@ section {
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   padding: var(--space-6) var(--space-5);
-  box-shadow: var(--shadow-sm);
 }
 
 .tagcloud-panel .panel-label {
@@ -970,7 +969,7 @@ section {
   transition: opacity 0.15s ease, transform 0.15s ease;
 }
 
-.tagcloud a:hover { transform: translateY(-2px); }
+.tagcloud a:hover { opacity: 0.8; }
 .tagcloud a:hover::after { opacity: 0.8; transform: translateX(0); }
 .tagcloud .sz6 { font-size: 2.8rem; }
 .tagcloud .sz5 { font-size: 2.2rem; }
@@ -1030,8 +1029,7 @@ section {
   grid-template-columns: 96px minmax(0, 1fr) auto;
   align-items: center;
   gap: 2px 22px;
-  box-shadow: var(--shadow-sm);
-  transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  transition: border-color 0.15s ease, background 0.15s ease;
 }
 
 .news-card .news-date {
@@ -1086,8 +1084,8 @@ section {
   display: inline-block;
   font-size: 0.72rem;
   font-weight: 600;
-  padding: 3px 10px;
-  border-radius: 999px;
+  padding: 3px 9px;
+  border-radius: 3px;
   color: var(--tag-c, var(--color-text-muted));
   background: color-mix(in srgb, var(--tag-c, var(--color-text-muted)) 14%, var(--color-surface));
   border: 1px solid color-mix(in srgb, var(--tag-c, var(--color-text-muted)) 30%, transparent);
@@ -1096,7 +1094,6 @@ section {
 .news-card:hover {
   border-color: var(--color-brand);
   background: color-mix(in srgb, var(--color-brand) 4%, var(--color-surface));
-  box-shadow: var(--shadow-md);
 }
 
 .news-card .news-date {
@@ -1110,11 +1107,11 @@ section {
    数字の上に小さく出す。どちらの時系列を見ているのか分かるように。 */
 .news-card .date-kind {
   display: block;
-  font-size: 0.66rem;
+  /* 0.66rem(約10px)+透過は読めなかったので、少し大きく・不透過にした */
+  font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.04em;
   color: var(--color-accent-btn);
-  opacity: 0.85;
 }
 
 .news-card .news-title {
@@ -1244,12 +1241,11 @@ section {
 }
 
 /* Generic content page */
+/* ここもティールの光のグラデーションをやめてベタ塗りに(理由はヒーローと同じ) */
 .page-hero {
   padding: var(--space-8) 0 var(--space-6);
   text-align: center;
-  background:
-    radial-gradient(900px 360px at 50% -30%, rgba(31, 179, 172, 0.09), transparent 60%),
-    linear-gradient(180deg, var(--color-surface) 0%, var(--color-bg) 100%);
+  background: var(--color-surface);
   border-bottom: 1px solid var(--color-border);
   margin-bottom: var(--space-6);
 }
@@ -1387,7 +1383,6 @@ section {
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   padding: var(--space-5) var(--space-6);
-  box-shadow: var(--shadow-sm);
 }
 
 .kenkyu-list {
@@ -1468,20 +1463,18 @@ section {
 /* 各写真はクリックで元サイズを開けるリンクにしている(素材として持ち帰れるように) */
 .photo-item {
   display: block;
-  border-radius: var(--radius);
+  border-radius: var(--radius-sm);
   overflow: hidden;
-  box-shadow: var(--shadow-sm);
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  transition: opacity 0.18s ease;
 }
 
 .photo-item:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  opacity: 0.85;
 }
 
 .photo-grid img {
   width: 100%;
-  border-radius: var(--radius);
+  border-radius: var(--radius-sm);
   aspect-ratio: 4 / 3;
   object-fit: cover;
 }
@@ -1588,7 +1581,7 @@ section {
   background: var(--color-accent-btn);
   color: #fff !important;
   padding: 14px 32px;
-  border-radius: 999px;
+  border-radius: var(--radius-sm);
   font-weight: 700;
 }
 
@@ -1617,7 +1610,6 @@ section {
   border-left: 4px solid var(--color-accent-btn);
   border-radius: var(--radius);
   padding: var(--space-5);
-  box-shadow: var(--shadow-sm);
   position: sticky;
   top: 100px;
 }
@@ -1684,33 +1676,46 @@ section {
   }
 }
 
+/* サイト内コーナー一覧(サイト紹介ページの末尾)。
+   以前は絵文字を大きく載せたタイル(🔗🏠📰…)を横スクロールで並べていたが、
+   絵文字をアイコン代わりに敷き詰めるのは素人サイト・生成ページの典型なので、
+   文字だけの索引リストに変えた(絵文字はCSSで非表示にしている)。 */
 .icon-cards {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
   gap: 10px;
-  overflow-x: auto;
-  padding: 4px 4px 10px;
+  padding: 0;
   margin: 32px auto 0;
+  max-width: 940px;
 }
 
 .icon-card {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
   gap: 8px;
-  flex: 1 1 0;
-  min-width: 108px;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius);
-  padding: 16px 10px;
-  text-align: center;
-  font-size: 0.82rem;
+  border-radius: var(--radius-sm);
+  padding: 13px 16px;
+  text-align: left;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.icon-card::after {
+  content: "→";
+  margin-left: auto;
+  color: var(--color-text-faint);
+  font-size: 0.85em;
+}
+
+.icon-card:hover {
+  color: var(--color-brand);
 }
 
 .icon-card .icon-emoji {
-  font-size: 1.5rem;
-  line-height: 1;
+  display: none;
 }
 
 /* Concept page: process flow diagram */
@@ -1719,7 +1724,8 @@ section {
   flex-wrap: wrap;
   align-items: center;
   gap: 6px;
-  background: #eaf3f6;
+  background: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius);
   padding: 16px 18px;
   margin: 16px 0;
@@ -1729,7 +1735,7 @@ section {
 .flow-diagram span:not(.arrow) {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
-  border-radius: 999px;
+  border-radius: var(--radius-sm);
   padding: 6px 14px;
   color: var(--color-text);
 }
@@ -1834,7 +1840,6 @@ section {
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   padding: var(--space-4) var(--space-5);
-  box-shadow: var(--shadow-sm);
 }
 
 .sidebar-widget-title {
@@ -1962,7 +1967,7 @@ section {
   margin: var(--space-4) 0;
   padding: var(--space-3) var(--space-4);
   color: var(--color-text-muted);
-  font-style: italic;
+  /* 日本語の斜体は機械的に傾けた偽物しかなく読みにくいだけなのでやめた */
 }
 
 .article-page .commentary {
@@ -2006,8 +2011,8 @@ section {
   width: 100%;
   max-height: 280px;
   object-fit: cover;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
+  border-radius: var(--radius);
+  box-shadow: none;
   display: block;
 }
 
@@ -2076,7 +2081,7 @@ section {
 .article-chart .chart-bar-track {
   flex: 1;
   background: var(--color-border);
-  border-radius: 999px;
+  border-radius: 2px;
   height: 14px;
   overflow: hidden;
 }
@@ -2084,7 +2089,7 @@ section {
 .article-chart .chart-bar {
   height: 100%;
   background: var(--color-accent);
-  border-radius: 999px;
+  border-radius: 2px;
 }
 
 .article-chart .chart-value {
@@ -2259,7 +2264,7 @@ section {
   background: #fdf1d6;
   color: #8a6d1d;
   border: 1px solid #eddca0;
-  border-radius: 999px;
+  border-radius: var(--radius-sm);
   font-size: 0.78rem;
   padding: 4px 14px;
   margin: 8px 0 24px;
@@ -2370,7 +2375,7 @@ section {
   grid-row: 1;
   justify-self: start;
   padding: 1px 8px;
-  border-radius: 999px;
+  border-radius: 3px;
   background: var(--color-surface-alt);
   border: 1px solid var(--color-border);
   color: var(--color-text-muted);
@@ -2521,7 +2526,7 @@ section {
   border: 1px solid var(--color-border);
   background: var(--color-surface);
   padding: 10px 18px;
-  border-radius: 999px;
+  border-radius: var(--radius-sm);
   font-size: 0.92rem;
   cursor: pointer;
   color: var(--color-text-muted);
@@ -2553,7 +2558,7 @@ section {
   border: 1px solid var(--color-border);
   background: var(--color-surface);
   padding: 8px 16px;
-  border-radius: 999px;
+  border-radius: var(--radius-sm);
   font-size: 0.85rem;
   cursor: pointer;
   color: var(--color-text-muted);
@@ -2620,7 +2625,7 @@ section {
   gap: 6px;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
-  border-radius: 999px;
+  border-radius: var(--radius-sm);
   padding: 5px 12px 5px 8px;
   font-size: 0.82rem;
   color: var(--color-text);
@@ -3029,7 +3034,7 @@ section {
   border: 1px solid var(--color-border-strong);
   background: var(--color-surface);
   color: var(--color-text-muted);
-  border-radius: 999px;
+  border-radius: var(--radius-sm);
   padding: 7px 16px;
   font-family: inherit;
   font-size: var(--text-sm);
@@ -3114,7 +3119,7 @@ section {
 }
 
 .home-kenkyu .section-title::before {
-  background: var(--color-accent);
+  background: var(--color-accent-on-dark);
 }
 
 .home-kenkyu-lead {
@@ -3158,7 +3163,8 @@ section {
   flex-shrink: 0;
   font-size: var(--text-sm);
   font-weight: 700;
-  color: var(--color-accent);
+  /* 濃紺の上で#2e7f78は沈むので、帯の上だけ明るいアクセントを使う */
+  color: var(--color-accent-on-dark);
   font-variant-numeric: tabular-nums;
 }
 
@@ -3571,7 +3577,6 @@ section {
 .link-card:hover {
   border-left-color: var(--color-brand);
   border-color: var(--color-brand);
-  transform: translateY(-2px);
 }
 
 .link-card:hover h4 {

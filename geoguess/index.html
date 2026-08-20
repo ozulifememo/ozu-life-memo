@@ -31,31 +31,31 @@
 </script>
 <style>
   .geo-wrap { max-width: 720px; margin: 0 auto; }
-  .geo-card { border: 1px solid var(--color-border); border-radius: 12px; padding: 24px; background: #fff; }
+  .geo-card { border: 1px solid var(--color-border); border-radius: var(--radius); padding: 24px; background: #fff; }
   .geo-start { text-align: center; padding: 40px 20px; }
   .geo-progress { text-align: center; color: var(--color-text-muted); font-size: 0.9rem; margin-bottom: 12px; }
   .geo-photo-wrap { margin-bottom: 16px; }
   .geo-photo-wrap img {
-    width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 10px; box-shadow: var(--shadow-md); display: block;
+    width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius); box-shadow: var(--shadow-md); display: block;
   }
-  #geo-map { width: 100%; height: 360px; border-radius: 10px; margin-bottom: 14px; border: 1px solid var(--color-border); }
+  #geo-map { width: 100%; height: 360px; border-radius: var(--radius); margin-bottom: 14px; border: 1px solid var(--color-border); }
   .geo-hint { text-align: center; color: var(--color-text-muted); font-size: 0.88rem; margin: 0 0 14px; }
   .geo-guess-btn-wrap { text-align: center; }
-  .geo-round-result { margin-top: 16px; padding: 14px; background: var(--color-bg); border-radius: 8px; display: none; text-align: center; }
+  .geo-round-result { margin-top: 16px; padding: 14px; background: var(--color-bg); border-radius: var(--radius-sm); display: none; text-align: center; }
   .geo-round-result.show { display: block; }
   .geo-round-badge { font-weight: 800; font-size: 1.1rem; margin: 0 0 6px; }
   .geo-round-badge.correct { color: #2e7d46; }
   .geo-round-badge.wrong { color: #c0392b; }
   .geo-answer-pin {
     display: inline-block; background: #2e7d46; color: #fff; font-size: 0.75rem; font-weight: 700;
-    padding: 2px 8px; border-radius: 999px; white-space: nowrap; transform: translate(-50%, -140%);
+    padding: 2px 8px; border-radius: 4px; white-space: nowrap; transform: translate(-50%, -140%);
   }
   .geo-next { display: none; margin-top: 16px; text-align: right; }
   .geo-next.show { display: block; }
   .geo-result { text-align: center; }
   .geo-result-score { font-size: 2.4rem; font-weight: 800; color: var(--color-brand); margin: 12px 0; }
   .geo-result-badge {
-    display: inline-block; font-size: 1.1rem; font-weight: 800; padding: 8px 24px; border-radius: 999px; margin-bottom: 14px;
+    display: inline-block; font-size: 1.1rem; font-weight: 800; padding: 8px 24px; border-radius: 4px; margin-bottom: 14px;
   }
   .geo-result-badge.pass { background: #e6f4ea; color: #2e7d46; }
   .geo-result-badge.fail { background: #fbe9e7; color: #c0392b; }
@@ -64,7 +64,7 @@
   .geo-review-title { font-weight: 700; margin-bottom: 12px; color: var(--color-text); }
   .geo-review-item { display: flex; align-items: center; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--color-border); font-size: 0.92rem; }
   .geo-review-item:last-child { border-bottom: none; }
-  .geo-review-mark { flex-shrink: 0; font-weight: 800; font-size: 0.8rem; padding: 3px 10px; border-radius: 999px; }
+  .geo-review-mark { flex-shrink: 0; font-weight: 800; font-size: 0.8rem; padding: 3px 10px; border-radius: 4px; }
   .geo-review-item.correct .geo-review-mark { background: #e6f4ea; color: #2e7d46; }
   .geo-review-item.wrong .geo-review-mark { background: #fbe9e7; color: #c0392b; }
 </style>

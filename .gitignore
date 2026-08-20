@@ -3,6 +3,7 @@ Thumbs.db
 desktop.ini
 *.log
 node_modules/
+__pycache__/
 
 # 個人的な運営メモ(非公開・GitHubには絶対に上げない)
 private-notes/
@@ -30,7 +31,9 @@ docs/
 /_tools/
 /NOTION-SYNC-PROGRESS.md
 
-# Claude Codeの作業用ファイル(スキル定義以外はコミットしない)
-# settings.local.json / scheduled_tasks.lock / worktrees の漏洩防止
-/.claude/*
-!/.claude/skills/
+# Claude Codeの作業用ファイルは全部コミットしない。
+# 以前はスキル定義(.claude/skills/)だけ許可していたが、スキルの本文には
+# 運営者の名字がそのまま書かれており、Publicリポジトリに上げると
+# 匿名運営が破れる。スキルはこのPCの中だけで使う(2026-08-20変更)。
+/.claude/
+

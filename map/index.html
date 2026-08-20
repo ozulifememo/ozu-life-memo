@@ -50,16 +50,22 @@
     </div>
 
     <div class="map-tab-panel active" data-panel="names" role="tabpanel">
+      <div class="map-search">
+        <input id="aza-search" list="aza-names" placeholder="地名をさがす(例: 徳森)" autocomplete="off">
+        <datalist id="aza-names"></datalist>
+        <span class="map-search-hint">選ぶと、その地区へ移動します</span>
+      </div>
       <div id="map-names" class="ozu-map"></div>
       <div class="map-legend">
         <div class="map-legend-group">
           <p class="map-legend-title">エリア(2005年合併前の旧市町村)</p>
           <span class="legend-chip"><i class="legend-swatch" style="background:#2f6690"></i>大洲地域</span>
-          <span class="legend-chip"><i class="legend-swatch" style="background:#2ec4c4"></i>長浜地域</span>
+          <span class="legend-chip"><i class="legend-swatch" style="background:#2a9d97"></i>長浜地域</span>
           <span class="legend-chip"><i class="legend-swatch" style="background:#e08a3c"></i>肱川地域</span>
           <span class="legend-chip"><i class="legend-swatch" style="background:#8a63c2"></i>河辺地域</span>
         </div>
       </div>
+      <p class="stub-note">地図を拡大すると、地区ごとの細かい地名ラベルが出ます。色のついた地区をクリック(タップ)すると、人口や地名の説明が出ます。</p>
     </div>
 
     <div class="map-tab-panel" data-panel="ozuall" role="tabpanel">
@@ -94,7 +100,7 @@
         </div>
       </div>
       <p class="stub-note">
-        マーカーの位置は住所の字(あざ)を中心にした概算です。同じ字に複数の施設がある場合は少しずらして表示しています。
+        地図を拡大すると学校名のラベルが出ます。マーカーの位置は住所の字(あざ)を中心にした概算です。同じ字に複数の施設がある場合は少しずらして表示しています。
       </p>
     </div>
 

@@ -3,10 +3,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const GROUP_COLORS = {
     ozu: "#2f6690",
-    nagahama: "#2ec4c4",
+    // 長浜はもとの #2ec4c4 がネオン風の水色で、サイトの落ち着いた配色から
+    // 1色だけ浮いていたため一段沈めた(凡例の色も合わせて変更済み)
+    nagahama: "#2a9d97",
     hijikawa: "#e08a3c",
     kawabe: "#8a63c2",
   };
+
+  const GROUP_LABELS = { ozu: "大洲地域", nagahama: "長浜地域", hijikawa: "肱川地域", kawabe: "河辺地域" };
 
   const GSI_TILE = "https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png";
   const GSI_ATTR =
@@ -156,16 +160,65 @@ document.addEventListener("DOMContentLoaded", () => {
     const namesLeaderGroup = L.layerGroup().addTo(namesMap);
     const updateNamesLeaderLabels = makeLeaderLabelUpdater(namesMap, namesAzaLayer, namesLeaderGroup, 46);
 
+    // 引いた表示のときに出す「大洲地域/長浜地域/肱川地域/河辺地域」の大きなラベル。
+    // 以前は初期表示で地名が1つも出ず「色の塊」にしか見えなかったための対策。
+    // ズームインすると個別の地名ラベルに切り替わる。
+    const regionGroup = L.layerGroup();
+    (function buildRegionLabels() {
+      const sums = {};
+      namesAzaLayer.eachLayer((l) => {
+        const p = l.feature.properties;
+        if (!sums[p.group]) sums[p.group] = { sLat: 0, sLng: 0, n: 0 };
+        sums[p.group].sLat += p.cy;
+        sums[p.group].sLng += p.cx;
+        sums[p.group].n++;
+      });
+      Object.keys(GROUP_LABELS).forEach((g) => {
+        const s = sums[g];
+        if (!s) return;
+        L.marker([s.sLat / s.n, s.sLng / s.n], {
+          icon: L.divIcon({
+            className: "",
+            html: `<span class="region-label" style="color:${GROUP_COLORS[g]}">${GROUP_LABELS[g]}</span>`,
+          }),
+          interactive: false,
+        }).addTo(regionGroup);
+      });
+    })();
+
     function updateLabels() {
       const zoom = namesMap.getZoom();
       if (zoom >= 13) {
+        if (namesMap.hasLayer(regionGroup)) namesMap.removeLayer(regionGroup);
         updateNamesLeaderLabels();
       } else {
         namesAzaLayer.eachLayer((layer) => layer.closeTooltip());
         namesLeaderGroup.clearLayers();
+        if (!namesMap.hasLayer(regionGroup)) regionGroup.addTo(namesMap);
       }
     }
     namesMap.on("zoomend", updateLabels);
+
+    // 地名検索: 選ぶとその地区へズームして説明を開く
+    const searchInput = document.getElementById("aza-search");
+    const searchList = document.getElementById("aza-names");
+    if (searchInput && searchList) {
+      const names = [];
+      namesAzaLayer.eachLayer((l) => names.push(l.feature.properties.name));
+      names.sort((a, b) => a.localeCompare(b, "ja"));
+      searchList.innerHTML = names.map((n) => `<option value="${n}"></option>`).join("");
+      searchInput.addEventListener("change", () => {
+        const v = searchInput.value.trim();
+        if (!v) return;
+        let target = null;
+        namesAzaLayer.eachLayer((l) => {
+          if (l.feature.properties.name === v) target = l;
+        });
+        if (!target) return;
+        namesMap.fitBounds(target.getBounds(), { maxZoom: 14, padding: [30, 30] });
+        setTimeout(() => target.openPopup(), 350);
+      });
+    }
 
     // 以前は特定3地区(highlightフラグ)だけ赤枠にして、そこへ自動ズームしていたが、
     // 「なぜこの3地区だけ強調されるのか分からない」という指摘を受けて廃止。

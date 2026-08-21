@@ -76,6 +76,8 @@
       '<a href="' + prefix + 'concept/">サイト紹介</a>' +
       '<a href="' + home + '">トップページ</a>' +
       '<a href="#" data-modal-open>お問い合わせ</a>' +
+      // 外部の発信先。なりすまし防止も兼ねて、本物はここから辿れる状態にしておく。
+      '<a href="https://note.com/ozulifememo" target="_blank" rel="noopener">note</a>' +
       "</div>" +
       "</div>";
 

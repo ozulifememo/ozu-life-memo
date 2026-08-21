@@ -1257,6 +1257,20 @@ section {
   }
 }
 
+/* 記事をnoteにも載せたときの案内(2026-08-21)。
+   本文の邪魔をしないよう、出典欄のあとに1行だけ置く。 */
+.note-crosslink {
+  color: var(--color-text-muted);
+  font-size: 0.86rem;
+  margin: var(--space-5) 0 0;
+}
+
+.note-crosslink a {
+  color: var(--color-accent-btn);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 /* おすすめ記事10選(/best/)。番号つきの一覧カード(2026-08-21新設) */
 .best-list {
   list-style: none;

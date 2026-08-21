@@ -5,6 +5,9 @@
 // sourceDate … 出典(参照した記事・資料)そのものの日付。各記事の出典欄に書かれた
 //              日付から拾っている。出典に日付が無い記事(市役所の制度ページなど)は
 //              このキーを持たない。記事一覧の並び替えに使う。
+// note       … noteに転載したときの記事URL。書くと記事ページに「noteにも掲載しています」が出る
+// noteDate   … noteに出した日(YYYY-MM-DD)。掲載管理用
+// insta      … インスタに投稿した日(YYYY-MM-DD)。掲載管理用で、画面には出さない
 // sourceDateKind … その日付が「更新」「発行」「策定」などどの種類かが判別できた場合のみ。
 // news一覧ページ・トップページの「最新ニュース」・各記事ページの「あわせて読みたい」に自動反映されます。
 
@@ -242,6 +245,7 @@ const OZU_NEWS = [
     category: "kurashi",
     source: "大洲市役所",
     tags: ["財政・税金"],
+    insta: "2026-08-21",
   },
   {
     slug: "shiyuchi-baikyaku",
@@ -598,6 +602,9 @@ const OZU_NEWS = [
     category: "shiten",
     source: "大洲市オープンデータ「主要観光施設入込み状況調」",
     tags: ["観光"],
+    note: "https://note.com/ozulifememo/n/nf3ae903c3c5e",
+    noteDate: "2026-08-21",
+    insta: "2026-08-21",
   },
   {
     slug: "kokuritsu-seishonen-ozu",
@@ -1137,6 +1144,7 @@ const OZU_NEWS = [
     category: "kurashi",
     source: "大洲市ホームページ、大洲市公式観光情報VisitOzu",
     tags: ["観光", "交通・インフラ"],
+    insta: "2026-08-21",
   },
   {
     slug: "ozu-mizubusoku-shinso",

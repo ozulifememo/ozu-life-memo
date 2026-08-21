@@ -62,30 +62,30 @@
 <script src="../assets/js/news-data.js"></script>
 <script src="../assets/js/article-card.js"></script>
 <script>
-  // おすすめ10本。タイトルとカテゴリは news-data.js から引くので、
-  // 記事名を直したときにこのページだけ古くなる事故が起きない。
-  // note に転載したら note: "URL" を書き足すと「note版もあります」が出る。
+  // おすすめ10本。タイトル・カテゴリ・noteのURLは news-data.js(記事台帳)から引く。
+  // ここにはスラッグと紹介文だけを書く。記事名やnoteのURLが変わっても、
+  // 台帳を直せばこのページも自動で追従する。
   (function renderBest() {
     const BEST = [
-      { slug: "castle-stay-hyakuman", note: "",
+      { slug: "castle-stay-hyakuman",
         blurb: "1泊132万円から。それでも収益の3割が文化財の保全に戻る、という仕組みまで読み解く。" },
-      { slug: "akiya-taisaku-keikaku", note: "",
+      { slug: "akiya-taisaku-keikaku",
         blurb: "大洲の空き家率は19.2%。市の対策計画から、この街の現在地を読む。" },
-      { slug: "jr-akaji-jinko", note: "",
+      { slug: "jr-akaji-jinko",
         blurb: "大洲の移動の足はこの先どうなるのか。JRの赤字とバスの実情から考える。" },
-      { slug: "juki-jinko-chiku", note: "",
+      { slug: "juki-jinko-chiku",
         blurb: "地区ごとに並べると、人がどこに住んでいるのかが見えてくる。大洲の「形」の話。" },
-      { slug: "gouu-bosai", note: "",
+      { slug: "gouu-bosai",
         blurb: "あの豪雨の裁判で、大洲の防災はどう変わるのか。判決と市の動きを追う。" },
-      { slug: "nagahama-umetate-keii", note: "",
+      { slug: "nagahama-umetate-keii",
         blurb: "長浜港の埋立は、実は50年がかりの計画だった。半世紀分の経緯を掘る。" },
-      { slug: "2005-gappei-kaiko", note: "",
+      { slug: "2005-gappei-kaiko",
         blurb: "2005年、「新大洲市」が生まれた日。合併前最後の広報誌を読み返す。" },
-      { slug: "jinko-vision-3man", note: "",
+      { slug: "jinko-vision-3man",
         blurb: "2060年の大洲は3万人? 市が立てた人口目標の中身を確かめる。" },
-      { slug: "ozu-okashi-shigure", note: "",
+      { slug: "ozu-okashi-shigure",
         blurb: "銘菓「志ぐれ」の由来と、市内10店舗それぞれの味。甘い方の大洲の話。" },
-      { slug: "aihara-san", note: "",
+      { slug: "aihara-san",
         blurb: "16年間、無報酬で。行政相談委員の相原さんが総務大臣表彰を受けた話。" },
     ];
 
@@ -100,8 +100,9 @@
       const thumb = photo
         ? `<span class="best-thumb"><img src="${photo.thumbSrc}" alt="${OzuCard.escapeHtml(photo.alt)}" loading="lazy" decoding="async"></span>`
         : "";
-      const noteLink = b.note
-        ? ` <a class="best-note-link" href="${b.note}" target="_blank" rel="noopener">note版もあります</a>`
+      // noteのURLは記事台帳(news-data.js)の note: から引く。ここには書かない。
+      const noteLink = item.note
+        ? ` <a class="best-note-link" href="${item.note}" target="_blank" rel="noopener">note版もあります</a>`
         : "";
       return `
       <li class="best-item">

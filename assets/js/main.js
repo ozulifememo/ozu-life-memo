@@ -181,4 +181,25 @@ document.addEventListener("DOMContentLoaded", () => {
       applyNewsFilter();
     });
   });
+
+  // ── noteに転載した記事の案内 ───────────────────────
+  // 台帳(news-data.js)の note: にURLが入っている記事だけ、出典欄のあとに1行出す。
+  // 記事HTMLを1本ずつ手で直さなくてよいように、ここでまとめて面倒を見る。
+  (function renderNoteCrosslink() {
+    const page = document.querySelector(".article-page[data-slug]");
+    if (!page || typeof OZU_NEWS === "undefined") return;
+    const item = OZU_NEWS.find((n) => n.slug === page.dataset.slug);
+    if (!item || !item.note) return;
+    const p = document.createElement("p");
+    p.className = "note-crosslink";
+    const a = document.createElement("a");
+    a.href = item.note;
+    a.target = "_blank";
+    a.rel = "noopener";
+    a.textContent = "noteにも掲載しています";
+    p.append("この記事は ", a, "。");
+    const related = page.querySelector(".related-list");
+    if (related) related.parentNode.insertBefore(p, related);
+    else page.appendChild(p);
+  })();
 });

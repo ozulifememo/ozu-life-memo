@@ -320,17 +320,18 @@ def check_tables(path, html, rep):
     囲いが無い表は、スマホ幅で中身が入り切らないときにページ全体を
     横に突き破る(2026-08-20のブラウザ点検で9記事が実際にはみ出していた)。
     記事の表は <div style="overflow-x:auto;"> で包むのがこのサイトの決まり。
+    共通クラス .article-table-wrap も同じ役割なので、こちらでもよい。
     """
     if page_type(path) not in ("article", "book", "kenkyu"):
         return
     body = body_only(html)
     for m in re.finditer(r"<table\b", body):
         before = body[max(0, m.start() - 250):m.start()]
-        if "overflow-x" not in before:
+        if "overflow-x" not in before and "article-table-wrap" not in before:
             line = html[:html.find(body) + m.start()].count("\n") + 1
             rep.error(rel(path), "表", f"スクロール用の囲いが無い表があります({line}行目付近)",
                       "       スマホで表がページ幅を突き破る原因になります。\n"
-                      '       <div style="overflow-x:auto;"> で表を包んでください')
+                      '       <div class="article-table-wrap"> で表を包んでください')
             break   # 1ファイル1件で十分
 
 

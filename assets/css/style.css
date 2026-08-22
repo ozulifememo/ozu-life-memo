@@ -3869,3 +3869,76 @@ section {
 .book-section-title h2 {
   min-width: 0;
 }
+
+/* ── 記事の表(.article-table) ────────────────────────────────
+   これまで記事内の表は1つ1つに長いstyle=""を直接書いていて、書くのも直すのも
+   重かった。見た目は既存の表とそろえたまま、クラス1つで書けるようにする。
+   横に長い表はスマホで表だけ横スクロールさせたいので、.article-table-wrap で包む。 */
+.article-table-wrap {
+  overflow-x: auto;
+  margin: 0 0 var(--space-5);
+}
+
+.article-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  font-size: var(--text-sm);
+}
+
+.article-table caption {
+  caption-side: top;
+  text-align: left;
+  font-weight: 700;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  padding: 0 0 var(--space-3);
+}
+
+.article-table th,
+.article-table td {
+  text-align: left;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: top;
+}
+
+.article-table thead th {
+  background: var(--color-surface-alt);
+  color: var(--color-brand);
+  font-weight: 600;
+  font-size: var(--text-xs);
+  white-space: nowrap;
+}
+
+.article-table tbody tr:last-child th,
+.article-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.article-table tbody th {
+  font-weight: 600;
+  color: var(--color-text);
+  white-space: nowrap;
+}
+
+/* 3列以上の表は、スマホ幅で1文字ずつ縦積みになるほど潰れる。
+   最低幅を持たせて、潰す代わりに .article-table-wrap の中で横スクロールさせる。 */
+.article-table--wide {
+  min-width: 34rem;
+}
+
+.article-table .num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.article-table-note {
+  margin: calc(var(--space-5) * -1 + var(--space-2)) 0 var(--space-5);
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+}

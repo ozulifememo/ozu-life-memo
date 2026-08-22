@@ -78,6 +78,8 @@
       '<a href="#" data-modal-open>お問い合わせ</a>' +
       // 外部の発信先。なりすまし防止も兼ねて、本物はここから辿れる状態にしておく。
       '<a href="https://note.com/ozulifememo" target="_blank" rel="noopener">note</a>' +
+      '<a href="https://www.instagram.com/ozulifememo/" target="_blank" rel="noopener">Instagram</a>' +
+      '<a href="' + prefix + 'feed.xml">更新をRSSで受け取る</a>' +
       "</div>" +
       "</div>";
 

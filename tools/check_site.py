@@ -175,7 +175,8 @@ def collect_pages() -> list[Path]:
     for p in REPO.rglob("*.html"):
         rp = p.relative_to(REPO).as_posix()
         # pr/ はSNS展開用の内部素材置き場(gitignore済み、GitHub Pagesに載らない)
-        if rp.startswith((".claude/", "node_modules/", "docs/", "pr/", "private-notes/")):
+        # tools/_gikai_cache/ は会議録のダウンロード置き場(記事ではない)
+        if rp.startswith((".claude/", "node_modules/", "docs/", "pr/", "private-notes/", "tools/")):
             continue
         if p.name.startswith("_"):      # _measure.html などの検証用
             continue

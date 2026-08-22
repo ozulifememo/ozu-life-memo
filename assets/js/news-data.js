@@ -41,6 +41,7 @@ const OZU_NEWS = [
     title: "845人が働く工場が大洲にあった。「松下寿」はどこへ消えたのか",
     category: "shiten",
     source: "大洲市議会会議録／愛媛県『えひめの記憶』",
+    sourceDate: "2010-06-15",
     tags: ["産業・農業", "防災"],
   },
   {
@@ -67,6 +68,8 @@ const OZU_NEWS = [
     title: "大洲市「未来ノート」、もしものときに備えるエンディングノート",
     category: "kurashi",
     source: "大洲市高齢福祉課「大洲市未来ノート」",
+    sourceDate: "2026-08-17",
+    sourceDateKind: "更新",
     tags: ["医療・福祉"],
   },
   {
@@ -75,6 +78,8 @@ const OZU_NEWS = [
     title: "狂犬病予防注射、令和９年３月からルールが変わる。「４月～６月の期間限定」が廃止に",
     category: "kurashi",
     source: "大洲市役所/新潟県・越谷市など他自治体の同一内容お知らせ",
+    sourceDate: "2026-08-07",
+    sourceDateKind: "更新",
     tags: ["医療・福祉"],
   },
   {
@@ -83,6 +88,8 @@ const OZU_NEWS = [
     title: "危険空き家の解体に上限80万円。ただし枠は年30戸の先着順",
     category: "kurashi",
     source: "大洲市「危険空き家除却事業補助金」",
+    sourceDate: "2026-04-01",
+    sourceDateKind: "更新",
     tags: ["空き家・住宅"],
   },
   {
@@ -100,6 +107,8 @@ const OZU_NEWS = [
     title: "大洲市の給食費、小中とも無償に。小学校は国の制度、中学校は市の判断",
     category: "kurashi",
     source: "大洲市ホームページ/文部科学省/大洲市令和8年度当初予算の概要",
+    sourceDate: "2026-06-26",
+    sourceDateKind: "更新",
     tags: ["子育て・教育"],
   },
   {
@@ -137,6 +146,8 @@ const OZU_NEWS = [
     title: "大洲市の空き家、「壊す」と「放置」どちらが得か。固定資産税の分かれ目を計算してみた",
     category: "kurashi",
     source: "大洲市(危険空き家除却事業補助金・市有地売却物件・固定資産税)、総務省(固定資産税の概要・家屋評価・負担調整措置)、国土交通省(空家等対策特別措置法・住宅用地特例)",
+    sourceDate: "2025-07-30",
+    sourceDateKind: "更新",
     tags: ["空き家・住宅", "財政・税金"],
   },
   {
@@ -145,6 +156,8 @@ const OZU_NEWS = [
     title: "大洲市の空き家バンク物件640万円、３人家族で買ったら実際いくらかかる？",
     category: "kurashi",
     source: "大洲市空き家バンク物件No.1-1-207、大洲市移住・定住促進補助金、国税庁・総務省・国土交通省の税制資料をもとに試算",
+    sourceDate: "2026-04-09",
+    sourceDateKind: "掲載",
     tags: ["空き家・住宅"],
   },
   {
@@ -270,6 +283,8 @@ const OZU_NEWS = [
     title: "大洲市の軽自動車税、実はPayPayで払える。ただし車検が近い人は要注意",
     category: "kurashi",
     source: "大洲市役所",
+    sourceDate: "2023-03-27",
+    sourceDateKind: "更新",
     tags: ["財政・税金"],
     insta: "2026-08-21",
   },
@@ -289,6 +304,8 @@ const OZU_NEWS = [
     title: "大洲に「フジ」の店はもうない。マルナカ大洲店で５％引きになる日",
     category: "kurashi",
     source: "フジ",
+    sourceDate: "2026-08-19",
+    sourceDateKind: "確認",
     tags: ["産業・農業"],
   },
   {
@@ -307,6 +324,8 @@ const OZU_NEWS = [
     title: "「大洲の人はイントネーションがない」と言われる理由",
     category: "shiten",
     source: "広報おおず、愛媛県史 民俗 下 ほか",
+    sourceDate: "1984-03-31",
+    sourceDateKind: "発行",
     tags: ["合併・地域"],
   },
   {
@@ -363,6 +382,8 @@ const OZU_NEWS = [
     title: "大洲藩祖・加藤光泰は、大洲に来たことがなかった",
     category: "shiten",
     source: "大洲市役所/大洲市立博物館",
+    sourceDate: "2021-04-20",
+    sourceDateKind: "更新",
     tags: ["観光"],
   },
   {
@@ -489,6 +510,8 @@ const OZU_NEWS = [
     title: "大洲のうかい、初めてでもわかる乗り方ガイド",
     category: "ima",
     source: "大洲のうかい公式サイト、大洲市公式ホームページ、大洲市観光協会(VisitOzu)、NIPPONIA HOTEL大洲城下町マガジン",
+    sourceDate: "2026-05-07",
+    sourceDateKind: "更新",
     tags: ["観光"],
   },
   {
@@ -515,6 +538,8 @@ const OZU_NEWS = [
     title: "皮膚科なのに常勤医ゼロ。大洲市立病院の非常勤ローテーションを見る",
     category: "ima",
     source: "大洲市「皮膚科(市立大洲病院)」",
+    sourceDate: "2026-07-29",
+    sourceDateKind: "更新",
     tags: ["医療・福祉"],
   },
   {
@@ -561,6 +586,8 @@ const OZU_NEWS = [
     title: "大洲市の９年計画に意見を出したのは５人。反映されたのは１件だけ",
     category: "shiten",
     source: "大洲市「第3次大洲市総合計画基本構想(案)パブリックコメント実施結果」ページ・結果PDF",
+    sourceDate: "2026-07-29",
+    sourceDateKind: "更新",
     tags: ["議会・行政", "人口減少"],
   },
   {
@@ -618,6 +645,8 @@ const OZU_NEWS = [
     title: "大洲市の循環バス「ぐるりんおおず」、乗り方の実用ガイド",
     category: "kurashi",
     source: "愛媛県オープンデータカタログ／大洲市オープンデータ(標準的なバス情報フォーマット)",
+    sourceDate: "2026-04-01",
+    sourceDateKind: "更新",
     tags: ["交通・インフラ"],
   },
   {
@@ -745,6 +774,7 @@ const OZU_NEWS = [
     title: "大洲は「伊予の小京都」。でも実は「全国京都会議」には入っていない",
     category: "shiten",
     source: "中日新聞、全国京都会議公式サイト ほか",
+    sourceDate: "2023-10-27",
     tags: ["観光"],
   },
   {
@@ -808,6 +838,8 @@ const OZU_NEWS = [
     title: "少彦名神社、大洲市菅田町にある知る人ぞ知る神社",
     category: "shiten",
     source: "少彦名神社とおすくな社中（公式サイト）、大洲市ホームページ ほか",
+    sourceDate: "2016-12-26",
+    sourceDateKind: "更新",
     tags: ["観光"],
   },
   {
@@ -816,6 +848,8 @@ const OZU_NEWS = [
     title: "大洲藩主・加藤家の墓所は如法寺にある",
     category: "shiten",
     source: "大洲市ホームページ、Wikipedia、MATCHA ほか",
+    sourceDate: "2021-04-20",
+    sourceDateKind: "更新",
     tags: ["観光"],
   },
   {
@@ -834,6 +868,8 @@ const OZU_NEWS = [
     title: "しろしたテラスに行ってきた。家でも職場でもない第三の作業場所",
     category: "ima",
     source: "しろしたテラス公式サイト、大洲市役所 ほか",
+    sourceDate: "2025-12-26",
+    sourceDateKind: "更新",
     tags: ["まちづくり"],
   },
   {
@@ -842,6 +878,8 @@ const OZU_NEWS = [
     title: "大洲の鵜飼と、鵜・川魚の生態系を考える",
     category: "shiten",
     source: "大洲市観光協会、環境省、愛媛県、大洲市役所 ほか",
+    sourceDate: "2026-04-22",
+    sourceDateKind: "更新",
     tags: ["観光"],
   },
   {
@@ -859,6 +897,8 @@ const OZU_NEWS = [
     title: "大洲市「暮らしの便利帳2026」ができました",
     category: "ima",
     source: "大洲市役所",
+    sourceDate: "2026-01-01",
+    sourceDateKind: "版",
     tags: ["まちづくり"],
   },
   {
@@ -877,6 +917,7 @@ const OZU_NEWS = [
     title: "ホテルの歯ブラシで国内シェア１位。その会社は大洲市新谷にある",
     category: "shiten",
     source: "note",
+    sourceDate: "2026-04-22",
     tags: ["産業・農業", "財政・税金"],
   },
   {
@@ -939,6 +980,7 @@ const OZU_NEWS = [
     title: "肱川町の鹿野川荘と「風の里」。大洲で意外と知らない一角",
     category: "shiten",
     source: "大洲市役所、note",
+    sourceDate: "2026-03-30",
     tags: ["観光"],
   },
   {
@@ -957,6 +999,7 @@ const OZU_NEWS = [
     title: "大洲にはまだ養蚕農家がある。誰が、何のために続けているのか",
     category: "shiten",
     source: "note",
+    sourceDate: "2021-06-01",
     tags: ["産業・農業"],
   },
   {
@@ -1142,6 +1185,7 @@ const OZU_NEWS = [
     title: "崩壊寸前だった城下町を救ったのは、若者と「10年貸し」の発想",
     category: "shiten",
     source: "東京都立大学大学院 修士論文",
+    sourceDate: "2023-03-01",
     tags: ["空き家・住宅", "まちづくり"],
     pick: true,
     pickNote: "「今すぐ売る」でも「自分で管理」でもない第三の選択肢が城下町を救った。",
@@ -1161,6 +1205,8 @@ const OZU_NEWS = [
     title: "大洲銘菓「志ぐれ」の由来。市内10店舗、それぞれの味",
     category: "shiten",
     source: "大洲市ホームページ（商工観光課）",
+    sourceDate: "2023-09-19",
+    sourceDateKind: "更新",
     tags: ["観光", "産業・農業"],
   },
   {
@@ -1169,6 +1215,8 @@ const OZU_NEWS = [
     title: "大洲の無料駐車場一覧。城下町観光で使える３か所",
     category: "kurashi",
     source: "大洲市ホームページ、大洲市公式観光情報VisitOzu",
+    sourceDate: "2021-10-11",
+    sourceDateKind: "更新",
     tags: ["観光", "交通・インフラ"],
     insta: "2026-08-21",
   },
@@ -1178,6 +1226,7 @@ const OZU_NEWS = [
     title: "大洲の「水不足」は本当か。野村ダムは実際に取水制限していた",
     category: "kurashi",
     source: "国土交通省肱川ダム統合管理事務所、大洲市役所",
+    sourceDate: "2026-08-03",
     tags: ["防災"],
   },
   {
@@ -1214,6 +1263,8 @@ const OZU_NEWS = [
     title: "肱川はどこからどこまで？源流・合流点を図解でたどる",
     category: "shiten",
     source: "国土交通省四国地方整備局、愛媛県、四国西予ジオパーク ほか",
+    sourceDate: "2022-06-22",
+    sourceDateKind: "変更",
     tags: ["観光"],
     pick: true,
     pickNote: "源流は西予市の鳥坂峠。黒瀬川・河辺川・小田川・矢落川との合流点を図解と地図でたどってみた。",
@@ -1257,6 +1308,8 @@ const OZU_NEWS = [
     title: "四国８の字ネットワーク、整備率77％。大洲は縦貫道と横断道の両方の終点だった",
     category: "kurashi",
     source: "愛媛県道路建設課、愛媛県南予地方局、国土交通省、NEXCO西日本",
+    sourceDate: "2025-06-25",
+    sourceDateKind: "更新",
     tags: ["交通・インフラ", "防災"],
     pick: true,
     pickNote: "整備率は約76~77%。大洲道路・松山道の4車線化も、この巨大な道路網の一部だった。",

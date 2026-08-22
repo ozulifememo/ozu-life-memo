@@ -204,9 +204,7 @@ figcaption {
    誌面らしさを消していた。ホバーは罫線の色が変わるだけにする。
    (影は、本当に手前に重なる部品=ドロップダウンとモーダルだけに残す) */
 .news-category-card,
-.link-list a,
 .icon-card,
-.link-card,
 .related-list-plain,
 .monthly-card,
 .featured-article a.featured-card,
@@ -214,9 +212,7 @@ figcaption {
   transition: border-color 0.18s ease, background 0.18s ease;
 }
 
-.link-list a:hover,
 .icon-card:hover,
-.link-card:hover,
 .monthly-card:hover,
 .featured-article a.featured-card:hover,
 .fun-corner-card:hover {
@@ -1464,28 +1460,6 @@ section {
   color: var(--color-text-muted);
 }
 
-/* Link list */
-.link-list {
-  max-width: 760px;
-  margin: 0 auto;
-  display: grid;
-  gap: 12px;
-}
-
-.link-list a {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius);
-  padding: 16px 20px;
-}
-
-.link-list a:hover {
-  border-color: var(--color-brand);
-}
-
 /* 大洲の自由研究(jiyu-kenkyu)のタイトル部分は各ページのHTMLに
    style="max-width:820px" と直接書かれており、本文(.jk-section = 760px)と
    左端が30pxずれて見えていた。記事は今後もテンプレートから増えるので、
@@ -1884,68 +1858,83 @@ section {
   font-weight: 700;
 }
 
-/* Link page card grid */
-.link-section {
-  max-width: 1040px;
-  margin: 0 auto 56px;
+/* ── リンク集(2026-08-22 コンパクト化) ─────────────────
+   カード型だと25件で縦に3画面分伸びていたので、
+   「列見出し+仕切り線のリスト」3カラムに変えて1画面で見渡せる密度にした。
+   詰まって見えないよう、枠は描かず余白と罫線だけで区切る。 */
+.link-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(24px, 4vw, 48px);
+  max-width: 1160px;
+  margin: 0 auto;
+  align-items: start;
 }
 
-.link-section-title {
-  font-size: var(--text-lg);
+.link-col-title {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  font-size: var(--text-base);
   font-weight: 700;
   color: var(--color-brand-dark);
-  line-height: 1.5;
-  margin: 0 0 24px;
-}
-
-.link-card-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
-
-.link-card {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius);
-  overflow: hidden;
-  display: block;
-}
-
-.link-card img {
-  width: 100%;
-  height: 110px;
-  object-fit: cover;
-}
-
-.link-card .link-card-body {
-  padding: 14px 16px;
-}
-
-.link-card h4 {
-  margin: 0 0 6px;
-  font-size: 0.95rem;
-}
-
-.link-card p {
+  border-bottom: 2px solid var(--color-brand-dark);
+  padding-bottom: 10px;
   margin: 0;
-  font-size: 0.82rem;
+}
+
+.link-col-title span {
+  font-size: var(--text-xs);
+  font-weight: 500;
   color: var(--color-text-muted);
+  letter-spacing: 0.02em;
 }
 
-.link-card:hover {
-  border-color: var(--color-brand);
+.link-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-@media (max-width: 900px) {
-  .link-card-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.link-list li {
+  border-bottom: 1px solid var(--color-border);
 }
 
-@media (max-width: 560px) {
-  .link-card-grid {
+.link-list a {
+  display: block;
+  padding: 8px 2px 9px;
+}
+
+.link-name {
+  display: block;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.45;
+}
+
+.link-name::after {
+  content: " ↗";
+  font-size: 0.75em;
+  color: var(--color-text-faint);
+}
+
+.link-desc {
+  display: block;
+  margin-top: 1px;
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.link-list a:hover .link-name {
+  color: var(--color-brand);
+}
+
+@media (max-width: 860px) {
+  .link-columns {
     grid-template-columns: 1fr;
+    gap: 36px;
   }
 }
 

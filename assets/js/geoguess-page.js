@@ -6,9 +6,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const OZU_CENTER = [33.5049, 132.5457];
   const OZU_ZOOM = 13;
 
-  const GSI_TILE = "https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png";
-  const GSI_ATTR =
-    '<a href="https://maps.gsi.go.jp/development/ichiran.html" target="_blank" rel="noopener">地理院タイル</a>(国土地理院)';
+  // 地理院タイル(pale)は地名や店名がほとんど描かれず場所を思い出す手がかりに乏しい、
+  // という本人の要望で、建物名・店名まで載るOpenStreetMap標準タイルに切り替えた(2026-08-22)。
+  const MAP_TILE = "https://tile.openstreetmap.org/{z}/{x}/{y}.png";
+  const MAP_ATTR =
+    '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors';
 
   const noDataEl = document.getElementById("geo-no-data");
   const startScreen = document.getElementById("geo-start");
@@ -73,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function ensureMap() {
     if (map) return;
     map = L.map(mapEl).setView(OZU_CENTER, OZU_ZOOM);
-    L.tileLayer(GSI_TILE, { attribution: GSI_ATTR, maxZoom: 18 }).addTo(map);
+    L.tileLayer(MAP_TILE, { attribution: MAP_ATTR, maxZoom: 19 }).addTo(map);
     map.on("click", (e) => {
       if (hasAnswered) return;
       placeGuessMarker(e.latlng);

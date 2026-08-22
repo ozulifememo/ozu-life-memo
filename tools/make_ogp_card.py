@@ -38,7 +38,7 @@ sx1 = (W + sub_w) / 2 + 30
 d.rectangle([sx0, 422 + 18, sx0 + sq, 422 + 18 + sq], fill=MIKAN)
 d.rectangle([sx1, 422 + 18, sx1 + sq, 422 + 18 + sq], fill=MIKAN)
 
-out = r"c:\Users\ihfff\Desktop\ozu-life-memo\assets\img\ogp-card.png"
-img.save(out, "PNG", optimize=True)
 import os
+out = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "assets", "img", "ogp-card.png")
+img.save(out, "PNG", optimize=True)
 print("saved:", out, os.path.getsize(out) // 1024, "KB")

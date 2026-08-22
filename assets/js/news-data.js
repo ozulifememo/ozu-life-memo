@@ -36,6 +36,32 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "matsushita-kotobuki",
+    date: "2026-08-22",
+    title: "845人が働く工場が大洲にあった。「松下寿」はどこへ消えたのか",
+    category: "shiten",
+    source: "大洲市議会会議録／愛媛県『えひめの記憶』",
+    tags: ["産業・農業", "防災"],
+  },
+  {
+    slug: "shikoku-shinkansen-53nen",
+    date: "2026-08-22",
+    title: "四国に新幹線は来るのか。53年止まっていた計画に、国が初めてお金を付けた",
+    category: "shiten",
+    source: "国土交通省「幹線鉄道ネットワーク等のあり方に関する調査」／四国新幹線整備促進期成会",
+    sourceDate: "2026-08-21",
+    tags: ["交通・インフラ", "財政・税金"],
+  },
+  {
+    slug: "kanko-rieki-yukue",
+    date: "2026-08-22",
+    title: "観光に88%が賛成。じゃあ、もうけは大洲に落ちているのか",
+    category: "shiten",
+    source: "大洲市「歴史的建造物等を活用した持続可能なまちづくりに関するアンケート」（令和７年度）",
+    sourceDate: "2025-12-24",
+    tags: ["観光", "財政・税金"],
+  },
+  {
     slug: "ozu-mirai-note",
     date: "2026-08-18",
     title: "大洲市「未来ノート」、もしものときに備えるエンディングノート",

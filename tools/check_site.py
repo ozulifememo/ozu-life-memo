@@ -100,12 +100,14 @@ SITE_SUFFIXES = [
 # そのファイルが無い環境では匿名性チェックだけを飛ばし、他の点検は通常どおり動く。
 BANNED = []
 SUSPECT = []
+ALLOW = []
 _words = Path(__file__).resolve().parent.parent / "private-notes" / "banned-words.py"
 if _words.exists():
     _ns = {}
     exec(compile(_words.read_text(encoding="utf-8"), str(_words), "exec"), _ns)
     BANNED = _ns.get("BANNED", [])
     SUSPECT = _ns.get("SUSPECT", [])
+    ALLOW = _ns.get("ALLOW", [])      # 当たっても見逃してよい文字列(実在の地名など)
 
 # 敬体(ですます調)の語尾。常体に統一する方針なので混在を警告する
 KEITAI = [r"ました。", r"ています。", r"ません。", r"します。", r"です。", r"ます。"]
@@ -626,6 +628,44 @@ def git_changed_pages() -> set:
     return paths
 
 
+def check_repo_anonymity(rep):
+    """リポジトリに入っている全テキストファイルに、個人が特定できる語が無いか。
+
+    記事本文の検査(check_anonymity)は本文しか見ない。2026-08-29、道具が
+    書き出した台帳(JSON)に名字が入ったままコミット・pushしてしまった。
+    公開されるのは記事だけではない。git が追跡している全ファイルを見る。
+    """
+    import subprocess
+    if not BANNED:
+        return
+    try:
+        out = subprocess.run(["git", "ls-files"], cwd=str(REPO), capture_output=True,
+                             text=True, encoding="utf-8", timeout=30).stdout
+    except Exception:
+        return
+    skip_ext = (".png", ".jpg", ".jpeg", ".webp", ".gif", ".svg", ".ico", ".pdf",
+                ".woff", ".woff2", ".ttf", ".xlsx", ".zip")
+    for f in out.split("\n"):
+        if not f or f.lower().endswith(skip_ext):
+            continue
+        path = REPO / f
+        if page_type(path) in ("article", "book", "kenkyu"):
+            continue                      # 記事本文は check_anonymity が見ている
+        try:
+            text = path.read_text(encoding="utf-8", errors="ignore")
+        except Exception:
+            continue
+        for pattern, why in BANNED:
+            for m in re.finditer(pattern, text):
+                around = text[max(0, m.start() - 30): m.end() + 30]
+                if any(a in around for a in ALLOW):
+                    continue
+                rep.error(f, "匿名性", f"「{m.group(0)}」が記事以外のファイルにあります({why})",
+                          "       …" + " ".join(around.split()) + "…\n"
+                          "       道具が書き出すファイルも公開されます")
+                break
+
+
 def check_registry_orphans(registry, pages, rep):
     """台帳にあるのにファイルが無い / ファイルがあるのに台帳に無い"""
     on_disk = {p.stem for p in pages if page_type(p) == "article"}
@@ -937,6 +977,7 @@ def main():
 
     if not args.slug and not args.changed:
         check_registry_orphans(registry, pages, rep)
+        check_repo_anonymity(rep)
     if not args.slug:
         check_sitemap(pages, sitemap, rep)
 

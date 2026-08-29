@@ -36,6 +36,42 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "kyushoku-center-yoryoku",
+    date: "2026-08-30",
+    title: "10年後、大洲の給食は1,765食に減る。空いた分を高校生や高齢者に回せるか",
+    category: "shiten",
+    source: "大洲市議会会議録／文部科学省 学校給食実施状況調査／厚生労働省 配食事業ガイドライン",
+    sourceDate: "2026-03-01",
+    tags: ["子育て・教育", "議会・行政"],
+  },
+  {
+    slug: "kishou-bosai-advisor",
+    date: "2026-08-30",
+    title: "愛媛に5人の気象のプロ。大洲市は「今のところ雇わない」と答えた",
+    category: "shiten",
+    source: "大洲市議会会議録／気象庁「気象業務はいま2025」／気象防災アドバイザー活用促進事業報告書",
+    sourceDate: "2024-06-01",
+    tags: ["防災", "議会・行政"],
+  },
+  {
+    slug: "nankotsu-dendo-earphone",
+    date: "2026-08-30",
+    title: "大洲市役所の窓口にある丸いイヤホン。あれは500年ぶりの発見だった",
+    category: "kurashi",
+    source: "大洲市議会会議録／内閣府 令和7年版高齢社会白書／AUDIOLOGY JAPAN",
+    sourceDate: "2025-09-01",
+    tags: ["医療・福祉"],
+  },
+  {
+    slug: "kanshin-breaker",
+    date: "2026-08-30",
+    title: "地震の火事の6割は「電気」。大洲市が上限1万5千円を出している器具",
+    category: "kurashi",
+    source: "大洲市「地震被害軽減対策の費用を補助します」／中央防災会議／愛媛県地震被害想定調査",
+    sourceDate: "2026-04-13",
+    tags: ["防災"],
+  },
+  {
     slug: "tsuyagawa-tokutei-toshi-kasen",
     date: "2026-08-28",
     title: "大洲の都谷川が、四国で初めて「都市の川」になった",

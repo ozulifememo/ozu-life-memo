@@ -1,0 +1,183 @@
+# -*- coding: utf-8 -*-
+"""記事HTMLを、Notion「③記事一覧」に入れる形(Notion風Markdown)に変換する。
+
+公開手順(/kokai)ではNotion③への登録まで含まれているが、2026-08-26〜28に
+別セッションで公開した11本がNotionに無かった。HTMLからNotion原稿を
+機械で起こせるようにして、この手順漏れが起きても後から追いつけるようにする。
+
+変換するもの: h2 / p / strong / ul・ol / 出典欄(callout)
+捨てるもの: 要点ボックス・読了時間・吹き出し・図(SVG)・「同じテーマの記事」
+(要点と読了時間はHTML側の見せ方の部品なのでNotion原稿には入れない、が方針)
+
+使い方:
+  python tools/html2notion.py <slug>            # 標準出力にMarkdown
+  python tools/html2notion.py <slug> --json     # プロパティも含めてJSON
+"""
+import argparse
+import html as H
+import json
+import re
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import check_site as cs                                    # noqa: E402
+
+CAT = {"ima": "大洲のいま", "kurashi": "大洲の暮らし", "shiten": "大洲の視点"}
+KANSUJI = "〇一二三四五六七八九"
+
+
+def kansuji(n: int) -> str:
+    """Notionのプロパティ欄は数量を漢数字で書く(矢印や算用数字が化けた実例あり)"""
+    if n < 10:
+        return KANSUJI[n]
+    if n < 20:
+        return "十" + (KANSUJI[n - 10] if n > 10 else "")
+    return KANSUJI[n // 10] + "十" + (KANSUJI[n % 10] if n % 10 else "")
+
+
+def inline(s: str) -> str:
+    """段落の中のタグをMarkdownに"""
+    s = re.sub(r"<strong\b[^>]*>(.*?)</strong>", r"**\1**", s, flags=re.S)
+    s = re.sub(r"<b\b[^>]*>(.*?)</b>", r"**\1**", s, flags=re.S)
+    s = re.sub(r"<em\b[^>]*>(.*?)</em>", r"*\1*", s, flags=re.S)
+    s = re.sub(r'<a\b[^>]*href="([^"]+)"[^>]*>(.*?)</a>', lambda m: f"[{m.group(2)}]({m.group(1)})", s, flags=re.S)
+    s = re.sub(r"<br\s*/?>", "\n", s)
+    s = re.sub(r"<[^>]+>", "", s)
+    s = H.unescape(s)
+    return " ".join(s.split())
+
+
+def convert(slug: str) -> dict:
+    p = cs.REPO / "eachnews" / f"{slug}.html"
+    html = cs.read(p)
+    reg = cs.load_registry()[slug]
+
+    # 本文は <div class="article-page"> から <aside>(サイドバー) の手前まで。
+    # ヘッダー・フッター・サイドバー・お問い合わせは記事ではないので最初から外す
+    start = html.find('<div class="article-page"')
+    end = html.find("<aside", start)
+    body = html[start:end if end > 0 else None]
+
+    # 出典欄を先に取り出しておき、本文からは除く。
+    # 形は <div class="content-block source-box"> の中に <a class="source-link"> が並ぶ
+    src_m = re.search(r'<div class="content-block source-box">.*?</div>', body, re.S)
+    sources = []
+    posted = ""
+    if src_m:
+        box = src_m.group(0)
+        # 掲載日の書き方は「2026/08/28」と「2026年8月26日」の2通りある
+        pm = re.search(r'<p class="source-box-posted">.*?(\d{4})[/年](\d{1,2})[/月](\d{1,2}).*?</p>', box, re.S)
+        if pm:
+            posted = f"{int(pm.group(1))}年{int(pm.group(2))}月{int(pm.group(3))}日"
+            box = box[:pm.start()] + box[pm.end():]
+        for a in re.finditer(r'<a class="source-link"\s+href="([^"]+)"[^>]*>(.*?)</a>(.*?)(?=<a class="source-link"|</div>)',
+                             box, re.S):
+            url = H.unescape(a.group(1))
+            label = inline(a.group(2))
+            rest = inline(a.group(3))
+            sources.append((label, url, rest))
+        body = body[:src_m.start()] + body[src_m.end():]
+
+    # 捨てる部品(要点・読了時間・吹き出し・図はHTML側の見せ方の部品)
+    for pat in (r'<div class="article-summary".*?</ul>\s*</div>',
+                r'<div class="memou-intro">.*?</div>\s*</div>',
+                r"<svg\b.*?</svg>", r"<figure\b.*?</figure>", r"<script\b.*?</script>",
+                r"<nav\b.*?</nav>"):
+        body = re.sub(pat, " ", body, flags=re.S | re.I)
+    # 記事の帯(カテゴリ・出典名・読了時間)は本文ではない
+    body = re.sub(r"<p\b[^>]*>(?:(?!</p>).)*分で読める(?:(?!</p>).)*</p>", " ", body, flags=re.S)
+
+    # 台帳(news-data.js)の、この記事の出典名と情報源日付
+    js = cs.read(cs.REPO / "assets" / "js" / "news-data.js")
+    em = re.search(r'\{[^{}]*slug:\s*"%s"[^{}]*\}' % re.escape(slug), js, re.S)
+    entry = em.group(0) if em else ""
+    def field(k):
+        mm = re.search(k + r':\s*"([^"]*)"', entry)
+        return mm.group(1) if mm else ""
+    reg = dict(reg, source=field("source"), sourceDate=field("sourceDate"))
+    # 「同じテーマの記事」以降は捨てる
+    cut = re.search(r"<h2[^>]*>\s*同じテーマの記事", body)
+    if cut:
+        body = body[:cut.start()]
+
+    out = []
+    for m in re.finditer(r"<(h2|h3|p|ul|ol|blockquote|table)\b[^>]*>(.*?)</\1>", body, re.S | re.I):
+        tag, inner = m.group(1).lower(), m.group(2)
+        if tag == "h2":
+            t = inline(inner)
+            if t and "出典" not in t:
+                out.append(f"## {t}")
+        elif tag == "h3":
+            out.append(f"### {inline(inner)}")
+        elif tag == "p":
+            t = inline(inner)
+            if t:
+                out.append(t)
+        elif tag in ("ul", "ol"):
+            items = [inline(li) for li in re.findall(r"<li\b[^>]*>(.*?)</li>", inner, re.S)]
+            mark = "-" if tag == "ul" else "1."
+            out.append("\n".join(f"{mark} {it}" for it in items if it))
+        elif tag == "blockquote":
+            out.append("> " + inline(inner))
+        elif tag == "table":
+            rows = re.findall(r"<tr\b[^>]*>(.*?)</tr>", inner, re.S)
+            lines = []
+            for i, r in enumerate(rows):
+                cells = [inline(c) for c in re.findall(r"<t[hd]\b[^>]*>(.*?)</t[hd]>", r, re.S)]
+                lines.append("| " + " | ".join(cells) + " |")
+                if i == 0:
+                    lines.append("|" + "---|" * len(cells))
+            out.append("\n".join(lines))
+
+    md = "\n".join(out)
+    if sources:
+        rows = []
+        for label, url, rest in sources:
+            # Notionの出典は各リンクに日付注記を付ける決まり。HTML側に無ければ、
+            # 記事を掲載した日を「その時点で確認した」注記として付ける
+            if rest:
+                note = f"({rest})"
+            elif posted and not re.search(r"\d{4}年|令和|平成|閲覧", label):
+                note = f"({posted}時点)"
+            else:
+                note = ""
+            rows.append(f"\t[{label}]({url}){note}")
+        md += "\n<callout icon=\"📎\" color=\"blue_bg\">\n\t**出典・参考にした資料**\n" + "\n".join(rows) + "\n</callout>"
+
+    desc = (re.search(r'name="description" content="([^"]*)"', html) or [None, ""])[1]
+    # 出典の要約(プロパティ用)。主な出典の名前+「ほか計N本」
+    main = re.sub(r"ほか$", "", reg.get("source", "")).strip()
+    src_summary = f"{main}ほか計{kansuji(len(sources))}本" if sources else main
+    return {
+        "slug": slug,
+        "title": reg["title"],
+        "category": CAT.get(reg.get("category", ""), "大洲の視点"),
+        "date": reg.get("date", ""),
+        "sourceDate": reg.get("sourceDate", ""),
+        "source_summary": src_summary,
+        "ref_url": sources[0][1] if sources else "",
+        "desc": H.unescape(desc),
+        "n_sources": len(sources),
+        "markdown": md,
+    }
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("slug")
+    ap.add_argument("--json", action="store_true")
+    a = ap.parse_args()
+    try:
+        sys.stdout.reconfigure(encoding="utf-8")
+    except Exception:
+        pass
+    r = convert(a.slug)
+    if a.json:
+        print(json.dumps(r, ensure_ascii=False, indent=1))
+    else:
+        print(r["markdown"])
+
+
+if __name__ == "__main__":
+    main()

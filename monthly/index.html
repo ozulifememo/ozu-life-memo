@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>月間まとめ ｜ OZU LIFE MEMO</title>
+<meta name="description" content="大洲市であった出来事を、月に一度、私なりの視点でまとめています。">
+<link rel="icon" href="../assets/img/favicon-192.png">
+<link rel="alternate" type="application/rss+xml" title="OZU LIFE MEMO の更新" href="../feed.xml">
+<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link data-ozu-fonts rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;family=Shippori+Mincho+B1:wght@600;700&amp;display=swap">
+<link rel="stylesheet" href="../assets/css/style.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="OZU LIFE MEMO">
+<meta property="og:title" content="月間まとめ">
+<meta property="og:description" content="大洲市であった出来事を、月に一度、私なりの視点でまとめています。">
+<meta property="og:url" content="https://ozulifememo.github.io/ozu-life-memo/monthly/">
+<meta property="og:image" content="https://ozulifememo.github.io/ozu-life-memo/assets/img/ogp-card.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://ozulifememo.github.io/ozu-life-memo/monthly/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "月間まとめ ｜ OZU LIFE MEMO",
+  "url": "https://ozulifememo.github.io/ozu-life-memo/monthly/",
+  "description": "大洲市であった出来事を、月に一度、私なりの視点でまとめています。",
+  "isPartOf": {"@type": "WebSite", "name": "OZU LIFE MEMO", "url": "https://ozulifememo.github.io/ozu-life-memo/"}
+}
+</script>
+</head>
+<body>
+
+<div data-site-header data-prefix="../"></div>
+
+<section class="page-hero">
+  <div class="wrap">
+    <h1>月間まとめ</h1>
+    <p>
+      大洲市であった出来事を、月に一度、私なりの視点でまとめています。<br>
+      毎回すべてを追いきれているわけではありませんが、「大洲の今」の記録として残していきます。
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="news-tabs">
+      <button class="news-tab active" data-category="all">全般</button>
+      <button class="news-tab" data-category="ima">大洲のいま</button>
+      <button class="news-tab" data-category="kurashi">大洲の暮らし</button>
+      <button class="news-tab" data-category="shiten">大洲の視点</button>
+    </div>
+    <div class="monthly-list" id="monthly-list"></div>
+  </div>
+</section>
+
+<div data-site-footer></div>
+
+<div data-site-modal></div>
+
+<script src="../assets/js/site-chrome.js"></script>
+<script src="../assets/js/news-data.js"></script>
+<script src="../assets/js/monthly-data.js"></script>
+<script>
+  (function renderMonthlyList() {
+    const list = document.getElementById("monthly-list");
+    if (!list || typeof OZU_MONTHLY_NOTES === "undefined") return;
+
+    const monthLabel = (m) => {
+      const [y, mo] = m.split("-");
+      return `${y}年${parseInt(mo, 10)}月`;
+    };
+
+    list.innerHTML = OZU_MONTHLY_NOTES.map((entry) => {
+      // 月内はほとんど同じ掲載日なので、出典が新しい順を第2キーにする
+      const articles = OZU_NEWS.filter((item) => item.date.startsWith(entry.month)).sort((a, b) => {
+        if (a.date !== b.date) return a.date < b.date ? 1 : -1;
+        const as = a.sourceDate || "";
+        const bs = b.sourceDate || "";
+        if (as !== bs) return as < bs ? 1 : -1;
+        return 0;
+      });
+
+      const articleItems = articles
+        .map(
+          (item) => `
+        <li data-category="${item.category}">
+          <span class="rdate">${item.date.slice(5).replace("-", "/")}</span>
+          <span class="rtag">[${OZU_CATEGORY_LABELS[item.category]}]</span>
+          <a href="../eachnews/${item.slug}.html">${item.title}</a>
+        </li>`
+        )
+        .join("");
+
+      return `
+      <article class="monthly-card">
+        <h2>${monthLabel(entry.month)}</h2>
+        <p class="monthly-headline">${entry.headline}</p>
+        <p class="monthly-comment">${entry.comment}</p>
+        <ul>${articleItems}</ul>
+      </article>`;
+    }).join("");
+  })();
+</script>
+<script src="../assets/js/main.js"></script>
+<script data-goatcounter="https://ozulifememo.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

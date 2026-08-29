@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>おすすめ記事 10選 ｜ OZU LIFE MEMO</title>
+<meta name="description" content="129本の記事の中から、運営者が「まず読んでほしい」10本を選びました。大洲の暮らし・お金・歴史がひととおり分かる入口です。">
+<link rel="icon" href="../assets/img/favicon-192.png">
+<link rel="alternate" type="application/rss+xml" title="OZU LIFE MEMO の更新" href="../feed.xml">
+<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link data-ozu-fonts rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;family=Shippori+Mincho+B1:wght@600;700&amp;display=swap">
+<link rel="stylesheet" href="../assets/css/style.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="OZU LIFE MEMO">
+<meta property="og:title" content="おすすめ記事 10選">
+<meta property="og:description" content="129本の記事の中から、運営者が「まず読んでほしい」10本を選びました。大洲の暮らし・お金・歴史がひととおり分かる入口です。">
+<meta property="og:url" content="https://ozulifememo.github.io/ozu-life-memo/best/">
+<meta property="og:image" content="https://ozulifememo.github.io/ozu-life-memo/assets/img/ogp-card.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://ozulifememo.github.io/ozu-life-memo/best/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "おすすめ記事 10選 ｜ OZU LIFE MEMO",
+  "url": "https://ozulifememo.github.io/ozu-life-memo/best/",
+  "description": "129本の記事の中から、運営者が「まず読んでほしい」10本を選びました。",
+  "isPartOf": {"@type": "WebSite", "name": "OZU LIFE MEMO", "url": "https://ozulifememo.github.io/ozu-life-memo/"}
+}
+</script>
+</head>
+<body>
+
+<div data-site-header data-prefix="../"></div>
+
+<section class="page-hero" style="padding-bottom:0;">
+  <div class="wrap">
+    <h1>おすすめ記事 10選</h1>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="section-lead" style="max-width:640px;">
+      129本の記事の中から、運営者が「まず読んでほしい」10本を選びました。
+      大洲の暮らし・お金・歴史が、これだけでひととおり分かる入口です。
+    </p>
+    <ol class="best-list" id="best-list"></ol>
+    <p class="section-more">
+      <a href="../news/">記事の一覧をすべて見る</a>
+    </p>
+  </div>
+</section>
+
+<div data-site-footer></div>
+
+<div data-site-modal></div>
+
+<script src="../assets/js/site-chrome.js"></script>
+<script src="../assets/js/photos-data.js"></script>
+<script src="../assets/js/article-images.js"></script>
+<script src="../assets/js/news-data.js"></script>
+<script src="../assets/js/article-card.js"></script>
+<script>
+  // おすすめ10本。タイトル・カテゴリ・noteのURLは news-data.js(記事台帳)から引く。
+  // ここにはスラッグと紹介文だけを書く。記事名やnoteのURLが変わっても、
+  // 台帳を直せばこのページも自動で追従する。
+  (function renderBest() {
+    const BEST = [
+      { slug: "castle-stay-hyakuman",
+        blurb: "1泊132万円から。それでも収益の3割が文化財の保全に戻る、という仕組みまで読み解く。" },
+      { slug: "akiya-taisaku-keikaku",
+        blurb: "大洲の空き家率は19.2%。市の対策計画から、この街の現在地を読む。" },
+      { slug: "jr-akaji-jinko",
+        blurb: "大洲の移動の足はこの先どうなるのか。JRの赤字とバスの実情から考える。" },
+      { slug: "juki-jinko-chiku",
+        blurb: "地区ごとに並べると、人がどこに住んでいるのかが見えてくる。大洲の「形」の話。" },
+      { slug: "gouu-bosai",
+        blurb: "あの豪雨の裁判で、大洲の防災はどう変わるのか。判決と市の動きを追う。" },
+      { slug: "nagahama-umetate-keii",
+        blurb: "長浜港の埋立は、実は50年がかりの計画だった。半世紀分の経緯を掘る。" },
+      { slug: "2005-gappei-kaiko",
+        blurb: "2005年、「新大洲市」が生まれた日。合併前最後の広報誌を読み返す。" },
+      { slug: "jinko-vision-3man",
+        blurb: "2060年の大洲は3万人? 市が立てた人口目標の中身を確かめる。" },
+      { slug: "ozu-okashi-shigure",
+        blurb: "銘菓「志ぐれ」の由来と、市内10店舗それぞれの味。甘い方の大洲の話。" },
+      { slug: "aihara-san",
+        blurb: "16年間、無報酬で。行政相談委員の相原さんが総務大臣表彰を受けた話。" },
+    ];
+
+    const wrap = document.getElementById("best-list");
+    if (!wrap || typeof OZU_NEWS === "undefined") return;
+
+    wrap.innerHTML = BEST.map((b, i) => {
+      const item = OZU_NEWS.find((n) => n.slug === b.slug);
+      if (!item) return "";
+      const cat = typeof OZU_CATEGORY_LABELS !== "undefined" ? (OZU_CATEGORY_LABELS[item.category] || "") : "";
+      const photo = typeof OzuCard !== "undefined" ? OzuCard.articlePhoto(b.slug, "../") : null;
+      const thumb = photo
+        ? `<span class="best-thumb"><img src="${photo.thumbSrc}" alt="${OzuCard.escapeHtml(photo.alt)}" loading="lazy" decoding="async"></span>`
+        : "";
+      // noteのURLは記事台帳(news-data.js)の note: から引く。ここには書かない。
+      const noteLink = item.note
+        ? ` <a class="best-note-link" href="${item.note}" target="_blank" rel="noopener">note版もあります</a>`
+        : "";
+      return `
+      <li class="best-item">
+        <span class="best-no">${String(i + 1).padStart(2, "0")}</span>
+        <span class="best-body">
+          <a class="best-title" href="../eachnews/${b.slug}.html">${item.title}</a>
+          <span class="best-blurb">${b.blurb}${noteLink}</span>
+          <span class="best-cat">${cat}</span>
+        </span>
+        ${thumb}
+      </li>`;
+    }).join("");
+  })();
+</script>
+<script src="../assets/js/main.js"></script>
+<script data-goatcounter="https://ozulifememo.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

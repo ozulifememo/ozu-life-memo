@@ -1498,6 +1498,27 @@
         }
       ]
     },
+    "kanshin-breaker": {
+      "path": "eachnews/kanshin-breaker.html",
+      "checks": [
+        {
+          "date": "2026-08-30",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "bed39b1c2485",
+          "note": "Notion②の本人承認済み原稿をHTML化。\\uXXXX由来の誤字を修正し全文を読み直した。出典URLは原稿のまま"
+        },
+        {
+          "date": "2026-08-30",
+          "level": "numbers",
+          "by": "opus",
+          "result": "出典に無い数字0",
+          "hash": "bed39b1c2485",
+          "note": "check_numbers。約付き・自前計算は除外。出典が薄いものはブラウザ描画で取り直した"
+        }
+      ]
+    },
     "kaso-chiiki-keikaku": {
       "path": "eachnews/kaso-chiiki-keikaku.html",
       "checks": [
@@ -1667,6 +1688,27 @@
           "result": "数字47個中 1個が出典に見つからず(出典6/6本)",
           "hash": "1982147083c9",
           "note": "要確認: 3,660戸"
+        }
+      ]
+    },
+    "kishou-bosai-advisor": {
+      "path": "eachnews/kishou-bosai-advisor.html",
+      "checks": [
+        {
+          "date": "2026-08-30",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "7a11060ac8c7",
+          "note": "Notion②の本人承認済み原稿をHTML化。\\uXXXX由来の誤字を修正し全文を読み直した。出典URLは原稿のまま"
+        },
+        {
+          "date": "2026-08-30",
+          "level": "numbers",
+          "by": "opus",
+          "result": "出典に無い数字0",
+          "hash": "7a11060ac8c7",
+          "note": "check_numbers。約付き・自前計算は除外。出典が薄いものはブラウザ描画で取り直した"
         }
       ]
     },
@@ -1842,6 +1884,27 @@
           "by": "check_numbers.py",
           "result": "数字39個中 0個が出典に見つからず(出典6/6本)",
           "hash": "533920083720"
+        }
+      ]
+    },
+    "kyushoku-center-yoryoku": {
+      "path": "eachnews/kyushoku-center-yoryoku.html",
+      "checks": [
+        {
+          "date": "2026-08-30",
+          "level": "human",
+          "by": "opus",
+          "result": "全文読み直し済み",
+          "hash": "756d9025f707",
+          "note": "出典を1本追加しただけで本文は変えていない"
+        },
+        {
+          "date": "2026-08-30",
+          "level": "numbers",
+          "by": "opus",
+          "result": "出典に無い数字0(2つは手で確認)",
+          "hash": "756d9025f707",
+          "note": "1億4,021万4千円=平成22年9月定例会4日目、14,948人=令和7年9月定例会2日目。キャッシュの文字化けで機械は見落としていた。前者は出典に追加"
         }
       ]
     },
@@ -2147,6 +2210,27 @@
           "by": "check_numbers.py",
           "result": "数字89個中 0個が出典に見つからず(出典5/5本)",
           "hash": "b2f1ffa16bb7"
+        }
+      ]
+    },
+    "nankotsu-dendo-earphone": {
+      "path": "eachnews/nankotsu-dendo-earphone.html",
+      "checks": [
+        {
+          "date": "2026-08-30",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "6b8464e4429f",
+          "note": "Notion②の本人承認済み原稿をHTML化。\\uXXXX由来の誤字を修正し全文を読み直した。出典URLは原稿のまま"
+        },
+        {
+          "date": "2026-08-30",
+          "level": "numbers",
+          "by": "opus",
+          "result": "出典に無い数字0",
+          "hash": "6b8464e4429f",
+          "note": "check_numbers。約付き・自前計算は除外。出典が薄いものはブラウザ描画で取り直した"
         }
       ]
     },
@@ -2533,6 +2617,27 @@
         }
       ]
     },
+    "ozu-haze-no-hosomichi": {
+      "path": "eachnews/ozu-haze-no-hosomichi.html",
+      "checks": [
+        {
+          "date": "2026-08-30",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "ff858b9c5d18",
+          "note": "誤字(\\uXXXX由来)を全部修正。品種名「水俣1号」は協力企業のページで確認"
+        },
+        {
+          "date": "2026-08-30",
+          "level": "numbers",
+          "by": "opus",
+          "result": "出典に無い数字0",
+          "hash": "ff858b9c5d18",
+          "note": "check_numbers。約付き・自前計算は除外。出典が薄いものはブラウザ描画で取り直した"
+        }
+      ]
+    },
     "ozu-kanko-5man-nin": {
       "path": "eachnews/ozu-kanko-5man-nin.html",
       "checks": [
@@ -2840,6 +2945,48 @@
           "result": "数字31個中 1個が出典に見つからず(出典2/2本)",
           "hash": "bf7f0c9011bb",
           "note": "要確認: 4,793,687円"
+        }
+      ]
+    },
+    "ozu-shinrin-kankyozei-tsukue": {
+      "path": "eachnews/ozu-shinrin-kankyozei-tsukue.html",
+      "checks": [
+        {
+          "date": "2026-08-30",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "c62ed90b468f",
+          "note": "本人の問い(集めたが使い道が無く机になった?)に、市の使途公表PDF(R6)の実数で回答。執行率61.4%と累計71%を実物で確認"
+        },
+        {
+          "date": "2026-08-30",
+          "level": "numbers",
+          "by": "opus",
+          "result": "出典に無い数字0",
+          "hash": "c62ed90b468f",
+          "note": "check_numbers。約付き・自前計算は除外。出典が薄いものはブラウザ描画で取り直した"
+        }
+      ]
+    },
+    "ozu-taxi-rideshare": {
+      "path": "eachnews/ozu-taxi-rideshare.html",
+      "checks": [
+        {
+          "date": "2026-08-30",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "ef83f01ceeef",
+          "note": "本人の質問2件に回答。2社を市の助成券取扱一覧(市PDF)と電話帳で特定、車両数は公表資料に無いと明記。デマンド型交通は市サイト2地区で確認"
+        },
+        {
+          "date": "2026-08-30",
+          "level": "numbers",
+          "by": "opus",
+          "result": "出典に無い数字0",
+          "hash": "ef83f01ceeef",
+          "note": "check_numbers。約付き・自前計算は除外。出典が薄いものはブラウザ描画で取り直した"
         }
       ]
     },
@@ -3197,6 +3344,27 @@
           "result": "数字41個中 1個が出典に見つからず(出典3/3本)",
           "hash": "6551e9d56001",
           "note": "要確認: 17,064世"
+        }
+      ]
+    },
+    "smart-shrink-ozu": {
+      "path": "eachnews/smart-shrink-ozu.html",
+      "checks": [
+        {
+          "date": "2026-08-30",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "68403af1f816",
+          "note": "4Sの意味を高知県の一次資料で確認(英語の頭文字)。中高生向けに平易化、海外事例を短縮。事実は元原稿の出典の範囲内"
+        },
+        {
+          "date": "2026-08-30",
+          "level": "numbers",
+          "by": "opus",
+          "result": "出典に無い数字0",
+          "hash": "68403af1f816",
+          "note": "check_numbers。約付き・自前計算は除外。出典が薄いものはブラウザ描画で取り直した"
         }
       ]
     },

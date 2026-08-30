@@ -253,8 +253,19 @@ def fetch_source(url: str, session) -> tuple:
         except Exception as e:
             return "", False, f"PDFを読めず({e.__class__.__name__})"
     else:
+        # 大洲市サイトは Content-Type に charset を付けないので、requests は
+        # ISO-8859-1 と決めつける。そのまま decode すると日本語が全部化けて、
+        # 全角数字や「億・万」の桁区切りが照合できなくなる(2026-08-30に発見。
+        # 会議録に載っている 14,948人 が「出典に無い」と誤判定されていた)。
+        # meta charset を優先し、無ければ中身から推定する。
+        enc = r.encoding
+        m = re.search(rb"charset=[\"']?([\w-]+)", body[:4096], re.I)
+        if m:
+            enc = m.group(1).decode("ascii", "ignore")
+        elif not enc or enc.lower() in ("iso-8859-1", "latin-1", "ascii"):
+            enc = r.apparent_encoding or "utf-8"
         try:
-            html = body.decode(r.encoding or "utf-8", errors="replace")
+            html = body.decode(enc, errors="replace")
         except Exception:
             html = body.decode("utf-8", errors="replace")
         html = re.sub(r"<(script|style)\b.*?</\1>", " ", html, flags=re.S | re.I)

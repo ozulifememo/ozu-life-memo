@@ -36,6 +36,42 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-haze-no-hosomichi",
+    date: "2026-08-30",
+    title: "225万8,000円でハゼの木を植える。大洲の「ハゼの細道」は、かぶれないのか",
+    category: "shiten",
+    source: "大洲市議会会議録／愛媛県史・えひめの記憶／文化遺産オンライン",
+    sourceDate: "2024-03-04",
+    tags: ["産業・農業", "合併・地域"],
+  },
+  {
+    slug: "ozu-taxi-rideshare",
+    date: "2026-08-30",
+    title: "大洲のタクシー会社は2社になった。ライドシェアは救いになるのか",
+    category: "shiten",
+    source: "大洲市議会会議録／四国運輸局 自家用車活用事業許可事業者一覧／大洲市 公共交通機関",
+    sourceDate: "2026-07-31",
+    tags: ["交通・インフラ", "人口減少"],
+  },
+  {
+    slug: "smart-shrink-ozu",
+    date: "2026-08-30",
+    title: "「賢く縮む」を大洲でもやるのか。市長は「分野を選ぶ」と答えた",
+    category: "shiten",
+    source: "大洲市議会会議録／高知県創造戦略推進委員会資料／Berkeley Planning Journal",
+    sourceDate: "2025-12-01",
+    tags: ["まちづくり", "人口減少"],
+  },
+  {
+    slug: "ozu-shinrin-kankyozei-tsukue",
+    date: "2026-08-30",
+    title: "住民税に増えた年1,000円は、大洲では木の机1,550セットになった",
+    category: "shiten",
+    source: "大洲市議会会議録／大洲市 森林環境譲与税の使途／会計検査院 令和6年度決算検査報告",
+    sourceDate: "2024-12-01",
+    tags: ["財政・税金", "産業・農業"],
+  },
+  {
     slug: "kyushoku-center-yoryoku",
     date: "2026-08-30",
     title: "10年後、大洲の給食は1,765食に減る。空いた分を高校生や高齢者に回せるか",

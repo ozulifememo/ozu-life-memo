@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-uriage-ranking",
+    date: "2026-08-31",
+    title: "大洲でいちばん売上が大きい会社は222億円。でも2位から先は誰にも分からない",
+    category: "shiten",
+    source: "建設業の経営事項審査（CIIC）・JA愛媛たいきディスクロージャー誌ほか",
+    sourceDate: "2026-08-31",
+    tags: ["産業・農業", "まちづくり"],
+  },
+  {
     slug: "nanyo-kabu-jojo",
     date: "2026-08-31",
     title: "大洲の会社の株は買えない。南予で買えるのは宇和島の2社だけだった",

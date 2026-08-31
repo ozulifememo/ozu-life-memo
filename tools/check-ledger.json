@@ -4286,6 +4286,35 @@
         }
       ]
     },
+    "ozu-uriage-ranking": {
+      "path": "eachnews/ozu-uriage-ranking.html",
+      "checks": [
+        {
+          "date": "2026-08-31",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "67614e66ba61",
+          "note": "CIICの経営規模等評価結果通知書PDFで一宮工務店の売上高を確認(会社公表値と一致)。JAのディスクロージャー誌・総務省の病院決算PDF・WAM NETも一次資料で確認。出典URLがインデックスを指していた5本を実物のPDFに差し替え、疎通も確認した"
+        },
+        {
+          "date": "2026-08-31",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "機械点検",
+          "hash": "67614e66ba61",
+          "note": "問題なし"
+        },
+        {
+          "date": "2026-08-31",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字と出典の照合",
+          "hash": "67614e66ba61",
+          "note": "数字61個中 見つからず1個(CIICの通知書PDF内の売上高。出典13/13本すべて取得できた)"
+        }
+      ]
+    },
     "ozu-zaisei-zentaizo": {
       "path": "jiyu-kenkyu/ozu-zaisei-zentaizo.html",
       "checks": [

@@ -60,13 +60,19 @@ def walk_text(obj, out):
             walk_text(v, out)
 
 
-def fetched_body(marker: str) -> str | None:
-    """会話ログから、notion-fetch が返したページ本文を取り出す(いちばん新しいもの)"""
+def fetched_body(marker: str):
+    """会話ログから、notion-fetch が返したページ本文を取り出す。
+
+    **かならず、いちばん新しい取得を使う。** ここを間違えると危ない。
+    ページを直したあとに照合しても、直す前の古い取得を拾ってしまえば
+    「1文字も違いなし」と出てしまい、検査になっていない。
+    だから行のタイムスタンプで並べ替えて、最後のものを採る。
+    いつ取得したものかも呼び出し元に返して、画面に出す。
+    """
     base = logs_dir()
     files = glob.glob(str(base / "*.jsonl")) + glob.glob(str(base / "*" / "subagents" / "*.jsonl"))
-    files.sort(key=os.path.getmtime, reverse=True)
     found = []
-    for p in files[:14]:
+    for p in files:
         for line in io.open(p, encoding="utf-8", errors="replace"):
             if marker not in line:
                 continue
@@ -78,10 +84,14 @@ def fetched_body(marker: str) -> str | None:
             walk_text(o, out)
             for t in out:
                 if "<page url=" in t and "</content>" in t and marker in t:
-                    found.append(t)
+                    found.append((o.get("timestamp") or "", os.path.basename(p), t))
     if not found:
         return None
-    t = found[-1].strip()
+    found.sort(key=lambda x: x[0])       # 取得した時刻の順
+    stamp, src, t = found[-1]
+    print("  もとにした取得: %s（%s）／候補 %d 件のうち、いちばん新しいもの"
+          % (stamp or "時刻不明", src, len(found)))
+    t = t.strip()
     if t.startswith("{"):
         try:
             o2 = json.loads(t)

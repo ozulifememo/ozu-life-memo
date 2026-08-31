@@ -127,7 +127,9 @@ def status_of(art, path):
         levels.setdefault(c["level"], []).append(c)
     fresh, stale, unknown = [], [], []
     for level, items in levels.items():
-        newest = max(items, key=lambda c: c["date"])
+        # 同じ日に確認し直すことがある(日付は日単位)。記録は時系列で追記される
+        # ので、日付が同じなら「あとに書かれた行」を新しいとみなす。
+        newest = max(enumerate(items), key=lambda t: (t[1]["date"], t[0]))[1]
         h = newest.get("hash")
         if h is None:
             unknown.append((level, newest))

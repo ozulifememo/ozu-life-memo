@@ -44,6 +44,8 @@ CHROME_REQUIRED = [
     ("data-site-header", "ヘッダーの置き場所"),
     ("data-site-footer", "フッターの置き場所"),
     ("assets/js/site-chrome.js", "共通部品スクリプト"),
+    ("<html lang=", "言語属性(lang)"),
+    ('name="viewport"', "スマホ表示設定(viewport)"),
 ]
 
 # 記事ページ(eachnews)だけに必要な部品
@@ -66,18 +68,24 @@ ARTICLE_REQUIRED = [
     ("assets/js/photos-data.js", "写真データスクリプト"),
     ("assets/js/article-related.js", "あわせて読みたいスクリプト"),
     ("assets/js/main.js", "共通スクリプト"),
+    ('name="description"', "検索結果に出る説明文(description)"),
+    ("goatcounter", "アクセス解析タグ(無いと閲覧数が数えられない)"),
+    ('type="application/rss+xml"', "RSS発見リンク(feed.xmlへの案内)"),
+    ('class="memou-intro"', "冒頭のメモうの吹き出し(2026-08-30から標準部品)"),
+    ('id="related-list-items"', "あわせて読みたいの置き場(無いとJSが差し込めない)"),
+    ('class="source-box-posted"', "掲載日の表記"),
 ]
 
-# 写真の新方式。まだ移行中なので、欠けていてもエラーにしない(数だけ数える)。
-ARTICLE_PHOTO_OPTIONAL = [
-    ("assets/js/article-images.js", "記事写真のひもづけスクリプト"),
-]
+# 補足: assets/js/article-images.js は記事ページではなく一覧ページ(index/news/best)が
+# 読み込むスクリプトになった(2026-08時点の実態)。記事側の必須部品には含めない。
 
 # 読み物ページ(book / jiyu-kenkyu)に必要な部品
 READING_REQUIRED = [
     ("application/ld+json", "構造化データ(検索エンジン向け)"),
     ('rel="canonical"', "正規URL指定"),
     ("og:title", "SNSシェア用タイトル"),
+    ('name="description"', "検索結果に出る説明文(description)"),
+    ("goatcounter", "アクセス解析タグ(無いと閲覧数が数えられない)"),
 ]
 
 # タイトルの末尾に付く、サイト側の決まり文句
@@ -148,6 +156,37 @@ TITLE_JARGON_OK = ["分かる", "わかる", "読み解く", "かみくだ", "�
 
 # 予讃線は非電化。「電車」と書くと事実が違う(本人の明示指示)
 NONDENKA = ("予讃線", "電車")
+
+# 公開URL(canonical / og:url の照合に使う)
+BASE_URL = "https://ozulifememo.github.io/ozu-life-memo/"
+
+# 個人のストレージへのリンクは貼らない(読者が開けないうえ、公開範囲の事故になる)
+STORAGE_LINKS = ["drive.google.com", "docs.google.com", "dropbox.com"]
+
+# Notionからの貼り戻しで紛れ込む「似ているが違う字」。check_mojibake.py の辞書から、
+# ふつうの日本語文で正当に使われうる字(畔・喰・儒・畧など)を除いた分だけを見る。
+# 誤検知がありうるので警告どまり(見て判断)。
+MOJI_LOOKALIKE = "頨絤胝痑偿賫綌怱聢圈蠟戗櫔"
+
+# 日本語の本文に混ざったら事故の文字体系(キリル・ハングル・タイ・デーヴァナーガリー等)
+FOREIGN_SCRIPT = re.compile("[Ѐ-ӿ가-힯฀-๿ऀ-ॿ֐-׿؀-ۿ]")
+# アクセント付きラテン文字。×(乗算)と÷(除算)は数式で正当に使うので除く。警告どまり
+LATIN_ODD = re.compile("[À-ÖØ-öø-ɏ]")
+
+# 打ち間違いの定番。左が誤り(かもしれない)字、右が理由。error=Trueは正解が1つのもの
+TYPO_WORDS = [
+    ("肘川", "川の名前は肱川(ひじかわ)。肘は誤字", True),
+    ("大州", "市名は大洲。歴史的表記の引用なら見逃してよい", False),
+    ("富士山", "大洲の山は冨士山(とみすやま)。静岡の富士山の話なら見逃してよい", False),
+]
+
+# 「今年」「去年」などの相対的な時期の言葉は、読まれる頃には意味がずれる。
+# 公開済みの記事には適用せず、この日付以降に掲載する記事にだけ警告する(目安)。
+RELATIVE_WORDS = ["今年", "去年", "昨年", "来年", "先月", "今月"]
+RELATIVE_WORDS_SINCE = "2026-09-01"
+
+# 「あとで追記したい」と書いた約束を月次で拾うための言い回し(--promises で一覧)
+PROMISE_PHRASES = ["追記したい", "追記する", "分かり次第", "わかり次第", "続報"]
 
 
 # ---------------------------------------------------------------------------
@@ -238,24 +277,56 @@ def collect_pages() -> list[Path]:
 # ---------------------------------------------------------------------------
 
 def load_registry() -> dict:
-    """news-data.js から記事の一覧(slug と title)を取り出す"""
+    """news-data.js から記事の一覧を取り出す。
+
+    以前は正規表現で流し読みしていたが、体裁が少し変わると黙って
+    記事を取りこぼす(実際に156本中2本を落としていた)。波かっこの
+    深さを数えて1件ずつ切り出し、取りこぼしがあれば検査側で気づける
+    ように、ファイル中の slug の出現数も一緒に控えておく。
+    """
     js_path = REPO / "assets" / "js" / "news-data.js"
     if not js_path.exists():
         return {}
     js = read(js_path)
+    m = re.search(r"const OZU_NEWS\s*=\s*\[", js)
+    if not m:
+        return {}
 
     records = {}
-    current = None
-    pattern = re.compile(r'(slug|title|date|category)\s*:\s*"((?:[^"\\]|\\.)*)"')
-    for m in pattern.finditer(js):
-        key, value = m.group(1), m.group(2)
-        value = value.replace('\\"', '"').replace("\\\\", "\\")
-        if key == "slug":
-            current = {"slug": value}
-            records[value] = current
-        elif current is not None:
-            current[key] = value
+    depth = 0
+    start = None
+    order = []
+    for i in range(m.end(), len(js)):
+        ch = js[i]
+        if ch == "{":
+            if depth == 0:
+                start = i
+            depth += 1
+        elif ch == "}":
+            depth -= 1
+            if depth == 0 and start is not None:
+                block = js[start:i]
+                rec = {}
+                for fm in re.finditer(r'(\w+)\s*:\s*"((?:[^"\\]|\\.)*)"', block):
+                    rec[fm.group(1)] = fm.group(2).replace('\\"', '"').replace("\\\\", "\\")
+                tm = re.search(r"tags\s*:\s*\[([^\]]*)\]", block)
+                rec["tags"] = re.findall(r'"([^"]+)"', tm.group(1)) if tm else []
+                if "slug" in rec:
+                    records[rec["slug"]] = rec
+                    order.append(rec["slug"])
+        elif ch == "]" and depth == 0:
+            break
+
+    records["__order__"] = order
+    records["__slug_mentions__"] = len(re.findall(r'slug\s*:\s*"', js))
+    tags_m = re.search(r"const OZU_TAGS\s*=\s*\[([^\]]*)\]", js, flags=re.S)
+    records["__all_tags__"] = re.findall(r'"([^"]+)"', tags_m.group(1)) if tags_m else []
     return records
+
+
+def registry_articles(registry: dict) -> dict:
+    """__〜__ の管理用キーを除いた、slug→記事情報だけの辞書"""
+    return {k: v for k, v in registry.items() if not k.startswith("__")}
 
 
 def load_sitemap() -> set:
@@ -611,8 +682,354 @@ def check_sources(path, html, rep):
                           f"       {url}\n       官公庁・大学・企業の公式発表に差し替えてください")
 
 
-def git_changed_pages() -> set:
-    """gitから見て、いま手を入れているHTMLのパスを集める(フック用)"""
+def expected_page_url(path) -> str:
+    """このファイルが公開されたときのURL"""
+    return BASE_URL + rel(path)
+
+
+def collect_ids(pages) -> dict:
+    """ページ内リンクの照合用に、全ページの id / name を集める"""
+    ids = {}
+    for p in pages:
+        html = read(p)
+        ids[rel(p)] = (set(re.findall(r'\bid="([^"]+)"', html))
+                       | set(re.findall(r'\bname="([^"]+)"', html)))
+    return ids
+
+
+def check_head_meta(path, html, registry, rep):
+    """<head>の中身(canonical・OGP・JSON-LD)が置き場所と食い違っていないか"""
+    if page_type(path) not in ("article", "book", "kenkyu"):
+        return
+    expect = expected_page_url(path)
+
+    m = re.search(r'<link rel="canonical" href="([^"]+)"', html)
+    if m and m.group(1) != expect:
+        rep.error(rel(path), "メタ", "canonical が実際のURLと違います",
+                  f"       いま  : {m.group(1)}\n       正しく: {expect}")
+    m = re.search(r'<meta property="og:url" content="([^"]+)"', html)
+    if m and m.group(1) != expect:
+        rep.error(rel(path), "メタ", "og:url が実際のURLと違います", f"       {m.group(1)}")
+    m = re.search(r'<meta property="og:image" content="([^"]+)"', html)
+    if m:
+        if m.group(1).startswith(BASE_URL):
+            if not (REPO / m.group(1)[len(BASE_URL):]).exists():
+                rep.error(rel(path), "メタ", "og:image の画像ファイルがありません", f"       {m.group(1)}")
+        else:
+            rep.warn(rel(path), "メタ", "og:image がこのサイト以外のURLです", f"       {m.group(1)}")
+
+    # og:title にだけはサイト名を付けない(LINEで2行に切れる。2026-08-20からの決まり)
+    m = re.search(r'<meta property="og:title" content="([^"]*)"', html)
+    if m and "OZU LIFE MEMO" in m.group(1):
+        rep.error(rel(path), "メタ", "og:title に「｜ OZU LIFE MEMO」が付いています",
+                  "       og:title だけはサイト名を付けない決まり(LINEでタイトルが切れるため)")
+    m = re.search(r"<title>(.*?)</title>", html, flags=re.S)
+    if m and "OZU LIFE MEMO" not in m.group(1):
+        rep.error(rel(path), "メタ", "<title> にサイト名が付いていません",
+                  "       「記事名 ｜ OZU LIFE MEMO」の形にする")
+
+    m = re.search(r'<script type="application/ld\+json">(.*?)</script>', html, flags=re.S)
+    if m:
+        try:
+            data = json.loads(m.group(1))
+        except Exception as e:
+            rep.error(rel(path), "メタ", "JSON-LD が壊れています(JSONとして読めません)", f"       {e}")
+            data = {}
+        if page_type(path) == "article":
+            reg = registry.get(path.stem) or {}
+            ld_date = data.get("datePublished")
+            if ld_date and reg.get("date") and ld_date != reg["date"]:
+                rep.error(rel(path), "日付", "JSON-LD の datePublished が台帳と違います",
+                          f"       JSON-LD: {ld_date} / 台帳: {reg['date']}")
+
+
+def check_link_hygiene(path, html, rep):
+    """リンクと画像の書き方(公開範囲・セキュリティ・読み上げ配慮)"""
+    if page_type(path) not in ("article", "book", "kenkyu"):
+        return
+    body = body_only(html)
+
+    for bad in STORAGE_LINKS:
+        if bad in html:
+            rep.error(rel(path), "リンク", f"個人ストレージへのリンクがあります({bad})",
+                      "       読者が開けないうえ、共有範囲の事故につながる。公式の公開URLに差し替える")
+            break
+
+    n = sum(1 for m in re.finditer(r'<a\b[^>]*target="_blank"[^>]*>', body)
+            if "noopener" not in m.group(0))
+    if n:
+        rep.error(rel(path), "リンク", f'target="_blank" に rel="noopener" が無いリンクが{n}個あります',
+                  '       <a target="_blank" rel="noopener"> の形にする')
+
+    for m in re.finditer(r"<img\b[^>]*>", body):
+        if "alt=" not in m.group(0):
+            rep.error(rel(path), "画像", "alt属性の無い画像があります",
+                      f'       {m.group(0)[:70]}\n       飾りの画像でも alt="" と書く(読み上げ環境への配慮)')
+            break
+
+
+def check_typos(path, html, rep):
+    """誤字・記号のねじれ。正解が1つのものはエラー、文脈によるものは警告"""
+    text = strip_tags(body_only(html))
+    jibun = strip_quotes(text)
+
+    for word, why, is_error in TYPO_WORDS:
+        if word in jibun:
+            i = jibun.find(word)
+            around = " ".join(jibun[max(0, i - 20): i + 25].split())
+            f = rep.error if is_error else rep.warn
+            f(rel(path), "誤字", f"「{word}」があります({why})", f"       …{around}…")
+
+    for a, b, is_error in (("「", "」", True), ("『", "』", True), ("（", "）", False)):
+        ca, cb = text.count(a), text.count(b)
+        if ca != cb:
+            f = rep.error if is_error else rep.warn
+            f(rel(path), "誤字", f"かぎかっこの開き閉じが合いません({a}={ca}個 {b}={cb}個)",
+              "       消し忘れ・書きかけの跡であることが多い")
+
+    if "。。" in text.replace("。。。", ""):
+        i = text.find("。。")
+        rep.error(rel(path), "誤字", "句点が連続しています(。。)",
+                  f"       …{text[max(0, i - 20): i + 20]}…")
+    if "、、" in text:
+        rep.error(rel(path), "誤字", "読点が連続しています(、、)")
+    for zw, name in (("​", "ゼロ幅スペース"), ("­", "ソフトハイフン")):
+        if zw in body_only(html):
+            rep.error(rel(path), "誤字", f"見えない文字({name})が紛れています")
+            break
+
+    m = FOREIGN_SCRIPT.search(text)
+    if m:
+        i = m.start()
+        rep.error(rel(path), "誤字", f"日本語の本文に別の文字体系の字があります(「{m.group(0)}」)",
+                  f"       …{text[max(0, i - 15): i + 15]}…")
+    m = LATIN_ODD.search(text)
+    if m:
+        i = m.start()
+        rep.warn(rel(path), "誤字", f"アクセント付きラテン文字があります(「{m.group(0)}」)",
+                 f"       …{text[max(0, i - 15): i + 15]}…\n"
+                 "       外国語の綴りの引用として正しいなら、そのままでよい")
+    hits = [c for c in MOJI_LOOKALIKE if c in text]
+    if hits:
+        rep.warn(rel(path), "誤字", "Notion経由で化けやすい字が含まれています(" + "".join(hits) + ")",
+                 "       前後を読み、化けなら直す。正しい用字ならそのままでよい")
+
+
+def check_fragments(path, html, id_map, rep):
+    """ページ内リンク(#〜)の行き先IDが実在するか。check_links はファイルの有無しか見ない"""
+    body = body_only(html)
+    body = re.sub(r"<script\b.*?</script>", " ", body, flags=re.S | re.I)
+    for m in re.finditer(r'href="([^"]*#[^"]+)"', body):
+        ref = m.group(1)
+        if ref.startswith(("http", "mailto:", "javascript:")) or "${" in ref:
+            continue
+        fpart, frag = ref.split("#", 1)
+        if not frag:
+            continue
+        if fpart == "":
+            target = rel(path)
+        else:
+            fpart = fpart.split("?")[0]
+            if fpart.startswith("/"):
+                continue
+            try:
+                target = (path.parent / fpart).resolve().relative_to(REPO.resolve()).as_posix()
+            except Exception:
+                continue
+            if target.endswith("/"):
+                target += "index.html"
+        ids = id_map.get(target)
+        if ids is None:
+            continue          # ファイル自体の有無は check_links が見る
+        if frag not in ids:
+            rep.error(rel(path), "アンカー", f"リンクの行き先ID「#{frag}」がありません",
+                      f"       {ref}\n       押しても何も起きないリンクになっています")
+
+
+def check_article_registry_sync(path, html, registry, rep):
+    """記事の表示(掲載日・カテゴリ・読了時間・資料数)が台帳・実体とそろっているか"""
+    if page_type(path) != "article":
+        return
+    body = body_only(html)
+    reg = registry.get(path.stem)
+
+    m = re.search(r'class="article-page" data-slug="([^"]+)"', body)
+    if not m:
+        rep.error(rel(path), "台帳", "data-slug がありません",
+                  '       <div class="article-page" data-slug="ファイル名"> が関連記事抽出の目印になる')
+    elif m.group(1) != path.stem:
+        rep.error(rel(path), "台帳", f"data-slug がファイル名と違います({m.group(1)})",
+                  "       「あわせて読みたい」の抽出が狂います")
+
+    # 読了時間: add_readtime.py と同じ計算をして、走らせ忘れを見つける
+    m = re.search(r'class="article-readtime">約(\d+)分で読める', body)
+    if m:
+        b = re.sub(r"<script\b.*?</script>", " ", body, flags=re.S | re.I)
+        b = re.sub(r"<style\b.*?</style>", " ", b, flags=re.S | re.I)
+        b = re.sub(r'<div class="content-block source-box".*', " ", b, flags=re.S)
+        chars = len(re.sub(r"\s+", "", re.sub(r"<[^>]+>", "", b)))
+        want = max(1, round(chars / 550))
+        if int(m.group(1)) != want:
+            rep.error(rel(path), "日付",
+                      f"読了時間(約{m.group(1)}分)が本文の長さと合いません(計算では約{want}分)",
+                      "       本文を書き換えたら python tools/add_readtime.py を走らせる")
+
+    # 「調べた資料 N本」= 実際の出典リンク数
+    m = re.search(r'class="article-summary-sources">調べた資料\s*(\d+)本', body)
+    if m:
+        actual = len(re.findall(r'class="source-link"', body))
+        if int(m.group(1)) != actual:
+            rep.error(rel(path), "出典",
+                      f"「調べた資料 {m.group(1)}本」が実際の出典数({actual}本)と違います",
+                      "       出典を増減させたら、この数字も直す")
+
+    if reg:
+        # 掲載日の表記(2026/08/30 と 2026年8月30日 の両形式を許す。後ろの注記も許す)
+        m = re.search(r'class="source-box-posted">この記事をサイトに掲載した日:\s*([^<]+)<', body)
+        if m:
+            shown = m.group(1).strip()
+            dm = re.match(r"(\d{4})[/年](\d{1,2})[/月](\d{1,2})日?", shown)
+            if dm:
+                norm = f"{dm.group(1)}-{int(dm.group(2)):02d}-{int(dm.group(3)):02d}"
+                if reg.get("date") and norm != reg["date"]:
+                    rep.error(rel(path), "日付", f"掲載日の表記({shown})が台帳({reg['date']})と違います")
+            else:
+                rep.error(rel(path), "日付", f"掲載日の表記が読み取れません({shown})")
+
+        m = re.search(r'<span class="article-cat">([^<]+)</span>', body)
+        cat_labels = {"ima": "大洲のいま", "kurashi": "大洲の暮らし", "shiten": "大洲の視点"}
+        if m and reg.get("category") in cat_labels:
+            if m.group(1).strip() != cat_labels[reg["category"]]:
+                rep.error(rel(path), "台帳",
+                          f"カテゴリ表示({m.group(1).strip()})が台帳({cat_labels[reg['category']]})と違います")
+
+
+def check_relative_dates(path, html, registry, rep):
+    """「今年」「去年」のような相対的な時期の言葉(新しく書く記事だけの目安)"""
+    if page_type(path) != "article":
+        return
+    reg = registry.get(path.stem) or {}
+    if not reg.get("date") or reg["date"] < RELATIVE_WORDS_SINCE:
+        return
+    jibun = strip_quotes(strip_tags(body_only(html)))
+    hits = [w for w in RELATIVE_WORDS if w in jibun]
+    if hits:
+        rep.warn(rel(path), "文章", "相対的な時期の言葉があります(" + "・".join(hits) + ")",
+                 "       読まれる頃には意味がずれやすい。「2026年」「令和8年度」のような固定の言い方も検討する")
+
+
+def check_kenkyu_extra(path, html, rep):
+    """自由研究(jiyu-kenkyu)ならではの決まり"""
+    if page_type(path) != "kenkyu":
+        return
+    body = body_only(html)
+    refs = set(re.findall(r'href="#(fn\d+)"', body))
+    defs = set(re.findall(r'<li id="(fn\d+)"', body))
+    for x in sorted(refs - defs):
+        rep.error(rel(path), "アンカー", f'脚注の飛び先(id="{x}")がありません',
+                  "       本文の脚注番号を押しても出典に飛べない状態です")
+    text = strip_tags(body)
+    if "<svg" not in body:
+        rep.warn(rel(path), "スタイル", "図解(inline SVG)が見当たりません(自由研究は図解ありが方針)")
+    if "調べても分からなかった" not in text and "調べてもわからなかった" not in text:
+        rep.warn(rel(path), "スタイル", "「調べても分からなかったこと」の章が見当たりません",
+                 "       見つからなかったことを正直に書くのが自由研究の方針(2026-08-19確立)")
+
+
+def check_registry_file(registry, rep):
+    """台帳(news-data.js)そのものの整合"""
+    arts = registry_articles(registry)
+    order = registry.get("__order__", [])
+    mentions = registry.get("__slug_mentions__", len(arts))
+    if mentions != len(order):
+        rep.error("assets/js/news-data.js", "台帳",
+                  f"台帳の読み取り数({len(order)})とslugの出現数({mentions})が合いません",
+                  "       news-data.js の書式が崩れているか、点検器の読み取りが壊れています")
+    if len(set(order)) != len(order):
+        dup = sorted({s for s in order if order.count(s) > 1})
+        rep.error("assets/js/news-data.js", "台帳", "slugが重複しています: " + ", ".join(dup))
+    def valid_date(v: str) -> bool:
+        try:
+            datetime.strptime(v, "%Y-%m-%d")
+            return True
+        except ValueError:
+            return False
+
+    all_tags = registry.get("__all_tags__", [])
+    for slug, r in arts.items():
+        if r.get("date") and not valid_date(r["date"]):
+            rep.error("assets/js/news-data.js", "台帳", f"「{slug}」の日付の形式が変です({r['date']})",
+                      "       YYYY-MM-DD の実在する日付にする")
+        if r.get("sourceDate") and not valid_date(r["sourceDate"]):
+            rep.error("assets/js/news-data.js", "台帳", f"「{slug}」のsourceDateの形式が変です({r['sourceDate']})",
+                      "       YYYY-MM-DD の実在する日付にする")
+        if r.get("category") not in ("ima", "kurashi", "shiten"):
+            rep.error("assets/js/news-data.js", "台帳", f"「{slug}」のカテゴリが不正です({r.get('category')})",
+                      "       ima / kurashi / shiten のどれか。新しい選択肢を勝手に増やさない(kokaiの決まり)")
+        tags = r.get("tags", [])
+        if not tags:
+            rep.error("assets/js/news-data.js", "台帳", f"「{slug}」にタグがありません(1〜2個付ける)")
+        else:
+            bad = [t for t in tags if all_tags and t not in all_tags]
+            if bad:
+                rep.error("assets/js/news-data.js", "台帳",
+                          f"「{slug}」にOZU_TAGSに無いタグがあります({'、'.join(bad)})")
+            if len(tags) > 2:
+                rep.warn("assets/js/news-data.js", "台帳", f"「{slug}」のタグが{len(tags)}個あります(1〜2個が決まり)")
+
+
+def check_feed(registry, rep):
+    """feed.xml が最新の記事を含んでいるか(make_feed.py の走らせ忘れを見つける)"""
+    feed_p = REPO / "feed.xml"
+    if not feed_p.exists():
+        return
+    feed = read(feed_p)
+    links = re.findall(r"<link>\s*(.*?)\s*</link>", feed)
+    feed_slugs = {u.rstrip("/").split("/")[-1].replace(".html", "") for u in links if "eachnews" in u}
+    newest = registry.get("__order__", [])[:5]
+    missing = [s for s in newest if s not in feed_slugs]
+    if missing:
+        rep.error("feed.xml", "台帳", "最新の記事がRSSに入っていません: " + ", ".join(missing),
+                  "       記事を公開したら python tools/make_feed.py を走らせる")
+    for u in links:
+        if u.startswith(BASE_URL):
+            r = u[len(BASE_URL):]
+            if r and not r.endswith("/") and not (REPO / r).exists():
+                rep.error("feed.xml", "台帳", f"RSSに載っているページが存在しません: {u}")
+
+
+def check_sitemap_targets(sitemap, rep):
+    """sitemap.xml のURLの行き先が実在するか(check_sitemapの逆向き)"""
+    for loc in sorted(sitemap):
+        if not loc.startswith(BASE_URL):
+            rep.warn("sitemap.xml", "sitemap", f"サイト外のURLが載っています: {loc}")
+            continue
+        r = loc[len(BASE_URL):]
+        if r == "" or r.endswith("/"):
+            r += "index.html"
+        if not (REPO / r).exists():
+            rep.error("sitemap.xml", "sitemap", f"行き先の無いURLが載っています: {loc}",
+                      "       Googleに「存在しないページ」を案内している状態です")
+
+
+def list_promises(pages):
+    """「分かり次第追記したい」のような約束を一覧にする(--promises)。検査ではなく月次巡視用"""
+    print("\n  記事の中の「あとで追記する」系の約束(果たせたら本文を追記して消し込む):\n")
+    n = 0
+    for p in pages:
+        if page_type(p) not in ("article", "book", "kenkyu"):
+            continue
+        text = strip_tags(body_only(read(p)))
+        for sent in re.split(r"(?<=。)", text):
+            if any(ph in sent for ph in PROMISE_PHRASES):
+                n += 1
+                print(f"    {rel(p)}")
+                print(f"      {sent.strip()[:90]}")
+    print(f"\n  合計 {n} 件。\n")
+
+
+def git_changed_files() -> set:
+    """gitから見て、いま手が入っている全ファイルのパス(フック用)"""
     import subprocess
     try:
         out = subprocess.run(["git", "status", "--porcelain"], cwd=str(REPO),
@@ -627,9 +1044,13 @@ def git_changed_pages() -> set:
         name = line[3:].strip().strip('"')
         if " -> " in name:          # リネームは移動先だけ見る
             name = name.split(" -> ")[-1]
-        if name.endswith(".html"):
-            paths.add(name)
+        paths.add(name)
     return paths
+
+
+def git_changed_pages() -> set:
+    """gitから見て、いま手を入れているHTMLのパスを集める(フック用)"""
+    return {p for p in git_changed_files() if p.endswith(".html")}
 
 
 def check_repo_anonymity(rep):
@@ -673,7 +1094,7 @@ def check_repo_anonymity(rep):
 def check_registry_orphans(registry, pages, rep):
     """台帳にあるのにファイルが無い / ファイルがあるのに台帳に無い"""
     on_disk = {p.stem for p in pages if page_type(p) == "article"}
-    for slug in registry:
+    for slug in registry_articles(registry):
         if slug not in on_disk:
             rep.error("assets/js/news-data.js", "台帳",
                       f"台帳にある「{slug}」のHTMLファイルがありません",
@@ -746,7 +1167,7 @@ def print_report(rep, pages, registry, elapsed):
     print()
     print(line)
     print(" OZU LIFE MEMO サイト点検")
-    print(f" {datetime.now():%Y-%m-%d %H:%M}  /  対象 {len(pages)}ページ・記事{len(registry)}本"
+    print(f" {datetime.now():%Y-%m-%d %H:%M}  /  対象 {len(pages)}ページ・記事{len(registry_articles(registry))}本"
           f"  /  {elapsed:.1f}秒")
     print(line)
 
@@ -757,7 +1178,8 @@ def print_report(rep, pages, registry, elapsed):
     for w in rep.warns:
         by_kind[w["kind"]][1] += 1
 
-    order = ["構造", "タグ", "表", "タイトル", "台帳", "匿名性", "文字化け", "出典", "スタイル", "文体", "見出し", "sitemap", "リンク"]
+    order = ["構造", "タグ", "表", "タイトル", "メタ", "日付", "台帳", "アンカー", "匿名性",
+             "文字化け", "誤字", "出典", "画像", "リンク", "スタイル", "文体", "文章", "見出し", "sitemap"]
     print()
     for kind in order:
         if kind not in by_kind and kind not in ("構造", "タイトル", "匿名性", "文字化け", "出典"):
@@ -813,7 +1235,7 @@ BROKEN_SAMPLE = """<!DOCTYPE html>
 <title>基本計画策定のタイトル ｜ OZU LIFE MEMO</title>
 <link rel="canonical" href="x">
 <meta property="og:title" content="基本計画策定のタイトル ｜ OZU LIFE MEMO">
-<script type="application/ld+json">{"headline":"基本計画策定のタイトル"}</script>
+<script type="application/ld+json">{"headline":"基本計画策定のタイトル","datePublished":"2000-01-01"}</script>
 </head><body>
 <div data-site-header data-prefix="../"></div>
 <h1>基本計画策定のタイトル</h1>
@@ -822,11 +1244,15 @@ BROKEN_SAMPLE = """<!DOCTYPE html>
 </div>
 <p>この記事にはダミー禁止語が入っています。文字化けもあります: �</p>
 <p>予讃線の電車のことを、大洲に住んでいる人にも知ってほしい。</p>
-<p><img src="../assets/img/この画像はない.jpg" alt="壊れた画像"></p>
+<p>肘川という誤字と、かぎかっこの開きだけ「ここに置く。ダミーの句点。。</p>
+<p><a href="#sonzai-shinai-id">行き先の無いページ内リンク</a></p>
+<p><a href="https://drive.google.com/file/d/xxxx" target="_blank">個人ストレージへのリンク</a></p>
+<p><img src="../assets/img/この画像はない.jpg" alt="壊れた画像"> <img src="../assets/img/altnashi.png"></p>
 <p><a href="../eachnews/このページはない.html">壊れたリンク</a></p>
 <p>そしてこの一文は、読点でつなぎ続けることで、どこまでも長くなり、主語も述語も遠く離れ、読んでいる途中で何の話だったのか分からなくなり、それでもまだ終わらず、さらに例を並べ、括弧を挟み、注釈を足し、結局のところ二百字を超えてしまい、読み手はもう一度先頭に戻らなければならず、それでも意味が取れないまま次の段落へ進むことになる、そういう悪い見本として置いてある、とても長い一文である。</p>
 <table><tr><td>スクロール用の囲いが無い表</td></tr></table>
 <div>閉じていないdiv
+<p class="source-box-posted">この記事をサイトに掲載した日: 2020/01/01</p>
 <div data-site-footer="article"></div><div data-site-modal></div>
 <script src="../assets/js/site-chrome.js"></script>
 <script src="../assets/js/news-data.js"></script>
@@ -834,9 +1260,11 @@ BROKEN_SAMPLE = """<!DOCTYPE html>
 </body></html>
 """
 
-BROKEN_REGISTRY = """const OZU_NEWS = [
+BROKEN_REGISTRY = """const OZU_TAGS = ["防災", "観光"];
+const OZU_NEWS = [
   { slug: "broken", date: "2026-08-19", title: "台帳側のタイトル", category: "ima" },
   { slug: "yukue-fumei", date: "2026-08-19", title: "HTMLが存在しない記事", category: "ima" },
+  { slug: "kowareta-daicho", date: "2026-99-99", title: "壊れた行", category: "nazo" },
 ];
 """
 
@@ -847,11 +1275,29 @@ EXPECTED = [
     ("構造", "読了時間"),
     ("構造", "photos-data.js"),
     ("構造", "article-related.js"),
+    ("構造", "viewport"),
+    ("構造", "description"),
+    ("構造", "アクセス解析"),
+    ("構造", "RSS発見"),
+    ("構造", "メモう"),
+    ("構造", "あわせて読みたいの置き場"),
     ("タグ", "div"),
     ("表", "囲い"),
     ("タイトル", "news-data.js"),
+    ("メタ", "canonical"),
+    ("メタ", "og:title"),
+    ("日付", "datePublished"),
+    ("日付", "掲載日"),
+    ("台帳", "data-slug"),
+    ("台帳", "タグがありません"),
+    ("台帳", "カテゴリが不正"),
+    ("台帳", "日付の形式"),
+    ("アンカー", "行き先ID"),
     ("匿名性", "ダミー禁止語"),
     ("文字化け", "文字化け"),
+    ("誤字", "肘川"),
+    ("誤字", "かぎかっこ"),
+    ("誤字", "句点"),
     ("出典", "1本"),
     ("出典", "news.yahoo.co.jp"),
     ("表現", "知ってほしい"),
@@ -859,7 +1305,10 @@ EXPECTED = [
     ("事実", "電車"),
     ("タイトル", "策定"),
     ("画像", "行き先がありません"),
+    ("画像", "alt属性"),
     ("リンク", "行き先がありません"),
+    ("リンク", "noopener"),
+    ("リンク", "ストレージ"),
     ("台帳", "yukue-fumei"),
 ]
 
@@ -886,6 +1335,7 @@ def run_selftest() -> int:
         try:
             pages = collect_pages()
             registry = load_registry()
+            id_map = collect_ids(pages)
             rep = Report()
             for p in pages:
                 html = read(p)
@@ -893,6 +1343,13 @@ def run_selftest() -> int:
                 check_tag_balance(p, html, rep)
                 check_tables(p, html, rep)
                 check_titles(p, html, registry, rep)
+                check_head_meta(p, html, registry, rep)
+                check_link_hygiene(p, html, rep)
+                check_typos(p, html, rep)
+                check_fragments(p, html, id_map, rep)
+                check_article_registry_sync(p, html, registry, rep)
+                check_relative_dates(p, html, registry, rep)
+                check_kenkyu_extra(p, html, rep)
                 check_anonymity(p, html, rep)
                 check_mojibake(p, html, rep)
                 check_style(p, html, rep)
@@ -901,6 +1358,7 @@ def run_selftest() -> int:
                 check_title_numbers(p, html, rep)
                 check_sources(p, html, rep)
             check_registry_orphans(registry, pages, rep)
+            check_registry_file(registry, rep)
         finally:
             REPO = real_repo
 
@@ -936,6 +1394,8 @@ def main():
                     help="疑問形の見出しを一覧にする(答えが書けているか目視するとき用)")
     ap.add_argument("--changed", action="store_true",
                     help="gitで変更のあったページだけ点検する(フックが使う)")
+    ap.add_argument("--promises", action="store_true",
+                    help="「あとで追記したい」系の約束を一覧にする(月次巡視用)")
     ap.add_argument("--json", metavar="FILE", help="結果をJSONファイルに保存する")
     ap.add_argument("--selftest", action="store_true",
                     help="点検スクリプト自体が正しく動くか自己診断する")
@@ -946,9 +1406,14 @@ def main():
 
     started = time.time()
 
-    pages = collect_pages()
+    all_pages = collect_pages()
+    pages = list(all_pages)
     registry = load_registry()
     sitemap = load_sitemap()
+
+    if args.promises:
+        list_promises(pages)
+        return 0
 
     if args.slug:
         pages = [p for p in pages if p.stem == args.slug]
@@ -956,12 +1421,18 @@ def main():
             print(f"「{args.slug}」というページが見つかりませんでした。")
             return 1
 
+    changed_files = set()
     if args.changed:
-        changed = git_changed_pages()
+        changed_files = git_changed_files()
+        changed = {p for p in changed_files if p.endswith(".html")}
         pages = [p for p in pages if rel(p) in changed]
-        if not pages:
+        touched_shared = changed_files & {"assets/js/news-data.js", "sitemap.xml", "feed.xml"}
+        if not pages and not touched_shared:
             print("\n  いま手を入れたページはありません。点検をとばします。\n")
             return 0
+
+    # ページ内リンクの行き先は、点検対象外のページにもあるので全ページから集める
+    id_map = collect_ids(all_pages)
 
     rep = Report()
 
@@ -971,6 +1442,13 @@ def main():
         check_tag_balance(p, html, rep)
         check_tables(p, html, rep)
         check_titles(p, html, registry, rep)
+        check_head_meta(p, html, registry, rep)
+        check_link_hygiene(p, html, rep)
+        check_typos(p, html, rep)
+        check_fragments(p, html, id_map, rep)
+        check_article_registry_sync(p, html, registry, rep)
+        check_relative_dates(p, html, registry, rep)
+        check_kenkyu_extra(p, html, rep)
         check_anonymity(p, html, rep)
         check_mojibake(p, html, rep)
         check_style(p, html, rep, show_headings=args.headings)
@@ -980,8 +1458,21 @@ def main():
         check_sources(p, html, rep)
 
     if not args.slug and not args.changed:
-        check_registry_orphans(registry, pages, rep)
+        check_registry_orphans(registry, all_pages, rep)
         check_repo_anonymity(rep)
+        check_registry_file(registry, rep)
+        check_feed(registry, rep)
+        check_sitemap_targets(sitemap, rep)
+    if args.changed:
+        # 台帳・sitemap・RSSに手が入っているときは、その整合も見る(公開作業の消し忘れ対策)
+        if "assets/js/news-data.js" in changed_files:
+            check_registry_orphans(registry, all_pages, rep)
+            check_registry_file(registry, rep)
+            check_feed(registry, rep)
+        if "sitemap.xml" in changed_files:
+            check_sitemap_targets(sitemap, rep)
+        if "feed.xml" in changed_files:
+            check_feed(registry, rep)
     if not args.slug:
         check_sitemap(pages, sitemap, rep)
 

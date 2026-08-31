@@ -55,6 +55,7 @@ TEMPLATE = """<!DOCTYPE html>
 <title>{title} ｜ OZU LIFE MEMO</title>
 <meta name="description" content="{desc}">
 <link rel="icon" href="../assets/img/favicon-192.png">
+<link rel="alternate" type="application/rss+xml" title="OZU LIFE MEMO の更新" href="../feed.xml">
 <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -96,8 +97,19 @@ TEMPLATE = """<!DOCTYPE html>
     <p class="article-date"><span class="article-cat">{cat_label}</span> ・ 出典: {source_label}</p>
     <h1>{title}</h1>
 
+    <div class="memou-intro">
+      <div class="memou-intro-figure">
+        <img src="../assets/img/memou-naruhodo.svg" alt="" class="memou-intro-avatar" width="84" height="84" decoding="async">
+        <span class="memou-intro-name">メモう</span>
+      </div>
+      <div class="memou-intro-bubble">
+        <p>(メモうのひとこと1行目。記事の入口をやわらかく)</p>
+        <p>(2行目。数字か意外な事実をひとつ)</p>
+      </div>
+    </div>
+
     <div class="article-summary">
-      <p class="article-summary-label">要点</p>
+      <p class="article-summary-label">3行でいうと<span class="article-summary-sources">調べた資料 2本</span></p>
       <ul>
         <li>(要点1: 核心の事実。数字か語を1つ<strong>太字</strong>に)</li>
         <li>(要点2: 裏付けの数字や仕組み)</li>

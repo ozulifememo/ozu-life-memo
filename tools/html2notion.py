@@ -206,9 +206,10 @@ def convert(slug: str, subdir: str = "eachnews") -> dict:
                 out.append('<callout icon="📌" color="gray_bg">\n'
                            + "\n".join("\t" + x for x in rows) + "\n</callout>")
         elif tag == "table":
-            # Notionの表は <table> 形式だけ。Markdownのパイプ表(| A | B |)は
-            # 仕様に無く、そのまま文字列として貼り付くだけで表にならない
-            # (2026-08-31に実測。既に入れた記事のパイプ表は表として読めていない)。
+            # Notion-flavored Markdown の仕様に載っている表の書き方はこの形。
+            # Markdownのパイプ表(| A | B |)でもNotion側が表に変換してくれるので、
+            # どちらでも表にはなる(2026-08-31に実物のページを読んで確認した)。
+            # 仕様どおりの形のほうが、変換に頼らないぶん確実なのでこちらにする。
             grid = table_grid(inner)
             if grid:
                 lines = ['<table header-row="true">']

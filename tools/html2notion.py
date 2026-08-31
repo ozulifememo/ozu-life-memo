@@ -147,6 +147,14 @@ def convert(slug: str, subdir: str = "eachnews") -> dict:
             footnotes.append((li.group(1), inline(li.group(2))))
         body = body[:fn_m.start()] + body[fn_m.end():]
 
+    # 自由研究の枠囲み(jk-callout)は中身が <strong> と <br> だけで、
+    # p タグを持たない。そのため下の抜き出しから丸ごと漏れていた。
+    # 料金表のように、ここにしか無い情報が入っていることがある
+    # (2026-08-31、城泊の記事で「基本料金1名55万円」の表がNotionから消えていた)。
+    # HTMLに無いタグ名に置き換えて、本文と一緒に拾えるようにする。
+    body = re.sub(r'<div class="jk-callout">(.*?)</div>',
+                  lambda m: "<callout>" + m.group(1) + "</callout>", body, flags=re.S)
+
     # 捨てる部品(要点・読了時間・吹き出し・図はHTML側の見せ方の部品)
     for pat in (r'<div class="article-summary".*?</ul>\s*</div>',
                 r'<div class="memou-intro">.*?</div>\s*</div>',
@@ -172,7 +180,7 @@ def convert(slug: str, subdir: str = "eachnews") -> dict:
         body = body[:cut.start()]
 
     out = []
-    for m in re.finditer(r"<(h2|h3|p|ul|ol|blockquote|table)\b[^>]*>(.*?)</\1>", body, re.S | re.I):
+    for m in re.finditer(r"<(h2|h3|p|ul|ol|blockquote|table|callout)\b[^>]*>(.*?)</\1>", body, re.S | re.I):
         tag, inner = m.group(1).lower(), m.group(2)
         if tag == "h2":
             t = inline(inner)
@@ -190,6 +198,13 @@ def convert(slug: str, subdir: str = "eachnews") -> dict:
             out.append("\n".join(f"{mark} {it}" for it in items if it))
         elif tag == "blockquote":
             out.append("> " + inline(inner))
+        elif tag == "callout":
+            # 中の <br> は行の区切り。inline() は空白を潰すので、先に割る
+            rows = [inline(x) for x in re.split(r"<br\s*/?>", inner)]
+            rows = [x for x in rows if x]
+            if rows:
+                out.append('<callout icon="📌" color="gray_bg">\n'
+                           + "\n".join("\t" + x for x in rows) + "\n</callout>")
         elif tag == "table":
             lines = []
             for i, cells in enumerate(table_grid(inner)):

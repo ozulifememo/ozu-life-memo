@@ -301,6 +301,10 @@ def check_structure(path, html, rep):
 def check_tag_balance(path, html, rep):
     """タグの開き閉じが合っているか"""
     body = body_only(html)
+    # HTMLコメントの中のタグは、画面には出ないので数えない。
+    # new_kiji.py が置く「段落は <p class="commentary">、見出しは <h2>」という
+    # 書き置きを数えてしまい、本文が正しいのにエラーが出ていた(2026-08-31)。
+    body = re.sub(r"<!--.*?-->", " ", body, flags=re.S)
     for tag in ("div", "h2", "strong", "section", "p"):
         opens = len(re.findall(rf"<{tag}\b", body, flags=re.I))
         closes = len(re.findall(rf"</{tag}>", body, flags=re.I))

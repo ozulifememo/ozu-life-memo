@@ -2274,6 +2274,35 @@
         }
       ]
     },
+    "nanyo-kabu-jojo": {
+      "path": "eachnews/nanyo-kabu-jojo.html",
+      "checks": [
+        {
+          "date": "2026-08-31",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "954a66228518",
+          "note": "上場企業の有無を3つの一覧で照合。両社の決算短信・招集通知・会社概要のPDFを開いて売上・上場年・株主総会の会場まで確認。従業員数はものさしが揃わないため比較を削除"
+        },
+        {
+          "date": "2026-08-31",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "機械点検",
+          "hash": "954a66228518",
+          "note": "問題なし"
+        },
+        {
+          "date": "2026-08-31",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字と出典の照合",
+          "hash": "954a66228518",
+          "note": "数字45個中 見つからず1個(JPXの一覧を自分で数えた4,444銘柄)"
+        }
+      ]
+    },
     "natsu-kion-20nen": {
       "path": "eachnews/natsu-kion-20nen.html",
       "checks": [

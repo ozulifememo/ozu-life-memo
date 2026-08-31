@@ -26,6 +26,8 @@ import check_site as cs                                    # noqa: E402
 CAT = {"ima": "大洲のいま", "kurashi": "大洲の暮らし", "shiten": "大洲の視点"}
 SITE = "https://ozulifememo.github.io/ozu-life-memo/"
 MDLINK = re.compile(r"\[([^]]*)\]\(([^)]+)\)")   # Markdownのリンク [題](URL)
+CELL = re.compile(r"<t([hd])\b([^>]*)>(.*?)</t\1>", re.S | re.I)
+SPAN = re.compile(r'(rowspan|colspan)\s*=\s*"?(\d+)', re.I)
 KANSUJI = "〇一二三四五六七八九"
 
 
@@ -48,6 +50,46 @@ def inline(s: str) -> str:
     s = re.sub(r"<[^>]+>", "", s)
     s = H.unescape(s)
     return " ".join(s.split())
+
+
+def table_grid(inner: str) -> list:
+    """HTMLの表を、行ごとのセルの一覧にする。
+
+    自由研究の表は rowspan / colspan でセルを結合していることがある。
+    Markdownの表は結合できないので、結合の続きは空セルで埋めて列数を揃える。
+
+    揃えないと、行ごとにセル数が違ってNotion側で列が丸ごと落ちる。
+    2026-08-31、人口47年の記事の「自然減と社会減の内訳」で、
+    rowspanを使っていた3列目(差引)が消えて2列の表になった。
+    """
+    grid = []
+    carry = {}                     # 列番号 -> あと何行、上のセルが続くか
+    for r in re.findall(r"<tr\b[^>]*>(.*?)</tr>", inner, re.S):
+        row, cells, ci, col = [], CELL.findall(r), 0, 0
+        while col < 64:            # 表が壊れていても止まるようにする
+            if carry.get(col, 0) > 0:
+                carry[col] -= 1
+                row.append("")     # 上のセルから続いている場所
+                col += 1
+                continue
+            if ci >= len(cells):
+                break
+            _, attrs, body = cells[ci]
+            ci += 1
+            spans = {k.lower(): int(v) for k, v in SPAN.findall(attrs)}
+            start = col
+            row.append(inline(body))
+            col += 1
+            for _ in range(spans.get("colspan", 1) - 1):
+                row.append("")
+                col += 1
+            if spans.get("rowspan", 1) > 1:
+                carry[start] = spans["rowspan"] - 1
+        grid.append(row)
+    width = max((len(r) for r in grid), default=0)
+    for r in grid:
+        r.extend([""] * (width - len(r)))
+    return grid
 
 
 def convert(slug: str, subdir: str = "eachnews") -> dict:
@@ -149,10 +191,8 @@ def convert(slug: str, subdir: str = "eachnews") -> dict:
         elif tag == "blockquote":
             out.append("> " + inline(inner))
         elif tag == "table":
-            rows = re.findall(r"<tr\b[^>]*>(.*?)</tr>", inner, re.S)
             lines = []
-            for i, r in enumerate(rows):
-                cells = [inline(c) for c in re.findall(r"<t[hd]\b[^>]*>(.*?)</t[hd]>", r, re.S)]
+            for i, cells in enumerate(table_grid(inner)):
                 lines.append("| " + " | ".join(cells) + " |")
                 if i == 0:
                     lines.append("|" + "---|" * len(cells))

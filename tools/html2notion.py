@@ -227,7 +227,9 @@ def convert(slug: str, subdir: str = "eachnews") -> dict:
             # Notionの出典は各リンクに日付注記を付ける決まり。HTML側に無ければ、
             # 記事を掲載した日を「その時点で確認した」注記として付ける
             if rest:
-                note = f"({rest})"
+                # HTML側がすでに括弧つきで書いていれば、二重に囲まない
+                # (2026-08-31、「)(（2026年８月31日確認）)」になっていた)
+                note = rest if rest[0] in "（(" else f"({rest})"
             elif posted and not re.search(r"\d{4}年|令和|平成|閲覧", label):
                 note = f"({posted}時点)"
             else:

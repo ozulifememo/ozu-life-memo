@@ -206,12 +206,18 @@ def convert(slug: str, subdir: str = "eachnews") -> dict:
                 out.append('<callout icon="📌" color="gray_bg">\n'
                            + "\n".join("\t" + x for x in rows) + "\n</callout>")
         elif tag == "table":
-            lines = []
-            for i, cells in enumerate(table_grid(inner)):
-                lines.append("| " + " | ".join(cells) + " |")
-                if i == 0:
-                    lines.append("|" + "---|" * len(cells))
-            out.append("\n".join(lines))
+            # Notionの表は <table> 形式だけ。Markdownのパイプ表(| A | B |)は
+            # 仕様に無く、そのまま文字列として貼り付くだけで表にならない
+            # (2026-08-31に実測。既に入れた記事のパイプ表は表として読めていない)。
+            grid = table_grid(inner)
+            if grid:
+                lines = ['<table header-row="true">']
+                for cells in grid:
+                    lines.append("\t<tr>")
+                    lines += ["\t\t<td>" + c + "</td>" for c in cells]
+                    lines.append("\t</tr>")
+                lines.append("</table>")
+                out.append("\n".join(lines))
 
     md = "\n".join(out)
     if sources:

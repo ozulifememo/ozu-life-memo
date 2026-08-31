@@ -41,10 +41,16 @@ BASE = "https://www.city.ozu.ehime.jp/kaigiroku/"
 UA = "Mozilla/5.0 (compatible; OZU-LIFE-MEMO-research/1.0)"
 
 # 平成21年→H21、令和2年→R02 のようにフォルダ名が変わる
+#
+# 2019年の扱いに注意(2026-08-31に実測して判明)。
+# 改元は2019年5月1日なので、暦の上では6月・9月・12月の定例会は令和元年にあたる。
+# ところが市のサイトは、2019年ぶんを4回とも H31 フォルダに置いている。
+# R01 というフォルダは存在しない。ここを R01 で探していたため、
+# 2019年の会議録16本がまるごと検索から漏れていた(復興計画が確定した年だった)。
 def folder_for(year: int) -> str:
-    if year <= 2018:            # 平成30年まで
+    if year <= 2019:            # 2019年は令和元年だが、市のサイトでは H31
         return f"H{year - 1988:02d}"
-    return f"R{year - 2018:02d}"  # 令和元年(2019)から
+    return f"R{year - 2018:02d}"  # 2020年(令和2年)から R02
 
 
 def candidates(y_from: int, y_to: int):

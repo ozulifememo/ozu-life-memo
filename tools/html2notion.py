@@ -24,6 +24,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import check_site as cs                                    # noqa: E402
 
 CAT = {"ima": "大洲のいま", "kurashi": "大洲の暮らし", "shiten": "大洲の視点"}
+SITE = "https://ozulifememo.github.io/ozu-life-memo/"
+MDLINK = re.compile(r"\[([^]]*)\]\(([^)]+)\)")   # Markdownのリンク [題](URL)
 KANSUJI = "〇一二三四五六七八九"
 
 
@@ -48,16 +50,30 @@ def inline(s: str) -> str:
     return " ".join(s.split())
 
 
-def convert(slug: str) -> dict:
-    p = cs.REPO / "eachnews" / f"{slug}.html"
+def convert(slug: str, subdir: str = "eachnews") -> dict:
+    # 記事(eachnews/)だけでなく、大洲の自由研究(jiyu-kenkyu/)や
+    # 大洲と読書(book/)からも起こせるようにしてある。
+    # 自由研究・読書は news-data.js の台帳に載らないので、そこは空で返る。
+    p = cs.REPO / subdir / f"{slug}.html"
     html = cs.read(p)
-    reg = cs.load_registry()[slug]
+    reg = cs.load_registry().get(slug, {"slug": slug, "title": "", "category": ""})
 
     # 本文は <div class="article-page"> から <aside>(サイドバー) の手前まで。
     # ヘッダー・フッター・サイドバー・お問い合わせは記事ではないので最初から外す
     start = html.find('<div class="article-page"')
+    if start < 0:
+        # 自由研究(jiyu-kenkyu/)はサイドバーが無く、本文は <div class="wrap jk-section">。
+        # 読書(book/)も article-page を持たないことがあるので、wrap まで落とす
+        for marker in ('<div class="wrap jk-section"', '<div class="wrap"'):
+            start = html.find(marker)
+            if start >= 0:
+                break
     end = html.find("<aside", start)
     body = html[start:end if end > 0 else None]
+
+    # 自由研究の脚注参照 <a href="#fn3" class="jk-fn">[３]</a> は、
+    # リンクにすると [[３]](#fn3) と壊れる。ただの番号として残す
+    body = re.sub(r'<a\b[^>]*class="jk-fn"[^>]*>(.*?)</a>', r"\1", body, flags=re.S)
 
     # 出典欄を先に取り出しておき、本文からは除く。
     # 形は <div class="content-block source-box"> の中に <a class="source-link"> が並ぶ
@@ -79,11 +95,23 @@ def convert(slug: str) -> dict:
             sources.append((label, url, rest))
         body = body[:src_m.start()] + body[src_m.end():]
 
+    # 自由研究(jiyu-kenkyu/)の出典は、番号付きの脚注 <div class="jk-footnotes">。
+    # 1つの脚注にリンクが複数入ったり、リンクが無いものもあるので、
+    # 記事の source-box とは別に、行ごとまるごとMarkdown化する
+    footnotes = []
+    fn_m = re.search(r'<div class="jk-footnotes">.*?</ol>\s*</div>', body, re.S)
+    if fn_m:
+        for li in re.finditer(r'<li\b[^>]*id="fn(\d+)"[^>]*>(.*?)</li>', fn_m.group(0), re.S):
+            footnotes.append((li.group(1), inline(li.group(2))))
+        body = body[:fn_m.start()] + body[fn_m.end():]
+
     # 捨てる部品(要点・読了時間・吹き出し・図はHTML側の見せ方の部品)
     for pat in (r'<div class="article-summary".*?</ul>\s*</div>',
                 r'<div class="memou-intro">.*?</div>\s*</div>',
                 r"<svg\b.*?</svg>", r"<figure\b.*?</figure>", r"<script\b.*?</script>",
-                r"<nav\b.*?</nav>"):
+                r"<nav\b.*?</nav>",
+                # 自由研究の目次(ページ内リンク)もHTML側の部品。Notion原稿には入れない
+                r'<div class="jk-toc">.*?</ol>\s*</div>'):
         body = re.sub(pat, " ", body, flags=re.S | re.I)
     # 記事の帯(カテゴリ・出典名・読了時間)は本文ではない
     body = re.sub(r"<p\b[^>]*>(?:(?!</p>).)*分で読める(?:(?!</p>).)*</p>", " ", body, flags=re.S)
@@ -144,11 +172,31 @@ def convert(slug: str) -> dict:
                 note = ""
             rows.append(f"\t[{label}]({url}){note}")
         md += "\n<callout icon=\"📎\" color=\"blue_bg\">\n\t**出典・参考にした資料**\n" + "\n".join(rows) + "\n</callout>"
+    if footnotes:
+        # 脚注の中の相対リンク(../eachnews/xxx.html や同じ階層の yyy.html)は、
+        # Notionで開けるようにサイトの絶対URLへ直す
+        def abslink(m):
+            label, href = m.group(1), m.group(2)
+            if not re.match(r"https?:|#", href):
+                href = SITE + re.sub(r"^\.\./", "", href) if href.startswith("../") \
+                    else f"{SITE}{subdir}/{href}"
+            return f"[{label}]({href})"
+        rows = ["\t%s. %s" % (n, MDLINK.sub(abslink, t)) for n, t in footnotes]
+        md += "\n<callout icon=\"📎\" color=\"blue_bg\">\n\t**出典・参考にした資料**\n" + "\n".join(rows) + "\n</callout>"
 
     desc = (re.search(r'name="description" content="([^"]*)"', html) or [None, ""])[1]
+    # 台帳に載らないページ(自由研究・読書)は、HTML自身のJSON-LDから題と日付を拾う
+    if not reg.get("title"):
+        hm = re.search(r'"headline"\s*:\s*"([^"]*)"', html) or re.search(r"<h1[^>]*>(.*?)</h1>", html, re.S)
+        reg["title"] = inline(hm.group(1)) if hm else slug
+    if not reg.get("date"):
+        dm = re.search(r'"datePublished"\s*:\s*"(\d{4})-(\d{2})-(\d{2})', html)
+        if dm:
+            reg["date"] = f"{dm.group(1)}-{dm.group(2)}-{dm.group(3)}"
     # 出典の要約(プロパティ用)。主な出典の名前+「ほか計N本」
     main = re.sub(r"ほか$", "", reg.get("source", "")).strip()
-    src_summary = f"{main}ほか計{kansuji(len(sources))}本" if sources else main
+    n_src = len(sources) or len(footnotes)
+    src_summary = f"{main}ほか計{kansuji(n_src)}本" if n_src else main
     return {
         "slug": slug,
         "title": reg["title"],
@@ -156,9 +204,11 @@ def convert(slug: str) -> dict:
         "date": reg.get("date", ""),
         "sourceDate": reg.get("sourceDate", ""),
         "source_summary": src_summary,
-        "ref_url": sources[0][1] if sources else "",
+        "ref_url": sources[0][1] if sources else
+                   (re.search(r"\((https?://[^)]+)\)", footnotes[0][1]) or [None, ""])[1] if footnotes else "",
         "desc": H.unescape(desc),
-        "n_sources": len(sources),
+        "n_sources": n_src,
+        "url": f"{SITE}{subdir}/{slug}.html",
         "markdown": md,
     }
 
@@ -167,12 +217,14 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("slug")
     ap.add_argument("--json", action="store_true")
+    ap.add_argument("--dir", default="eachnews",
+                    help="HTMLの置き場。eachnews(既定) / jiyu-kenkyu / book")
     a = ap.parse_args()
     try:
         sys.stdout.reconfigure(encoding="utf-8")
     except Exception:
         pass
-    r = convert(a.slug)
+    r = convert(a.slug, a.dir)
     if a.json:
         print(json.dumps(r, ensure_ascii=False, indent=1))
     else:

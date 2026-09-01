@@ -28,6 +28,14 @@ const themes = OZU_ARTICLE_PHOTO_WANTED
 
 const waitingTotal = new Set([].concat.apply([], themes.map(function (t) { return t.waiting; }))).size;
 
+// どのテーマにも入っていない、写真なしの記事。
+// テーマに登録しないかぎり撮影リストに一度も出てこないので、
+// 新しく書いた記事が黙って写真待ちのまま埋もれる。ここで見えるようにする。
+const IN_THEME = new Set([].concat.apply([], OZU_ARTICLE_PHOTO_WANTED.map(function (w) { return w.slugs; })));
+const orphans = OZU_NEWS.filter(function (a) {
+  return !OZU_ARTICLE_IMAGES[a.slug] && !IN_THEME.has(a.slug);
+});
+
 let out = [];
 out.push("# 撮影リスト ｜ OZU LIFE MEMO");
 out.push("");
@@ -36,6 +44,7 @@ out.push("");
 out.push("- 記事の総数: **" + total + "本**");
 out.push("- 写真が付いている記事: **" + withPhoto + "本**");
 out.push("- 写真待ちの記事: **" + waitingTotal + "本**");
+out.push("- どのテーマにも入っていない記事: **" + orphans.length + "本**（下に一覧）");
 out.push("- 手持ちの写真: **" + OZU_PHOTO_LIBRARY.length + "枚**（うち記事に使えるもの " + OZU_PHOTO_USABLE.length + "枚）");
 out.push("");
 out.push("写真待ちの記事は、いまサイト上では写真を出していません。");
@@ -60,6 +69,23 @@ themes.forEach(function (t, i) {
     out.push("");
   }
 });
+
+if (orphans.length) {
+  out.push("---");
+  out.push("");
+  out.push("## どのテーマにも入っていない記事（" + orphans.length + "本）");
+  out.push("");
+  out.push("写真がなく、上のどのテーマにも入っていない記事です。");
+  out.push("**このままだと撮影リストに出てこないので、いつまでも写真待ちのまま気づかれません。**");
+  out.push("");
+  out.push("`assets/js/article-images.js` の `OZU_ARTICLE_PHOTO_WANTED` で、合うテーマの `slugs` に足すか、");
+  out.push("新しいテーマを作ってください。数字や制度の話だけで写真がいらない記事なら、放っておいて構いません。");
+  out.push("");
+  orphans.forEach(function (a) {
+    out.push("- " + a.date + "　" + a.title + "　`" + a.slug + "`");
+  });
+  out.push("");
+}
 
 out.push("---");
 out.push("");
@@ -100,3 +126,6 @@ out.push("");
 
 fs.writeFileSync("撮影リスト.md", out.join("\n"), "utf8");
 console.log("撮影リスト.md を書き出しました（テーマ " + themes.length + "件 / 写真待ちの記事 " + waitingTotal + "本）");
+if (orphans.length) {
+  console.log("どのテーマにも入っていない記事が " + orphans.length + "本あります。撮影リストの最後を見てください。");
+}

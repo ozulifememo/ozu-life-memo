@@ -4271,6 +4271,27 @@
         }
       ]
     },
+    "ozu-toilecar-kumamoto": {
+      "path": "eachnews/ozu-toilecar-kumamoto.html",
+      "checks": [
+        {
+          "date": "2026-09-02",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "998321b1e6b9",
+          "note": "会議録6回分(H27-12/H29-03/H29-09/R06-09/R07-03/R07-06/R07-12)とH30-09を原文で確認し、引用は全文照合。気象庁PDFで震度7・M7.1・深さ16kmを確認。加東市の協定PDFで第1条の文言を確認。新居浜市の派遣は市公式ページで確認。数字照合は27個中0個が未検出"
+        },
+        {
+          "date": "2026-09-02",
+          "level": "numbers",
+          "by": "check_numbers",
+          "result": "数字と出典の照合",
+          "hash": "998321b1e6b9",
+          "note": "数字27個・出典12本すべて照合、見つからず0"
+        }
+      ]
+    },
     "ozu-toori-namae": {
       "path": "eachnews/ozu-toori-namae.html",
       "checks": [

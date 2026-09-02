@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-toilecar-kumamoto",
+    date: "2026-09-02",
+    title: "大洲のトイレカーが熊本の避難所へ。始まりは11年前、うかいの屋形船だった",
+    category: "shiten",
+    source: "大洲市議会会議録（平成27年12月〜令和7年12月）・大洲市発表",
+    sourceDate: "2026-08-25",
+    tags: ["防災", "議会・行政"],
+  },
+  {
     slug: "ozu-uriage-ranking",
     date: "2026-08-31",
     title: "大洲でいちばん売上が大きい会社は222億円。でも2位から先は誰にも分からない",

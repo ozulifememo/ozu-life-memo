@@ -1532,6 +1532,25 @@
         }
       ]
     },
+    "hijikawa-hanran-nenpyo": {
+      "path": "jiyu-kenkyu/hijikawa-hanran-nenpyo.html",
+      "checks": [
+        {
+          "date": "2026-09-03",
+          "level": "machine",
+          "by": "opus",
+          "result": "check_site.py エラー0",
+          "hash": "2685e040b33b"
+        },
+        {
+          "date": "2026-09-03",
+          "level": "publish",
+          "by": "opus",
+          "result": "2026-09-03 公開",
+          "hash": "2685e040b33b"
+        }
+      ]
+    },
     "hijikawa-nagare": {
       "path": "eachnews/hijikawa-nagare.html",
       "checks": [
@@ -1607,6 +1626,25 @@
           "by": "check_site.py",
           "result": "問題なし",
           "hash": "a9ecc6f7cf6e"
+        }
+      ]
+    },
+    "hijikawa-suii-38nen": {
+      "path": "jiyu-kenkyu/hijikawa-suii-38nen.html",
+      "checks": [
+        {
+          "date": "2026-09-03",
+          "level": "machine",
+          "by": "opus",
+          "result": "check_site.py エラー0",
+          "hash": "86d495ad8597"
+        },
+        {
+          "date": "2026-09-03",
+          "level": "publish",
+          "by": "opus",
+          "result": "2026-09-03 公開",
+          "hash": "86d495ad8597"
         }
       ]
     },
@@ -3533,6 +3571,25 @@
         }
       ]
     },
+    "ozu-akiya-chikubetsu": {
+      "path": "jiyu-kenkyu/ozu-akiya-chikubetsu.html",
+      "checks": [
+        {
+          "date": "2026-09-03",
+          "level": "machine",
+          "by": "opus",
+          "result": "check_site.py エラー0",
+          "hash": "ee802637caca"
+        },
+        {
+          "date": "2026-09-03",
+          "level": "publish",
+          "by": "opus",
+          "result": "2026-09-03 公開",
+          "hash": "ee802637caca"
+        }
+      ]
+    },
     "ozu-arts-taiwan": {
       "path": "eachnews/ozu-arts-taiwan.html",
       "checks": [
@@ -3593,6 +3650,25 @@
         }
       ]
     },
+    "ozu-bohantou-denkidai": {
+      "path": "eachnews/ozu-bohantou-denkidai.html",
+      "checks": [
+        {
+          "date": "2026-09-03",
+          "level": "machine",
+          "by": "opus",
+          "result": "check_site.py エラー0",
+          "hash": "cde60bc58670"
+        },
+        {
+          "date": "2026-09-03",
+          "level": "publish",
+          "by": "opus",
+          "result": "2026-09-03 公開",
+          "hash": "cde60bc58670"
+        }
+      ]
+    },
     "ozu-cable-tv-nhk": {
       "path": "eachnews/ozu-cable-tv-nhk.html",
       "checks": [
@@ -3647,6 +3723,25 @@
         }
       ]
     },
+    "ozu-cci-shigoto": {
+      "path": "eachnews/ozu-cci-shigoto.html",
+      "checks": [
+        {
+          "date": "2026-09-03",
+          "level": "machine",
+          "by": "opus",
+          "result": "check_site.py エラー0",
+          "hash": "537b3fd719c0"
+        },
+        {
+          "date": "2026-09-03",
+          "level": "publish",
+          "by": "opus",
+          "result": "2026-09-03 公開",
+          "hash": "537b3fd719c0"
+        }
+      ]
+    },
     "ozu-chiiki-okoshi-tai": {
       "path": "eachnews/ozu-chiiki-okoshi-tai.html",
       "checks": [
@@ -3678,6 +3773,25 @@
           "by": "check_site.py",
           "result": "問題なし",
           "hash": "a4d8e4ad2297"
+        }
+      ]
+    },
+    "ozu-conveni-kofu": {
+      "path": "eachnews/ozu-conveni-kofu.html",
+      "checks": [
+        {
+          "date": "2026-09-03",
+          "level": "machine",
+          "by": "opus",
+          "result": "check_site.py エラー0",
+          "hash": "e59d57d9f16c"
+        },
+        {
+          "date": "2026-09-03",
+          "level": "publish",
+          "by": "opus",
+          "result": "2026-09-03 公開",
+          "hash": "e59d57d9f16c"
         }
       ]
     },
@@ -3762,6 +3876,44 @@
         }
       ]
     },
+    "ozu-furusato-ryushutsu": {
+      "path": "eachnews/ozu-furusato-ryushutsu.html",
+      "checks": [
+        {
+          "date": "2026-09-03",
+          "level": "machine",
+          "by": "opus",
+          "result": "check_site.py エラー0",
+          "hash": "97a928a27563"
+        },
+        {
+          "date": "2026-09-03",
+          "level": "publish",
+          "by": "opus",
+          "result": "2026-09-03 公開",
+          "hash": "97a928a27563"
+        }
+      ]
+    },
+    "ozu-gouu-8nen": {
+      "path": "jiyu-kenkyu/ozu-gouu-8nen.html",
+      "checks": [
+        {
+          "date": "2026-09-03",
+          "level": "machine",
+          "by": "opus",
+          "result": "check_site.py エラー0",
+          "hash": "b97d3186b1bc"
+        },
+        {
+          "date": "2026-09-03",
+          "level": "publish",
+          "by": "opus",
+          "result": "2026-09-03 公開",
+          "hash": "b97d3186b1bc"
+        }
+      ]
+    },
     "ozu-haze-no-hosomichi": {
       "path": "eachnews/ozu-haze-no-hosomichi.html",
       "checks": [
@@ -3803,6 +3955,44 @@
           "result": "有効(差分のみ)",
           "hash": "0bd08bf92621",
           "note": "差分確認: 吹き出しの数字は本文既出の再掲のみ。出典との照合は公開時(2026-08-30)の手動照合が実質有効"
+        }
+      ]
+    },
+    "ozu-hokago-jido-club": {
+      "path": "eachnews/ozu-hokago-jido-club.html",
+      "checks": [
+        {
+          "date": "2026-09-03",
+          "level": "machine",
+          "by": "opus",
+          "result": "check_site.py エラー0",
+          "hash": "6d97fa2e5cbf"
+        },
+        {
+          "date": "2026-09-03",
+          "level": "publish",
+          "by": "opus",
+          "result": "2026-09-03 公開",
+          "hash": "6d97fa2e5cbf"
+        }
+      ]
+    },
+    "ozu-inuneko-hikitori": {
+      "path": "eachnews/ozu-inuneko-hikitori.html",
+      "checks": [
+        {
+          "date": "2026-09-03",
+          "level": "machine",
+          "by": "opus",
+          "result": "check_site.py エラー0",
+          "hash": "fe38551d0dfa"
+        },
+        {
+          "date": "2026-09-03",
+          "level": "publish",
+          "by": "opus",
+          "result": "2026-09-03 公開",
+          "hash": "fe38551d0dfa"
         }
       ]
     },
@@ -3952,6 +4142,25 @@
         }
       ]
     },
+    "ozu-kasoryo-shiminhyo": {
+      "path": "eachnews/ozu-kasoryo-shiminhyo.html",
+      "checks": [
+        {
+          "date": "2026-09-03",
+          "level": "machine",
+          "by": "opus",
+          "result": "check_site.py エラー0",
+          "hash": "1de83f0c8807"
+        },
+        {
+          "date": "2026-09-03",
+          "level": "publish",
+          "by": "opus",
+          "result": "2026-09-03 公開",
+          "hash": "1de83f0c8807"
+        }
+      ]
+    },
     "ozu-kasseika-keikaku-kenshou": {
       "path": "eachnews/ozu-kasseika-keikaku-kenshou.html",
       "checks": [
@@ -4005,6 +4214,44 @@
         }
       ]
     },
+    "ozu-kieta-bus": {
+      "path": "jiyu-kenkyu/ozu-kieta-bus.html",
+      "checks": [
+        {
+          "date": "2026-09-03",
+          "level": "machine",
+          "by": "opus",
+          "result": "check_site.py エラー0",
+          "hash": "a61aad306f9d"
+        },
+        {
+          "date": "2026-09-03",
+          "level": "publish",
+          "by": "opus",
+          "result": "2026-09-03 公開",
+          "hash": "a61aad306f9d"
+        }
+      ]
+    },
+    "ozu-kieta-gakko": {
+      "path": "jiyu-kenkyu/ozu-kieta-gakko.html",
+      "checks": [
+        {
+          "date": "2026-09-03",
+          "level": "machine",
+          "by": "opus",
+          "result": "check_site.py エラー0",
+          "hash": "5fa19021df4a"
+        },
+        {
+          "date": "2026-09-03",
+          "level": "publish",
+          "by": "opus",
+          "result": "2026-09-03 公開",
+          "hash": "5fa19021df4a"
+        }
+      ]
+    },
     "ozu-kogyo-yosui": {
       "path": "eachnews/ozu-kogyo-yosui.html",
       "checks": [
@@ -4036,6 +4283,82 @@
           "by": "check_site.py",
           "result": "問題なし",
           "hash": "65084957cc40"
+        }
+      ]
+    },
+    "ozu-kouhou-genka": {
+      "path": "eachnews/ozu-kouhou-genka.html",
+      "checks": [
+        {
+          "date": "2026-09-03",
+          "level": "machine",
+          "by": "opus",
+          "result": "check_site.py エラー0",
+          "hash": "32f210045645"
+        },
+        {
+          "date": "2026-09-03",
+          "level": "publish",
+          "by": "opus",
+          "result": "2026-09-03 公開",
+          "hash": "32f210045645"
+        }
+      ]
+    },
+    "ozu-koyosha-ev": {
+      "path": "eachnews/ozu-koyosha-ev.html",
+      "checks": [
+        {
+          "date": "2026-09-03",
+          "level": "machine",
+          "by": "opus",
+          "result": "check_site.py エラー0",
+          "hash": "11cc325d7805"
+        },
+        {
+          "date": "2026-09-03",
+          "level": "publish",
+          "by": "opus",
+          "result": "2026-09-03 公開",
+          "hash": "11cc325d7805"
+        }
+      ]
+    },
+    "ozu-kyuson-mei": {
+      "path": "jiyu-kenkyu/ozu-kyuson-mei.html",
+      "checks": [
+        {
+          "date": "2026-09-03",
+          "level": "machine",
+          "by": "opus",
+          "result": "check_site.py エラー0",
+          "hash": "be39114baca6"
+        },
+        {
+          "date": "2026-09-03",
+          "level": "publish",
+          "by": "opus",
+          "result": "2026-09-03 公開",
+          "hash": "be39114baca6"
+        }
+      ]
+    },
+    "ozu-michinoeki-machinoeki": {
+      "path": "eachnews/ozu-michinoeki-machinoeki.html",
+      "checks": [
+        {
+          "date": "2026-09-03",
+          "level": "machine",
+          "by": "opus",
+          "result": "check_site.py エラー0",
+          "hash": "06889ce989bd"
+        },
+        {
+          "date": "2026-09-03",
+          "level": "publish",
+          "by": "opus",
+          "result": "2026-09-03 公開",
+          "hash": "06889ce989bd"
         }
       ]
     },
@@ -4131,6 +4454,44 @@
           "by": "check_site.py",
           "result": "問題なし",
           "hash": "88d1e4240105"
+        }
+      ]
+    },
+    "ozu-mynakenkou-riyoritsu": {
+      "path": "eachnews/ozu-mynakenkou-riyoritsu.html",
+      "checks": [
+        {
+          "date": "2026-09-03",
+          "level": "machine",
+          "by": "opus",
+          "result": "check_site.py エラー0",
+          "hash": "1108e6480079"
+        },
+        {
+          "date": "2026-09-03",
+          "level": "publish",
+          "by": "opus",
+          "result": "2026-09-03 公開",
+          "hash": "1108e6480079"
+        }
+      ]
+    },
+    "ozu-nogyo-31nen": {
+      "path": "jiyu-kenkyu/ozu-nogyo-31nen.html",
+      "checks": [
+        {
+          "date": "2026-09-03",
+          "level": "machine",
+          "by": "opus",
+          "result": "check_site.py エラー0",
+          "hash": "5d80de049634"
+        },
+        {
+          "date": "2026-09-03",
+          "level": "publish",
+          "by": "opus",
+          "result": "2026-09-03 公開",
+          "hash": "5d80de049634"
         }
       ]
     },
@@ -4242,6 +4603,101 @@
         }
       ]
     },
+    "ozu-reform-hojo": {
+      "path": "eachnews/ozu-reform-hojo.html",
+      "checks": [
+        {
+          "date": "2026-09-03",
+          "level": "machine",
+          "by": "opus",
+          "result": "check_site.py エラー0",
+          "hash": "aafab1312507"
+        },
+        {
+          "date": "2026-09-03",
+          "level": "publish",
+          "by": "opus",
+          "result": "2026-09-03 公開",
+          "hash": "aafab1312507"
+        }
+      ]
+    },
+    "ozu-rosenka-44nen": {
+      "path": "jiyu-kenkyu/ozu-rosenka-44nen.html",
+      "checks": [
+        {
+          "date": "2026-09-03",
+          "level": "machine",
+          "by": "opus",
+          "result": "check_site.py エラー0",
+          "hash": "52dde770e47c"
+        },
+        {
+          "date": "2026-09-03",
+          "level": "publish",
+          "by": "opus",
+          "result": "2026-09-03 公開",
+          "hash": "52dde770e47c"
+        }
+      ]
+    },
+    "ozu-sangyo-40nen": {
+      "path": "jiyu-kenkyu/ozu-sangyo-40nen.html",
+      "checks": [
+        {
+          "date": "2026-09-03",
+          "level": "machine",
+          "by": "opus",
+          "result": "check_site.py エラー0",
+          "hash": "6b4e012bfb19"
+        },
+        {
+          "date": "2026-09-03",
+          "level": "publish",
+          "by": "opus",
+          "result": "2026-09-03 公開",
+          "hash": "6b4e012bfb19"
+        }
+      ]
+    },
+    "ozu-senkyo-14kai": {
+      "path": "jiyu-kenkyu/ozu-senkyo-14kai.html",
+      "checks": [
+        {
+          "date": "2026-09-03",
+          "level": "machine",
+          "by": "opus",
+          "result": "check_site.py エラー0",
+          "hash": "24051d6453ba"
+        },
+        {
+          "date": "2026-09-03",
+          "level": "publish",
+          "by": "opus",
+          "result": "2026-09-03 公開",
+          "hash": "24051d6453ba"
+        }
+      ]
+    },
+    "ozu-senkyo-kouhou": {
+      "path": "eachnews/ozu-senkyo-kouhou.html",
+      "checks": [
+        {
+          "date": "2026-09-03",
+          "level": "machine",
+          "by": "opus",
+          "result": "check_site.py エラー0",
+          "hash": "c1eacaf67b87"
+        },
+        {
+          "date": "2026-09-03",
+          "level": "publish",
+          "by": "opus",
+          "result": "2026-09-03 公開",
+          "hash": "c1eacaf67b87"
+        }
+      ]
+    },
     "ozu-shakyo-kessan": {
       "path": "eachnews/ozu-shakyo-kessan.html",
       "checks": [
@@ -4318,6 +4774,120 @@
           "result": "有効(差分のみ)",
           "hash": "3af34deeb9d1",
           "note": "差分確認: 吹き出しの数字は本文既出の再掲のみ。出典との照合は公開時(2026-08-30)の手動照合が実質有効"
+        }
+      ]
+    },
+    "ozu-shitei-kanrisha": {
+      "path": "eachnews/ozu-shitei-kanrisha.html",
+      "checks": [
+        {
+          "date": "2026-09-03",
+          "level": "machine",
+          "by": "opus",
+          "result": "check_site.py エラー0",
+          "hash": "68eedd8d0b9a"
+        },
+        {
+          "date": "2026-09-03",
+          "level": "publish",
+          "by": "opus",
+          "result": "2026-09-03 公開",
+          "hash": "68eedd8d0b9a"
+        }
+      ]
+    },
+    "ozu-shiyakusho-zangyo": {
+      "path": "eachnews/ozu-shiyakusho-zangyo.html",
+      "checks": [
+        {
+          "date": "2026-09-03",
+          "level": "machine",
+          "by": "opus",
+          "result": "check_site.py エラー0",
+          "hash": "61d8d26ec73f"
+        },
+        {
+          "date": "2026-09-03",
+          "level": "publish",
+          "by": "opus",
+          "result": "2026-09-03 公開",
+          "hash": "61d8d26ec73f"
+        }
+      ]
+    },
+    "ozu-shokuinsu-kenai-hikaku": {
+      "path": "eachnews/ozu-shokuinsu-kenai-hikaku.html",
+      "checks": [
+        {
+          "date": "2026-09-03",
+          "level": "machine",
+          "by": "opus",
+          "result": "check_site.py エラー0",
+          "hash": "1df1b15456ff"
+        },
+        {
+          "date": "2026-09-03",
+          "level": "publish",
+          "by": "opus",
+          "result": "2026-09-03 公開",
+          "hash": "1df1b15456ff"
+        }
+      ]
+    },
+    "ozu-sodai-gomi-hikaku": {
+      "path": "eachnews/ozu-sodai-gomi-hikaku.html",
+      "checks": [
+        {
+          "date": "2026-09-03",
+          "level": "machine",
+          "by": "opus",
+          "result": "check_site.py エラー0",
+          "hash": "ab3f177b4f9e"
+        },
+        {
+          "date": "2026-09-03",
+          "level": "publish",
+          "by": "opus",
+          "result": "2026-09-03 公開",
+          "hash": "ab3f177b4f9e"
+        }
+      ]
+    },
+    "ozu-solar-katei": {
+      "path": "eachnews/ozu-solar-katei.html",
+      "checks": [
+        {
+          "date": "2026-09-03",
+          "level": "machine",
+          "by": "opus",
+          "result": "check_site.py エラー0",
+          "hash": "800e753910f0"
+        },
+        {
+          "date": "2026-09-03",
+          "level": "publish",
+          "by": "opus",
+          "result": "2026-09-03 公開",
+          "hash": "800e753910f0"
+        }
+      ]
+    },
+    "ozu-solar-yama": {
+      "path": "eachnews/ozu-solar-yama.html",
+      "checks": [
+        {
+          "date": "2026-09-03",
+          "level": "machine",
+          "by": "opus",
+          "result": "check_site.py エラー0",
+          "hash": "bf140db47afb"
+        },
+        {
+          "date": "2026-09-03",
+          "level": "publish",
+          "by": "opus",
+          "result": "2026-09-03 公開",
+          "hash": "bf140db47afb"
         }
       ]
     },
@@ -4420,6 +4990,25 @@
         }
       ]
     },
+    "ozu-toshokan-kashidashi": {
+      "path": "eachnews/ozu-toshokan-kashidashi.html",
+      "checks": [
+        {
+          "date": "2026-09-03",
+          "level": "machine",
+          "by": "opus",
+          "result": "check_site.py エラー0",
+          "hash": "a6dcb9f0e07d"
+        },
+        {
+          "date": "2026-09-03",
+          "level": "publish",
+          "by": "opus",
+          "result": "2026-09-03 公開",
+          "hash": "a6dcb9f0e07d"
+        }
+      ]
+    },
     "ozu-ukai-guide": {
       "path": "eachnews/ozu-ukai-guide.html",
       "checks": [
@@ -4500,6 +5089,25 @@
           "by": "check_site.py",
           "result": "問題なし",
           "hash": "16f8b0bc7161"
+        }
+      ]
+    },
+    "ozu-zeishu-24nen": {
+      "path": "jiyu-kenkyu/ozu-zeishu-24nen.html",
+      "checks": [
+        {
+          "date": "2026-09-03",
+          "level": "machine",
+          "by": "opus",
+          "result": "check_site.py エラー0",
+          "hash": "c15c6ce8bb92"
+        },
+        {
+          "date": "2026-09-03",
+          "level": "publish",
+          "by": "opus",
+          "result": "2026-09-03 公開",
+          "hash": "c15c6ce8bb92"
         }
       ]
     },

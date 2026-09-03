@@ -1091,6 +1091,72 @@ def check_repo_anonymity(rep):
                 break
 
 
+def scan_commit_messages(messages, rep):
+    """コミットメッセージの文面に、個人が特定できる語が無いか。
+
+    gitと切り離してあるのは、--selftest で本当に反応するか確かめるため。
+    messages は (見出し, 本文) の並び。
+    """
+    if not BANNED:
+        return
+    for label, msg in messages:
+        for pattern, why in BANNED:
+            hit = None
+            for m in re.finditer(pattern, msg):
+                around = msg[max(0, m.start() - 30): m.end() + 30]
+                if any(a in around for a in ALLOW):
+                    continue
+                hit = (m.group(0), around)
+                break
+            if hit:
+                rep.error(label, "匿名性",
+                          f"「{hit[0]}」がコミットメッセージにあります({why})",
+                          "       …" + " ".join(hit[1].split()) + "…\n"
+                          "       GitHubのコミットログは公開されます。"
+                          "pushする前なら git commit --amend で書き直せます")
+
+
+def check_commit_messages(rep):
+    """まだpushしていないコミットのメッセージを見る。
+
+    2026-09-03、記事32本を公開したとき「なぜ1本だけ保留にしたか」を
+    コミットメッセージに書き、その説明の中に関所の語をそのまま入れて
+    pushした。ファイルの中身(check_repo_anonymity)をいくら見ても、
+    コミットメッセージは捕まらない。しかも「匿名性の検査に当たる」と
+    併記したため、その語が運営者にとって意味を持つことまで示していた。
+    表の中に1行あるより悪い。
+
+    pushしてしまうと履歴を書き換えないと消せないので、まだpushして
+    いない分だけをエラーにする。ここで止めれば --amend で直せる。
+    """
+    import subprocess
+    if not BANNED:
+        return
+
+    def git(*args):
+        return subprocess.run(["git"] + list(args), cwd=str(REPO), capture_output=True,
+                              text=True, encoding="utf-8", errors="replace", timeout=30)
+
+    try:
+        up = git("rev-parse", "--abbrev-ref", "--symbolic-full-name", "@{u}")
+        if up.returncode != 0:
+            return                      # 上流ブランチが無いなら何もしない
+        log = git("log", up.stdout.strip() + "..HEAD", "--format=%H%x1f%B%x1e")
+        if log.returncode != 0:
+            return
+    except Exception:
+        return
+
+    messages = []
+    for rec in log.stdout.split("\x1e"):
+        rec = rec.strip()
+        if not rec:
+            continue
+        sha, _, msg = rec.partition("\x1f")
+        messages.append((f"コミット {sha[:8]} (未push)", msg))
+    scan_commit_messages(messages, rep)
+
+
 def check_registry_orphans(registry, pages, rep):
     """台帳にあるのにファイルが無い / ファイルがあるのに台帳に無い"""
     on_disk = {p.stem for p in pages if page_type(p) == "article"}
@@ -1294,6 +1360,7 @@ EXPECTED = [
     ("台帳", "日付の形式"),
     ("アンカー", "行き先ID"),
     ("匿名性", "ダミー禁止語"),
+    ("匿名性", "コミットメッセージにあります"),
     ("文字化け", "文字化け"),
     ("誤字", "肘川"),
     ("誤字", "かぎかっこ"),
@@ -1359,6 +1426,17 @@ def run_selftest() -> int:
                 check_sources(p, html, rep)
             check_registry_orphans(registry, pages, rep)
             check_registry_file(registry, rep)
+            # コミットメッセージの検査(gitを叩かずに、文面だけ渡して確かめる)。
+            # ALLOW には自己テスト用のダミー語そのものが入っている(check_site.py 自身を
+            # check_repo_anonymity が読むため)。そのままだと見逃されて確かめられないので、
+            # ここだけ一時的に外す。
+            _allow_backup = ALLOW[:]
+            try:
+                ALLOW.clear()
+                scan_commit_messages(
+                    [("コミット selftest", "ダミー禁止語をコミットメッセージに書いてしまった例")], rep)
+            finally:
+                ALLOW[:] = _allow_backup
         finally:
             REPO = real_repo
 
@@ -1460,6 +1538,7 @@ def main():
     if not args.slug and not args.changed:
         check_registry_orphans(registry, all_pages, rep)
         check_repo_anonymity(rep)
+        check_commit_messages(rep)
         check_registry_file(registry, rep)
         check_feed(registry, rep)
         check_sitemap_targets(sitemap, rep)

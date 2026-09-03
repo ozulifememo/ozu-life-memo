@@ -5051,6 +5051,14 @@
           "by": "check_site.py",
           "result": "問題なし",
           "hash": "d6fc727cdbb6"
+        },
+        {
+          "date": "2026-09-03",
+          "level": "human",
+          "by": "fable",
+          "result": "人が読んで裏取り",
+          "hash": "b49219fda99f",
+          "note": "県プレスリリース(EH216-S/AirX)を一次資料として追加、6月定例会で言及ゼロを確認して追記。映像の約束のみ残す"
         }
       ]
     },

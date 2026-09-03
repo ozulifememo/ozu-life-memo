@@ -4286,6 +4286,25 @@
         }
       ]
     },
+    "ozu-kokudo56-kyudo": {
+      "path": "jiyu-kenkyu/ozu-kokudo56-kyudo.html",
+      "checks": [
+        {
+          "date": "2026-09-03",
+          "level": "machine",
+          "by": "opus",
+          "result": "check_site.py エラー0",
+          "hash": "7e5028300e0f"
+        },
+        {
+          "date": "2026-09-03",
+          "level": "publish",
+          "by": "opus",
+          "result": "2026-09-03 公開(ALLOWに県道名を追加して解禁)",
+          "hash": "7e5028300e0f"
+        }
+      ]
+    },
     "ozu-kouhou-genka": {
       "path": "eachnews/ozu-kouhou-genka.html",
       "checks": [

@@ -474,12 +474,22 @@ def check_tables(path, html, rep):
 
 
 def check_anonymity(path, html, rep):
-    """本文に個人が特定できる語が入っていないか"""
+    """本文に個人が特定できる語が入っていないか。
+
+    ALLOW(当たっても見逃してよい文字列)は check_repo_anonymity と同じものを見る。
+    2026-09-03、記事の表に1行だけ出てくる県道名が引っかかったときに、
+    こちらだけ ALLOW を見ていないことが分かった。本人の線引きは
+    「記事の中に普通に出てくる地名は良い。その付近で働いていると
+    分からなければ許す」。だから語そのものではなく、その語を含む
+    固有名詞の並びのときだけ見逃す。
+    """
     text = strip_tags(body_only(html))
 
     for pattern, why in BANNED:
         for m in re.finditer(pattern, text):
             around = text[max(0, m.start() - 30): m.end() + 30]
+            if any(a in around for a in ALLOW):
+                continue
             rep.error(rel(path), "匿名性", f"「{m.group(0)}」が本文にあります({why})",
                       f"       …{around}…")
             break   # 1ファイル1件で十分
@@ -487,6 +497,8 @@ def check_anonymity(path, html, rep):
     for pattern, why in SUSPECT:
         for m in re.finditer(pattern, text):
             around = text[max(0, m.start() - 30): m.end() + 30]
+            if any(a in around for a in ALLOW):
+                continue
             rep.warn(rel(path), "匿名性", f"「{m.group(0)}」が本文にあります({why})",
                      f"       …{around}…")
             break
@@ -1399,6 +1411,12 @@ def run_selftest() -> int:
 
         real_repo = REPO
         REPO = root
+        # ALLOW(見逃してよい文字列)には自己テスト用のダミー語そのものが入っている
+        # (check_site.py 自身を check_repo_anonymity が読むため)。そのままだと
+        # 匿名性の検査が自己診断で反応せず、「見ているつもりで見ていない」状態に
+        # なる。自己診断のあいだだけ外す。
+        _allow_backup = ALLOW[:]
+        ALLOW.clear()
         try:
             pages = collect_pages()
             registry = load_registry()
@@ -1426,19 +1444,12 @@ def run_selftest() -> int:
                 check_sources(p, html, rep)
             check_registry_orphans(registry, pages, rep)
             check_registry_file(registry, rep)
-            # コミットメッセージの検査(gitを叩かずに、文面だけ渡して確かめる)。
-            # ALLOW には自己テスト用のダミー語そのものが入っている(check_site.py 自身を
-            # check_repo_anonymity が読むため)。そのままだと見逃されて確かめられないので、
-            # ここだけ一時的に外す。
-            _allow_backup = ALLOW[:]
-            try:
-                ALLOW.clear()
-                scan_commit_messages(
-                    [("コミット selftest", "ダミー禁止語をコミットメッセージに書いてしまった例")], rep)
-            finally:
-                ALLOW[:] = _allow_backup
+            # コミットメッセージの検査(gitを叩かずに、文面だけ渡して確かめる)
+            scan_commit_messages(
+                [("コミット selftest", "ダミー禁止語をコミットメッセージに書いてしまった例")], rep)
         finally:
             REPO = real_repo
+            ALLOW[:] = _allow_backup
 
     found = rep.errors + rep.warns
     missed = []

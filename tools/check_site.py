@@ -471,6 +471,43 @@ def check_tables(path, html, rep):
                       "       スマホで表がページ幅を突き破る原因になります。\n"
                       '       <div class="article-table-wrap"> で表を包んでください')
             break   # 1ファイル1件で十分
+    check_table_cells(path, body, rep)
+
+
+def check_table_cells(path, body, rep):
+    """表の各行のセル数が、見出しの行とそろっているか。
+
+    2026-09-03、jiyu-kenkyu/ozu-rosenka-44nen.html の地価の表で、1行だけ
+    <td> が1つ足りず、年と価格の対応が1つずつずれて表示されていた。
+    見た目には気づけないうえ、**読者は間違った年の地価を読むことになる**。
+    正解が1つしかない不具合なので、目安ではなくエラーにする。
+
+    rowspan を使っている表は行ごとのセル数が変わって当然なので見ない。
+    """
+    for tbl in re.finditer(r"(?s)<table\b.*?</table>", body):
+        t = tbl.group(0)
+        if "rowspan" in t:
+            continue
+        widths = []
+        for tr in re.finditer(r"(?s)<tr\b.*?</tr>", t):
+            w = 0
+            for cell in re.finditer(r"<t[dh]\b([^>]*)>", tr.group(0)):
+                m = re.search(r'colspan\s*=\s*"?(\d+)', cell.group(1))
+                w += int(m.group(1)) if m else 1
+            if w:
+                widths.append((w, tr.group(0)))
+        if not widths:
+            continue
+        head = widths[0][0]
+        for w, tr in widths[1:]:
+            if w != head:
+                first = re.search(r"(?s)<t[dh]\b[^>]*>(.*?)</t[dh]>", tr)
+                label = re.sub(r"<[^>]+>", "", first.group(1)).strip() if first else "?"
+                rep.error(rel(path), "表",
+                          f"セルの数がそろっていない行があります(見出しは{head}個、"
+                          f"この行は{w}個): 「{label[:30]}」",
+                          "       年と値の対応が1つずつずれて表示されます。\n"
+                          "       足りないセルを補うか、余分なセルを消してください")
 
 
 def check_anonymity(path, html, rep):
@@ -1329,6 +1366,10 @@ BROKEN_SAMPLE = """<!DOCTYPE html>
 <p><a href="../eachnews/このページはない.html">壊れたリンク</a></p>
 <p>そしてこの一文は、読点でつなぎ続けることで、どこまでも長くなり、主語も述語も遠く離れ、読んでいる途中で何の話だったのか分からなくなり、それでもまだ終わらず、さらに例を並べ、括弧を挟み、注釈を足し、結局のところ二百字を超えてしまい、読み手はもう一度先頭に戻らなければならず、それでも意味が取れないまま次の段落へ進むことになる、そういう悪い見本として置いてある、とても長い一文である。</p>
 <table><tr><td>スクロール用の囲いが無い表</td></tr></table>
+<div class="article-table-wrap"><table>
+<tr><th>地点</th><th>1996</th><th>2025</th></tr>
+<tr><td>セルが1つ足りない行</td><td>100</td></tr>
+</table></div>
 <div>閉じていないdiv
 <p class="source-box-posted">この記事をサイトに掲載した日: 2020/01/01</p>
 <div data-site-footer="article"></div><div data-site-modal></div>
@@ -1361,6 +1402,7 @@ EXPECTED = [
     ("構造", "あわせて読みたいの置き場"),
     ("タグ", "div"),
     ("表", "囲い"),
+    ("表", "セルの数がそろっていない"),
     ("タイトル", "news-data.js"),
     ("メタ", "canonical"),
     ("メタ", "og:title"),

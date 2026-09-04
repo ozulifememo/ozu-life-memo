@@ -534,6 +534,14 @@
         },
         {
           "date": "2026-09-04",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "cf49c6530220",
+          "note": "D班: note風に全面改稿。出典PDFを原本で読み、数字照合と出典URLの疎通を確認。合計・割り算は電卓で検算"
+        },
+        {
+          "date": "2026-09-04",
           "level": "machine",
           "by": "check_site.py",
           "result": "問題なし",
@@ -891,6 +899,14 @@
           "by": "check_site.py",
           "result": "問題なし",
           "hash": "a1171fed7279"
+        },
+        {
+          "date": "2026-09-04",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "a1171fed7279",
+          "note": "D班: note風に全面改稿。出典PDFを原本で読み、数字照合と出典URLの疎通を確認。合計・割り算は電卓で検算"
         },
         {
           "date": "2026-09-04",
@@ -1445,6 +1461,14 @@
         },
         {
           "date": "2026-09-04",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "b876e5ff8b90",
+          "note": "D班: note風に全面改稿。出典PDFを原本で読み、数字照合と出典URLの疎通を確認。合計・割り算は電卓で検算"
+        },
+        {
+          "date": "2026-09-04",
           "level": "machine",
           "by": "check_site.py",
           "result": "問題なし",
@@ -1483,6 +1507,14 @@
           "by": "check_site.py",
           "result": "問題なし",
           "hash": "82e4f68d5ce0"
+        },
+        {
+          "date": "2026-09-04",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "75e09b2f21bb",
+          "note": "D班: note風に全面改稿。出典PDFを原本で読み、数字照合と出典URLの疎通を確認。合計・割り算は電卓で検算"
         },
         {
           "date": "2026-09-04",
@@ -1732,6 +1764,14 @@
         },
         {
           "date": "2026-09-04",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "f1c2ae858f13",
+          "note": "D班: note風に全面改稿。出典PDFを原本で読み、数字照合と出典URLの疎通を確認。合計・割り算は電卓で検算"
+        },
+        {
+          "date": "2026-09-04",
           "level": "machine",
           "by": "check_site.py",
           "result": "問題なし",
@@ -1770,6 +1810,14 @@
           "by": "check_site.py",
           "result": "問題なし",
           "hash": "b874e3491bc0"
+        },
+        {
+          "date": "2026-09-04",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "ff305467389e",
+          "note": "D班: note風に全面改稿。出典PDFを原本で読み、数字照合と出典URLの疎通を確認。合計・割り算は電卓で検算"
         },
         {
           "date": "2026-09-04",
@@ -1973,6 +2021,14 @@
         },
         {
           "date": "2026-09-04",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "9b331a3ce389",
+          "note": "D班: note風に全面改稿。出典PDFを原本で読み、数字照合と出典URLの疎通を確認。合計・割り算は電卓で検算"
+        },
+        {
+          "date": "2026-09-04",
           "level": "machine",
           "by": "check_site.py",
           "result": "問題なし",
@@ -2146,6 +2202,14 @@
           "by": "check_site.py",
           "result": "問題なし",
           "hash": "890f01f51ca0"
+        },
+        {
+          "date": "2026-09-04",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "890f01f51ca0",
+          "note": "D班: note風に全面改稿。出典PDFを原本で読み、数字照合と出典URLの疎通を確認。合計・割り算は電卓で検算"
         },
         {
           "date": "2026-09-04",
@@ -3826,6 +3890,14 @@
         },
         {
           "date": "2026-09-04",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "dca5f578541c",
+          "note": "D班: note風に全面改稿。出典PDFを原本で読み、数字照合と出典URLの疎通を確認。合計・割り算は電卓で検算"
+        },
+        {
+          "date": "2026-09-04",
           "level": "machine",
           "by": "check_site.py",
           "result": "問題なし",
@@ -3980,6 +4052,14 @@
           "by": "check_site.py",
           "result": "問題なし",
           "hash": "533920083720"
+        },
+        {
+          "date": "2026-09-04",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "533920083720",
+          "note": "D班: note風に全面改稿。出典PDFを原本で読み、数字照合と出典URLの疎通を確認。合計・割り算は電卓で検算"
         },
         {
           "date": "2026-09-04",
@@ -6518,6 +6598,14 @@
         },
         {
           "date": "2026-09-04",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "5b72e10561a6",
+          "note": "D班: note風に全面改稿。出典PDFを原本で読み、数字照合と出典URLの疎通を確認。合計・割り算は電卓で検算"
+        },
+        {
+          "date": "2026-09-04",
           "level": "machine",
           "by": "check_site.py",
           "result": "問題なし",
@@ -7864,6 +7952,14 @@
         },
         {
           "date": "2026-09-04",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "5e8f08aba50a",
+          "note": "D班: note風に全面改稿。出典PDFを原本で読み、数字照合と出典URLの疎通を確認。合計・割り算は電卓で検算"
+        },
+        {
+          "date": "2026-09-04",
           "level": "machine",
           "by": "check_site.py",
           "result": "問題なし",
@@ -8483,6 +8579,14 @@
           "by": "check_site.py",
           "result": "問題なし",
           "hash": "874f999c8919"
+        },
+        {
+          "date": "2026-09-04",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "874f999c8919",
+          "note": "D班: note風に全面改稿。出典PDFを原本で読み、数字照合と出典URLの疎通を確認。合計・割り算は電卓で検算"
         },
         {
           "date": "2026-09-04",

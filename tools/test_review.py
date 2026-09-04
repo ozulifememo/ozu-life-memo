@@ -8,6 +8,9 @@ sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="repla
 import tempfile, os
 SITE = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")).replace("\\","/")
 URL = "file:///" + SITE + "/_review.html"
+import glob
+# 下書き(_始まりのHTML)の本数は日によって変わるので、その場で数える
+N_DRAFT = len([f for f in glob.glob(SITE + "/eachnews/_*.html") + glob.glob(SITE + "/jiyu-kenkyu/_*.html")])
 SHOT = os.path.join(tempfile.gettempdir(), "ozu-review-shots")
 os.makedirs(SHOT, exist_ok=True)
 ng = []
@@ -111,7 +114,11 @@ with sync_playwright() as pw:
     check("◯の行に印1つ", pg.evaluate("document.querySelectorAll('#rows .row.ok').length") == 1)
     check("△の行に印1つ", pg.evaluate("document.querySelectorAll('#rows .row.fix').length") == 1)
     pg.evaluate("F.kind='draft';sync('#fKind','k','draft');refresh()"); pg.wait_for_timeout(250)
-    check("下書きだけ33本", pg.evaluate("document.querySelectorAll('#rows .row').length") == 33)
+    # 下書きの本数は公開のたびに変わる。数を書き置くと、公開しただけでテストが
+    # 落ちるようになる(2026-09-03に33本を全部公開して実際に落ちた)。ここは数え直す。
+    check(f"下書きだけ{N_DRAFT}本",
+          pg.evaluate("document.querySelectorAll('#rows .row').length") == N_DRAFT,
+          pg.evaluate("document.querySelectorAll('#rows .row').length"))
     pg.evaluate("F.kind='jk';sync('#fKind','k','jk');refresh()"); pg.wait_for_timeout(250)
     check("自由研究21本", pg.evaluate("document.querySelectorAll('#rows .row').length") == 21)
     pg.evaluate("F.kind='';F.q='肱川';refresh()"); pg.wait_for_timeout(500)

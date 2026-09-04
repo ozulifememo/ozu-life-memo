@@ -1,12 +1,11 @@
 # -*- coding: utf-8 -*-
 """卓の中の記事が、本物のHTMLを直接開いたときと同じ中身になっているか照合する。"""
-import sys, io, random
+import sys, io, os, random, tempfile
 from playwright.sync_api import sync_playwright
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
 SITE = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")).replace("\\","/")
 
-import tempfile, os
 VIEW = "file:///" + SITE + "/_review.html"
 SHOT = os.path.join(tempfile.gettempdir(), "ozu-review-shots")
 os.makedirs(SHOT, exist_ok=True)

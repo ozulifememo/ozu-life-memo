@@ -217,10 +217,16 @@ def count_articles() -> dict:
     wanted_body = strip_comments(block(imgs, "const OZU_ARTICLE_PHOTO_WANTED = ["))
     in_theme = set(re.findall(r'"([a-z0-9\-]+)"', wanted_body))
 
+    # 写真が要らないと決めた記事(数字と制度だけで被写体が無いもの)は、
+    # 「テーマ未登録」に数えない。数えると毎回宿題に出続けてしまう。
+    no_photo_body = strip_comments(block(imgs, "const OZU_ARTICLE_NO_PHOTO = {"))
+    no_photo = set(re.findall(r'"([a-z0-9\-]+)"\s*:', no_photo_body))
+
     known = set(slugs)
     with_photo = len(have_photo & known)
     waiting = len([s for s in slugs if s not in have_photo and s in in_theme])
-    orphan = len([s for s in slugs if s not in have_photo and s not in in_theme])
+    orphan = len([s for s in slugs
+                  if s not in have_photo and s not in in_theme and s not in no_photo])
 
     lib = js_text("photos-data.js")
     photos = len(re.findall(r"\{\s*file:", lib))

@@ -81,14 +81,6 @@
       "調べ方": "python tools/check_site.py --promises で一覧を出し、各記事の据え置き理由が崩れていないかを上の時期の資料で確かめる"
     },
     {
-      "名前": "記事の読み返し(レビュー卓)",
-      "値": "0/217本",
-      "確認日": "2026-09-03",
-      "有効日数": 14,
-      "メモ": "公開済み217本を1本ずつ読み返して ◯そのまま/△直す/✕下げる に仕分ける。2026-09-03に道具を作った(python tools/build_review.py で作り直せる)。判定はclaude.aiの非公開アーティファクトに記録。URLは個人メモ側にある",
-      "調べ方": "クロコに「レビュー卓の進み具合を見て」と言う。判定はアーティファクトのデータベース(reviews コレクション)に入っている"
-    },
-    {
       "名前": "note原稿キット(書き上げ済み・未投稿)",
       "値": "23本",
       "確認日": "2026-09-04",
@@ -135,6 +127,22 @@
       "有効日数": 14,
       "メモ": "2026-09-04の月次点検の1回目では、大洲市サイトの他のURLが200を返す中で、この12本だけが404だった(消えている可能性が高い)。ところが点検を短時間に3回走らせたせいでCDNに弾かれ、以後サイト全体が403になり、確かめ直せなくなった。ブロックが解けてから1本ずつ確認して、生きていれば放置、消えていればWayback Machineの保存版か現行ページに差し替える。対象: /site/kosodate/69093.html … ozu-hokago-jido-club / /soshiki/fukkou/31969.html … hijikawa-hanran-nenpyo, ozu-gouu-8nen / /soshiki/kankou/30934.html … ozu-okane-no-nagare / /soshiki/kankyo/68741.html … ozu-inuneko-hikitori / /soshiki/kawabeko/0229.html … ozu-kyuson-mei / /soshiki/kyoikusomu/0766.html … ozu-kieta-gakko / /soshiki/shimin/54255.html … ozu-conveni-kofu / /soshiki/zaisei/74143.html・74157.html・74159.html … bunka-kaikan-kibo-shukusho / /uploaded/attachment/40445.pdf … ozu-koyosha-ev / /uploaded/attachment/45164.pdf … furusato-nozei-r5-jisseki, furusato-nozei-yukue",
       "調べ方": "curl -sS -o /dev/null -w '%{http_code}' -A 'Mozilla/5.0 (compatible; OzuLifeMemoLinkCheck/1.0)' <URL> でトップページが200に戻っているか先に見る。戻っていたら python tools/check_site.py --urls を1回だけ走らせる"
+    },
+    {
+      "名前": "記事の読み返し(レビュー卓)",
+      "値": "0/217本",
+      "確認日": "2026-09-04",
+      "有効日数": 30,
+      "メモ": "2026-09-04にpush後の内容で作り直して同じURLに再公開済み(記事217本・図解100個・写真62枚)。判定はまだ0件。判定はアーティファクトのDB(collection: reviews)にあり、HTMLを作り直しても消えない。",
+      "調べ方": "Artifactツールの read_db / db_op=list / collection=reviews で件数を数える"
+    },
+    {
+      "名前": "大洲市サイトの出典12本(404を確認済み・差し替え待ち)",
+      "値": "12本 / 14か所",
+      "確認日": "2026-09-04",
+      "有効日数": 14,
+      "メモ": "2026-09-04 21時、ブロックが解けた状態で再確認したところ、市のトップと会議録は200を返す中でこの12本だけが404だった。つまりブロックではなく本当に削除されている。差し替え先を調査中。",
+      "調べ方": "curl -A 'Mozilla/5.0 (compatible; OzuLifeMemoLinkCheck/1.0)' で1本ずつ。見つからなければ archive.org/wayback/available の保存版に差し替える"
     }
   ],
   "期限のあるもの": [

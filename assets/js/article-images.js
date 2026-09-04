@@ -127,6 +127,20 @@ const OZU_ARTICLE_IMAGES = {
 // key は撮影テーマ、subjects は撮ってきてほしいもの、slugs は待っている記事。
 // 撮影して assets/img/photos/ に追加したら、photos-data.js に台帳を1行足して、
 // 上の OZU_ARTICLE_IMAGES にひもづけを書けば一覧にも記事にも反映される。
+// 写真が要らないと判断した記事。
+// 数字と制度だけの話で、内容に合う被写体が無い(あるいは撮るのが不適切な)もの。
+// ここに入れておくと「どのテーマにも入っていない記事」に出てこなくなる。
+// 撮れる被写体を思いついたら、この表から外してテーマの slugs に移すこと。
+const OZU_ARTICLE_NO_PHOTO = {
+  "ozu-furusato-ryushutsu": "ふるさと納税の収支の話。被写体が無い",
+  "ozu-kasoryo-shiminhyo": "火葬料の話。斎場を撮るのは弔いの場なので避ける",
+  "ozu-mynakenkou-riyoritsu": "利用率の話。医療機関の受付を撮るのは患者が写るので避ける",
+  "ozu-toilecar-kumamoto": "車両が市外に出ていることが多く、確実に撮れない",
+  "smart-shrink-ozu": "市長答弁と政策論。被写体が無い",
+  "kishou-bosai-advisor": "県の人事と市の方針の話。被写体が無い",
+  "gappei-tokureisai-owari": "合併特例債の借入額の話。被写体が無い"
+};
+
 const OZU_ARTICLE_PHOTO_WANTED = [
   {
     theme: "空き家・古い民家",

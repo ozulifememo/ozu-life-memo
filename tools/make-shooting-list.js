@@ -32,9 +32,11 @@ const waitingTotal = new Set([].concat.apply([], themes.map(function (t) { retur
 // テーマに登録しないかぎり撮影リストに一度も出てこないので、
 // 新しく書いた記事が黙って写真待ちのまま埋もれる。ここで見えるようにする。
 const IN_THEME = new Set([].concat.apply([], OZU_ARTICLE_PHOTO_WANTED.map(function (w) { return w.slugs; })));
+const NO_PHOTO = (typeof OZU_ARTICLE_NO_PHOTO === "object" && OZU_ARTICLE_NO_PHOTO) || {};
 const orphans = OZU_NEWS.filter(function (a) {
-  return !OZU_ARTICLE_IMAGES[a.slug] && !IN_THEME.has(a.slug);
+  return !OZU_ARTICLE_IMAGES[a.slug] && !IN_THEME.has(a.slug) && !NO_PHOTO[a.slug];
 });
+const noPhotoCount = OZU_NEWS.filter(function (a) { return NO_PHOTO[a.slug]; }).length;
 
 let out = [];
 out.push("# 撮影リスト ｜ OZU LIFE MEMO");
@@ -45,6 +47,7 @@ out.push("- 記事の総数: **" + total + "本**");
 out.push("- 写真が付いている記事: **" + withPhoto + "本**");
 out.push("- 写真待ちの記事: **" + waitingTotal + "本**");
 out.push("- どのテーマにも入っていない記事: **" + orphans.length + "本**（下に一覧）");
+out.push("- 写真が要らないと決めた記事: **" + noPhotoCount + "本**（`OZU_ARTICLE_NO_PHOTO` に理由つきで書いてある）");
 out.push("- 手持ちの写真: **" + OZU_PHOTO_LIBRARY.length + "枚**（うち記事に使えるもの " + OZU_PHOTO_USABLE.length + "枚）");
 out.push("");
 out.push("写真待ちの記事は、いまサイト上では写真を出していません。");

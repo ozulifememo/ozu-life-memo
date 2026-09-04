@@ -1066,6 +1066,33 @@ def check_sitemap_targets(sitemap, rep):
                       "       Googleに「存在しないページ」を案内している状態です")
 
 
+def check_promises(path, html, rep):
+    """果たす保証のない「あとで追記します」を書かない(関所)
+
+    運営者の指示(2026-09-04、Notionの記事コメント):
+      「『日程が分かり次第、この記事に追記します。』こういうのは書かないで。
+        書く保証ないから。」
+
+    「調べたが分からなかった」と事実を書くのはよい。そのあとに追記を約束するのが駄目。
+    直し方は、約束の一文を消すだけ。事実のほうは残す。
+    """
+    if page_type(path) not in ("article", "book", "kenkyu"):
+        return
+    text = strip_tags(body_only(html))
+    for sent in re.split(r"(?<=。)", text):
+        sent = sent.strip()
+        if not sent:
+            continue
+        # 「追記したい/追記します/補足したい」が出たときだけ止める。
+        # 「分かり次第」単独(引用の中など)や「続報」は拾わない。
+        if not any(w in sent for w in ("追記したい", "追記します", "追記する",
+                                       "追って補足したい", "追って補足します")):
+            continue
+        rep.error(rel(path), "約束",
+                  "果たす保証のない「あとで追記する」を書いています",
+                  "       " + sent[:80])
+
+
 def list_promises(pages):
     """「分かり次第追記したい」のような約束を一覧にする(--promises)。検査ではなく月次巡視用"""
     print("\n  記事の中の「あとで追記する」系の約束(果たせたら本文を追記して消し込む):\n")
@@ -1443,6 +1470,7 @@ BROKEN_SAMPLE = """<!DOCTYPE html>
 </div>
 <p>この記事にはダミー禁止語が入っています。文字化けもあります: �</p>
 <p>予讃線の電車のことを、大洲に住んでいる人にも知ってほしい。</p>
+<p>日程は公表されていなかった。分かり次第、この記事に追記したい。</p>
 <p>肘川という誤字と、かぎかっこの開きだけ「ここに置く。ダミーの句点。。</p>
 <p><a href="#sonzai-shinai-id">行き先の無いページ内リンク</a></p>
 <p><a href="https://drive.google.com/file/d/xxxx" target="_blank">個人ストレージへのリンク</a></p>
@@ -1506,6 +1534,7 @@ EXPECTED = [
     ("出典", "1本"),
     ("出典", "news.yahoo.co.jp"),
     ("表現", "知ってほしい"),
+    ("約束", "あとで追記する"),
     ("文章", "1文が"),
     ("事実", "電車"),
     ("タイトル", "策定"),
@@ -1565,6 +1594,7 @@ def run_selftest() -> int:
                 check_mojibake(p, html, rep)
                 check_style(p, html, rep)
                 check_phrasing(p, html, rep)
+                check_promises(p, html, rep)
                 check_links(p, html, rep)
                 check_title_numbers(p, html, rep)
                 check_sources(p, html, rep)
@@ -1689,6 +1719,7 @@ def main():
         check_mojibake(p, html, rep)
         check_style(p, html, rep, show_headings=args.headings)
         check_phrasing(p, html, rep)
+        check_promises(p, html, rep)
         check_links(p, html, rep)
         check_title_numbers(p, html, rep)
         check_sources(p, html, rep)

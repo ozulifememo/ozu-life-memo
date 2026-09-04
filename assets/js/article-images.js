@@ -132,7 +132,8 @@ const OZU_ARTICLE_PHOTO_WANTED = [
     theme: "空き家・古い民家",
     subjects: "傷んだ空き家の外観、板が外れた壁、草の茂った敷地。人物や表札が写らない角度で。",
     slugs: ["kiken-akiya-jokyaku-hojokin", "akiya-441ko-kaitai-level", "akiya-kaitai-soneki-bunkiten",
-            "akiyabank-640man-kazoku-shisan", "akiya-taisaku-keikaku", "ozu-arts-taiwan"]
+            "akiyabank-640man-kazoku-shisan", "akiya-taisaku-keikaku", "ozu-arts-taiwan",
+            "ozu-reform-hojo"]
   },
   {
     theme: "長浜地区・長浜港",
@@ -143,15 +144,17 @@ const OZU_ARTICLE_PHOTO_WANTED = [
   },
   {
     theme: "学校・教育の現場",
-    subjects: "小中学校の校舎(外観)、大洲高校の正門、体育館、通学路。児童生徒が写らない時間帯に。",
+    subjects: "小中学校の校舎(外観)、大洲高校の正門、体育館、通学路、給食センターの外観、教室の木製の机。児童生徒が写らない時間帯に。",
     slugs: ["chugakko-kyushoku-muryoka", "gikai-futoko-suii", "sogo-kyoiku-kaigi-honne",
-            "bukatsu-chiiki-ido", "gikai-ozukoko-teiinware"]
+            "bukatsu-chiiki-ido", "gikai-ozukoko-teiinware",
+            "kyushoku-center-yoryoku", "ozu-shinrin-kankyozei-tsukue"]
   },
   {
     theme: "スーパー・商業施設",
-    subjects: "マルナカ大洲店の外観、フレスポ大洲、アクトピア大洲の解体現場・跡地、家電量販店。",
+    subjects: "マルナカ大洲店の外観、フレスポ大洲、アクトピア大洲の解体現場・跡地、家電量販店、カラオケ店の外観と料金表、コンビニのマルチコピー機。",
     slugs: ["fuji-point", "fuji-marunaka-aeon-keii", "actopia-ozu-kaitai",
-            "shoene-kaden-hojo", "shoene-hojo-keisan"]
+            "shoene-kaden-hojo", "shoene-hojo-keisan",
+            "ozu-karaoke-hikaku", "ozu-conveni-kofu"]
   },
   {
     theme: "循環バス「ぐるりんおおず」",
@@ -165,8 +168,9 @@ const OZU_ARTICLE_PHOTO_WANTED = [
   },
   {
     theme: "公民館・コミュニティセンター",
-    subjects: "上須戒コミュニティセンターの外観(CLTパネルが分かる角度)、他地区のコミュニティセンターの表札。",
-    slugs: ["kamisuga-community-center", "kominkan-community-center-itsu"]
+    subjects: "上須戒コミュニティセンターの外観(CLTパネルが分かる角度)、他地区のコミュニティセンターの表札、入口の鍵まわり(スマートロックの有無が分かるもの)。",
+    slugs: ["kamisuga-community-center", "kominkan-community-center-itsu",
+            "smartlock-community-center"]
   },
   {
     theme: "ダム(野村ダム・鹿野川ダム)",
@@ -200,13 +204,14 @@ const OZU_ARTICLE_PHOTO_WANTED = [
   },
   {
     theme: "ごみ・環境",
-    subjects: "ごみステーションと分別の掲示、ごみ収集カレンダーの掲示板。",
-    slugs: ["gomi-dashi-7bunbetsu"]
+    subjects: "ごみステーションと分別の掲示、ごみ収集カレンダーの掲示板、粗大ごみ処理券を売っている店の棚、清掃センターの受付。",
+    slugs: ["gomi-dashi-7bunbetsu", "ozu-sodai-gomi-hikaku"]
   },
   {
     theme: "工場・工業団地",
-    subjects: "新谷地区の工場、工業団地の造成地や案内看板。",
-    slugs: ["chosei-cost", "kigyo-yuchi-kikuyocho-hikaku"]
+    subjects: "新谷地区の工場、工業団地の造成地や案内看板、旧松下寿(パナソニック)跡地とそこに通した市道。",
+    slugs: ["chosei-cost", "kigyo-yuchi-kikuyocho-hikaku",
+            "matsushita-kotobuki", "matsushita-ato-shido"]
   },
   {
     theme: "夏の暑さ",
@@ -216,16 +221,82 @@ const OZU_ARTICLE_PHOTO_WANTED = [
   {
     theme: "犬・動物",
     subjects: "狂犬病予防注射の集合会場の掲示、動物病院の看板。",
-    slugs: ["kyokenbyo-yobo-2027"]
+    slugs: ["kyokenbyo-yobo-2027", "ozu-inuneko-hikitori"]
   },
   {
     theme: "市役所まわりのバリエーション(急がないが効く)",
-    subjects: "議場・委員会室、市役所の窓口フロア、市役所の別角度・別の季節、庁舎前の掲示板。行政・財政の記事が19本あり、いまは同じ3枚を使い回しているため、角度違いが数枚あるだけで一覧の見え方が変わる。",
-    slugs: []
+    subjects: "議場・委員会室、市役所の窓口フロア、市役所の別角度・別の季節、庁舎前の掲示板、庁舎の駐車場に並ぶ公用車、窓口に置いてある軟骨伝導イヤホン、広報おおずの配布ラック。行政・財政の記事が19本あり、いまは同じ3枚を使い回しているため、角度違いが数枚あるだけで一覧の見え方が変わる。",
+    slugs: ["nankotsu-dendo-earphone", "ozu-koyosha-ev", "ozu-shiyakusho-zangyo",
+            "ozu-shokuinsu-kenai-hikaku", "ozu-kouhou-genka"]
   },
   {
     theme: "まちづくりの現場",
     subjects: "地域おこし協力隊が関わる拠点、総合計画ワークショップの会場、「OZU 555 PROJECT」の関連施設。",
     slugs: ["sogo-keikaku-workshop", "ozu-555-project"]
+  },
+  {
+    theme: "保育所・学童・保健センター",
+    subjects: "保育所・こども園の外観と門(園児が写らない時間帯に)、放課後児童クラブの入口、保健センターの外観と健診の案内掲示。",
+    slugs: ["rikkoho-hoikusho-nyusho", "gosaiji-kenshin-ozu", "ozu-hokago-jido-club"]
+  },
+  {
+    theme: "選挙・投票の現場",
+    subjects: "選挙ポスターの掲示板、オズメッセ大洲店の入口と期日前投票所の案内、選挙公報を置いてある棚。",
+    slugs: ["ozmesse-kijitsuzen-tohyo", "ozu-senkyo-kouhou"]
+  },
+  {
+    theme: "太陽光パネル",
+    subjects: "住宅の屋根に載った太陽光パネル、山の斜面のメガソーラー(公道からの遠景)、パワーコンディショナーの箱。",
+    slugs: ["ozu-solar-katei", "ozu-solar-yama"]
+  },
+  {
+    theme: "水道・浄水場",
+    subjects: "浄水場・配水池の外観と銘板、水道メーターの検針票(番号と氏名を隠して)、工業用水の管路や施設の看板。",
+    slugs: ["suido-ryokin-toitsu-15pct", "ozu-kogyo-yosui"]
+  },
+  {
+    theme: "駅・道路・タクシー",
+    subjects: "伊予大洲駅の駅舎とタクシー乗り場、松山自動車道の4車線化工事の区間(歩道橋などから)、高速のインター入口。",
+    slugs: ["ozu-taxi-rideshare", "shikoku-shinkansen-53nen", "matsuyama-do-4shasen-zando"]
+  },
+  {
+    theme: "電波・通信のインフラ",
+    subjects: "新しく開通したトンネルの坑口、携帯電話の基地局の鉄塔、住宅に引き込まれたケーブルテレビの線とアンテナ。",
+    slugs: ["ozu-denpa-kengai", "ozu-cable-tv-nhk"]
+  },
+  {
+    theme: "城下町の観光施設",
+    subjects: "しろしたテラスの外観と看板、大洲城の入口と券売所、おおず赤煉瓦館、まちなかの観光客の流れ(顔が写らない角度で)。",
+    slugs: ["shiroshita-terrace-unei", "ozu-shitei-kanrisha", "kanko-rieki-yukue"]
+  },
+  {
+    theme: "大洲の会社・経済",
+    subjects: "大洲商工会議所の建物と看板、大洲まつりのポスターやのぼり、市内の主な会社の社屋(公道から、表札が読める程度に)。",
+    slugs: ["ozu-cci-shigoto", "ozu-uriage-ranking", "nanyo-kabu-jojo"]
+  },
+  {
+    theme: "まちなかの川と橋",
+    subjects: "都谷川の護岸と流れ(まちなかを通る区間)、十夜ヶ橋と橋の下、川沿いの水位標。",
+    slugs: ["tsuyagawa-tokutei-toshi-kasen", "toyogabashi-henro-isan"]
+  },
+  {
+    theme: "防犯灯・電気まわり",
+    subjects: "電柱に付いた防犯灯、夜の住宅街の街路灯、住宅の分電盤と感震ブレーカー(自宅で撮れる)。",
+    slugs: ["ozu-bohantou-denkidai", "kanshin-breaker"]
+  },
+  {
+    theme: "図書館",
+    subjects: "大洲市立図書館の外観と書架、返却ポスト、開館時間の掲示。利用者が写らない角度で。",
+    slugs: ["ozu-toshokan-kashidashi"]
+  },
+  {
+    theme: "道の駅・あさもや",
+    subjects: "道の駅「清流の里ひじかわ」の看板とトイレ棟、あさもやの外観と駐車場、直売所の棚。",
+    slugs: ["ozu-michinoeki-machinoeki"]
+  },
+  {
+    theme: "ハゼの細道",
+    subjects: "「ハゼの細道」に植えられたハゼの並木、樹名板、紅葉の時期の様子。",
+    slugs: ["ozu-haze-no-hosomichi"]
   }
 ];

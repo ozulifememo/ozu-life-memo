@@ -20,6 +20,7 @@ OZU LIFE MEMO サイト点検スクリプト
 from __future__ import annotations
 
 import argparse
+import html as htmllib
 import json
 import os
 import re
@@ -350,8 +351,12 @@ def source_urls(path, html) -> list:
     body = body_only(html)
     if page_type(path) == "kenkyu":
         urls = re.findall(r'<a\s[^>]*href="(https?://[^"]+)"', body)
+        urls = [htmllib.unescape(u) for u in urls]
         return [u for u in dict.fromkeys(urls) if "ozulifememo" not in u]
     urls = re.findall(r'class="source-link"\s+href="(https?://[^"]+)"', body)
+    # HTMLでは & を &amp; と書くのが正しい。実際に叩くURLに戻してから確認する
+    # (戻さないと e-stat のような ?a=1&amp;b=2 形式が全部404に見える)
+    urls = [htmllib.unescape(u) for u in urls]
     return list(dict.fromkeys(urls))
 
 
@@ -1231,6 +1236,44 @@ def check_sitemap(pages, sitemap, rep):
                      "       Googleに見つけてもらえない可能性があります")
 
 
+# ブラウザに近い名乗り方。官公庁サイトの多くは、素っ気ないUAや HEAD を弾く。
+# 実在するのに404・405に見える出典が大量に出たため(2026-09-04)、ここを直した。
+BROWSER_UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+              "(KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36")
+
+
+def fetch_status(url):
+    """URLの状態を返す。HEADで断られたらGETで確かめ直す。
+
+    戻り値は HTTPステータス(int)か、接続できなかった理由(str)。
+    """
+    import urllib.request
+    import urllib.error
+
+    def once(method):
+        req = urllib.request.Request(url, method=method, headers={
+            "User-Agent": BROWSER_UA,
+            "Accept": "text/html,application/xhtml+xml,application/pdf,*/*",
+            "Accept-Language": "ja,en;q=0.8",
+        })
+        try:
+            with urllib.request.urlopen(req, timeout=20) as res:
+                return res.status
+        except urllib.error.HTTPError as e:
+            return e.code
+        except Exception as e:
+            return f"接続失敗({type(e).__name__})"
+
+    code = once("HEAD")
+    # HEADを実装していないサーバーが多い。4xx/5xxならGETで確かめ直す。
+    if not isinstance(code, int) or code >= 400:
+        code2 = once("GET")
+        if isinstance(code2, int) and code2 < 400:
+            return code2
+        code = code2 if isinstance(code2, int) else code
+    return code
+
+
 def check_urls(pages, rep, limit=None):
     """出典URLが生きているか実際に確認する(--urls のときだけ)"""
     import urllib.request
@@ -1251,21 +1294,19 @@ def check_urls(pages, rep, limit=None):
     for i, (url, where) in enumerate(items, 1):
         if i % 20 == 0:
             print(f"    {i}/{len(items)} 件...")
-        req = urllib.request.Request(url, method="HEAD", headers={
-            "User-Agent": "Mozilla/5.0 (compatible; OzuLifeMemoLinkCheck/1.0)"
-        })
-        try:
-            with urllib.request.urlopen(req, timeout=15) as res:
-                code = res.status
-        except urllib.error.HTTPError as e:
-            code = e.code
-        except Exception as e:
-            code = f"接続失敗({type(e).__name__})"
+        code = fetch_status(url)
 
-        if isinstance(code, int) and code >= 400:
+        # 404/410 だけが「本当に消えた」。403・405・429・202 は
+        # 相手がボット避けで返しているだけのことが多く、ブラウザでは開ける。
+        # ここでエラーにすると、生きている出典を消す圧力になるので警告に留める。
+        if code in (404, 410):
             dead += 1
             for w in where:
                 rep.error(w, "リンク", f"出典URLが {code} を返します", f"       {url}")
+        elif isinstance(code, int) and code >= 400:
+            for w in where:
+                rep.warn(w, "リンク", f"出典URLが {code} を返しました(ブラウザでは開けることが多い)",
+                         f"       {url}")
         elif not isinstance(code, int):
             for w in where:
                 rep.warn(w, "リンク", f"出典URLに接続できませんでした", f"       {url} / {code}")
@@ -1492,6 +1533,27 @@ def run_selftest() -> int:
         finally:
             REPO = real_repo
             ALLOW[:] = _allow_backup
+
+    # ── 部品の自己診断 ────────────────────────────────
+    # 「違反を検知するか」とは別に、「正しいものを正しく扱えるか」も見る。
+    # 2026-09-04、出典URLの &amp; を & に戻さないまま叩いていたせいで、
+    # 生きている出典10本が404に見えていた。検知する側が静かに間違うと、
+    # 点検は通っているのに結果が嘘になる。ここで毎回それを潰す。
+    parts_ng = []
+    probe = ('<main><a class="source-link" '
+             'href="https://example.com/x?a=1&amp;b=2" '
+             'target="_blank" rel="noopener">出典</a></main>')
+    got = source_urls(REPO / "eachnews" / "probe.html", probe)
+    if got != ["https://example.com/x?a=1&b=2"]:
+        parts_ng.append("出典URLの取り出し: &amp; を & に戻せていない -> %r" % (got,))
+    print("    [%s] 部品: 出典URLの &amp; を戻す" % ("OK " if not parts_ng else "NG "))
+    if parts_ng:
+        print()
+        print("  自己診断に失敗しました。部品が正しく動いていません。")
+        for why in parts_ng:
+            print("    " + why)
+        print("  点検スクリプトが壊れている可能性があります。OKという結果を信用しないでください。")
+        return 1
 
     found = rep.errors + rep.warns
     missed = []

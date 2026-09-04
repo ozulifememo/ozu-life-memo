@@ -47,6 +47,21 @@
           "result": "数字29個中 3個が出典に見つからず(出典6/6本)",
           "hash": "cd228e9c9930",
           "note": "要確認: 1,730、40,575人、37,638人"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "cd228e9c9930"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字29個中 3個が出典に見つからず(出典6/6本)",
+          "hash": "cd228e9c9930",
+          "note": "要確認: 1,730、40,575人、37,638人"
         }
       ]
     },
@@ -113,6 +128,21 @@
           "result": "数字28個中 1個が出典に見つからず(出典8/8本)",
           "hash": "89e52739d164",
           "note": "要確認: 45,585m"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "89e52739d164"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字28個中 1個が出典に見つからず(出典8/8本)",
+          "hash": "89e52739d164",
+          "note": "要確認: 45,585m"
         }
       ]
     },
@@ -135,6 +165,13 @@
         },
         {
           "date": "2026-09-04",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "2a11215db1c7"
+        },
+        {
+          "date": "2026-09-05",
           "level": "machine",
           "by": "check_site.py",
           "result": "問題なし",
@@ -187,6 +224,20 @@
           "by": "check_numbers.py",
           "result": "数字7個中 0個が出典に見つからず(出典5/5本)",
           "hash": "200a05562d37"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "200a05562d37"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字7個中 0個が出典に見つからず(出典5/5本)",
+          "hash": "200a05562d37"
         }
       ]
     },
@@ -223,6 +274,20 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字105個中 0個が出典に見つからず(出典6/6本)",
+          "hash": "3bacedffe16b"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "3bacedffe16b"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字105個中 0個が出典に見つからず(出典6/6本)",
@@ -277,6 +342,21 @@
           "result": "数字90個中 9個が出典に見つからず(出典9/9本)",
           "hash": "95313a9b4c71",
           "note": "要確認: 1,799円、12,995円、17,199円、20,299円、21,523円、22,260円"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "95313a9b4c71"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字90個中 9個が出典に見つからず(出典9/9本)",
+          "hash": "95313a9b4c71",
+          "note": "要確認: 1,799円、12,995円、17,199円、20,299円、21,523円、22,260円"
         }
       ]
     },
@@ -321,6 +401,20 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字42個中 0個が出典に見つからず(出典6/6本)",
+          "hash": "6d4791a890ac"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "6d4791a890ac"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字42個中 0個が出典に見つからず(出典6/6本)",
@@ -370,6 +464,21 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字86個中 8個が出典に見つからず(出典7/7本)",
+          "hash": "48c8e483faa2",
+          "note": "要確認: 760万、1,110万、1,310万、1,510万、510万、360万"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "48c8e483faa2"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字86個中 8個が出典に見つからず(出典7/7本)",
@@ -433,6 +542,21 @@
           "result": "数字92個中 7個が出典に見つからず(出典5/5本)",
           "hash": "9e589fd1a399",
           "note": "要確認: 37,725人、734人、38,459人、943人、6,239人、14,868人"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "9e589fd1a399"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字92個中 7個が出典に見つからず(出典5/5本)",
+          "hash": "9e589fd1a399",
+          "note": "要確認: 37,725人、734人、38,459人、943人、6,239人、14,868人"
         }
       ]
     },
@@ -469,6 +593,20 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字10個中 0個が出典に見つからず(出典5/5本)",
+          "hash": "15d94a228e33"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "15d94a228e33"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字10個中 0個が出典に見つからず(出典5/5本)",
@@ -521,6 +659,20 @@
           "by": "check_numbers.py",
           "result": "数字30個中 0個が出典に見つからず(出典7/7本)",
           "hash": "23b76f6e3b9e"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "23b76f6e3b9e"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字30個中 0個が出典に見つからず(出典7/7本)",
+          "hash": "23b76f6e3b9e"
         }
       ]
     },
@@ -565,6 +717,20 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字78個中 0個が出典に見つからず(出典5/5本)",
+          "hash": "cf49c6530220"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "cf49c6530220"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字78個中 0個が出典に見つからず(出典5/5本)",
@@ -627,6 +793,21 @@
           "result": "公開済み",
           "hash": "328f18402879",
           "note": "2026-09-04に本人の許可を得てpush。差し替えた出典と入札不調の追記が公開サイトに出ている"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "328f18402879"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字93個中 8個が出典に見つからず(出典11/11本)",
+          "hash": "328f18402879",
+          "note": "要確認: 139、148、139.15m、139m、6,060万、100万"
         }
       ]
     },
@@ -675,6 +856,20 @@
           "by": "check_numbers.py",
           "result": "数字28個中 0個が出典に見つからず(出典5/5本)",
           "hash": "7122988d5dd8"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "7122988d5dd8"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字28個中 0個が出典に見つからず(出典5/5本)",
+          "hash": "7122988d5dd8"
         }
       ]
     },
@@ -701,6 +896,13 @@
           "by": "check_site.py",
           "result": "問題なし",
           "hash": "96c9b1b24120"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "96c9b1b24120"
         }
       ]
     },
@@ -723,6 +925,13 @@
         },
         {
           "date": "2026-09-04",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "99bb144726bd"
+        },
+        {
+          "date": "2026-09-05",
           "level": "machine",
           "by": "check_site.py",
           "result": "問題なし",
@@ -777,6 +986,21 @@
           "result": "数字5個中 1個が出典に見つからず(出典2/2本)",
           "hash": "26eb9353fd92",
           "note": "要確認: 1661年"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "26eb9353fd92"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字5個中 1個が出典に見つからず(出典2/2本)",
+          "hash": "26eb9353fd92",
+          "note": "要確認: 1661年"
         }
       ]
     },
@@ -817,6 +1041,20 @@
           "by": "check_numbers.py",
           "result": "数字62個中 0個が出典に見つからず(出典8/8本)",
           "hash": "81097bbeda13"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "81097bbeda13"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字62個中 0個が出典に見つからず(出典8/8本)",
+          "hash": "81097bbeda13"
         }
       ]
     },
@@ -853,6 +1091,20 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字35個中 0個が出典に見つからず(出典9/9本)",
+          "hash": "a4b86bdca2d3"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "a4b86bdca2d3"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字35個中 0個が出典に見つからず(出典9/9本)",
@@ -905,6 +1157,20 @@
           "by": "check_numbers.py",
           "result": "数字7個中 0個が出典に見つからず(出典3/3本)",
           "hash": "28495f0cfdac"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "28495f0cfdac"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字7個中 0個が出典に見つからず(出典3/3本)",
+          "hash": "28495f0cfdac"
         }
       ]
     },
@@ -953,6 +1219,20 @@
           "by": "check_numbers.py",
           "result": "数字56個中 0個が出典に見つからず(出典7/7本)",
           "hash": "a1171fed7279"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "a1171fed7279"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字56個中 0個が出典に見つからず(出典7/7本)",
+          "hash": "a1171fed7279"
         }
       ]
     },
@@ -990,6 +1270,21 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字24個中 1個が出典に見つからず(出典3/3本)",
+          "hash": "d18531cb80aa",
+          "note": "要確認: 1,410"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "d18531cb80aa"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字24個中 1個が出典に見つからず(出典3/3本)",
@@ -1035,6 +1330,20 @@
           "by": "check_numbers.py",
           "result": "数字36個中 0個が出典に見つからず(出典16/16本)",
           "hash": "cc46b2404d02"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "cc46b2404d02"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字36個中 0個が出典に見つからず(出典16/16本)",
+          "hash": "cc46b2404d02"
         }
       ]
     },
@@ -1071,6 +1380,20 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字70個中 0個が出典に見つからず(出典7/7本)",
+          "hash": "acd6048cdd0c"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "acd6048cdd0c"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字70個中 0個が出典に見つからず(出典7/7本)",
@@ -1117,6 +1440,21 @@
           "result": "数字11個中 1個が出典に見つからず(出典4/4本)",
           "hash": "72f8cb639a41",
           "note": "要確認: 84.0%"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "72f8cb639a41"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字11個中 1個が出典に見つからず(出典4/4本)",
+          "hash": "72f8cb639a41",
+          "note": "要確認: 84.0%"
         }
       ]
     },
@@ -1143,6 +1481,13 @@
           "by": "check_site.py",
           "result": "問題なし",
           "hash": "f31ded9b1303"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "f31ded9b1303"
         }
       ]
     },
@@ -1165,6 +1510,13 @@
         },
         {
           "date": "2026-09-04",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "556091397cc0"
+        },
+        {
+          "date": "2026-09-05",
           "level": "machine",
           "by": "check_site.py",
           "result": "問題なし",
@@ -1209,6 +1561,20 @@
           "by": "check_numbers.py",
           "result": "数字14個中 0個が出典に見つからず(出典7/7本)",
           "hash": "7abc21e31ef7"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "7abc21e31ef7"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字14個中 0個が出典に見つからず(出典7/7本)",
+          "hash": "7abc21e31ef7"
         }
       ]
     },
@@ -1245,6 +1611,20 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字43個中 0個が出典に見つからず(出典7/7本)",
+          "hash": "66c4435194ff"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "66c4435194ff"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字43個中 0個が出典に見つからず(出典7/7本)",
@@ -1286,6 +1666,21 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字27個中 2個が出典に見つからず(出典7/7本)",
+          "hash": "ac46c125f232",
+          "note": "要確認: 1.5%、150円"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "ac46c125f232"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字27個中 2個が出典に見つからず(出典7/7本)",
@@ -1349,6 +1744,21 @@
           "result": "公開済み",
           "hash": "55397743f6cc",
           "note": "2026-09-04に本人の許可を得てpush。差し替えた出典と入札不調の追記が公開サイトに出ている"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "55397743f6cc"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字94個中 6個が出典に見つからず(出典5/5本)",
+          "hash": "55397743f6cc",
+          "note": "要確認: 1,042件、2,539万、4,339万、6,785円、3,172万、7,362万"
         }
       ]
     },
@@ -1407,6 +1817,21 @@
           "result": "公開済み",
           "hash": "fb0c70b1542e",
           "note": "2026-09-04に本人の許可を得てpush。差し替えた出典と入札不調の追記が公開サイトに出ている"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "fb0c70b1542e"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字156個中 22個が出典に見つからず(出典8/8本)",
+          "hash": "fb0c70b1542e",
+          "note": "要確認: 1,693万、1,130円、8,592万、3,655円、2,078万、3,740円"
         }
       ]
     },
@@ -1455,6 +1880,20 @@
           "by": "check_numbers.py",
           "result": "数字22個中 0個が出典に見つからず(出典5/5本)",
           "hash": "e96855f835f5"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "e96855f835f5"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字22個中 0個が出典に見つからず(出典5/5本)",
+          "hash": "e96855f835f5"
         }
       ]
     },
@@ -1491,6 +1930,20 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字49個中 0個が出典に見つからず(出典3/4本)",
+          "hash": "e1cac4f9523d"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "e1cac4f9523d"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字49個中 0個が出典に見つからず(出典3/4本)",
@@ -1545,6 +1998,21 @@
           "result": "数字57個中 3個が出典に見つからず(出典7/8本)",
           "hash": "b876e5ff8b90",
           "note": "要確認: 4,850人、435、432"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "b876e5ff8b90"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字57個中 3個が出典に見つからず(出典7/8本)",
+          "hash": "b876e5ff8b90",
+          "note": "要確認: 4,850人、435、432"
         }
       ]
     },
@@ -1593,6 +2061,20 @@
           "by": "check_numbers.py",
           "result": "数字56個中 0個が出典に見つからず(出典5/6本)",
           "hash": "75e09b2f21bb"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "75e09b2f21bb"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字56個中 0個が出典に見つからず(出典5/6本)",
+          "hash": "75e09b2f21bb"
         }
       ]
     },
@@ -1630,6 +2112,21 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字33個中 12個が出典に見つからず(出典2/3本)",
+          "hash": "a9637325fac0",
+          "note": "要確認: 150円、420円、9,485人、7,210人、2,275人、26.0%"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "a9637325fac0"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字33個中 12個が出典に見つからず(出典2/3本)",
@@ -1677,6 +2174,21 @@
           "result": "数字32個中 2個が出典に見つからず(出典2/3本)",
           "hash": "81bb7c034136",
           "note": "要確認: 500円、37,725人"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "81bb7c034136"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字32個中 2個が出典に見つからず(出典2/3本)",
+          "hash": "81bb7c034136",
+          "note": "要確認: 500円、37,725人"
         }
       ]
     },
@@ -1714,6 +2226,21 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字32個中 5個が出典に見つからず(出典4/5本)",
+          "hash": "bcbc5fd968af",
+          "note": "要確認: 163人、19,227世、37,725人、432、163"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "bcbc5fd968af"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字32個中 5個が出典に見つからず(出典4/5本)",
@@ -1759,6 +2286,20 @@
           "by": "check_numbers.py",
           "result": "数字43個中 0個が出典に見つからず(出典3/4本)",
           "hash": "a86c18c4ca7a"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "a86c18c4ca7a"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字43個中 0個が出典に見つからず(出典3/4本)",
+          "hash": "a86c18c4ca7a"
         }
       ]
     },
@@ -1795,6 +2336,20 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字23個中 0個が出典に見つからず(出典2/3本)",
+          "hash": "3e613bdb23d7"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "3e613bdb23d7"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字23個中 0個が出典に見つからず(出典2/3本)",
@@ -1843,6 +2398,20 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字111個中 0個が出典に見つからず(出典4/5本)",
+          "hash": "f1c2ae858f13"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "f1c2ae858f13"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字111個中 0個が出典に見つからず(出典4/5本)",
@@ -1896,6 +2465,20 @@
           "by": "check_numbers.py",
           "result": "数字23個中 0個が出典に見つからず(出典10/10本)",
           "hash": "ff305467389e"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "ff305467389e"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字23個中 0個が出典に見つからず(出典10/10本)",
+          "hash": "ff305467389e"
         }
       ]
     },
@@ -1940,6 +2523,20 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字8個中 0個が出典に見つからず(出典5/5本)",
+          "hash": "c06f71e9eccd"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "c06f71e9eccd"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字8個中 0個が出典に見つからず(出典5/5本)",
@@ -2023,6 +2620,20 @@
           "by": "check_numbers.py",
           "result": "数字26個中 0個が出典に見つからず(出典10/10本)",
           "hash": "ca21c28ac1f8"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "ca21c28ac1f8"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字26個中 0個が出典に見つからず(出典10/10本)",
+          "hash": "ca21c28ac1f8"
         }
       ]
     },
@@ -2059,6 +2670,20 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字46個中 0個が出典に見つからず(出典6/6本)",
+          "hash": "267d3ce67bf4"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "267d3ce67bf4"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字46個中 0個が出典に見つからず(出典6/6本)",
@@ -2111,6 +2736,20 @@
           "by": "check_numbers.py",
           "result": "数字38個中 0個が出典に見つからず(出典3/4本)",
           "hash": "9b331a3ce389"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "9b331a3ce389"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字38個中 0個が出典に見つからず(出典3/4本)",
+          "hash": "9b331a3ce389"
         }
       ]
     },
@@ -2153,6 +2792,21 @@
           "result": "数字24個中 3個が出典に見つからず(出典4/4本)",
           "hash": "4d0e0ee75c79",
           "note": "要確認: 250円、53回、18回"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "4d0e0ee75c79"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字24個中 3個が出典に見つからず(出典4/4本)",
+          "hash": "4d0e0ee75c79",
+          "note": "要確認: 250円、53回、18回"
         }
       ]
     },
@@ -2179,6 +2833,13 @@
           "by": "check_site.py",
           "result": "問題なし",
           "hash": "554f8ea460a9"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "554f8ea460a9"
         }
       ]
     },
@@ -2201,6 +2862,13 @@
         },
         {
           "date": "2026-09-04",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "5248ae43348b"
+        },
+        {
+          "date": "2026-09-05",
           "level": "machine",
           "by": "check_site.py",
           "result": "問題なし",
@@ -2242,6 +2910,21 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字131個中 24個が出典に見つからず(出典16/16本)",
+          "hash": "f9023d47e506",
+          "note": "要確認: 1,199人、38,772、1,199、51,841、37,652、8,334"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "f9023d47e506"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字131個中 24個が出典に見つからず(出典16/16本)",
@@ -2291,6 +2974,20 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字42個中 0個が出典に見つからず(出典4/4本)",
+          "hash": "890f01f51ca0"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "890f01f51ca0"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字42個中 0個が出典に見つからず(出典4/4本)",
@@ -2358,6 +3055,20 @@
           "by": "check_numbers.py",
           "result": "数字76個中 0個が出典に見つからず(出典18/18本)",
           "hash": "8ec353bc8c57"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "8ec353bc8c57"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字76個中 0個が出典に見つからず(出典18/18本)",
+          "hash": "8ec353bc8c57"
         }
       ]
     },
@@ -2394,6 +3105,20 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字8個中 0個が出典に見つからず(出典7/7本)",
+          "hash": "3d97bf95acbf"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "3d97bf95acbf"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字8個中 0個が出典に見つからず(出典7/7本)",
@@ -2448,6 +3173,21 @@
           "result": "公開済み",
           "hash": "7451c201f7a8",
           "note": "2026-09-04に本人の許可を得てpush。差し替えた出典と入札不調の追記が公開サイトに出ている"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "7451c201f7a8"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字424個中 25個が出典に見つからず(出典14/16本)",
+          "hash": "7451c201f7a8",
+          "note": "要確認: 1,069件、1852年、1852、1689、1704、1714"
         }
       ]
     },
@@ -2484,6 +3224,20 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字6個中 0個が出典に見つからず(出典7/8本)",
+          "hash": "a75327993685"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "a75327993685"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字6個中 0個が出典に見つからず(出典7/8本)",
@@ -2528,6 +3282,20 @@
           "by": "check_numbers.py",
           "result": "数字21個中 0個が出典に見つからず(出典5/5本)",
           "hash": "5201c85c41c4"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "5201c85c41c4"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字21個中 0個が出典に見つからず(出典5/5本)",
+          "hash": "5201c85c41c4"
         }
       ]
     },
@@ -2564,6 +3332,20 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字9個中 0個が出典に見つからず(出典4/4本)",
+          "hash": "a9ecc6f7cf6e"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "a9ecc6f7cf6e"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字9個中 0個が出典に見つからず(出典4/4本)",
@@ -2618,6 +3400,21 @@
           "result": "公開済み",
           "hash": "a58eb748ea75",
           "note": "2026-09-04に本人の許可を得てpush。出典の差し替え・約束の削除を反映した本文が公開サイトに出ている"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "a58eb748ea75"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字285個中 27個が出典に見つからず(出典21/21本)",
+          "hash": "a58eb748ea75",
+          "note": "要確認: 3120、1477、114回、0.227m、9.234m、1988"
         }
       ]
     },
@@ -2660,6 +3457,21 @@
           "result": "数字54個中 9個が出典に見つからず(出典8/8本)",
           "hash": "e72834fb11cf",
           "note": "要確認: 109年、468戸、535、330戸、441、914戸"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "e72834fb11cf"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字54個中 9個が出典に見つからず(出典8/8本)",
+          "hash": "e72834fb11cf",
+          "note": "要確認: 109年、468戸、535、330戸、441、914戸"
         }
       ]
     },
@@ -2682,6 +3494,13 @@
         },
         {
           "date": "2026-09-04",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "4bd1ed92807a"
+        },
+        {
+          "date": "2026-09-05",
           "level": "machine",
           "by": "check_site.py",
           "result": "問題なし",
@@ -2726,6 +3545,20 @@
           "by": "check_numbers.py",
           "result": "数字46個中 0個が出典に見つからず(出典4/4本)",
           "hash": "c5cbec885cf0"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "c5cbec885cf0"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字46個中 0個が出典に見つからず(出典4/4本)",
+          "hash": "c5cbec885cf0"
         }
       ]
     },
@@ -2748,6 +3581,13 @@
         },
         {
           "date": "2026-09-04",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "54e43a4202be"
+        },
+        {
+          "date": "2026-09-05",
           "level": "machine",
           "by": "check_site.py",
           "result": "問題なし",
@@ -2794,6 +3634,21 @@
           "result": "数字18個中 4個が出典に見つからず(出典6/6本)",
           "hash": "389a42aaea4a",
           "note": "要確認: 201906、201904、202006、202410"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "389a42aaea4a"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字18個中 4個が出典に見つからず(出典6/6本)",
+          "hash": "389a42aaea4a",
+          "note": "要確認: 201906、201904、202006、202410"
         }
       ]
     },
@@ -2830,6 +3685,20 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字40個中 0個が出典に見つからず(出典2/2本)",
+          "hash": "b09ebe10f1ca"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "b09ebe10f1ca"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字40個中 0個が出典に見つからず(出典2/2本)",
@@ -2915,6 +3784,21 @@
           "result": "数字153個中 23個が出典に見つからず(出典15/15本)",
           "hash": "861970e64b0d",
           "note": "要確認: 78,319人、37,638人、42,004人、1,429人、19,898人、1,683人"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "861970e64b0d"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字153個中 23個が出典に見つからず(出典15/15本)",
+          "hash": "861970e64b0d",
+          "note": "要確認: 78,319人、37,638人、42,004人、1,429人、19,898人、1,683人"
         }
       ]
     },
@@ -2965,6 +3849,21 @@
           "result": "数字52個中 3個が出典に見つからず(出典6/7本)",
           "hash": "1b05889ec47c",
           "note": "要確認: 4,143万、15,464件、536円"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "1b05889ec47c"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字52個中 3個が出典に見つからず(出典6/7本)",
+          "hash": "1b05889ec47c",
+          "note": "要確認: 4,143万、15,464件、536円"
         }
       ]
     },
@@ -3009,6 +3908,20 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字16個中 0個が出典に見つからず(出典7/7本)",
+          "hash": "e37529950c42"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "e37529950c42"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字16個中 0個が出典に見つからず(出典7/7本)",
@@ -3063,6 +3976,21 @@
           "result": "数字35個中 2個が出典に見つからず(出典3/3本)",
           "hash": "872526ed4443",
           "note": "要確認: 78,319人、40,575人"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "872526ed4443"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字35個中 2個が出典に見つからず(出典3/3本)",
+          "hash": "872526ed4443",
+          "note": "要確認: 78,319人、40,575人"
         }
       ]
     },
@@ -3089,6 +4017,13 @@
           "by": "check_site.py",
           "result": "問題なし",
           "hash": "fb9a22c4950c"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "fb9a22c4950c"
         }
       ]
     },
@@ -3111,6 +4046,13 @@
         },
         {
           "date": "2026-09-04",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "6f43914c65c8"
+        },
+        {
+          "date": "2026-09-05",
           "level": "machine",
           "by": "check_site.py",
           "result": "問題なし",
@@ -3163,6 +4105,20 @@
           "by": "check_numbers.py",
           "result": "数字17個中 0個が出典に見つからず(出典7/7本)",
           "hash": "7bdb32fa0be3"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "7bdb32fa0be3"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字17個中 0個が出典に見つからず(出典7/7本)",
+          "hash": "7bdb32fa0be3"
         }
       ]
     },
@@ -3207,6 +4163,20 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字13個中 0個が出典に見つからず(出典4/4本)",
+          "hash": "cf8cc02a1ad6"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "cf8cc02a1ad6"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字13個中 0個が出典に見つからず(出典4/4本)",
@@ -3259,6 +4229,20 @@
           "by": "check_numbers.py",
           "result": "数字38個中 0個が出典に見つからず(出典10/10本)",
           "hash": "3b45c32c5594"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "3b45c32c5594"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字38個中 0個が出典に見つからず(出典10/10本)",
+          "hash": "3b45c32c5594"
         }
       ]
     },
@@ -3296,6 +4280,21 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字64個中 1個が出典に見つからず(出典3/3本)",
+          "hash": "beb66aec4048",
+          "note": "要確認: 3.4億"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "beb66aec4048"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字64個中 1個が出典に見つからず(出典3/3本)",
@@ -3345,6 +4344,20 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字3個中 0個が出典に見つからず(出典5/5本)",
+          "hash": "eaae9bc6e6bb"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "eaae9bc6e6bb"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字3個中 0個が出典に見つからず(出典5/5本)",
@@ -3407,6 +4420,20 @@
           "by": "check_numbers.py",
           "result": "数字55個中 0個が出典に見つからず(出典14/14本)",
           "hash": "d5ba5313e2bc"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "d5ba5313e2bc"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字55個中 0個が出典に見つからず(出典14/14本)",
+          "hash": "d5ba5313e2bc"
         }
       ]
     },
@@ -3455,6 +4482,20 @@
           "by": "check_numbers.py",
           "result": "数字32個中 0個が出典に見つからず(出典5/5本)",
           "hash": "8d6e17d035b5"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "8d6e17d035b5"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字32個中 0個が出典に見つからず(出典5/5本)",
+          "hash": "8d6e17d035b5"
         }
       ]
     },
@@ -3492,6 +4533,21 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字69個中 2個が出典に見つからず(出典3/3本)",
+          "hash": "f0f5b0f29c1c",
+          "note": "要確認: 72,480人、15,484人"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "f0f5b0f29c1c"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字69個中 2個が出典に見つからず(出典3/3本)",
@@ -3539,6 +4595,21 @@
           "result": "数字24個中 2個が出典に見つからず(出典4/4本)",
           "hash": "3f5eac15e59f",
           "note": "要確認: 252年、51年"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "3f5eac15e59f"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字24個中 2個が出典に見つからず(出典4/4本)",
+          "hash": "3f5eac15e59f",
+          "note": "要確認: 252年、51年"
         }
       ]
     },
@@ -3579,6 +4650,20 @@
           "by": "check_numbers.py",
           "result": "数字79個中 0個が出典に見つからず(出典6/6本)",
           "hash": "441997d66870"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "441997d66870"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字79個中 0個が出典に見つからず(出典6/6本)",
+          "hash": "441997d66870"
         }
       ]
     },
@@ -3615,6 +4700,20 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字6個中 0個が出典に見つからず(出典6/6本)",
+          "hash": "e6c12020c46e"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "e6c12020c46e"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字6個中 0個が出典に見つからず(出典6/6本)",
@@ -3667,6 +4766,20 @@
           "by": "check_numbers.py",
           "result": "数字49個中 0個が出典に見つからず(出典4/4本)",
           "hash": "63a84d3d35e8"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "63a84d3d35e8"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字49個中 0個が出典に見つからず(出典4/4本)",
+          "hash": "63a84d3d35e8"
         }
       ]
     },
@@ -3704,6 +4817,21 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字69個中 3個が出典に見つからず(出典14/14本)",
+          "hash": "f9c8365f4d05",
+          "note": "要確認: 37,725人、19,227世、4,760億"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "f9c8365f4d05"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字69個中 3個が出典に見つからず(出典14/14本)",
@@ -3754,6 +4882,21 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字47個中 1個が出典に見つからず(出典6/6本)",
+          "hash": "1982147083c9",
+          "note": "要確認: 3,660戸"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "1982147083c9"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字47個中 1個が出典に見つからず(出典6/6本)",
@@ -3817,6 +4960,20 @@
           "by": "check_numbers.py",
           "result": "数字32個中 0個が出典に見つからず(出典13/13本)",
           "hash": "d8adc05e8be2"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "d8adc05e8be2"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字32個中 0個が出典に見つからず(出典13/13本)",
+          "hash": "d8adc05e8be2"
         }
       ]
     },
@@ -3853,6 +5010,20 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字12個中 0個が出典に見つからず(出典4/4本)",
+          "hash": "d9a37cbc5765"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "d9a37cbc5765"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字12個中 0個が出典に見つからず(出典4/4本)",
@@ -3897,6 +5068,20 @@
           "by": "check_numbers.py",
           "result": "数字94個中 0個が出典に見つからず(出典4/4本)",
           "hash": "7c074f4b10a9"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "7c074f4b10a9"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字94個中 0個が出典に見つからず(出典4/4本)",
+          "hash": "7c074f4b10a9"
         }
       ]
     },
@@ -3933,6 +5118,20 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字4個中 0個が出典に見つからず(出典3/3本)",
+          "hash": "87f87c078021"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "87f87c078021"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字4個中 0個が出典に見つからず(出典3/3本)",
@@ -3974,6 +5173,21 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字8個中 1個が出典に見つからず(出典5/5本)",
+          "hash": "8e10e23feb16",
+          "note": "要確認: 812"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "8e10e23feb16"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字8個中 1個が出典に見つからず(出典5/5本)",
@@ -4028,6 +5242,20 @@
           "by": "check_numbers.py",
           "result": "数字73個中 0個が出典に見つからず(出典5/5本)",
           "hash": "dca5f578541c"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "dca5f578541c"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字73個中 0個が出典に見つからず(出典5/5本)",
+          "hash": "dca5f578541c"
         }
       ]
     },
@@ -4050,6 +5278,13 @@
         },
         {
           "date": "2026-09-04",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "bd28d5d87bb0"
+        },
+        {
+          "date": "2026-09-05",
           "level": "machine",
           "by": "check_site.py",
           "result": "問題なし",
@@ -4104,6 +5339,21 @@
           "result": "数字11個中 1個が出典に見つからず(出典3/3本)",
           "hash": "26cd2091175f",
           "note": "要確認: 170万"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "26cd2091175f"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字11個中 1個が出典に見つからず(出典3/3本)",
+          "hash": "26cd2091175f",
+          "note": "要確認: 170万"
         }
       ]
     },
@@ -4140,6 +5390,20 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字8個中 0個が出典に見つからず(出典3/3本)",
+          "hash": "4b050bbf0f66"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "4b050bbf0f66"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字8個中 0個が出典に見つからず(出典3/3本)",
@@ -4188,6 +5452,20 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字39個中 0個が出典に見つからず(出典6/6本)",
+          "hash": "533920083720"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "533920083720"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字39個中 0個が出典に見つからず(出典6/6本)",
@@ -4250,6 +5528,20 @@
           "by": "check_numbers.py",
           "result": "数字117個中 0個が出典に見つからず(出典26/26本)",
           "hash": "01e807c9b696"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "01e807c9b696"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字117個中 0個が出典に見つからず(出典26/26本)",
+          "hash": "01e807c9b696"
         }
       ]
     },
@@ -4298,6 +5590,20 @@
           "by": "check_numbers.py",
           "result": "数字9個中 0個が出典に見つからず(出典3/3本)",
           "hash": "41f0b403701f"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "41f0b403701f"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字9個中 0個が出典に見つからず(出典3/3本)",
+          "hash": "41f0b403701f"
         }
       ]
     },
@@ -4335,6 +5641,21 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字22個中 2個が出典に見つからず(出典11/11本)",
+          "hash": "fb6003077e4e",
+          "note": "要確認: 930戸、845人"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "fb6003077e4e"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字22個中 2個が出典に見つからず(出典11/11本)",
@@ -4398,6 +5719,21 @@
           "result": "数字47個中 4個が出典に見つからず(出典14/14本)",
           "hash": "7a47ec45d52b",
           "note": "要確認: 845人、886人、309億、1,037"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "7a47ec45d52b"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字47個中 4個が出典に見つからず(出典14/14本)",
+          "hash": "7a47ec45d52b",
+          "note": "要確認: 845人、886人、309億、1,037"
         }
       ]
     },
@@ -4442,6 +5778,20 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字10個中 0個が出典に見つからず(出典8/8本)",
+          "hash": "cbd022ea7ffe"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "cbd022ea7ffe"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字10個中 0個が出典に見つからず(出典8/8本)",
@@ -4494,6 +5844,20 @@
           "by": "check_numbers.py",
           "result": "数字19個中 0個が出典に見つからず(出典4/4本)",
           "hash": "7dd62794d1a6"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "7dd62794d1a6"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字19個中 0個が出典に見つからず(出典4/4本)",
+          "hash": "7dd62794d1a6"
         }
       ]
     },
@@ -4538,6 +5902,20 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字6個中 0個が出典に見つからず(出典4/4本)",
+          "hash": "4f06becd4028"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "4f06becd4028"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字6個中 0個が出典に見つからず(出典4/4本)",
@@ -4605,6 +5983,20 @@
           "by": "check_numbers.py",
           "result": "数字132個中 0個が出典に見つからず(出典5/5本)",
           "hash": "e7c4715d556f"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "e7c4715d556f"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字132個中 0個が出典に見つからず(出典5/5本)",
+          "hash": "e7c4715d556f"
         }
       ]
     },
@@ -4641,6 +6033,20 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字18個中 0個が出典に見つからず(出典6/6本)",
+          "hash": "85a5e7afa4d5"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "85a5e7afa4d5"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字18個中 0個が出典に見つからず(出典6/6本)",
@@ -4710,6 +6116,21 @@
           "result": "数字21個中 2個が出典に見つからず(出典7/8本)",
           "hash": "319e9289a375",
           "note": "要確認: 1,595万、1,450万"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "319e9289a375"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字21個中 2個が出典に見つからず(出典7/8本)",
+          "hash": "319e9289a375",
+          "note": "要確認: 1,595万、1,450万"
         }
       ]
     },
@@ -4746,6 +6167,20 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字63個中 0個が出典に見つからず(出典9/9本)",
+          "hash": "d57fb3e81645"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "d57fb3e81645"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字63個中 0個が出典に見つからず(出典9/9本)",
@@ -4798,6 +6233,20 @@
           "by": "check_numbers.py",
           "result": "数字22個中 0個が出典に見つからず(出典3/3本)",
           "hash": "1738ca65c168"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "1738ca65c168"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字22個中 0個が出典に見つからず(出典3/3本)",
+          "hash": "1738ca65c168"
         }
       ]
     },
@@ -4834,6 +6283,20 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字25個中 0個が出典に見つからず(出典4/4本)",
+          "hash": "2373a2e957a2"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "2373a2e957a2"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字25個中 0個が出典に見つからず(出典4/4本)",
@@ -4878,6 +6341,20 @@
           "by": "check_numbers.py",
           "result": "数字89個中 0個が出典に見つからず(出典5/5本)",
           "hash": "b2f1ffa16bb7"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "b2f1ffa16bb7"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字89個中 0個が出典に見つからず(出典5/5本)",
+          "hash": "b2f1ffa16bb7"
         }
       ]
     },
@@ -4898,6 +6375,20 @@
           "by": "check_site.py",
           "result": "問題なし",
           "hash": "977ff8104044"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "977ff8104044"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字39個中 0個が出典に見つからず(出典9/9本)",
+          "hash": "977ff8104044"
         }
       ]
     },
@@ -4917,6 +6408,20 @@
           "level": "machine",
           "by": "check_site.py",
           "result": "問題なし",
+          "hash": "fdd85ecb92e6"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "fdd85ecb92e6"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字38個中 0個が出典に見つからず(出典6/6本)",
           "hash": "fdd85ecb92e6"
         }
       ]
@@ -4976,6 +6481,20 @@
           "by": "check_numbers.py",
           "result": "数字23個中 0個が出典に見つからず(出典12/12本)",
           "hash": "dbcd45ebb4d2"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "dbcd45ebb4d2"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字23個中 0個が出典に見つからず(出典12/12本)",
+          "hash": "dbcd45ebb4d2"
         }
       ]
     },
@@ -5027,6 +6546,21 @@
           "result": "数字44個中 1個が出典に見つからず(出典16/16本)",
           "hash": "8ae237819d34",
           "note": "要確認: 4,444"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "8ae237819d34"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字44個中 1個が出典に見つからず(出典16/16本)",
+          "hash": "8ae237819d34",
+          "note": "要確認: 4,444"
         }
       ]
     },
@@ -5069,6 +6603,21 @@
           "result": "数字128個中 2個が出典に見つからず(出典5/5本)",
           "hash": "deefc755f928",
           "note": "要確認: 2,914日、0959"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "deefc755f928"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字128個中 2個が出典に見つからず(出典5/5本)",
+          "hash": "deefc755f928",
+          "note": "要確認: 2,914日、0959"
         }
       ]
     },
@@ -5091,6 +6640,13 @@
         },
         {
           "date": "2026-09-04",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "8d61d55f6924"
+        },
+        {
+          "date": "2026-09-05",
           "level": "machine",
           "by": "check_site.py",
           "result": "問題なし",
@@ -5132,6 +6688,21 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字88個中 25個が出典に見つからず(出典18/18本)",
+          "hash": "08fcb9643dcf",
+          "note": "要確認: 37,421、66,681、21,624、77,015、37,797、230,574"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "08fcb9643dcf"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字88個中 25個が出典に見つからず(出典18/18本)",
@@ -5179,6 +6750,21 @@
           "result": "数字12個中 1個が出典に見つからず(出典4/4本)",
           "hash": "74b45852d345",
           "note": "要確認: 47日"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "74b45852d345"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字12個中 1個が出典に見つからず(出典4/4本)",
+          "hash": "74b45852d345",
+          "note": "要確認: 47日"
         }
       ]
     },
@@ -5216,6 +6802,21 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字18個中 1個が出典に見つからず(出典4/4本)",
+          "hash": "f314f2df6f58",
+          "note": "要確認: 1677年"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "f314f2df6f58"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字18個中 1個が出典に見つからず(出典4/4本)",
@@ -5263,6 +6864,21 @@
           "result": "数字28個中 11個が出典に見つからず(出典5/5本)",
           "hash": "3ef2ade17d2c",
           "note": "要確認: 1,125万、1,237万、1,125.0万、1,130.0万、1,140.0万、1,150.0万"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "3ef2ade17d2c"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字28個中 11個が出典に見つからず(出典5/5本)",
+          "hash": "3ef2ade17d2c",
+          "note": "要確認: 1,125万、1,237万、1,125.0万、1,130.0万、1,140.0万、1,150.0万"
         }
       ]
     },
@@ -5289,6 +6905,13 @@
           "by": "check_site.py",
           "result": "問題なし",
           "hash": "09fdc71ef536"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "09fdc71ef536"
         }
       ]
     },
@@ -5311,6 +6934,13 @@
         },
         {
           "date": "2026-09-04",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "7f1e5f63bf78"
+        },
+        {
+          "date": "2026-09-05",
           "level": "machine",
           "by": "check_site.py",
           "result": "問題なし",
@@ -5351,6 +6981,20 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字51個中 0個が出典に見つからず(出典7/7本)",
+          "hash": "d48bf9bf90ce"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "d48bf9bf90ce"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字51個中 0個が出典に見つからず(出典7/7本)",
@@ -5399,6 +7043,20 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字21個中 0個が出典に見つからず(出典7/7本)",
+          "hash": "4d8decd01062"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "4d8decd01062"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字21個中 0個が出典に見つからず(出典7/7本)",
@@ -5453,6 +7111,21 @@
           "result": "数字8個中 1個が出典に見つからず(出典9/9本)",
           "hash": "7669f27231c6",
           "note": "要確認: 240人"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "7669f27231c6"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字8個中 1個が出典に見つからず(出典9/9本)",
+          "hash": "7669f27231c6",
+          "note": "要確認: 240人"
         }
       ]
     },
@@ -5495,6 +7168,21 @@
           "result": "公開済み",
           "hash": "fb9fe3a28c59",
           "note": "2026-09-04に本人の許可を得てpush。出典の差し替え・約束の削除を反映した本文が公開サイトに出ている"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "fb9fe3a28c59"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字251個中 3個が出典に見つからず(出典16/16本)",
+          "hash": "fb9fe3a28c59",
+          "note": "要確認: 895、1,188、43,212"
         }
       ]
     },
@@ -5543,6 +7231,20 @@
           "by": "check_numbers.py",
           "result": "数字9個中 0個が出典に見つからず(出典6/6本)",
           "hash": "719776c9f562"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "719776c9f562"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字9個中 0個が出典に見つからず(出典6/6本)",
+          "hash": "719776c9f562"
         }
       ]
     },
@@ -5583,6 +7285,20 @@
           "by": "check_numbers.py",
           "result": "数字0個中 0個が出典に見つからず(出典6/6本)",
           "hash": "398dbbe3cdc9"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "398dbbe3cdc9"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字0個中 0個が出典に見つからず(出典6/6本)",
+          "hash": "398dbbe3cdc9"
         }
       ]
     },
@@ -5612,6 +7328,21 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字60個中 3個が出典に見つからず(出典23/24本)",
+          "hash": "cde60bc58670",
+          "note": "要確認: 5,606円、3,201円、720万"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "cde60bc58670"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字60個中 3個が出典に見つからず(出典23/24本)",
@@ -5658,6 +7389,20 @@
           "by": "check_numbers.py",
           "result": "数字38個中 0個が出典に見つからず(出典11/11本)",
           "hash": "205698701c16"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "205698701c16"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字38個中 0個が出典に見つからず(出典11/11本)",
+          "hash": "205698701c16"
         }
       ]
     },
@@ -5700,6 +7445,21 @@
           "result": "数字19個中 1個が出典に見つからず(出典5/5本)",
           "hash": "d573fd246a6e",
           "note": "要確認: 3.4億"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "d573fd246a6e"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字19個中 1個が出典に見つからず(出典5/5本)",
+          "hash": "d573fd246a6e",
+          "note": "要確認: 3.4億"
         }
       ]
     },
@@ -5729,6 +7489,21 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字13個中 1個が出典に見つからず(出典10/10本)",
+          "hash": "537b3fd719c0",
+          "note": "要確認: 350年"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "文章:相対的な時期の言葉があります(昨年)",
+          "hash": "537b3fd719c0"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字13個中 1個が出典に見つからず(出典10/10本)",
@@ -5778,6 +7553,20 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字21個中 0個が出典に見つからず(出典6/6本)",
+          "hash": "a4d8e4ad2297"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "a4d8e4ad2297"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字21個中 0個が出典に見つからず(出典6/6本)",
@@ -5832,6 +7621,21 @@
           "result": "公開済み",
           "hash": "6596b5629a20",
           "note": "2026-09-04に本人の許可を得てpush。差し替えた出典と入札不調の追記が公開サイトに出ている"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "6596b5629a20"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字59個中 2個が出典に見つからず(出典26/27本)",
+          "hash": "6596b5629a20",
+          "note": "要確認: 1,385、707"
         }
       ]
     },
@@ -5869,6 +7673,21 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字39個中 8個が出典に見つからず(出典9/9本)",
+          "hash": "c376576189e4",
+          "note": "要確認: 526、477、923、936、873、718"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "c376576189e4"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字39個中 8個が出典に見つからず(出典9/9本)",
@@ -5915,6 +7734,20 @@
           "by": "check_numbers.py",
           "result": "数字11個中 0個が出典に見つからず(出典5/5本)",
           "hash": "74beee47e600"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "74beee47e600"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字11個中 0個が出典に見つからず(出典5/5本)",
+          "hash": "74beee47e600"
         }
       ]
     },
@@ -5957,6 +7790,21 @@
           "result": "数字15個中 2個が出典に見つからず(出典6/6本)",
           "hash": "2edd0e288613",
           "note": "要確認: 6.5倍、4.4"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "2edd0e288613"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字15個中 2個が出典に見つからず(出典6/6本)",
+          "hash": "2edd0e288613",
+          "note": "要確認: 6.5倍、4.4"
         }
       ]
     },
@@ -5986,6 +7834,21 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字198個中 7個が出典に見つからず(出典15/15本)",
+          "hash": "97a928a27563",
+          "note": "要確認: 9,706万、7,766万、9,693万、1,177万、3,993万、3,154万"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "97a928a27563"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字198個中 7個が出典に見つからず(出典15/15本)",
@@ -6041,6 +7904,21 @@
           "result": "公開済み",
           "hash": "c40765f5b393",
           "note": "2026-09-04に本人の許可を得てpush。差し替えた出典と入札不調の追記が公開サイトに出ている"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "c40765f5b393"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字190個中 4個が出典に見つからず(出典23/23本)",
+          "hash": "c40765f5b393",
+          "note": "要確認: 2013、2014、4.65、8,683万"
         }
       ]
     },
@@ -6099,6 +7977,20 @@
           "by": "check_numbers.py",
           "result": "数字34個中 0個が出典に見つからず(出典16/16本)",
           "hash": "0bd08bf92621"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "0bd08bf92621"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字34個中 0個が出典に見つからず(出典16/16本)",
+          "hash": "0bd08bf92621"
         }
       ]
     },
@@ -6148,6 +8040,20 @@
           "result": "公開済み",
           "hash": "bd0cea9e94e8",
           "note": "2026-09-04に本人の許可を得てpush。差し替えた出典と入札不調の追記が公開サイトに出ている"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "文章:相対的な時期の言葉があります(来年)",
+          "hash": "bd0cea9e94e8"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字97個中 0個が出典に見つからず(出典19/19本)",
+          "hash": "bd0cea9e94e8"
         }
       ]
     },
@@ -6198,6 +8104,21 @@
           "result": "公開済み",
           "hash": "6491f3cbcc41",
           "note": "2026-09-04に本人の許可を得てpush。差し替えた出典と入札不調の追記が公開サイトに出ている"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "6491f3cbcc41"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字113個中 3個が出典に見つからず(出典18/18本)",
+          "hash": "6491f3cbcc41",
+          "note": "要確認: 4,387、2,634、2,299"
         }
       ]
     },
@@ -6246,6 +8167,20 @@
           "by": "check_numbers.py",
           "result": "数字14個中 0個が出典に見つからず(出典3/3本)",
           "hash": "396e345e66ee"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "396e345e66ee"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字14個中 0個が出典に見つからず(出典3/3本)",
+          "hash": "396e345e66ee"
         }
       ]
     },
@@ -6290,6 +8225,20 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字25個中 0個が出典に見つからず(出典3/3本)",
+          "hash": "70f04a01f547"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "70f04a01f547"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字25個中 0個が出典に見つからず(出典3/3本)",
@@ -6360,6 +8309,21 @@
           "result": "数字85個中 27個が出典に見つからず(出典3/3本)",
           "hash": "8c9d26a7feca",
           "note": "要確認: 216,698、236,416、177,965、37,926、37,269、50,175"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "8c9d26a7feca"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字85個中 27個が出典に見つからず(出典3/3本)",
+          "hash": "8c9d26a7feca",
+          "note": "要確認: 216,698、236,416、177,965、37,926、37,269、50,175"
         }
       ]
     },
@@ -6402,6 +8366,21 @@
           "result": "数字38個中 5個が出典に見つからず(出典6/6本)",
           "hash": "9d82a4e1a4fe",
           "note": "要確認: 490円、410円、900円、230円、550円"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "9d82a4e1a4fe"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字38個中 5個が出典に見つからず(出典6/6本)",
+          "hash": "9d82a4e1a4fe",
+          "note": "要確認: 490円、410円、900円、230円、550円"
         }
       ]
     },
@@ -6431,6 +8410,20 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字46個中 0個が出典に見つからず(出典7/8本)",
+          "hash": "1de83f0c8807"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "1de83f0c8807"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字46個中 0個が出典に見つからず(出典7/8本)",
@@ -6471,6 +8464,20 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字70個中 0個が出典に見つからず(出典13/13本)",
+          "hash": "d3a08d142e1d"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "d3a08d142e1d"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字70個中 0個が出典に見つからず(出典13/13本)",
@@ -6517,6 +8524,21 @@
           "result": "数字131個中 2個が出典に見つからず(出典12/12本)",
           "hash": "cba5034f8cb0",
           "note": "要確認: 7,766万、3,275万"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "cba5034f8cb0"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字131個中 2個が出典に見つからず(出典12/12本)",
+          "hash": "cba5034f8cb0",
+          "note": "要確認: 7,766万、3,275万"
         }
       ]
     },
@@ -6546,6 +8568,21 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字234個中 2個が出典に見つからず(出典31/31本)",
+          "hash": "a61aad306f9d",
+          "note": "要確認: 1975、1990"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "a61aad306f9d"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字234個中 2個が出典に見つからず(出典31/31本)",
@@ -6600,6 +8637,20 @@
           "result": "公開済み",
           "hash": "4296bd12e2c0",
           "note": "2026-09-04に本人の許可を得てpush。差し替えた出典と入札不調の追記が公開サイトに出ている"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "4296bd12e2c0"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字112個中 0個が出典に見つからず(出典34/34本)",
+          "hash": "4296bd12e2c0"
         }
       ]
     },
@@ -6644,6 +8695,20 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字8個中 0個が出典に見つからず(出典7/7本)",
+          "hash": "65084957cc40"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "65084957cc40"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字8個中 0個が出典に見つからず(出典7/7本)",
@@ -6698,6 +8763,21 @@
           "result": "公開済み",
           "hash": "ed37f2a28b20",
           "note": "2026-09-04に本人の許可を得てpush。出典の差し替え・約束の削除を反映した本文が公開サイトに出ている"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "誤字:「大州」があります(市名は大洲。歴史的表記の引用なら見逃してよい)",
+          "hash": "ed37f2a28b20"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字156個中 21個が出典に見つからず(出典16/16本)",
+          "hash": "ed37f2a28b20",
+          "note": "要確認: 1953、1963、38207、4,033.4k、9,735、8,677"
         }
       ]
     },
@@ -6727,6 +8807,21 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字101個中 10個が出典に見つからず(出典20/20本)",
+          "hash": "32f210045645",
+          "note": "要確認: 1,128万、2,520万、1,283万、1,237万、1,231万、1,102万"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "32f210045645"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字101個中 10個が出典に見つからず(出典20/20本)",
@@ -6781,6 +8876,20 @@
           "result": "公開済み",
           "hash": "c27cae56ce0e",
           "note": "2026-09-04に本人の許可を得てpush。差し替えた出典と入札不調の追記が公開サイトに出ている"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "c27cae56ce0e"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字90個中 0個が出典に見つからず(出典19/20本)",
+          "hash": "c27cae56ce0e"
         }
       ]
     },
@@ -6830,6 +8939,20 @@
           "result": "公開済み",
           "hash": "a77be629ebc5",
           "note": "2026-09-04に本人の許可を得てpush。差し替えた出典と入札不調の追記が公開サイトに出ている"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "a77be629ebc5"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字72個中 0個が出典に見つからず(出典28/28本)",
+          "hash": "a77be629ebc5"
         }
       ]
     },
@@ -6859,6 +8982,21 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字82個中 13個が出典に見つからず(出典27/27本)",
+          "hash": "06889ce989bd",
+          "note": "要確認: 244,134、180,802、242,588、180,389、176,275、199,494"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "06889ce989bd"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字82個中 13個が出典に見つからず(出典27/27本)",
@@ -6908,6 +9046,20 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字5個中 0個が出典に見つからず(出典5/5本)",
+          "hash": "5b72e10561a6"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "5b72e10561a6"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字5個中 0個が出典に見つからず(出典5/5本)",
@@ -6962,6 +9114,21 @@
           "result": "数字6個中 1個が出典に見つからず(出典7/7本)",
           "hash": "7e95a6c1538c",
           "note": "要確認: 35%"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "7e95a6c1538c"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字6個中 1個が出典に見つからず(出典7/7本)",
+          "hash": "7e95a6c1538c",
+          "note": "要確認: 35%"
         }
       ]
     },
@@ -7010,6 +9177,20 @@
           "by": "check_numbers.py",
           "result": "数字7個中 0個が出典に見つからず(出典2/2本)",
           "hash": "88d1e4240105"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "88d1e4240105"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字7個中 0個が出典に見つからず(出典2/2本)",
+          "hash": "88d1e4240105"
         }
       ]
     },
@@ -7043,6 +9224,20 @@
           "by": "check_numbers.py",
           "result": "数字86個中 0個が出典に見つからず(出典17/17本)",
           "hash": "1108e6480079"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "1108e6480079"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字86個中 0個が出典に見つからず(出典17/17本)",
+          "hash": "1108e6480079"
         }
       ]
     },
@@ -7072,6 +9267,21 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字362個中 4個が出典に見つからず(出典47/47本)",
+          "hash": "5d80de049634",
+          "note": "要確認: 35,867、29,799、45,105、225,288"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "5d80de049634"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字362個中 4個が出典に見つからず(出典47/47本)",
@@ -7189,6 +9399,21 @@
           "result": "公開済み",
           "hash": "5095f2c9fd57",
           "note": "2026-09-04に本人の許可を得てpush。差し替えた出典と入札不調の追記が公開サイトに出ている"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "5095f2c9fd57"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字39個中 2個が出典に見つからず(出典17/17本)",
+          "hash": "5095f2c9fd57",
+          "note": "要確認: 153、404"
         }
       ]
     },
@@ -7239,6 +9464,21 @@
           "result": "数字4個中 1個が出典に見つからず(出典5/5本)",
           "hash": "d3d1467bfba1",
           "note": "要確認: 70年"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "d3d1467bfba1"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字4個中 1個が出典に見つからず(出典5/5本)",
+          "hash": "d3d1467bfba1",
+          "note": "要確認: 70年"
         }
       ]
     },
@@ -7280,6 +9520,20 @@
           "result": "公開済み",
           "hash": "cfa2a8b0f20a",
           "note": "2026-09-04に本人の許可を得てpush。出典の差し替え・約束の削除を反映した本文が公開サイトに出ている"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "cfa2a8b0f20a"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字95個中 0個が出典に見つからず(出典35/35本)",
+          "hash": "cfa2a8b0f20a"
         }
       ]
     },
@@ -7345,6 +9599,21 @@
           "result": "公開済み",
           "hash": "e98622ea4f9f",
           "note": "2026-09-04に本人の許可を得てpush。出典の差し替え・約束の削除を反映した本文が公開サイトに出ている"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "e98622ea4f9f"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字301個中 41個が出典に見つからず(出典20/21本)",
+          "hash": "e98622ea4f9f",
+          "note": "要確認: 2026、71,500、58,200、50,300、46,400、92,500"
         }
       ]
     },
@@ -7374,6 +9643,21 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字287個中 138個が出典に見つからず(出典19/19本)",
+          "hash": "6b4e012bfb19",
+          "note": "要確認: 8,058人、3,497人、19,747、15,501、6,352、2,604"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "6b4e012bfb19"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字287個中 138個が出典に見つからず(出典19/19本)",
@@ -7421,6 +9705,21 @@
           "result": "公開済み",
           "hash": "63ed590844f7",
           "note": "2026-09-04に本人の許可を得てpush。出典の差し替え・約束の削除を反映した本文が公開サイトに出ている"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "63ed590844f7"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字160個中 1個が出典に見つからず(出典27/27本)",
+          "hash": "63ed590844f7",
+          "note": "要確認: 2,439人"
         }
       ]
     },
@@ -7470,6 +9769,20 @@
           "result": "公開済み",
           "hash": "b60d8044dac8",
           "note": "2026-09-04に本人の許可を得てpush。出典の差し替え・約束の削除を反映した本文が公開サイトに出ている"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "文章:相対的な時期の言葉があります(今年)",
+          "hash": "b60d8044dac8"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字65個中 0個が出典に見つからず(出典15/15本)",
+          "hash": "b60d8044dac8"
         }
       ]
     },
@@ -7515,6 +9828,21 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字31個中 1個が出典に見つからず(出典2/2本)",
+          "hash": "bf7f0c9011bb",
+          "note": "要確認: 4,793,687円"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "bf7f0c9011bb"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字31個中 1個が出典に見つからず(出典2/2本)",
@@ -7579,6 +9907,21 @@
           "result": "数字98個中 2個が出典に見つからず(出典14/14本)",
           "hash": "3af34deeb9d1",
           "note": "要確認: 43,212、31,515"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "3af34deeb9d1"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字98個中 2個が出典に見つからず(出典14/14本)",
+          "hash": "3af34deeb9d1",
+          "note": "要確認: 43,212、31,515"
         }
       ]
     },
@@ -7608,6 +9951,20 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字49個中 0個が出典に見つからず(出典25/25本)",
+          "hash": "68eedd8d0b9a"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "68eedd8d0b9a"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字49個中 0個が出典に見つからず(出典25/25本)",
@@ -7654,6 +10011,37 @@
           "result": "数字94個中 1個が出典に見つからず(出典16/16本)",
           "hash": "61d8d26ec73f",
           "note": "要確認: 22,390"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "human",
+          "by": "opus",
+          "result": "本文の数字1件を修正済み。残る未照合1件は正当",
+          "hash": "35cf72ab139a",
+          "note": "2026-09-04に本文の全団体の時間外勤務を140.0時間から141.1時間に修正(総務省PDFの表15で確認)。修正後の未照合1件は22,390時間で、記事自身が「翌年に公表された別のPDFでは値が違う」と食い違いを説明している箇所。出典の取り違えではない"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "35cf72ab139a"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字94個中 1個が出典に見つからず(出典16/16本)",
+          "hash": "35cf72ab139a",
+          "note": "要確認: 22,390"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "publish",
+          "by": "opus",
+          "result": "公開済み",
+          "hash": "35cf72ab139a",
+          "note": "2026-09-04に141.1時間の修正をpushして公開反映を実機確認済み"
         }
       ]
     },
@@ -7683,6 +10071,21 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字232個中 23個が出典に見つからず(出典23/23本)",
+          "hash": "1df1b15456ff",
+          "note": "要確認: 7,764、18,573、14,708、30,019、35,173、66,981"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "1df1b15456ff"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字232個中 23個が出典に見つからず(出典23/23本)",
@@ -7722,6 +10125,21 @@
           "result": "数字104個中 2個が出典に見つからず(出典25/25本)",
           "hash": "ab3f177b4f9e",
           "note": "要確認: 4,540円、3,150円"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "ab3f177b4f9e"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字104個中 2個が出典に見つからず(出典25/25本)",
+          "hash": "ab3f177b4f9e",
+          "note": "要確認: 4,540円、3,150円"
         }
       ]
     },
@@ -7755,6 +10173,20 @@
           "by": "check_numbers.py",
           "result": "数字58個中 0個が出典に見つからず(出典7/7本)",
           "hash": "800e753910f0"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "800e753910f0"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字58個中 0個が出典に見つからず(出典7/7本)",
+          "hash": "800e753910f0"
         }
       ]
     },
@@ -7784,6 +10216,20 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字51個中 0個が出典に見つからず(出典9/9本)",
+          "hash": "bf140db47afb"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "bf140db47afb"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字51個中 0個が出典に見つからず(出典9/9本)",
@@ -7846,6 +10292,20 @@
           "by": "check_numbers.py",
           "result": "数字90個中 0個が出典に見つからず(出典28/29本)",
           "hash": "625080bf0d34"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "625080bf0d34"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字90個中 0個が出典に見つからず(出典28/29本)",
+          "hash": "625080bf0d34"
         }
       ]
     },
@@ -7877,6 +10337,20 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字27個中 0個が出典に見つからず(出典12/12本)",
+          "hash": "998321b1e6b9"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "998321b1e6b9"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字27個中 0個が出典に見つからず(出典12/12本)",
@@ -7929,6 +10403,20 @@
           "by": "check_numbers.py",
           "result": "数字1個中 0個が出典に見つからず(出典6/6本)",
           "hash": "0809eb27fceb"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "0809eb27fceb"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字1個中 0個が出典に見つからず(出典6/6本)",
+          "hash": "0809eb27fceb"
         }
       ]
     },
@@ -7958,6 +10446,21 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字173個中 32個が出典に見つからず(出典21/21本)",
+          "hash": "a6dcb9f0e07d",
+          "note": "要確認: 7,707、9,002、565,974、102,924、174,630、32,756"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "文章:相対的な時期の言葉があります(去年)",
+          "hash": "a6dcb9f0e07d"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字173個中 32個が出典に見つからず(出典21/21本)",
@@ -8000,6 +10503,21 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字45個中 4個が出典に見つからず(出典6/6本)",
+          "hash": "6736a6219069",
+          "note": "要確認: 158日、5,150円、46日、12,600円"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "6736a6219069"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字45個中 4個が出典に見つからず(出典6/6本)",
@@ -8049,6 +10567,21 @@
           "result": "数字61個中 1個が出典に見つからず(出典13/13本)",
           "hash": "67614e66ba61",
           "note": "要確認: 22,230,485千"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "67614e66ba61"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字61個中 1個が出典に見つからず(出典13/13本)",
+          "hash": "67614e66ba61",
+          "note": "要確認: 22,230,485千"
         }
       ]
     },
@@ -8086,6 +10619,21 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字141個中 9個が出典に見つからず(出典13/13本)",
+          "hash": "16f8b0bc7161",
+          "note": "要確認: 1,225万、5,468万、6,855万、8,580万、5,550万、8,683万"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "16f8b0bc7161"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字141個中 9個が出典に見つからず(出典13/13本)",
@@ -8133,6 +10681,21 @@
           "result": "公開済み",
           "hash": "3d067c6b5a4d",
           "note": "2026-09-04に本人の許可を得てpush。出典の差し替え・約束の削除を反映した本文が公開サイトに出ている"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "3d067c6b5a4d"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字512個中 272個が出典に見つからず(出典23/23本)",
+          "hash": "3d067c6b5a4d",
+          "note": "要確認: 31,171万、31,770万、9,761、31,022、457,897、53,131"
         }
       ]
     },
@@ -8155,6 +10718,13 @@
         },
         {
           "date": "2026-09-04",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "31c153966ee4"
+        },
+        {
+          "date": "2026-09-05",
           "level": "machine",
           "by": "check_site.py",
           "result": "問題なし",
@@ -8207,6 +10777,20 @@
           "by": "check_numbers.py",
           "result": "数字6個中 0個が出典に見つからず(出典4/4本)",
           "hash": "bf4aa97e5a13"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "bf4aa97e5a13"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字6個中 0個が出典に見つからず(出典4/4本)",
+          "hash": "bf4aa97e5a13"
         }
       ]
     },
@@ -8249,6 +10833,21 @@
           "result": "数字25個中 1個が出典に見つからず(出典6/6本)",
           "hash": "e48a4ece9a98",
           "note": "要確認: 6.5%"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "e48a4ece9a98"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字25個中 1個が出典に見つからず(出典6/6本)",
+          "hash": "e48a4ece9a98",
+          "note": "要確認: 6.5%"
         }
       ]
     },
@@ -8285,6 +10884,20 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字65個中 0個が出典に見つからず(出典3/3本)",
+          "hash": "65d6a15112ec"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "65d6a15112ec"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字65個中 0個が出典に見つからず(出典3/3本)",
@@ -8339,6 +10952,21 @@
           "result": "数字46個中 1個が出典に見つからず(出典5/5本)",
           "hash": "5e8f08aba50a",
           "note": "要確認: 479万"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "5e8f08aba50a"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字46個中 1個が出典に見つからず(出典5/5本)",
+          "hash": "5e8f08aba50a",
+          "note": "要確認: 479万"
         }
       ]
     },
@@ -8387,6 +11015,20 @@
           "by": "check_numbers.py",
           "result": "数字14個中 0個が出典に見つからず(出典6/6本)",
           "hash": "68d1be68cc5b"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "68d1be68cc5b"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字14個中 0個が出典に見つからず(出典6/6本)",
+          "hash": "68d1be68cc5b"
         }
       ]
     },
@@ -8423,6 +11065,20 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字26個中 0個が出典に見つからず(出典5/5本)",
+          "hash": "491ce27c4400"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "491ce27c4400"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字26個中 0個が出典に見つからず(出典5/5本)",
@@ -8471,6 +11127,20 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字23個中 0個が出典に見つからず(出典14/14本)",
+          "hash": "f9dcd0de7beb"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "f9dcd0de7beb"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字23個中 0個が出典に見つからず(出典14/14本)",
@@ -8524,6 +11194,20 @@
           "by": "check_numbers.py",
           "result": "数字59個中 0個が出典に見つからず(出典16/16本)",
           "hash": "79632e5ce7ee"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "79632e5ce7ee"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字59個中 0個が出典に見つからず(出典16/16本)",
+          "hash": "79632e5ce7ee"
         }
       ]
     },
@@ -8566,6 +11250,21 @@
           "result": "数字52個中 1個が出典に見つからず(出典20/20本)",
           "hash": "f122624f9645",
           "note": "要確認: 4,735万"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "f122624f9645"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字52個中 1個が出典に見つからず(出典20/20本)",
+          "hash": "f122624f9645",
+          "note": "要確認: 4,735万"
         }
       ]
     },
@@ -8603,6 +11302,21 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字8個中 3個が出典に見つからず(出典7/7本)",
+          "hash": "f81e911624ec",
+          "note": "要確認: 700年、250年、2015"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "f81e911624ec"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字8個中 3個が出典に見つからず(出典7/7本)",
@@ -8658,6 +11372,21 @@
           "result": "数字46個中 2個が出典に見つからず(出典6/6本)",
           "hash": "124e646231ed",
           "note": "要確認: 7.8倍、22,512円"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "124e646231ed"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字46個中 2個が出典に見つからず(出典6/6本)",
+          "hash": "124e646231ed",
+          "note": "要確認: 7.8倍、22,512円"
         }
       ]
     },
@@ -8694,6 +11423,20 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字89個中 0個が出典に見つからず(出典6/6本)",
+          "hash": "3e6eca599ceb"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "3e6eca599ceb"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字89個中 0個が出典に見つからず(出典6/6本)",
@@ -8735,6 +11478,21 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字41個中 1個が出典に見つからず(出典3/3本)",
+          "hash": "6551e9d56001",
+          "note": "要確認: 17,064世"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "6551e9d56001"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字41個中 1個が出典に見つからず(出典3/3本)",
@@ -8798,6 +11556,20 @@
           "by": "check_numbers.py",
           "result": "数字26個中 0個が出典に見つからず(出典14/15本)",
           "hash": "622a56f313f5"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "622a56f313f5"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字26個中 0個が出典に見つからず(出典14/15本)",
+          "hash": "622a56f313f5"
         }
       ]
     },
@@ -8846,6 +11618,20 @@
           "by": "check_numbers.py",
           "result": "数字27個中 0個が出典に見つからず(出典7/7本)",
           "hash": "094a8d74b964"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "094a8d74b964"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字27個中 0個が出典に見つからず(出典7/7本)",
+          "hash": "094a8d74b964"
         }
       ]
     },
@@ -8883,6 +11669,21 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字66個中 1個が出典に見つからず(出典4/4本)",
+          "hash": "080e1714addf",
+          "note": "要確認: 24,184人"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "080e1714addf"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字66個中 1個が出典に見つからず(出典4/4本)",
@@ -8936,6 +11737,20 @@
           "by": "check_numbers.py",
           "result": "数字7個中 0個が出典に見つからず(出典6/6本)",
           "hash": "0afc96774d9d"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "0afc96774d9d"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字7個中 0個が出典に見つからず(出典6/6本)",
+          "hash": "0afc96774d9d"
         }
       ]
     },
@@ -8984,6 +11799,20 @@
           "by": "check_numbers.py",
           "result": "数字30個中 0個が出典に見つからず(出典6/6本)",
           "hash": "874f999c8919"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "874f999c8919"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字30個中 0個が出典に見つからず(出典6/6本)",
+          "hash": "874f999c8919"
         }
       ]
     },
@@ -9020,6 +11849,20 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字60個中 0個が出典に見つからず(出典6/6本)",
+          "hash": "bfc846307078"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "bfc846307078"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字60個中 0個が出典に見つからず(出典6/6本)",
@@ -9103,6 +11946,20 @@
           "by": "check_numbers.py",
           "result": "数字20個中 0個が出典に見つからず(出典6/6本)",
           "hash": "947f266bc9a3"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "947f266bc9a3"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字20個中 0個が出典に見つからず(出典6/6本)",
+          "hash": "947f266bc9a3"
         }
       ]
     },
@@ -9145,6 +12002,21 @@
           "result": "数字12個中 1個が出典に見つからず(出典3/3本)",
           "hash": "ca34ddb6c582",
           "note": "要確認: 14日"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "ca34ddb6c582"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字12個中 1個が出典に見つからず(出典3/3本)",
+          "hash": "ca34ddb6c582",
+          "note": "要確認: 14日"
         }
       ]
     },
@@ -9167,6 +12039,13 @@
         },
         {
           "date": "2026-09-04",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "ceba85f5b5f0"
+        },
+        {
+          "date": "2026-09-05",
           "level": "machine",
           "by": "check_site.py",
           "result": "問題なし",
@@ -9219,6 +12098,20 @@
           "by": "check_numbers.py",
           "result": "数字35個中 0個が出典に見つからず(出典7/7本)",
           "hash": "5564045c38a0"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "5564045c38a0"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字35個中 0個が出典に見つからず(出典7/7本)",
+          "hash": "5564045c38a0"
         }
       ]
     },
@@ -9255,6 +12148,20 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字11個中 0個が出典に見つからず(出典5/5本)",
+          "hash": "63e3b9baa20c"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "63e3b9baa20c"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字11個中 0個が出典に見つからず(出典5/5本)",
@@ -9309,6 +12216,21 @@
           "result": "数字65個中 3個が出典に見つからず(出典7/7本)",
           "hash": "22d2ed796dde",
           "note": "要確認: 19,231世、5,570万、5,773万"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "22d2ed796dde"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字65個中 3個が出典に見つからず(出典7/7本)",
+          "hash": "22d2ed796dde",
+          "note": "要確認: 19,231世、5,570万、5,773万"
         }
       ]
     },
@@ -9331,6 +12253,13 @@
         },
         {
           "date": "2026-09-04",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "f70619e5018c"
+        },
+        {
+          "date": "2026-09-05",
           "level": "machine",
           "by": "check_site.py",
           "result": "問題なし",
@@ -9383,6 +12312,20 @@
           "by": "check_numbers.py",
           "result": "数字13個中 0個が出典に見つからず(出典5/5本)",
           "hash": "9f709041a739"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "9f709041a739"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字13個中 0個が出典に見つからず(出典5/5本)",
+          "hash": "9f709041a739"
         }
       ]
     },
@@ -9431,6 +12374,20 @@
           "by": "check_numbers.py",
           "result": "数字13個中 0個が出典に見つからず(出典8/8本)",
           "hash": "ade52dccd434"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "ade52dccd434"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字13個中 0個が出典に見つからず(出典8/8本)",
+          "hash": "ade52dccd434"
         }
       ]
     },
@@ -9467,6 +12424,20 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字10個中 0個が出典に見つからず(出典5/5本)",
+          "hash": "0f45efb6d185"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "0f45efb6d185"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字10個中 0個が出典に見つからず(出典5/5本)",
@@ -9511,6 +12482,20 @@
           "by": "check_numbers.py",
           "result": "数字9個中 0個が出典に見つからず(出典9/9本)",
           "hash": "05c8e2dab4ee"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "05c8e2dab4ee"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字9個中 0個が出典に見つからず(出典9/9本)",
+          "hash": "05c8e2dab4ee"
         }
       ]
     },
@@ -9547,6 +12532,20 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字29個中 0個が出典に見つからず(出典6/6本)",
+          "hash": "fe7da99f99a1"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "fe7da99f99a1"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字29個中 0個が出典に見つからず(出典6/6本)",
@@ -9601,6 +12600,21 @@
           "result": "数字12個中 2個が出典に見つからず(出典2/3本)",
           "hash": "974762bd3328",
           "note": "要確認: 19.2%、34棟"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "974762bd3328"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字12個中 2個が出典に見つからず(出典2/3本)",
+          "hash": "974762bd3328",
+          "note": "要確認: 19.2%、34棟"
         }
       ]
     },
@@ -9638,6 +12652,21 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字179個中 2個が出典に見つからず(出典7/7本)",
+          "hash": "7a9bf76942d9",
+          "note": "要確認: 37,725人、19,227世"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "7a9bf76942d9"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字179個中 2個が出典に見つからず(出典7/7本)",
@@ -9687,6 +12716,20 @@
         },
         {
           "date": "2026-09-04",
+          "level": "numbers",
+          "by": "check_numbers.py",
+          "result": "数字13個中 0個が出典に見つからず(出典3/3本)",
+          "hash": "3cdf7559a76a"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "3cdf7559a76a"
+        },
+        {
+          "date": "2026-09-05",
           "level": "numbers",
           "by": "check_numbers.py",
           "result": "数字13個中 0個が出典に見つからず(出典3/3本)",

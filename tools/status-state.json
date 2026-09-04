@@ -127,6 +127,14 @@
       "有効日数": 92,
       "メモ": "www.city.ozu.ehime.jp は全ページ403/404を出し分けており、機械でもブラウザ(headless)でも生死を判定できない。近隣自治体(宇和島・西条・伊予・八幡浜)とj-lisも同様。点検で出ても『消えた』とは限らないので、Wayback Machineで確かめるまで差し替えない",
       "調べ方": "archive.org/wayback/available で保存版の有無と日付を見る"
+    },
+    {
+      "名前": "大洲市サイトの出典12本(404の疑い・未確認)",
+      "値": "12本 / 14か所",
+      "確認日": "2026-09-04",
+      "有効日数": 14,
+      "メモ": "2026-09-04の月次点検の1回目では、大洲市サイトの他のURLが200を返す中で、この12本だけが404だった(消えている可能性が高い)。ところが点検を短時間に3回走らせたせいでCDNに弾かれ、以後サイト全体が403になり、確かめ直せなくなった。ブロックが解けてから1本ずつ確認して、生きていれば放置、消えていればWayback Machineの保存版か現行ページに差し替える。対象: /site/kosodate/69093.html … ozu-hokago-jido-club / /soshiki/fukkou/31969.html … hijikawa-hanran-nenpyo, ozu-gouu-8nen / /soshiki/kankou/30934.html … ozu-okane-no-nagare / /soshiki/kankyo/68741.html … ozu-inuneko-hikitori / /soshiki/kawabeko/0229.html … ozu-kyuson-mei / /soshiki/kyoikusomu/0766.html … ozu-kieta-gakko / /soshiki/shimin/54255.html … ozu-conveni-kofu / /soshiki/zaisei/74143.html・74157.html・74159.html … bunka-kaikan-kibo-shukusho / /uploaded/attachment/40445.pdf … ozu-koyosha-ev / /uploaded/attachment/45164.pdf … furusato-nozei-r5-jisseki, furusato-nozei-yukue",
+      "調べ方": "curl -sS -o /dev/null -w '%{http_code}' -A 'Mozilla/5.0 (compatible; OzuLifeMemoLinkCheck/1.0)' <URL> でトップページが200に戻っているか先に見る。戻っていたら python tools/check_site.py --urls を1回だけ走らせる"
     }
   ],
   "期限のあるもの": [

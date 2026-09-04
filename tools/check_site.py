@@ -1291,26 +1291,69 @@ def check_urls(pages, rep, limit=None):
 
     print(f"\n  出典URL {len(items)}件の疎通を確認します(1件ずつ、少し時間がかかります)")
     dead = 0
+
+    # 相手サイトに嫌われたら、それ以上は叩かない。
+    # 2026-09-04、この点検を短時間に3回走らせたら大洲市サイトのCDNに
+    # 弾かれ、782本が一斉に403になった(その直前の点検では200だった)。
+    # 叩き続けても分からないうえ相手にも迷惑なので、同じホストが続けて
+    # 弾いてきたら、そのホストは打ち切って1行にまとめる。
+    BLOCK_AFTER = 5
+    ng_streak = defaultdict(int)   # ホスト -> 続けて弾かれた回数
+    blocked = {}                   # ホスト -> 確認できなかった本数
+    blocked_where = {}             # ホスト -> それを引いていたページ
+
+    def host_of(u):
+        m = re.match(r"https?://([^/]+)", u)
+        return m.group(1) if m else u
+
     for i, (url, where) in enumerate(items, 1):
         if i % 20 == 0:
             print(f"    {i}/{len(items)} 件...")
+
+        host = host_of(url)
+        if host in blocked:
+            blocked[host] += 1
+            continue
+
         code = fetch_status(url)
 
         # 404/410 だけが「本当に消えた」。403・405・429・202 は
         # 相手がボット避けで返しているだけのことが多く、ブラウザでは開ける。
         # ここでエラーにすると、生きている出典を消す圧力になるので警告に留める。
         if code in (404, 410):
+            ng_streak[host] = 0
             dead += 1
             for w in where:
                 rep.error(w, "リンク", f"出典URLが {code} を返します", f"       {url}")
+        elif code in (202, 403, 429):
+            ng_streak[host] += 1
+            if ng_streak[host] >= BLOCK_AFTER:
+                blocked[host] = ng_streak[host]
+                blocked_where[host] = where[0]
+                print(f"    {host} に弾かれたので、このホストは打ち切ります")
+                time.sleep(0.4)
+                continue
+            for w in where:
+                rep.warn(w, "リンク", f"出典URLが {code} を返しました(ブラウザでは開けることが多い)",
+                         f"       {url}")
         elif isinstance(code, int) and code >= 400:
+            ng_streak[host] = 0
             for w in where:
                 rep.warn(w, "リンク", f"出典URLが {code} を返しました(ブラウザでは開けることが多い)",
                          f"       {url}")
         elif not isinstance(code, int):
+            ng_streak[host] += 1
             for w in where:
                 rep.warn(w, "リンク", f"出典URLに接続できませんでした", f"       {url} / {code}")
+        else:
+            ng_streak[host] = 0
         time.sleep(0.4)   # レート制限を避ける
+
+    for host, n in sorted(blocked.items()):
+        rep.warn(blocked_where[host], "リンク",
+                 f"{host} が点検を弾いています。このホストの出典{n}本は確認できませんでした",
+                 "       生きていないという意味ではありません。ブラウザでは開けます。"
+                 "確かめるなら https://archive.org/wayback/available?url=... を使います")
     print(f"    完了。生きていないURL: {dead}件")
 
 

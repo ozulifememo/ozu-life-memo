@@ -5,8 +5,24 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Thu, 03 Sep 2026 20:03:13 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 04 Sep 2026 21:43:49 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>南海トラフの確率のもとは、江戸時代の古文書だった。「竿」の解釈で1.4mか1.9mか変わる</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/nankai-kakuritsu-murotsu.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/nankai-kakuritsu-murotsu.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:00:00 +0900</pubDate>
+      <description>南海トラフ地震の発生確率は、高知県室戸市・室津港の隆起量から計算されている。その根拠は江戸時代の史料で、測量に使った竿の解釈しだいで数値が変わる。確率が動いた本当の理由をたどる。</description>
+      <category>防災</category>
+    </item>
+    <item>
+      <title>「南海トラフ80%」の横に「20〜50%」が並んだ。国が確率を2つ出した理由</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/nankai-kakuritsu-2tsu.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/nankai-kakuritsu-2tsu.html</guid>
+      <pubDate>Fri, 04 Sep 2026 09:00:00 +0900</pubDate>
+      <description>南海トラフ地震の30年以内発生確率は、2025年9月に「60〜90%程度以上」と「20〜50%」の併記になった。南海トラフだけが他の地震と違う計算式を使っている理由と、大洲市議会での使われ方を追う。</description>
+      <category>防災</category>
+    </item>
     <item>
       <title>防犯灯の電気代は1灯で年2,400円。市は1円も出していない</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-bohantou-denkidai.html</link>
@@ -254,23 +270,6 @@
       <description>1日4,300食つくれる大洲市学校給食センター。市の見込みでは令和18年度に1,765食まで減る。空いた調理能力を高校生や高齢者に回せないのか、議会の3年間の経緯と法律の壁を調べた。</description>
       <category>子育て・教育</category>
       <category>議会・行政</category>
-    </item>
-    <item>
-      <title>愛媛に5人の気象のプロ。大洲市は「今のところ雇わない」と答えた</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/kishou-bosai-advisor.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/kishou-bosai-advisor.html</guid>
-      <pubDate>Sun, 30 Aug 2026 09:00:00 +0900</pubDate>
-      <description>気象庁が育てる「気象防災アドバイザー」。大洲市長は有意義と認めつつ活用は想定しないと答弁した。制度の中身、置いた自治体で何が変わったか、大洲の避難情報がいま何で決まっているかを調べた。</description>
-      <category>防災</category>
-      <category>議会・行政</category>
-    </item>
-    <item>
-      <title>大洲市役所の窓口にある丸いイヤホン。あれは500年ぶりの発見だった</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/nankotsu-dendo-earphone.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/nankotsu-dendo-earphone.html</guid>
-      <pubDate>Sun, 30 Aug 2026 09:00:00 +0900</pubDate>
-      <description>大洲市役所の窓口に置かれた軟骨伝導イヤホン。提案から3か月で設置された経緯を会議録で追い、2004年に見つかった「第3の聴覚経路」という科学史と、全国1,879か所への広がりを調べた。</description>
-      <category>医療・福祉</category>
     </item>
   </channel>
 </rss>

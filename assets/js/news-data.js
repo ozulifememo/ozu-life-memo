@@ -36,6 +36,24 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "nankai-kakuritsu-murotsu",
+    date: "2026-09-04",
+    title: "南海トラフの確率のもとは、江戸時代の古文書だった。「竿」の解釈で1.4mか1.9mか変わる",
+    category: "shiten",
+    source: "地震調査委員会「南海トラフの地震活動の長期評価(第二版一部改訂)」ほか",
+    sourceDate: "2025-09-26",
+    tags: ["防災"],
+  },
+  {
+    slug: "nankai-kakuritsu-2tsu",
+    date: "2026-09-04",
+    title: "「南海トラフ80%」の横に「20〜50%」が並んだ。国が確率を2つ出した理由",
+    category: "shiten",
+    source: "地震調査委員会「南海トラフの地震活動の長期評価(第二版一部改訂)」ほか",
+    sourceDate: "2025-09-26",
+    tags: ["防災"],
+  },
+  {
     slug: "ozu-bohantou-denkidai",
     date: "2026-09-03",
     title: "防犯灯の電気代は1灯で年2,400円。市は1円も出していない",

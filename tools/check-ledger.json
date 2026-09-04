@@ -4881,6 +4881,46 @@
         }
       ]
     },
+    "nankai-kakuritsu-2tsu": {
+      "path": "eachnews/nankai-kakuritsu-2tsu.html",
+      "checks": [
+        {
+          "date": "2026-09-04",
+          "level": "human",
+          "by": "opus",
+          "result": "一次資料を自分で開いて裏取り",
+          "hash": "977ff8104044",
+          "note": "地震本部の長期評価PDF(121ページ)を自分で開き、第4章と説明文第4章の該当箇所を読んで数字を確認。気象庁の解説資料と確率値一覧PDFでも突き合わせた。経過率0.90=80年÷88.2年は自分で計算し、その旨を本文に明記している"
+        },
+        {
+          "date": "2026-09-04",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "977ff8104044"
+        }
+      ]
+    },
+    "nankai-kakuritsu-murotsu": {
+      "path": "eachnews/nankai-kakuritsu-murotsu.html",
+      "checks": [
+        {
+          "date": "2026-09-04",
+          "level": "human",
+          "by": "opus",
+          "result": "一次資料を自分で開いて裏取り",
+          "hash": "fdd85ecb92e6",
+          "note": "地震本部の長期評価PDF(121ページ)を自分で開き、第4章と説明文第4章の該当箇所を読んで数字を確認。気象庁の解説資料と確率値一覧PDFでも突き合わせた。経過率0.90=80年÷88.2年は自分で計算し、その旨を本文に明記している"
+        },
+        {
+          "date": "2026-09-04",
+          "level": "machine",
+          "by": "check_site.py",
+          "result": "問題なし",
+          "hash": "fdd85ecb92e6"
+        }
+      ]
+    },
     "nankotsu-dendo-earphone": {
       "path": "eachnews/nankotsu-dendo-earphone.html",
       "checks": [

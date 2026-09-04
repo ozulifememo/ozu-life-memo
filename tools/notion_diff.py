@@ -54,7 +54,7 @@ old_str にすると、そのまま「同期できているか」の判定にな
 ## 何を見るか
 
   ずれ    … 行単位の差分(本文が違う)
-  化け    … Notion側にだけ現れる文字(冄・熀・戰 のような字)
+  化け    … **サイト219本のどこにも出てこない文字**(冄・熀・戰・繀 のような字)
   数字    … 数字を出現順に総当たりで照合。1個でも違えばエラー
   切れ    … 末尾の一文が一致するか(本文が途中で終わっていないか)
   出典    … リンクの本数と、URLそのものが一致するか
@@ -98,8 +98,18 @@ def numbers(text: str) -> list:
 
 
 def body_of(md: str) -> str:
-    """出典calloutを除いた本文"""
-    return md.split("<callout")[0].rstrip()
+    """出典calloutを除いた本文
+
+    calloutは末尾にあるとは限らない。Notionの古いページは**先頭**に置いている
+    ことがある(2026-09-05に実測。61本中かなりの数がそうだった)。
+    最初は `split("<callout")[0]` にしていたので、先頭型のページは本文が空と
+    判定され、「数字0個」「末尾が違う」という嘘の差分が大量に出た。
+    どこにあっても取り除く。
+    """
+    out = re.sub(r"<callout\b.*?</callout>", "", md, flags=re.S)
+    # 閉じタグが無い書き方(末尾で切れている等)にも一応備える
+    out = re.sub(r"<callout\b.*$", "", out, flags=re.S)
+    return out.strip()
 
 
 def links_of(md: str) -> list:
@@ -151,6 +161,26 @@ def cmd_prepare(args) -> int:
     return 0
 
 
+_SITE_CHARS = None
+
+
+def site_charset() -> set:
+    """サイトの記事219本で実際に使われている文字の全体集合(1度だけ作る)"""
+    global _SITE_CHARS
+    if _SITE_CHARS is None:
+        cs = set()
+        for d in ("eachnews", "jiyu-kenkyu", "book"):
+            for f in (REPO / d).glob("*.html"):
+                cs |= set(re.sub(r"<[^>]+>", "", f.read_text(encoding="utf-8", errors="replace")))
+        _SITE_CHARS = cs
+    return _SITE_CHARS
+
+
+def strip_tags_rough(s: str) -> str:
+    """Notion側の書式タグ(<empty-block/> など)を落とす"""
+    return re.sub(r"<[^>]+>", "", s)
+
+
 def compare(slug: str, want: str, got: str) -> list:
     """1本ぶんの突き合わせ。見つけた問題を並べて返す"""
     ng = []
@@ -174,13 +204,21 @@ def compare(slug: str, want: str, got: str) -> list:
         else:
             ng.append(("数字", "個数が違います: 正 %d個 / Notion %d個" % (len(wn), len(gn)), ""))
 
-    # 2. 化け(Notion側にだけ出る文字)
-    extra = sorted(set(gb) - set(wb))
-    # 空白や記号のゆれは無視
-    extra = [c for c in extra if not c.isspace() and c not in "　"]
+    # 2. 化け
+    #
+    # 最初は「その記事の正しい本文に無い文字」を全部疑っていたが、それだと
+    # Notion特有のタグ(<empty-block/>など)のASCIIや、単に版が違うだけの
+    # 普通の漢字まで拾ってしまい、61本で45件の大半が誤検知だった(2026-09-05)。
+    #
+    # いまは **サイト219本のどこにも出てこない文字** だけを疑う。
+    # 日本語の記事に一度も現れない字が入っていたら、まず書き込み時の化けである。
+    # この方式に変えたら、61本から本物の11か所(沖縄→沖繀、高知→高睑、炉→瀉など)
+    # だけが残った。
+    extra = sorted({c for c in strip_tags_rough(gb)
+                    if c not in site_charset() and not c.isspace()})
     if extra:
-        ng.append(("化け", "Notion側にだけある文字: %s" % " ".join(extra),
-                   "       元の本文に無い字が入っています。書き込み時の化けの疑いがあります"))
+        ng.append(("化け", "サイトのどこにも無い文字が入っています: %s" % " ".join(extra),
+                   "       書き込み時の化けです。見た目が近い別の字に変わっています"))
 
     # 3. 切れ
     if last_line(want) != last_line(got):
@@ -284,7 +322,10 @@ def selftest() -> int:
             "</callout>")
     cases = [
         ("数字", base.replace("約１億8,500万円", "約1冄4,500万円")),
-        ("化け", base.replace("総務92人", "総牲92人")),
+        # 「化け」は、サイトのどこにも出てこない字でないと検知できない。
+        # 「牲」のような普通の字はサイトのどこかで使われているので不可。
+        # 実際に起きた化け(沖縄→沖繀)を、そのままテストに使う。
+        ("化け", base.replace("総務92人", "総繀92人")),
         ("切れ", base.replace("これで終わりである。\n", "")),
         ("出典", base.replace("https://example.com/b", "https://example.com/c")),
         # 「ずれ」は最後の砦なので、他の検査に引っかからない壊し方で試す。
@@ -302,6 +343,14 @@ def selftest() -> int:
     clean = not compare("test", base, base)
     print("    [%s] 同じ本文を誤検知しない" % ("OK " if clean else "NG "))
     ok = ok and clean
+
+    # calloutが先頭にあるNotionページを、誤検知しないか。
+    # 2026-09-05、ここを見落として61本ぶんの嘘の差分を出した。
+    head, tail = base.split("<callout", 1)
+    flipped = "<callout" + tail + "\n" + head.rstrip()
+    same = not compare("test", base, flipped)
+    print("    [%s] 出典calloutが先頭にあっても誤検知しない" % ("OK " if same else "NG "))
+    ok = ok and same
     print()
     if ok:
         print("  自己診断OK。この道具の結果は信用して大丈夫です。\n")

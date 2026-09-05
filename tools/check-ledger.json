@@ -10820,6 +10820,33 @@
         }
       ]
     },
+    "ozu-ramenshop-nazo": {
+      "path": "eachnews/ozu-ramenshop-nazo.html",
+      "checks": [
+        {
+          "date": "2026-09-06",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "bd32f527e391",
+          "note": "営業日と休業の記述は、選挙ドットコムの投稿2件(2026-05-09と2026-06-17)を自分で開いて原文を確認。人名が出ないURLだけを出典にし、本文にも名前は書いていない。卸の噂は裏が取れず、探した先を本文に列挙。チェーンの仕組み(椿食堂管理が本部で麺やスープの素を製造、義務ではない)と森製麺所の実在を噂の元の候補として示した。冒頭の個人的な回想は匿名性のため削除"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "machine",
+          "by": "opus",
+          "result": "エラー0",
+          "hash": "bd32f527e391"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "numbers",
+          "by": "opus",
+          "result": "数字13個すべて照合済み",
+          "hash": "bd32f527e391"
+        }
+      ]
+    },
     "ozu-reform-hojo": {
       "path": "eachnews/ozu-reform-hojo.html",
       "checks": [

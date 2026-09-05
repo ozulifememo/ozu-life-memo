@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-ramenshop-nazo",
+    date: "2026-09-06",
+    title: "週2日しか開かないラーメン屋が大洲にある。営業日は月と木の昼だけで、いまは休業していた",
+    category: "shiten",
+    source: "大洲市議会議員のSNS投稿ほか",
+    sourceDate: "2026-06-17",
+    tags: ["産業・農業", "まちづくり"],
+  },
+  {
     slug: "ozu-furui-mise",
     date: "2026-09-06",
     title: "大洲でいちばん古い店は1624年の菓子屋。ただし1688年創業の割烹に、1617年の記録もある",

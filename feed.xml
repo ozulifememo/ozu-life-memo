@@ -5,8 +5,17 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Sun, 06 Sep 2026 00:58:58 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 06 Sep 2026 01:03:01 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>週2日しか開かないラーメン屋が大洲にある。営業日は月と木の昼だけで、いまは休業していた</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-ramenshop-nazo.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-ramenshop-nazo.html</guid>
+      <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
+      <description>東大洲のラーメンショップKANTO大洲店が週に1〜2日しか開いていない、という話を調べた。営業日は特定できたが、「そこで麺やスープを作って他店に卸している」という噂は裏が取れなかった。</description>
+      <category>産業・農業</category>
+      <category>まちづくり</category>
+    </item>
     <item>
       <title>大洲でいちばん古い店は1624年の菓子屋。ただし1688年創業の割烹に、1617年の記録もある</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-furui-mise.html</link>
@@ -260,15 +269,6 @@
       <description>広報おおずの印刷製本費は年1,128万円。市が最後に公表した発行部数1万8,000部で割ると1冊52円になる。広告主が5円を肩代わりし、残りは税金。ところが配ってくれる区長さんへの対価は、10年前に交付金へ溶けて金額を取り出せなくなっていた。</description>
       <category>議会・行政</category>
       <category>財政・税金</category>
-    </item>
-    <item>
-      <title>大洲市の公用車は176台。そのうち電気自動車は3台だった</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-koyosha-ev.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-koyosha-ev.html</guid>
-      <pubDate>Thu, 03 Sep 2026 09:00:00 +0900</pubDate>
-      <description>環境省の令和7年度調査で、大洲市の一般公用車は176台、うちEV3台・ハイブリッド19台と分かった。電動化率12.5パーセントは県内11市で2位だがEV比率は6位。市の削減目標40.9パーセントのうち24.4パーセント分は電力会社の取組頼みであることも計画本編から確認した。</description>
-      <category>議会・行政</category>
-      <category>交通・インフラ</category>
     </item>
   </channel>
 </rss>

@@ -1114,6 +1114,72 @@ def check_requests(path, html, rep):
             return
 
 
+# ── 文量が足りない記事を挙げる(目安・警告) ──────────────────────
+# 本人の指示(2026-09-06):
+#   「3000文字以内の記事は内容を増やす。僕の好みにあったこと。文献数を
+#     増やす。ただ文章を増やして薄くすることは絶対に許さない。
+#     無理なら無理と言ってくれる方がよい。僕が質問を考える」
+#
+# **これはエラーにしない。** エラーにすると「検査を通すために文章を
+# 水増しする」圧力が生まれ、本人がいちばん嫌がっていることが起きる。
+# 2026-08-29の教訓(1文150字の警告を消すために事実の強さが歪んだ)と
+# 同じ構図なので、ここは警告にとどめる。
+#
+# 警告が出たら、やることは3つのうちどれか。
+#   1. 本人が知りたがる問い(なんでそうなったの/他ではどうなの/
+#      で、結局どうなったの/いくらかかるの)を立てて、調べて足す
+#   2. 出典を増やして裏を厚くする
+#   3. **これ以上は調べても出てこない、と正直に伝える**
+# 3が正解のことがある。そのときは無理に伸ばさない。
+TANBUN = 3000
+
+
+def body_chars(html):
+    """記事の本文の字数(空白を除く)。要点3行から出典欄の手前まで"""
+    body = body_only(html)
+    m = re.search(r'(<div class="article-summary".*?)<div class="content-block source-box"',
+                  body, re.S)
+    return len(re.sub(r"\s", "", strip_tags(m.group(1) if m else body)))
+
+
+def check_length(path, html, rep, collect=None):
+    """本文が短い記事を挙げる(目安)
+
+    collect にリストを渡すと、警告を出さずにそこへ溜める。
+    全記事を回すときに1本ずつ警告を出すと、他の警告が埋もれるため。
+    """
+    if page_type(path) not in ("article", "kenkyu"):
+        return
+    n = body_chars(html)
+    if n >= TANBUN:
+        return
+    src = len(re.findall(r"source-link", html))
+    if collect is not None:
+        collect.append((n, rel(path), src))
+        return
+    rep.warn(rel(path), "文量",
+             "本文が%d字です(目安の%d字より%d字少ない / 出典%d本)" % (n, TANBUN, TANBUN - n, src),
+             "       中身を足せるなら足す。足せないなら、そう伝える。\n"
+             "       文章だけ増やして薄くするのは、いちばんやってはいけないこと")
+
+
+def report_length(short, rep):
+    """溜めた「短い記事」を、1件の警告にまとめて出す"""
+    if not short:
+        return
+    short.sort()
+    lines = ["       短い順に。\n"]
+    for n, p, src in short[:8]:
+        lines.append("         %5d字 出典%2d本  %s\n" % (n, src, p))
+    if len(short) > 8:
+        lines.append("         ほか %d本\n" % (len(short) - 8))
+    lines.append("       中身を足せるなら足す。足せないなら、そう伝える。\n")
+    lines.append("       文章だけ増やして薄くするのは、いちばんやってはいけないこと")
+    rep.warn("(記事ぜんぶ)", "文量",
+             "本文が%d字に満たない記事が %d本あります" % (TANBUN, len(short)),
+             "".join(lines))
+
+
 # ── 取材していないのに「取材した」と書かない(関所) ────────────────
 # 本人の指摘(2026-09-06):「『大洲市に確認したところ』。これ、確認して
 # いないよね。嘘つかないで。」
@@ -1765,6 +1831,7 @@ EXPECTED = [
     ("約束", "あとで追記する"),
     ("要望", "市への要望"),
     ("取材", "していない取材"),
+    ("文量", "本文が"),
     ("メモう", "原本"),
     ("メモう", "書きかけ"),
     ("レビュー卓", "作り直されていません"),
@@ -1836,6 +1903,7 @@ def run_selftest() -> int:
                 check_promises(p, html, rep)
                 check_requests(p, html, rep)
                 check_shuzai(p, html, rep)
+                check_length(p, html, rep)
                 check_memou_sync(p, html, rep)
                 check_links(p, html, rep)
                 check_title_numbers(p, html, rep)
@@ -1945,6 +2013,7 @@ def main():
     id_map = collect_ids(all_pages)
 
     rep = Report()
+    short = []          # 文量が足りない記事を溜める(最後にまとめて1件出す)
 
     for p in pages:
         html = read(p)
@@ -1966,10 +2035,13 @@ def main():
         check_promises(p, html, rep)
         check_requests(p, html, rep)
         check_shuzai(p, html, rep)
+        check_length(p, html, rep, short)
         check_memou_sync(p, html, rep)
         check_links(p, html, rep)
         check_title_numbers(p, html, rep)
         check_sources(p, html, rep)
+
+    report_length(short, rep)
 
     if not args.slug and not args.changed:
         check_review_fresh(all_pages, rep)

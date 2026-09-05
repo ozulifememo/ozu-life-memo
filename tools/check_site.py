@@ -930,12 +930,18 @@ def check_article_registry_sync(path, html, registry, rep):
 
     # 「調べた資料 N本」= 実際の出典リンク数
     m = re.search(r'class="article-summary-sources">調べた資料\s*(\d+)本', body)
+    actual = len(re.findall(r'class="source-link"', body))
     if m:
-        actual = len(re.findall(r'class="source-link"', body))
         if int(m.group(1)) != actual:
             rep.error(rel(path), "出典",
                       f"「調べた資料 {m.group(1)}本」が実際の出典数({actual}本)と違います",
                       "       出典を増減させたら、この数字も直す")
+    else:
+        # 2026-09-06、丸ごと無い記事が3本あった。数え合わせの検査が素通りしていた
+        rep.error(rel(path), "出典",
+                  "要点ボックスに「調べた資料 N本」がありません",
+                  f"       ラベルの中に <span class=\"article-summary-sources\">"
+                  f"調べた資料 {actual}本</span> を足す")
 
     if reg:
         # 掲載日の表記(2026/08/30 と 2026年8月30日 の両形式を許す。後ろの注記も許す)
@@ -1828,6 +1834,7 @@ EXPECTED = [
     ("誤字", "かぎかっこ"),
     ("誤字", "句点"),
     ("出典", "1本"),
+    ("出典", "調べた資料"),
     ("出典", "news.yahoo.co.jp"),
     ("表現", "知ってほしい"),
     ("約束", "あとで追記する"),

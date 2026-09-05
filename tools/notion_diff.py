@@ -289,6 +289,76 @@ def cmd_check(args) -> int:
     return 1 if total_ng else 0
 
 
+_SITE_COUNT = None
+
+
+def site_charcount():
+    """サイトの記事で、その字が何回使われているかの表(1度だけ作る)"""
+    global _SITE_COUNT
+    if _SITE_COUNT is None:
+        import collections
+        c = collections.Counter()
+        for d in ("eachnews", "jiyu-kenkyu", "book"):
+            for f in (REPO / d).glob("*.html"):
+                c.update(re.sub(r"<[^>]+>", "",
+                                f.read_text(encoding="utf-8", errors="replace")))
+        _SITE_COUNT = c
+    return _SITE_COUNT
+
+
+# サイトでこれ以下しか出てこない字を「珍しい」とみなす
+RARE = 8
+# 化ける前の字はよく使う字のはず。これ以上出てくる字だけを候補にする
+COMMON = 20
+
+
+def hex_neighbors(ch: str) -> list:
+    """その字とコードポイントが16進1桁だけ違う字を並べる"""
+    n = ord(ch)
+    if n > 0xFFFF:
+        return []
+    out = []
+    for pos in range(4):
+        shift = pos * 4
+        cur = (n >> shift) & 0xF
+        for d in range(16):
+            if d == cur:
+                continue
+            m = (n & ~(0xF << shift)) | (d << shift)
+            if 0x3000 <= m <= 0x9FFF or 0xFF00 <= m <= 0xFFEF:
+                out.append(chr(m))
+    return out
+
+
+def hex_neighbor_suspects(text: str) -> list:
+    """「16進を1桁書き間違えた」形の化けを探す。
+
+    サイトに一度も出てこない字を探す方法には穴がある。化けた先が
+    サイトでも使う字だと素通りしてしまう。2026-09-05、四国新幹線の記事の
+    メモ欄で「綱引き」が「綿引き」になっていた例がそれで、綿はサイトに
+    1回だけ出てくるので見つからなかった(綱 U+7DB1 / 綿 U+7DBF)。
+
+    そこで、珍しい字を見つけたら、コードポイントが16進1桁だけ違う字を
+    総当たりし、その中にサイトでよく使う字があれば候補として挙げる。
+    これは「疑わしい」であって「化けている」ではない。人が読んで決める。
+    """
+    cnt = site_charcount()
+    out = []
+    for m in re.finditer(r"[぀-鿿]", text):
+        ch = m.group()
+        c = cnt.get(ch, 0)
+        if c > RARE:
+            continue
+        for nb in hex_neighbors(ch):
+            k = cnt.get(nb, 0)
+            if k >= COMMON and k >= max(10 * c, 10):
+                j = m.start()
+                out.append((ch, c, nb, k,
+                            re.sub(r"\s+", " ", text[max(0, j - 20):j + 20])))
+                break
+    return out
+
+
 def cmd_props(args) -> int:
     """Notionの「プロパティ欄」の化けを探す
 
@@ -315,7 +385,24 @@ def cmd_props(args) -> int:
                 re.sub(r"\s+", " ", t[max(0, j - 25):j + 25])))
             hit += 1
     print("---")
-    print("%d件を点検 / 疑わしい文字 %d個" % (len(rows), hit))
+    print("%d件を点検 / サイトに無い文字 %d個" % (len(rows), hit))
+
+    # 「化けた先もサイトで使う字」の型。これは疑いであって断定ではない
+    print()
+    print("[参考] コードポイントが16進1桁違いで、よく使う字に化けている疑い")
+    print("       (珍しい字が挙がるだけのこともある。読んで判断すること)")
+    n2 = 0
+    seen = set()
+    for r in rows:
+        for ch, c, nb, k, ctx in hex_neighbor_suspects(r.get("text") or ""):
+            key = (r.get("slug"), ch, ctx)
+            if key in seen:
+                continue
+            seen.add(key)
+            print("  %s / %s : %s(%d回) → %s(%d回) かも … %s"
+                  % (r.get("slug"), r.get("field"), ch, c, nb, k, ctx))
+            n2 += 1
+    print("  疑い %d個" % n2)
     return 1 if hit else 0
 
 
@@ -405,6 +492,16 @@ def selftest() -> int:
     print("    [%s] プロパティ欄の化けを検知し、正しい方は誤検知しない"
           % ("OK " if pgood else "NG "))
     ok = ok and pgood
+
+    # 「化けた先もサイトで使う字だった」型。字の珍しさだけでは見つからない。
+    # 2026-09-05、綱引き→綿引き(綱 U+7DB1 / 綿 U+7DBF)がこれで、綿はサイトに
+    # 1回出てくるので素通りしていた。16進1桁違いの総当たりで捕まえる。
+    hits = [h[0] for h in hex_neighbor_suspects("規格の綿引きと維持費")]
+    clean2 = hex_neighbor_suspects("規格の綱引きと維持費")
+    ngood = "綿" in hits and not clean2
+    print("    [%s] 16進1桁違いの化けを見つけ、正しい方は挙げない"
+          % ("OK " if ngood else "NG "))
+    ok = ok and ngood
 
     print()
     if ok:

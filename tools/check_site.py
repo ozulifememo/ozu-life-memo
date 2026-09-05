@@ -1114,6 +1114,68 @@ def check_requests(path, html, rep):
             return
 
 
+# ── 取材していないのに「取材した」と書かない(関所) ────────────────
+# 本人の指摘(2026-09-06):「『大洲市に確認したところ』。これ、確認して
+# いないよね。嘘つかないで。」
+#
+# このサイトは公開資料だけで書いている。電話も訪問もしていない。
+# それなのに「市に確認したところ」と書くと、読者は「この人は市に
+# 問い合わせたんだ」と受け取る。**それは読者への嘘になる。**
+# しかも、いちばんまずいのは、書いた本人が忘れることだ。
+# 実際、2026-09-06に全記事を洗ったら1本だけ残っていた。
+#
+# 見逃してよい形が3つあるので、そこは通す。
+#   1. 否定  … 「市に確認したわけではないので断定はしない」
+#   2. 読者への案内 … 「行く前に電話で確認するのが確実だと思う」
+#   3. 他者の取材 … 「愛媛シルクが2021年に取材した時点」
+SHUZAI_WHO = ("市", "大洲市", "市役所", "県", "国", "担当課", "担当者",
+              "窓口", "漁協", "組合", "会社", "業者", "学校", "教育委員会")
+# 「やった」と言い切っている形だけを拾う。「尋ねないと分からない」のような
+# 打ち消しを拾わないよう、動詞の活用まで含めて書く
+SHUZAI_DO = ("確認した", "確認して", "確認しました",
+             "問い合わせた", "問い合わせて", "問い合わせました",
+             "取材した", "取材して", "取材しました",
+             "聞いてみた", "聞いてみると", "聞いたところ",
+             "尋ねた", "尋ねたところ", "伺った", "伺ったところ")
+# 否定・仮定。やっていないと分かる形
+SHUZAI_NOT = ("わけではない", "していない", "できていない", "していません",
+              "かもしれない", "たいところ", "たいと思う", "予定", "つもり",
+              "ば分かる", "れば", "なかった", "できない", "できず",
+              "ないと", "ないため", "ないので", "ずに", "べきだ", "必要がある")
+# 読者に向けた案内。「あなたが確認して」の形
+SHUZAI_READER = ("するよう", "してほしい", "するのが", "してください", "すると",
+                 "したい方", "が確実", "を勧め", "してみて")
+# 他の人・他の媒体がやった取材
+SHUZAI_OTHER = ("が取材", "の取材", "が確認", "が問い合わせ", "による取材",
+                "が聞い", "の聞き取り", "が実施した")
+
+
+def check_shuzai(path, html, rep):
+    """やっていない取材を、やったように書いていないか(関所)"""
+    if page_type(path) not in ("article", "book", "kenkyu"):
+        return
+    jibun = strip_quotes(strip_tags(body_only(html)))
+    for sent in re.split(r"(?<=。)", jibun):
+        sent = sent.strip()
+        if not sent or not any(w + "に" in sent for w in SHUZAI_WHO):
+            continue
+        if any(x in sent for x in SHUZAI_NOT):
+            continue
+        if any(x in sent for x in SHUZAI_READER):
+            continue
+        if any(x in sent for x in SHUZAI_OTHER):
+            continue
+        for d in SHUZAI_DO:
+            if d in sent:
+                rep.error(rel(path), "取材",
+                          "していない取材を、したように書いています",
+                          "       " + sent[:80] + "\n"
+                          "       このサイトは公開資料だけで書いている。\n"
+                          "       条例や資料で確かめたなら、そう書く\n"
+                          "       (例:「大洲市税条例を通しで確認したところ」)")
+                return
+
+
 # new_kiji.py が新しい記事に置く見本の文。これが残っていたら書きかけ
 MEMOU_PLACEHOLDER = ("ひとこと1行目", "記事の入口をやわらかく",
                      "数字か意外な事実をひとつ")
@@ -1636,6 +1698,7 @@ BROKEN_SAMPLE = """<!DOCTYPE html>
 <p>予讃線の電車のことを、大洲に住んでいる人にも知ってほしい。</p>
 <p>日程は公表されていなかった。分かり次第、この記事に追記したい。</p>
 <p>市には、この結果をもっと早く公表してほしい。</p>
+<p>この点は大洲市に問い合わせて確認した。</p>
 <p>肘川という誤字と、かぎかっこの開きだけ「ここに置く。ダミーの句点。。</p>
 <p><a href="#sonzai-shinai-id">行き先の無いページ内リンク</a></p>
 <p><a href="https://drive.google.com/file/d/xxxx" target="_blank">個人ストレージへのリンク</a></p>
@@ -1701,6 +1764,7 @@ EXPECTED = [
     ("表現", "知ってほしい"),
     ("約束", "あとで追記する"),
     ("要望", "市への要望"),
+    ("取材", "していない取材"),
     ("メモう", "原本"),
     ("メモう", "書きかけ"),
     ("レビュー卓", "作り直されていません"),
@@ -1771,6 +1835,7 @@ def run_selftest() -> int:
                 check_phrasing(p, html, rep)
                 check_promises(p, html, rep)
                 check_requests(p, html, rep)
+                check_shuzai(p, html, rep)
                 check_memou_sync(p, html, rep)
                 check_links(p, html, rep)
                 check_title_numbers(p, html, rep)
@@ -1900,6 +1965,7 @@ def main():
         check_phrasing(p, html, rep)
         check_promises(p, html, rep)
         check_requests(p, html, rep)
+        check_shuzai(p, html, rep)
         check_memou_sync(p, html, rep)
         check_links(p, html, rep)
         check_title_numbers(p, html, rep)

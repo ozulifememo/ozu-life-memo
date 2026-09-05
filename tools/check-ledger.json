@@ -496,6 +496,20 @@
           "result": "push済み・公開ページと一致を確認",
           "hash": "357bab7361c9",
           "note": "公開サイトのHTMLと手元のファイルをハッシュで突き合わせ、35本すべて完全一致を確認した"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "machine",
+          "by": "opus",
+          "result": "エラー0",
+          "hash": "47ac1a547d1d"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "numbers",
+          "by": "opus",
+          "result": "OK",
+          "hash": "47ac1a547d1d"
         }
       ]
     },
@@ -5029,6 +5043,20 @@
           "result": "push済み・公開ページと一致を確認",
           "hash": "5e5684e8690f",
           "note": "公開サイトのHTMLと手元のファイルをハッシュで突き合わせ、35本すべて完全一致を確認した"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "machine",
+          "by": "opus",
+          "result": "エラー0",
+          "hash": "8722a1ba01b8"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "numbers",
+          "by": "opus",
+          "result": "OK",
+          "hash": "8722a1ba01b8"
         }
       ]
     },
@@ -5962,6 +5990,20 @@
           "result": "push済み・公開ページと一致を確認",
           "hash": "39c2d34d6f6d",
           "note": "公開サイトのHTMLと手元のファイルをハッシュで突き合わせ、35本すべて完全一致を確認した"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "machine",
+          "by": "opus",
+          "result": "エラー0",
+          "hash": "76ab73591f4f"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "numbers",
+          "by": "opus",
+          "result": "OK",
+          "hash": "76ab73591f4f"
         }
       ]
     },
@@ -13746,6 +13788,20 @@
           "result": "数字65個中 3個が出典に見つからず(出典7/7本)",
           "hash": "22d2ed796dde",
           "note": "要確認: 19,231世、5,570万、5,773万"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "machine",
+          "by": "opus",
+          "result": "エラー0",
+          "hash": "26bc2cf9a9e0"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "numbers",
+          "by": "opus",
+          "result": "OK",
+          "hash": "26bc2cf9a9e0"
         }
       ]
     },

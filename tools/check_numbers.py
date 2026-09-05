@@ -88,6 +88,77 @@ CALC_MARKS = ("÷", "×", "=", "≈", "≒", "検算", "割ると", "掛ける",
               "換算", "計算", "ずつ")
 
 
+# ---------------------------------------------------------------------------
+# 漢数字
+# ---------------------------------------------------------------------------
+
+_KAN_D = {"〇": "0", "零": "0", "一": "1", "二": "2", "三": "3", "四": "4",
+          "五": "5", "六": "6", "七": "7", "八": "8", "九": "9"}
+_KAN_UNIT = {"十": 10, "百": 100, "千": 1000}
+_KAN_BIG = {"万": 10 ** 4, "億": 10 ** 8, "兆": 10 ** 12}
+
+# 「三十日」のように、後ろに来ると数だと分かる字。
+# これを付けないと「十分(=じゅうぶん)」まで 10分 に化けてしまう
+_KAN_TAIL = ("億", "万", "円", "人", "名", "件", "戸", "棟", "世帯", "台", "校",
+             "所", "年", "月", "日", "回", "倍", "割", "点", "位", "歳", "%",
+             "匹", "頭", "本", "冊", "社", "席", "室", "館", "店", "番",
+             "パーセント", "ヘクタール", "メートル", "キロ", "ha", "km", "分の")
+
+
+def _kan_value(s: str) -> int:
+    """「三百八十三」「一億二千万」を数に直す"""
+    total, section, digit = 0, 0, 0
+    for ch in s:
+        if ch in _KAN_D:
+            digit = digit * 10 + int(_KAN_D[ch])
+        elif ch in _KAN_UNIT:
+            section += (digit or 1) * _KAN_UNIT[ch]
+            digit = 0
+        elif ch in _KAN_BIG:
+            total += (section + digit) * _KAN_BIG[ch]
+            section = digit = 0
+    return total + section + digit
+
+
+def kansuji_to_arabic(text: str) -> str:
+    """出典の中の漢数字を算用数字にした写しを作る。
+
+    愛媛県史のような資料は「八四五名」「三〇九億円」と縦書き用の漢数字で
+    書かれている。記事は算用数字で書くので、字面が合わず「出典に無い」と
+    出てしまう(2026-09-05、松下寿の記事で実際に3個そう出た。目で見ると
+    ちゃんと載っていた)。人が毎回確かめ直すのは無駄なので機械に持たせる。
+
+    安全側に倒してある。裸の「一」「三」は数に直さない(「一部」「三つ」を
+    壊さないため)。位取りのある形と1文字の形は、後ろに単位が来ている
+    ときだけ直す(「十分」を 10分 にしないため)。
+    """
+    tail = "|".join(re.escape(t) for t in _KAN_TAIL)
+    D = "〇零一二三四五六七八九"
+
+    # 1. 小数「九五・四%」。中黒が小数点として使われている形
+    def _dec(m):
+        a = "".join(_KAN_D[c] for c in m.group(1))
+        b = "".join(_KAN_D[c] for c in m.group(2))
+        return a + "." + b
+
+    text = re.sub(r"([" + D + r"]{2,})・([" + D + r"]+)", _dec, text)
+    text = re.sub(r"([" + D + r"])・([" + D + r"]+)(?=" + tail + ")", _dec, text)
+
+    # 2. 「八四五」のように漢数字が2つ以上並んだもの(位取りなし)
+    text = re.sub(r"[" + D + r"]{2,}",
+                  lambda m: "".join(_KAN_D[c] for c in m.group()), text)
+
+    # 3. 「三百八十三匹」「七月」のように、後ろの単位で数だと分かる形
+    pat = re.compile(r"[" + D + r"十百千万億兆]+(?=" + tail + ")")
+
+    def _mix(m):
+        w = m.group()
+        v = _kan_value(w)
+        return str(v) if v or w in ("〇", "零") else w
+
+    return pat.sub(_mix, text)
+
+
 def variants(digits: str) -> set:
     """同じ量の別の書き方を作る。
 
@@ -436,6 +507,7 @@ def check_article(path, session, verbose=True):
     substantial = fetched - len(thin)
 
     missing, calculated, other_form = [], [], []
+    kan = None   # 漢数字を直した写し。使う記事だけで作る(全部作ると遅い)
     for n in numbers:
         if not haystack:
             break
@@ -449,6 +521,15 @@ def check_article(path, session, verbose=True):
         hit = next((v for v in variants(n["digits"]) if v in haystack), None)
         if hit:
             n["as"] = hit
+            other_form.append(n)
+            continue
+        # 出典が漢数字で書いている場合(愛媛県史など)。要るときだけ作る
+        if kan is None:
+            kan = kansuji_to_arabic(haystack)
+        hit = next((v for v in variants(n["digits"]) | {n["digits"]}
+                    if v in kan), None)
+        if hit:
+            n["as"] = hit + "(出典は漢数字)"
             other_form.append(n)
             continue
         missing.append(n)
@@ -469,6 +550,54 @@ def check_article(path, session, verbose=True):
     }
 
 
+# ---------------------------------------------------------------------------
+# 自己診断
+# ---------------------------------------------------------------------------
+
+# 左が出典に書かれている形、右が直ったあとに含まれていてほしい字面。
+# 右が None のものは「直してはいけない」= そのまま残っていてほしいもの。
+# 直しすぎると、出典に無い数字まで「載っている」ことになってしまう。
+# それは見落としを生むので、直さない側のほうが大事。
+EXPECTED_KAN = [
+    ("八四五名が働いていた",        "845名"),
+    ("三〇九億円のうち三〇四億円",  "309億円"),
+    ("九五・四%",                   "95.4%"),
+    ("三百八十三匹が幼齢個体",      "383匹"),
+    ("約二万三千人",                "23000"),
+    ("平成三十年七月豪雨",          "30年7月"),
+    ("千人あたり二七・六人",        "27.6人"),
+    # ここから下は直してはいけないもの
+    ("十分に注意してほしい",        None),
+    ("一部の地域では",              None),
+    ("三つの案が出た",              None),
+    ("四国の中で",                  None),
+    ("大洲・内子・長浜",            None),
+    ("一方で",                      None),
+]
+
+
+def selftest() -> int:
+    print("\n  自己診断: 漢数字の直し方が壊れていないか試します...\n")
+    ok = True
+    for src, want in EXPECTED_KAN:
+        got = kansuji_to_arabic(src)
+        if want is None:
+            good = got == src
+            what = "そのまま残す"
+        else:
+            good = want in got
+            what = "→ " + want
+        print("    [%s] %-22s %-14s %s" % ("OK " if good else "NG ", src, what,
+                                           "" if good else "実際: " + got))
+        ok = ok and good
+    print()
+    if ok:
+        print("  自己診断OK。%d件すべて期待どおりです。\n" % len(EXPECTED_KAN))
+        return 0
+    print("  自己診断に失敗しました。照合結果を信用しないでください。\n")
+    return 1
+
+
 def main():
     ap = argparse.ArgumentParser(description="記事の数字が出典に載っているか照合する")
     ap.add_argument("--slug", help="この記事だけ照合する")
@@ -478,6 +607,8 @@ def main():
                     help="本文が薄い出典を、ブラウザで開き直して取り込む(時間がかかる)")
     ap.add_argument("--index", action="store_true",
                     help="いまの出典の中身を控える(あとで書き換わりを見るため)")
+    ap.add_argument("--selftest", action="store_true",
+                    help="この道具自体が壊れていないか試す")
     ap.add_argument("--watch", action="store_true",
                     help="出典を取り直して、中身が変わっていないか見る(月次点検用)")
     args = ap.parse_args()
@@ -487,6 +618,8 @@ def main():
     except Exception:
         pass
 
+    if args.selftest:
+        return selftest()
     if args.render:
         return render_thin_sources(args.limit)
     if args.index:

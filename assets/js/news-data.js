@@ -1437,7 +1437,7 @@ const OZU_NEWS = [
   {
     slug: "michi-ijihi",
     date: "2026-04-03",
-    sourceDate: "2026-03-01",
+    sourceDate: "2026-02-16",
     title: "大洲は道が多すぎる？ 道路の維持費という見えない出費",
     category: "shiten",
     source: "note",

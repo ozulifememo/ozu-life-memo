@@ -6153,6 +6153,33 @@
         }
       ]
     },
+    "kyushoku-taberarenai-ko": {
+      "path": "eachnews/kyushoku-taberarenai-ko.html",
+      "checks": [
+        {
+          "date": "2026-09-05",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "acac2f671de7",
+          "note": "文科省の調査PDFの第2表と課題の表を画像にして目で読み、285,081人と22/722を確認。市議会の答弁は令和8年3月定例会1・2・4日目、令和7年3月・令和6年3月の原文を確認。11万5,000円の2人分は公表単価からの逆算であることを本文に明記"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "opus",
+          "result": "エラー0",
+          "hash": "acac2f671de7"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "opus",
+          "result": "数字48個 / 出典に無いもの0個",
+          "hash": "acac2f671de7"
+        }
+      ]
+    },
     "machizukuri-hyosho": {
       "path": "eachnews/machizukuri-hyosho.html",
       "checks": [

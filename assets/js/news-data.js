@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "kyushoku-taberarenai-ko",
+    date: "2026-09-05",
+    title: "給食が無料になっても、食べられない子には1円も届かない。大洲は11万5,000円を置いた",
+    category: "shiten",
+    source: "大洲市議会 令和8年3月定例会 会議録ほか",
+    sourceDate: "2026-03-01",
+    tags: ["子育て・教育", "議会・行政"],
+  },
+  {
     slug: "ozu-kuchikiki-kiroku",
     date: "2026-09-05",
     title: "市役所は議員の「お願い」を記録しているか。大洲市は9年前に「検討する」と答えた",

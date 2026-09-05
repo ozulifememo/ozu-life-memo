@@ -5,8 +5,17 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Sat, 05 Sep 2026 23:19:26 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 05 Sep 2026 23:27:42 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>給食が無料になっても、食べられない子には1円も届かない。大洲は11万5,000円を置いた</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/kyushoku-taberarenai-ko.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/kyushoku-taberarenai-ko.html</guid>
+      <pubDate>Sat, 05 Sep 2026 09:00:00 +0900</pubDate>
+      <description>令和8年4月、小学校の給食費が全国一律で無償になった。ただしアレルギーなどで給食を食べられない子には届かない。大洲市はそこに新しい補助金を作った。予算は11万5,000円。</description>
+      <category>子育て・教育</category>
+      <category>議会・行政</category>
+    </item>
     <item>
       <title>市役所は議員の「お願い」を記録しているか。大洲市は9年前に「検討する」と答えた</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kuchikiki-kiroku.html</link>
@@ -259,15 +268,6 @@
       <description>大洲市職員の残業は1人あたり月6.3時間で全国の市区町村平均の6割弱。部署別実績は非公表だが、予算書の事業別内訳57か所を集計すると、時間外勤務手当9,160万円のうち18.9パーセントが選挙関係だった。2018年7月の豪雨の月は1人47時間だった。</description>
       <category>議会・行政</category>
       <category>財政・税金</category>
-    </item>
-    <item>
-      <title>20年で240人減らしたのに、大洲市の職員は1,000人あたりでは減っていない</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-shokuinsu-kenai-hikaku.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-shokuinsu-kenai-hikaku.html</guid>
-      <pubDate>Thu, 03 Sep 2026 09:00:00 +0900</pubDate>
-      <description>大洲市の職員は640人。県内20市町を人口1,000人あたりで並べると9番目に多い。20年で240人(27パーセント)減らしたが、人口も26パーセント減ったため、市民1,000人あたりの職員密度はほぼ変わっていない。隣には会計年度任用職員568人がいる。</description>
-      <category>議会・行政</category>
-      <category>人口減少</category>
     </item>
   </channel>
 </rss>

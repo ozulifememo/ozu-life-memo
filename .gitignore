@@ -72,3 +72,5 @@ _*.json
 tools/_notion_diff/
 # PDFを画像にした作業用。大きいのでリポジトリには入れない
 tools/_pdf_yomu/
+
+tools/_houjin_cache/

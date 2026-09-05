@@ -5,8 +5,17 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Sat, 05 Sep 2026 23:52:15 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 06 Sep 2026 00:02:23 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大洲の法人1,607件を全部数えた。もう無いのは189件、うち66件は1月のある日にまとめて消えた</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-houjin-kiesaki.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-houjin-kiesaki.html</guid>
+      <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
+      <description>国税庁が公開している法人番号のデータで、大洲市にある法人1,607件を全部数えた。189件はすでに登記が閉じられていて、その消え方には3通りあった。</description>
+      <category>産業・農業</category>
+      <category>合併・地域</category>
+    </item>
     <item>
       <title>大洲でいちばん古いホームページを探した。市の1年前に、人口1,100人の村が出していた</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-furui-homepage.html</link>
@@ -260,14 +269,6 @@
       <description>大洲市に汎用の住宅リフォーム補助はなく、令和8年度予算に「リフォーム」の語は1度も出てこない。あるのは耐震・ブロック塀・空き家など目的別の補助だ。要綱の除外規定と予算の枠、そして市が15年間「耐震を最優先」と答え続けてきた経緯まで調べた。</description>
       <category>空き家・住宅</category>
       <category>防災</category>
-    </item>
-    <item>
-      <title>候補者の主張が載った紙が、大洲にはなかった。今年4月、初めて配られた</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-senkyo-kouhou.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-senkyo-kouhou.html</guid>
-      <pubDate>Thu, 03 Sep 2026 09:00:00 +0900</pubDate>
-      <description>大洲市には選挙公報がなかった。2026年4月26日の市長選で初めて発行。壁は制度ではなく「7日間」の選挙期間と印刷所の納期で、原稿受付の前倒しと「紙より先にPDF」で越えた。市議会の会議録と国の資料でたどる。</description>
-      <category>議会・行政</category>
     </item>
   </channel>
 </rss>

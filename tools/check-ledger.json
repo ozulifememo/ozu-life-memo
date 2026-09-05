@@ -8983,6 +8983,33 @@
         }
       ]
     },
+    "ozu-houjin-kiesaki": {
+      "path": "eachnews/ozu-houjin-kiesaki.html",
+      "checks": [
+        {
+          "date": "2026-09-06",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "267382eb76c1",
+          "note": "国税庁の愛媛県分CSV(53,300件)を自分で集計。数え方は tools/houjin.py に残し、誰でも作り直せるようにした。閉鎖日が年1日に集中していることは県全体2,681件でも確認。みなし解散の仕組みは法務省のページで裏取り。個人名由来の社名は本文に出さず、産業史として意味のある名前(農業會・養蚕・製蝋・炭・製材・醤油・酒)だけを挙げた"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "machine",
+          "by": "opus",
+          "result": "OK",
+          "hash": "267382eb76c1"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "numbers",
+          "by": "opus",
+          "result": "OK",
+          "hash": "267382eb76c1"
+        }
+      ]
+    },
     "ozu-inuneko-hikitori": {
       "path": "eachnews/ozu-inuneko-hikitori.html",
       "checks": [

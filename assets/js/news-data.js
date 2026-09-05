@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-houjin-kiesaki",
+    date: "2026-09-06",
+    title: "大洲の法人1,607件を全部数えた。もう無いのは189件、うち66件は1月のある日にまとめて消えた",
+    category: "shiten",
+    source: "国税庁 法人番号公表サイト（令和8年8月31日更新）ほか",
+    sourceDate: "2026-08-31",
+    tags: ["産業・農業", "合併・地域"],
+  },
+  {
     slug: "ozu-furui-homepage",
     date: "2026-09-05",
     title: "大洲でいちばん古いホームページを探した。市の1年前に、人口1,100人の村が出していた",

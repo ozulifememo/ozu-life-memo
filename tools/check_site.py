@@ -1180,6 +1180,53 @@ def check_memou_sync(path, html, rep):
                   + Path(path).stem)
 
 
+REVIEW_BUILT = Path(__file__).resolve().parent / "review-built.json"
+
+
+def review_fingerprint(pages) -> str:
+    """レビュー卓に入る本文の指紋。build_review.py と同じ数え方をする"""
+    import hashlib
+    h = hashlib.sha1()
+    for p in sorted(pages, key=lambda x: rel(x)):
+        if page_type(p) not in ("article", "kenkyu", "book"):
+            continue
+        h.update(rel(p).encode("utf-8"))
+        h.update(body_only(read(p)).encode("utf-8"))
+    return h.hexdigest()
+
+
+def check_review_fresh(pages, rep):
+    """レビュー卓が、いまの記事より古くないか(関所)
+
+    レビュー卓(claude.ai のアーティファクト)は、**作った時点の記事のコピー**を
+    中に持っている。記事を直しても卓は勝手に追いつかない。
+
+    2026-09-05に実際に起きた。記事を7本直してサイトには反映したのに、
+    卓が古いままで、本人が卓を開いて「なおってないんだけど」と気づいた。
+    **本人が気づくまで分からない形の事故**だったので、機械に移した。
+
+    直し方は3つ。
+      1. python tools/build_review.py
+      2. Artifact ツールで _review-src.html を同じURLに publish
+      3. これで review-built.json が更新され、この検査は消える
+    """
+    if not REVIEW_BUILT.exists():
+        return
+    try:
+        want = json.loads(REVIEW_BUILT.read_text(encoding="utf-8")).get("fingerprint")
+    except Exception:
+        return
+    if not want:
+        return
+    got = review_fingerprint(pages)
+    if got != want:
+        rep.error("tools/review-built.json", "レビュー卓",
+                  "記事を直したのに、レビュー卓が作り直されていません",
+                  "       卓は作った時点のコピーを持つので、勝手には追いつきません" + "\n"
+                  "       python tools/build_review.py を走らせて、" + "\n"
+                  "       _review-src.html を同じURLに publish してください")
+
+
 def check_promises(path, html, rep):
     """果たす保証のない「あとで追記します」を書かない(関所)
 
@@ -1656,6 +1703,7 @@ EXPECTED = [
     ("要望", "市への要望"),
     ("メモう", "原本"),
     ("メモう", "書きかけ"),
+    ("レビュー卓", "作り直されていません"),
     ("文章", "1文が"),
     ("事実", "電車"),
     ("タイトル", "策定"),
@@ -1727,6 +1775,7 @@ def run_selftest() -> int:
                 check_links(p, html, rep)
                 check_title_numbers(p, html, rep)
                 check_sources(p, html, rep)
+            check_review_fresh(pages, rep)   # 卓が古いかを見る検査も試す
             check_registry_orphans(registry, pages, rep)
             check_registry_file(registry, rep)
             # コミットメッセージの検査(gitを叩かずに、文面だけ渡して確かめる)
@@ -1857,6 +1906,7 @@ def main():
         check_sources(p, html, rep)
 
     if not args.slug and not args.changed:
+        check_review_fresh(all_pages, rep)
         check_registry_orphans(registry, all_pages, rep)
         check_repo_anonymity(rep)
         check_commit_messages(rep)
@@ -1864,6 +1914,9 @@ def main():
         check_feed(registry, rep)
         check_sitemap_targets(sitemap, rep)
     if args.changed:
+        # 記事に手が入ったなら、レビュー卓が置いていかれていないかも見る
+        if pages:
+            check_review_fresh(all_pages, rep)
         # 台帳・sitemap・RSSに手が入っているときは、その整合も見る(公開作業の消し忘れ対策)
         if "assets/js/news-data.js" in changed_files:
             check_registry_orphans(registry, all_pages, rep)

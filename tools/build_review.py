@@ -174,4 +174,27 @@ if "[hidden]{display:none!important}" not in html:
     bad.append("hidden を効かせる指定が無い")
 svg = sum(r["body"].count("<svg") for r in rows)
 print("インラインSVG(図解):", svg, "個")
+# ---------------------------------------------------------------- 指紋
+# **記事を直したら、この卓も作り直さないと中身が古いまま残る。**
+# 2026-09-05、記事を7本直したのにこの卓が古いままで、本人が開いて気づいた。
+# 本人が気づくまで分からない形の事故だったので、機械に移した。
+#
+# ここで書く指紋を check_site.py が読み、いまの記事と比べる。
+# ズレていたら「レビュー卓が作り直されていません」で止まる。
+# **数え方は check_site.py の review_fingerprint と同じでなければならない**ので、
+# 自前で数えず、あちらの関数をそのまま呼ぶ。
+import datetime
+sys.path.insert(0, HERE)
+import check_site as _cs
+
+fp = _cs.review_fingerprint(_cs.collect_pages())
+io.open(os.path.join(HERE, "review-built.json"), "w", encoding="utf-8", newline="").write(
+    json.dumps({"fingerprint": fp,
+                "built": datetime.date.today().isoformat(),
+                "メモ": "レビュー卓に入れた記事本文の指紋。check_site.py がこれと"
+                        "いまの記事を比べて、卓が古くなっていたら止める。"
+                        "build_review.py が書く。作り直したら publish も忘れないこと"},
+               ensure_ascii=False, indent=1))
+print("指紋を書きました: tools/review-built.json")
+
 print("点検:", "問題なし" if not bad else bad)

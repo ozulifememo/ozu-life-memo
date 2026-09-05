@@ -1114,6 +1114,54 @@ def check_requests(path, html, rep):
             return
 
 
+MEMOU_LEDGER = Path(__file__).resolve().parent / "memou-ledger.json"
+_MEMOU = None
+
+
+def memou_ledger():
+    """メモうの吹き出しの原本(1度だけ読む)"""
+    global _MEMOU
+    if _MEMOU is None:
+        try:
+            _MEMOU = json.loads(MEMOU_LEDGER.read_text(encoding="utf-8"))
+        except Exception:
+            _MEMOU = {}
+    return _MEMOU
+
+
+def check_memou_sync(path, html, rep):
+    """メモうの吹き出しが、原本(memou-ledger.json)と食い違っていないか(関所)
+
+    吹き出しの文章は tools/memou-ledger.json が原本で、HTMLはそこから
+    apply_memou.py が書き出したもの。**HTMLだけを直すと、次に誰かが
+    apply_memou.py を走らせた瞬間に消える。** 逆に原本だけ直しても
+    公開ページは変わらない。
+
+    2026-09-05に実際に起きた。裏取りで「養蚕農家は1軒」を「2戸」に直したのに、
+    HTMLの吹き出しだけが「1軒」に戻っていた(3本)。公開ページは直った版が
+    出ていて手元が古い、という気づきにくい形だった。
+    どちらを直しても、もう片方を直し忘れたらここで止まる。
+    """
+    if page_type(path) != "article":
+        return
+    m = re.search(r'<div class="memou-intro-bubble">(.*?)</div>', html, flags=re.S)
+    if not m:
+        return
+    parts = [strip_tags(x).strip()
+             for x in re.findall(r"<p>(.*?)</p>", m.group(1), flags=re.S)]
+    got = "\n".join(parts)
+    want = (memou_ledger().get(Path(path).stem) or {}).get("bubble", "")
+    if not want:
+        return
+    if got.strip() != want.strip():
+        rep.error(rel(path), "メモう",
+                  "吹き出しが原本(tools/memou-ledger.json)と違います",
+                  "       ページ: " + got.replace("\n", " / ")[:70] + "\n"
+                  "       原本  : " + want.replace("\n", " / ")[:70] + "\n"
+                  "       原本を直してから python tools/apply_memou.py --slug "
+                  + Path(path).stem)
+
+
 def check_promises(path, html, rep):
     """果たす保証のない「あとで追記します」を書かない(関所)
 
@@ -1517,6 +1565,9 @@ BROKEN_SAMPLE = """<!DOCTYPE html>
   <a class="source-link" href="https://news.yahoo.co.jp/articles/xxxx" target="_blank">消えやすい出典</a>
 </div>
 <p>この記事にはダミー禁止語が入っています。文字化けもあります: �</p>
+<div class="memou-intro-bubble">
+<p>原本とちがう吹き出し。</p>
+</div>
 <p>予讃線の電車のことを、大洲に住んでいる人にも知ってほしい。</p>
 <p>日程は公表されていなかった。分かり次第、この記事に追記したい。</p>
 <p>市には、この結果をもっと早く公表してほしい。</p>
@@ -1585,6 +1636,7 @@ EXPECTED = [
     ("表現", "知ってほしい"),
     ("約束", "あとで追記する"),
     ("要望", "市への要望"),
+    ("メモう", "原本"),
     ("文章", "1文が"),
     ("事実", "電車"),
     ("タイトル", "策定"),
@@ -1622,6 +1674,12 @@ def run_selftest() -> int:
         # なる。自己診断のあいだだけ外す。
         _allow_backup = ALLOW[:]
         ALLOW.clear()
+        # メモうの原本は本物のファイルを読むので、自己診断用の1行を差し込む。
+        # 入れないと「原本に無い記事」として素通りし、見ているつもりで
+        # 見ていない検査になる
+        global _MEMOU
+        _memou_backup = _MEMOU
+        _MEMOU = {"broken": {"bubble": "原本のほうの吹き出し。"}}
         try:
             pages = collect_pages()
             registry = load_registry()
@@ -1646,6 +1704,7 @@ def run_selftest() -> int:
                 check_phrasing(p, html, rep)
                 check_promises(p, html, rep)
                 check_requests(p, html, rep)
+                check_memou_sync(p, html, rep)
                 check_links(p, html, rep)
                 check_title_numbers(p, html, rep)
                 check_sources(p, html, rep)
@@ -1657,6 +1716,7 @@ def run_selftest() -> int:
         finally:
             REPO = real_repo
             ALLOW[:] = _allow_backup
+            _MEMOU = _memou_backup
 
     # ── 部品の自己診断 ────────────────────────────────
     # 「違反を検知するか」とは別に、「正しいものを正しく扱えるか」も見る。
@@ -1772,6 +1832,7 @@ def main():
         check_phrasing(p, html, rep)
         check_promises(p, html, rep)
         check_requests(p, html, rep)
+        check_memou_sync(p, html, rep)
         check_links(p, html, rep)
         check_title_numbers(p, html, rep)
         check_sources(p, html, rep)

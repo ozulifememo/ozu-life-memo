@@ -403,7 +403,7 @@ function layerOf(slug){
   if(r.v === 'drop') return 'kan';
   return 'yari';
 }
-/* やり取りの中の向き。クロコ待ちか、原田さん待ちか */
+/* やり取りの中の向き。クロコ待ちか、本人待ちか */
 function turnOf(slug){
   var r = S[slug] || {}, k = (R[slug] && R[slug].items) || [];
   if(!k.length) return 'kuroko';
@@ -536,7 +536,7 @@ function renderTalk(){
   if(!a || F.layer !== 'yari'){ box.hidden = true; box.innerHTML=''; return; }
   var r = S[a.slug] || {}, ks = (R[a.slug] && R[a.slug].items) || [];
   var h = [];
-  if(r.m) h.push('<div class="card h"><div class="who">原田さん<span class="tm">'+fmtT(r.t)+'</span></div>'+esc(r.m)+'</div>');
+  if(r.m) h.push('<div class="card h"><div class="who">わたし<span class="tm">'+fmtT(r.t)+'</span></div>'+esc(r.m)+'</div>');
   ks.forEach(function(k){
     var kind = KINDLB[k.kind] || 'メモ';
     h.push('<div class="card k t-'+esc(k.kind||'memo')+'">'

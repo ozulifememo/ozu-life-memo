@@ -1066,6 +1066,54 @@ def check_sitemap_targets(sitemap, rep):
                       "       Googleに「存在しないページ」を案内している状態です")
 
 
+# 市への要望を書かない(関所)。運営者の指示(2026-09-04)。
+# 誰に向けた「〜してほしい」なのかで意味が変わるので、判定は狭く作ってある。
+# 読者に向けた案内(「時刻表を確認してほしい」)と、誰かの発言を伝えた文
+# (「補助してほしいという求めに対して」)は、このルールの対象ではない。
+REQ_WHO = ("市", "大洲市", "市役所", "行政", "県", "議会", "市議会", "国")
+REQ_ASK = ("してほしい", "して欲しい", "してもらいたい", "求めたい", "期待したい",
+           "望みたい", "してもらえると助かる", "願いたい", "すべきではないか")
+# 誰かの発言・要望を伝えているだけの文
+REQ_SAYS = ("呼びかけ", "と述べ", "と答弁", "という声", "と話し", "としている",
+            "と語", "という要望", "という求め", "と訴え", "意見が", "声が出て",
+            "と書いて", "と指摘", "と主張", "とある", "と記", "意見書", "と、")
+# 読者に向けた案内。「あなたが〜してみて」の形
+REQ_READER = ("確認", "確かめ", "見", "読ん", "開い", "想像", "考え", "比べ",
+              "試し", "聞い", "調べ", "覚え", "思い出し", "行っ", "使っ", "知っ")
+
+
+def check_requests(path, html, rep):
+    """市への要望を書かない(関所)
+
+    運営者の指示(2026-09-04)。このサイトは調べたことを置く場所であって、
+    行政に注文を付ける場所ではない。「〜してほしい」と書いた瞬間に、
+    記事の立ち位置が「調べた人」から「要求する人」に変わる。
+
+    2026-09-05時点の全記事230本で、この検査は1件も出ない(手で直したあと)。
+    出るとしたら、これから書く記事のほうである。
+    """
+    if page_type(path) not in ("article", "book", "kenkyu"):
+        return
+    jibun = strip_quotes(strip_tags(body_only(html)))
+    for sent in re.split(r"(?<=。)", jibun):
+        sent = sent.strip()
+        if not sent or not any(w in sent for w in REQ_WHO):
+            continue
+        if any(x in sent for x in REQ_SAYS):
+            continue
+        for a in REQ_ASK:
+            i = sent.find(a)
+            if i < 0:
+                continue
+            if any(sent[:i].endswith(r) for r in REQ_READER):
+                continue
+            rep.error(rel(path), "要望",
+                      "市への要望を書いています",
+                      "       " + sent[:80] + "\n"
+                      "       調べた事実だけを書く。注文は付けない")
+            return
+
+
 def check_promises(path, html, rep):
     """果たす保証のない「あとで追記します」を書かない(関所)
 
@@ -1471,6 +1519,7 @@ BROKEN_SAMPLE = """<!DOCTYPE html>
 <p>この記事にはダミー禁止語が入っています。文字化けもあります: �</p>
 <p>予讃線の電車のことを、大洲に住んでいる人にも知ってほしい。</p>
 <p>日程は公表されていなかった。分かり次第、この記事に追記したい。</p>
+<p>市には、この結果をもっと早く公表してほしい。</p>
 <p>肘川という誤字と、かぎかっこの開きだけ「ここに置く。ダミーの句点。。</p>
 <p><a href="#sonzai-shinai-id">行き先の無いページ内リンク</a></p>
 <p><a href="https://drive.google.com/file/d/xxxx" target="_blank">個人ストレージへのリンク</a></p>
@@ -1535,6 +1584,7 @@ EXPECTED = [
     ("出典", "news.yahoo.co.jp"),
     ("表現", "知ってほしい"),
     ("約束", "あとで追記する"),
+    ("要望", "市への要望"),
     ("文章", "1文が"),
     ("事実", "電車"),
     ("タイトル", "策定"),
@@ -1595,6 +1645,7 @@ def run_selftest() -> int:
                 check_style(p, html, rep)
                 check_phrasing(p, html, rep)
                 check_promises(p, html, rep)
+                check_requests(p, html, rep)
                 check_links(p, html, rep)
                 check_title_numbers(p, html, rep)
                 check_sources(p, html, rep)
@@ -1720,6 +1771,7 @@ def main():
         check_style(p, html, rep, show_headings=args.headings)
         check_phrasing(p, html, rep)
         check_promises(p, html, rep)
+        check_requests(p, html, rep)
         check_links(p, html, rep)
         check_title_numbers(p, html, rep)
         check_sources(p, html, rep)

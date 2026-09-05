@@ -1114,6 +1114,10 @@ def check_requests(path, html, rep):
             return
 
 
+# new_kiji.py が新しい記事に置く見本の文。これが残っていたら書きかけ
+MEMOU_PLACEHOLDER = ("ひとこと1行目", "記事の入口をやわらかく",
+                     "数字か意外な事実をひとつ")
+
 MEMOU_LEDGER = Path(__file__).resolve().parent / "memou-ledger.json"
 _MEMOU = None
 
@@ -1149,6 +1153,16 @@ def check_memou_sync(path, html, rep):
         return
     parts = [strip_tags(x).strip()
              for x in re.findall(r"<p>(.*?)</p>", m.group(1), flags=re.S)]
+    # 書きかけのまま公開しないための関所。new_kiji.py が置く見本の文が
+    # 残っていると、読者には「(メモうのひとこと1行目。記事の入口をやわらかく)」
+    # がそのまま見える。2026-09-05、新記事11本すべてがこの状態で、
+    # check_site.py はエラー0を返していた(誰も見ていない場所だった)。
+    for ph in MEMOU_PLACEHOLDER:
+        if any(ph in x for x in parts):
+            rep.error(rel(path), "メモう",
+                      "吹き出しが書きかけの見本のままです",
+                      "       " + " / ".join(parts)[:80])
+            break
     got = "\n".join(parts)
     want = (memou_ledger().get(Path(path).stem) or {}).get("bubble", "")
     if not want:
@@ -1566,7 +1580,7 @@ BROKEN_SAMPLE = """<!DOCTYPE html>
 </div>
 <p>この記事にはダミー禁止語が入っています。文字化けもあります: �</p>
 <div class="memou-intro-bubble">
-<p>原本とちがう吹き出し。</p>
+<p>(メモうのひとこと1行目。記事の入口をやわらかく)</p>
 </div>
 <p>予讃線の電車のことを、大洲に住んでいる人にも知ってほしい。</p>
 <p>日程は公表されていなかった。分かり次第、この記事に追記したい。</p>
@@ -1637,6 +1651,7 @@ EXPECTED = [
     ("約束", "あとで追記する"),
     ("要望", "市への要望"),
     ("メモう", "原本"),
+    ("メモう", "書きかけ"),
     ("文章", "1文が"),
     ("事実", "電車"),
     ("タイトル", "策定"),

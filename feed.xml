@@ -5,8 +5,17 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Sun, 06 Sep 2026 00:13:54 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 06 Sep 2026 00:20:41 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>いもたきの発祥は大洲。でも県内9か所のうち南予は2か所だけで、西条は半額だった</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-imotaki-makete.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-imotaki-makete.html</guid>
+      <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
+      <description>大洲が発祥とされるいもたきは、いま愛媛県内の9か所で行われている。発祥地は負けているのか。開催地・期間・料金を並べて確かめた。</description>
+      <category>観光</category>
+      <category>まちづくり</category>
+    </item>
     <item>
       <title>大洲の麦みそはなぜ甘いのか。愛媛の麦は明治40年に9割が主食で、いまは7割が味噌になっていた</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-mugimiso-shoyu.html</link>
@@ -260,15 +269,6 @@
       <description>大洲市の道の駅は肱川町の清流の里ひじかわ1つだけ。あさもやが道の駅でないのは、駐車場とトイレが24時間開いていないからだ。制度の違いを一次資料で押さえ、交通量と利用者数を比べると、山あいの道の駅のほうがまちなかより車も人も多かった。</description>
       <category>観光</category>
       <category>交通・インフラ</category>
-    </item>
-    <item>
-      <title>マイナ保険証、大洲で使えないのは91か所中2か所。では、何人が使っているのか</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-mynakenkou-riyoritsu.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-mynakenkou-riyoritsu.html</guid>
-      <pubDate>Thu, 03 Sep 2026 09:00:00 +0900</pubDate>
-      <description>大洲市内の保険医療機関・薬局91か所のうちマイナ保険証対応は89か所と自分で数えた。市町村別の利用率は公表されておらず、愛媛県は66.14パーセントで全国39位。「交付率」「登録率」「利用率」が別物であることを、同じ日の大洲市の数字が2通りになる実例で示す。</description>
-      <category>医療・福祉</category>
-      <category>議会・行政</category>
     </item>
   </channel>
 </rss>

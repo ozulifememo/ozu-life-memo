@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-imotaki-makete",
+    date: "2026-09-06",
+    title: "いもたきの発祥は大洲。でも県内9か所のうち南予は2か所だけで、西条は半額だった",
+    category: "shiten",
+    source: "大洲市ホームページ／日本交通公社 全国観光資源台帳ほか",
+    sourceDate: "2026-08-03",
+    tags: ["観光", "まちづくり"],
+  },
+  {
     slug: "ozu-mugimiso-shoyu",
     date: "2026-09-06",
     title: "大洲の麦みそはなぜ甘いのか。愛媛の麦は明治40年に9割が主食で、いまは7割が味噌になっていた",

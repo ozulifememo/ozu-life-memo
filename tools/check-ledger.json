@@ -9010,6 +9010,33 @@
         }
       ]
     },
+    "ozu-imotaki-makete": {
+      "path": "eachnews/ozu-imotaki-makete.html",
+      "checks": [
+        {
+          "date": "2026-09-06",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "de69f89496f6",
+          "note": "県内9か所の会場を地域別に並べ直して、南予が2か所だけであることを確認。西条市の公式ページで料金(予約1500円/当日1700円)と期間を原文で確認し、大洲市観光協会の3,300円/2,000円と比較。日本三大芋煮の来歴(2013年の旅行雑誌『旅の手帖』)は市のページの記述どおり。参加者数の統計は愛媛県の観光統計を当たったが主要観光施設の表に項目が無く、見つけられなかったことを本文に明記"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "machine",
+          "by": "opus",
+          "result": "OK",
+          "hash": "de69f89496f6"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "numbers",
+          "by": "opus",
+          "result": "OK",
+          "hash": "de69f89496f6"
+        }
+      ]
+    },
     "ozu-inuneko-hikitori": {
       "path": "eachnews/ozu-inuneko-hikitori.html",
       "checks": [

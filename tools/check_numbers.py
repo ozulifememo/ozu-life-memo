@@ -433,13 +433,21 @@ def watch_sources(limit=None) -> int:
     return 0
 
 
-def render_thin_sources(limit=None):
-    """本文が薄い出典を、ブラウザで開き直して取り込む"""
+def render_thin_sources(limit=None, slug=None):
+    """本文が薄い出典を、ブラウザで開き直して取り込む
+
+    JavaScriptで中身を描くページは、ふつうに取ると器だけが返ってくる。
+    その出典で裏付けている数字が全部「出典に見つからない」と出てしまう。
+    --slug を付けると、その記事の出典だけを取り直す(全部やると729本あって
+    時間もかかるし、よそのサーバーに負担をかけるため)。
+    """
     from playwright.sync_api import sync_playwright
 
     targets = []
     for p in cs.collect_pages():
         if cs.page_type(p) not in ("article", "kenkyu", "book"):
+            continue
+        if slug and p.stem != slug:
             continue
         html = cs.read(p)
         for u in cs.source_urls(p, html):
@@ -621,7 +629,7 @@ def main():
     if args.selftest:
         return selftest()
     if args.render:
-        return render_thin_sources(args.limit)
+        return render_thin_sources(args.limit, args.slug)
     if args.index:
         return build_index()
     if args.watch:

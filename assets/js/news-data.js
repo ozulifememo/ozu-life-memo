@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-furui-mise",
+    date: "2026-09-06",
+    title: "大洲でいちばん古い店は1624年の菓子屋。ただし1688年創業の割烹に、1617年の記録もある",
+    category: "shiten",
+    source: "大洲ええモンセレクション／大洲市公式観光ガイドほか",
+    sourceDate: "2026-09-06",
+    tags: ["産業・農業", "合併・地域"],
+  },
+  {
     slug: "ozu-imotaki-makete",
     date: "2026-09-06",
     title: "いもたきの発祥は大洲。でも県内9か所のうち南予は2か所だけで、西条は半額だった",

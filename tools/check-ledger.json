@@ -8707,6 +8707,33 @@
         }
       ]
     },
+    "ozu-furui-homepage": {
+      "path": "eachnews/ozu-furui-homepage.html",
+      "checks": [
+        {
+          "date": "2026-09-05",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "9af115151279",
+          "note": "インターネットアーカイブのCDX APIで大洲関係20ドメインの最古スナップショットを実測し、河辺村2000-09-17/長浜町2000-12-08/大洲市2001-09-09/肱川町2002-02-07を確認。各ページの本文も実際に取得して読み、長浜町の開設日2000.11.06と大洲市の公開日8月27日、「テキストテキスト」の残りを原文で確認した。愛媛11市の比較も同じ方法。記録が無い=存在しなかったではないことを本文に明記"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "opus",
+          "result": "OK",
+          "hash": "9af115151279"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "opus",
+          "result": "OK",
+          "hash": "9af115151279"
+        }
+      ]
+    },
     "ozu-furusato-ryushutsu": {
       "path": "eachnews/ozu-furusato-ryushutsu.html",
       "checks": [

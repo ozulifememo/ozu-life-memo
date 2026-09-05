@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-furui-homepage",
+    date: "2026-09-05",
+    title: "大洲でいちばん古いホームページを探した。市の1年前に、人口1,100人の村が出していた",
+    category: "shiten",
+    source: "インターネットアーカイブ（Wayback Machine）ほか",
+    sourceDate: "2000-09-17",
+    tags: ["まちづくり", "合併・地域"],
+  },
+  {
     slug: "ozu-kuri-nakayama",
     date: "2026-09-05",
     title: "栗の生産量は愛媛で1位。なのに有名なのは中山栗。地域ブランド11件に大洲は1つもなかった",

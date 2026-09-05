@@ -1454,7 +1454,7 @@ const OZU_NEWS = [
   {
     slug: "chosei-cost",
     date: "2026-04-25",
-    title: "ホテルの歯ブラシで国内シェア１位。その会社は大洲市新谷にある",
+    title: "ホテルの歯ブラシで国内トップクラス。その会社は大洲市新谷にある",
     category: "shiten",
     source: "note",
     sourceDate: "2026-04-22",
@@ -1712,7 +1712,7 @@ const OZU_NEWS = [
     date: "2026-08-01",
     sourceDate: "2025-01-01",
     sourceDateKind: "報告",
-    title: "大洲城に泊まると160万円？「キャッスルステイ」の仕組みを読む",
+    title: "大洲城に1泊132万円。そのお金はどこへ行くのか、市議会の答弁で分かった",
     category: "shiten",
     source: "東京都立大学大学院 修士論文",
     tags: ["観光"],

@@ -5,8 +5,17 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Sun, 06 Sep 2026 00:02:23 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 06 Sep 2026 00:13:54 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大洲の麦みそはなぜ甘いのか。愛媛の麦は明治40年に9割が主食で、いまは7割が味噌になっていた</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-mugimiso-shoyu.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-mugimiso-shoyu.html</guid>
+      <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
+      <description>大洲のみそ汁は甘い。その甘さの正体を、愛媛県のはだか麦の統計からたどった。麦の使い道が主食から味噌へ入れ替わった歴史と、大洲に残る蔵の数を数えた。</description>
+      <category>産業・農業</category>
+      <category>合併・地域</category>
+    </item>
     <item>
       <title>大洲の法人1,607件を全部数えた。もう無いのは189件、うち66件は1月のある日にまとめて消えた</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-houjin-kiesaki.html</link>
@@ -260,15 +269,6 @@
       <description>大洲市内の保険医療機関・薬局91か所のうちマイナ保険証対応は89か所と自分で数えた。市町村別の利用率は公表されておらず、愛媛県は66.14パーセントで全国39位。「交付率」「登録率」「利用率」が別物であることを、同じ日の大洲市の数字が2通りになる実例で示す。</description>
       <category>医療・福祉</category>
       <category>議会・行政</category>
-    </item>
-    <item>
-      <title>大洲市に「リフォーム補助」はない。耐震なら115万円、空き家なら400万円出る</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-reform-hojo.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-reform-hojo.html</guid>
-      <pubDate>Thu, 03 Sep 2026 09:00:00 +0900</pubDate>
-      <description>大洲市に汎用の住宅リフォーム補助はなく、令和8年度予算に「リフォーム」の語は1度も出てこない。あるのは耐震・ブロック塀・空き家など目的別の補助だ。要綱の除外規定と予算の枠、そして市が15年間「耐震を最優先」と答え続けてきた経緯まで調べた。</description>
-      <category>空き家・住宅</category>
-      <category>防災</category>
     </item>
   </channel>
 </rss>

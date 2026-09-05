@@ -10221,6 +10221,33 @@
         }
       ]
     },
+    "ozu-mugimiso-shoyu": {
+      "path": "eachnews/ozu-mugimiso-shoyu.html",
+      "checks": [
+        {
+          "date": "2026-09-06",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "d928efce1560",
+          "note": "愛媛県農産園芸課のPDFで用途の変遷(明治40年 主食90%/味噌醤油6% → 平成29年 味噌70%)を原文で確認。農水省の県概要PDFで南予の農産物一覧にはだか麦が無いことも確認し、断定を避けた表現にした。大洲の蔵7件は法人番号データを自分で集計。醤油が甘口かどうかは裏が取れなかったので、その旨を本文に明記"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "machine",
+          "by": "opus",
+          "result": "OK",
+          "hash": "d928efce1560"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "numbers",
+          "by": "opus",
+          "result": "OK",
+          "hash": "d928efce1560"
+        }
+      ]
+    },
     "ozu-muryo-chushajo": {
       "path": "eachnews/ozu-muryo-chushajo.html",
       "checks": [

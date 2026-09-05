@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-mugimiso-shoyu",
+    date: "2026-09-06",
+    title: "大洲の麦みそはなぜ甘いのか。愛媛の麦は明治40年に9割が主食で、いまは7割が味噌になっていた",
+    category: "shiten",
+    source: "愛媛県農産園芸課「はだか麦の生産振興と需要拡大について」ほか",
+    sourceDate: "2021-03-01",
+    tags: ["産業・農業", "合併・地域"],
+  },
+  {
     slug: "ozu-houjin-kiesaki",
     date: "2026-09-06",
     title: "大洲の法人1,607件を全部数えた。もう無いのは189件、うち66件は1月のある日にまとめて消えた",

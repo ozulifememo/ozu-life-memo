@@ -159,6 +159,16 @@ figcaption {
   text-wrap: pretty;
 }
 
+/* メモうの吹き出しだけ、この指定から漏れていた。
+   2〜3行の短い文なので pretty より balance のほうが効く。
+   本人の指摘(2026-09-05):「最後の『て。』だけが2行目にある。こういうのは好きではない」。
+   balance は行の長さをならすので、1〜2文字だけ残る形になりにくい。 */
+.memou-intro-bubble p,
+.memou-aside p {
+  text-wrap: balance;
+  word-break: auto-phrase;
+}
+
 /* word-break: auto-phrase は「見出し・短い説明文」だけにかける。
    長い段落にかけると文節の切れ目でしか折り返せず、右端が大きく余って
    かえって行が詰まる(実測: 1行の使用率が91%→84%、行数が12→13に増えた)。 */

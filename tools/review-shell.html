@@ -146,6 +146,56 @@ button,select,input,textarea{font-family:inherit;color:inherit}
   padding:7px 16px;font-size:12px;color:var(--fg2);pointer-events:none;
   opacity:0;transition:opacity .2s}
 #toast.on{opacity:1}
+
+/* ============================================================
+   レイヤー。3つの層で、色も持ち物も変える。
+     未読    … 読む場所。紙が主役。夜の計器みたいな暗い枠
+     やり取り … 話す場所。琥珀。コメントが記事の上に乗る
+     完了    … 探す場所。青灰。静かにして、検索を前に出す
+   ============================================================ */
+body.L-yari{--frame:#1e1a14;--frame2:#292319;--frame3:#362e21;--rule:#4a3f2d;--dim:#a89377}
+body.L-kan {--frame:#141a20;--frame2:#1c242c;--frame3:#26313b;--rule:#334150;--dim:#7f909f}
+body.L-yari #paper{background:#f7f4ec}
+body.L-kan  #paper{background:#f2f4f6}
+
+#layers{display:flex;gap:4px;flex:0 0 auto}
+#layers button{border:1px solid var(--rule);background:transparent;color:var(--dim);
+  border-radius:6px;height:32px;padding:0 9px;font-size:12px;cursor:pointer;
+  display:flex;align-items:center;gap:5px;white-space:nowrap}
+#layers button:hover{color:var(--fg);border-color:#54606d}
+#layers button .n{font-family:var(--mono);font-size:10.5px;opacity:.7}
+#layers button.on{color:#fff;font-weight:700}
+#layers button[data-l=mi].on  {background:#3b4652;border-color:#54606d}
+#layers button[data-l=yari].on{background:#7a5a1e;border-color:#9b7527;color:#fff5e2}
+#layers button[data-l=kan].on {background:#2f4356;border-color:#3f5a72;color:#e6f1fa}
+@media(max-width:700px){#layers button{padding:0 7px;font-size:11px}
+  #layers button .lb{display:none}}
+
+/* ---------- やり取りの帯(記事の上に乗る) ---------- */
+#talk{background:#faf6ea;border-bottom:2px solid #d8c69a;padding:14px 16px 12px}
+#talk .card{max-width:760px;margin:0 auto 10px;border-radius:8px;padding:11px 14px;
+  font-size:13.5px;line-height:1.85;white-space:pre-wrap;word-break:break-word}
+#talk .card:last-child{margin-bottom:0}
+#talk .who{font-size:10.5px;letter-spacing:.06em;font-weight:700;
+  margin-bottom:5px;display:flex;align-items:center;gap:7px}
+#talk .who .tm{font-weight:400;letter-spacing:0;opacity:.6;font-size:10px;margin-left:auto}
+#talk .h{background:#fff;border:1px solid #e0d3b0;color:#3a3223}
+#talk .h .who{color:#8a6a1c}
+#talk .k{background:#eef4f8;border:1px solid #c6d8e4;color:#22303a}
+#talk .k .who{color:#3d6f92}
+#talk .k .kind{border:1px solid currentColor;border-radius:3px;padding:0 5px;font-size:9.5px}
+#talk .k.t-naosita  .kind{color:#2f7a4a}
+#talk .k.t-shinai   .kind{color:#7a6a2f}
+#talk .k.t-nakatta  .kind{color:#8a5a3a}
+#talk .k.t-handan   .kind{color:#8a3a5a}
+#talk .none{max-width:760px;margin:0 auto;font-size:12px;color:#8a7a55;text-align:center;padding:6px}
+
+/* ---------- 完了の画面 ---------- */
+body.L-kan #bot .v{display:none}
+#kanbar{display:none;align-items:center;gap:8px;flex:1 1 auto;min-width:0}
+body.L-kan #kanbar{display:flex}
+#kanq{flex:1 1 auto;min-width:0;height:38px;background:var(--frame2);
+  border:1px solid var(--rule);border-radius:6px;padding:0 12px;font-size:13px}
 </style>
 <style id="sitecss">__SITECSS__</style>
 <style>
@@ -160,6 +210,11 @@ button,select,input,textarea{font-family:inherit;color:inherit}
 
 <div id="top">
   <button id="btn-list" class="ic" title="一覧 (L)" aria-label="一覧">☰</button>
+  <div id="layers">
+    <button data-l="mi"><span class="lb">未読</span><span class="n">0</span></button>
+    <button data-l="yari"><span class="lb">やり取り</span><span class="n">0</span></button>
+    <button data-l="kan"><span class="lb">完了</span><span class="n">0</span></button>
+  </div>
   <span id="pos" class="mono">—</span>
   <span id="crumb"></span>
   <div id="progwrap">
@@ -170,6 +225,7 @@ button,select,input,textarea{font-family:inherit;color:inherit}
   <button id="btn-help" class="ic" title="キーの一覧 (?)">?</button>
 </div>
 
+<div id="talk" hidden></div>
 <div id="paper"></div>
 
 <div id="memo" hidden>
@@ -182,6 +238,7 @@ button,select,input,textarea{font-family:inherit;color:inherit}
   <button class="v" data-v="ok"><span class="mk">◯</span><span class="lb">そのまま</span></button>
   <button class="v" data-v="fix"><span class="mk">△</span><span class="lb">直す</span></button>
   <button class="v" data-v="drop"><span class="mk">✕</span><span class="lb">下げる</span></button>
+  <div id="kanbar"><input id="kanq" type="search" placeholder="完了した記事から探す"></div>
   <button id="memobtn">メモ</button>
   <button class="nav" id="next" title="次 (→)" aria-label="次の記事">›</button>
 </div>
@@ -254,7 +311,9 @@ var LSKEY = 'ozu-review-v1';
 var S = {};            /* slug -> {v:'ok'|'fix'|'drop', m:memo, t:時刻} */
 var DB = null;
 var ORDER = [], cur = 0, lastPos = 0;
-var F = {kind:'', state:'todo', tag:'', q:'', sort:'old'};
+var R = {};            /* slug -> {items:[{kind,text,t,re}]}  クロコからの返事 */
+var F = {kind:'', layer:'mi', tag:'', q:'', sort:'old'};
+var LAYERS = [['mi','未読'],['yari','やり取り'],['kan','完了']];
 var dim = 0;
 
 var $ = function(s){return document.querySelector(s)};
@@ -283,7 +342,7 @@ function pushDB(slug){
     var keys = Object.keys(dbQueue); dbQueue = {};
     keys.forEach(function(k){
       var r = S[k];
-      var p = r ? DB.doc('reviews/'+k).set({v:r.v||'', m:r.m||'', t:r.t||0})
+      var p = r ? DB.doc('reviews/'+k).set({v:r.v||'', m:r.m||'', t:r.t||0, done:r.done?1:0})
                 : DB.doc('reviews/'+k).delete();
       p.catch(function(){});
     });
@@ -298,13 +357,25 @@ function mark(slug, patch){
 }
 
 /* ---------- サーバーの控えと突き合わせる ---------- */
+function pullReplies(){
+  if(!DB) return;
+  DB.collection('replies').get().then(function(snap){
+    var n = 0;
+    snap.docs.forEach(function(d){
+      var v = d.data() || {};
+      if(v.items && v.items.length){ R[d.id] = {items:v.items}; n++; }
+    });
+    if(n){ build(); paint(); renderTalk(); }
+  }).catch(function(){});
+}
 function pullDB(){
+  pullReplies();
   DB.collection('reviews').get().then(function(snap){
     var changed = false;
     snap.docs.forEach(function(d){
       var v = d.data() || {}, k = d.id, mine = S[k];
       if(!mine || (v.t||0) > (mine.t||0)){
-        if(v.v || v.m){ S[k] = {v:v.v||'', m:v.m||'', t:v.t||0}; changed = true; }
+        if(v.v || v.m){ S[k] = {v:v.v||'', m:v.m||'', t:v.t||0, done:!!v.done}; changed = true; }
       }
     });
     /* こちらにしか無いものはサーバーへ送る */
@@ -320,6 +391,25 @@ if(window.claude && window.claude.use){
   window.claude.use('db').then(function(d){ if(d){ DB = d; pullDB(); } }).catch(function(){});
 }
 
+/* ---------- 層の判定 ----------
+   未読    … まだ判定していない
+   やり取り … △を付けて、まだ終わっていない
+   完了    … ◯を付けた、または「これで終わり」にした
+   ✕(下げる)は完了に混ぜず、やり取りにも出さない。別に数える。       */
+function layerOf(slug){
+  var r = S[slug];
+  if(!r || !r.v) return 'mi';
+  if(r.v === 'ok' || r.done) return 'kan';
+  if(r.v === 'drop') return 'kan';
+  return 'yari';
+}
+/* やり取りの中の向き。クロコ待ちか、原田さん待ちか */
+function turnOf(slug){
+  var r = S[slug] || {}, k = (R[slug] && R[slug].items) || [];
+  if(!k.length) return 'kuroko';
+  var last = k[k.length-1].t || 0;
+  return (r.t || 0) > last ? 'kuroko' : 'harada';
+}
 /* ---------- 絞り込みと並び ---------- */
 function done(i){ var r = S[A[i].slug]; return !!(r && r.v); }
 function sortKey(a){
@@ -335,10 +425,8 @@ function build(){
     var a = A[i];
     if(F.kind==='draft'){ if(!a.draft) continue; }
     else if(F.kind && a.kind!==F.kind) continue;
-    if(F.state==='todo' && done(i)) continue;
-    if(F.state==='ok'||F.state==='fix'||F.state==='drop'){
-      var r = S[a.slug]; if(!r || r.v!==F.state) continue;
-    }
+    if(layerOf(a.slug) !== F.layer) continue;
+    if(F.layer==='yari' && F.turn && turnOf(a.slug) !== F.turn) continue;
     if(F.tag && (a.tags||[]).indexOf(F.tag)<0) continue;
     if(q){
       var hit = a.title.toLowerCase().indexOf(q)>=0;
@@ -359,8 +447,8 @@ var MK = {ok:'◯', fix:'△', drop:'✕'};
 var KD = {news:'記事', jk:'自由研究', book:'読書'};
 function renderRows(){
   if(!ORDER.length){
-    rows.innerHTML = '<div class="empty">'+(F.state==='todo'
-      ? 'この条件では、点検していない記事はもうありません。<br>「ぜんぶ」に切り替えると見直せます。'
+    rows.innerHTML = '<div class="empty">'+(F.layer==='mi'
+      ? 'この条件では、まだ読んでいない記事はありません。<br>上の「やり取り」「完了」に切り替えられます。'
       : '当てはまる記事がありません。')+'</div>';
     return;
   }
@@ -419,6 +507,12 @@ function paint(){
     }
     var s = c.querySelector('.n'); if(s) s.textContent = left;
   });
+  /* 層ごとの数 */
+  var LC = {mi:0, yari:0, kan:0};
+  for(var q=0;q<N;q++) LC[layerOf(A[q].slug)]++;
+  document.querySelectorAll('#layers button').forEach(function(b){
+    var e = b.querySelector('.n'); if(e) e.textContent = LC[b.dataset.l];
+  });
   /* 判定ボタン */
   var slug = A[cur] ? A[cur].slug : '', r = S[slug] || {};
   document.querySelectorAll('#bot .v').forEach(function(b){
@@ -426,6 +520,33 @@ function paint(){
   });
   $('#memobtn').classList.toggle('has', !!r.m);
   renderRows();
+}
+
+/* ---------- やり取りの帯 ---------- */
+var KINDLB = {naosita:'直した', shinai:'直していない', nakatta:'見つからなかった',
+              handan:'判断がほしい', memo:'メモ'};
+function fmtT(t){
+  if(!t) return '';
+  var d = new Date(t);
+  return (d.getMonth()+1)+'/'+d.getDate()+' '+('0'+d.getHours()).slice(-2)+':'+('0'+d.getMinutes()).slice(-2);
+}
+function renderTalk(){
+  var box = $('#talk');
+  var a = A[cur];
+  if(!a || F.layer !== 'yari'){ box.hidden = true; box.innerHTML=''; return; }
+  var r = S[a.slug] || {}, ks = (R[a.slug] && R[a.slug].items) || [];
+  var h = [];
+  if(r.m) h.push('<div class="card h"><div class="who">原田さん<span class="tm">'+fmtT(r.t)+'</span></div>'+esc(r.m)+'</div>');
+  ks.forEach(function(k){
+    var kind = KINDLB[k.kind] || 'メモ';
+    h.push('<div class="card k t-'+esc(k.kind||'memo')+'">'
+      + '<div class="who">クロコ<span class="kind">'+esc(kind)+'</span>'
+      + '<span class="tm">'+fmtT(k.t)+'</span></div>' + esc(k.text||'') + '</div>');
+  });
+  if(!ks.length) h.push('<div class="none">クロコはまだ見ていません。</div>');
+  else if(turnOf(a.slug)==='kuroko') h.push('<div class="none">新しいコメントを、クロコはまだ見ていません。</div>');
+  box.innerHTML = h.join('');
+  box.hidden = false;
 }
 
 /* ---------- 記事を出す ---------- */
@@ -441,6 +562,7 @@ function show(i, scroll){
   $('#crumb').textContent = bits.join(' ・ ');
   document.title = pad(i)+' ' + a.title;
   var t = $('#memoT'); t.value = (S[a.slug]||{}).m || '';
+  renderTalk();
   var p = ORDER.indexOf(i); if(p>=0) lastPos = p;
   if(scroll!==false) window.scrollTo(0,0);
   paint();
@@ -508,7 +630,7 @@ function setV(v){
   mark(slug, {v: (r.v === v ? '' : v)});
   var nv = (S[slug]||{}).v;
   build();
-  if(nv && F.state === 'todo' && p >= 0){
+  if(layerOf(slug) !== F.layer && p >= 0){
     /* いまの1本が一覧から抜けるので、同じ位置がそのまま「次」になる */
     if(!ORDER.length){ paint(); toast('この条件は、ぜんぶ見終わりました'); return; }
     var q = Math.min(p, ORDER.length - 1);
@@ -538,17 +660,45 @@ var KINDS = [['','ぜんぶ'],['news','記事'],['jk','自由研究'],['book','�
 $('#fKind').innerHTML = KINDS.map(function(k){
   return '<button class="chip'+(k[0]===F.kind?' on':'')+'" data-k="'+k[0]+'">'+k[1]+'<span class="n"></span></button>';
 }).join('');
-var STATES = [['todo','まだ'],['','ぜんぶ'],['ok','◯'],['fix','△'],['drop','✕']];
-$('#fState').innerHTML = STATES.map(function(k){
-  return '<button class="chip'+(k[0]===F.state?' on':'')+'" data-s="'+k[0]+'">'+k[1]+'</button>';
-}).join('');
+/* 状態の絞り込みは「層」に置き換えた。ここは向き(クロコ待ち/確認待ち)だけ */
+var TURNS = [['','やり取り ぜんぶ'],['kuroko','クロコ待ち'],['harada','見てほしい']];
+function paintTurns(){
+  $('#fState').innerHTML = (F.layer==='yari' ? TURNS.map(function(k){
+    return '<button class="chip'+(k[0]===(F.turn||'')?' on':'')+'" data-s="'+k[0]+'">'+k[1]+'</button>';
+  }).join('') : '');
+}
 $('#fKind').addEventListener('click', function(e){
   var c = e.target.closest('.chip'); if(!c) return;
   F.kind = c.dataset.k; sync('#fKind','k',F.kind); refresh();
 });
 $('#fState').addEventListener('click', function(e){
   var c = e.target.closest('.chip'); if(!c) return;
-  F.state = c.dataset.s; sync('#fState','s',F.state); refresh();
+  F.turn = c.dataset.s; sync('#fState','s',F.turn||''); refresh();
+});
+/* ---------- 層の切り替え ---------- */
+function setLayer(l){
+  F.layer = l; F.turn = '';
+  document.body.className = 'L-' + l;
+  document.querySelectorAll('#layers button').forEach(function(b){
+    b.classList.toggle('on', b.dataset.l === l);
+  });
+  paintTurns();
+  build(); paint();
+  if(ORDER.length) show(ORDER[0]); else { paper.innerHTML =
+    '<div class="rv-hole">'+(l==='mi' ? 'まだ読んでいない記事は、もうありません。'
+      : l==='yari' ? 'やり取り中の記事はありません。'
+      : '完了した記事はまだありません。')+'</div>'; renderTalk(); }
+  try{ localStorage.setItem('ozu-review-layer', l) }catch(e){}
+}
+$('#layers').addEventListener('click', function(e){
+  var b = e.target.closest('button'); if(b) setLayer(b.dataset.l);
+});
+/* 完了の層の検索は下のバーから */
+var kanTimer = null;
+$('#kanq').addEventListener('input', function(){
+  var v = this.value;
+  clearTimeout(kanTimer);
+  kanTimer = setTimeout(function(){ F.q = v; refresh(); if(ORDER.length) show(ORDER[0]); }, 220);
 });
 function sync(sel, at, val){
   document.querySelectorAll(sel+' .chip').forEach(function(c){
@@ -638,6 +788,15 @@ paper.addEventListener('touchend', function(e){
 
 /* ---------- 起動 ---------- */
 loadLocal();
+var L0 = 'mi';
+try{ var sl = localStorage.getItem('ozu-review-layer');
+     if(sl==='mi'||sl==='yari'||sl==='kan') L0 = sl; }catch(e){}
+F.layer = L0;
+document.body.className = 'L-' + L0;
+document.querySelectorAll('#layers button').forEach(function(b){
+  b.classList.toggle('on', b.dataset.l === L0);
+});
+paintTurns();
 build();
 var first = 0;
 try{ var last = localStorage.getItem('ozu-review-last');

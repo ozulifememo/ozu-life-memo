@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-conveni-itsukara",
+    date: "2026-09-06",
+    title: "セブン-イレブンが愛媛に来たのは2014年。43番目の県だった。大洲のコンビニ23店を数えた",
+    category: "shiten",
+    source: "セブン-イレブン・ジャパン／ファミリーマートの公式発表ほか",
+    sourceDate: "2014-02-28",
+    tags: ["産業・農業", "まちづくり"],
+  },
+  {
     slug: "ozu-ramenshop-nazo",
     date: "2026-09-06",
     title: "週2日しか開かないラーメン屋が大洲にある。営業日は月と木の昼だけで、いまは休業していた",

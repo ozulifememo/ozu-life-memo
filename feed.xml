@@ -5,8 +5,17 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Sun, 06 Sep 2026 01:03:01 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 06 Sep 2026 01:17:31 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>セブン-イレブンが愛媛に来たのは2014年。43番目の県だった。大洲のコンビニ23店を数えた</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-conveni-itsukara.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-conveni-itsukara.html</guid>
+      <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
+      <description>大洲にコンビニが最初に来たのはいつか。市単位では分からなかったが、県単位なら公式の記録が残っていた。セブンは2014年、ファミマは2003年。そして大洲の店舗数を数えると、ローソンが半分を占めていた。</description>
+      <category>産業・農業</category>
+      <category>まちづくり</category>
+    </item>
     <item>
       <title>週2日しか開かないラーメン屋が大洲にある。営業日は月と木の昼だけで、いまは休業していた</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-ramenshop-nazo.html</link>
@@ -259,15 +268,6 @@
       <pubDate>Thu, 03 Sep 2026 09:00:00 +0900</pubDate>
       <description>大洲市の火葬料は12歳以上で市内8,000円・市外40,000円と5倍の差。分けているのは住んでいた場所ではなく住民票だ。斎場は合併で引き継いだ4か所あり、95パーセントが肱陵苑に集中。長浜火葬場は「使用不能となった段階で廃止したい」と答弁されている。</description>
       <category>医療・福祉</category>
-      <category>財政・税金</category>
-    </item>
-    <item>
-      <title>「広報おおず」1冊52円。では、配ってくれる区長さんの分はいくらか</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kouhou-genka.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kouhou-genka.html</guid>
-      <pubDate>Thu, 03 Sep 2026 09:00:00 +0900</pubDate>
-      <description>広報おおずの印刷製本費は年1,128万円。市が最後に公表した発行部数1万8,000部で割ると1冊52円になる。広告主が5円を肩代わりし、残りは税金。ところが配ってくれる区長さんへの対価は、10年前に交付金へ溶けて金額を取り出せなくなっていた。</description>
-      <category>議会・行政</category>
       <category>財政・税金</category>
     </item>
   </channel>

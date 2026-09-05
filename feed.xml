@@ -5,8 +5,17 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Sat, 05 Sep 2026 17:45:23 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 05 Sep 2026 19:56:09 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>市役所は議員の「お願い」を記録しているか。大洲市は9年前に「検討する」と答えた</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kuchikiki-kiroku.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kuchikiki-kiroku.html</guid>
+      <pubDate>Sat, 05 Sep 2026 09:00:00 +0900</pubDate>
+      <description>議員から行政への働きかけを記録する制度。全国調査では、記録の要件を「違法・不当なもの」に絞った56自治体のうち記録があったのは4市だけで、要件を絞らない神戸市は3万2千件を超えた。大洲市は2017年3月の議会でこの制度を取り上げ、「判断が難しい」として検討にとどめている。</description>
+      <category>議会・行政</category>
+      <category>まちづくり</category>
+    </item>
     <item>
       <title>大洲市に書店は何軒あるか。数え方を4通り試すと、1軒にも3軒にもなった</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-shoten-nanken.html</link>
@@ -259,15 +268,6 @@
       <description>大洲市の職員は640人。県内20市町を人口1,000人あたりで並べると9番目に多い。20年で240人(27パーセント)減らしたが、人口も26パーセント減ったため、市民1,000人あたりの職員密度はほぼ変わっていない。隣には会計年度任用職員568人がいる。</description>
       <category>議会・行政</category>
       <category>人口減少</category>
-    </item>
-    <item>
-      <title>粗大ごみのシールは1枚1,050円。同じものを自分で運ぶと310円だった</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-sodai-gomi-hikaku.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-sodai-gomi-hikaku.html</guid>
-      <pubDate>Thu, 03 Sep 2026 09:00:00 +0900</pubDate>
-      <description>大洲市の粗大ごみは収集なら1個1,050円、環境センターへ自分で運べば100キロ未満310円。持ち込みは重さで決まるため、まとめて運ぶほど差が開き、実質逆転しない。近隣4市町との比較と、「車がない人だけが1,050円を払う」構図まで調べた。</description>
-      <category>議会・行政</category>
-      <category>財政・税金</category>
     </item>
   </channel>
 </rss>

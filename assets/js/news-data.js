@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-kuchikiki-kiroku",
+    date: "2026-09-05",
+    title: "市役所は議員の「お願い」を記録しているか。大洲市は9年前に「検討する」と答えた",
+    category: "shiten",
+    source: "全国市民オンブズマン連絡会議／大洲市議会会議録／名古屋地裁判決ほか計7本",
+    sourceDate: "2021-09-24",
+    tags: ["議会・行政", "まちづくり"],
+  },
+  {
     slug: "ozu-shoten-nanken",
     date: "2026-09-05",
     title: "大洲市に書店は何軒あるか。数え方を4通り試すと、1軒にも3軒にもなった",

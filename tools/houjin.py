@@ -170,6 +170,21 @@ def report(rows, label: str, names: bool = False) -> None:
                   % (lab, len(a), len(c), 100 * len(c) / len(a)))
 
     print()
+    print("  ・住所の頭で分けた地区ごと(多い順)。どこに会社が集まっているか")
+    AREA = ("新谷", "長浜町", "肱川町", "河辺町", "東大洲", "八多喜町", "菅田町",
+            "平野町", "五郎", "北只", "徳森", "若宮", "中村", "大洲")
+    def area(r):
+        for k in AREA:
+            if r[11].startswith(k):
+                return k
+        return "その他"
+    ac = collections.Counter(area(r) for r in rows)
+    for k, v in ac.most_common():
+        sub = [r for r in rows if area(r) == k]
+        cl = [r for r in sub if r[CLOSED]]
+        print("      %-8s %4d件 / 閉鎖 %3d件 (%.1f%%)" % (k, v, len(cl), 100 * len(cl) / v))
+
+    print()
     print("  ・新しく法人番号がついた年(2015-10-05 の一斉付番より後だけ)")
     new = [r for r in rows if r[ASSIGNED] > "2015-10-06"]
     ny = collections.Counter(r[ASSIGNED][:4] for r in new)

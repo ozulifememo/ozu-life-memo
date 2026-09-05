@@ -106,8 +106,18 @@ def cmd_show(args) -> int:
             if not 0 <= i < n:
                 print("  %dページ目はありません(全%dページ)" % (i + 1, n))
                 continue
-            pm = doc[i].get_pixmap(matrix=fitz.Matrix(ZOOM, ZOOM))
-            f = OUT / ("%s_p%02d.png" % (stem, i + 1))
+            z = args.zoom or ZOOM
+            clip = None
+            if args.crop:
+                # 左上と右下を、ページの幅・高さに対する割合(0〜1)で指定する。
+                # 細かい表は、そこだけ切り出して大きく出さないと数字が読めない
+                a, b, c, d = (float(x) for x in args.crop.split(","))
+                r = doc[i].rect
+                clip = fitz.Rect(r.x0 + r.width * a, r.y0 + r.height * b,
+                                 r.x0 + r.width * c, r.y0 + r.height * d)
+            pm = doc[i].get_pixmap(matrix=fitz.Matrix(z, z), clip=clip)
+            f = OUT / ("%s_p%02d%s.png" % (stem, i + 1,
+                                           "_" + args.crop.replace(",", "-") if args.crop else ""))
             pm.save(f)
             made.append(f)
         print()
@@ -237,6 +247,10 @@ def main() -> int:
     ap.add_argument("target", nargs="?", help="PDFのURL、またはファイルのパス")
     ap.add_argument("--page", type=int, help="このページだけ画像にする(1から数える)")
     ap.add_argument("--all", action="store_true", help="全ページを画像にする")
+    ap.add_argument("--zoom", type=float,
+                    help="拡大率(既定2.0)。細かい表は6くらいにすると読める")
+    ap.add_argument("--crop", metavar="左,上,右,下",
+                    help="ページの一部だけ切り出す。0〜1の割合で指定(例 0.75,0.8,1.0,1.0)")
     ap.add_argument("--list", action="store_true", help="読めないPDFを全部並べる")
     ap.add_argument("--transcribe", metavar="FILE",
                     help="目で読み取った中身(テキストファイル)を出典キャッシュに戻す")

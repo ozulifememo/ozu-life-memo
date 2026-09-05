@@ -1524,7 +1524,7 @@ const OZU_NEWS = [
     slug: "kouhou-2022-seika-bansenso",
     date: "2026-07-27",
     sourceDate: "2022-01-01",
-    title: "2022年、大洲城下に灯った聖火と「盤泉荘」",
+    title: "2021年、大洲城下に灯った聖火と「盤泉荘」",
     category: "shiten",
     source: "広報おおず",
     tags: ["観光", "合併・地域"],

@@ -289,6 +289,36 @@ def cmd_check(args) -> int:
     return 1 if total_ng else 0
 
 
+def cmd_props(args) -> int:
+    """Notionの「プロパティ欄」の化けを探す
+
+    本文だけ見ていると見つからない化けが実際にあった(2026-09-05、
+    クロコ裏取りメモの中で「喜茂別町」が「喊茅別町」になっていた)。
+    メモ欄は誰も読み返さないので、化けたまま何か月も残る。
+
+    入力は JSON の配列。1件は {"slug":..., "field":..., "text":...}。
+    判定はこの道具の本文点検と同じ「サイト219本のどこにも出てこない文字」。
+    """
+    import json as _json
+    rows = _json.loads(Path(args.file).read_text(encoding="utf-8"))
+    cs = site_charset()
+    hit = 0
+    for r in rows:
+        t = r.get("text") or ""
+        for m in re.finditer(r"[^\s]", t):
+            c = m.group()
+            if c in cs:
+                continue
+            j = m.start()
+            print("%s / %s : %r  … %s" % (
+                r.get("slug"), r.get("field"), c,
+                re.sub(r"\s+", " ", t[max(0, j - 25):j + 25])))
+            hit += 1
+    print("---")
+    print("%d件を点検 / 疑わしい文字 %d個" % (len(rows), hit))
+    return 1 if hit else 0
+
+
 def cmd_missing(args) -> int:
     """②に登録されていない記事を出す(スラッグの一覧を渡してもらう方式)"""
     if not args.registered:
@@ -351,6 +381,31 @@ def selftest() -> int:
     same = not compare("test", base, flipped)
     print("    [%s] 出典calloutが先頭にあっても誤検知しない" % ("OK " if same else "NG "))
     ok = ok and same
+
+    # プロパティ欄の点検。本文がきれいでもメモ欄が化けていた実例がある
+    # (2026-09-05、クロコ裏取りメモの「喜茂別町」→「喊茅別町」)。
+    import tempfile
+    import json as _j
+    import argparse as _a
+    with tempfile.NamedTemporaryFile("w", suffix=".json", encoding="utf-8",
+                                     delete=False) as fh:
+        _j.dump([{"slug": "t", "field": "メモ", "text": "全国の良い事例(真庭市・喊茅別町)"},
+                 {"slug": "t", "field": "メモ", "text": "全国の良い事例(真庭市・喜茂別町)"}],
+                fh, ensure_ascii=False)
+        tmp = fh.name
+    buf, sys.stdout = sys.stdout, io.StringIO()
+    try:
+        rc = cmd_props(_a.Namespace(file=tmp))
+        out = sys.stdout.getvalue()
+    finally:
+        sys.stdout = buf
+        Path(tmp).unlink(missing_ok=True)
+    # 化けた側だけが出て、正しい側は出ないこと
+    pgood = rc == 1 and "喊" in out and "喜茂別" not in out
+    print("    [%s] プロパティ欄の化けを検知し、正しい方は誤検知しない"
+          % ("OK " if pgood else "NG "))
+    ok = ok and pgood
+
     print()
     if ok:
         print("  自己診断OK。この道具の結果は信用して大丈夫です。\n")
@@ -374,6 +429,10 @@ def main() -> int:
     p3 = sub.add_parser("missing", help="②に登録されていない記事を出す")
     p3.add_argument("--registered", help="登録済みスラッグを並べたテキスト")
     p3.set_defaults(func=cmd_missing)
+
+    p5 = sub.add_parser("props", help="Notionのプロパティ欄(メモなど)の化けを探す")
+    p5.add_argument("file", help="[{slug,field,text},...] のJSON")
+    p5.set_defaults(func=cmd_props)
 
     p4 = sub.add_parser("selftest", help="この道具自体が壊れていないか試す")
     p4.set_defaults(func=lambda a: selftest())

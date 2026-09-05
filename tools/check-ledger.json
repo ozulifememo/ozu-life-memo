@@ -9871,6 +9871,33 @@
         }
       ]
     },
+    "ozu-kuri-nakayama": {
+      "path": "eachnews/ozu-kuri-nakayama.html",
+      "checks": [
+        {
+          "date": "2026-09-05",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "1649af905a52",
+          "note": "特許庁PDFで愛媛の地域団体商標11件の一覧を確認し、大洲市のものが1件も無いことを確かめた。市議会の会議録は令和5年9月・令和4年6月・平成30年3月・平成27年12月・平成21年6月・平成25年3月・令和7年12月の原文を確認。市町村別の栗の統計が存在しないことも農水省・e-Statで確認して本文に明記"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "machine",
+          "by": "opus",
+          "result": "OK",
+          "hash": "1649af905a52"
+        },
+        {
+          "date": "2026-09-05",
+          "level": "numbers",
+          "by": "opus",
+          "result": "OK",
+          "hash": "1649af905a52"
+        }
+      ]
+    },
     "ozu-kyuson-mei": {
       "path": "jiyu-kenkyu/ozu-kyuson-mei.html",
       "checks": [

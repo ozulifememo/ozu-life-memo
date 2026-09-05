@@ -5,8 +5,17 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Sat, 05 Sep 2026 23:27:42 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 05 Sep 2026 23:40:38 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>栗の生産量は愛媛で1位。なのに有名なのは中山栗。地域ブランド11件に大洲は1つもなかった</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kuri-nakayama.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kuri-nakayama.html</guid>
+      <pubDate>Sat, 05 Sep 2026 09:00:00 +0900</pubDate>
+      <description>大洲市は栗の生産量が愛媛県内1位。それなのに「栗といえば中山」と言われる。この差はどこから来たのかを、市議会の会議録と特許庁の資料で調べた。</description>
+      <category>産業・農業</category>
+      <category>まちづくり</category>
+    </item>
     <item>
       <title>給食が無料になっても、食べられない子には1円も届かない。大洲は11万5,000円を置いた</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/kyushoku-taberarenai-ko.html</link>
@@ -257,15 +266,6 @@
       <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-shitei-kanrisha.html</guid>
       <pubDate>Thu, 03 Sep 2026 09:00:00 +0900</pubDate>
       <description>大洲市が指定管理者に任せている施設を数えると30施設・14団体。制度は平成15年の法改正で生まれ、大洲は合併した平成17年1月から使い始めた。応募ゼロ、使途不明金による指定取消、そして経費削減のための制度が指定管理料の増額へ転じるまでを追う。</description>
-      <category>議会・行政</category>
-      <category>財政・税金</category>
-    </item>
-    <item>
-      <title>大洲市役所の残業代9,160万円。その5分の1は「選挙」に消えていた</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-shiyakusho-zangyo.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-shiyakusho-zangyo.html</guid>
-      <pubDate>Thu, 03 Sep 2026 09:00:00 +0900</pubDate>
-      <description>大洲市職員の残業は1人あたり月6.3時間で全国の市区町村平均の6割弱。部署別実績は非公表だが、予算書の事業別内訳57か所を集計すると、時間外勤務手当9,160万円のうち18.9パーセントが選挙関係だった。2018年7月の豪雨の月は1人47時間だった。</description>
       <category>議会・行政</category>
       <category>財政・税金</category>
     </item>

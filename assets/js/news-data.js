@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-kuri-nakayama",
+    date: "2026-09-05",
+    title: "栗の生産量は愛媛で1位。なのに有名なのは中山栗。地域ブランド11件に大洲は1つもなかった",
+    category: "shiten",
+    source: "大洲市議会 令和5年9月定例会 会議録ほか",
+    sourceDate: "2023-09-01",
+    tags: ["産業・農業", "まちづくり"],
+  },
+  {
     slug: "kyushoku-taberarenai-ko",
     date: "2026-09-05",
     title: "給食が無料になっても、食べられない子には1円も届かない。大洲は11万5,000円を置いた",

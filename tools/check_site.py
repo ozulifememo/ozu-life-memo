@@ -1167,7 +1167,11 @@ def check_memou_sync(path, html, rep):
     want = (memou_ledger().get(Path(path).stem) or {}).get("bubble", "")
     if not want:
         return
-    if got.strip() != want.strip():
+    # 空白は見ない。kaigyo.py が入れる <span class="nb"> を strip_tags が
+    # 空白に変えるので、そのままでは中身が同じでも食い違って見える
+    def _flat(x):
+        return re.sub(r"\s+", "", x)
+    if _flat(got) != _flat(want):
         rep.error(rel(path), "メモう",
                   "吹き出しが原本(tools/memou-ledger.json)と違います",
                   "       ページ: " + got.replace("\n", " / ")[:70] + "\n"

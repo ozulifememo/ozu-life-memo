@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-kokuho-kennai-hikaku",
+    date: "2026-09-07",
+    title: "同じ年収400万円で国保料は年13万円違う。大洲は県内15市町で安いほうから2番目",
+    category: "kurashi",
+    source: "大洲市国民健康保険税条例、愛媛県「標準保険料率(令和7年度)」ほか",
+    sourceDate: "2026-09-06",
+    tags: ["財政・税金", "医療・福祉"],
+  },
+  {
     slug: "ozu-chugaku-shinro-shinai",
     date: "2026-09-06",
     title: "市内の高校に進むのは55.9%。大洲の中学生は、どこへ行くのか",

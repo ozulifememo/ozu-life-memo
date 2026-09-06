@@ -12640,6 +12640,35 @@
         }
       ]
     },
+    "ozu-kokuho-kennai-hikaku": {
+      "path": "eachnews/ozu-kokuho-kennai-hikaku.html",
+      "checks": [
+        {
+          "date": "2026-09-07",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "d8398821a0f9",
+          "note": "計算方法の検算あり。東温市が公表しているモデル世帯の試算と、医療・支援・介護・子の4区分すべて1円まで一致することを確認している"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "machine",
+          "by": "opus",
+          "result": "機械点検",
+          "hash": "d8398821a0f9",
+          "note": "check_site.py エラー0"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "numbers",
+          "by": "opus",
+          "result": "数字と出典の照合",
+          "hash": "d8398821a0f9",
+          "note": "未照合19個はすべて自分で計算した市町別の年額。出典に無いのは当然"
+        }
+      ]
+    },
     "ozu-kotsu-seiri-ryo-kotoba": {
       "path": "eachnews/ozu-kotsu-seiri-ryo-kotoba.html",
       "checks": [

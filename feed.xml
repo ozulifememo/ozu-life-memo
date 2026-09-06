@@ -5,8 +5,17 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Sun, 06 Sep 2026 23:42:45 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 07 Sep 2026 07:14:47 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>同じ年収400万円で国保料は年13万円違う。大洲は県内15市町で安いほうから2番目</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kokuho-kennai-hikaku.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kokuho-kennai-hikaku.html</guid>
+      <pubDate>Mon, 07 Sep 2026 09:00:00 +0900</pubDate>
+      <description>40代夫婦と中学生の子1人・給与収入400万円という同じモデル世帯を立て、愛媛県内の市町の令和8年度の国民健康保険料(税)率を条例と公表資料から拾って全部計算した。大洲市は料率が確認できた15市町のうち14番目、持ち家なら最も安い。</description>
+      <category>財政・税金</category>
+      <category>医療・福祉</category>
+    </item>
     <item>
       <title>市内の高校に進むのは55.9%。大洲の中学生は、どこへ行くのか</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-chugaku-shinro-shinai.html</link>
@@ -255,15 +264,6 @@
       <description>大洲が発祥とされるいもたきは、いま愛媛県内の9か所で行われている。発祥地は負けているのか。開催地・期間・料金を並べて確かめた。</description>
       <category>観光</category>
       <category>まちづくり</category>
-    </item>
-    <item>
-      <title>大洲の麦みそはなぜ甘いのか。愛媛の麦は明治40年に9割が主食で、いまは7割が味噌になっていた</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-mugimiso-shoyu.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-mugimiso-shoyu.html</guid>
-      <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
-      <description>大洲のみそ汁は甘い。その甘さの正体を、愛媛県のはだか麦の統計からたどった。麦の使い道が主食から味噌へ入れ替わった歴史と、大洲に残る蔵の数を数えた。</description>
-      <category>産業・農業</category>
-      <category>合併・地域</category>
     </item>
   </channel>
 </rss>

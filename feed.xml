@@ -5,16 +5,8 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Sun, 06 Sep 2026 15:03:05 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 06 Sep 2026 15:15:20 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>大洲市の条例を変えるには658人。ひとりでできる手もある</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kaeru-shikumi.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kaeru-shikumi.html</guid>
-      <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
-      <description>大洲市民が制度として持っている手を、法律の条文と大洲の実数で並べた。条例の制定を求める直接請求に要る署名は658人分、議会の解散や市長の解職は10,961人分になる。住民監査請求は1人でできて、署名も手数料も要らない。</description>
-      <category>議会・行政</category>
-    </item>
     <item>
       <title>大洲を変えられるのは誰か。327億円のうち、市が自分で決められるのは78億円だった</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-dare-ga-kimeru.html</link>
@@ -263,6 +255,15 @@
       <description>愛媛県が認証する「ひめボス宣言事業所」は県内1,049社。一覧を最後まで数えたら大洲市内は40社で、事業所100社あたりに直すと県内4番目に多かった。県の認証と市の奨励金の違いも整理した。</description>
       <category>産業・農業</category>
       <category>子育て・教育</category>
+    </item>
+    <item>
+      <title>大洲ICから500m、9ヘクタールの産業団地。残り3区画の値段は坪9万円だった</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/higashi-ozu-sangyo-danchi.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/higashi-ozu-sangyo-danchi.html</guid>
+      <pubDate>Sat, 05 Sep 2026 09:00:00 +0900</pubDate>
+      <description>大洲市東大洲の産業団地は約9haを7区画に分けて分譲中で、2026年9月時点の募集は3区画。市のページに価格はないが、愛媛県の企業立地サイトには坪9万円と出ていた。調べた記録。</description>
+      <category>産業・農業</category>
+      <category>まちづくり</category>
     </item>
   </channel>
 </rss>

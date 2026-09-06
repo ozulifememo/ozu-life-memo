@@ -45,7 +45,7 @@
   <div class="wrap">
     <div class="article-layout">
       <div class="article-page" data-slug="jichitai-site-403">
-    <p class="article-date"><span class="article-cat">大洲の視点</span> ・ 出典: RFC 9110 / Google検索セントラル / Wayback Machine API（情報源日付: 2026-09-06） ・ <span class="article-readtime">約10分で読める</span></p>
+    <p class="article-date"><span class="article-cat">大洲の視点</span> ・ 出典: RFC 9110 / Google検索セントラル / Wayback Machine API（情報源日付: 2026-09-06） ・ <span class="article-readtime">約11分で読める</span></p>
     <h1>「ページが消えた」は勘違いだった。<span class="nb">愛媛</span>20市町を測って分かった403の正体</h1>
 
     <div class="memou-intro">
@@ -65,7 +65,7 @@
       <ul>
         <li><span class="nb">愛媛県</span>内20市町のサイトを測ったら、存在しないページには<strong>全部404</strong>（無い）が返ってきた</li>
         <li>存在しないURLを<strong><span class="nb">15回</span></strong>続けて開いた瞬間403に変わり、一度も触っていない他の市町まで同時に閉じた</li>
-        <li>403は「ページが消えた」ではなく「あなたが弾かれている」。<strong>10〜<span class="nb">15分</span></strong>で自然に戻る</li>
+        <li>403は「ページが消えた」ではなく「あなたが弾かれている」。時間を置くと戻るが、<strong>また閉じることもある</strong></li>
       </ul>
     </div>
     <p class="commentary">このサイトは2026年9月4日、記事12本分の出典を差し替えた。大洲市のサイトのページが404を返したので、消えたと判断したのである。</p>
@@ -145,7 +145,27 @@
 
     <p class="commentary"><strong>一度も触っていない松野町と大洲市が、同時に閉じた。</strong> しかも閉じたのは「存在しないページ」ではない。<strong>トップページが、普通のブラウザで403になった。</strong></p>
     <p class="commentary">そのあと45秒おきに見ていると、内子町が403になり次に200に戻り、八幡浜市が200に戻ってまた403になる、という揺れ方をした。答える機械が複数あって、締め出しの記録が全部には行き渡っていないように見える。</p>
-    <p class="commentary">つまりこれは、ページに付いている性質ではない。<strong>見に来た側に付いている状態である。</strong> そして自然に消える。大洲市の場合、13時35分に閉まり、13時44分にはまだ閉まっていて、13時49分には開いていた。<strong>おおむね10〜15分で戻る。</strong></p>
+    <p class="commentary">つまりこれは、ページに付いている性質ではない。<strong>見に来た側に付いている状態である。</strong> そして時間が経つと消える。ただし、きれいには消えない。大洲市と松山市のトップページを5分おきに見続けた記録が、そのことをよく表している。</p>
+    <div class="article-table-wrap">
+    <table class="article-table">
+      <thead><tr><th>時刻</th><th>大洲市</th><th>松山市</th></tr></thead>
+      <tbody>
+        <tr><td>13:44</td><td>403</td><td>200</td></tr>
+        <tr><td>13:49</td><td>200</td><td>200</td></tr>
+        <tr><td>13:54</td><td>200</td><td>200</td></tr>
+        <tr><td>13:59</td><td>403</td><td>403</td></tr>
+        <tr><td>14:04</td><td>403</td><td>403</td></tr>
+        <tr><td>14:09</td><td>200</td><td>200</td></tr>
+        <tr><td>14:14</td><td>200</td><td>200</td></tr>
+        <tr><td>14:19</td><td>200</td><td><strong>403</strong></td></tr>
+        <tr><td>14:24</td><td><strong>403</strong></td><td><strong>403</strong></td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p class="commentary">13時59分と14時04分が閉じているのは、13時56分の実験のせいである。<strong>問題はその先だ。</strong> 14時09分にいったん開いたのに、<strong>14時19分と14時24分にまた閉じている。</strong></p>
+    <p class="commentary">この間こちらがしていたのは、5分に2回この表を取ることだけである。しかもその2回は空振りではなく、どれも普通のトップページだった。<strong>引き金を引いた覚えがないのに、また閉まっている。</strong></p>
+    <p class="commentary">なぜ戻るのかは分からなかった。締め出しの記録が長く残っていて、たまたまそれを持っている機械に当たると閉まる、という読み方はできる。だがこれは推測で、外から測っただけでは確かめられない。</p>
     <p class="commentary">15回の空振りを1分足らずで出す相手は、機械的にURLを総当たりしている侵入者とほとんど区別がつかない。それを止めるのは、防御の仕組みとして自然な動きである。<strong>誰かが意地悪をしているわけではない。</strong></p>
     <div class="memou-aside">
       <img src="../assets/img/memou-odoroki.svg" alt="" class="memou-aside-avatar" width="54" height="54" decoding="async">
@@ -184,7 +204,7 @@
     <p class="commentary"><code>timestamp</code>の<code>20260815223957</code>は2026年8月15日22時39分57秒である。この日には200で開けていた、という記録が残る。保存が一つも無ければ<code>{"archived_snapshots": {}}</code>とだけ返る。URLに<code>&amp;</code>や日本語が入るときは、URLエンコードしてから付ける。</p>
     <p class="commentary">これを踏まえると、手順は三つになる。</p>
     <p class="commentary"><strong>一、番号だけで決めない。</strong> 403が出たら、それは「ページが無い」ではなく「いま自分が弾かれている」と読む。</p>
-    <p class="commentary"><strong>二、時間を置いて、普通のブラウザで開き直す。</strong> 10〜15分あければ戻る。まとめて確かめるときは1件ごとに間をあける。今回の測定では、6秒おきに20件回した時点で閉まり、18秒おきなら閉まらなかった。</p>
+    <p class="commentary"><strong>二、時間を置いて、普通のブラウザで開き直す。</strong> 今回は5分から15分ほどで開いた。ただし開いたあとにまた閉じたので、<strong>「何分待てば必ず開く」とは言えない。</strong> 一度403を見たら、その日は一覧を上から順に流すのをやめて、日を改めるほうが確実である。まとめて確かめるときは1件ごとに間をあける。今回の測定では、6秒おきに20件回した時点で閉まり、18秒おきなら閉まらなかった。</p>
     <p class="commentary"><strong>三、それでも見つからないときに、保存版を見る。</strong> 保存があれば、いつまで生きていたかが分かる。無ければ、本当に最初から無かったのかもしれない。</p>
     <p class="commentary">書いておきたいのは、市役所のサイトは無いときに「無い」と答えていた、ということである。<strong>測る前は逆だと思っていた。</strong> 南予の市が「無い」と言わないのだと思い込んでいて、実際には、そう思い込ませていたのは自分の測り方のほうだった。1回測って決めていたら、この記事は事実と逆のことを書いていた。</p>
 

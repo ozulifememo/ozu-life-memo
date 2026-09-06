@@ -79,7 +79,14 @@ button,select,input,textarea{font-family:inherit;color:inherit}
 #memo textarea{width:100%;height:88px;resize:vertical;background:var(--frame);
   border:1px solid var(--rule);border-radius:6px;padding:9px 11px;font-size:14px;
   color:var(--fg);line-height:1.6}
-#memo .hint{font-size:11px;color:var(--dim);margin:6px 2px 0}
+#memo .hint{font-size:11px;color:var(--dim);margin:0;flex:1}
+#memo .mrow{display:flex;align-items:center;gap:10px;margin-top:6px}
+#memo #memoSend{flex:0 0 auto;padding:7px 18px;border-radius:6px;font-size:13px;
+  background:#3b4a3a;border:1px solid #6f9b6a;color:#dfeadd;cursor:pointer}
+#memo #memoSend:hover{background:#46583f}
+#talk .card.h2{border-left-color:#6f9b6a}
+#talk .again{background:#3a3226;border:1px solid #c08b3e;color:#f0dcb8;
+  border-radius:6px;padding:9px 11px;margin:8px 0;font-size:13px;line-height:1.6}
 
 /* ---------- 引き出し(一覧) ---------- */
 #scrim{position:fixed;inset:0;background:rgba(8,10,13,.55);z-index:50}
@@ -229,8 +236,11 @@ body.L-kan #kanbar{display:flex}
 <div id="paper"></div>
 
 <div id="memo" hidden>
-  <textarea id="memoT" placeholder="気づいたこと。あとで直すときの手がかりになる。"></textarea>
-  <p class="hint">自動で保存されます。閉じるのは Esc か「メモ」をもう一度。</p>
+  <textarea id="memoT" placeholder="クロコに伝えたいこと。送ると、やり取りに積まれます。"></textarea>
+  <div class="mrow">
+    <p class="hint">下書きは自動で残ります。送るまでクロコには届きません。閉じるのは Esc。</p>
+    <button id="memoSend">送る</button>
+  </div>
 </div>
 
 <div id="bot">
@@ -342,7 +352,8 @@ function pushDB(slug){
     var keys = Object.keys(dbQueue); dbQueue = {};
     keys.forEach(function(k){
       var r = S[k];
-      var p = r ? DB.doc('reviews/'+k).set({v:r.v||'', m:r.m||'', t:r.t||0, done:r.done?1:0})
+      var p = r ? DB.doc('reviews/'+k).set({v:r.v||'', m:r.m||'', t:r.t||0, done:r.done?1:0,
+                                            ms:r.ms||[], mt:r.mt||0, d:r.d||''})
                 : DB.doc('reviews/'+k).delete();
       p.catch(function(){});
     });
@@ -352,7 +363,7 @@ function mark(slug, patch){
   var r = S[slug] || {v:'', m:'', t:0};
   for(var k in patch) r[k] = patch[k];
   r.t = Date.now();
-  if(!r.v && !r.m) delete S[slug]; else S[slug] = r;
+  if(!r.v && !r.m && !r.d && !(r.ms && r.ms.length)) delete S[slug]; else S[slug] = r;
   saveLocal(); pushDB(slug); paint();
 }
 
@@ -375,7 +386,10 @@ function pullDB(){
     snap.docs.forEach(function(d){
       var v = d.data() || {}, k = d.id, mine = S[k];
       if(!mine || (v.t||0) > (mine.t||0)){
-        if(v.v || v.m){ S[k] = {v:v.v||'', m:v.m||'', t:v.t||0, done:!!v.done}; changed = true; }
+        if(v.v || v.m || (v.ms && v.ms.length)){
+          S[k] = {v:v.v||'', m:v.m||'', t:v.t||0, done:!!v.done,
+                  ms:v.ms||[], mt:v.mt||0, d:v.d||''};
+          changed = true; }
       }
     });
     /* こちらにしか無いものはサーバーへ送る */
@@ -404,11 +418,17 @@ function layerOf(slug){
   return 'yari';
 }
 /* やり取りの中の向き。クロコ待ちか、本人待ちか */
+function myLastT(r){
+  if(r.mt) return r.mt;
+  if(r.ms && r.ms.length) return r.ms[r.ms.length-1].t || 0;
+  return r.m ? (r.t || 0) : 0;      /* 昔の形(mだけ)にも合わせる */
+}
 function turnOf(slug){
   var r = S[slug] || {}, k = (R[slug] && R[slug].items) || [];
   if(!k.length) return 'kuroko';
   var last = k[k.length-1].t || 0;
-  return (r.t || 0) > last ? 'kuroko' : 'harada';
+  /* 判定を押しただけでは向きを変えない。メモを送った時刻で見る */
+  return myLastT(r) > last ? 'kuroko' : 'harada';
 }
 /* ---------- 絞り込みと並び ---------- */
 function done(i){ var r = S[A[i].slug]; return !!(r && r.v); }
@@ -518,7 +538,7 @@ function paint(){
   document.querySelectorAll('#bot .v').forEach(function(b){
     b.classList.toggle('on', r.v === b.dataset.v);
   });
-  $('#memobtn').classList.toggle('has', !!r.m);
+  $('#memobtn').classList.toggle('has', !!(r.m || r.d || (r.ms && r.ms.length)));
   renderRows();
 }
 
@@ -536,15 +556,28 @@ function renderTalk(){
   if(!a || F.layer !== 'yari'){ box.hidden = true; box.innerHTML=''; return; }
   var r = S[a.slug] || {}, ks = (R[a.slug] && R[a.slug].items) || [];
   var h = [];
-  if(r.m) h.push('<div class="card h"><div class="who">わたし<span class="tm">'+fmtT(r.t)+'</span></div>'+esc(r.m)+'</div>');
-  ks.forEach(function(k){
-    var kind = KINDLB[k.kind] || 'メモ';
-    h.push('<div class="card k t-'+esc(k.kind||'memo')+'">'
-      + '<div class="who">クロコ<span class="kind">'+esc(kind)+'</span>'
-      + '<span class="tm">'+fmtT(k.t)+'</span></div>' + esc(k.text||'') + '</div>');
+  /* 自分のメモと、クロコの返事を、時刻の順に全部並べる */
+  var line = [];
+  var mine = r.ms && r.ms.length ? r.ms
+           : (r.m ? [{text:r.m, t:r.t||0}] : []);   /* 昔の形にも合わせる */
+  mine.forEach(function(m){ line.push({side:'h', text:m.text, t:m.t||0}); });
+  ks.forEach(function(k){ line.push({side:'k', text:k.text||'', kind:k.kind, t:k.t||0}); });
+  line.sort(function(a,b){ return (a.t||0) - (b.t||0) });
+  line.forEach(function(e, i){
+    if(e.side === 'h'){
+      h.push('<div class="card h'+(i?' h2':'')+'"><div class="who">わたし<span class="tm">'
+        + fmtT(e.t)+'</span></div>'+esc(e.text)+'</div>');
+    }else{
+      h.push('<div class="card k t-'+esc(e.kind||'memo')+'">'
+        + '<div class="who">クロコ<span class="kind">'+esc(KINDLB[e.kind]||'メモ')+'</span>'
+        + '<span class="tm">'+fmtT(e.t)+'</span></div>' + esc(e.text) + '</div>');
+    }
   });
   if(!ks.length) h.push('<div class="none">クロコはまだ見ていません。</div>');
   else if(turnOf(a.slug)==='kuroko') h.push('<div class="none">新しいコメントを、クロコはまだ見ていません。</div>');
+  else h.push('<div class="again">クロコが手を入れました。読んでから、下でもう一度どうするか選んでください。'
+            + '<br><b>◯そのまま</b> … これで終わり(完了へ移ります)　'
+            + '<b>△直す</b> … まだ直したいことがある(メモを書いて送ってください)</div>');
   box.innerHTML = h.join('');
   box.hidden = false;
 }
@@ -561,7 +594,7 @@ function show(i, scroll){
               a.chars.toLocaleString()+'字', 'リンク'+a.links];
   $('#crumb').textContent = bits.join(' ・ ');
   document.title = pad(i)+' ' + a.title;
-  var t = $('#memoT'); t.value = (S[a.slug]||{}).m || '';
+  var t = $('#memoT'); t.value = (S[a.slug]||{}).d || '';   /* 下書き。前のメモは入れない */
   renderTalk();
   var p = ORDER.indexOf(i); if(p>=0) lastPos = p;
   if(scroll!==false) window.scrollTo(0,0);
@@ -652,7 +685,26 @@ function openMemo(o){
 $('#memobtn').onclick = function(){ openMemo($('#memo').hidden) };
 memoT.addEventListener('input', function(){
   clearTimeout(memoTimer);
-  memoTimer = setTimeout(function(){ mark(A[cur].slug, {m: memoT.value.trim()}); }, 400);
+  memoTimer = setTimeout(function(){ mark(A[cur].slug, {d: memoT.value}); }, 400);
+});
+/* 送る = ここで初めてメモになる。ms に積んで、m は最新のものにする */
+function sendMemo(){
+  var a = A[cur]; if(!a) return;
+  var txt = memoT.value.trim();
+  if(!txt){ toast('書いてから送ってください'); return; }
+  var r = S[a.slug] || {};
+  var ms = (r.ms || []).slice();
+  if(!ms.length && r.m) ms.push({text:r.m, t:r.t||0});   /* 昔の形の1件を拾う */
+  var now = Date.now();
+  ms.push({text:txt, t:now});
+  mark(a.slug, {m:txt, ms:ms, mt:now, d:''});
+  memoT.value = '';
+  renderTalk();
+  toast('送りました。クロコが見ます');
+}
+$('#memoSend').onclick = sendMemo;
+memoT.addEventListener('keydown', function(e){
+  if((e.ctrlKey || e.metaKey) && e.key === 'Enter'){ e.preventDefault(); sendMemo(); }
 });
 
 /* ---------- 絞り込みUI ---------- */

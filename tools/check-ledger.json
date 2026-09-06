@@ -14310,6 +14310,35 @@
         }
       ]
     },
+    "ozu-shakkin-hitori-atari": {
+      "path": "eachnews/ozu-shakkin-hitori-atari.html",
+      "checks": [
+        {
+          "date": "2026-09-07",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "0359f789ed13",
+          "note": "見出しの846,600円を手で検算(330億5,127万円÷39,040人=846,600)。分母に住民基本台帳人口を使い、国勢調査人口ではないことを本文で明示している点も確認。年度別系列そのものは機械照合できていない"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "machine",
+          "by": "opus",
+          "result": "機械点検",
+          "hash": "0359f789ed13",
+          "note": "check_site.py エラー0"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "numbers",
+          "by": "opus",
+          "result": "数字と出典の照合",
+          "hash": "0359f789ed13",
+          "note": "未照合66個(29.3%)。出典19本は全部取れているが、総務省の決算統計は数値がExcel/PDF側にあるため本文中の年度別系列が機械照合に出てこない。自分で割った1人あたりの値も未照合になる"
+        }
+      ]
+    },
     "ozu-shakyo-kessan": {
       "path": "eachnews/ozu-shakyo-kessan.html",
       "checks": [

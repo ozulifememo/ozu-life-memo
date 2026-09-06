@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-shakkin-hitori-atari",
+    date: "2026-09-07",
+    title: "大洲市の借金は1人あたり84万6,600円。この割り算はどこまで本当か",
+    category: "shiten",
+    source: "総務省「令和6年度市町村別決算状況調」／愛媛県「財政状況資料集（令和6年度）大洲市」／大洲市議会 会議録 ほか",
+    sourceDate: "2026-09-06",
+    tags: ["財政・税金", "人口減少"],
+  },
+  {
     slug: "ozu-kentoshimasu-kaigiroku",
     date: "2026-09-07",
     title: "「検討します」は18年で1回だけ。市議会の会議録307本を数えてみた",

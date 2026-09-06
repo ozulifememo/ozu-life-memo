@@ -5,8 +5,17 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Mon, 07 Sep 2026 07:42:26 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 07 Sep 2026 07:44:03 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大洲市の借金は1人あたり84万6,600円。この割り算はどこまで本当か</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-shakkin-hitori-atari.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-shakkin-hitori-atari.html</guid>
+      <pubDate>Mon, 07 Sep 2026 09:00:00 +0900</pubDate>
+      <description>大洲市の地方債現在高330億5,127万円を人口で割ると1人あたり84万6,600円になる。ただし「1人あたりの借金」という言い方は昔から批判が多い。臨時財政対策債を分け、基金と資産を並べ、県内11市と比べたうえで、この割り算が何を言えて何を言えないのかを調べた。</description>
+      <category>財政・税金</category>
+      <category>人口減少</category>
+    </item>
     <item>
       <title>「検討します」は18年で1回だけ。市議会の会議録307本を数えてみた</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kentoshimasu-kaigiroku.html</link>
@@ -254,14 +263,6 @@
       <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-jo-nihonichi.html</guid>
       <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
       <description>大洲城天守の高さ19.15メートルは、戦後に木造で復元された天守では日本一。白石城16.7メートル、掛川城16.18メートルと同じものさしで並べて確かめた。市議会の答弁と市の復元事業報告書から、この天守が揺れることを前提にした柔構造であること、石垣ではなく6本の杭が支えていること、本来は建築基準法で建てられない建物だったことまで追った。</description>
-      <category>観光</category>
-    </item>
-    <item>
-      <title>6万3,000本のツツジが咲かなかった年。大洲市が調べて、それでも原因は分からなかった</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/tomisuyama-tsutsuji.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/tomisuyama-tsutsuji.html</guid>
-      <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
-      <description>大洲市の冨士山のツツジは「西日本一」と言われる。ところが市議会の会議録を19年分たどると、市がそう答えたことは一度もない。さらに平成31年、ツツジはほとんど咲かず、市は「原因の特定には至っておりません」と答弁していた。本数・言い回し・咲かなかった年を、一次資料で追いかけた記録。</description>
       <category>観光</category>
     </item>
   </channel>

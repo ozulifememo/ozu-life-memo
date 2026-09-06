@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-gesuido-jokaso",
+    date: "2026-09-06",
+    title: "下水道と浄化槽、20年で30万円以上違う。大洲ではどっちになるか住所で決まる",
+    category: "kurashi",
+    source: "大洲市「下水道事業について」「公共下水道供用開始区域および使用料金について」ほか",
+    sourceDate: "2026-09-06",
+    tags: ["交通・インフラ", "財政・税金"],
+  },
+  {
     slug: "ozu-atsusa-samusa-denkidai",
     date: "2026-09-06",
     title: "大洲の猛暑日は松山の2倍。なのに熱帯夜は19分の1だった",

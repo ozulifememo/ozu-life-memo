@@ -11160,6 +11160,35 @@
         }
       ]
     },
+    "ozu-gesuido-jokaso": {
+      "path": "eachnews/ozu-gesuido-jokaso.html",
+      "checks": [
+        {
+          "date": "2026-09-06",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "a0fc8fccb24f",
+          "note": "月20立方メートル×早見表2,662円=年31,944円が議会答弁の「約3万2,000円」と一致することを検算。浄化槽法10条・11条はe-Gov APIで条文を取得して確認"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "machine",
+          "by": "opus",
+          "result": "機械点検",
+          "hash": "a0fc8fccb24f",
+          "note": "check_site.py エラー0(レビュー卓を除く)"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "numbers",
+          "by": "opus",
+          "result": "数字と出典の照合",
+          "hash": "a0fc8fccb24f",
+          "note": "大洲市サイトが403で照合機は7本取れず。Wayback経由で使用料早見表・受益者負担金370円・浄化槽補助限度額の原文を自分で開いて確認済み"
+        }
+      ]
+    },
     "ozu-gouu-8nen": {
       "path": "jiyu-kenkyu/ozu-gouu-8nen.html",
       "checks": [

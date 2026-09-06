@@ -5,8 +5,17 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Sun, 06 Sep 2026 23:08:37 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 06 Sep 2026 23:37:00 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>下水道と浄化槽、20年で30万円以上違う。大洲ではどっちになるか住所で決まる</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-gesuido-jokaso.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-gesuido-jokaso.html</guid>
+      <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
+      <description>大洲市の汚水処理は公共下水道・農業集落排水・浄化槽の3つに分かれている。どれになるかは住所で決まり、払う額は20年で30万円以上違う。上水と下水の違いから、水がどこを通って家に届くかまで調べた。</description>
+      <category>交通・インフラ</category>
+      <category>財政・税金</category>
+    </item>
     <item>
       <title>大洲の猛暑日は松山の2倍。なのに熱帯夜は19分の1だった</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-atsusa-samusa-denkidai.html</link>
@@ -255,15 +264,6 @@
       <description>大洲市は栗の生産量が愛媛県内1位。それなのに「栗といえば中山」と言われる。この差はどこから来たのかを、市議会の会議録と特許庁の資料で調べた。</description>
       <category>産業・農業</category>
       <category>まちづくり</category>
-    </item>
-    <item>
-      <title>給食が無料になっても、食べられない子には1円も届かない。大洲は11万5,000円を置いた</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/kyushoku-taberarenai-ko.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/kyushoku-taberarenai-ko.html</guid>
-      <pubDate>Sat, 05 Sep 2026 09:00:00 +0900</pubDate>
-      <description>令和8年4月、小学校の給食費が全国一律で無償になった。ただしアレルギーなどで給食を食べられない子には届かない。大洲市はそこに新しい補助金を作った。予算は11万5,000円。</description>
-      <category>子育て・教育</category>
-      <category>議会・行政</category>
     </item>
   </channel>
 </rss>

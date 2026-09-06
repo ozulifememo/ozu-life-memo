@@ -36,6 +36,24 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "jichitai-site-403",
+    date: "2026-09-06",
+    title: "「ページが消えた」は勘違いだった。愛媛20市町を測って分かった403の正体",
+    category: "shiten",
+    source: "RFC 9110 / Google検索セントラル / Wayback Machine API",
+    sourceDate: "2026-09-06",
+    tags: ["議会・行政"],
+  },
+  {
+    slug: "ozu-jo-kawara-kimei",
+    date: "2026-09-06",
+    title: "大洲城の屋根に、名前入りの瓦が2,928枚。1枚2,000円だった",
+    category: "shiten",
+    source: "大洲市「大洲城天守復元事業報告書」",
+    sourceDate: "2026-09-06",
+    tags: ["観光"],
+  },
+  {
     slug: "ozu-jabara-10nen",
     date: "2026-09-06",
     title: "花粉症の柑橘を10年。大洲の収穫は年150キロ、本家の村は年100トンだった",

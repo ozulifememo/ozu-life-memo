@@ -887,6 +887,15 @@ def check_raw_quote(path, html, rep):
                   "       …|" + " ".join(m.group(1).split()) + "…\n"
                   "       kiji_md.py で作り直すか、手で article-table にする")
         break
+    # コードも同じ形の事故を起こす。2026-09-06、自治体サイトの403の記事で
+    # バッククォート3つがそのまま段落に落ち、記号だけの行が4つ並んでいた。
+    # kiji_md.py 側に対応を足したので、以後は変換される
+    for m in re.finditer(r"<p[^>]*>\s*" + ("`" * 3) + r"(.{0,60})", body_only(html)):
+        rep.error(rel(path), "引用",
+                  "コードが変換されず記号のまま本文に出ています",
+                  "       …" + ("`" * 3) + " ".join(m.group(1).split()) + "…\n"
+                  "       kiji_md.py で作り直すか、手で article-code にする")
+        break
 
 
 def check_typos(path, html, rep):
@@ -1903,6 +1912,7 @@ BROKEN_SAMPLE = """<!DOCTYPE html>
 <p class="commentary">| 表 | が変換されないまま出ている例 |</p>
 <!-- ダミー: C:/Users/dummyuser/Desktop/scoped.css -->
 <p class="commentary">&gt; 引用が変換されないまま本文に出ている例。</p>
+<p class="commentary">```</p>
 <p><a href="#sonzai-shinai-id">行き先の無いページ内リンク</a></p>
 <p><a href="https://drive.google.com/file/d/xxxx" target="_blank">個人ストレージへのリンク</a></p>
 <p><img src="../assets/img/この画像はない.jpg" alt="壊れた画像"> <img src="../assets/img/altnashi.png"></p>
@@ -1960,7 +1970,9 @@ EXPECTED = [
     ("匿名性", "ローカルパス"),
     ("匿名性", "コミットメッセージにあります"),
     ("文字化け", "文字化け"),
-    ("引用", "変換されず"),
+    ("引用", "引用が変換されず"),
+    ("引用", "表が変換されず"),
+    ("引用", "コードが変換されず"),
     ("誤字", "肘川"),
     ("誤字", "かぎかっこ"),
     ("誤字", "句点"),

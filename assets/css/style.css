@@ -4434,3 +4434,40 @@ section {
     gap: 6px;
   }
 }
+
+/* ── 記事の中のコード表示(.article-code) ──────────────────────
+   2026-09-06追加。自治体サイトの403の記事で、APIのURLと返ってくるJSONを
+   そのままの字面で見せる必要が出た。本文の書体で出すと空白や記号が潰れて、
+   読者が真似できない。等幅で、行を折らずに、その箱だけ横スクロールさせる。
+   囲みは表(.article-table)と同じ枠線・角丸にそろえてある。 */
+.article-code {
+  margin: 0 0 var(--space-5);
+  padding: var(--space-4);
+  background: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow-x: auto;
+  font-size: var(--text-sm);
+  line-height: 1.7;
+  color: var(--color-text);
+}
+
+.article-code code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  white-space: pre;
+  background: none;
+  padding: 0;
+  border: 0;
+}
+
+/* 本文中に混ざる短いコード(`timestamp` のような語)。
+   行の高さを変えないよう、余白は控えめにする。 */
+.article-page :not(pre) > code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.92em;
+  background: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: 0.08em 0.34em;
+  word-break: break-all;
+}

@@ -66,9 +66,23 @@ def parse(path):
 
 
 def inline(t):
-    """**太字** と 「」内の強調をHTMLにする。タグは書かせない前提でエスケープ済み。"""
+    """**太字** と `コード` をHTMLにする。タグは書かせない前提でエスケープ済み。
+
+    `コード` を先に抜いて預かってから太字を処理する。順番が逆だと、
+    コードの中に書いた ** が太字になってしまい、字面が変わる。
+    字面をそのまま見せるための書式なので、変わっては意味がない。
+    """
     t = html.escape(t, quote=False)
-    return re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", t)
+    kept = []
+
+    def keep(m):
+        kept.append(m.group(1))
+        return "\x00%d\x00" % (len(kept) - 1)
+
+    t = re.sub(r"`([^`]+?)`", keep, t)
+    t = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", t)
+    return re.sub(r"\x00(\d+)\x00",
+                  lambda m: "<code>" + kept[int(m.group(1))] + "</code>", t)
 
 
 def build_body(text):
@@ -77,6 +91,8 @@ def build_body(text):
     list_title = None
     quote = []        # 「> 」で始まる引用の受け皿
     table = []        # 「| … |」で始まる表の受け皿
+    code = []         # ``` で囲まれたコードの受け皿
+    in_code = False   # いま ``` の中か
 
     def flush_table():
         """Markdown の表を article-table にする。2026-09-06に足した。
@@ -113,6 +129,29 @@ def build_body(text):
         out.append("    </div>")
         out.append("")
         table = []
+
+    def flush_code():
+        """``` で囲まれた部分を article-code にする。
+
+        2026-09-06に足した。自治体サイトの403の記事で、APIのURLと返ってくる
+        JSONをそのままの字面で見せる必要が出たとき、変換側がこの書式を知らず、
+        バッククォート3つが本文にそのまま出ていた。
+        中身は字面が命なので、太字も ` ` も解釈せず、エスケープだけする。
+        """
+        nonlocal code
+        if not code:
+            return
+        while code and not code[0].strip():
+            code.pop(0)
+        while code and not code[-1].strip():
+            code.pop()
+        if not code:
+            return
+        out.append('    <pre class="article-code"><code>'
+                   + html.escape("\n".join(code), quote=False)
+                   + "</code></pre>")
+        out.append("")
+        code = []
 
     def flush_quote():
         """引用ブロックを article-quote にする。
@@ -155,6 +194,19 @@ def build_body(text):
     lines = text.splitlines()
     for i, line in enumerate(lines):
         s = line.strip()
+        if s.startswith("```"):
+            if in_code:
+                flush_code()
+                in_code = False
+            else:
+                flush_list()
+                flush_quote()
+                flush_table()
+                in_code = True
+            continue
+        if in_code:
+            code.append(line.rstrip())
+            continue
         if s.startswith("|") and s.endswith("|") and s.count("|") >= 3:
             flush_list()
             flush_quote()
@@ -187,6 +239,7 @@ def build_body(text):
     flush_list()
     flush_quote()
     flush_table()
+    flush_code()
     return "\n".join(out).rstrip() + "\n"
 
 

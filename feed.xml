@@ -5,8 +5,24 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Sun, 06 Sep 2026 13:29:37 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 06 Sep 2026 14:20:11 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>「ページが消えた」は勘違いだった。愛媛20市町を測って分かった403の正体</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/jichitai-site-403.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/jichitai-site-403.html</guid>
+      <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
+      <description>存在しないページを開くと、市役所のサイトは何と答えるのか。愛媛県内20市町を2026年9月6日に自分で測った。答えは全部「404（無い）」だった。ところが存在しないURLを15回続けて開いた瞬間、403に変わり、一度も触っていない他の市町まで同時に閉じた。403は「ページが無い」という意味ではない。</description>
+      <category>議会・行政</category>
+    </item>
+    <item>
+      <title>大洲城の屋根に、名前入りの瓦が2,928枚。1枚2,000円だった</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-jo-kawara-kimei.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-jo-kawara-kimei.html</guid>
+      <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
+      <description>2004年に木造復元された大洲城天守。総工費15億9,427万6,496円のうち4億4,650万15円が寄付だった。集め方は7種類あり、そのひとつが1枚2,000円の瓦記名募金。市の復元事業報告書と広報の連載から、金額・件数・瓦の総数まで追って、あの屋根に何枚の名前が載っているのかを確かめた。</description>
+      <category>観光</category>
+    </item>
     <item>
       <title>花粉症の柑橘を10年。大洲の収穫は年150キロ、本家の村は年100トンだった</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-jabara-10nen.html</link>
@@ -248,24 +264,6 @@
       <description>2026年9月1日、中央線のない生活道路の法定速度が60km/hから30km/hに下がった。ただし標識のある道と中央線のある道は変わらない。大洲市内で何が変わるのか、ゾーン30との違いとあわせて整理した。</description>
       <category>交通・インフラ</category>
       <category>防災</category>
-    </item>
-    <item>
-      <title>2028年、愛媛で38年ぶりの国民文化祭。大洲の新しい文化会館の工期は、その後だった</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/kokubunsai-2028-ehime.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/kokubunsai-2028-ehime.html</guid>
-      <pubDate>Sat, 05 Sep 2026 09:00:00 +0900</pubDate>
-      <description>2028年10月22日から12月3日まで、愛媛県で38年ぶりの国民文化祭が開かれる。県の資料では会場は20の全市町。大洲の新しい市民文化会館の建築工事の工期は令和11年1月31日までで、会期より後の日付になっている。</description>
-      <category>まちづくり</category>
-      <category>観光</category>
-    </item>
-    <item>
-      <title>64億円の文化会館、入札に1社も来なかった</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/bunka-kaikan-nyusatsu-fucho.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/bunka-kaikan-nyusatsu-fucho.html</guid>
-      <pubDate>Sat, 05 Sep 2026 09:00:00 +0900</pubDate>
-      <description>大洲市民文化会館の新築工事が入札不調になった。予定価格37億9,700万円の建築工事に応札者ゼロ。3か月前の市議会で市長が「業者がなかった場合」を想定して答えていた、そのとおりのことが起きた。</description>
-      <category>財政・税金</category>
-      <category>まちづくり</category>
     </item>
   </channel>
 </rss>

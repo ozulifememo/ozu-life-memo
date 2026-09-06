@@ -5,8 +5,17 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Sun, 06 Sep 2026 23:39:23 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 06 Sep 2026 23:42:45 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>市内の高校に進むのは55.9%。大洲の中学生は、どこへ行くのか</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-chugaku-shinro-shinai.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-chugaku-shinro-shinai.html</guid>
+      <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
+      <description>大洲市内の中学校を卒業して県内の高校に進んだ349人のうち、市内の高校に進んだのは195人で55.9%だった。市議会の答弁と県教育委員会の資料から、行き先の内訳と、この数字がどう動いてきたかを確かめた。</description>
+      <category>子育て・教育</category>
+      <category>人口減少</category>
+    </item>
     <item>
       <title>大洲の求人1.29倍は平均の数字。フルタイム1.79倍、パート0.78倍に割れていた</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kyujin-shokushu-betsu.html</link>
@@ -253,15 +262,6 @@
       <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-mugimiso-shoyu.html</guid>
       <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
       <description>大洲のみそ汁は甘い。その甘さの正体を、愛媛県のはだか麦の統計からたどった。麦の使い道が主食から味噌へ入れ替わった歴史と、大洲に残る蔵の数を数えた。</description>
-      <category>産業・農業</category>
-      <category>合併・地域</category>
-    </item>
-    <item>
-      <title>大洲の法人1,607件を全部数えた。もう無いのは189件、うち66件は1月のある日にまとめて消えた</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-houjin-kiesaki.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-houjin-kiesaki.html</guid>
-      <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
-      <description>国税庁が公開している法人番号のデータで、大洲市にある法人1,607件を全部数えた。189件はすでに登記が閉じられていて、その消え方には3通りあった。</description>
       <category>産業・農業</category>
       <category>合併・地域</category>
     </item>

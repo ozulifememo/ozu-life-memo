@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-chugaku-shinro-shinai",
+    date: "2026-09-06",
+    title: "市内の高校に進むのは55.9%。大洲の中学生は、どこへ行くのか",
+    category: "ima",
+    source: "大洲市議会 令和7年6月定例会 会議録、愛媛県教育委員会「県立学校振興計画」関連資料 ほか",
+    sourceDate: "2026-09-06",
+    tags: ["子育て・教育", "人口減少"],
+  },
+  {
     slug: "ozu-kyujin-shokushu-betsu",
     date: "2026-09-06",
     title: "大洲の求人1.29倍は平均の数字。フルタイム1.79倍、パート0.78倍に割れていた",

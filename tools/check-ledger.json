@@ -10693,6 +10693,27 @@
         }
       ]
     },
+    "ozu-chugaku-shinro-shinai": {
+      "path": "eachnews/ozu-chugaku-shinro-shinai.html",
+      "checks": [
+        {
+          "date": "2026-09-06",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "cd63c84fe31f",
+          "note": "55.9%は令和7年6月定例会の教育長答弁(195÷349)と確認。同じ答弁の86.5%は分母が特定できず記事では使っていない、と本文に明記されている"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "machine",
+          "by": "opus",
+          "result": "機械点検",
+          "hash": "cd63c84fe31f",
+          "note": "check_site.py エラー0"
+        }
+      ]
+    },
     "ozu-conveni-itsukara": {
       "path": "eachnews/ozu-conveni-itsukara.html",
       "checks": [

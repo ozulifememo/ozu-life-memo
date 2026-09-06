@@ -5,8 +5,51 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Sun, 06 Sep 2026 14:31:58 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 06 Sep 2026 14:55:16 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>800人の署名で、駅前に屋根がついた。大洲で市民が動いて実際に変わった5件</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-shimin-ga-ugoita.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-shimin-ga-ugoita.html</guid>
+      <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
+      <description>大洲市民が動いて、市の予算や計画が実際に変わった記録はあるのか。市議会の会議録18年ぶん307回を「請願」「陳情」「署名」「要望書」で検索し、動いた人・議会の扱い・その後まで3つそろった事例を5件だけ数え出した。</description>
+      <category>まちづくり</category>
+      <category>議会・行政</category>
+    </item>
+    <item>
+      <title>冨士山公園2個分の山を、ただで町に渡した人がいる。90ヘクタールはいまどうなったのか</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kato-yasumichi-kifu.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kato-yasumichi-kifu.html</guid>
+      <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
+      <description>大洲藩最後の藩主の次男・加藤泰通が、昭和24年に冨士山の所有林90町8反を大洲町に寄付した。いまの単位で約90ヘクタール、冨士山公園ちょうど2個分。誰が、なぜ渡し、その土地はいまどうなっているのかを一次資料で追いかけた。</description>
+      <category>まちづくり</category>
+      <category>観光</category>
+    </item>
+    <item>
+      <title>大洲城の天守に、松は1.1パーセントしかない。なぜ桧になったのか</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-jo-matsu-hinoki.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-jo-matsu-hinoki.html</guid>
+      <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
+      <description>2004年に木造復元された大洲城天守。使った木材447.692立方メートルのうち、松は4.894立方メートルしかない。市の報告書は、松枯れ病と、岩国の錦帯橋・金沢の五十間長屋による松材高騰を理由に挙げている。その裏をどこまで取れるか、岩国市の資料と林野庁の統計で確かめた。</description>
+      <category>産業・農業</category>
+      <category>観光</category>
+    </item>
+    <item>
+      <title>大洲のうかいは、いま1晩に33人。50年前は何人が乗っていたのか</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-ukai-kanransha.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-ukai-kanransha.html</guid>
+      <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
+      <description>大洲のうかいの観覧者数は、昭和49年の2万8,754人がピークだった。令和6年は3,726人。50年で87%減っている。市議会の会議録と愛媛県の統計11年分を突き合わせて、いつ・どれだけ落ちたのか、コロナのあとどこまで戻ったのかを年ごとに並べた。</description>
+      <category>観光</category>
+    </item>
+    <item>
+      <title>農家の負担はゼロ。大洲の7.4ヘクタールが代わりに約束した15年</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-yasarai-nochi.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-yasarai-nochi.html</guid>
+      <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
+      <description>大洲市南久米の野佐来地区で、7.4ヘクタールの田んぼが県の手で作り直されている。費用は国と県と市が持ち、地権者も耕す側も1円も出していない。代わりに約束したのが15年の貸し出しと、収益2割増しだった。市が足した水路3,500万円の内訳と、いまどこまで進んだかを調べた。</description>
+      <category>産業・農業</category>
+    </item>
     <item>
       <title>「ページが消えた」は勘違いだった。愛媛20市町を測って分かった403の正体</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/jichitai-site-403.html</link>
@@ -221,49 +264,6 @@
       <description>大洲市が上下水道台帳システムの再構築を発注した。地下に埋まる管は約877キロ。手を挙げたのは2社だけで、その理由は募集要項に書いてある。台帳は法律で持つことが義務づけられ、全国の7パーセントはまだ作っていなかった。</description>
       <category>交通・インフラ</category>
       <category>財政・税金</category>
-    </item>
-    <item>
-      <title>モバイルバッテリーはもやすごみに出せない。大洲で回収している店を数えたら7店あった</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/juden-denchi-dashikata.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/juden-denchi-dashikata.html</guid>
-      <pubDate>Sat, 05 Sep 2026 09:00:00 +0900</pubDate>
-      <description>大洲市の家庭ごみ7種分別に充電式電池の枠はない。ではモバイルバッテリーはどこへ出すのか。市のマップに載る協力店は3店だが、JBRCの検索で市内を数えると7店あった。膨らんだ電池の持ち込み先と、電動アシスト自転車の例外まで調べた。</description>
-      <category>防災</category>
-      <category>まちづくり</category>
-    </item>
-    <item>
-      <title>「市民ポスト」に出した意見は、本当に返ってくるのか。公開された回答76本を数えた</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/shimin-post-teigen.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/shimin-post-teigen.html</guid>
-      <pubDate>Sat, 05 Sep 2026 09:00:00 +0900</pubDate>
-      <description>大洲市の市役所や支所、コミュニティセンターに置かれた「市民ポスト」。入れた紙はどこへ行き、返事は返ってくるのか。市のサイトに公開されている回答を1本ずつ数え、8年半ぶんの中身と、公開される条件、よその市との違いを調べた。</description>
-      <category>議会・行政</category>
-    </item>
-    <item>
-      <title>大洲の学校の体育館にエアコンはあるのか。教室は99.6%、体育館は0%だった</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/taiikukan-kucho.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/taiikukan-kucho.html</guid>
-      <pubDate>Sat, 05 Sep 2026 09:00:00 +0900</pubDate>
-      <description>公立小中学校の教室のエアコンは99.6%に届いた。だが体育館は全国31.7%、愛媛県23.1%、大洲市は0%。文部科学省の市区町村別データと市議会の答弁から、8年計画とその理由を調べた。</description>
-      <category>子育て・教育</category>
-      <category>防災</category>
-    </item>
-    <item>
-      <title>9月議会で9人が何を聞くのか。通告書を全部読んだら、6人が学校の話だった</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/gikai-2026-09-tsukoku.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/gikai-2026-09-tsukoku.html</guid>
-      <pubDate>Sat, 05 Sep 2026 09:00:00 +0900</pubDate>
-      <description>大洲市議会の令和8年9月定例会に向けて、9人の議員が出した質問の予告文書を3ページ全部読んだ。テーマごとに束ね直すと、学校に6人、コミュニティセンターと空調に3人ずつ関心が集まっていた。過去5回分ともくらべた。</description>
-      <category>議会・行政</category>
-    </item>
-    <item>
-      <title>9月1日から、中央線のない道は時速30キロ。大洲で変わる道、変わらない道</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/seikatsu-doro-30km.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/seikatsu-doro-30km.html</guid>
-      <pubDate>Sat, 05 Sep 2026 09:00:00 +0900</pubDate>
-      <description>2026年9月1日、中央線のない生活道路の法定速度が60km/hから30km/hに下がった。ただし標識のある道と中央線のある道は変わらない。大洲市内で何が変わるのか、ゾーン30との違いとあわせて整理した。</description>
-      <category>交通・インフラ</category>
-      <category>防災</category>
     </item>
   </channel>
 </rss>

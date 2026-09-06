@@ -11483,6 +11483,35 @@
         }
       ]
     },
+    "ozu-jo-matsu-hinoki": {
+      "path": "eachnews/ozu-jo-matsu-hinoki.html",
+      "checks": [
+        {
+          "date": "2026-09-06",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "02b6692c8c81",
+          "note": "人が読んで裏取り。松→桧の直接の引き金は松枯れ病ではなく錦帯橋・金沢工事による松材の価格高騰であることを報告書第4章の原文で確認。金沢城の松使用量は裏が取れず、その旨を本文に明記してある"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "machine",
+          "by": "opus",
+          "result": "機械点検",
+          "hash": "02b6692c8c81",
+          "note": "check_site エラー0"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "numbers",
+          "by": "opus",
+          "result": "数字と出典の照合",
+          "hash": "02b6692c8c81",
+          "note": "未照合6個は愛媛県・林野庁の森林面積統計と大洲市統計。出典は全10本取得できている"
+        }
+      ]
+    },
     "ozu-jo-nihonichi": {
       "path": "eachnews/ozu-jo-nihonichi.html",
       "checks": [
@@ -12000,6 +12029,35 @@
           "result": "OK",
           "hash": "d3a08d142e1d",
           "note": "疑問形の見出しの答え・断定表現の裏付け・市への要望の混入・議会引用の原文照合を通しで確認。議会由来と書いた引用127件のうち105件は会議録キャッシュと一字一致、残りは市議会だより/県議会/条例/基本計画など別出典への帰属が正しいことを確認"
+        }
+      ]
+    },
+    "ozu-kato-yasumichi-kifu": {
+      "path": "eachnews/ozu-kato-yasumichi-kifu.html",
+      "checks": [
+        {
+          "date": "2026-09-06",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "49464015b65a",
+          "note": "人が読んで裏取り。寄付の動機は会議録307回分・県史・国会図書館まで探して本人の言葉が出てこなかったことを本文に正直に書いてある。44.9haは都市計画決定面積であり90haとの差を「減った」と書かない理由も明記"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "machine",
+          "by": "opus",
+          "result": "機械点検",
+          "hash": "49464015b65a",
+          "note": "check_site エラー0"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "numbers",
+          "by": "opus",
+          "result": "数字と出典の照合",
+          "hash": "49464015b65a",
+          "note": "未照合3個はすべて自分で計算した値(44.9ha→449,000平方メートル、昭和24年→1949年、会議録307回の自数え)。403の5本はWayback経由で読んでいる"
         }
       ]
     },
@@ -13898,6 +13956,35 @@
         }
       ]
     },
+    "ozu-shimin-ga-ugoita": {
+      "path": "eachnews/ozu-shimin-ga-ugoita.html",
+      "checks": [
+        {
+          "date": "2026-09-06",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "c9524f7c7b42",
+          "note": "人が読んで裏取り。請願・陳情ルートは全307回から番号と表題を機械抽出し14件を1件ずつ議決確認。要望書・自治会ルートは語彙ベースで取りこぼしうる旨を報告に明記。一般市民の実名は書いていない"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "machine",
+          "by": "opus",
+          "result": "機械点検",
+          "hash": "c9524f7c7b42",
+          "note": "check_site エラー0"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "numbers",
+          "by": "opus",
+          "result": "数字と出典の照合",
+          "hash": "c9524f7c7b42",
+          "note": "未照合1個のみ。出典39本中38本取得"
+        }
+      ]
+    },
     "ozu-shinrin-kankyozei-tsukue": {
       "path": "eachnews/ozu-shinrin-kankyozei-tsukue.html",
       "checks": [
@@ -14797,6 +14884,35 @@
         }
       ]
     },
+    "ozu-ukai-kanransha": {
+      "path": "eachnews/ozu-ukai-kanransha.html",
+      "checks": [
+        {
+          "date": "2026-09-06",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "857f8f3f0c26",
+          "note": "人が読んで裏取り。私が渡した前提「約6,000人(令和元)」が誤りで、県統計の令和元年は3,618人だとエージェントが訂正。県の連続12年分を採用している"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "machine",
+          "by": "opus",
+          "result": "機械点検",
+          "hash": "857f8f3f0c26",
+          "note": "check_site エラー0"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "numbers",
+          "by": "opus",
+          "result": "数字と出典の照合",
+          "hash": "857f8f3f0c26",
+          "note": "ピーク2万8,754人はH25_201309teirei-3の答弁原文で確認(全角２のため機械が読めず、目で確かめた)。いもたき7万8,014人も同答弁にあり。5,485/5,693も会議録に実在"
+        }
+      ]
+    },
     "ozu-uriage-ranking": {
       "path": "eachnews/ozu-uriage-ranking.html",
       "checks": [
@@ -14875,6 +14991,35 @@
           "by": "opus",
           "result": "61個中1個が未照合(通知書の生の桁22,230,485千円で、記事の222億3,000万円と一致)",
           "hash": "8d6600885ce3"
+        }
+      ]
+    },
+    "ozu-yasarai-nochi": {
+      "path": "eachnews/ozu-yasarai-nochi.html",
+      "checks": [
+        {
+          "date": "2026-09-06",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "933b49cd287c",
+          "note": "人が読んで裏取り。事業は令和7年度で終わらず令和9年度完成目標に2年延びていることを最新答弁で確認。収益性20%の定義は農水省実施要領の原文、15年契約は土地改良法91条の2第6項まで当たっている"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "machine",
+          "by": "opus",
+          "result": "機械点検",
+          "hash": "933b49cd287c",
+          "note": "check_site エラー0"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "numbers",
+          "by": "opus",
+          "result": "数字と出典の照合",
+          "hash": "933b49cd287c",
+          "note": "未照合は会議録307回分の自数えのみ。会議録6本は手元キャッシュから写して照合済み"
         }
       ]
     },

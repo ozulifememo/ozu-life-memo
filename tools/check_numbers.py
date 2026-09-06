@@ -170,7 +170,56 @@ def kansuji_to_arabic(text: str) -> str:
         v = _kan_value(w)
         return str(v) if v or w in ("〇", "零") else w
 
-    return pat.sub(_mix, text)
+    return _join_arabic_units(pat.sub(_mix, text))
+
+
+def _join_arabic_units(text: str) -> str:
+    """「2万8,754」「15億9,427万6,496円」を1つの数にする。
+
+    算用数字と万・億が混ざった書き方は、日本語の資料ではごく普通である。
+    だがここまでの処理は漢数字しか見ていないので「2万8754」のまま残り、
+    記事側の 28754 と噛み合わなかった。
+
+    2026-09-06、うかいの記事で昭和49年のピーク「２万8,754人」が
+    「出典に無い」と出て気づいた。会議録には確かに載っていた。
+    同じ形で、いもたきの「７万8,014人」も落ちていた。
+
+    この関数は生の出典テキストにも掛かるので、桁区切りのカンマが
+    残っている前提で組む。桁数が合わないものは触らない。
+    """
+    # 出典側は全角で書かれていることがある(会議録の「２万8,754人」が実例)。
+    # ここで半角にそろえてから見る。数字と桁区切りだけなので、意味は変わらない
+    text = text.translate(str.maketrans("０１２３４５６７８９，", "0123456789,"))
+
+    D = r"[0-9](?:[0-9,]*[0-9])?"
+
+    def d(t):
+        return t.replace(",", "") if t else ""
+
+    def oku(m):
+        top = d(m.group(1))
+        if not (m.group(2) or m.group(3)):
+            return m.group(0)   # 「309億円」のような裸の億は、単位のまま残す
+        if len(top) > 4:
+            return m.group(0)
+        man, below = d(m.group(2)), d(m.group(3))
+        if len(man) > 4 or len(below) > 4:
+            return m.group(0)
+        low = (int(man) * 10000 + int(below or 0)) if man else 0
+        return str(int(top) * 100000000 + low)
+
+    def man(m):
+        top, below = d(m.group(1)), d(m.group(2))
+        if len(top) > 4 or len(below) > 4:
+            return m.group(0)
+        return str(int(top) * 10000 + int(below or 0))
+
+    # 億が先。「15億9,427万6,496」の万を先に潰すと億の側の桁が合わなくなる
+    text = re.sub(r"(?<![0-9])(" + D + r")億(?:(" + D + r")万)?(" + D + r")?(?![0-9,億万])",
+                  oku, text)
+    text = re.sub(r"(?<![0-9])(" + D + r")万(" + D + r")?(?![0-9,万])",
+                  man, text)
+    return text
 
 
 def variants(digits: str) -> set:
@@ -594,6 +643,14 @@ EXPECTED_KAN = [
     # 読点を桁区切りに使う縦書きの書き方(2026-09-06、大洲城の報告書で見つけた)
     ("合計一、五九四、二七六、四九六円", "1594276496円"),
     ("寄付金四四六、五〇〇、〇一五円",   "446500015円"),
+    # 算用数字と万・億が混ざった書き方(2026-09-06、うかいの記事で見つけた)
+    ("ピークは昭和49年の2万8,754人", "28754"),
+    ("7万8,014人",                   "78014"),
+    ("1万902人",                     "10902"),
+    ("約2万5,000人",                 "25000"),
+    ("3万人を切った",                "30000"),
+    ("15億9,427万6,496円",           "1594276496"),
+    ("4億4,650万15円",               "446500015"),
     # ここから下は直してはいけないもの
     ("十分に注意してほしい",        None),
     ("一部の地域では",              None),

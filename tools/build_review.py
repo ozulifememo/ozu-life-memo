@@ -81,8 +81,34 @@ for kind, d in (("news", "eachnews"), ("jk", "jiyu-kenkyu"), ("book", "book")):
                          links=len(re.findall(r'<a [^>]*href="https?://', b)),
                          chars=len(plain(b)), body=b))
 
+# ---------------------------------------------------------------- 記事案
+# 2026-09-06。本人が「記事案も卓で◯✕したい」と言ったので、記事と同じ行として
+# 並べる。判定・メモ・端末間の同期は、記事とまったく同じ仕組みに乗る。
+# 見分けは kind="idea" と、行の左に出る「記事案」の札でつける。
+KIKAKU = os.path.join(HERE, "kikaku-ledger.json")
+n_idea = 0
+if os.path.exists(KIKAKU):
+    for k in json.load(open(KIKAKU, encoding="utf-8")):
+        body = (
+            '<div class="idea">'
+            '<h1>' + k["title"] + '</h1>'
+            '<p class="ideaTag">' + k["group"] + '</p>'
+            '<h2>クロコからのひと言</h2>'
+            '<p class="commentary">' + k["hitokoto"] + '</p>'
+            '<h2>手がかり・調べ方</h2>'
+            '<p class="commentary">' + k["tegakari"] + '</p>'
+            '<p class="ideaNote">これはまだ記事ではありません。'
+            '◯なら書きにいきます。✕でも、理由をメモに書いてもらえると助かります。</p>'
+            '</div>')
+        rows.append(dict(kind="idea", slug=k["id"], draft=False, title=k["title"],
+                         date="", cat=k["group"], tags=[], links=0,
+                         chars=len(k["hitokoto"]) + len(k["tegakari"]), body=body))
+        n_idea += 1
+    print("記事案:", n_idea)
+
 SLUGS = {r["slug"] for r in rows}
-print("記事:", len(rows), "／ 下書き:", sum(1 for r in rows if r["draft"]))
+print("記事:", sum(1 for r in rows if r["kind"] != "idea"),
+      "／ 下書き:", sum(1 for r in rows if r["draft"]))
 
 # ---------------------------------------------------------------- 画像
 used = set()

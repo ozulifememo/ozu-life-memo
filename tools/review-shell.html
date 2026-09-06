@@ -127,6 +127,27 @@ button,select,input,textarea{font-family:inherit;color:inherit}
 .row .no{font-family:var(--mono);font-weight:300}
 .row .kd{border:1px solid var(--rule);border-radius:3px;padding:0 4px;font-size:9.5px}
 .row .kd.draft{border-color:#6a5a3a;color:#c9ac6f}
+/* 記事案。記事と一目で見分けがつくように、札も左線も別の色にする
+   (2026-09-06、本人の「ちゃんと区別するように」) */
+.row .kd.idea{border-color:#4a6b8a;color:#8fc0e8;background:#1b2734}
+.row.isIdea{border-left-color:#2f5d84}
+.row.isIdea .ti{color:#dfe9f2}
+.row.isIdea.ok{border-left-color:var(--ok)}
+.row.isIdea.fix{border-left-color:var(--fix)}
+.row.isIdea.drop{border-left-color:var(--drop)}
+.ideaCount{opacity:.85;color:#8fc0e8}
+/* 中身の見た目 */
+.paper .idea{max-width:660px;margin:0 auto;padding:8px 0 40px}
+.paper .idea h1{font-size:23px;line-height:1.5;margin:0 0 14px}
+.paper .idea .ideaTag{display:inline-block;font-size:11.5px;letter-spacing:.04em;
+  border:1px solid #4a6b8a;color:#8fc0e8;background:#1b2734;
+  border-radius:3px;padding:3px 10px;margin:0 0 26px}
+.paper .idea h2{font-size:13px;letter-spacing:.06em;color:#8fc0e8;
+  margin:26px 0 8px;padding-bottom:6px;border-bottom:1px solid #26313d}
+.paper .idea .commentary{font-size:14.5px;line-height:1.95;margin:0}
+.paper .idea .ideaNote{margin:34px 0 0;padding:12px 14px;border-radius:4px;
+  background:#1b2027;border:1px solid #262d35;
+  font-size:12.5px;line-height:1.8;color:var(--fg3)}
 .row .mk{margin-left:auto;font-size:12px}
 .row .ti{font-size:13px;line-height:1.5;color:var(--fg2)}
 .row.done .ti{color:#7f8b96}
@@ -443,7 +464,11 @@ function build(){
   var out = [];
   for(var i=0;i<N;i++){
     var a = A[i];
-    if(F.kind==='draft'){ if(!a.draft) continue; }
+    /* 記事案は独立させる。「記事案」を選んだときだけ出て、
+       それ以外の絞り込みには混ざらない(本人の「ちゃんと区別するように」) */
+    if(F.kind==='idea'){ if(a.kind!=='idea') continue; }
+    else if(a.kind==='idea') continue;
+    else if(F.kind==='draft'){ if(!a.draft) continue; }
     else if(F.kind && a.kind!==F.kind) continue;
     if(layerOf(a.slug) !== F.layer) continue;
     if(F.layer==='yari' && F.turn && turnOf(a.slug) !== F.turn) continue;
@@ -464,23 +489,26 @@ function build(){
 
 /* ---------- 一覧を描く ---------- */
 var MK = {ok:'◯', fix:'△', drop:'✕'};
-var KD = {news:'記事', jk:'自由研究', book:'読書'};
+var KD = {news:'記事', jk:'自由研究', book:'読書', idea:'記事案'};
 function renderRows(){
   if(!ORDER.length){
     rows.innerHTML = '<div class="empty">'+(F.layer==='mi'
-      ? 'この条件では、まだ読んでいない記事はありません。<br>上の「やり取り」「完了」に切り替えられます。'
+      ? (F.kind==='idea'
+         ? 'まだ見ていない記事案はありません。<br>上の「やり取り」「完了」に切り替えられます。'
+         : 'この条件では、まだ読んでいない記事はありません。<br>上の「やり取り」「完了」に切り替えられます。')
       : '当てはまる記事がありません。')+'</div>';
     return;
   }
   var h = [];
   for(var n=0;n<ORDER.length;n++){
     var i = ORDER[n], a = A[i], r = S[a.slug] || {};
-    var cls = 'row' + (r.v ? ' done '+r.v : '') + (i===cur ? ' cur' : '');
+    var cls = 'row' + (r.v ? ' done '+r.v : '') + (i===cur ? ' cur' : '')
+            + (a.kind==='idea' ? ' isIdea' : '');
     h.push('<button class="'+cls+'" data-i="'+i+'">'
       + '<span class="m1">'
       +   '<span class="no">'+pad(i)+'</span>'
       +   '<span class="kd'+(a.draft?' draft':'')+'">'+(a.draft?'下書き':KD[a.kind])+'</span>'
-      +   '<span>'+esc(a.date || '未公開')+'</span>'
+      +   '<span>'+esc(a.kind==='idea' ? 'まだ書いていない' : (a.date || '未公開'))+'</span>'
       +   '<span>'+esc(a.cat)+'</span>'
       +   (r.v ? '<span class="mk">'+MK[r.v]+'</span>' : '')
       + '</span>'
@@ -496,19 +524,27 @@ function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g, function(c){
 
 /* ---------- 進みの表示 ---------- */
 function paint(){
-  var d = 0; for(var i=0;i<N;i++) if(done(i)) d++;
-  $('#prog').firstElementChild.style.width = (d/N*100)+'%';
+  /* 記事案を見ているときは、記事案の中だけで数える。
+     記事246本と記事案50件を1本の棒に混ぜると、どちらの進みも読めなくなる */
+  var wantIdea = (F.kind==='idea');
+  var d = 0, T = 0;
+  for(var i=0;i<N;i++){
+    if((A[i].kind==='idea') !== wantIdea) continue;
+    T++; if(done(i)) d++;
+  }
+  if(!T) T = 1;
+  $('#prog').firstElementChild.style.width = (d/T*100)+'%';
   $('#progtxt').textContent = d;
   $('#prog').setAttribute('aria-valuenow', d);
   $('#dDone').textContent = d;
-  $('#dAll').textContent = N;
-  $('#dbar').firstElementChild.style.width = (d/N*100)+'%';
+  $('#dAll').textContent = T;
+  $('#dbar').firstElementChild.style.width = (d/T*100)+'%';
   var t0 = new Date(); t0.setHours(0,0,0,0);
   var today = 0;
   for(var k in S) if(S[k].v && S[k].t >= t0.getTime()) today++;
   $('#dToday').textContent = today ? 'きょう '+today+' 本' : '';
   /* 種類ごと */
-  var g = {news:[0,0], jk:[0,0], book:[0,0], draft:[0,0]};
+  var g = {news:[0,0], jk:[0,0], book:[0,0], draft:[0,0], idea:[0,0]};
   for(var j=0;j<N;j++){
     var a = A[j], key = a.draft ? 'draft' : a.kind;
     g[key][1]++; if(done(j)) g[key][0]++;
@@ -516,20 +552,25 @@ function paint(){
   }
   $('#dkinds').innerHTML = ['news','jk','book'].map(function(k){
     return KD[k]+' <b class="mono">'+g[k][0]+'/'+g[k][1]+'</b>';
-  }).join('') + '<span style="opacity:.75">うち下書き <b class="mono">'+g.draft[0]+'/'+g.draft[1]+'</b></span>';
+  }).join('') + '<span style="opacity:.75">うち下書き <b class="mono">'+g.draft[0]+'/'+g.draft[1]+'</b></span>'
+    + '<span class="ideaCount">記事案 <b class="mono">'+g.idea[0]+'/'+g.idea[1]+'</b></span>';
   /* 種類チップの残数 */
   document.querySelectorAll('#fKind .chip').forEach(function(c){
     var k = c.dataset.k, left = 0;
     for(var j=0;j<N;j++){
       var a = A[j];
-      var mt = !k ? true : (k==='draft' ? a.draft : a.kind===k);
+      var mt = !k ? (a.kind!=='idea')
+                  : (k==='draft' ? (a.draft && a.kind!=='idea') : a.kind===k);
       if(mt && !done(j)) left++;
     }
     var s = c.querySelector('.n'); if(s) s.textContent = left;
   });
   /* 層ごとの数 */
   var LC = {mi:0, yari:0, kan:0};
-  for(var q=0;q<N;q++) LC[layerOf(A[q].slug)]++;
+  for(var q=0;q<N;q++){
+    if((A[q].kind==='idea') !== wantIdea) continue;
+    LC[layerOf(A[q].slug)]++;
+  }
   document.querySelectorAll('#layers button').forEach(function(b){
     var e = b.querySelector('.n'); if(e) e.textContent = LC[b.dataset.l];
   });
@@ -708,7 +749,7 @@ memoT.addEventListener('keydown', function(e){
 });
 
 /* ---------- 絞り込みUI ---------- */
-var KINDS = [['','ぜんぶ'],['news','記事'],['jk','自由研究'],['book','読書'],['draft','下書き']];
+var KINDS = [['','ぜんぶ'],['news','記事'],['jk','自由研究'],['book','読書'],['draft','下書き'],['idea','記事案']];
 $('#fKind').innerHTML = KINDS.map(function(k){
   return '<button class="chip'+(k[0]===F.kind?' on':'')+'" data-k="'+k[0]+'">'+k[1]+'<span class="n"></span></button>';
 }).join('');

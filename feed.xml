@@ -5,8 +5,32 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Sun, 06 Sep 2026 10:34:18 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 06 Sep 2026 13:29:37 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>花粉症の柑橘を10年。大洲の収穫は年150キロ、本家の村は年100トンだった</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-jabara-10nen.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-jabara-10nen.html</guid>
+      <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
+      <description>大洲市は平成17年度から、花粉症に効くとされる柑橘「ジャバラ」を上須戒地区で試作していた。飲料「ジンじゃばら」は商標登録され200本が完売する。そして平成25年度、圃場は地権者に返された。本家の和歌山県北山村、隣の内子町と数字を並べて追った。</description>
+      <category>産業・農業</category>
+    </item>
+    <item>
+      <title>28軒のうち13軒が同じ年にやめた。大洲のたばこ畑12ヘクタールのその後</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-tabako-haisaku.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-tabako-haisaku.html</guid>
+      <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
+      <description>平成24年、大洲市の葉たばこ農家28戸のうち13戸が一斉に廃作し、約12ヘクタールの畑が空いた。きっかけは国のたばこ増税とJTの全国廃作募集だった。市と県とJAが選んだ「転換推進12品目」と、その後14年ぶんの会議録を追った。</description>
+      <category>産業・農業</category>
+    </item>
+    <item>
+      <title>国が440ヘクタールの畑を作った。耕作放棄地は894ヘクタール。並べていい数字か調べた</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kokuei-nochi.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kokuei-nochi.html</guid>
+      <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
+      <description>大洲の山の中に、斜面が急に平らになっている場所がある。昭和51年から平成元年にかけて国が造成した農地で、正式には国営大洲喜多開拓建設事業という。植えるはずだった桑と葉たばこはどちらも消え、29あった維持管理組合は7つになった。造成440ヘクタールと耕作放棄地894ヘクタールが同じものさしの数字なのかも、会議録で確かめた。</description>
+      <category>産業・農業</category>
+    </item>
     <item>
       <title>堤防の代わりに、家のほうを持ち上げた。全国で最初にやったのは大洲だった</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-takuchi-kasaage.html</link>
@@ -242,31 +266,6 @@
       <description>大洲市民文化会館の新築工事が入札不調になった。予定価格37億9,700万円の建築工事に応札者ゼロ。3か月前の市議会で市長が「業者がなかった場合」を想定して答えていた、そのとおりのことが起きた。</description>
       <category>財政・税金</category>
       <category>まちづくり</category>
-    </item>
-    <item>
-      <title>南海トラフの確率のもとは、江戸時代の古文書だった。「竿」の解釈で1.4mか1.9mか変わる</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/nankai-kakuritsu-murotsu.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/nankai-kakuritsu-murotsu.html</guid>
-      <pubDate>Fri, 04 Sep 2026 09:00:00 +0900</pubDate>
-      <description>南海トラフ地震の発生確率は、高知県室戸市・室津港の隆起量から計算されている。その根拠は江戸時代の史料で、測量に使った竿の解釈しだいで数値が変わる。確率が動いた本当の理由をたどる。</description>
-      <category>防災</category>
-    </item>
-    <item>
-      <title>「南海トラフ80%」の横に「20〜50%」が並んだ。国が確率を2つ出した理由</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/nankai-kakuritsu-2tsu.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/nankai-kakuritsu-2tsu.html</guid>
-      <pubDate>Fri, 04 Sep 2026 09:00:00 +0900</pubDate>
-      <description>南海トラフ地震の30年以内発生確率は、2025年9月に「60〜90%程度以上」と「20〜50%」の併記になった。南海トラフだけが他の地震と違う計算式を使っている理由と、大洲市議会での使われ方を追う。</description>
-      <category>防災</category>
-    </item>
-    <item>
-      <title>防犯灯の電気代は1灯で年2,400円。市は1円も出していない</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-bohantou-denkidai.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-bohantou-denkidai.html</guid>
-      <pubDate>Thu, 03 Sep 2026 09:00:00 +0900</pubDate>
-      <description>夜道を照らす防犯灯は市のものではなく、電気代も管理も区・自治会の負担だ。四国電力の料金表から1灯あたり年約2,400円と計算し、市全体で住民が払う額を推計。電気代を市が持つ自治体との比較と、「防犯灯」という名前が生まれた1947年までさかのぼる。</description>
-      <category>交通・インフラ</category>
-      <category>財政・税金</category>
     </item>
   </channel>
 </rss>

@@ -11144,6 +11144,35 @@
         }
       ]
     },
+    "ozu-jabara-10nen": {
+      "path": "eachnews/ozu-jabara-10nen.html",
+      "checks": [
+        {
+          "date": "2026-09-06",
+          "level": "human",
+          "by": "opus",
+          "result": "OK",
+          "hash": "4e718a2878a5",
+          "note": "本家・北山村との比較が記事の核。出典原文を目で読んで2498万→2億7592万を確認した。出典は「10倍以上」としか書いていないので、11.0倍は自分で計算したと本文に明記させた。やめた理由は会議録に無く、その旨を正直に書いている"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "machine",
+          "by": "opus",
+          "result": "OK",
+          "hash": "4e718a2878a5",
+          "note": "check_site.py 問題なし"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "numbers",
+          "by": "opus",
+          "result": "OK",
+          "hash": "4e718a2878a5",
+          "note": "北山村の販売額2億7,592万円と平成10年2,498万円を、みんなの農業広場の原文で実際に確認した(SSLで一度取れなかったが、ブラウザ相当のUAで再取得して原文を読んだ)。残る未照合は和暦の西暦換算と、会議録307回という自分で数えた数"
+        }
+      ]
+    },
     "ozu-jo-nihonichi": {
       "path": "eachnews/ozu-jo-nihonichi.html",
       "checks": [
@@ -12016,6 +12045,35 @@
           "result": "数字156個中 21個が出典に見つからず(出典16/16本)",
           "hash": "ed37f2a28b20",
           "note": "要確認: 1953、1963、38207、4,033.4k、9,735、8,677"
+        }
+      ]
+    },
+    "ozu-kokuei-nochi": {
+      "path": "eachnews/ozu-kokuei-nochi.html",
+      "checks": [
+        {
+          "date": "2026-09-06",
+          "level": "human",
+          "by": "opus",
+          "result": "OK",
+          "hash": "a44e8ecb8a81",
+          "note": "440haと894haが同じものさしの数字でないことを記事自身が検証して1節にしている。土地改良区が29から7に減ったこと、国が同じ事業を2度指摘していたことも会議録で裏取り"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "machine",
+          "by": "opus",
+          "result": "OK",
+          "hash": "a44e8ecb8a81",
+          "note": "check_site.py 問題なし"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "numbers",
+          "by": "opus",
+          "result": "OK",
+          "hash": "a44e8ecb8a81",
+          "note": "数字74個すべて出典と一致。出典17本すべて取得できた"
         }
       ]
     },
@@ -13981,6 +14039,35 @@
           "result": "OK",
           "hash": "bf140db47afb",
           "note": "疑問形の見出しの答え・断定表現の裏付け・市への要望の混入・議会引用の原文照合を通しで確認。議会由来と書いた引用は会議録キャッシュと突き合わせ、一致しなかったものは条例/パブコメ/判決文/JA開示資料など別出典への帰属が正しいことを個別に確認した"
+        }
+      ]
+    },
+    "ozu-tabako-haisaku": {
+      "path": "eachnews/ozu-tabako-haisaku.html",
+      "checks": [
+        {
+          "date": "2026-09-06",
+          "level": "human",
+          "by": "opus",
+          "result": "OK",
+          "hash": "995d54351995",
+          "note": "45戸→15戸の推移、転換推進12品目、64%解消36%未利用を会議録で確認。作る側がやめても市たばこ税は減らなかったという分け方も正しい"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "machine",
+          "by": "opus",
+          "result": "OK",
+          "hash": "995d54351995",
+          "note": "check_site.py 問題なし"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "numbers",
+          "by": "opus",
+          "result": "OK",
+          "hash": "995d54351995",
+          "note": "数字74個中72個が一致。残る2個は市たばこ税(別記事の数字)と、会議録307回という自分で数えた数"
         }
       ]
     },

@@ -36,6 +36,33 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-jabara-10nen",
+    date: "2026-09-06",
+    title: "花粉症の柑橘を10年。大洲の収穫は年150キロ、本家の村は年100トンだった",
+    category: "shiten",
+    source: "大洲市議会 会議録／和歌山県北山村／内子フレッシュパークからり",
+    sourceDate: "2026-09-06",
+    tags: ["産業・農業"],
+  },
+  {
+    slug: "ozu-tabako-haisaku",
+    date: "2026-09-06",
+    title: "28軒のうち13軒が同じ年にやめた。大洲のたばこ畑12ヘクタールのその後",
+    category: "shiten",
+    source: "大洲市議会 会議録／農林水産省／財務省",
+    sourceDate: "2026-09-06",
+    tags: ["産業・農業"],
+  },
+  {
+    slug: "ozu-kokuei-nochi",
+    date: "2026-09-06",
+    title: "国が440ヘクタールの畑を作った。耕作放棄地は894ヘクタール。並べていい数字か調べた",
+    category: "shiten",
+    source: "大洲市議会会議録／会計検査院決算検査報告／えひめの記憶／愛媛県",
+    sourceDate: "2026-09-06",
+    tags: ["産業・農業"],
+  },
+  {
     slug: "ozu-takuchi-kasaage",
     date: "2026-09-06",
     title: "堤防の代わりに、家のほうを持ち上げた。全国で最初にやったのは大洲だった",

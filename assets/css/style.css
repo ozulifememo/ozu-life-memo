@@ -1,0 +1,4436 @@
+:root {
+  /* Color */
+  --color-bg: #f6f5f2;
+  --color-surface: #ffffff;
+  --color-surface-alt: #eef2f4;
+  --color-text: #16232f;
+  --color-text-muted: #5b6673;
+  --color-text-faint: #656b78;
+  --color-brand: #2a5b82;
+  --color-brand-dark: #1e435f;
+  /* アクセントは肱川の深い青緑。
+     以前の #1fb3ac はCSSフレームワークの既定色そのままの明るいティールで、
+     藍・蜜柑・柿渋といった落ち着いた和色の中で1色だけ浮いていた。
+     タグ8色(--color-tag-*)と同じ彩度・明度帯にそろえている。 */
+  --color-accent: #2e7f78;
+  --color-accent-dark: #1f5f5a;
+  /* 濃紺の帯(.home-kenkyu)の上で使う明るめのアクセント。
+     #2e7f78 のままだと濃紺に沈んで読めないための専用色。 */
+  --color-accent-on-dark: #7fc4b9;
+  --color-accent-btn: #0f7d78;
+  --color-accent-btn-hover: #0c6560;
+  /* メモうの吹き出し用。マスコットの体色にある茶系から取っている。
+     要点ボックス(--color-surface-alt の寒色)と並べても同じ箱に見えないように、
+     わざと暖色側に置いている。 */
+  --color-memou-bg: #fdf8ef;
+  --color-memou-border: #dfd0b8;
+  --color-memou-ink: #8a5541;
+
+  --color-border: #e4e2dc;
+  --color-border-strong: #d3d0c7;
+  --color-warn-bg: #fdf1d6;
+  --color-warn-text: #8a6d1d;
+  --color-warn-border: #eddca0;
+
+  /* タグ・カテゴリの色分け。
+     もとは彩度の高い8色だったが、1画面に8色が同時に出ると
+     「配色が決まっていないサイト」に見えるため、明度をそろえ
+     彩度を落として、8色が1つの色群として読めるようにしている。
+     色そのものは大洲にちなんだ名前を引き継いでいる。 */
+  --color-tag-indigo: #3d5473;    /* 藍色 - 伝統・行政 */
+  --color-tag-mikan: #9a6238;     /* 蜜柑色 - 観光・活気 */
+  --color-tag-moss: #566b45;      /* 若草色 - まちづくり・再生 */
+  --color-tag-gold: #846f42;      /* 山吹金 - 産業・実り */
+  --color-tag-teal: #3a6a64;      /* 肱川の水色 - インフラ・流れ */
+  --color-tag-slate: #556678; /* 鈍色 - 財政・データ */
+  --color-tag-kakishibu: #8a5541; /* 柿渋色 - 防災・警戒 */
+  --color-tag-rose: #7b5060;      /* 紅樺色 - 福祉・やさしさ */
+
+  /* Typography scale (major third-ish, capped to a small set) */
+  /* 本文はゴシック、見出しは明朝。Webフォントは各HTMLの<head>で読み込んでいる。
+     未読み込み・読み込み失敗時はOS標準のフォントに落ちるようフォールバックを並べる。 */
+  --font-sans: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
+  --font-serif: "Shippori Mincho B1", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+  --text-xs: 0.8125rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-md: 1.125rem;
+  --text-lg: 1.375rem;
+  --text-xl: 1.75rem;
+  --text-2xl: 2.25rem;
+  --text-3xl: 2.75rem;
+
+  /* Spacing scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+
+  /* Elevation (subtle, warm-toned so it doesn't read as pure-black drop shadow) */
+  --shadow-sm: 0 1px 2px rgba(22, 35, 47, 0.06), 0 1px 1px rgba(22, 35, 47, 0.04);
+  --shadow-md: 0 6px 16px rgba(22, 35, 47, 0.08), 0 2px 4px rgba(22, 35, 47, 0.05);
+  --shadow-lg: 0 16px 40px rgba(22, 35, 47, 0.12), 0 4px 10px rgba(22, 35, 47, 0.06);
+
+  --max-width: 1160px;
+  --header-h: 76px;
+  /* 角丸は「かすかに面取りしてある」程度に抑える。
+     以前は 8/14/20px で、カードもタグも写真も全部丸く、
+     いかにも生成ツールの既定値という見え方だった。
+     読み物主体のサイトなので、印刷物寄りの硬い角に振る。 */
+  --radius-sm: 4px;
+  --radius: 6px;
+  --radius-lg: 8px;
+
+  /* backward-compat aliases (specialised sections below still reference these) */
+  --color-accent-dark-legacy: var(--color-accent-dark);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.75;
+  font-size: var(--text-base);
+  -webkit-font-smoothing: antialiased;
+  /* 大洲検定・ジオゲッサー・データなど中身の短いページで、フッターが画面の
+     途中で終わって下に何もない帯ができてしまうのを防ぐ。
+     bodyを縦フレックスにして、フッターに margin-top:auto を効かせる。 */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* キーボード操作時にどこにいるか見えるようにする(マウス操作では出ない) */
+:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
+}
+
+/* ── 日本語の折り返しをきれいにする ────────────────────────────
+   日本語は英語と違って「どこでも改行できる」ので、放っておくと
+   「大洲市民の非公式情報サイ／ト」のように最後の1文字だけ次の行に
+   落ちて読みにくくなる。
+   ・word-break: auto-phrase … 文節(意味のまとまり)で改行してくれる
+   ・text-wrap: pretty      … 最後の行が極端に短くならないよう調整する
+   どちらも未対応ブラウザでは無視されるだけなので、害はない。
+   長い本文にかけると重いので、見出しや短い説明文だけに絞ってかける。 */
+/* まず全体に text-wrap: pretty。最後の行に1〜2文字だけ残るのを防ぐ */
+h1, h2, h3, h4,
+.hero-text p,
+.page-hero p,
+.pick-card h3,
+.pick-card p,
+.news-title,
+.link-card strong,
+.link-card p,
+.icon-card,
+.monthly-headline,
+.monthly-comment,
+.featured-article .featured-body p,
+.fun-corner-card p,
+.sidebar-latest-list li a,
+.news-category-card p,
+.home-kenkyu-lead,
+figcaption {
+  text-wrap: pretty;
+}
+
+/* メモうの吹き出しだけ、この指定から漏れていた。
+   本人の指摘(2026-09-05):「3つのメモのうちの1つが少し長いから、
+   1文字だけ次の行に落ちるのが嫌」。段落が3つあること自体は問題ない。
+
+   はじめ balance にしたが、**段落の途中に <br> があると balance は
+   <br> の手前までしか効かない**ことが分かった(2026-09-05に実測)。
+   sogo3-pabukome-5nin の帯が実例で、前半2行は13字・14字ときれいに
+   揃っているのに、後半だけ25字・2字のまま放置されていた。
+   メモうの段落569のうち18に <br> が入っている。
+
+   pretty は「最後の行が極端に短くならないようにする」ための指定で、
+   まさに本人が嫌がっている形を狙って直してくれる。
+   63本×5つの画面幅で数え比べた結果:
+     総行数はどの幅でも balance と完全に同じ(見た目の詰まり方は変わらない)
+     1〜2文字だけ落ちる段落は balance 1件 → pretty 0件
+   悪くなるところが無いので pretty にする。 */
+.memou-intro-bubble p,
+.memou-aside p {
+  text-wrap: pretty;
+  word-break: auto-phrase;
+}
+
+/* 壊れてはいけない語を、壊れない箱に入れる。tools/kaigyo.py が付ける。
+   word-break: auto-phrase はChromeにしか無く、iPadのSafariでは効かない。
+   本人の指摘(2026-09-05):「大洲城・臥龍山荘、まさかの来／館者5万人」のように
+   語の途中で切れる。数字と単位(37,931／人)も切れる。
+   これはどのブラウザでも効く。 */
+.nb {
+  white-space: nowrap;
+}
+
+/* word-break: auto-phrase は「見出し・短い説明文」だけにかける。
+   長い段落にかけると文節の切れ目でしか折り返せず、右端が大きく余って
+   かえって行が詰まる(実測: 1行の使用率が91%→84%、行数が12→13に増えた)。 */
+h1, h2, h3, h4,
+.page-hero p,
+.pick-card h3,
+.pick-card p,
+.news-title,
+.link-card strong,
+.link-card p,
+.icon-card,
+.monthly-headline,
+.sidebar-latest-list li a,
+.home-kenkyu-lead,
+.kenkyu-list a,
+figcaption {
+  word-break: auto-phrase;
+}
+
+/* ── 見出しは明朝 ────────────────────────────────────────────
+   本文と同じゴシックで見出しだけ極太にすると、どうしても
+   「テンプレートで組んだページ」の見え方になる。
+   見出しに明朝を当てると、同じ内容でも「編集された誌面」に見える。
+   UI(ナビ・ボタン・タブ・数字ラベル)はゴシックのままにして、
+   読み物の部分だけ書体を変えている。 */
+.hero h1,
+.page-hero h1,
+.article-page h1,
+.article-page h2,
+.section-title,
+.pick-card h3,
+.news-card .news-title,
+.lead-story-title,
+.kenkyu-list a,
+.featured-article h3,
+.monthly-headline {
+  font-family: var(--font-serif);
+  font-feature-settings: "palt" 1;
+}
+
+.wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* 共通カード演出: 罫線1本のフラットな箱で統一する。
+   以前は全カードに影+ホバーで2px浮き上がる演出を付けていたが、
+   読み物サイトでカードが浮き沈みするのは広告サイトの動きで、
+   誌面らしさを消していた。ホバーは罫線の色が変わるだけにする。
+   (影は、本当に手前に重なる部品=ドロップダウンとモーダルだけに残す) */
+.news-category-card,
+.icon-card,
+.related-list-plain,
+.monthly-card,
+.featured-article a.featured-card,
+.fun-corner-card {
+  transition: border-color 0.18s ease, background 0.18s ease;
+}
+
+.icon-card:hover,
+.monthly-card:hover,
+.featured-article a.featured-card:hover,
+.fun-corner-card:hover {
+  border-color: var(--color-brand);
+}
+
+/* Header */
+/* [data-site-header]は、site-chrome.jsがヘッダーHTMLを差し込む前の空のプレースホルダー。
+   高さを指定しないとJS実行までの一瞬ヘッダーが無い状態になり、実際の高さ(--header-h)分
+   レイアウトがガクッとずれる(CLS)ので、あらかじめ同じ高さを確保しておく。 */
+[data-site-header] {
+  display: block;
+  /* +3px は .site-header の上端の藍色の線の分 */
+  min-height: calc(var(--header-h) + 3px);
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  /* すりガラス(backdrop-filter)はやめて、不透明のベタ塗りにする。
+     半透明で本文が透けるヘッダーは流行りのUIの既定演出で、
+     新聞・雑誌的な題字の据わりが出ない(97%でも本文がうっすら透けた)。
+     画面最上部の藍色の線は、紙面の題字罫のつもり。 */
+  background: var(--color-bg);
+  border-top: 3px solid var(--color-brand-dark);
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* ヘッダーだけは本文の枠(--max-width: 1160px)を使わず画面幅いっぱいに広げる。
+   本文は読みやすさ優先で幅を抑えたいが、ロゴとナビまで同じ幅に押し込めると
+   大きなモニターで「真ん中だけ窮屈」に見えてしまう。
+   中途半端な幅(1400px程度)は本文と微妙にズレて雑に見えるので、
+   ・ロゴ+ナビ … 画面左端に寄せる
+   ・お問い合わせボタン … 画面右端に寄せる(margin-left:auto)
+   と割り切って、意図的な全幅ヘッダーにしている。 */
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 44px;
+  height: var(--header-h);
+  max-width: none;
+  padding: 0 clamp(20px, 3vw, 56px);
+}
+
+.logo {
+  /* A案ロゴ(題字・明朝)に合わせた書体。最上部の藍罫3pxとセットで新聞の題字の意匠 */
+  font-family: "Shippori Mincho B1", "Yu Mincho", serif;
+  font-weight: 700;
+  font-size: var(--text-md);
+  letter-spacing: 0.02em;
+  color: var(--color-brand-dark);
+  white-space: nowrap;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+}
+
+/* A案ロゴの丸マーク。地色が生成りなので、丸く切り抜いて背景に馴染ませる */
+.logo-mark {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: block;
+}
+
+@media (max-width: 480px) {
+  .logo-mark {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 44px;
+  /* flex-shrink: 0 にして、狭い幅でも項目が潰れて重ならないようにする */
+  flex: 1 0 auto;
+}
+
+/* お問い合わせボタンだけ右端へ追い出す */
+.main-nav .cta-btn {
+  margin-left: auto;
+}
+
+.main-nav a {
+  font-size: 0.95rem;
+  color: var(--color-text);
+  white-space: nowrap;
+}
+
+.main-nav a.current,
+.main-nav a:hover {
+  color: var(--color-brand);
+}
+
+/* ナビのドロップダウン(「読み物」「遊ぶ」)。PC幅ではホバーで子項目を表示する */
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown-trigger {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  font-size: 0.95rem;
+  color: var(--color-text);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.nav-dropdown-trigger:hover,
+.nav-dropdown-trigger.current,
+.nav-dropdown.open .nav-dropdown-trigger {
+  color: var(--color-brand);
+}
+
+.nav-caret {
+  /* 親の文字が0.86remまで縮む幅では0.65emで約9pxになり潰れて見えるので下限を置く */
+  font-size: max(0.72em, 11px);
+  transition: transform 0.15s ease;
+}
+
+.nav-dropdown-menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 10px;
+  padding: 8px;
+  min-width: 168px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+  z-index: 200;
+}
+
+/* トリガーとメニューの間の隙間でホバーが切れないよう、透明な橋を張る */
+.nav-dropdown::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 10px;
+}
+
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu,
+.nav-dropdown.open .nav-dropdown-menu,
+.nav-dropdown-trigger:focus + .nav-dropdown-menu {
+  display: flex;
+}
+
+.nav-dropdown:hover .nav-caret,
+.nav-dropdown.open .nav-caret {
+  transform: rotate(180deg);
+}
+
+.nav-dropdown-menu a {
+  padding: 9px 12px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.nav-dropdown-menu a:hover {
+  background: var(--color-bg);
+}
+
+.cta-btn {
+  background: var(--color-accent-btn);
+  color: #fff !important;
+  padding: 11px 24px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: var(--text-sm);
+  letter-spacing: 0.01em;
+  transition: background 0.15s ease;
+}
+
+.cta-btn:hover {
+  background: var(--color-accent-btn-hover);
+}
+
+/* ── ナビの段階的な圧縮 ──────────────────────────────
+   ナビは実寸で約790px、ロゴが約140px。画面が狭くなるにつれて
+   「余白 → 文字サイズ」の順に少しずつ削り、ハンバーガーに逃げるのを
+   できるだけ後(980px未満)まで引き延ばす。縦置きモニター(幅1080px前後)でも
+   メニューが全部見えるようにするための調整。
+   ※ここは基本スタイルより後ろに置くこと。前に置くと後の宣言に負けて効かない。 */
+@media (max-width: 1399px) {
+  .site-header .wrap {
+    gap: 34px;
+  }
+  .main-nav {
+    gap: 28px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .site-header .wrap {
+    gap: 24px;
+    padding: 0 24px;
+  }
+  .main-nav {
+    gap: 16px;
+  }
+  .main-nav a,
+  .nav-dropdown-trigger {
+    font-size: 0.92rem;
+  }
+  .main-nav .cta-btn {
+    padding: 10px 18px;
+    font-size: 0.84rem;
+  }
+}
+
+@media (max-width: 1039px) {
+  .site-header .wrap {
+    gap: 20px;
+    padding: 0 20px;
+  }
+  .logo {
+    font-size: 1rem;
+  }
+  .main-nav {
+    gap: 12px;
+  }
+  .main-nav a,
+  .nav-dropdown-trigger {
+    font-size: 0.86rem;
+  }
+  .main-nav .cta-btn {
+    padding: 9px 14px;
+    font-size: 0.8rem;
+  }
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  /* 指で押す前提なので当たり判定は44×44pxを確保する(見た目のアイコンは22pxのまま) */
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+  /* ヘッダーは左寄せ(flex-start)なので、ハンバーガーは自力で右端へ寄せる */
+  margin-left: auto;
+  /* 当たり判定を広げた分、アイコンの右端が内側に入るのを打ち消す */
+  margin-right: -11px;
+}
+
+.nav-toggle span,
+.nav-toggle span::before,
+.nav-toggle span::after {
+  content: "";
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--color-text);
+  position: relative;
+  transition: 0.2s;
+}
+
+.nav-toggle span::before {
+  position: absolute;
+  top: -7px;
+}
+
+.nav-toggle span::after {
+  position: absolute;
+  top: 7px;
+}
+
+@media (max-width: 979px) {
+  .main-nav {
+    position: fixed;
+    top: var(--header-h);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+    max-height: 0;
+    overflow: hidden;
+    overflow-y: auto;
+    transition: max-height 0.25s ease;
+  }
+
+  .main-nav.open {
+    max-height: calc(100vh - var(--header-h));
+  }
+
+  .main-nav a,
+  .main-nav .cta-btn {
+    width: 100%;
+    padding: 14px 24px;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  /* 上の圧縮ルールで小さくした文字を、ドロワーでは読みやすい大きさに戻す */
+  .main-nav a,
+  .main-nav .cta-btn,
+  .nav-dropdown-trigger {
+    font-size: 0.95rem;
+  }
+
+  .logo {
+    font-size: var(--text-md);
+  }
+
+  .main-nav .cta-btn {
+    border-radius: 0;
+    text-align: center;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  /* スマホのハンバーガーメニューでは、ホバーが使えないので
+     「読み物」「遊ぶ」の中身は常に開いた状態でそのまま縦に並べる */
+  .nav-dropdown {
+    width: 100%;
+  }
+
+  .nav-dropdown-trigger {
+    width: 100%;
+    justify-content: space-between;
+    padding: 14px 24px;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .nav-dropdown-menu {
+    display: flex;
+    position: static;
+    transform: none;
+    margin: 0;
+    padding: 0;
+    min-width: 0;
+    background: var(--color-bg);
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .nav-dropdown::after {
+    content: none;
+  }
+
+  .nav-dropdown-menu a {
+    padding: 12px 24px 12px 40px;
+    border-radius: 0;
+    font-size: 0.95rem;
+  }
+}
+
+/* Hero */
+/* 右上からティール色の光がにじむ radial-gradient は、
+   生成ツールが作るLPの定番演出だったので外した。白のベタ塗りにする。 */
+.hero {
+  position: relative;
+  padding: var(--space-8) 0 var(--space-7);
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+.hero .wrap {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: var(--space-7);
+  align-items: center;
+}
+
+/* 見出し上の小さなラベル。丸いバッジ(ピル)をやめて、
+   雑誌の柱のような字間の広い小さな見出しにする */
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-accent-btn);
+  font-weight: 700;
+  font-size: var(--text-xs);
+  letter-spacing: 0.14em;
+  margin: 0 0 var(--space-4);
+}
+
+.hero-eyebrow::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: var(--color-accent-btn);
+  flex-shrink: 0;
+}
+
+.hero h1 {
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  margin: 0 0 var(--space-4);
+  color: var(--color-text);
+}
+
+.hero p {
+  color: var(--color-text-muted);
+  font-size: var(--text-md);
+  line-height: 1.85;
+  /* 46ch は日本語だと1行24字ほどで、カラム幅(約559px)を大きく余らせていた。
+     日本語の読みやすい行長は30〜40字なので、カラムを使い切る指定にする */
+  max-width: 34em;
+  margin: 0 0 var(--space-5);
+}
+
+.hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.hero-ctas a {
+  display: inline-block;
+  padding: 13px 24px;
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  text-decoration: none;
+  border: 1px solid var(--color-border-strong);
+  color: var(--color-text);
+  background: var(--color-surface);
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.hero-ctas a:hover {
+  border-color: var(--color-brand);
+}
+
+.hero-ctas a.primary {
+  background: var(--color-brand);
+  color: #fff;
+  border-color: var(--color-brand);
+}
+
+.hero-ctas a.primary:hover {
+  background: var(--color-brand-dark);
+  border-color: var(--color-brand-dark);
+}
+
+.hero-photo {
+  position: relative;
+}
+
+/* 写真の背後に斜めグラデーションの色紙をずらして敷く演出は、
+   生成ツール製LPの典型だったので廃止。写真は写真としてそのまま置く。 */
+.hero-photo img {
+  border-radius: var(--radius);
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  box-shadow: var(--shadow-sm);
+}
+
+@media (max-width: 860px) {
+  .hero .wrap {
+    grid-template-columns: 1fr;
+  }
+  .hero-photo { order: -1; }
+  .hero h1 { font-size: var(--text-2xl); }
+}
+
+/* スマホ幅では36pxだと「大洲の「知りたい」を、」が1行に収まらず、
+   意図した2行のキャッチコピーが4行に割れてしまうので一段小さくする */
+@media (max-width: 520px) {
+  .hero h1,
+  .page-hero h1 {
+    font-size: 1.8rem;
+  }
+  /* .article-page h1 はここで上書きしない。clamp() が面倒を見ている。
+     上書きすると、狭い画面のほうが広い画面より字が大きくなってしまう */
+}
+
+/* Home: クロコが選んだ記事のピックアップ */
+.home-picks {
+  padding-top: 8px;
+}
+
+/* 4列(1枚あたり約250px)だとタイトルが「〜セレクシ／ョン」のように
+   1文字だけ次の行に落ちるので、1枚を広くして3列にする */
+.pick-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 18px;
+}
+
+.pick-card {
+  display: block;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-5);
+  text-decoration: none;
+  transition: border-color 0.18s ease;
+}
+
+.pick-card:hover {
+  border-color: var(--color-brand);
+}
+
+.pick-card .pick-badge {
+  display: inline-block;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  color: var(--color-brand-dark);
+  background: var(--color-surface-alt);
+  padding: 4px 12px;
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-3);
+}
+
+.pick-card h3 {
+  margin: 0 0 var(--space-2);
+  font-size: var(--text-md);
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--color-text);
+}
+
+.pick-card p {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.65;
+}
+
+/* Carousel */
+.carousel-section {
+  padding: 8px 0 56px;
+}
+
+.carousel {
+  position: relative;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 4px 0 16px;
+  scrollbar-width: none;
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-track img {
+  flex: 0 0 260px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  scroll-snap-align: start;
+}
+
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.carousel-controls button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.carousel-caption {
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  margin-top: 4px;
+}
+
+/* Section titles */
+.section-title {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0 0 var(--space-5);
+  position: relative;
+  padding-left: var(--space-3);
+}
+
+.section-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.15em;
+  bottom: 0.15em;
+  width: 4px;
+  background: var(--color-accent);
+}
+
+section {
+  padding: var(--space-7) 0;
+}
+
+/* News category cards */
+.news-categories {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.news-category-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+
+.news-category-card h2 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+  color: var(--color-brand);
+}
+
+.news-category-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 860px) {
+  .news-categories {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* News tabs + table */
+.news-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.news-tab {
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  padding: 8px 18px;
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--color-text-muted);
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.news-tab:hover {
+  border-color: var(--color-brand);
+  color: var(--color-brand-dark);
+}
+
+.news-tab.active {
+  background: var(--color-brand-dark);
+  color: #fff;
+  border-color: var(--color-brand-dark);
+}
+
+.tag-filter-label {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin: 0 0 8px;
+}
+
+.tag-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.tag-chip {
+  border: 1px solid var(--color-border);
+  background: transparent;
+  padding: 5px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  cursor: pointer;
+  color: var(--color-text-muted);
+}
+
+.tag-chip.active {
+  background: var(--color-brand);
+  color: #fff;
+  border-color: var(--color-brand);
+}
+
+/* タグクラウド(ホーム・データページ共通) */
+.tagcloud-panel {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-6) var(--space-5);
+}
+
+.tagcloud-panel .panel-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  color: var(--color-text-faint);
+  margin: 0 0 20px;
+  text-transform: uppercase;
+}
+
+.tagcloud {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 22px;
+}
+
+/* 記事件数の小さい数字。以前は各ページのHTML側で font-size:.4em を指定していて、
+   小さいタグでは6px程度になり数字が読めなかったので、下限をここで決める */
+.tagcloud sup {
+  font-size: 0.72rem;
+  font-weight: 700;
+  opacity: 0.75;
+  margin-left: 1px;
+  top: -0.15em;
+}
+
+.tagcloud a {
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--tag-c, var(--color-text-muted));
+  display: inline-flex;
+  align-items: baseline;
+  gap: 3px;
+  transition: transform 0.15s ease;
+}
+
+.tagcloud a::after {
+  content: "›";
+  font-size: 0.6em;
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.tagcloud a:hover { opacity: 0.8; }
+.tagcloud a:hover::after { opacity: 0.8; transform: translateX(0); }
+.tagcloud .sz6 { font-size: 2.8rem; }
+.tagcloud .sz5 { font-size: 2.2rem; }
+.tagcloud .sz4 { font-size: 1.7rem; }
+.tagcloud .sz3 { font-size: 1.35rem; }
+.tagcloud .sz2 { font-size: 1.05rem; }
+.tagcloud .sz1 { font-size: 0.92rem; }
+
+.tagcloud-hint {
+  font-size: 0.78rem;
+  color: var(--color-text-faint);
+  margin-top: 18px;
+}
+
+.tagcloud-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin-top: var(--space-5);
+  justify-content: center;
+}
+
+.tagcloud-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+}
+
+.tagcloud-legend-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--tag-c);
+  flex: none;
+}
+
+/* News list: 1行に1記事のリスト形式。
+   以前は横に2〜3枚並べていたが、1枚あたりの幅が狭くタイトルが
+   「〜全国京都会議」/「には入っていない」のように細かく折り返して読みづらかった。
+   横1本の行にして、日付 / タイトル+出典 / タグ の3列で組む。 */
+.news-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.news-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  /* カテゴリ色は上辺の太線だと横長の行で主張が強すぎるので、左端の線に変えた */
+  border-left: 4px solid var(--tag-c, var(--color-border-strong));
+  border-radius: var(--radius);
+  padding: var(--space-3) var(--space-5);
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 2px 22px;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.news-card .news-date {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+}
+
+.news-card .news-title {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.news-card .news-source {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.news-card .card-tags-row {
+  grid-column: 3;
+  grid-row: 1 / span 2;
+  justify-content: flex-end;
+  margin-top: 0;
+}
+
+/* スマホでは3列に分ける余裕がないので、素直に縦積みへ戻す */
+@media (max-width: 680px) {
+  .news-card {
+    grid-template-columns: 1fr;
+    padding: var(--space-4);
+  }
+  .news-card .news-date,
+  .news-card .news-title,
+  .news-card .news-source,
+  .news-card .card-tags-row {
+    grid-column: 1;
+    grid-row: auto;
+  }
+  .news-card .card-tags-row {
+    justify-content: flex-start;
+    margin-top: 6px;
+  }
+}
+
+.card-tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.card-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 3px;
+  color: var(--tag-c, var(--color-text-muted));
+  background: color-mix(in srgb, var(--tag-c, var(--color-text-muted)) 14%, var(--color-surface));
+  border: 1px solid color-mix(in srgb, var(--tag-c, var(--color-text-muted)) 30%, transparent);
+}
+
+.news-card:hover {
+  border-color: var(--color-brand);
+  background: color-mix(in srgb, var(--color-brand) 4%, var(--color-surface));
+}
+
+.news-card .news-date {
+  color: var(--color-text-faint);
+  font-size: var(--text-xs);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.5;
+}
+
+/* 日付が「出典そのものの日付」なのか「サイトに載せた日」なのかを、
+   数字の上に小さく出す。どちらの時系列を見ているのか分かるように。 */
+.news-card .date-kind {
+  display: block;
+  /* 0.66rem(約10px)+透過は読めなかったので、少し大きく・不透過にした */
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--color-accent-btn);
+}
+
+.news-card .news-title {
+  font-weight: 700;
+  font-size: var(--text-base);
+  line-height: 1.55;
+}
+
+.news-card .news-title:hover {
+  color: var(--color-brand);
+}
+
+.news-card .news-source {
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+/* 大洲ノート専用: 左サイドバー(フィルタ) + 右カラム(表形式一覧)
+   以前はボタンを1個1列で縦積みにしていたが、それだと高さが約1400pxになり、
+   横長の画面では追従(sticky)したまま画面からはみ出して、下の「情報源」の
+   絞り込みがページ最下部まで見えなかった。チップを折り返しで詰めて高さを
+   半分以下にし、それでも収まらない画面ではサイドバーの中だけでスクロール
+   できるようにする(2026-08-21)。 */
+.news-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.news-sidebar {
+  flex: 0 0 230px;
+  position: sticky;
+  top: 88px;
+  max-height: calc(100vh - 104px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  padding-right: 6px;
+}
+
+.sidebar-filter-group {
+  margin-bottom: 18px;
+}
+
+.news-sidebar .news-tabs,
+.news-sidebar .tag-filter {
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 0;
+}
+
+.news-sidebar .news-tab,
+.news-sidebar .tag-chip {
+  width: auto;
+  text-align: left;
+  border-radius: var(--radius-sm);
+  padding: 5px 11px;
+  font-size: 0.78rem;
+}
+
+.news-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.news-table {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--color-surface);
+}
+
+.news-table-head {
+  display: grid;
+  grid-template-columns: 1fr 100px 220px;
+  gap: 16px;
+  padding: 10px 20px;
+  background: var(--color-surface-alt);
+  color: var(--color-text-muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.news-row {
+  display: grid;
+  grid-template-columns: 1fr 100px 220px;
+  gap: 16px;
+  align-items: center;
+  padding: 12px 20px;
+  border-top: 1px solid var(--color-border);
+  transition: background 0.15s ease;
+}
+
+.news-row:hover {
+  background: var(--color-surface-alt);
+}
+
+.news-row .news-title {
+  font-weight: 700;
+  font-size: var(--text-sm);
+  line-height: 1.5;
+}
+
+.news-row .news-title:hover {
+  color: var(--color-brand);
+}
+
+.news-row .news-date {
+  color: var(--color-text-faint);
+  font-size: var(--text-xs);
+  font-variant-numeric: tabular-nums;
+}
+
+.news-row .news-source {
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 860px) {
+  .news-layout {
+    flex-direction: column;
+  }
+  .news-sidebar {
+    position: static;
+    flex: none;
+    width: 100%;
+    max-height: none;
+    overflow-y: visible;
+    padding-right: 0;
+  }
+  .news-table-head {
+    display: none;
+  }
+  .news-row {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+}
+
+/* 記事をnoteにも載せたときの案内(2026-08-21)。
+   本文の邪魔をしないよう、出典欄のあとに1行だけ置く。 */
+.note-crosslink {
+  color: var(--color-text-muted);
+  font-size: 0.86rem;
+  margin: var(--space-5) 0 0;
+}
+
+.note-crosslink a {
+  color: var(--color-accent-btn);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* おすすめ記事10選(/best/)。番号つきの一覧カード(2026-08-21新設) */
+.best-list {
+  list-style: none;
+  margin: var(--space-6) 0 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.best-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  padding: 18px 22px;
+}
+
+.best-no {
+  flex: 0 0 auto;
+  font-family: "Shippori Mincho B1", serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-tag-mikan);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.best-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.best-title {
+  display: block;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.best-title:hover {
+  color: var(--color-brand);
+}
+
+.best-blurb {
+  display: block;
+  color: var(--color-text-muted);
+  font-size: 0.86rem;
+  line-height: 1.7;
+  margin-top: 4px;
+}
+
+.best-cat {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 0.72rem;
+  color: var(--color-text-faint);
+  border: 1px solid var(--color-border);
+  padding: 2px 8px;
+}
+
+.best-note-link {
+  color: var(--color-accent-btn);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-size: 0.82rem;
+}
+
+.best-thumb {
+  flex: 0 0 132px;
+  height: 84px;
+  overflow: hidden;
+}
+
+.best-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 680px) {
+  .best-item {
+    gap: 14px;
+    padding: 14px 16px;
+  }
+  .best-thumb {
+    flex-basis: 88px;
+    height: 66px;
+  }
+}
+
+/* 大洲の自由研究: 脚注の出典リンク。サイト全体でリンクの下線を消しているため、
+   ここだけは「押せる」と分かる見た目に戻す(行全体をリンク化した 2026-08-21)。
+   scroll-margin は本文の脚注番号から飛んできたとき追従ヘッダーに隠れない余白。 */
+.jk-footnotes a {
+  color: var(--color-brand);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.jk-footnotes a:hover {
+  color: var(--color-brand-dark);
+}
+
+.jk-footnotes li {
+  scroll-margin-top: 96px;
+}
+
+/* Generic content page */
+/* ここもティールの光のグラデーションをやめてベタ塗りに(理由はヒーローと同じ) */
+.page-hero {
+  padding: var(--space-8) 0 var(--space-6);
+  text-align: center;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: var(--space-6);
+}
+
+.page-hero h1 {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin: 0 0 var(--space-3);
+}
+
+.page-hero p {
+  color: var(--color-text-muted);
+  font-size: var(--text-md);
+  line-height: 1.8;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.content-block {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+/* 各ページの中見出し。本文の太字(16px)とほぼ同じ大きさで区別がつかなかったので、
+   .article-page h2 と同じ大きさ・色に揃えて階層をはっきりさせる */
+.content-block h2 {
+  color: var(--color-brand-dark);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  line-height: 1.5;
+  margin: var(--space-7) 0 var(--space-3);
+}
+
+/* Source list, boxed like article-chart/article-diagram */
+.content-block.source-box {
+  background: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-4) var(--space-5);
+  margin: 0 auto var(--space-5);
+}
+
+.content-block.source-box h2 {
+  margin: 0 0 var(--space-3);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-text-muted);
+}
+
+.content-block.source-box .source-link {
+  margin-bottom: var(--space-2);
+}
+
+.content-block.source-box .source-link:last-child {
+  margin-bottom: 0;
+}
+
+/* 出典が10件あると縦に長く、本文を読み始めるまで遠くなってしまう。
+   横幅に余裕がある画面では2列に流して、高さを半分に抑える。
+   ただし出典が4件以下の記事(全体の約7割)で2列にすると右半分が空いて
+   崩れて見えるので、:has() で「5件目がある記事」だけに限定する。 */
+@media (min-width: 700px) {
+  .content-block.source-box:has(.source-link:nth-of-type(5)) {
+    columns: 2;
+    column-gap: var(--space-5);
+  }
+  .content-block.source-box:has(.source-link:nth-of-type(5)) h2 {
+    column-span: all;
+  }
+  .content-block.source-box .source-link {
+    break-inside: avoid;
+  }
+}
+
+.content-block p {
+  color: var(--color-text-muted);
+}
+
+/* 大洲の自由研究(jiyu-kenkyu)のタイトル部分は各ページのHTMLに
+   style="max-width:820px" と直接書かれており、本文(.jk-section)と
+   左端がずれて見えていた。記事は今後もテンプレートから増えるので、
+   ファイルを1つずつ直すのではなく、ここで本文幅に揃える。
+   (インラインstyleに勝つには !important が必要) */
+.jk-hero .wrap {
+  max-width: 792px !important;
+}
+
+/* 自由研究も、記事と同じ幅・同じ題の大きさに揃える(2026-09-05)。
+   ・幅  … 記事(.article-page)を792pxに広げたので、こちらも合わせる。
+           本文の .jk-section も一緒に広げないと、題だけ横に出てずれる。
+   ・題  … 各ページのh1に style="font-size:clamp(1.6rem,4vw,2.1rem)" が
+           直接書いてある。インラインstyleに勝つには !important が要る。
+           大きいままだと題が3行4行に割れるので、記事と同じ clamp にする。
+   自由研究のページは1ページずつHTMLに<style>を持っているので、
+   21本のファイルを個別に直すのではなく、ここでまとめて上書きする。
+   数え直した結果(パソコン幅1280px、題21本): 1行 10本 / 2行 11本 / 3行以上 0本。
+   題と本文の左端のずれも0本。 */
+.jk-section {
+  max-width: 792px !important;
+}
+
+.jk-hero h1 {
+  font-size: clamp(1.45rem, 1.05rem + 1.5vw, 1.75rem) !important;
+}
+
+/* トップ・大洲ノートに置いた「大洲の自由研究」への導線。
+   サイト共通ナビはJavaScriptで生成しているため、検索エンジンが最初に読む
+   HTMLにはコーナーの存在が出てこない。ここだけは素の <a href> で書いてある。 */
+.home-kenkyu-lead {
+  color: var(--color-text-muted);
+  margin: -12px 0 var(--space-5);
+  max-width: 46em;
+}
+
+.home-kenkyu-more {
+  display: inline-block;
+  margin-left: 4px;
+  color: var(--color-brand);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.home-kenkyu-more:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.kenkyu-panel {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-5) var(--space-6);
+}
+
+.kenkyu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(340px, 100%), 1fr));
+  gap: 0 40px;
+}
+
+.kenkyu-list li {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.kenkyu-list li:last-child,
+.kenkyu-list li:nth-last-child(2) {
+  border-bottom: none;
+}
+
+.kenkyu-list a {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 12px;
+  align-items: baseline;
+  padding: 11px 8px;
+  margin: 0 -8px;
+  border-radius: 6px;
+  font-weight: 600;
+  line-height: 1.6;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.kenkyu-list a:hover {
+  background: var(--color-surface-alt);
+  color: var(--color-brand);
+}
+
+.kenkyu-no {
+  color: var(--color-accent-btn);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* 1列に落ちる幅では、最後の1件だけ罫線を消す */
+@media (max-width: 760px) {
+  .kenkyu-list li:nth-last-child(2) {
+    border-bottom: 1px solid var(--color-border);
+  }
+  .kenkyu-list li:last-child {
+    border-bottom: none;
+  }
+}
+
+/* Photo grid */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+/* 写真をテーマごとのまとまりに分ける見出し */
+.photo-group-title {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-brand-dark);
+  line-height: 1.5;
+  margin: var(--space-8) 0 var(--space-4);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.photo-group-title:first-of-type {
+  margin-top: 0;
+}
+
+/* 各写真はクリックで元サイズを開けるリンクにしている(素材として持ち帰れるように) */
+.photo-item {
+  display: block;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  transition: opacity 0.18s ease;
+}
+
+.photo-item:hover {
+  opacity: 0.85;
+}
+
+.photo-grid img {
+  width: 100%;
+  border-radius: var(--radius-sm);
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+/* Footer */
+.site-footer {
+  /* 中身が短いページでも画面の一番下に居座らせる(bodyのflex-direction:columnと対) */
+  margin-top: auto;
+  border-top: 1px solid var(--color-border);
+  background: var(--color-surface-alt);
+  padding: var(--space-7) 0 var(--space-6);
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+.site-footer .wrap > p:first-child {
+  font-weight: 700;
+  color: var(--color-text);
+  font-size: var(--text-base);
+  margin: 0 0 var(--space-2);
+}
+
+.site-footer p {
+  margin: 0 0 var(--space-1);
+}
+
+.footer-feedback {
+  margin: var(--space-4) auto;
+  max-width: 480px;
+  line-height: 1.7;
+}
+
+.footer-feedback a {
+  color: var(--color-brand);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Contact modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(28, 43, 58, 0.5);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  padding: 20px;
+}
+
+.modal-overlay.open {
+  display: flex;
+}
+
+.modal-box {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: 36px 32px;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  box-shadow: var(--shadow-lg);
+}
+
+/* ホームの帯にちょこんと座っている「メモう」。紹介文は付けず、いるだけ */
+.site-intro-memou {
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  display: block;
+  margin-right: -4px;
+}
+
+@media (max-width: 700px) {
+  .site-intro-memou {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+/* 404ページで飛んでいく「メモう」 */
+.memou-404 {
+  display: block;
+  width: 200px;
+  height: 200px;
+  max-width: 62%;
+  margin: 0 auto -8px;
+}
+
+.memou-404-caption {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  margin-bottom: 28px;
+}
+
+/* 案内役の「メモう」。本文には出さず、読者と接するモーダルと404にだけ顔を出す */
+.modal-memou {
+  display: block;
+  width: 76px;
+  height: 76px;
+  margin: 0 auto 4px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: var(--color-text-muted);
+}
+
+.modal-box h3 {
+  margin: 0 0 6px;
+  font-size: 1.15rem;
+}
+
+.modal-box .modal-note {
+  color: var(--color-brand);
+  font-size: 0.9rem;
+  margin: 0 0 16px;
+}
+
+.modal-box .modal-warning {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin: 0 0 24px;
+}
+
+.modal-box .modal-warning strong {
+  display: block;
+  color: var(--color-text);
+}
+
+.form-btn {
+  display: inline-block;
+  background: var(--color-accent-btn);
+  color: #fff !important;
+  padding: 14px 32px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+}
+
+.form-btn:hover {
+  background: var(--color-accent-btn-hover);
+}
+
+/* Concept page: disclaimer + icon rows */
+.disclaimer-block {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 40px;
+  /* 以前は align-items:center で、小さな飾り枠が長文の横で
+     宙に浮いて見えていた。上端を本文の見出しと揃える */
+  align-items: start;
+  max-width: 940px;
+  margin: 0 auto;
+}
+
+/* 免責事項の「要点3つ」。以前はここに隣の見出しを言い換えただけの
+   飾り枠があり、情報がゼロだった。長文を読まない人でも要点が拾えるよう、
+   中身のある要約カードに置き換えている。 */
+.disclaimer-summary {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-accent-btn);
+  border-radius: var(--radius);
+  padding: var(--space-5);
+  /* 以前は position:sticky でスクロールに追いかけてきたが、
+     要約の枠が動き続けるのは落ち着かないという本人の指摘でやめた。 */
+}
+
+.disclaimer-summary-label {
+  margin: 0 0 var(--space-4);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--color-accent-btn);
+}
+
+.disclaimer-summary ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: dsum;
+  display: grid;
+  gap: var(--space-4);
+}
+
+.disclaimer-summary li {
+  counter-increment: dsum;
+  display: grid;
+  grid-template-columns: 26px 1fr;
+  gap: 2px 10px;
+  line-height: 1.6;
+}
+
+.disclaimer-summary li::before {
+  content: counter(dsum);
+  grid-row: 1 / span 2;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--color-accent-btn);
+  color: #fff;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.disclaimer-summary li strong {
+  font-size: 0.95rem;
+  color: var(--color-text);
+}
+
+.disclaimer-summary li span {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 900px) {
+  .disclaimer-summary {
+    position: static;
+  }
+}
+
+@media (max-width: 760px) {
+  .disclaimer-block {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* サイト内コーナー一覧(サイト紹介ページの末尾)。
+   以前は絵文字を大きく載せたタイル(🔗🏠📰…)を横スクロールで並べていたが、
+   絵文字をアイコン代わりに敷き詰めるのは素人サイト・生成ページの典型なので、
+   文字だけの索引リストに変えた(絵文字はCSSで非表示にしている)。 */
+.icon-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 10px;
+  padding: 0;
+  margin: 32px auto 0;
+  max-width: 940px;
+}
+
+.icon-card {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 13px 16px;
+  text-align: left;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.icon-card::after {
+  content: "→";
+  margin-left: auto;
+  color: var(--color-text-faint);
+  font-size: 0.85em;
+}
+
+.icon-card:hover {
+  color: var(--color-brand);
+}
+
+.icon-card .icon-emoji {
+  display: none;
+}
+
+/* Concept page: process flow diagram */
+.flow-diagram {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  background: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin: 16px 0;
+  font-size: 0.85rem;
+}
+
+.flow-diagram span:not(.arrow) {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 6px 14px;
+  color: var(--color-text);
+}
+
+.flow-diagram .arrow {
+  color: var(--color-brand);
+  font-weight: 700;
+}
+
+/* ── リンク集(2026-08-22 コンパクト化) ─────────────────
+   カード型だと25件で縦に3画面分伸びていたので、
+   「列見出し+仕切り線のリスト」3カラムに変えて1画面で見渡せる密度にした。
+   詰まって見えないよう、枠は描かず余白と罫線だけで区切る。 */
+.link-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(24px, 4vw, 48px);
+  max-width: 1160px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+.link-col-title {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--color-brand-dark);
+  border-bottom: 2px solid var(--color-brand-dark);
+  padding-bottom: 10px;
+  margin: 0;
+}
+
+.link-col-title span {
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--color-text-muted);
+  letter-spacing: 0.02em;
+}
+
+.link-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.link-list li {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.link-list a {
+  display: block;
+  padding: 8px 2px 9px;
+}
+
+.link-name {
+  display: block;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.45;
+}
+
+.link-name::after {
+  content: " ↗";
+  font-size: 0.75em;
+  color: var(--color-text-faint);
+}
+
+.link-desc {
+  display: block;
+  margin-top: 1px;
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.link-list a:hover .link-name {
+  color: var(--color-brand);
+}
+
+@media (max-width: 860px) {
+  .link-columns {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
+/* Article page (eachnews): 本文+サイドバーの2カラムレイアウト */
+/* 題とメモうが3行4行に割れるのを減らすため、記事ページだけ枠を1割広げた
+   (2026-09-05、本人の希望「横枠を広げて、できるだけ1行にしたい」)。
+   幅720px・字36pxのときは、題が3行4行に割れていた。
+   幅792px・字28pxにして本物のChromeで数え直した結果(パソコン幅1280px、題210本):
+     1行 79本 / 2行 131本 / 3行以上 0本
+     最後の行に1〜2文字だけ落ちる題 0本 */
+.article-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 48px;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.article-page {
+  max-width: 792px;
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+}
+
+.article-sidebar {
+  flex: 0 0 280px;
+  position: sticky;
+  top: 96px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sidebar-widget {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-4) var(--space-5);
+}
+
+.sidebar-widget-title {
+  margin: 0 0 var(--space-3);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-brand-dark);
+}
+
+.sidebar-widget-links {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sidebar-widget-links a {
+  padding: 8px 10px;
+  margin: 0 -10px;
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.sidebar-widget-links a:hover {
+  background: var(--color-surface-alt);
+  color: var(--color-brand);
+}
+
+.sidebar-latest-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.sidebar-latest-list li a {
+  display: block;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--color-text);
+}
+
+.sidebar-latest-list li a:hover {
+  color: var(--color-brand);
+}
+
+.sidebar-latest-list .rdate {
+  display: block;
+  margin-top: 3px;
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+}
+
+.sidebar-cta {
+  text-align: center;
+  background: var(--color-surface-alt);
+}
+
+.sidebar-cta p {
+  margin: 0 0 var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.sidebar-cta .form-btn {
+  padding: 10px 22px;
+  font-size: var(--text-sm);
+}
+
+@media (max-width: 860px) {
+  .article-sidebar {
+    display: none;
+  }
+}
+
+.article-page h1 {
+  /* 画面の幅に合わせて伸び縮みする。狭い画面で 1.45rem、広い画面で 1.75rem。
+     大きいままだと題が3行4行に割れる。本人は「できるだけ1行、長いのは2行」を好む。 */
+  font-size: clamp(1.45rem, 1.05rem + 1.5vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.45;
+  margin: 0 0 var(--space-2);
+  /* 折り返したときに最後の行だけ1〜2文字残る「ぶら下がり」を防ぐ。
+     対応ブラウザでは行の長さが自動的にならされる(未対応でも通常の折り返しになるだけで害はない) */
+  text-wrap: balance;
+}
+
+.article-page h2 {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--color-brand-dark);
+  margin: var(--space-7) 0 var(--space-3);
+}
+
+.article-date {
+  display: inline-block;
+  color: var(--color-text-muted);
+  background: var(--color-surface-alt);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin: 0 0 var(--space-5);
+}
+
+.source-link {
+  display: block;
+  color: var(--color-brand);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  margin-bottom: var(--space-1);
+  /* break-all は1文字単位でぶつ切りになるので、必要なときだけ折る指定にする */
+  overflow-wrap: anywhere;
+  font-size: var(--text-xs);
+}
+
+.article-page blockquote {
+  border-left: 3px solid var(--color-accent);
+  background: var(--color-surface-alt);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  margin: var(--space-4) 0;
+  padding: var(--space-3) var(--space-4);
+  color: var(--color-text-muted);
+  /* 日本語の斜体は機械的に傾けた偽物しかなく読みにくいだけなのでやめた */
+}
+
+.article-page .commentary {
+  font-size: var(--text-md);
+  margin: 0 0 var(--space-5);
+  overflow-wrap: break-word;
+}
+
+.article-page p,
+.article-page li {
+  overflow-wrap: break-word;
+}
+
+/* Article hero photo */
+.article-hero-img {
+  margin: 0 0 var(--space-5);
+}
+
+.article-hero-img img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  display: block;
+}
+
+.article-hero-img figcaption {
+  margin-top: 8px;
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+  text-align: right;
+}
+
+.link-hero-photo {
+  max-width: 720px;
+  margin: 0 auto var(--space-6);
+}
+
+.link-hero-photo img {
+  width: 100%;
+  max-height: 280px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: none;
+  display: block;
+}
+
+.link-hero-photo figcaption {
+  margin-top: 8px;
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+  text-align: right;
+}
+
+/* 記事末尾のランダム実写真(大洲市内で撮影) */
+.article-random-photo {
+  margin: var(--space-6) 0 var(--space-5);
+}
+
+.article-random-photo img {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  display: block;
+}
+
+.article-random-photo figcaption {
+  margin-top: 8px;
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+  text-align: right;
+}
+
+/* Article self-made data chart (no external images, no copyright risk) */
+.article-chart {
+  background: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-4) var(--space-5);
+  margin: 0 0 var(--space-5);
+}
+
+.article-chart .chart-title {
+  font-weight: 700;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-3);
+}
+
+.article-chart .chart-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-2);
+  font-size: var(--text-sm);
+}
+
+.article-chart .chart-row:last-child {
+  margin-bottom: 0;
+}
+
+.article-chart .chart-label {
+  width: 108px;
+  flex-shrink: 0;
+  color: var(--color-text-muted);
+}
+
+.article-chart .chart-bar-track {
+  flex: 1;
+  background: var(--color-border);
+  border-radius: 2px;
+  height: 14px;
+  overflow: hidden;
+}
+
+.article-chart .chart-bar {
+  height: 100%;
+  background: var(--color-accent);
+  border-radius: 2px;
+}
+
+.article-chart .chart-value {
+  width: 108px;
+  flex-shrink: 0;
+  text-align: right;
+  font-weight: 700;
+  color: var(--color-text);
+  font-variant-numeric: tabular-nums;
+}
+
+.article-chart .chart-note {
+  margin-top: var(--space-3);
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+}
+
+@media (max-width: 480px) {
+  .article-chart .chart-label {
+    width: 76px;
+    font-size: var(--text-xs);
+  }
+  .article-chart .chart-value {
+    width: 84px;
+    font-size: var(--text-xs);
+  }
+}
+
+/* Article self-made SVG diagram (no external images, no copyright risk) */
+.article-diagram {
+  background: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-4) var(--space-5);
+  margin: 0 0 var(--space-5);
+}
+
+.article-diagram .diagram-title {
+  font-weight: 700;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-3);
+}
+
+.article-diagram svg {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.article-diagram .diagram-note {
+  margin-top: var(--space-3);
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+}
+
+/* Article single-stat callout */
+.stat-callout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-5);
+  background: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-4) var(--space-5);
+  margin: 0 0 var(--space-5);
+}
+
+.stat-callout .stat-item {
+  flex: 1;
+  min-width: 140px;
+}
+
+.stat-callout .stat-number {
+  display: block;
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--color-brand-dark);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.stat-callout .stat-label {
+  display: block;
+  margin-top: 4px;
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.related-list {
+  border-top: 1px solid var(--color-border);
+  padding-top: 24px;
+  margin-top: 40px;
+}
+
+.related-list h2 {
+  font-size: 1.1rem;
+  color: var(--color-brand);
+  margin: 0 0 16px;
+}
+
+.related-list ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.related-list li {
+  display: flex;
+  gap: 14px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.9rem;
+}
+
+.related-list .rdate {
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.related-list a:hover {
+  color: var(--color-brand);
+}
+
+/* Home latest news list */
+.related-list-plain {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 760px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.related-list-plain li {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.92rem;
+  flex-wrap: wrap;
+}
+
+.related-list-plain li:last-child {
+  border-bottom: none;
+}
+
+.related-list-plain .rdate {
+  color: var(--color-text-muted);
+  font-size: 0.82rem;
+  white-space: nowrap;
+}
+
+.related-list-plain .rtag {
+  color: var(--color-brand);
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+
+.related-list-plain a:hover {
+  color: var(--color-brand);
+}
+
+/* Article draft state */
+.draft-note {
+  display: inline-block;
+  background: #fdf1d6;
+  color: #8a6d1d;
+  border: 1px solid #eddca0;
+  border-radius: var(--radius-sm);
+  font-size: 0.78rem;
+  padding: 4px 14px;
+  margin: 8px 0 24px;
+}
+
+.stub-note {
+  background: #f1f3f4;
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius);
+  padding: 24px;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  margin: 8px 0 32px;
+}
+
+/* Photo page */
+.photo-note {
+  max-width: 760px;
+  margin: 0 auto 28px;
+  color: var(--color-text-muted);
+}
+
+.drive-cta {
+  text-align: center;
+  margin-top: 32px;
+}
+
+.drive-cta a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: var(--color-brand);
+}
+
+/* Monthly digest page */
+.monthly-list {
+  max-width: 760px;
+  margin: 0 auto;
+  display: grid;
+  gap: 24px;
+}
+
+.monthly-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 28px;
+}
+
+.monthly-card h2 {
+  margin: 0 0 4px;
+  font-size: 1.25rem;
+  color: var(--color-brand);
+}
+
+.monthly-card .monthly-headline {
+  margin: 0 0 14px;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.monthly-card .monthly-comment {
+  color: var(--color-text-muted);
+  margin: 0 0 18px;
+}
+
+/* 1か月に80件近く並ぶ月があり、1列の羅列だと「文字の壁」になって読めなかった。
+   広い画面では2列に分け、1行ずつ区切り線とホバーを付けて目で追えるようにする。 */
+.monthly-card ul {
+  list-style: none;
+  margin: 0;
+  padding: 14px 0 0;
+  border-top: 1px solid var(--color-border);
+  display: grid;
+  /* min() を挟まないと、スマホ幅(1列に入りきらない幅)で330pxが下限になって横スクロールが出る */
+  grid-template-columns: repeat(auto-fill, minmax(min(330px, 100%), 1fr));
+  gap: 0 32px;
+}
+
+.monthly-card li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: baseline;
+  gap: 4px 10px;
+  padding: 7px 8px;
+  margin: 0 -8px;
+  border-radius: 6px;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.monthly-card li:hover {
+  background: var(--color-surface-alt);
+}
+
+.monthly-card .rdate {
+  grid-row: 1;
+  color: var(--color-text-faint);
+  font-size: var(--text-xs);
+  white-space: nowrap;
+}
+
+/* カテゴリは [大洲の視点] という素のテキストだったので、色付きのチップにして
+   ひと目でカテゴリが分かるようにする */
+.monthly-card .rtag {
+  grid-row: 1;
+  justify-self: start;
+  padding: 1px 8px;
+  border-radius: 3px;
+  background: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.monthly-card li[data-category="ima"] .rtag {
+  color: var(--color-tag-mikan);
+  border-color: color-mix(in srgb, var(--color-tag-mikan) 35%, transparent);
+}
+
+.monthly-card li[data-category="kurashi"] .rtag {
+  color: var(--color-tag-teal);
+  border-color: color-mix(in srgb, var(--color-tag-teal) 35%, transparent);
+}
+
+.monthly-card li[data-category="shiten"] .rtag {
+  color: var(--color-tag-indigo);
+  border-color: color-mix(in srgb, var(--color-tag-indigo) 35%, transparent);
+}
+
+.monthly-card li > a {
+  grid-column: 1 / -1;
+  font-weight: 600;
+  line-height: 1.55;
+}
+
+.monthly-card li a:hover {
+  color: var(--color-brand);
+}
+
+/* Home: featured article pick */
+.featured-article {
+  padding-top: 0;
+}
+
+.featured-article a.featured-card {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 28px;
+  align-items: center;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.featured-article img {
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+  object-fit: cover;
+}
+
+.featured-article .featured-body {
+  padding: 8px 28px 8px 0;
+}
+
+.featured-article .featured-eyebrow {
+  color: var(--color-accent-dark);
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  margin: 0 0 10px;
+}
+
+.featured-article h3 {
+  margin: 0 0 10px;
+  font-size: 1.3rem;
+  color: var(--color-text);
+}
+
+.featured-article p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.92rem;
+}
+
+.featured-article a.featured-card:hover h3 {
+  color: var(--color-brand);
+}
+
+@media (max-width: 760px) {
+  .featured-article a.featured-card {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-article .featured-body {
+    padding: 0 20px 20px;
+  }
+
+  .featured-article img {
+    min-height: 160px;
+  }
+}
+
+/* Home: fortune + history corners (放置で回る、月替わり自動ローテーション) */
+.fun-corners {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.fun-corner-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 22px 24px;
+}
+
+.fun-corner-card h3 {
+  margin: 0 0 12px;
+  font-size: 1.02rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.fun-corner-card .fun-main {
+  font-weight: 700;
+  color: var(--color-brand);
+  margin: 0 0 8px;
+}
+
+.fun-corner-card p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.88rem;
+}
+
+@media (max-width: 760px) {
+  .fun-corners {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Map page: tabs */
+.map-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.map-tab {
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  padding: 10px 18px;
+  border-radius: var(--radius-sm);
+  font-size: 0.92rem;
+  cursor: pointer;
+  color: var(--color-text-muted);
+  font-family: inherit;
+}
+
+.map-tab.active {
+  background: var(--color-brand);
+  color: #fff;
+  border-color: var(--color-brand);
+}
+
+.map-tab-panel {
+  display: none;
+}
+
+.map-tab-panel.active {
+  display: block;
+}
+
+.poster-select {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.poster-btn {
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  cursor: pointer;
+  color: var(--color-text-muted);
+  font-family: inherit;
+}
+
+.poster-btn.active {
+  background: var(--color-text);
+  color: #fff;
+  border-color: var(--color-text);
+}
+
+.poster-frame {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--color-surface);
+}
+
+.poster-frame img {
+  width: 100%;
+  display: block;
+}
+
+/* Map page */
+.ozu-map {
+  width: 100%;
+  height: 640px;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+@media (max-width: 760px) {
+  .ozu-map {
+    height: 480px;
+  }
+}
+
+/* 地名検索(地名マップの上) */
+.map-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.map-search input {
+  flex: 0 1 320px;
+  font: inherit;
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  padding: 9px 14px;
+}
+
+.map-search input:focus {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 1px;
+  border-color: var(--color-brand);
+}
+
+.map-search-hint {
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+}
+
+/* 引いて見ているときに出す、4地域の大きな名前ラベル */
+.region-label {
+  position: relative;
+  display: block;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+  text-shadow: 0 0 4px #fff, 0 0 4px #fff, 0 0 4px #fff, 0 0 8px #fff;
+}
+
+.map-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-top: 18px;
+}
+
+.map-legend-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.map-legend-title {
+  width: 100%;
+  margin: 0 0 2px;
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+}
+
+.legend-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 5px 12px 5px 8px;
+  font-size: 0.82rem;
+  color: var(--color-text);
+}
+
+.legend-swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  flex: none;
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex: none;
+}
+
+.map-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 16px 0 8px;
+  font-size: 0.92rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.map-table th,
+.map-table td {
+  text-align: left;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.map-table th {
+  background: #eaf3f6;
+  color: var(--color-brand);
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.map-table tr:last-child td {
+  border-bottom: none;
+}
+
+.map-emoji-marker {
+  display: block;
+  font-size: 20px;
+  line-height: 26px;
+  text-align: center;
+  width: 26px;
+  height: 26px;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35));
+}
+
+.map-poi-marker {
+  display: block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 1px rgba(28, 43, 58, 0.25);
+}
+
+.aza-label {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: 2px 7px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text);
+  box-shadow: none;
+}
+
+.leader-label {
+  position: relative;
+  display: block;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid var(--color-border);
+  border-radius: 5px;
+  padding: 0px 5px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--color-text);
+  white-space: nowrap;
+}
+
+.neighbor-label {
+  position: relative;
+  display: block;
+  transform: translate(-50%, -50%);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #7a828a;
+  white-space: nowrap;
+  text-shadow: 0 0 3px #f7f7f5, 0 0 3px #f7f7f5, 0 0 3px #f7f7f5;
+}
+
+.facility-label {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--color-border);
+  border-radius: 5px;
+  padding: 0px 5px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--color-text);
+  box-shadow: none;
+}
+
+.road-label {
+  position: relative;
+  display: block;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.92);
+  border: 1.5px solid;
+  border-radius: 999px;
+  padding: 1px 8px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: var(--radius);
+  font-family: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", sans-serif;
+}
+
+.map-popup-title {
+  font-weight: 700;
+  margin: 0 0 4px;
+  color: var(--color-brand);
+}
+
+.map-popup-body {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   トップページ 2026-08 改修
+   ・SaaSのランディングページ風のヒーローをやめ、記事から始める構成に
+   ・記事カードに写真を入れる(写真が無い記事は文字だけのカードにする)
+   ・セクションごとに背景と組み方を変えて、上から下まで同じリズムが
+     続かないようにする
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── セクション共通 ───────────────────────────────── */
+.site-intro,
+.lead-section,
+.picks-section,
+.latest-section,
+.home-tags,
+.home-photos {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.lead-section,
+.latest-section {
+  background: var(--color-bg);
+}
+
+.picks-section,
+.home-tags,
+.home-photos {
+  background: var(--color-surface);
+}
+
+.lead-section,
+.picks-section,
+.latest-section,
+.home-tags,
+.home-photos {
+  padding: var(--space-8) 0;
+}
+
+/* 主役記事はページの顔なので、上の余白だけ詰めて早く見せる */
+.lead-section {
+  padding-top: var(--space-6);
+}
+
+.section-lead {
+  margin: calc(var(--space-4) * -1) 0 var(--space-6);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  max-width: 44em;
+}
+
+.section-more {
+  margin: var(--space-6) 0 0;
+  font-size: var(--text-sm);
+}
+
+.section-more a {
+  font-weight: 700;
+  color: var(--color-brand);
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+}
+
+.section-more a::after {
+  content: " →";
+}
+
+.section-more a:hover {
+  color: var(--color-brand-dark);
+}
+
+/* ── サイトの自己紹介の帯 ─────────────────────────── */
+.site-intro {
+  background: var(--color-surface);
+  /* 汎用の section { padding: 48px 0 } を打ち消す。
+     この帯は1行の名刺なので、上下48pxも取ると
+     ヘッダーと主役記事の間が空白だらけになる(実際になっていた)。 */
+  padding: 0;
+}
+
+.site-intro .wrap {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-5);
+  padding-top: var(--space-3);
+  padding-bottom: var(--space-3);
+}
+
+.site-intro-text {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+.site-intro-text strong {
+  color: var(--color-text);
+  font-weight: 700;
+}
+
+.site-intro-link {
+  flex-shrink: 0;
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-brand);
+  white-space: nowrap;
+}
+
+.site-intro-link::after {
+  content: " →";
+}
+
+/* ── 主役記事(新聞の1面型: 大1本+サブ2本) ─────────────── */
+.lead-grid {
+  display: grid;
+  grid-template-columns: 1.55fr 1fr;
+  gap: var(--space-6) var(--space-7);
+  align-items: start;
+}
+
+.lead-story {
+  display: block;
+}
+
+.lead-story--textonly {
+  max-width: 40em;
+}
+
+.lead-media {
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-alt);
+}
+
+.lead-media img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.lead-story--main .lead-media img {
+  aspect-ratio: 16 / 9;
+}
+
+/* サブは横長に切って、右の列に2本すっきり収める */
+.lead-story--sub .lead-media img {
+  aspect-ratio: 2 / 1;
+}
+
+.lead-story:hover .lead-media img {
+  transform: scale(1.03);
+}
+
+.lead-body {
+  padding-top: var(--space-3);
+}
+
+.lead-story-title {
+  margin: var(--space-2) 0 var(--space-3);
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  line-height: 1.45;
+  letter-spacing: 0.01em;
+}
+
+.lead-story-title--sub {
+  font-size: var(--text-md);
+  line-height: 1.55;
+  margin: var(--space-1) 0 var(--space-2);
+}
+
+.lead-story:hover .lead-story-title {
+  color: var(--color-brand);
+}
+
+.lead-side {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.lead-story--sub + .lead-story--sub {
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-5);
+}
+
+.lead-note {
+  margin: 0 0 var(--space-4);
+  color: var(--color-text-muted);
+  font-size: var(--text-base);
+  line-height: 1.85;
+}
+
+/* ── 記事カード ────────────────────────────────── */
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6) var(--space-5);
+}
+
+.story-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.story-media {
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-alt);
+}
+
+.story-media img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.story-card:hover .story-media img {
+  transform: scale(1.04);
+}
+
+/* 写真が無い記事のカード。
+   写真の枠だけ空けると一覧の高さがそろわずガタガタになるので、
+   同じ大きさの色面を置いてカテゴリ名を大きく入れる。
+   「写真が用意できていない枠」ではなく「文字で見せるカード」に見せる。 */
+.story-media--none {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 3 / 2;
+  background: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+}
+
+.story-media--none span {
+  font-family: var(--font-serif);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--color-text-muted);
+  opacity: 0.75;
+}
+
+.story-card--textonly[data-category="ima"] .story-media--none { border-bottom: 3px solid var(--color-tag-mikan); }
+.story-card--textonly[data-category="kurashi"] .story-media--none { border-bottom: 3px solid var(--color-tag-teal); }
+.story-card--textonly[data-category="shiten"] .story-media--none { border-bottom: 3px solid var(--color-tag-indigo); }
+
+.story-cat {
+  display: block;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-2);
+}
+
+/* カテゴリ名の小さなラベルに、カテゴリの色をそのまま使う。
+   タグ8色(和色)を本文側にも効かせて、灰色一辺倒の一覧に目印を作る。 */
+[data-category="ima"] .story-cat { color: var(--color-tag-mikan); }
+[data-category="kurashi"] .story-cat { color: var(--color-tag-teal); }
+[data-category="shiten"] .story-cat { color: var(--color-tag-indigo); }
+
+.story-title {
+  margin: 0 0 var(--space-2);
+  font-size: var(--text-md);
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.story-card:hover .story-title {
+  color: var(--color-brand);
+}
+
+.story-note {
+  margin: 0 0 var(--space-3);
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  line-height: 1.8;
+}
+
+.story-meta {
+  display: block;
+  margin-top: auto;
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+}
+
+.story-ym {
+  margin-left: 0.7em;
+  padding-left: 0.7em;
+  border-left: 1px solid var(--color-border-strong);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── 新しい資料から(密なリスト) ──────────────────── */
+.home-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
+}
+
+.home-tab {
+  border: 1px solid var(--color-border-strong);
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+  border-radius: var(--radius-sm);
+  padding: 7px 16px;
+  font-family: inherit;
+  font-size: var(--text-sm);
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.home-tab:hover {
+  border-color: var(--color-brand);
+  color: var(--color-brand);
+}
+
+.home-tab.active {
+  background: var(--color-brand);
+  border-color: var(--color-brand);
+  color: #fff;
+}
+
+/* カードを並べるのではなく、新聞の索引のように詰めて並べる。
+   上の写真カードとリズムを変えるのが狙い。 */
+.digest-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--color-border-strong);
+}
+
+.digest-item {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.digest-item a {
+  display: grid;
+  grid-template-columns: 5.5em 1fr 15em;
+  gap: var(--space-4);
+  align-items: baseline;
+  padding: var(--space-4) var(--space-2);
+  transition: background 0.15s ease;
+}
+
+.digest-item a:hover {
+  background: var(--color-surface);
+}
+
+.digest-ym {
+  font-size: var(--text-sm);
+  color: var(--color-text-faint);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+}
+
+.digest-title {
+  font-size: var(--text-base);
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.digest-item a:hover .digest-title {
+  color: var(--color-brand);
+}
+
+.digest-source {
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+  text-align: right;
+  line-height: 1.6;
+}
+
+/* ── 自由研究(反転セクション) ─────────────────────── */
+/* ページの真ん中に一度だけ濃い帯を入れて、上から下まで同じ明るさが
+   続かないようにしている。 */
+.home-kenkyu {
+  background: var(--color-brand-dark);
+  color: #eef2f6;
+  padding: var(--space-8) 0;
+  border-bottom: 1px solid var(--color-brand-dark);
+}
+
+.home-kenkyu .section-title {
+  color: #fff;
+}
+
+.home-kenkyu .section-title::before {
+  background: var(--color-accent-on-dark);
+}
+
+.home-kenkyu-lead {
+  margin: calc(var(--space-4) * -1) 0 var(--space-6);
+  color: #c3d2df;
+  font-size: var(--text-sm);
+  max-width: 44em;
+  line-height: 1.9;
+}
+
+.home-kenkyu .kenkyu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0 var(--space-7);
+}
+
+.home-kenkyu .kenkyu-list li {
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.home-kenkyu .kenkyu-list a {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-4);
+  padding: var(--space-4) 0;
+  color: #eef2f6;
+  font-size: var(--text-base);
+  line-height: 1.6;
+}
+
+.home-kenkyu .kenkyu-list a:hover {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.home-kenkyu .kenkyu-no {
+  flex-shrink: 0;
+  font-size: var(--text-sm);
+  font-weight: 700;
+  /* 濃紺の上で#2e7f78は沈むので、帯の上だけ明るいアクセントを使う */
+  color: var(--color-accent-on-dark);
+  font-variant-numeric: tabular-nums;
+}
+
+.home-kenkyu .section-more a {
+  color: #fff;
+}
+
+/* ── テーマで探す ───────────────────────────────── */
+/* 文字サイズを6段階に変えたタグクラウドをやめ、件数順のただの索引にした。
+   タグは色で区別せず、件数だけを添える。 */
+.tag-index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-3);
+}
+
+.tag-index-item {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.5em;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  padding: 9px 15px;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text);
+  background: var(--color-bg);
+  transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+}
+
+.tag-index-item:hover {
+  border-color: var(--color-brand);
+  color: var(--color-brand);
+  background: var(--color-surface);
+}
+
+.tag-index-count {
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── 写真の帯 ─────────────────────────────────── */
+/* 自動で流れるカルーセルをやめ、フリー写真ページへの導線に変えた。 */
+.photo-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-3);
+}
+
+.photo-strip img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  transition: opacity 0.2s ease;
+}
+
+.photo-strip a:hover img {
+  opacity: 0.82;
+}
+
+/* ── 画面が狭いとき ──────────────────────────────── */
+@media (max-width: 900px) {
+  .lead-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  /* スマホではサブ2本を先頭から罫線で区切る(大記事との切れ目を作る) */
+  .lead-side {
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--space-5);
+  }
+
+  .story-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .digest-item a {
+    grid-template-columns: 4.5em 1fr;
+    gap: var(--space-3);
+  }
+
+  .digest-source {
+    grid-column: 2;
+    text-align: left;
+  }
+
+  .home-kenkyu .kenkyu-list {
+    grid-template-columns: 1fr;
+  }
+
+  .photo-strip {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .site-intro .wrap {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+  }
+}
+
+@media (max-width: 600px) {
+  .story-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .photo-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* スマホでは1面トップの見出しを一段落とす(サブの見出しはそのまま) */
+  .lead-story--main .lead-story-title {
+    font-size: var(--text-xl);
+  }
+}
+
+/* ── 記事一覧のサムネイル ─────────────────────────────
+   一覧が文字だけだと、どの記事も同じ見た目になって選びづらい。
+   写真のある記事だけ小さく写真を添える。
+   写真が無い記事は枠(幅)だけ残して空にし、列がずれないようにしている。 */
+.news-card {
+  grid-template-columns: 96px minmax(0, 1fr) auto 104px;
+}
+
+.news-thumb {
+  grid-column: 4;
+  grid-row: 1 / span 2;
+  display: block;
+  width: 104px;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-alt);
+}
+
+.news-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.news-thumb--none {
+  background: none;
+}
+
+@media (max-width: 900px) {
+  .news-card {
+    grid-template-columns: 96px minmax(0, 1fr) 84px;
+  }
+  .news-thumb {
+    grid-column: 3;
+    width: 84px;
+  }
+  .news-card .card-tags-row {
+    grid-column: 2;
+    grid-row: 3;
+    justify-content: flex-start;
+    margin-top: 6px;
+  }
+}
+
+@media (max-width: 680px) {
+  .news-thumb {
+    display: none;
+  }
+
+  /* 上の900px向けの3列指定(96px 1fr 84px)が、前の方に書いてある
+     「スマホは1列に縦積み」の指定より後ろにあるため勝ってしまい、
+     タイトルが96pxの列に押し込まれて1行3〜4文字になっていた。
+     ここで改めて1列に戻す(実測: 記事一覧のタイトルが縦読み状態だった)。 */
+  .news-card {
+    grid-template-columns: 1fr;
+  }
+  .news-card .card-tags-row {
+    grid-column: 1;
+    grid-row: auto;
+    justify-content: flex-start;
+    margin-top: 6px;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   記事ページ 2026-08 改修
+   ・冒頭の日付行から掲載日を外し、カテゴリと出典を主役にした
+   ・出典ボックスを本文の先頭から末尾へ移した
+     (読者が本文を1行も読まないうちに出典リンクの塊にぶつかっていた)
+   ・記事と関係のないランダム写真を廃止した
+   ══════════════════════════════════════════════════════════════ */
+
+/* 丸いバッジ状の日付行をやめ、罫線を1本引いただけの記名行にする。
+   バッジは情報量のわりに目立ちすぎ、記事の顔である見出しと競合していた。 */
+.article-date {
+  display: block;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--color-border-strong);
+  border-radius: 0;
+  padding: 0 0 var(--space-3);
+  margin: 0 0 var(--space-4);
+  font-size: var(--text-xs);
+  font-weight: 400;
+  color: var(--color-text-muted);
+  line-height: 1.8;
+}
+
+.article-date .article-cat {
+  font-weight: 700;
+  color: var(--color-brand-dark);
+  letter-spacing: 0.04em;
+}
+
+.article-date .article-srcdate {
+  display: inline-block;
+  margin-left: 0.4em;
+  color: var(--color-text-faint);
+  font-variant-numeric: tabular-nums;
+}
+
+/* 読了時間(「約3分で読める」)。時間の見積もりを先に渡して、
+   忙しい読者が「読むかどうか」をすぐ決められるようにする */
+.article-readtime {
+  color: var(--color-accent-btn);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* ── 記事冒頭の「要点」ボックス ──────────────────────
+   新聞のリード文方式。急いでいる読者は3行だけ読んで帰れて、
+   読み飛ばされても要点は伝わる。本文の丁寧さはそのまま。 */
+/* 長い記事の途中に1回だけ置く「踊り場」。
+   冒頭の吹き出しと同じ形にすると2回目の導入に見えてしまうので、
+   しっぽも名前も付けない帯にして、あくまで合いの手にとどめる。
+   1記事1回まで。増やすと本文のリズムが壊れる。 */
+.memou-aside {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin: var(--space-7) 0;
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-memou-bg);
+  border-top: 1px solid var(--color-memou-border);
+  border-bottom: 1px solid var(--color-memou-border);
+}
+
+.memou-aside-avatar {
+  flex-shrink: 0;
+  width: 54px;
+  height: 54px;
+  display: block;
+}
+
+.memou-aside p {
+  margin: 0;
+  font-size: var(--text-base);
+  line-height: 1.8;
+  color: var(--color-text);
+}
+
+@media (max-width: 700px) {
+  .memou-aside {
+    gap: var(--space-2);
+    padding: var(--space-3);
+  }
+  .memou-aside-avatar {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+/* メモうの吹き出し。記事の冒頭で「これは何の話か」を話し言葉で伝える。
+   下の .article-summary が「事実の圧縮」なのに対し、こちらは「本文の翻訳」。
+   制度名・法律名・会計用語を使わず、数字は多くても1つにする(2〜3文まで)。
+   色は要点ボックス(青みがかった寒色)とわざとぶつけて、
+   メモうの体色にある茶系の暖色にしている。並んでも同じ箱に見えないように。 */
+.memou-intro {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  margin: 0 0 var(--space-5);
+}
+
+.memou-intro-figure {
+  flex-shrink: 0;
+  width: 84px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.memou-intro-avatar {
+  width: 84px;
+  height: 84px;
+  display: block;
+}
+
+/* 名前を出しておかないと「この鳥は誰?」で終わってしまう */
+.memou-intro-name {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--color-memou-ink);
+  line-height: 1;
+}
+
+.memou-intro-bubble {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  background: var(--color-memou-bg);
+  border: 2px solid var(--color-memou-border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-4) var(--space-5);
+  margin-top: 8px;
+}
+
+/* しっぽ。枠が2pxあるので、外側(枠色)と内側(背景色)の三角を2pxずらして重ねる */
+.memou-intro-bubble::before,
+.memou-intro-bubble::after {
+  content: "";
+  position: absolute;
+  top: 22px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-color: transparent;
+}
+
+.memou-intro-bubble::before {
+  left: -12px;
+  border-width: 9px 12px 9px 0;
+  border-right-color: var(--color-memou-border);
+}
+
+.memou-intro-bubble::after {
+  left: -9px;
+  border-width: 7px 10px 7px 0;
+  top: 24px;
+  border-right-color: var(--color-memou-bg);
+}
+
+.memou-intro-bubble p {
+  margin: 0;
+  font-size: var(--text-base);
+  line-height: 1.85;
+  color: var(--color-text);
+}
+
+.memou-intro-bubble p + p {
+  margin-top: 0.55em;
+}
+
+@media (max-width: 700px) {
+  .memou-intro {
+    gap: var(--space-1);
+  }
+  .memou-intro-figure {
+    width: 60px;
+  }
+  .memou-intro-avatar {
+    width: 60px;
+    height: 60px;
+  }
+  .memou-intro-name {
+    font-size: 10px;
+  }
+  .memou-intro-bubble {
+    padding: var(--space-3) var(--space-4);
+    margin-top: 4px;
+  }
+  .memou-intro-bubble::before { top: 16px; }
+  .memou-intro-bubble::after  { top: 18px; }
+}
+
+.article-summary {
+  background: var(--color-surface-alt);
+  border-left: 4px solid var(--color-accent-btn);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: var(--space-4) var(--space-5);
+  margin: 0 0 var(--space-6);
+}
+
+.article-summary-label {
+  margin: 0 0 var(--space-2);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-3);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--color-accent-btn);
+}
+
+/* 調べた資料の本数。長い記事は「難しい」ではなく「それだけ調べてある」
+   と受け取ってもらえるほうが正しい。ただし自慢に見えると逆効果なので、
+   見出しの右端に小さく置くだけにとどめる。 */
+.article-summary-sources {
+  flex-shrink: 0;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--color-text-faint);
+}
+
+.article-summary ul {
+  margin: 0;
+  padding-left: 1.2em;
+  display: grid;
+  gap: 7px;
+}
+
+.article-summary li {
+  font-size: var(--text-base);
+  line-height: 1.7;
+  color: var(--color-text);
+}
+
+/* 本文の途中に置く、数字を並べただけの小箱。
+   会議録から拾った内訳のように「文章で流すと読み飛ばされるが
+   表にするほどでもない」ものを入れる。要点ボックスと見た目がぶつからない
+   よう、左の色帯ではなく細い囲みにしてある。 */
+.fact-list {
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-alt);
+  padding: var(--space-4) var(--space-5);
+  margin: 0 0 var(--space-5);
+}
+
+.fact-list-title {
+  margin: 0 0 var(--space-3);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-brand);
+}
+
+.fact-list ul {
+  margin: 0;
+  padding-left: 1.2em;
+  display: grid;
+  gap: 6px;
+}
+
+.fact-list li {
+  font-size: var(--text-base);
+  line-height: 1.7;
+}
+
+/* 記事の顔になる写真。丸みと影を強く付けると写真そのものより
+   「枠」が目に付くので、角丸を抑えて影を外した。 */
+.article-hero-img {
+  margin: 0 0 var(--space-6);
+}
+
+.article-hero-img img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  box-shadow: none;
+  display: block;
+}
+
+.article-hero-img figcaption {
+  margin-top: 8px;
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+  text-align: left;
+  border-left: 2px solid var(--color-border-strong);
+  padding-left: 10px;
+}
+
+/* 末尾に移した出典ボックス。本文の一部ではなく「資料欄」として、
+   本文とははっきり違う見た目にする。 */
+.content-block.source-box {
+  margin-top: var(--space-8);
+  background: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-5);
+}
+
+.source-box-title {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-3);
+  padding: 0;
+  border: none;
+}
+
+.source-box-posted {
+  margin: var(--space-4) 0 0;
+  padding-top: var(--space-3);
+  border-top: 1px dashed var(--color-border-strong);
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   フッター 2026-08 改修
+   もとは中央寄せの2行だけで、ページが終わったのか作りかけなのか
+   分からない見え方だった。サイトの中身を一望できる索引に組み直す。
+   ══════════════════════════════════════════════════════════════ */
+.site-footer {
+  margin-top: auto;
+  border-top: 1px solid var(--color-border);
+  background: var(--color-surface-alt);
+  padding: var(--space-8) 0 var(--space-5);
+  text-align: left;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+/* 旧フッター向けの「1行目だけ大きく中央寄せ」を打ち消す */
+.site-footer .wrap > p:first-child {
+  font-weight: inherit;
+  color: inherit;
+  font-size: inherit;
+  margin: 0;
+}
+
+.footer-cols {
+  display: grid;
+  grid-template-columns: 2.2fr 1fr 1fr 1fr;
+  gap: var(--space-6) var(--space-5);
+  padding-bottom: var(--space-6);
+  border-bottom: 1px solid var(--color-border-strong);
+}
+
+.footer-col h3 {
+  margin: 0 0 var(--space-3);
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--color-text);
+}
+
+.footer-col a {
+  display: block;
+  padding: 5px 0;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.footer-col a:hover {
+  color: var(--color-brand);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footer-col--about {
+  max-width: 34em;
+}
+
+.footer-col--about p {
+  margin: 0 0 var(--space-3);
+  line-height: 1.85;
+}
+
+.footer-logo {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: var(--text-md);
+  letter-spacing: 0.02em;
+  color: var(--color-brand-dark);
+}
+
+.footer-note {
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+  line-height: 1.8;
+}
+
+.footer-feedback {
+  margin: var(--space-5) 0 0;
+  max-width: none;
+  line-height: 1.8;
+  font-size: var(--text-sm);
+}
+
+.footer-copy {
+  margin: var(--space-5) 0 0;
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+  letter-spacing: 0.04em;
+}
+
+/* トップのフッターに出す累計訪問数。
+   数字が取れないとき(GoatCounter側の設定OFF・広告ブロッカー等)は
+   hidden属性のまま行ごと消えるので、レイアウトは崩れない */
+.footer-stats {
+  margin: var(--space-4) 0 0;
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+  letter-spacing: 0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 900px) {
+  .footer-cols {
+    grid-template-columns: 1fr 1fr;
+  }
+  .footer-col--about {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 520px) {
+  .footer-cols {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── リンク集 2026-08 改修 ──────────────────────────
+   カードに貼っていた写真は、リンク先(市役所・Yahoo・X・note など)と
+   中身が対応しておらず、ただの飾りになっていたので外した。
+   文字だけのカードとして成立するよう、余白と外枠を作り直す。 */
+.link-card {
+  padding: var(--space-4) var(--space-5) var(--space-5);
+  border-left: 3px solid var(--color-border-strong);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.link-card .link-card-body {
+  padding: 0;
+}
+
+.link-card h4 {
+  margin: 0 0 8px;
+  font-size: var(--text-base);
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.link-card h4::after {
+  content: " ↗";
+  font-size: 0.8em;
+  color: var(--color-text-faint);
+}
+
+.link-card p {
+  margin: 0;
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  line-height: 1.8;
+}
+
+.link-card:hover {
+  border-left-color: var(--color-brand);
+  border-color: var(--color-brand);
+}
+
+.link-card:hover h4 {
+  color: var(--color-brand);
+}
+
+/* ── 大洲と読書: 「読んだ本」タグ+見出しの行 ─────────────────
+   各ページの<style>で display:flex になっているが、折り返しの指定が無く、
+   スマホ幅では h2 が縮めず右へはみ出していた(実測: 375px幅で399pxまで突き抜け)。
+   タグと見出しが入り切らない幅では素直に2行に折る。 */
+.book-section-title {
+  flex-wrap: wrap;
+}
+
+.book-section-title h2 {
+  min-width: 0;
+}
+
+/* ── 記事の表(.article-table) ────────────────────────────────
+   これまで記事内の表は1つ1つに長いstyle=""を直接書いていて、書くのも直すのも
+   重かった。見た目は既存の表とそろえたまま、クラス1つで書けるようにする。
+   横に長い表はスマホで表だけ横スクロールさせたいので、.article-table-wrap で包む。 */
+.article-table-wrap {
+  overflow-x: auto;
+  margin: 0 0 var(--space-5);
+}
+
+.article-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  font-size: var(--text-sm);
+}
+
+.article-table caption {
+  caption-side: top;
+  text-align: left;
+  font-weight: 700;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  padding: 0 0 var(--space-3);
+}
+
+.article-table th,
+.article-table td {
+  text-align: left;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: top;
+}
+
+.article-table thead th {
+  background: var(--color-surface-alt);
+  color: var(--color-brand);
+  font-weight: 600;
+  font-size: var(--text-xs);
+  white-space: nowrap;
+}
+
+.article-table tbody tr:last-child th,
+.article-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.article-table tbody th {
+  font-weight: 600;
+  color: var(--color-text);
+  white-space: nowrap;
+}
+
+/* 3列以上の表は、スマホ幅で1文字ずつ縦積みになるほど潰れる。
+   最低幅を持たせて、潰す代わりに .article-table-wrap の中で横スクロールさせる。 */
+.article-table--wide {
+  min-width: 34rem;
+}
+
+.article-table .num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.article-table-note {
+  margin: calc(var(--space-5) * -1 + var(--space-2)) 0 var(--space-5);
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+}
+
+
+/* ── 記事一覧を、開いた瞬間に記事が見える形にする ────────────────
+   もとは「大きな見出し → カテゴリ説明3枚 → 並び順 → タグ → 情報源」と
+   前置きが続き、スマホの最初の画面に記事が1本も出ていなかった。
+   前置きをたためるようにして、記事を上へ引き上げている。 */
+
+/* カテゴリの説明。初めて来た人には要るが、2回目からは邪魔になる */
+.news-intro {
+  margin: 0 0 var(--space-5);
+}
+
+.news-intro > summary {
+  cursor: pointer;
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  padding: 6px 0;
+}
+
+.news-intro > summary::-webkit-details-marker {
+  display: none;
+}
+
+.news-intro > summary::before {
+  content: "＋";
+  font-size: 12px;
+  color: var(--color-accent-btn);
+}
+
+.news-intro[open] > summary::before {
+  content: "－";
+}
+
+.news-intro > summary:hover {
+  color: var(--color-text);
+}
+
+.news-intro .news-categories {
+  margin-top: var(--space-4);
+}
+
+/* 並び替えと絞り込み。使う人は使うが、毎回は開かない */
+.news-filter-more > summary {
+  cursor: pointer;
+  list-style: none;
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-accent-btn);
+  padding: 8px 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.news-filter-more > summary::-webkit-details-marker {
+  display: none;
+}
+
+.news-filter-more > summary::before {
+  content: "＋";
+  font-size: 12px;
+}
+
+.news-filter-more[open] > summary::before {
+  content: "－";
+}
+
+.news-filter-more[open] > summary {
+  margin-bottom: var(--space-2);
+}
+
+@media (max-width: 680px) {
+  /* 見出しだけで画面の3分の1を使っていたので、大きく詰める。
+     一覧ページは「どこにいるか」より「何があるか」を先に見せたい */
+  .news-page-hero {
+    padding: var(--space-5) 0 var(--space-4);
+    margin-bottom: 0;
+  }
+
+  .news-page-hero h1 {
+    font-size: var(--text-xl);
+    margin: 0;
+  }
+
+  /* 見出しの下の節も、既定の48pxでは空きすぎる */
+  .news-page-hero + section {
+    padding-top: var(--space-4);
+  }
+
+  /* 「出典」と日付で2行使っていたので、1行に並べる */
+  .news-card .news-date {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .news-card .date-kind {
+    margin: 0;
+  }
+
+  /* 一覧の段階でタグを2つも3つも見せる必要はない。1つに絞る */
+  .news-card .card-tags-row > *:nth-child(n + 2) {
+    display: none;
+  }
+
+  /* カテゴリは横スクロールのタブにして1行に収める。
+     画面の上に貼り付けておくと、読みながらでも切り替えられる */
+  .news-sidebar {
+    position: sticky;
+    top: 56px;
+    z-index: 5;
+    max-height: none;
+    overflow: visible;
+    padding-right: 0;
+    background: var(--color-bg);
+    margin: 0 calc(var(--space-4) * -1);
+    padding: 6px var(--space-4) 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .news-sidebar .sidebar-primary {
+    margin-bottom: 6px;
+  }
+
+  .news-sidebar .sidebar-primary .tag-filter-label {
+    display: none;
+  }
+
+  .news-sidebar .sidebar-primary .news-tabs {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    gap: 6px;
+    padding-bottom: 6px;
+  }
+
+  .news-sidebar .sidebar-primary .news-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .news-sidebar .sidebar-primary .news-tab {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+
+  .news-filter-more > summary {
+    padding: 4px 0 8px;
+  }
+
+  /* 1枚179pxあり、1画面に4枚しか入らなかった。行間と余白を詰める */
+  .news-card {
+    padding: 10px var(--space-4);
+    gap: 3px;
+  }
+
+  .news-card .news-title {
+    font-size: var(--text-base);
+    line-height: 1.5;
+  }
+
+  /* 出典の1行は、一覧の段階では読まれない。畳んで件数を稼ぐ */
+  .news-card .news-source {
+    display: none;
+  }
+
+  .news-card .card-tags-row {
+    margin-top: 4px;
+  }
+
+  .news-cards {
+    gap: 6px;
+  }
+}

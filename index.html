@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OZU LIFE MEMO ｜ おおず生活情報(非公式)</title>
+<meta name="description" content="大洲市役所の硬い資料やニュースを『翻訳』する、個人運営の非公式・大洲市生活情報サイトです。">
+<meta name="google-site-verification" content="TodLgAwU1efa2K8qQUIfj3CtQbhJfZkeCny7guCRCSQ" />
+<link rel="icon" href="assets/img/favicon-192.png">
+<link rel="alternate" type="application/rss+xml" title="OZU LIFE MEMO の更新" href="feed.xml">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link data-ozu-fonts rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;family=Shippori+Mincho+B1:wght@600;700&amp;display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="OZU LIFE MEMO">
+<meta property="og:title" content="OZU LIFE MEMO ｜ おおず生活情報(非公式)">
+<meta property="og:description" content="大洲市役所の硬い資料やニュースを『翻訳』する、個人運営の非公式・大洲市生活情報サイトです。">
+<meta property="og:url" content="https://ozulifememo.github.io/ozu-life-memo/">
+<meta property="og:image" content="https://ozulifememo.github.io/ozu-life-memo/assets/img/ogp-card.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://ozulifememo.github.io/ozu-life-memo/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "OZU LIFE MEMO",
+  "url": "https://ozulifememo.github.io/ozu-life-memo/",
+  "description": "大洲市役所の硬い資料やニュースを『翻訳』する、個人運営の非公式・大洲市生活情報サイトです。",
+  "publisher": {"@type": "Organization", "name": "OZU LIFE MEMO"}
+}
+</script>
+</head>
+<body>
+
+<div data-site-header data-prefix=""></div>
+
+<!-- サイトの自己紹介。かつては画面いっぱいのヒーローだったが、
+     読者が最初に見たいのは記事なので、1行の帯に畳んで記事を先に出す。 -->
+<section class="site-intro">
+  <div class="wrap">
+    <img src="assets/img/memou.svg" alt="" class="site-intro-memou" width="52" height="52" decoding="async">
+    <p class="site-intro-text">
+      <strong>大洲市の非公式生活情報サイト。</strong>
+      市役所や議会の硬い資料、SNSの断片的な話題を、1人の市民の目線で読み解いています。
+    </p>
+    <a class="site-intro-link" href="concept/">このサイトについて</a>
+  </div>
+</section>
+
+<!-- 主役の記事を1本だけ大きく -->
+<section class="lead-section">
+  <div class="wrap">
+    <div id="home-lead"></div>
+  </div>
+</section>
+
+<section class="picks-section">
+  <div class="wrap">
+    <h2 class="section-title">読んでほしい記事</h2>
+    <div class="story-grid" id="home-pick-cards"></div>
+    <p class="section-more">
+      <a href="best/">運営者のおすすめ記事10選を見る</a>
+    </p>
+  </div>
+</section>
+
+<section class="latest-section">
+  <div class="wrap">
+    <h2 class="section-title">新しい資料から</h2>
+    <p class="section-lead">
+      掲載日ではなく、参照した資料そのものの日付が新しい順に並べています。
+    </p>
+    <div class="home-tabs">
+      <button class="home-tab active" data-category="all">全体</button>
+      <button class="home-tab" data-category="ima">大洲のいま</button>
+      <button class="home-tab" data-category="kurashi">大洲の暮らし</button>
+      <button class="home-tab" data-category="shiten">大洲の視点</button>
+    </div>
+    <ol class="digest-list" id="home-latest-news"></ol>
+    <p class="section-more">
+      <a href="news/">記事の一覧をすべて見る</a>
+    </p>
+  </div>
+</section>
+
+<section class="home-kenkyu">
+  <div class="wrap">
+    <h2 class="section-title">大洲の自由研究</h2>
+    <p class="home-kenkyu-lead">
+      1本の記事に収めるにはもったいない題材を、時間のあるときにじっくり読んでもらうための長文コーナーです。
+      出典を並べて、分からなかったことも正直に書いています。
+    </p>
+    <ol class="kenkyu-list">
+      <li><a href="jiyu-kenkyu/ozu-okane-no-nagare.html"><span class="kenkyu-no">01</span>大洲城下町、12億円はどこから来たのか</a></li>
+      <li><a href="jiyu-kenkyu/heisei-gappei-20nen.html"><span class="kenkyu-no">02</span>平成の大合併、大洲は何を得て何を失ったか</a></li>
+      <li><a href="jiyu-kenkyu/daito-kijun-horitsuron.html"><span class="kenkyu-no">03</span>豪雨訴訟と「大東基準」を、法律論として読む</a></li>
+      <li><a href="jiyu-kenkyu/ozu-zaisei-zentaizo.html"><span class="kenkyu-no">04</span>大洲市の財政、数字で全体像をつかむ</a></li>
+      <li><a href="jiyu-kenkyu/nipponia-8toshi-hikaku.html"><span class="kenkyu-no">05</span>NIPPONIA HOTEL、全国8都市を比較する</a></li>
+      <li><a href="jiyu-kenkyu/shirohaku-160man.html"><span class="kenkyu-no">06</span>大洲城キャッスルステイ、160万円の中身</a></li>
+      <li><a href="jiyu-kenkyu/jinko-47nen-graph.html"><span class="kenkyu-no">07</span>大洲市の人口減少、47年分のグラフで見る</a></li>
+      <li><a href="jiyu-kenkyu/hijikawa-474-shisen.html"><span class="kenkyu-no">08</span>肱川、474本の支川を持つ川</a></li>
+    </ol>
+    <p class="section-more">
+      <a href="jiyu-kenkyu/">「大洲の自由研究」の一覧を見る</a>
+    </p>
+  </div>
+</section>
+
+<section class="home-tags">
+  <div class="wrap">
+    <h2 class="section-title">テーマで探す</h2>
+    <p class="section-lead">全129記事につけたテーマタグです。かっこ内は記事数。</p>
+    <div class="tag-index" id="home-tag-index"></div>
+  </div>
+</section>
+
+<section class="home-photos">
+  <div class="wrap">
+    <h2 class="section-title">大洲の風景</h2>
+    <p class="section-lead">
+      記事で使っている写真は、すべて市内で自分で撮ったものです。自由に使える形で公開しています。
+    </p>
+    <div class="photo-strip">
+      <a href="photo/"><img src="assets/img/thumbs/photos/ozu-photo-05.jpg" alt="青空の下の大洲城" loading="lazy"></a>
+      <a href="photo/"><img src="assets/img/thumbs/real-photo-5.jpg" alt="高台から見下ろす大洲の市街地と肱川" loading="lazy"></a>
+      <a href="photo/"><img src="assets/img/thumbs/photos/ozu-photo-39.jpg" alt="肱川の川面と河原" loading="lazy"></a>
+      <a href="photo/"><img src="assets/img/thumbs/photos/ozu-photo-27.jpg" alt="冨士山公園のチューリップ畑" loading="lazy"></a>
+      <a href="photo/"><img src="assets/img/thumbs/photos/ozu-photo-54.jpg" alt="如法寺の本堂と石灯籠" loading="lazy"></a>
+      <a href="photo/"><img src="assets/img/thumbs/real-photo-1.jpg" alt="山あいを走る一両編成の普通列車" loading="lazy"></a>
+      <a href="photo/"><img src="assets/img/thumbs/photos/ozu-photo-72.jpg" alt="川を望むウッドデッキのテラス席" loading="lazy"></a>
+      <a href="photo/"><img src="assets/img/thumbs/photos/ozu-photo-80.jpg" alt="霧のかかる山あいの橋" loading="lazy"></a>
+    </div>
+    <p class="section-more">
+      <a href="photo/">フリー写真のページを見る</a>
+    </p>
+  </div>
+</section>
+
+<div data-site-footer></div>
+
+<div data-site-modal></div>
+
+<script src="assets/js/site-chrome.js"></script>
+<script src="assets/js/photos-data.js"></script>
+<script src="assets/js/article-images.js"></script>
+<script src="assets/js/news-data.js"></script>
+<script src="assets/js/article-card.js"></script>
+<script>
+  (function renderHome() {
+    if (typeof OZU_NEWS === "undefined" || typeof OzuCard === "undefined") return;
+
+    // ── 主役3本 + 読んでほしい記事 ──────────────────────
+    // pick記事のうち写真のあるものから3本、新聞の1面のように出す
+    // (1本目が大、2〜3本目がサブ)。写真が無い記事は大きく出しても
+    // 間が持たないので、主役には選ばない。
+    //
+    // どの3本を出すかは日替わり(日付で決まるローテーション)。
+    // 毎日トップの顔が変わるが、同じ日のあいだは何度開いても同じなので
+    // 「さっきと違う」というちらつきは起きない。
+    var picks = OZU_NEWS.filter(function (i) { return i.pick; });
+    picks = OzuCard.bySourceDateDesc(picks);
+
+    var withPhoto = picks.filter(function (i) { return OzuCard.articlePhoto(i.slug, ""); });
+    var leads = [];
+    if (withPhoto.length) {
+      var now = new Date();
+      var dayIndex = Math.floor((now - new Date(now.getFullYear(), 0, 0)) / 86400000);
+      var start = dayIndex % withPhoto.length;
+      for (var k = 0; k < Math.min(3, withPhoto.length); k++) {
+        leads.push(withPhoto[(start + k) % withPhoto.length]);
+      }
+    }
+    if (!leads.length) leads = picks.slice(0, 1);
+    var rest = picks.filter(function (i) { return leads.indexOf(i) === -1; });
+
+    var leadWrap = document.getElementById("home-lead");
+    if (leadWrap && leads.length) leadWrap.innerHTML = OzuCard.leadGrid(leads, "");
+
+    var pickWrap = document.getElementById("home-pick-cards");
+    if (pickWrap) {
+      pickWrap.innerHTML = rest
+        .map(function (i) { return OzuCard.storyCard(i, "", { showNote: true }); })
+        .join("");
+    }
+
+    // ── 新しい資料から ───────────────────────────────
+    var sorted = OzuCard.bySourceDateDesc(OZU_NEWS);
+    var listEl = document.getElementById("home-latest-news");
+
+    function renderDigest(category) {
+      var list = category === "all" ? sorted : sorted.filter(function (i) { return i.category === category; });
+      listEl.innerHTML = list
+        .slice(0, 10)
+        .map(function (item) {
+          var ym = OzuCard.sourceYmd(item);
+          return (
+            '<li class="digest-item">' +
+            '<a href="eachnews/' + item.slug + '.html">' +
+            '<span class="digest-ym">' + (ym || "—") + "</span>" +
+            '<span class="digest-title">' + OzuCard.escapeHtml(item.title) + "</span>" +
+            '<span class="digest-source">' + OzuCard.escapeHtml(item.source) + "</span>" +
+            "</a></li>"
+          );
+        })
+        .join("");
+    }
+
+    if (listEl) {
+      renderDigest("all");
+      document.querySelectorAll(".home-tab").forEach(function (tab) {
+        tab.addEventListener("click", function () {
+          document.querySelectorAll(".home-tab").forEach(function (t) { t.classList.remove("active"); });
+          tab.classList.add("active");
+          renderDigest(tab.dataset.category);
+        });
+      });
+    }
+
+    // ── テーマで探す ────────────────────────────────
+    // かつては文字サイズを6段階に変えたタグクラウドだったが、
+    // 見た目のわりに情報が伝わらないので、件数順に並べたただの索引にした。
+    var tagWrap = document.getElementById("home-tag-index");
+    if (tagWrap) {
+      var counts = {};
+      OZU_NEWS.forEach(function (i) {
+        (i.tags || []).forEach(function (t) { counts[t] = (counts[t] || 0) + 1; });
+      });
+      tagWrap.innerHTML = Object.keys(counts)
+        .sort(function (a, b) { return counts[b] - counts[a]; })
+        .map(function (t) {
+          return (
+            '<a class="tag-index-item" href="news/?tag=' + encodeURIComponent(t) + '">' +
+            OzuCard.escapeHtml(t) + '<span class="tag-index-count">' + counts[t] + "</span></a>"
+          );
+        })
+        .join("");
+    }
+  })();
+</script>
+<script src="assets/js/main.js"></script>
+<script data-goatcounter="https://ozulifememo.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

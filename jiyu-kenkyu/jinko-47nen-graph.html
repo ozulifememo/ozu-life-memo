@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>大洲市の人口減少、47年分のグラフで見る ｜ 大洲の自由研究 ｜ OZU LIFE MEMO</title>
+<meta name="description" content="1980年から2026年まで47年分の人口データを集めて１本のグラフにした。合併、豪雨、コロナ。大きな出来事のたびに人口動態はどう動いたのか。そして減り方が一番速いのは、実は今だった。">
+<link rel="icon" href="../assets/img/favicon-192.png">
+<link rel="alternate" type="application/rss+xml" title="OZU LIFE MEMO の更新" href="../feed.xml">
+<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link data-ozu-fonts rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;family=Shippori+Mincho+B1:wght@600;700&amp;display=swap">
+<link rel="stylesheet" href="../assets/css/style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="OZU LIFE MEMO">
+<meta property="og:title" content="大洲市の人口減少、47年分のグラフで見る ｜ 大洲の自由研究">
+<meta property="og:description" content="47年分の人口データを１本のグラフに。減り方が一番速いのは、実は今だった。">
+<meta property="og:url" content="https://ozulifememo.github.io/ozu-life-memo/jiyu-kenkyu/jinko-47nen-graph.html">
+<meta property="og:image" content="https://ozulifememo.github.io/ozu-life-memo/assets/img/ogp-card.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://ozulifememo.github.io/ozu-life-memo/jiyu-kenkyu/jinko-47nen-graph.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "大洲市の人口減少、47年分のグラフで見る",
+  "description": "1980年から2026年までの人口データを集めて１本の時系列にした自由研究。",
+  "datePublished": "2026-08-19",
+  "dateModified": "2026-08-19",
+  "image": "https://ozulifememo.github.io/ozu-life-memo/assets/img/ogp-card.png",
+  "author": {"@type": "Organization", "name": "OZU LIFE MEMO"},
+  "publisher": {"@type": "Organization", "name": "OZU LIFE MEMO"},
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://ozulifememo.github.io/ozu-life-memo/jiyu-kenkyu/jinko-47nen-graph.html"}
+}
+</script>
+<style>
+  .jk-hero { background: linear-gradient(180deg, var(--color-surface-alt) 0%, transparent 100%); }
+  .jk-meta { display:flex; gap:14px; flex-wrap:wrap; margin-top:14px; font-size:.82rem; color:var(--color-text-muted); }
+  .jk-meta span { background:var(--color-surface); border:1px solid var(--color-border); border-radius:4px; padding:4px 12px; }
+  .jk-toc { background:var(--color-surface); border:1px solid var(--color-border); border-radius:var(--radius); padding:20px 24px; margin:32px 0; }
+  .jk-toc h2 { margin-top:0; font-size:1rem; }
+  .jk-toc ol { margin:0; padding-left:1.3em; color:var(--color-text-muted); line-height:2; font-size:.92rem; }
+  .jk-toc a { color:inherit; }
+  .jk-toc a:hover { color:var(--color-brand); }
+  .jk-section { max-width:760px; margin:0 auto; }
+  .jk-section h2 { color:var(--color-brand); font-size:1.35rem; margin:52px 0 16px; scroll-margin-top:20px; }
+  .jk-section h3 { color:var(--color-text); font-size:1.05rem; margin:28px 0 10px; }
+  .jk-section p.commentary { margin-bottom:16px; }
+  .jk-callout { background:var(--color-surface-alt); border-left:3px solid var(--color-brand); border-radius:4px; padding:14px 18px; margin:20px 0; font-size:.92rem; color:var(--color-text-muted); }
+  .jk-org-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:14px; margin:20px 0; }
+  .jk-org-card { border:1px solid var(--color-border); border-radius:var(--radius); padding:16px 18px; background:var(--color-surface); }
+  .jk-org-card .jk-tag { font-size:.7rem; letter-spacing:.05em; color:var(--color-brand); font-weight:700; }
+  .jk-org-card h3 { margin:6px 0 8px; font-size:1rem; }
+  .jk-org-card p { margin:0; font-size:.85rem; color:var(--color-text-muted); line-height:1.7; }
+  .jk-diagram { background:var(--color-surface); border:1px solid var(--color-border); border-radius:var(--radius); padding:16px 8px; overflow-x:auto; margin:24px 0; }
+  .jk-diagram svg { display:block; width:100%; height:auto; min-width:720px; }
+  .jk-fig-caption { text-align:center; font-size:.82rem; color:var(--color-text-muted); margin-top:10px; }
+  table.jk-table { width:100%; border-collapse:collapse; font-size:.86rem; margin:16px 0; }
+  table.jk-table th, table.jk-table td { text-align:left; padding:9px 10px; border-bottom:1px solid var(--color-border); vertical-align:top; }
+  table.jk-table th { color:var(--color-text-muted); font-weight:700; font-size:.76rem; }
+  table.jk-table td.num { text-align:right; font-variant-numeric:tabular-nums; }
+  table.jk-table tr.hl td { background:var(--color-surface-alt); font-weight:700; }
+  .jk-fn { font-size:.7em; vertical-align:super; color:var(--color-brand); text-decoration:none; }
+  .jk-footnotes { font-size:.85rem; color:var(--color-text-muted); border-top:1px solid var(--color-border); padding-top:20px; margin-top:56px; }
+  .jk-footnotes li { margin-bottom:8px; }
+  .jk-series-note { background:var(--color-surface-alt); border-radius:var(--radius); padding:16px 20px; font-size:.85rem; color:var(--color-text-muted); margin:32px auto; max-width:760px; }
+</style>
+</head>
+<body>
+
+<div data-site-header data-prefix="../"></div>
+
+<section class="jk-hero">
+  <div class="wrap" style="max-width:820px;">
+    <p style="font-size:.8rem;letter-spacing:.06em;color:var(--color-brand);font-weight:700;margin-bottom:10px;">大洲の自由研究 #07</p>
+    <h1 style="font-size:clamp(1.6rem,4vw,2.1rem);line-height:1.5;"><span class="nb">大洲市</span>の人口減少、<span class="nb">47年</span>分のグラフで見る</h1>
+    <p style="color:var(--color-text-muted);margin-top:14px;">
+      これまで書いてきた記事のあちこちに、人口の数字が断片的に登場してきた。
+      78,319人、52,000人、40,575人、37,638人。どれも正しいのに、
+      並べても１つの物語にならない。だから1980年から2026年までの47年分を集めて、
+      １本のグラフに繋ぎ直した。すると、思っていたのと違う結論が出てきた。
+    </p>
+    <div class="jk-meta">
+      <span>読了目安 25～30分</span>
+      <span>公開: 2026/08/19</span>
+      <span>独自集計の時系列データを含みます</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap jk-section">
+
+    <div class="jk-toc">
+      <h2>目次</h2>
+      <ol>
+        <li><a href="#ch1">断片の数字を、１本の線にしたかった</a></li>
+        <li><a href="#ch2">データはどこから取ったか。２つの系列</a></li>
+        <li><a href="#ch3">合併という壁。1980～2004年の年次データが取れない理由</a></li>
+        <li><a href="#ch4">47年分のグラフ</a></li>
+        <li><a href="#ch5">ピークは1985年。40年で２万人が消えた</a></li>
+        <li><a href="#ch6">５年ごとに見る、減り方のギアチェンジ</a></li>
+        <li><a href="#ch7">１年ごとに見る。2018年の谷</a></li>
+        <li><a href="#ch8">いちばん速いのは、実は今だった</a></li>
+        <li><a href="#ch9">数字が合った瞬間。自然減と社会減の内訳</a></li>
+        <li><a href="#ch10">中身の変化。1980年と2015年の年齢構成</a></li>
+        <li><a href="#ch11">人口は半減、世帯数は増加というパラドックス</a></li>
+        <li><a href="#ch12">この先の47年。2060年に何人か</a></li>
+        <li><a href="#ch13">調べても分からなかったこと</a></li>
+        <li><a href="#ch14">47年を１本で見て、思ったこと</a></li>
+      </ol>
+    </div>
+
+    <h2 id="ch1">断片の数字を、１本の線にしたかった</h2>
+    <p class="commentary">
+      きっかけは、自分で書いた記事に対する違和感だった。
+    </p>
+    <p class="commentary">
+      統計書の記事では「ピーク時78,319人が今は40,575人」と書いた<a href="#fn1" class="jk-fn">[１]</a>。
+    </p>
+    <p class="commentary">
+      合併の記事では「合併直後は52,000人超」と書いた<a href="#fn2" class="jk-fn">[２]</a>。
+    </p>
+    <p class="commentary">
+      人口ビジョンの記事では「2060年の目標は３万人」と書いた<a href="#fn3" class="jk-fn">[３]</a>。
+    </p>
+    <p class="commentary">
+      どの数字も出典があって正確だ。でも、読んだ人の頭の中で１本の線にならない。
+    </p>
+    <p class="commentary">
+      78,319人はいつの数字なのか。40,575人と37,638人はどう違うのか。その問いに、自分でもすぐ答えられなかった。
+    </p>
+    <p class="commentary">
+      理由ははっきりしている。<strong>人口の数字には、少なくとも３つの違う出所がある</strong>からだ。
+    </p>
+    <p class="commentary">
+      ５年に１度の国勢調査。毎月更新される住民基本台帳。そして将来推計。
+    </p>
+    <p class="commentary">
+      それぞれ調べ方も対象も違うので、同じ年でも数字がずれる。記事ごとに手近な数字を使っていると、全体として何が起きているかが見えなくなる。
+    </p>
+    <p class="commentary">
+      そこで今回は、<strong>1980年から2026年までの47年間</strong>について、取れる限りのデータを集めて１本の時系列にした。
+    </p>
+    <p class="commentary">
+      なぜ47年かというと、それがいま手に入る一次データで遡れる、ほぼ限界の長さだったからだ。その事情も含めて書いていく。
+    </p>
+
+    <h2 id="ch2">データはどこから取ったか。２つの系列</h2>
+    <p class="commentary">
+      使ったのは、次の２つの系列だ。
+    </p>
+    <div class="jk-org-grid">
+      <div class="jk-org-card">
+        <span class="jk-tag">系列A</span>
+        <h3>国勢調査（５年ごと・1980～2025年）</h3>
+        <p>５年に１度、10月１日時点で「実際にそこに住んでいる人」を数える国の調査。最も精度が高いとされる。1980年から2020年までの数字と、2025年の速報値を使用。合併前の年については、現在の大洲市の区域に組み替えた数字が公表されている。</p>
+      </div>
+      <div class="jk-org-card">
+        <span class="jk-tag">系列B</span>
+        <h3>住民基本台帳（毎年・2005～2025年）</h3>
+        <p>住民票にもとづく数字で、大洲市が毎月公表している。届出ベースなので、進学や単身赴任で実際には住んでいない人も含まれる。各年12月31日時点のExcelファイルを21本ダウンロードして集計した。</p>
+      </div>
+    </div>
+    <p class="commentary">
+      ２つを並べると、同じ2020年でも国勢調査40,575人に対し、住民基本台帳（2020年12月末）は42,004人と、1,429人の差が出る。
+    </p>
+    <p class="commentary">
+      これはどちらかが間違っているのではなく、<strong>数えている対象が違う</strong>からだ。
+    </p>
+    <p class="commentary">
+      進学で市外に出ていても住民票を残している学生などが、この差に含まれる。
+    </p>
+    <p class="commentary">
+      グラフでは２つを別の線として描く。混ぜて１本にすると、
+      2005年のところで不自然な段差ができてしまうからだ。
+      面倒でも、出所の違う数字は分けて示すほうが誠実だと思う。
+    </p>
+
+    <h2 id="ch3">合併という壁。1980～2004年の年次データが取れない理由</h2>
+    <p class="commentary">
+      当初の計画は、47年すべてについて１年刻みのデータを集めることだった。
+      それは<strong>できなかった</strong>。理由を書いておきたい。
+    </p>
+    <p class="commentary">
+      大洲市が公開している住民基本台帳の人口・世帯数のデータは、<strong>平成17年（2005年）から</strong>しかない<a href="#fn4" class="jk-fn">[４]</a>。
+    </p>
+    <p class="commentary">
+      これは市がサボっているわけではなく、2005年１月11日に大洲市・長浜町・肱川町・河辺村が合併して「新しい大洲市」が誕生したからだ。
+    </p>
+    <p class="commentary">
+      現在の大洲市という自治体が生まれたのが2005年なので、その市が公開する住民基本台帳のデータも、そこから始まっている。
+    </p>
+    <p class="commentary">
+      では2004年以前はどうなるかというと、<strong>旧・大洲市、旧・長浜町、旧・肱川町、旧・河辺村それぞれの役場が記録していた数字を、４つ足し合わせる</strong>必要がある。
+    </p>
+    <p class="commentary">
+      しかし、解散した自治体の年次データはネット上では公開されていない。
+    </p>
+    <p class="commentary">
+      紙の統計書や県の資料には残っているはずだが、オンラインで確認できる形では見つけられなかった。
+    </p>
+    <div class="jk-callout">
+      つまり<strong>「合併」という出来事は、人口の推移そのものだけでなく、
+      人口を調べようとする作業にも壁を作っている</strong>ということになる。
+      2005年より前の大洲市の年ごとの姿は、４つの自治体の記録を集めないと復元できない。
+      これは今回の調べもので、いちばん実感としてこたえた発見だった。
+    </div>
+    <p class="commentary">
+      救いは、国勢調査が５年ごとに、現在の市域に組み替えた数字を出してくれていることだ。
+    </p>
+    <p class="commentary">
+      おかげで1980年まで遡ることはできた。１年刻みではないが、47年の大きな流れは描ける。
+    </p>
+    <p class="commentary">
+      この記事のグラフが「1980～2000年は５年刻み、2005年以降は１年刻み」という不揃いな形になっているのは、そういう事情による。
+    </p>
+
+    <h2 id="ch4">47年分のグラフ</h2>
+    <p class="commentary">
+      集めたデータを１枚にした。これが大洲市の47年間だ。
+    </p>
+    <div class="jk-diagram">
+      <figure style="margin:0;">
+        <svg viewBox="0 0 1180 430" role="img" aria-label="1980年から2026年までの大洲市の人口推移グラフ。国勢調査ベースで1980年57014人、1985年57263人がピーク、その後一貫して減少し2020年40575人、2025年37365人。住民基本台帳ベースでは2005年51841人から2025年38198人まで毎年減少している。2018年の西日本豪雨の年に減少幅が拡大している。">
+          <g font-size="12" fill="var(--color-text)">
+            <line x1="110" y1="50" x2="1090" y2="50" stroke="currentColor" stroke-opacity="0.12"/>
+            <line x1="110" y1="104" x2="1090" y2="104" stroke="currentColor" stroke-opacity="0.12"/>
+            <line x1="110" y1="158" x2="1090" y2="158" stroke="currentColor" stroke-opacity="0.12"/>
+            <line x1="110" y1="212" x2="1090" y2="212" stroke="currentColor" stroke-opacity="0.12"/>
+            <line x1="110" y1="265" x2="1090" y2="265" stroke="currentColor" stroke-opacity="0.12"/>
+            <line x1="110" y1="319" x2="1090" y2="319" stroke="currentColor" stroke-opacity="0.12"/>
+            <text x="102" y="54" text-anchor="end" font-size="11" fill="var(--color-text-muted)">6.0万</text>
+            <text x="102" y="108" text-anchor="end" font-size="11" fill="var(--color-text-muted)">5.5万</text>
+            <text x="102" y="162" text-anchor="end" font-size="11" fill="var(--color-text-muted)">5.0万</text>
+            <text x="102" y="216" text-anchor="end" font-size="11" fill="var(--color-text-muted)">4.5万</text>
+            <text x="102" y="269" text-anchor="end" font-size="11" fill="var(--color-text-muted)">4.0万</text>
+            <text x="102" y="323" text-anchor="end" font-size="11" fill="var(--color-text-muted)">3.5万</text>
+
+            <line x1="643" y1="40" x2="643" y2="345" stroke="var(--color-text-faint)" stroke-opacity="0.7" stroke-width="1.2" stroke-dasharray="4 4"/>
+            <text x="643" y="34" text-anchor="middle" font-size="11" fill="var(--color-text-muted)">2005年 合併</text>
+            <line x1="920" y1="40" x2="920" y2="345" stroke="#b5533f" stroke-opacity="0.6" stroke-width="1.2" stroke-dasharray="4 4"/>
+            <text x="920" y="34" text-anchor="middle" font-size="11" fill="#b5533f">2018年 西日本豪雨</text>
+
+            <polyline fill="none" stroke="var(--color-brand)" stroke-width="2.8" points="110,82.2 217,79.5 323,95.6 430,116.2 536,127.9 643,149.2 749,188.3 856,221.4 962,259.2 1069,293.8"/>
+            <g fill="var(--color-brand)">
+              <circle cx="110" cy="82.2" r="4.5"/><circle cx="217" cy="79.5" r="4.5"/><circle cx="323" cy="95.6" r="4.5"/>
+              <circle cx="430" cy="116.2" r="4.5"/><circle cx="536" cy="127.9" r="4.5"/><circle cx="643" cy="149.2" r="4.5"/>
+              <circle cx="749" cy="188.3" r="4.5"/><circle cx="856" cy="221.4" r="4.5"/><circle cx="962" cy="259.2" r="4.5"/>
+              <circle cx="1069" cy="293.8" r="4.5"/>
+            </g>
+
+            <polyline fill="none" stroke="#3f7fb5" stroke-width="2.2" stroke-dasharray="5 3" points="643,137.9 664,144.1 685,150.0 707,159.6 728,165.1 749,174.4 770,181.2 792,184.5 813,191.0 834,197.4 856,205.7 877,212.9 898,219.4 920,228.8 941,236.2 962,243.8 983,251.4 1005,259.1 1026,266.8 1047,275.7 1069,284.8"/>
+
+            <text x="228" y="70" font-size="12" font-weight="700" fill="var(--color-brand)">1985年 57,263人（この47年の最高）</text>
+            <text x="1069" y="312" text-anchor="end" font-size="12" font-weight="700" fill="var(--color-brand)">2025年 37,365人</text>
+            <text x="700" y="132" font-size="11.5" font-weight="700" fill="#3f7fb5">住民基本台帳（毎年12月31日）</text>
+            <text x="330" y="112" font-size="11.5" font-weight="700" fill="var(--color-brand)">国勢調査（５年ごと）</text>
+
+            <text x="110" y="365" text-anchor="middle" font-size="11" fill="var(--color-text-muted)">1980</text>
+            <text x="323" y="365" text-anchor="middle" font-size="11" fill="var(--color-text-muted)">1990</text>
+            <text x="536" y="365" text-anchor="middle" font-size="11" fill="var(--color-text-muted)">2000</text>
+            <text x="749" y="365" text-anchor="middle" font-size="11" fill="var(--color-text-muted)">2010</text>
+            <text x="962" y="365" text-anchor="middle" font-size="11" fill="var(--color-text-muted)">2020</text>
+            <text x="1069" y="365" text-anchor="middle" font-size="11" fill="var(--color-text-muted)">2025</text>
+
+            <text x="600" y="398" text-anchor="middle" font-size="11.5" fill="var(--color-text-muted)">国勢調査は現在の市域に組み替えた数値。住民基本台帳は外国人住民を含む</text>
+          </g>
+        </svg>
+      </figure>
+      <p class="jk-fig-caption">図１: 大洲市の人口推移（1980～2025年）。国勢調査および大洲市「住民基本台帳の人口世帯数」をもとにOZU LIFE MEMOが集計・作図</p>
+    </div>
+
+    <h2 id="ch5">ピークは1985年。40年で２万人が消えた</h2>
+    <p class="commentary">
+      グラフを見て最初に分かるのは、<strong>この47年間の頂点が1985年だった</strong>ということだ。
+    </p>
+    <p class="commentary">
+      国勢調査の数字で57,263人。1980年の57,014人からわずかに増えており、この５年間が、大洲市の区域が人口を増やした最後の期間になる。
+    </p>
+    <p class="commentary">
+      そこから40年後の2025年が37,365人。<strong>差し引き19,898人、率にすると34.7％が減った</strong>。
+    </p>
+    <p class="commentary">
+      約２万人というのは、いまの旧・長浜町エリア（5,220人）と旧・肱川町エリア（1,683人）と旧・河辺村エリア（474人）を全部足してもまだ足りない規模だ。40年間で、それだけの人がいなくなった。
+    </p>
+    <p class="commentary">
+      ちなみに、統計書に載っている「ピーク時78,319人」という数字は、この47年より前の時代のものになる<a href="#fn1" class="jk-fn">[１]</a>。
+    </p>
+    <p class="commentary">
+      1985年に57,263人だったのだから、78,319人はもっと昔——高度経済成長期より前の時代の数字ということになる。
+    </p>
+    <p class="commentary">
+      今回のグラフの範囲外だが、いま住んでいる人の半分以下の規模まで減っているという意味では、その数字も覚えておく価値がある。
+    </p>
+
+    <h2 id="ch6">５年ごとに見る、減り方のギアチェンジ</h2>
+    <p class="commentary">
+      国勢調査は５年ごとなので、５年間でどれだけ減ったかを並べると、
+      減り方の「ギア」が変わってきたことが見える。
+    </p>
+    <div style="overflow-x:auto;"><table class="jk-table">
+      <thead><tr><th>期間</th><th class="num">期首</th><th class="num">期末</th><th class="num">増減</th><th class="num">増減率</th></tr></thead>
+      <tbody>
+        <tr><td>1980→1985</td><td class="num">57,014</td><td class="num">57,263</td><td class="num">+249</td><td class="num">+0.4％</td></tr>
+        <tr><td>1985→1990</td><td class="num">57,263</td><td class="num">55,766</td><td class="num">-1,497</td><td class="num">-2.6％</td></tr>
+        <tr><td>1990→1995</td><td class="num">55,766</td><td class="num">53,850</td><td class="num">-1,916</td><td class="num">-3.4％</td></tr>
+        <tr><td>1995→2000</td><td class="num">53,850</td><td class="num">52,762</td><td class="num">-1,088</td><td class="num">-2.0％</td></tr>
+        <tr><td>2000→2005</td><td class="num">52,762</td><td class="num">50,786</td><td class="num">-1,976</td><td class="num">-3.7％</td></tr>
+        <tr><td>2005→2010</td><td class="num">50,786</td><td class="num">47,157</td><td class="num">-3,629</td><td class="num">-7.1％</td></tr>
+        <tr><td>2010→2015</td><td class="num">47,157</td><td class="num">44,086</td><td class="num">-3,071</td><td class="num">-6.5％</td></tr>
+        <tr><td>2015→2020</td><td class="num">44,086</td><td class="num">40,575</td><td class="num">-3,511</td><td class="num">-8.0％</td></tr>
+        <tr class="hl"><td>2020→2025</td><td class="num">40,575</td><td class="num">37,365</td><td class="num">-3,210</td><td class="num">-7.9％</td></tr>
+      </tbody>
+    </table></div>
+    <p class="commentary">
+      1985年から2005年までの20年間は、５年ごとに1,000～2,000人という比較的ゆるやかな減り方だった。
+    </p>
+    <p class="commentary">
+      ところが<strong>2005年を境に、５年で3,000人台という水準に跳ね上がる</strong>。そしてその水準が、20年間ずっと続いている。
+    </p>
+    <p class="commentary">
+      2005年は合併の年だが、合併したから減ったわけではないだろう。
+    </p>
+    <p class="commentary">
+      むしろ、1985年ごろに働き盛りだった団塊の世代が高齢期に入り、自然減（死亡が出生を上回る状態）が本格化した時期と重なっていると考えるほうが自然だ。
+    </p>
+    <p class="commentary">
+      減少率が-２％台から-７％台へと３倍近くになったこの転換点は、大洲市の人口史のなかで最も重要な変化だと思う。
+    </p>
+
+    <h2 id="ch7">１年ごとに見る。2018年の谷</h2>
+    <p class="commentary">
+      ここからは住民基本台帳の年次データを使う。
+      2005年から2025年までの各年、１年間で何人減ったかを並べたのが次のグラフだ。
+    </p>
+    <div class="jk-diagram">
+      <figure style="margin:0;">
+        <svg viewBox="0 0 1180 350" role="img" aria-label="2006年から2025年までの各年の人口減少数を示す棒グラフ。2008年が891人減、2010年と2018年が866人減、2025年が842人減、2024年が827人減と大きい。2012年の303人減が最も小さい。">
+          <g font-size="11.5" fill="var(--color-text)">
+            <text x="60" y="30" font-weight="700" font-size="13">１年間に減った人数（住民基本台帳・各年12月31日時点の前年差）</text>
+            <line x1="90" y1="270" x2="1120" y2="270" stroke="currentColor" stroke-opacity="0.35"/>
+            <line x1="90" y1="90" x2="1120" y2="90" stroke="currentColor" stroke-opacity="0.12"/>
+            <line x1="90" y1="180" x2="1120" y2="180" stroke="currentColor" stroke-opacity="0.12"/>
+            <text x="82" y="94" text-anchor="end" font-size="10.5" fill="var(--color-text-muted)">900人</text>
+            <text x="82" y="184" text-anchor="end" font-size="10.5" fill="var(--color-text-muted)">450人</text>
+
+            <rect x="98" y="154" width="38" height="116" fill="var(--color-brand)" fill-opacity="0.45"/>
+            <rect x="149" y="160" width="38" height="110" fill="var(--color-brand)" fill-opacity="0.45"/>
+            <rect x="200" y="92" width="38" height="178" fill="#b5533f" fill-opacity="0.75"/>
+            <rect x="251" y="168" width="38" height="102" fill="var(--color-brand)" fill-opacity="0.45"/>
+            <rect x="302" y="97" width="38" height="173" fill="#b5533f" fill-opacity="0.6"/>
+            <rect x="353" y="144" width="38" height="126" fill="var(--color-brand)" fill-opacity="0.45"/>
+            <rect x="404" y="209" width="38" height="61" fill="var(--color-brand)" fill-opacity="0.3"/>
+            <rect x="455" y="149" width="38" height="121" fill="var(--color-brand)" fill-opacity="0.45"/>
+            <rect x="506" y="150" width="38" height="120" fill="var(--color-brand)" fill-opacity="0.45"/>
+            <rect x="557" y="116" width="38" height="154" fill="var(--color-brand)" fill-opacity="0.45"/>
+            <rect x="608" y="137" width="38" height="133" fill="var(--color-brand)" fill-opacity="0.45"/>
+            <rect x="659" y="149" width="38" height="121" fill="var(--color-brand)" fill-opacity="0.45"/>
+            <rect x="710" y="97" width="38" height="173" fill="#b5533f" fill-opacity="0.75"/>
+            <rect x="761" y="131" width="38" height="139" fill="var(--color-brand)" fill-opacity="0.45"/>
+            <rect x="812" y="130" width="38" height="140" fill="var(--color-brand)" fill-opacity="0.45"/>
+            <rect x="863" y="129" width="38" height="141" fill="var(--color-brand)" fill-opacity="0.45"/>
+            <rect x="914" y="126" width="38" height="144" fill="var(--color-brand)" fill-opacity="0.45"/>
+            <rect x="965" y="127" width="38" height="143" fill="var(--color-brand)" fill-opacity="0.45"/>
+            <rect x="1016" y="105" width="38" height="165" fill="#b5533f" fill-opacity="0.55"/>
+            <rect x="1067" y="102" width="38" height="168" fill="#b5533f" fill-opacity="0.7"/>
+
+            <text x="219" y="86" text-anchor="middle" font-size="11" font-weight="700" fill="#b5533f">891</text>
+            <text x="729" y="91" text-anchor="middle" font-size="11" font-weight="700" fill="#b5533f">866</text>
+            <text x="1086" y="96" text-anchor="middle" font-size="11" font-weight="700" fill="#b5533f">842</text>
+            <text x="423" y="203" text-anchor="middle" font-size="11" fill="var(--color-text-muted)">303</text>
+
+            <text x="117" y="288" text-anchor="middle" font-size="10">06</text>
+            <text x="219" y="288" text-anchor="middle" font-size="10">08</text>
+            <text x="321" y="288" text-anchor="middle" font-size="10">10</text>
+            <text x="423" y="288" text-anchor="middle" font-size="10">12</text>
+            <text x="525" y="288" text-anchor="middle" font-size="10">14</text>
+            <text x="627" y="288" text-anchor="middle" font-size="10">16</text>
+            <text x="729" y="288" text-anchor="middle" font-size="10" font-weight="700" fill="#b5533f">18</text>
+            <text x="831" y="288" text-anchor="middle" font-size="10">20</text>
+            <text x="933" y="288" text-anchor="middle" font-size="10">22</text>
+            <text x="1035" y="288" text-anchor="middle" font-size="10">24</text>
+            <text x="1086" y="288" text-anchor="middle" font-size="10">25</text>
+
+            <text x="729" y="310" text-anchor="middle" font-size="11" fill="#b5533f">西日本豪雨</text>
+            <text x="600" y="336" text-anchor="middle" font-size="11" fill="var(--color-text-muted)">赤い棒は減少数が800人を超えた年</text>
+          </g>
+        </svg>
+      </figure>
+      <p class="jk-fig-caption">図２: 年ごとの人口減少数。大洲市「住民基本台帳の人口世帯数」各年12月31日版をもとに独自集計</p>
+    </div>
+    <p class="commentary">
+      2018年の棒が周囲より明らかに高い。この年の減少は866人で、前年（606人）、翌年（694人）と比べて突出している。
+    </p>
+    <p class="commentary">
+      西日本豪雨で肱川が氾濫し、市内で４人が亡くなり、約1,372ヘクタールが浸水したのがこの年の７月だ。市が平成30年９月の議会で示した数字である<a href="#fn16" class="jk-fn">[16]</a>。翌年６月の議会では「関連死１名を含む５名」と説明されており、あとから災害関連死が１人加わっている<a href="#fn17" class="jk-fn">[17]</a>。災害による転出が、はっきりと数字に出ている。
+    </p>
+    <p class="commentary">
+      市自身も、第２期総合戦略の振り返りのなかで「2017年には一時的に緩やかな人口減少に転じたものの、2018年７月豪雨災害に伴う転出者数の増加や出生数の減少により、その後の人口減少が顕著になった」と記している<a href="#fn3" class="jk-fn">[３]</a>。
+    </p>
+    <p class="commentary">
+      たしかに2017年の減少数は606人で、前後の年より小さい。
+    </p>
+    <p class="commentary">
+      持ち直しかけたところに災害が来た、という認識は数字と一致している。
+    </p>
+    <p class="commentary">
+      逆にいちばん減少が小さかったのは2012年の303人だ。他の年の半分以下で、この年だけ突出して減っていない。
+    </p>
+    <p class="commentary">
+      理由を探したが、特定できる出来事や政策を見つけることはできなかった。
+    </p>
+    <p class="commentary">
+      21年のうちこの１年だけが例外的に見えるので、集計方法の変更など技術的な要因の可能性もある。断定は避けておく。
+    </p>
+
+    <h2 id="ch8">いちばん速いのは、実は今だった</h2>
+    <p class="commentary">
+      ここからが、今回いちばん驚いた発見になる。
+    </p>
+    <p class="commentary">
+      図２の棒グラフは「何人減ったか」を示している。これを見ると2018年が最も深刻な年に見える。
+    </p>
+    <p class="commentary">
+      しかし人口そのものが年々小さくなっているのだから、同じ800人でも、５万人のときと４万人のときでは意味が違う。そこで<strong>減少「率」</strong>に直してみた。
+    </p>
+    <div style="overflow-x:auto;"><table class="jk-table">
+      <thead><tr><th>年</th><th class="num">減少数</th><th class="num">前年人口</th><th class="num">減少率</th><th>その年の出来事</th></tr></thead>
+      <tbody>
+        <tr><td>2006年</td><td class="num">-581</td><td class="num">51,841</td><td class="num">-1.12％</td><td>合併の翌年</td></tr>
+        <tr><td>2008年</td><td class="num">-891</td><td class="num">50,712</td><td class="num">-1.76％</td><td>減少数では最大</td></tr>
+        <tr><td>2012年</td><td class="num">-303</td><td class="num">47,817</td><td class="num">-0.63％</td><td>最も減らなかった年</td></tr>
+        <tr><td>2018年</td><td class="num">-866</td><td class="num">44,266</td><td class="num">-1.96％</td><td>西日本豪雨</td></tr>
+        <tr><td>2020年</td><td class="num">-702</td><td class="num">42,706</td><td class="num">-1.64％</td><td>コロナ１年目</td></tr>
+        <tr><td>2021年</td><td class="num">-704</td><td class="num">42,004</td><td class="num">-1.68％</td><td>コロナ２年目</td></tr>
+        <tr><td>2024年</td><td class="num">-827</td><td class="num">39,867</td><td class="num">-2.07％</td><td>—</td></tr>
+        <tr class="hl"><td>2025年</td><td class="num">-842</td><td class="num">39,040</td><td class="num">-2.16％</td><td>21年間で最も速い</td></tr>
+      </tbody>
+    </table></div>
+    <p class="commentary">
+      <strong>減少率で見ると、いちばん速いのは2025年（-2.16％）だった。</strong>
+    </p>
+    <p class="commentary">
+      次が2024年（-2.07％）。豪雨の年である2018年（-1.96％）を、直近の２年がどちらも上回っている。
+    </p>
+    <p class="commentary">
+      これは重要な視点の転換だと思う。「2018年の豪雨で人口が減った」という物語は分かりやすいし、実際にそのとおりだ。
+    </p>
+    <p class="commentary">
+      でも数字を率で見ると、<strong>災害という特別な出来事がなくても、いまの大洲市は当時より速いペースで人口を失っている</strong>ということになる。減少数だけを見ていると、この事実は見えない。
+    </p>
+    <div class="jk-callout">
+      分母が小さくなるほど、同じ人数の減少でも率は大きくなる。
+      つまり人口減少は、放っておけば加速して見える性質を持っている。
+      これは大洲だけの話ではなく、人口が減っている地域すべてに共通する構造だ。
+      「去年より減少数が少なかった」というニュースを見たときは、
+      率でも減っているのかを確かめる必要がある。
+    </div>
+
+    <h2 id="ch9">数字が合った瞬間。自然減と社会減の内訳</h2>
+    <p class="commentary">
+      減少の中身を分解しておきたい。人口が減る理由は２つしかない。
+    </p>
+    <p class="commentary">
+      <strong>亡くなる人が生まれる人より多いこと（自然減）</strong>と、<strong>出ていく人が入ってくる人より多いこと（社会減）</strong>だ。
+    </p>
+    <p class="commentary">
+      大洲市統計書（令和７年版）によると、令和６年（2024年）の１年間の内訳は次のようになる<a href="#fn1" class="jk-fn">[１]</a>。
+    </p>
+    <div style="overflow-x:auto;"><table class="jk-table">
+      <thead><tr><th>区分</th><th class="num">人数</th><th class="num">差引</th></tr></thead>
+      <tbody>
+        <tr><td>出生</td><td class="num">185人</td><td class="num" rowspan="2"><strong>自然減 -526人</strong></td></tr>
+        <tr><td>死亡</td><td class="num">711人</td></tr>
+        <tr><td>転入</td><td class="num">944人</td><td class="num" rowspan="2"><strong>社会減 -301人</strong></td></tr>
+        <tr><td>転出</td><td class="num">1,245人</td></tr>
+        <tr class="hl"><td colspan="2">合計</td><td class="num">-827人</td></tr>
+      </tbody>
+    </table></div>
+    <p class="commentary">
+      ここで、思わず声が出た瞬間があった。
+      この<strong>-827人という数字が、私が住民基本台帳から独自に集計した
+      2024年の減少数（39,867人→39,040人 = -827人）と、１人の狂いもなく一致した</strong>のだ。
+    </p>
+    <p class="commentary">
+      統計書の人口動態と、住民基本台帳の年末人口は、別々に公表されている数字だ。
+    </p>
+    <p class="commentary">
+      それが完全に一致したということは、今回21本のExcelファイルから機械的に抜き出した集計に、拾い間違いがなかったことの証明にもなる。
+    </p>
+    <p class="commentary">
+      自分で組んだ集計が公式の数字と噛み合った瞬間は、この自由研究シリーズを始めていちばん気持ちのいい体験だった。
+    </p>
+    <p class="commentary">
+      内訳の意味も読んでおきたい。減少827人のうち、<strong>自然減が526人で全体の64％、社会減が301人で36％</strong>。
+    </p>
+    <p class="commentary">
+      つまり人口減少の３分の２は、人が出ていくからではなく、亡くなる人が生まれる人の3.8倍いるからだ。
+    </p>
+    <p class="commentary">
+      １日あたりに直すと、出生0.51人・死亡1.95人。２日に１人生まれるペースに対して、ほぼ毎日誰かが亡くなっている計算になる。
+    </p>
+    <p class="commentary">
+      これは政策の効き方にも関わる話だ。移住促進や雇用創出で社会減を止められたとしても、それは減少の36％にしか効かない。
+    </p>
+    <p class="commentary">
+      残りの64％を変えるには出生数を増やすしかないが、出生数は「子どもを産む年齢の女性が何人いるか」に強く縛られる。
+    </p>
+    <p class="commentary">
+      過去数十年の人口減少が、いまの出生数の上限を先に決めてしまっている。
+    </p>
+
+    <h2 id="ch10">中身の変化。1980年と2015年の年齢構成</h2>
+    <p class="commentary">
+      総数だけでなく、中身の変化も見ておきたい。
+      国勢調査ベースの年齢３区分別の割合を、47年の始まりと終わり近くで比べる<a href="#fn5" class="jk-fn">[５]</a>。
+    </p>
+    <div class="jk-diagram">
+      <figure style="margin:0;">
+        <svg viewBox="0 0 1120 300" role="img" aria-label="1980年と2015年の大洲市の年齢構成の比較。1980年は年少人口21.4%、生産年齢人口64.4%、老年人口14.2%だったが、2015年には年少人口12.3%、生産年齢人口54.0%、老年人口33.7%となり、老年人口が2.4倍に増えた。">
+          <g font-size="12" fill="var(--color-text)">
+            <text x="60" y="36" font-weight="700" font-size="13">年齢３区分別の構成比の変化（国勢調査）</text>
+
+            <text x="60" y="88" font-size="12.5" font-weight="700">1980年</text>
+            <rect x="160" y="66" width="192" height="38" fill="#5a9e6f" fill-opacity="0.5" stroke="#5a9e6f"/>
+            <rect x="352" y="66" width="580" height="38" fill="var(--color-brand)" fill-opacity="0.35" stroke="var(--color-brand)"/>
+            <rect x="932" y="66" width="128" height="38" fill="#b5533f" fill-opacity="0.5" stroke="#b5533f"/>
+            <text x="256" y="90" text-anchor="middle" font-size="12">年少 21.4％</text>
+            <text x="642" y="90" text-anchor="middle" font-size="12">生産年齢 64.4％</text>
+            <text x="996" y="90" text-anchor="middle" font-size="12">老年 14.2％</text>
+
+            <text x="60" y="178" font-size="12.5" font-weight="700">2015年</text>
+            <rect x="160" y="156" width="111" height="38" fill="#5a9e6f" fill-opacity="0.5" stroke="#5a9e6f"/>
+            <rect x="271" y="156" width="486" height="38" fill="var(--color-brand)" fill-opacity="0.35" stroke="var(--color-brand)"/>
+            <rect x="757" y="156" width="303" height="38" fill="#b5533f" fill-opacity="0.5" stroke="#b5533f"/>
+            <text x="216" y="180" text-anchor="middle" font-size="12">12.3％</text>
+            <text x="514" y="180" text-anchor="middle" font-size="12">生産年齢 54.0％</text>
+            <text x="908" y="180" text-anchor="middle" font-size="12">老年 33.7％</text>
+
+            <rect x="160" y="228" width="900" height="52" rx="4" fill="var(--color-surface-alt)"/>
+            <text x="182" y="250" font-size="12">老年化指数（老年人口÷年少人口×100）は、66.2 → 274.0 へ。</text>
+            <text x="182" y="270" font-size="12">1980年は子ども３人に高齢者２人。2015年は子ども１人に高齢者2.7人。</text>
+          </g>
+        </svg>
+      </figure>
+      <p class="jk-fig-caption">図３: 年齢３区分別構成比の変化。国勢調査（1980年・2015年）をもとに作成</p>
+    </div>
+    <p class="commentary">
+      <strong>老年人口の割合が14.2％から33.7％へ、2.4倍になった。</strong>
+    </p>
+    <p class="commentary">
+      同じ期間に年少人口の割合は21.4％から12.3％へ、ほぼ半減している。
+    </p>
+    <p class="commentary">
+      老年化指数（高齢者が子どもの何倍いるかを示す指数）は66.2から274.0へ、４倍以上に跳ね上がった。
+    </p>
+    <p class="commentary">
+      35年で、街の中身が入れ替わったと言っていい変化だ。1980年の大洲市は、子ども３人に対して高齢者２人という構成だった。
+    </p>
+    <p class="commentary">
+      2015年には、子ども１人に対して高齢者が2.7人になっている。
+    </p>
+    <p class="commentary">
+      総人口が３割減ったという話より、この構成比の変化のほうが、街の見え方に直結しているはずだ。
+    </p>
+    <p class="commentary">
+      最新の統計書に載っている年齢別人口を見ると、０～４歳が1,262人に対して70～74歳が3,552人。
+    </p>
+    <p class="commentary">
+      約2.8倍の差がある<a href="#fn1" class="jk-fn">[１]</a>。この差は、これから先の出生数の上限をあらかじめ決めてしまう数字でもある。
+    </p>
+
+    <h2 id="ch11">人口は半減、世帯数は増加というパラドックス</h2>
+    <p class="commentary">
+      人口の話をするとき、必ずセットで見ておきたいのが世帯数だ。
+      ここには直感に反する現象が起きている。
+    </p>
+    <p class="commentary">
+      統計書によると、人口がピーク時78,319人から40,575人へと約半分になったのに対し、<strong>世帯数は15,836世帯から17,375世帯へと、むしろ増えている</strong><a href="#fn1" class="jk-fn">[１]</a>。
+    </p>
+    <p class="commentary">
+      １世帯あたりの平均人員は2.3人。大家族が減り、高齢者のひとり暮らしや２人暮らしが増えた結果だ。
+    </p>
+    <p class="commentary">
+      ただし、この増加はすでに反転している。今回集計した住民基本台帳のデータで世帯数を追うと、2012年の20,284世帯をピークに、2025年は19,252世帯まで減っている。
+    </p>
+    <p class="commentary">
+      <strong>人口減少に遅れること数年で、世帯数も減少局面に入った</strong>ということになる。
+    </p>
+    <div style="overflow-x:auto;"><table class="jk-table">
+      <thead><tr><th>年末</th><th class="num">人口</th><th class="num">世帯数</th><th class="num">１世帯あたり</th></tr></thead>
+      <tbody>
+        <tr><td>2005年</td><td class="num">51,841</td><td class="num">20,109</td><td class="num">2.58人</td></tr>
+        <tr class="hl"><td>2012年</td><td class="num">47,514</td><td class="num">20,284</td><td class="num">2.34人</td></tr>
+        <tr><td>2018年</td><td class="num">43,400</td><td class="num">19,853</td><td class="num">2.19人</td></tr>
+        <tr><td>2025年</td><td class="num">38,198</td><td class="num">19,252</td><td class="num">1.98人</td></tr>
+      </tbody>
+    </table></div>
+    <p class="commentary">
+      １世帯あたりの人員は2005年の2.58人から、2025年には<strong>1.98人</strong>へ。
+    </p>
+    <p class="commentary">
+      ついに２人を割った。平均すると、１つの家に２人いない、ということになる。
+    </p>
+    <p class="commentary">
+      この数字は、行政のコスト構造にも直結する。ごみ収集も、郵便配達も、上下水道も、防災の見回りも、基本的には「世帯」や「建物」の単位で発生する仕事だからだ。
+    </p>
+    <p class="commentary">
+      人口が26％減っても世帯数が５％しか減っていないなら、これらの業務量はほとんど減らない。
+    </p>
+    <p class="commentary">
+      <strong>「人が減ったから行政も小さくできる」とは単純に言えない</strong>理由が、この表に表れている。
+    </p>
+    <p class="commentary">
+      前回の財政の記事で見た経常収支比率99.7％という数字とも、ここでつながってくる<a href="#fn6" class="jk-fn">[６]</a>。
+    </p>
+
+    <h2 id="ch12">この先の47年。2060年に何人か</h2>
+    <p class="commentary">
+      過去47年を見たので、この先も確認しておく。
+    </p>
+    <div style="overflow-x:auto;"><table class="jk-table">
+      <thead><tr><th>年</th><th class="num">推計人口</th><th>出所</th></tr></thead>
+      <tbody>
+        <tr><td>2025年（実績）</td><td class="num">37,365人</td><td>令和７年国勢調査 速報値</td></tr>
+        <tr><td>2045年</td><td class="num">25,670人</td><td>社人研の将来推計（平成30年推計。市の総合戦略が引用）</td></tr>
+        <tr><td>2045年</td><td class="num">24,124人</td><td>社人研の将来推計（令和５年推計）<a href="#fn15" class="jk-fn">[15]</a></td></tr>
+        <tr><td>2050年</td><td class="num">21,366人</td><td>社人研の将来推計（令和５年推計）<a href="#fn15" class="jk-fn">[15]</a></td></tr>
+        <tr><td>2060年</td><td class="num">19,842人</td><td>社人研の推計に準拠した市の記載</td></tr>
+        <tr class="hl"><td>2060年（目標）</td><td class="num">30,000人</td><td>第２期大洲市まち・ひと・しごと創生総合戦略</td></tr>
+      </tbody>
+    </table></div>
+    <p class="commentary">
+      推計どおりに進むと、2060年の大洲市は19,842人。これに対して市が掲げている目標は30,000人で、<strong>約１万人の開きがある</strong><a href="#fn3" class="jk-fn">[３]</a>。
+    </p>
+    <p class="commentary">
+      表に2045年が２行あるのは、推計の年次が違うからだ。25,670人は平成30年（2018年）推計の数字で、市の総合戦略がこれを引いている。社人研はその後、令和２年国勢調査をもとに令和５年（2023年）推計を出していて、そこでは2045年が<strong>24,124人</strong>、2050年が<strong>21,366人</strong>になる<a href="#fn15" class="jk-fn">[15]</a>。５年で見通しが約1,500人下がった。
+    </p>
+    <p class="commentary">
+      2045年の推計25,670人という数字は、老年人口の割合が49.0％に達するという見通しとセットで示されている。令和５年推計ではこの割合は<strong>50.1％</strong>まで上がる<a href="#fn15" class="jk-fn">[15]</a>。２人に１人が65歳以上、という街の姿だ。
+    </p>
+    <p class="commentary">
+      １万人の差を埋めるというのは、相当に高い目標だ。
+      市自身も第１期総合戦略の振り返りで、ＫＰＩ全47件のうち43％が目標達成、
+      28％が目標値の60％未満の進捗にとどまったことを認め、
+      豪雨災害の影響とあわせて「目標値の設定が過大だった面もある」と率直に記している<a href="#fn3" class="jk-fn">[３]</a>。
+    </p>
+    <p class="commentary">
+      過去47年で人口が34.7％減った。今後35年でさらに47％減るというのが推計の姿だ。
+    </p>
+    <p class="commentary">
+      <strong>減り方は、これから加速する</strong>という予測になっている。第８章で見た「率で見るといまがいちばん速い」という事実は、この予測と整合している。
+    </p>
+
+    <h2 id="ch13">調べても分からなかったこと</h2>
+    <p class="commentary">
+      この記事の限界を書いておく。
+    </p>
+    <p class="commentary">
+      １つ目。<strong>1980年から2004年までの１年刻みのデータは、集められなかった。</strong>
+    </p>
+    <p class="commentary">
+      第３章に書いたとおり、大洲市が公開している住民基本台帳のデータは2005年からで、それ以前は解散した４つの自治体の記録を集める必要がある。
+    </p>
+    <p class="commentary">
+      オンラインで確認できる範囲では見つけられなかった。図書館や県の資料館にある紙の統計書を当たれば埋められる可能性はある。
+    </p>
+    <p class="commentary">
+      ２つ目。<strong>「ピーク時78,319人」が何年の数字なのかを特定できなかった。</strong>
+    </p>
+    <p class="commentary">
+      統計書に載っている数字だが、その年次を確認できていない。1985年に57,263人だったことから、それよりかなり前の時代であることは確実だが、1950年代なのか1960年代なのかは、この記事では断定できない。
+    </p>
+    <p class="commentary">
+      ３つ目。<strong>2012年だけ減少数が突出して小さい理由が分からなかった。</strong>
+    </p>
+    <p class="commentary">
+      303人という数字は前後の年の半分以下で、明らかに異質だ。特定の出来事や政策を探したが、説明できる材料を見つけられなかった。集計上の要因という可能性も否定できない。
+    </p>
+    <p class="commentary">
+      ４つ目。<strong>年齢構成の最新データを、1980年と同じ形で揃えられなかった。</strong>
+    </p>
+    <p class="commentary">
+      図３で使った年齢３区分の構成比は2015年までのもので、2020年・2025年の国勢調査にもとづく同じ形式の数字を確認できなかった。
+    </p>
+    <p class="commentary">
+      統計書の年齢別人口（０～４歳1,262人、70～74歳3,552人など）から傾向は読めるが、３区分の比率として直接比較できる形にはなっていない。
+    </p>
+    <p class="commentary">
+      ５つ目。<strong>転出者がどこへ行っているのかは分からなかった。</strong>2024年の転出1,245人が、松山市に行ったのか、県外に出たのか、どの年代が中心なのかといった内訳を示す資料は見つけられなかった。
+    </p>
+    <p class="commentary">
+      社会減の対策を考えるうえでは最も重要な情報のはずだが、公開されている範囲では確認できなかった。
+    </p>
+
+    <h2 id="ch14">47年を１本で見て、思ったこと</h2>
+    <p class="commentary">
+      最後に、この作業を通して分かったことをまとめる。
+    </p>
+    <p class="commentary">
+      <strong>①この47年の頂点は1985年、57,263人だった。</strong>
+      2025年は37,365人なので、40年で19,898人、34.7％が減った。
+    </p>
+    <p class="commentary">
+      <strong>②減り方のギアは2005年前後に変わった。</strong>
+      それまで５年で1,000～2,000人だった減少が、５年で3,000人台になり、
+      その水準が20年続いている。
+    </p>
+    <p class="commentary">
+      <strong>③2018年の西日本豪雨は、確かに数字に出ている。</strong>
+      １年で866人という減少は、前後の年より200人以上多い。
+      持ち直しかけていた2017年の直後だった。
+    </p>
+    <p class="commentary">
+      <strong>④しかし、減少率で見るといちばん速いのは2025年（-2.16％）だ。</strong>
+    </p>
+    <p class="commentary">
+      2024年（-2.07％）と合わせ、直近２年が豪雨の年（-1.96％）を上回っている。災害がなくても、いまのほうが速く減っている。
+    </p>
+    <p class="commentary">
+      <strong>⑤減少の３分の２は自然減で、移住政策では動かせない部分だ。</strong>
+      2024年の内訳は自然減526人、社会減301人。出生185人に対し死亡711人。
+    </p>
+    <p class="commentary">
+      グラフを作り終えて感じたのは、<strong>「人口減少」という言葉が、ずいぶん均されたものだったな</strong>ということだ。
+    </p>
+    <p class="commentary">
+      47年を１本の線にすると、そこには増えていた５年間があり、ギアが変わった年があり、災害で一段落ちた年があり、そして静かに加速している現在がある。
+    </p>
+    <p class="commentary">
+      「人口が減っている」の一言で片づけていたものの中に、これだけの起伏があった。
+    </p>
+    <p class="commentary">
+      個人的にいちばん残ったのは、第９章で数字が一致した瞬間だった。
+    </p>
+    <p class="commentary">
+      21本のExcelファイルから機械的に抜き出した-827人と、統計書に載っている出生・死亡・転入・転出から計算した-827人が、ぴたりと合った。
+    </p>
+    <p class="commentary">
+      当たり前といえば当たり前なのだけれど、あの827人という数字の１つひとつに、生まれた人と亡くなった人と、引っ越してきた人と出ていった人がいる。
+    </p>
+    <p class="commentary">
+      グラフの１ドットは、そういうものの集まりなのだと、作業しながら何度か手が止まった。
+    </p>
+
+    <div class="jk-footnotes">
+      <p style="font-weight:700;color:var(--color-text);margin-bottom:10px;">出典</p>
+      <ol>
+        <li id="fn1"><a href="https://www.city.ozu.ehime.jp/" target="_blank" rel="noopener">大洲市統計書（令和７年版）／大洲市 city.ozu.ehime.jp</a>。本サイトの解説記事は<a href="../eachnews/tokei-jinko.html">「人口78,319人が40,575人に。統計書で見る大洲の１年」</a></li>
+        <li id="fn2"><a href="../eachnews/2005-gappei-kaiko.html">2005年、「新大洲市」が生まれた日／OZU LIFE MEMO</a>、平成の大合併、大洲は何を得て何を失ったか／本シリーズ #02（<a href="heisei-gappei-20nen.html">記事はこちら</a>）</li>
+        <li id="fn3">第２期大洲市まち・ひと・しごと創生総合戦略（2020年３月策定、2025年２月改訂）／大洲市。本サイトの解説記事は<a href="../eachnews/jinko-vision-3man.html">「2060年の大洲は３万人？ 市が立てた目標の中身」</a>。総合戦略の掲載ページは <a href="https://www.city.ozu.ehime.jp/soshiki/kikakujoho/39298.html" target="_blank" rel="noopener">city.ozu.ehime.jp</a>（原資料の大洲市人口ビジョン（平成28年３月）のPDFは、2026年８月29日時点で市サイトから消えている。ウェブアーカイブにも保存がない）</li>
+        <li id="fn4"><a href="https://www.city.ozu.ehime.jp/soshiki/kikakujoho/1149.html" target="_blank" rel="noopener">住民基本台帳の人口世帯数／大洲市 city.ozu.ehime.jp</a>（平成17年～令和８年の各月データを公開。本記事では各年12月31日時点のExcelファイル21本を取得して集計した）</li>
+        <li id="fn5"><a href="https://ecitizen.jp/Population/City/38207" target="_blank" rel="noopener">愛媛県大洲市 市町村別の５歳年齢階級別人口の推移／ecitizen ecitizen.jp</a>（出所は総務省 国勢調査および国立社会保障・人口問題研究所 将来推計人口）</li>
+        <li id="fn6"><a href="ozu-zaisei-zentaizo.html">大洲市の財政、数字で全体像をつかむ／本シリーズ #04</a></li>
+        <li id="fn7"><a href="https://www.pref.ehime.jp/uploaded/attachment/177835.pdf" target="_blank" rel="noopener">令和７年国勢調査 地方集計結果／愛媛県 企画統計課 pref.ehime.jp</a>（大洲市 37,365人・16,797世帯、令和２年比 -3,210人・-7.91％）</li>
+        <li id="fn8"><a href="https://www.stat.go.jp/data/kokusei/2025/kekka.html" target="_blank" rel="noopener">令和７年国勢調査 人口速報集計結果／総務省統計局 stat.go.jp</a>、結果の概要 <a href="https://www.stat.go.jp/data/kokusei/2025/kekka/pdf/outline.pdf" target="_blank" rel="noopener">stat.go.jp</a></li>
+        <li id="fn9"><a href="https://www.pref.ehime.jp/page/84941.html" target="_blank" rel="noopener">国勢調査結果一覧・時系列データ／愛媛県 企画統計課 pref.ehime.jp</a></li>
+        <li id="fn10"><a href="https://jp.gdfreak.com/public/detail/jp010050000001038207/1" target="_blank" rel="noopener">グラフで見る! 大洲市の人口の推移（2000年-2045年）／GD Freak jp.gdfreak.com</a>（出所は総務省 国勢調査および社人研 将来推計人口）</li>
+        <li id="fn11"><a href="https://www.ipss.go.jp/" target="_blank" rel="noopener">日本の世帯数の将来推計（全国推計）令和６（2024）年推計／国立社会保障・人口問題研究所 ipss.go.jp</a></li>
+        <li id="fn12">大洲市過疎地域持続的発展計画／大洲市。本サイトの解説記事は<a href="../eachnews/kaso-chiiki-keikaku.html">「大洲市は「過疎地域」。持続的発展計画が映す危機感」</a></li>
+        <li id="fn13"><a href="../eachnews/gouu-bosai.html">あの豪雨の裁判で、大洲の防災はどう変わるのか／OZU LIFE MEMO</a>、豪雨訴訟と「大東基準」を、法律論として読む／本シリーズ #03（<a href="daito-kijun-horitsuron.html">記事はこちら</a>）</li>
+        <li id="fn14"><a href="https://www.soumu.go.jp/main_content/000892956.xlsx" target="_blank" rel="noopener">令和８年１月１日住民基本台帳人口・世帯数（市区町村別）【日本人住民】／総務省 soumu.go.jp</a></li>
+        <li id="fn16"><a href="https://www.city.ozu.ehime.jp/kaigiroku/H30/201809teirei-1.html" target="_blank" rel="noopener">平成30年９月大洲市議会定例会 会議録（開会日）／大洲市 city.ozu.ehime.jp</a>。「本市においては、市民４名のとうとい命が失われる」とある</li>
+        <li id="fn17"><a href="https://www.city.ozu.ehime.jp/kaigiroku/H31/201906teirei-2.html" target="_blank" rel="noopener">令和元年６月大洲市議会定例会 会議録／大洲市 city.ozu.ehime.jp</a>。「関連死１名を含む５名の尊い命が失われる」とある</li>
+        <li id="fn15"><a href="https://www.ipss.go.jp/pp-shicyoson/j/shicyoson23/t-page.asp" target="_blank" rel="noopener">日本の地域別将来推計人口（令和５（2023）年推計）／国立社会保障・人口問題研究所 ipss.go.jp</a>。大洲市の数値は愛媛県の結果表 <a href="https://www.ipss.go.jp/pp-shicyoson/j/shicyoson23/3kekka/Municipalities/38.xlsx" target="_blank" rel="noopener">Municipalities/38.xlsx</a>（シート「38207_大洲市」。総数 2045年24,124人・2050年21,366人、65歳以上の割合 2045年50.1％。2026年８月29日閲覧）</li>
+      </ol>
+    </div>
+
+    <div class="jk-series-note">
+      この記事は「大洲の自由研究」シリーズの７本目です。通常の<a href="../news/">大洲ノート</a>より
+      長く、専門的な内容を含みます。<a href="index.html">シリーズ一覧はこちら</a>。
+    </div>
+
+  </div>
+</section>
+
+<div data-site-footer></div>
+<div data-site-modal></div>
+<script src="../assets/js/site-chrome.js"></script>
+<script src="../assets/js/main.js"></script>
+<script data-goatcounter="https://ozulifememo.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="首をかしげて疑問に思っている鵜のマスコット">
+  <title>メモう（はてな）</title>
+  <!-- OZU LIFE MEMO の既存ロゴと同じ3色だけで構成。グラデーション・影・光沢は使わない -->
+  <!-- 紺 #1e435f / 青 #2a5b82 / 茶 #8a5541・#9a6238 / 生成り #f6f5f2 -->
+
+  <!-- 水面（左右で長さを変えて、左右対称を避ける） -->
+  <path d="M20 184 H62" stroke="#2a5b82" stroke-width="6" stroke-linecap="round" opacity=".35" fill="none"/>
+  <path d="M76 190 H126" stroke="#2a5b82" stroke-width="6" stroke-linecap="round" opacity=".35" fill="none"/>
+  <path d="M140 184 H176" stroke="#2a5b82" stroke-width="6" stroke-linecap="round" opacity=".35" fill="none"/>
+
+  <!-- 足と水かき -->
+  <path d="M66 158 V172" stroke="#9a6238" stroke-width="7" stroke-linecap="round" fill="none"/>
+  <path d="M90 158 V172" stroke="#9a6238" stroke-width="7" stroke-linecap="round" fill="none"/>
+  <path d="M56 174 L82 174 L69 168 Z" fill="#9a6238"/>
+  <path d="M80 174 L106 174 L93 168 Z" fill="#9a6238"/>
+
+  <!-- 尾（左後方へ長く。鵜のシルエットの決め手） -->
+  <path d="M46 128 L8 150 L48 148 Z" fill="#1e435f"/>
+
+  <!-- 胴 -->
+  <ellipse cx="80" cy="134" rx="44" ry="29" fill="#1e435f" transform="rotate(-6 80 134)"/>
+
+  <!-- 翼（輪郭線なしの1面だけ。塗り分けで羽を表す） -->
+  <path d="M58 126 q26 -12 52 2 q-22 20 -52 10 Z" fill="#2a5b82"/>
+
+  <!-- 首（先細りの塗りパス。鵜特有のS字） -->
+  <path d="M92 128 C82 100 96 66 118 52 L131 62 C112 74 102 102 108 130 Z" fill="#1e435f"/>
+
+  <!-- 頭 -->
+  <ellipse cx="126" cy="54" rx="15" ry="13" fill="#1e435f"/>
+
+  <!-- くちばし（細長く、先がわずかに下へ曲がる） -->
+  <path d="M138 49 L174 45 L172 53 L138 59 Z" fill="#9a6238"/>
+  <path d="M174 45 L172 53 L179 53 Z" fill="#8a5541"/>
+
+  <!-- 目（片方を細めて、いぶかしがっている） -->
+  <circle cx="130" cy="50" r="4.6" fill="#f6f5f2"/>
+  <circle cx="131.4" cy="49.4" r="2.2" fill="#16232f"/>
+
+  <!-- はてな -->
+  <path d="M105 22 q0 -7 6.5 -7 q6.5 0 6.5 6 q0 5 -6 6.5 v3.5"
+        stroke="#8a5541" stroke-width="4.4" fill="none"
+        stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="111.5" cy="38.5" r="2.8" fill="#8a5541"/>
+
+  <!-- 鵜飼の手縄。首に1本だけ巻く（大洲らしさ） -->
+  <path d="M87 96 q10 7 20 -2" stroke="#9a6238" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+
+  <!-- くわえているメモ用紙 -->
+  <g transform="rotate(-9 180 62)">
+    <rect x="166" y="50" width="28" height="24" rx="2" fill="#f6f5f2" stroke="#8a5541" stroke-width="3"/>
+    <path d="M172 58 H188" stroke="#8a5541" stroke-width="2.6" stroke-linecap="round"/>
+    <path d="M172 66 H182" stroke="#8a5541" stroke-width="2.6" stroke-linecap="round"/>
+  </g>
+</svg>

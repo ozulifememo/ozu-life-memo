@@ -11678,6 +11678,35 @@
         }
       ]
     },
+    "ozu-joho-kokai-tsukaikata": {
+      "path": "eachnews/ozu-joho-kokai-tsukaikata.html",
+      "checks": [
+        {
+          "date": "2026-09-07",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "7e1763128f4f",
+          "note": "「開示文書をネットに載せてよいか」は著作権法42条の3・49条1項1号まで当たり、断定できない分かれ目3か所を断定せずに示している"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "machine",
+          "by": "opus",
+          "result": "機械点検",
+          "hash": "7e1763128f4f",
+          "note": "check_site.py エラー0"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "numbers",
+          "by": "opus",
+          "result": "数字と出典の照合",
+          "hash": "7e1763128f4f",
+          "note": "数字39個すべて出典と照合できた(未照合0)"
+        }
+      ]
+    },
     "ozu-kaeru-shikumi": {
       "path": "jiyu-kenkyu/ozu-kaeru-shikumi.html",
       "checks": [

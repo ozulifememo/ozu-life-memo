@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-joho-kokai-tsukaikata",
+    date: "2026-09-07",
+    title: "大洲市への情報公開請求は年9件。閲覧は無料で15日。ただし「ネットに載せる」は別の話",
+    category: "shiten",
+    source: "大洲市情報公開条例(大洲市例規集)、著作権法(e-Gov法令検索)ほか",
+    sourceDate: "2026-09-06",
+    tags: ["議会・行政"],
+  },
+  {
     slug: "ozu-kotei-shisanzei-ie",
     date: "2026-09-07",
     title: "大洲で家を建てると、固定資産税は4年目に1.7倍。20年ぶん計算してみた",

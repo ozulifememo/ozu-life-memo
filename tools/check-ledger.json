@@ -13524,6 +13524,35 @@
         }
       ]
     },
+    "ozu-pabukome-kiku": {
+      "path": "jiyu-kenkyu/ozu-pabukome-kiku.html",
+      "checks": [
+        {
+          "date": "2026-09-06",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "ded10aa13f06",
+          "note": "人が読んで裏取り。3体で分担調査した材料をまとめた。条文はe-Gov原文、統計は総務省の施行状況調査7年度分、事例は各機関の結果公表PDF。引用した研究者の姓が運営者と同じため、匿名性の観点から論文名とリポジトリで引く形にした。制度を評価せず、使えとも勧めていない"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "machine",
+          "by": "opus",
+          "result": "機械点検",
+          "hash": "ded10aa13f06",
+          "note": "check_site 問題なし。自由研究#23"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "numbers",
+          "by": "opus",
+          "result": "数字と出典の照合",
+          "hash": "ded10aa13f06",
+          "note": "数字129個中128個が出典と一致。未照合1個は文化庁PDFのp.2にある24,938件で、出典欄の記載そのもの。取れなかった2本は立教リポジトリ(Referer付きで406)と大洲市の幼保再編ページ(市サイトが弾いている)"
+        }
+      ]
+    },
     "ozu-ramenshop-nazo": {
       "path": "eachnews/ozu-ramenshop-nazo.html",
       "checks": [

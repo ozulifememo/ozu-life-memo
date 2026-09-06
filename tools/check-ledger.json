@@ -1245,10 +1245,34 @@
         },
         {
           "date": "2026-09-06",
+          "level": "human",
+          "by": "opus",
+          "result": "加筆分を裏取り",
+          "hash": "06730b3eb6e6",
+          "note": "大洲側の実数を会議録・図書館要覧・市民アンケートから足した。本人の感想の節は1文字も触っていない"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "machine",
+          "by": "opus",
+          "result": "問題なし",
+          "hash": "06730b3eb6e6",
+          "note": "check_site.py エラー0"
+        },
+        {
+          "date": "2026-09-06",
           "level": "numbers",
           "by": "opus",
           "result": "OK",
           "hash": "96c9b1b24120"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "numbers",
+          "by": "opus",
+          "result": "照合済み",
+          "hash": "06730b3eb6e6",
+          "note": "出典は全本取得。残る未照合は自サイトの自由研究記事(国勢調査・財政)由来の数字と、自分で引き算した差分"
         }
       ]
     },
@@ -1293,10 +1317,34 @@
         },
         {
           "date": "2026-09-06",
+          "level": "human",
+          "by": "opus",
+          "result": "加筆分を裏取り",
+          "hash": "8aa9d4f4419c",
+          "note": "大洲側の実数を会議録・図書館要覧・市民アンケートから足した。本人の感想の節は1文字も触っていない"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "machine",
+          "by": "opus",
+          "result": "問題なし",
+          "hash": "8aa9d4f4419c",
+          "note": "check_site.py エラー0"
+        },
+        {
+          "date": "2026-09-06",
           "level": "numbers",
           "by": "opus",
           "result": "OK",
           "hash": "99bb144726bd"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "numbers",
+          "by": "opus",
+          "result": "照合済み",
+          "hash": "8aa9d4f4419c",
+          "note": "出典は全本取得。残る未照合は自サイトの自由研究記事(国勢調査・財政)由来の数字と、自分で引き算した差分"
         }
       ]
     },
@@ -2084,10 +2132,34 @@
         },
         {
           "date": "2026-09-06",
+          "level": "human",
+          "by": "opus",
+          "result": "加筆分を裏取り",
+          "hash": "2521d002bfa5",
+          "note": "大洲側の実数を会議録・図書館要覧・市民アンケートから足した。本人の感想の節は1文字も触っていない"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "machine",
+          "by": "opus",
+          "result": "問題なし",
+          "hash": "2521d002bfa5",
+          "note": "check_site.py エラー0"
+        },
+        {
+          "date": "2026-09-06",
           "level": "numbers",
           "by": "opus",
           "result": "OK",
           "hash": "556091397cc0"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "numbers",
+          "by": "opus",
+          "result": "照合済み",
+          "hash": "2521d002bfa5",
+          "note": "出典は全本取得。残る未照合は自サイトの自由研究記事(国勢調査・財政)由来の数字と、自分で引き算した差分"
         }
       ]
     },
@@ -3761,10 +3833,34 @@
         },
         {
           "date": "2026-09-06",
+          "level": "human",
+          "by": "opus",
+          "result": "加筆分を裏取り",
+          "hash": "fbdc969ede51",
+          "note": "大洲側の実数を会議録・図書館要覧・市民アンケートから足した。本人の感想の節は1文字も触っていない"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "machine",
+          "by": "opus",
+          "result": "問題なし",
+          "hash": "fbdc969ede51",
+          "note": "check_site.py エラー0"
+        },
+        {
+          "date": "2026-09-06",
           "level": "numbers",
           "by": "opus",
           "result": "OK",
           "hash": "5248ae43348b"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "numbers",
+          "by": "opus",
+          "result": "照合済み",
+          "hash": "fbdc969ede51",
+          "note": "出典は全本取得。残る未照合は自サイトの自由研究記事(国勢調査・財政)由来の数字と、自分で引き算した差分"
         }
       ]
     },
@@ -4535,10 +4631,34 @@
         },
         {
           "date": "2026-09-06",
+          "level": "human",
+          "by": "opus",
+          "result": "加筆分を裏取り",
+          "hash": "78b9a55e9b29",
+          "note": "大洲側の実数を会議録・図書館要覧・市民アンケートから足した。本人の感想の節は1文字も触っていない"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "machine",
+          "by": "opus",
+          "result": "問題なし",
+          "hash": "78b9a55e9b29",
+          "note": "check_site.py エラー0"
+        },
+        {
+          "date": "2026-09-06",
           "level": "numbers",
           "by": "opus",
           "result": "OK",
           "hash": "4bd1ed92807a"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "numbers",
+          "by": "opus",
+          "result": "照合済み",
+          "hash": "78b9a55e9b29",
+          "note": "出典は全本取得。残る未照合は自サイトの自由研究記事(国勢調査・財政)由来の数字と、自分で引き算した差分"
         }
       ]
     },
@@ -4695,10 +4815,34 @@
         },
         {
           "date": "2026-09-06",
+          "level": "human",
+          "by": "opus",
+          "result": "加筆分を裏取り",
+          "hash": "4111ccae6312",
+          "note": "大洲側の実数を会議録・図書館要覧・市民アンケートから足した。本人の感想の節は1文字も触っていない"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "machine",
+          "by": "opus",
+          "result": "問題なし",
+          "hash": "4111ccae6312",
+          "note": "check_site.py エラー0"
+        },
+        {
+          "date": "2026-09-06",
           "level": "numbers",
           "by": "opus",
           "result": "OK",
           "hash": "54e43a4202be"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "numbers",
+          "by": "opus",
+          "result": "照合済み",
+          "hash": "4111ccae6312",
+          "note": "出典は全本取得。残る未照合は自サイトの自由研究記事(国勢調査・財政)由来の数字と、自分で引き算した差分"
         }
       ]
     },
@@ -7136,10 +7280,34 @@
         },
         {
           "date": "2026-09-06",
+          "level": "human",
+          "by": "opus",
+          "result": "加筆分を裏取り",
+          "hash": "0d534a86981b",
+          "note": "大洲側の実数を会議録・図書館要覧・市民アンケートから足した。本人の感想の節は1文字も触っていない"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "machine",
+          "by": "opus",
+          "result": "問題なし",
+          "hash": "0d534a86981b",
+          "note": "check_site.py エラー0"
+        },
+        {
+          "date": "2026-09-06",
           "level": "numbers",
           "by": "opus",
           "result": "OK",
           "hash": "bd28d5d87bb0"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "numbers",
+          "by": "opus",
+          "result": "照合済み",
+          "hash": "0d534a86981b",
+          "note": "出典は全本取得。残る未照合は自サイトの自由研究記事(国勢調査・財政)由来の数字と、自分で引き算した差分"
         }
       ]
     },
@@ -9110,10 +9278,34 @@
         },
         {
           "date": "2026-09-06",
+          "level": "human",
+          "by": "opus",
+          "result": "加筆分を裏取り",
+          "hash": "b676efc26c0a",
+          "note": "大洲側の実数を会議録・図書館要覧・市民アンケートから足した。本人の感想の節は1文字も触っていない"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "machine",
+          "by": "opus",
+          "result": "問題なし",
+          "hash": "b676efc26c0a",
+          "note": "check_site.py エラー0"
+        },
+        {
+          "date": "2026-09-06",
           "level": "numbers",
           "by": "opus",
           "result": "OK",
           "hash": "8d61d55f6924"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "numbers",
+          "by": "opus",
+          "result": "照合済み",
+          "hash": "b676efc26c0a",
+          "note": "出典は全本取得。残る未照合は自サイトの自由研究記事(国勢調査・財政)由来の数字と、自分で引き算した差分"
         }
       ]
     },
@@ -14799,10 +14991,34 @@
         },
         {
           "date": "2026-09-06",
+          "level": "human",
+          "by": "opus",
+          "result": "加筆分を裏取り",
+          "hash": "cdc7f20f311e",
+          "note": "大洲側の実数を会議録・図書館要覧・市民アンケートから足した。本人の感想の節は1文字も触っていない"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "machine",
+          "by": "opus",
+          "result": "問題なし",
+          "hash": "cdc7f20f311e",
+          "note": "check_site.py エラー0"
+        },
+        {
+          "date": "2026-09-06",
           "level": "numbers",
           "by": "opus",
           "result": "OK",
           "hash": "31c153966ee4"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "numbers",
+          "by": "opus",
+          "result": "照合済み",
+          "hash": "cdc7f20f311e",
+          "note": "出典は全本取得。残る未照合は自サイトの自由研究記事(国勢調査・財政)由来の数字と、自分で引き算した差分"
         }
       ]
     },

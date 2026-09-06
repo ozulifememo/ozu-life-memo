@@ -1065,6 +1065,11 @@ def check_kenkyu_extra(path, html, rep):
         rep.error(rel(path), "アンカー", f'脚注の飛び先(id="{x}")がありません',
                   "       本文の脚注番号を押しても出典に飛べない状態です")
     text = strip_tags(body)
+    # メモうの吹き出し。2026-09-06、本人の「自由研究にめもうがいない」で
+    # 24本すべてに入れた。次に書く1本が抜けても気づけるよう、機械に置く。
+    if "memou-intro" not in body:
+        rep.error(rel(path), "構造", "自由研究にメモうの吹き出し(.memou-intro)がありません",
+                  "       自由研究も記事と同じく、目次の前に吹き出しを1つ置く")
     if "<svg" not in body:
         rep.warn(rel(path), "スタイル", "図解(inline SVG)が見当たりません(自由研究は図解ありが方針)")
     if "調べても分からなかった" not in text and "調べてもわからなかった" not in text:
@@ -1985,6 +1990,7 @@ EXPECTED = [
     ("要望", "市への要望"),
     ("取材", "していない取材"),
     ("文量", "本文が"),
+    ("構造", "自由研究にメモう"),
     ("メモう", "原本"),
     ("メモう", "書きかけ"),
     ("レビュー卓", "作り直されていません"),
@@ -1999,6 +2005,20 @@ EXPECTED = [
     ("台帳", "yukue-fumei"),
 ]
 
+
+
+# 自己診断用。自由研究のほうも、わざと壊したページを1枚作って検知を確かめる。
+# (メモうの吹き出しが無い / 図解が無い / 「調べても分からなかったこと」が無い)
+BROKEN_KENKYU = """<!DOCTYPE html>
+<html lang="ja"><head><meta charset="UTF-8"><title>自己診断用のこわれた自由研究</title></head>
+<body>
+<section><div class="wrap jk-section">
+    <div class="jk-toc"><h2>目次</h2><ol><li><a href="#ch1">見出し</a></li></ol></div>
+    <h2 id="ch1">見出し</h2>
+    <p class="commentary">本文。</p>
+</div></section>
+</body></html>
+"""
 
 def run_selftest() -> int:
     """わざと壊したページを作って、ちゃんと検知できるか確かめる。
@@ -2015,6 +2035,8 @@ def run_selftest() -> int:
         (root / "eachnews").mkdir(parents=True)
         (root / "assets" / "js").mkdir(parents=True)
         (root / "eachnews" / "broken.html").write_text(BROKEN_SAMPLE, encoding="utf-8")
+        (root / "jiyu-kenkyu").mkdir(parents=True)
+        (root / "jiyu-kenkyu" / "broken.html").write_text(BROKEN_KENKYU, encoding="utf-8")
         (root / "assets" / "js" / "news-data.js").write_text(BROKEN_REGISTRY, encoding="utf-8")
 
         real_repo = REPO

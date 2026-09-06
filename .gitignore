@@ -74,3 +74,6 @@ tools/_notion_diff/
 tools/_pdf_yomu/
 
 tools/_houjin_cache/
+
+# クイズ一覧の書き出し(build_quiz.py が作る。中身はquiz-data.jsにある)
+/_quiz-src.html

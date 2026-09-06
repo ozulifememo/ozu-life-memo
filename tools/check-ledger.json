@@ -14953,6 +14953,35 @@
         }
       ]
     },
+    "ozu-supa-toho-10pun": {
+      "path": "eachnews/ozu-supa-toho-10pun.html",
+      "checks": [
+        {
+          "date": "2026-09-07",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "df7774299ee4",
+          "note": "徒歩10分=800mの円を描いて重ねる方法と、数えた日を本文に明記。店が1つ閉じると圏内人口がまとめて入れ替わる、という結論まで数字で示している"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "machine",
+          "by": "opus",
+          "result": "機械点検",
+          "hash": "df7774299ee4",
+          "note": "check_site.py エラー0"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "numbers",
+          "by": "opus",
+          "result": "数字と出典の照合",
+          "hash": "df7774299ee4",
+          "note": "未照合33個(28.0%)。国勢調査メッシュ人口と店舗座標を重ねて自分で数えた値なので、出典に無いのは当然"
+        }
+      ]
+    },
     "ozu-tabako-haisaku": {
       "path": "eachnews/ozu-tabako-haisaku.html",
       "checks": [

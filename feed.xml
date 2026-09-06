@@ -5,8 +5,17 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Mon, 07 Sep 2026 07:45:32 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 07 Sep 2026 07:46:19 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>スーパーまで歩いて10分に住む大洲市民は9,282人。3年で5,057人減った</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-supa-toho-10pun.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-supa-toho-10pun.html</guid>
+      <pubDate>Mon, 07 Sep 2026 09:00:00 +0900</pubDate>
+      <description>大洲市でスーパーまで直線800メートル（徒歩10分）以内に住む人は9,282人、市の人口の23%だった。国勢調査の500mメッシュ人口と店舗7か所の座標を重ねて自分で数え、3年前の14,339人から5,057人減った理由まで追った。</description>
+      <category>まちづくり</category>
+      <category>人口減少</category>
+    </item>
     <item>
       <title>大洲の水道代、10年後は月4,650円？ 285億円を自分で割ってみた</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-suido-10nengo.html</link>
@@ -256,14 +265,6 @@
       <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-chosen-sakumotsu.html</guid>
       <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
       <description>令和6年3月の大洲市議会で「今までお茶やワサビ、以前にはギンナンやダチョウなど、ほとんどが成果を見せておりません」という発言があった。この一言を手がかりに、会議録307ページ分を検索して、大洲市が試してきた作物の年表を作った。ワサビは500本植えて収穫50本、お茶は約2,600万円。失敗をあげつらう記事ではなく、打席に立った記録である。</description>
-      <category>産業・農業</category>
-    </item>
-    <item>
-      <title>餃子の王将のメンマが国産に。大洲の乾タケノコが1キロ3,500円になった</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-menma-takenoko.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-menma-takenoko.html</guid>
-      <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
-      <description>餃子の王将がメンマの原料を国産に切り替えた平成27年、愛媛県で最も竹林が広い大洲市に、乾燥タケノコの注文が届いた。1キロ3,500円という値段の本当の意味と、その後10年分の生産量を、市議会の会議録と市の資料でたどった。</description>
       <category>産業・農業</category>
     </item>
   </channel>

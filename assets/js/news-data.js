@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-supa-toho-10pun",
+    date: "2026-09-07",
+    title: "スーパーまで歩いて10分に住む大洲市民は9,282人。3年で5,057人減った",
+    category: "kurashi",
+    source: "令和2年国勢調査 500mメッシュ人口（e-Stat 統計GIS）ほか",
+    sourceDate: "2026-09-06",
+    tags: ["まちづくり", "人口減少"],
+  },
+  {
     slug: "ozu-suido-10nengo",
     date: "2026-09-07",
     title: "大洲の水道代、10年後は月4,650円？ 285億円を自分で割ってみた",

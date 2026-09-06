@@ -11570,6 +11570,35 @@
         }
       ]
     },
+    "ozu-kaeru-shikumi": {
+      "path": "eachnews/ozu-kaeru-shikumi.html",
+      "checks": [
+        {
+          "date": "2026-09-06",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "c95becc2887c",
+          "note": "人が読んで裏取り。分母は選挙人名簿登録者数32,881人(令和8年6月1日、大洲26,237・長浜4,697・肱川1,487・河辺460)。条文はすべてe-Gov原文。直接請求は会議録307回分に記録なし、住民監査請求は平成19年の1件のみ確認。制度を説明するにとどめ、使えとは勧めていない"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "machine",
+          "by": "opus",
+          "result": "機械点検",
+          "hash": "c95becc2887c",
+          "note": "check_site 問題なし"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "numbers",
+          "by": "opus",
+          "result": "数字と出典の照合",
+          "hash": "c95becc2887c",
+          "note": "数字160個すべて出典と一致。未照合0個。403の6本(市の例規・企画情報課ページ)はWayback経由で読んでいる"
+        }
+      ]
+    },
     "ozu-kanko-5man-nin": {
       "path": "eachnews/ozu-kanko-5man-nin.html",
       "checks": [

@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-kaeru-shikumi",
+    date: "2026-09-06",
+    title: "大洲市の条例を変えるには658人。ひとりでできる手もある",
+    category: "shiten",
+    source: "地方自治法（e-Gov法令検索）、大洲市選挙管理委員会、総務省「地方自治月報第61号」、大洲市議会会議録",
+    sourceDate: "2026-09-06",
+    tags: ["議会・行政"],
+  },
+  {
     slug: "ozu-dare-ga-kimeru",
     date: "2026-09-06",
     title: "大洲を変えられるのは誰か。327億円のうち、市が自分で決められるのは78億円だった",

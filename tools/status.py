@@ -404,6 +404,46 @@ def render(s: dict) -> None:
         for h in holds:
             row(h["名前"], h.get("決めた日", ""))
 
+    # --- 作業の足跡 -------------------------------------------------------
+    # 運営者が6〜7回、別々のタイミングで同じことを言っている。
+    #   「会話が途中で終わっているか、不安になるときがある」
+    # チャットの一覧を見ても、どれが終わってどれが途中かは分からない。
+    # だが Stop フック(hook_check.py)が応答のたびに足跡を残しているので、
+    # 「最後にいつ、何を触って、そのとき手が入ったままだったか」は分かる。
+    ashi = REPO / "tools" / "ashiato.json"
+    if ashi.exists():
+        try:
+            log = json.loads(ashi.read_text(encoding="utf-8"))
+        except Exception:
+            log = []
+        if log:
+            head("最近の作業", "(チャットごとの足跡。手を動かすたびに自動で残る)")
+            # チャットごとに、いちばん新しい足跡だけを見る
+            byses = {}
+            for r in log:
+                byses[r.get("どのチャット", "?")] = r
+            recent = sorted(byses.values(), key=lambda r: r.get("いつ", ""), reverse=True)
+            for r in recent[:5]:
+                nokori = r.get("手が入ったままのファイル", 0)
+                err = r.get("エラー", 0)
+                mark = "!" if (nokori or err) else " "
+                sid = r.get("どのチャット", "?")
+                if nokori or err:
+                    tail = []
+                    if nokori:
+                        tail.append(f"手が入ったまま{nokori}件")
+                    if err:
+                        tail.append(f"エラー{err}件")
+                    note = "  ← " + "・".join(tail)
+                else:
+                    note = "  きれいに終わっている"
+                row(f"{r.get('いつ','?')}  [{sid}]", note, mark)
+                if nokori and r.get("その例"):
+                    for f in r["その例"][:3]:
+                        print(f"        {f}")
+            print(f"\n    足跡は直近{len(log)}回ぶん tools/ashiato.json にあります")
+            print("    「あのチャット、やり切ったっけ?」はここを見る")
+
     # --- 次の一手 ---------------------------------------------------------
     todo = suggest(s)
     if todo:

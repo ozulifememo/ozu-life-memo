@@ -52,10 +52,14 @@ ozu-life-memo/
 4. GitHub上のリポジトリページで「Settings」→ 左メニュー「Pages」
 5. 「Build and deployment」の「Source」を `Deploy from a branch` にし、Branch を `main` / `/ (root)` にして Save
 6. 数分待つと、同じ画面に `https://ユーザー名.github.io/ozu-life-memo/` のようなURLが表示され、そこで公開されます
-7. 更新するときは、ファイルを直して以下を実行するだけです
+7. 更新するときは、ファイルを直して以下を実行します
 
    ```bash
-   git add -A
+   git add <直したファイルのパス>
    git commit -m "更新内容のメモ"
    git push
    ```
+
+   **`git add -A` は使わないでください。** 作業中の別のファイルまで
+   まとめて公開してしまいます（実際に起きました）。
+   面倒でも、直したファイルのパスを1つずつ書くほうが安全です。

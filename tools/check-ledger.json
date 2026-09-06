@@ -12619,6 +12619,19 @@
         }
       ]
     },
+    "ozu-kotsu-seiri-ryo-kotoba": {
+      "path": "eachnews/ozu-kotsu-seiri-ryo-kotoba.html",
+      "checks": [
+        {
+          "date": "2026-09-06",
+          "level": "machine",
+          "by": "opus",
+          "result": "機械点検",
+          "hash": "96757fa85940",
+          "note": "check_site.py エラー0(レビュー卓を除く)"
+        }
+      ]
+    },
     "ozu-kouhou-genka": {
       "path": "eachnews/ozu-kouhou-genka.html",
       "checks": [

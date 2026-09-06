@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-kotsu-seiri-ryo-kotoba",
+    date: "2026-09-06",
+    title: "同じ500円を、議員は「駐車場料金」、市は「交通整理料」と呼んだ",
+    category: "shiten",
+    source: "平成25年9月大洲市議会定例会 会議録、大洲市都市公園条例、地方自治法 ほか",
+    sourceDate: "2026-09-06",
+    tags: ["議会・行政", "財政・税金"],
+  },
+  {
     slug: "ozu-gesuido-jokaso",
     date: "2026-09-06",
     title: "下水道と浄化槽、20年で30万円以上違う。大洲ではどっちになるか住所で決まる",

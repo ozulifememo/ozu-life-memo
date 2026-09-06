@@ -833,6 +833,36 @@ def check_link_hygiene(path, html, rep):
             break
 
 
+def check_source_urls(path, html, rep):
+    """出典のURLが壊れていないか(関所)
+
+    2026-09-06。書き足しを差し込む道具が、1行に2つリンクのある出典行を
+    1つのURLとして読み、開けないURLの出典を作ってしまった。
+    道具は直したが、出てしまった分と、これから同じことが起きた分を
+    ここで止める。生きているかどうかは check_numbers.py が見る。
+    """
+    if page_type(path) not in ("article", "book", "kenkyu"):
+        return
+    for m in re.finditer(r'<a class="source-link" href="([^"]*)"', html):
+        u = m.group(1)
+        why = None
+        # かっこは URL に普通に入る(Wikipediaの曖昧さ回避)。
+        # http が2回出るのも普通(Wayback は URL の中に URL を入れる)。
+        # だからそこは見ない。見るのは Markdown の記法が漏れた形だけ。
+        # 2026-09-06、その2つで誤検知したので絞り込んだ。
+        if not u.startswith(("http://", "https://")):
+            why = "http(s) で始まっていません"
+        elif "](" in u:
+            why = "Markdownのリンク記法が混ざっています(1行に2つリンクを書くとこうなります)"
+        elif " " in u or "<" in u or ">" in u:
+            why = "URLに使えない文字が入っています"
+        if why:
+            rep.error(rel(path), "出典",
+                      "出典のURLが壊れています(" + why + ")",
+                      "       " + u[:110])
+            break
+
+
 def check_raw_quote(path, html, rep):
     """引用が変換されずに「&gt;」のまま出ていないか(関所)
 
@@ -1859,7 +1889,7 @@ BROKEN_SAMPLE = """<!DOCTYPE html>
 <div data-site-header data-prefix="../"></div>
 <h1>基本計画策定のタイトル</h1>
 <div class="content-block">
-  <a class="source-link" href="https://news.yahoo.co.jp/articles/xxxx" target="_blank">消えやすい出典</a>
+  <a class="source-link" href="https://news.yahoo.co.jp/articles/xxxx)と[B](https://b.example/y" target="_blank">消えやすい出典</a>
 </div>
 <p>この記事にはダミー禁止語が入っています。文字化けもあります: �</p>
 <div class="memou-intro-bubble">
@@ -1936,6 +1966,7 @@ EXPECTED = [
     ("誤字", "句点"),
     ("出典", "1本"),
     ("出典", "調べた資料"),
+    ("出典", "URLが壊れて"),
     ("出典", "news.yahoo.co.jp"),
     ("表現", "知ってほしい"),
     ("約束", "あとで追記する"),
@@ -2001,6 +2032,7 @@ def run_selftest() -> int:
                 check_titles(p, html, registry, rep)
                 check_head_meta(p, html, registry, rep)
                 check_link_hygiene(p, html, rep)
+                check_source_urls(p, html, rep)
                 check_raw_quote(p, html, rep)
                 check_typos(p, html, rep)
                 check_fragments(p, html, id_map, rep)
@@ -2135,6 +2167,7 @@ def main():
         check_titles(p, html, registry, rep)
         check_head_meta(p, html, registry, rep)
         check_link_hygiene(p, html, rep)
+        check_source_urls(p, html, rep)
         check_raw_quote(p, html, rep)
         check_typos(p, html, rep)
         check_fragments(p, html, id_map, rep)

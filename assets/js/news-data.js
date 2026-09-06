@@ -1887,7 +1887,7 @@ const OZU_NEWS = [
   {
     slug: "ozu-muryo-chushajo",
     date: "2026-08-08",
-    title: "大洲の無料駐車場一覧。城下町観光で使える３か所",
+    title: "大洲の無料駐車場は５か所あった。城下町観光での使い分け",
     category: "kurashi",
     source: "大洲市ホームページ、大洲市公式観光情報VisitOzu",
     sourceDate: "2021-10-11",

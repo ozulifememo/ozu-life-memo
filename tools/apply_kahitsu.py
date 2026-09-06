@@ -56,10 +56,18 @@ def parse(md_path):
     if "---足す出典---" in head:
         for line in head.split("---足す出典---", 1)[1].splitlines():
             line = line.strip()
-            m = re.match(r"^-\s*\[(.+?)\]\((\S+?)\)\s*(?:[（(](.*)[）)])?\s*$", line)
-            if m:
-                label, url, note = m.group(1), m.group(2), (m.group(3) or "")
-                srcs.append((label, url, note))
+            # 1行に複数のリンクが書かれることがある。全部拾う。
+            # 2026-09-06、\S+? が「)と[別のリンク](URL」までまとめて
+            # 1つのURLにしてしまい、リンク切れの出典を2本作ってしまった
+            links = re.findall(r"\[(.+?)\]\((https?://[^\s)]+)\)", line)
+            if not links or not line.startswith("-"):
+                continue
+            note = ""
+            mn = re.search(r"[（(]([^（）()]*)[）)]\s*$", line)
+            if mn:
+                note = mn.group(1)
+            for i, (label, url) in enumerate(links):
+                srcs.append((label, url, note if i == 0 else ""))
     return srcs, body.strip()
 
 

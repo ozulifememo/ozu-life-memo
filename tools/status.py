@@ -187,6 +187,27 @@ def count_promises() -> int:
 def count_git() -> dict:
     porcelain = git("status", "--porcelain")
     dirty = [ln for ln in porcelain.splitlines() if ln.strip()]
+
+    # 中身が変わっていないものは数えない。
+    # git は改行コード(CRLF/LF)の判定が変わっただけのファイルも
+    # modified として並べる。2026-09-06、それが334件出て、
+    # 実際の差分は0追加0削除だった。「未コミット334件」と出ると、
+    # 次に見た人は別チャットが作業中だと思って手を止めてしまう。
+    numstat = git("diff", "--numstat")
+    changed = set()
+    for ln in numstat.splitlines():
+        cols = ln.split("\t")
+        if len(cols) == 3 and (cols[0] != "0" or cols[1] != "0"):
+            changed.add(cols[2])
+    kept = []
+    for ln in dirty:
+        st, name = ln[:2], ln[3:].strip().strip('"')
+        # 未追跡(??)と、ステージ済み(左側が空白でない)は、そのまま数える
+        if st.startswith("??") or st[0] not in " ":
+            kept.append(ln)
+        elif name in changed:
+            kept.append(ln)
+    dirty = kept
     ahead = git("rev-list", "--count", "origin/main..HEAD")
     behind = git("rev-list", "--count", "HEAD..origin/main")
     last = git("log", "-1", "--format=%cs %s")

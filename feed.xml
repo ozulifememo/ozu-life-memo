@@ -5,8 +5,17 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Sun, 06 Sep 2026 23:38:05 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 06 Sep 2026 23:39:23 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大洲の求人1.29倍は平均の数字。フルタイム1.79倍、パート0.78倍に割れていた</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kyujin-shokushu-betsu.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kyujin-shokushu-betsu.html</guid>
+      <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
+      <description>令和8年7月のハローワーク大洲の有効求人倍率は1.29倍。ただし公表表から働き方・職業・年齢で割り直すと、パートは0.78倍で県内最低、職業別では最大12倍の開きがあった。管轄区域から賃金まで、公表資料の表を自分で開いて数え直した。</description>
+      <category>産業・農業</category>
+      <category>医療・福祉</category>
+    </item>
     <item>
       <title>同じ500円を、議員は「駐車場料金」、市は「交通整理料」と呼んだ</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kotsu-seiri-ryo-kotoba.html</link>
@@ -254,15 +263,6 @@
       <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
       <description>国税庁が公開している法人番号のデータで、大洲市にある法人1,607件を全部数えた。189件はすでに登記が閉じられていて、その消え方には3通りあった。</description>
       <category>産業・農業</category>
-      <category>合併・地域</category>
-    </item>
-    <item>
-      <title>大洲でいちばん古いホームページを探した。市の1年前に、人口1,100人の村が出していた</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-furui-homepage.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-furui-homepage.html</guid>
-      <pubDate>Sat, 05 Sep 2026 09:00:00 +0900</pubDate>
-      <description>インターネットに残っている記録をたどって、大洲でいちばん古いホームページを探した。旧河辺村・旧長浜町・旧大洲市・旧肱川町の順で、いちばん小さい村がいちばん早かった。</description>
-      <category>まちづくり</category>
       <category>合併・地域</category>
     </item>
   </channel>

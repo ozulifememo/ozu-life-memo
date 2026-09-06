@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-kyujin-shokushu-betsu",
+    date: "2026-09-06",
+    title: "大洲の求人1.29倍は平均の数字。フルタイム1.79倍、パート0.78倍に割れていた",
+    category: "ima",
+    source: "愛媛労働局「労働市場月報(令和8年7月分)」ほか",
+    sourceDate: "2026-09-06",
+    tags: ["産業・農業", "医療・福祉"],
+  },
+  {
     slug: "ozu-kotsu-seiri-ryo-kotoba",
     date: "2026-09-06",
     title: "同じ500円を、議員は「駐車場料金」、市は「交通整理料」と呼んだ",

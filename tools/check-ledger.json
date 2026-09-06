@@ -213,23 +213,23 @@
           "level": "human",
           "by": "opus",
           "result": "書き足した分を読み返した",
-          "hash": "a34b4b5af130",
-          "note": "大洲側の実数を足す加筆。本人の感想の節は1文字も触っていない(git diff 削除行0)"
+          "hash": "189abcda9f98",
+          "note": "本文中のAI表記を、記事の既存表記に合わせて全角ＡＩに統一。感想の節は未変更"
         },
         {
           "date": "2026-09-06",
           "level": "machine",
           "by": "opus",
           "result": "エラー0",
-          "hash": "a34b4b5af130",
-          "note": "check_site.py --slug で0件。読書メモを厚くした回"
+          "hash": "189abcda9f98",
+          "note": "ＡＩの全角統一後に再点検"
         },
         {
           "date": "2026-09-06",
           "level": "numbers",
           "by": "opus",
           "result": "見つからず0/18",
-          "hash": "a34b4b5af130"
+          "hash": "189abcda9f98"
         }
       ]
     },

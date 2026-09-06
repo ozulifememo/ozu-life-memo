@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-seigan-hosoru",
+    date: "2026-09-07",
+    title: "議員の紹介が要る「請願」を18年ぶん数えた。116件のうち採択は8件",
+    category: "shiten",
+    source: "大洲市議会 会議録(2008年3月〜2026年6月)、全国市議会議長会「市議会の活動に関する実態調査結果」ほか",
+    sourceDate: "2026-09-07",
+    tags: ["議会・行政", "まちづくり"],
+  },
+  {
     slug: "ozu-supa-toho-10pun",
     date: "2026-09-07",
     title: "スーパーまで歩いて10分に住む大洲市民は9,282人。3年で5,057人減った",

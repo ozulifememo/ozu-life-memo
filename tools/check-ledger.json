@@ -14151,6 +14151,35 @@
         }
       ]
     },
+    "ozu-seigan-hosoru": {
+      "path": "eachnews/ozu-seigan-hosoru.html",
+      "checks": [
+        {
+          "date": "2026-09-07",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "a519ebaea60e",
+          "note": "会議録307本を独立に数え直し、請願番号が任期ごとに1号へリセットされること、任期別の最大が37→28→48→18→11→2であること、会議録に登場する請願が116件(18号のうち15号だけ出てこない)であることを再現。記事と完全一致"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "machine",
+          "by": "opus",
+          "result": "機械点検",
+          "hash": "a519ebaea60e",
+          "note": "check_site.py エラー0"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "numbers",
+          "by": "opus",
+          "result": "数字と出典の照合",
+          "hash": "a519ebaea60e",
+          "note": "未照合10個(8.1%)は自分で数えた集計値"
+        }
+      ]
+    },
     "ozu-senkyo-14kai": {
       "path": "jiyu-kenkyu/ozu-senkyo-14kai.html",
       "checks": [

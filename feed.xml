@@ -5,8 +5,17 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Mon, 07 Sep 2026 07:46:19 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 07 Sep 2026 08:40:55 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>議員の紹介が要る「請願」を18年ぶん数えた。116件のうち採択は8件</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-seigan-hosoru.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-seigan-hosoru.html</guid>
+      <pubDate>Mon, 07 Sep 2026 09:00:00 +0900</pubDate>
+      <description>市民が市議会に意見を届ける「請願」と「陳情」。大洲市議会の会議録307ファイルを機械で数え直したところ、2008年3月から2026年6月までの請願は116件、陳情は13件だった。任期ごとの受理件数と結末、全国や松山市との比較、減った理由の候補までを並べた。</description>
+      <category>議会・行政</category>
+      <category>まちづくり</category>
+    </item>
     <item>
       <title>スーパーまで歩いて10分に住む大洲市民は9,282人。3年で5,057人減った</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-supa-toho-10pun.html</link>
@@ -258,14 +267,6 @@
       <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
       <description>長浜大橋（赤橋）は昭和10年8月完成。いまも動く道路可動橋としては日本最古で、平成26年に国の重要文化財になった。82トンの重りが54トンの橋桁を持ち上げる仕組み、なぜ長浜に開く橋が要ったのか、いつ開くのかを一次資料で確かめた。市議会に出てくる「長浜・五郎・小鳥越」の赤橋3つの正体も追った。</description>
       <category>観光</category>
-    </item>
-    <item>
-      <title>大洲市は、ダチョウを飼おうとしたことがある。試した作物の年表</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-chosen-sakumotsu.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-chosen-sakumotsu.html</guid>
-      <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
-      <description>令和6年3月の大洲市議会で「今までお茶やワサビ、以前にはギンナンやダチョウなど、ほとんどが成果を見せておりません」という発言があった。この一言を手がかりに、会議録307ページ分を検索して、大洲市が試してきた作物の年表を作った。ワサビは500本植えて収穫50本、お茶は約2,600万円。失敗をあげつらう記事ではなく、打席に立った記録である。</description>
-      <category>産業・農業</category>
     </item>
   </channel>
 </rss>

@@ -5,8 +5,17 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Sun, 06 Sep 2026 14:55:16 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 06 Sep 2026 14:58:59 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大洲を変えられるのは誰か。327億円のうち、市が自分で決められるのは78億円だった</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-dare-ga-kimeru.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-dare-ga-kimeru.html</guid>
+      <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
+      <description>市長、市議会、県議、国、会社、会社員、株主、市職員。大洲市について誰がどこまで決められるのかを、地方自治法の条文と18年分の市議会会議録、令和6年度決算の実数で調べた。市が自分で集めて使い道も自分で決められるお金は、歳入327億円のうち78億円だった。</description>
+      <category>議会・行政</category>
+      <category>財政・税金</category>
+    </item>
     <item>
       <title>800人の署名で、駅前に屋根がついた。大洲で市民が動いて実際に変わった5件</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-shimin-ga-ugoita.html</link>
@@ -255,15 +264,6 @@
       <description>大洲市東大洲の産業団地は約9haを7区画に分けて分譲中で、2026年9月時点の募集は3区画。市のページに価格はないが、愛媛県の企業立地サイトには坪9万円と出ていた。調べた記録。</description>
       <category>産業・農業</category>
       <category>まちづくり</category>
-    </item>
-    <item>
-      <title>水道管がどこに埋まっているかの記録を作り直す。手を挙げたのは2社だけだった</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/suido-daicho-system.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/suido-daicho-system.html</guid>
-      <pubDate>Sat, 05 Sep 2026 09:00:00 +0900</pubDate>
-      <description>大洲市が上下水道台帳システムの再構築を発注した。地下に埋まる管は約877キロ。手を挙げたのは2社だけで、その理由は募集要項に書いてある。台帳は法律で持つことが義務づけられ、全国の7パーセントはまだ作っていなかった。</description>
-      <category>交通・インフラ</category>
-      <category>財政・税金</category>
     </item>
   </channel>
 </rss>

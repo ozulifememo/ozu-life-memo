@@ -10758,6 +10758,35 @@
         }
       ]
     },
+    "ozu-dare-ga-kimeru": {
+      "path": "eachnews/ozu-dare-ga-kimeru.html",
+      "checks": [
+        {
+          "date": "2026-09-06",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "6b4379131bc0",
+          "note": "人が読んで裏取り。18年分307回の会議録で予算の修正・再議・市長提出議案の否決が0件であることを機械抽出で確認。交付税の75%措置は地方交付税法14条2項で裏を取っている。議会や市を評価する書き方はしていない"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "machine",
+          "by": "opus",
+          "result": "機械点検",
+          "hash": "6b4379131bc0",
+          "note": "check_site 問題なし"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "numbers",
+          "by": "opus",
+          "result": "数字と出典の照合",
+          "hash": "6b4379131bc0",
+          "note": "数字136個すべて出典と一致。未照合0個。403の1本(選管ページ)はWayback経由で読んでいる"
+        }
+      ]
+    },
     "ozu-denpa-kengai": {
       "path": "eachnews/ozu-denpa-kengai.html",
       "checks": [

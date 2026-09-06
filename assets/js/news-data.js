@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-dare-ga-kimeru",
+    date: "2026-09-06",
+    title: "大洲を変えられるのは誰か。327億円のうち、市が自分で決められるのは78億円だった",
+    category: "shiten",
+    source: "大洲市「令和6年度大洲市の決算」／決算審査意見書／e-Gov法令検索／大洲市議会会議録",
+    sourceDate: "2026-09-06",
+    tags: ["議会・行政", "財政・税金"],
+  },
+  {
     slug: "ozu-shimin-ga-ugoita",
     date: "2026-09-06",
     title: "800人の署名で、駅前に屋根がついた。大洲で市民が動いて実際に変わった5件",

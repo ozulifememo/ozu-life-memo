@@ -14924,6 +14924,35 @@
         }
       ]
     },
+    "ozu-suido-10nengo": {
+      "path": "eachnews/ozu-suido-10nengo.html",
+      "checks": [
+        {
+          "date": "2026-09-07",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "95a767f22eef",
+          "note": "土台の285億円(施設187億+管路98億)と令和40年度給水人口22,416人は令和5年12月定例会2日目の答弁。エージェント側で29項目の算術検算を通している"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "machine",
+          "by": "opus",
+          "result": "機械点検",
+          "hash": "95a767f22eef",
+          "note": "check_site.py エラー0"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "numbers",
+          "by": "opus",
+          "result": "数字と出典の照合",
+          "hash": "95a767f22eef",
+          "note": "未照合23個(17.3%)。ほとんどが自分で立てた試算のシナリオ値。試算であることは本文に明記されている"
+        }
+      ]
+    },
     "ozu-tabako-haisaku": {
       "path": "eachnews/ozu-tabako-haisaku.html",
       "checks": [

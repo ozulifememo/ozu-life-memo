@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-suido-10nengo",
+    date: "2026-09-07",
+    title: "大洲の水道代、10年後は月4,650円？ 285億円を自分で割ってみた",
+    category: "shiten",
+    source: "大洲市議会 令和5年9月定例会会議録、愛媛県「経営比較分析表（令和6年度決算）」ほか",
+    sourceDate: "2026-09-06",
+    tags: ["財政・税金", "人口減少"],
+  },
+  {
     slug: "ozu-shakkin-hitori-atari",
     date: "2026-09-07",
     title: "大洲市の借金は1人あたり84万6,600円。この割り算はどこまで本当か",

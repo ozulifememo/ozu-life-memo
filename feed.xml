@@ -5,8 +5,17 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Mon, 07 Sep 2026 07:44:03 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 07 Sep 2026 07:45:32 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大洲の水道代、10年後は月4,650円？ 285億円を自分で割ってみた</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-suido-10nengo.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-suido-10nengo.html</guid>
+      <pubDate>Mon, 07 Sep 2026 09:00:00 +0900</pubDate>
+      <description>大洲市は水道施設の更新に令和3年度から令和40年度まで285億円かかると見込んでいる。市自身が「令和40年度には現行の約2.5倍」と議会で答弁している。この数字を年割りして、10年後の請求書がいくらになるかを試算した。</description>
+      <category>財政・税金</category>
+      <category>人口減少</category>
+    </item>
     <item>
       <title>大洲市の借金は1人あたり84万6,600円。この割り算はどこまで本当か</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-shakkin-hitori-atari.html</link>
@@ -256,14 +265,6 @@
       <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
       <description>餃子の王将がメンマの原料を国産に切り替えた平成27年、愛媛県で最も竹林が広い大洲市に、乾燥タケノコの注文が届いた。1キロ3,500円という値段の本当の意味と、その後10年分の生産量を、市議会の会議録と市の資料でたどった。</description>
       <category>産業・農業</category>
-    </item>
-    <item>
-      <title>大洲城の天守は日本一高い。19.15mの木造は「揺れる前提」で建っている</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-jo-nihonichi.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-jo-nihonichi.html</guid>
-      <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
-      <description>大洲城天守の高さ19.15メートルは、戦後に木造で復元された天守では日本一。白石城16.7メートル、掛川城16.18メートルと同じものさしで並べて確かめた。市議会の答弁と市の復元事業報告書から、この天守が揺れることを前提にした柔構造であること、石垣ではなく6本の杭が支えていること、本来は建築基準法で建てられない建物だったことまで追った。</description>
-      <category>観光</category>
     </item>
   </channel>
 </rss>

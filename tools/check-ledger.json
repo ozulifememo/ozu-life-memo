@@ -12371,6 +12371,35 @@
         }
       ]
     },
+    "ozu-kentoshimasu-kaigiroku": {
+      "path": "eachnews/ozu-kentoshimasu-kaigiroku.html",
+      "checks": [
+        {
+          "date": "2026-09-07",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "b0ac63511776",
+          "note": "会議録307本を独立に数え直し、「検討します」全13回のうち議会側12回・市側1回(令和7年12月定例会の室長発言)を再現。記事の記述と完全一致"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "machine",
+          "by": "opus",
+          "result": "機械点検",
+          "hash": "b0ac63511776",
+          "note": "check_site.py エラー0"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "numbers",
+          "by": "opus",
+          "result": "数字と出典の照合",
+          "hash": "b0ac63511776",
+          "note": "未照合8個(8.2%)は自分で数えた集計値。出典に無いのは当然"
+        }
+      ]
+    },
     "ozu-kieta-bus": {
       "path": "jiyu-kenkyu/ozu-kieta-bus.html",
       "checks": [

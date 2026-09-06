@@ -5,8 +5,17 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Mon, 07 Sep 2026 07:41:16 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 07 Sep 2026 07:42:26 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>「検討します」は18年で1回だけ。市議会の会議録307本を数えてみた</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kentoshimasu-kaigiroku.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kentoshimasu-kaigiroku.html</guid>
+      <pubDate>Mon, 07 Sep 2026 09:00:00 +0900</pubDate>
+      <description>大洲市議会の会議録307本(平成20年3月〜令和8年6月)を全部開き、「検討」「研究」「注視」が誰の発言に何回出るかを機械で数えた。そのうえで「検討」と言われた8件が実際どうなったかを後年の会議録で追跡した。</description>
+      <category>議会・行政</category>
+      <category>まちづくり</category>
+    </item>
     <item>
       <title>市役所で働く人の47％は「1年ごとの職員」。大洲市の568人と、時給1,203円の中身</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kaikei-nendo-ninyo.html</link>
@@ -254,15 +263,6 @@
       <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
       <description>大洲市の冨士山のツツジは「西日本一」と言われる。ところが市議会の会議録を19年分たどると、市がそう答えたことは一度もない。さらに平成31年、ツツジはほとんど咲かず、市は「原因の特定には至っておりません」と答弁していた。本数・言い回し・咲かなかった年を、一次資料で追いかけた記録。</description>
       <category>観光</category>
-    </item>
-    <item>
-      <title>セブン-イレブンが愛媛に来たのは2014年。43番目の県だった。大洲のコンビニ23店を数えた</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-conveni-itsukara.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-conveni-itsukara.html</guid>
-      <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
-      <description>大洲にコンビニが最初に来たのはいつか。市単位では分からなかったが、県単位なら公式の記録が残っていた。セブンは2014年、ファミマは2003年。そして大洲の店舗数を数えると、ローソンが半分を占めていた。</description>
-      <category>産業・農業</category>
-      <category>まちづくり</category>
     </item>
   </channel>
 </rss>

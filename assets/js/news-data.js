@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-kentoshimasu-kaigiroku",
+    date: "2026-09-07",
+    title: "「検討します」は18年で1回だけ。市議会の会議録307本を数えてみた",
+    category: "shiten",
+    source: "大洲市議会 会議録(平成20年3月〜令和8年6月)ほか",
+    sourceDate: "2026-09-06",
+    tags: ["議会・行政", "まちづくり"],
+  },
+  {
     slug: "ozu-kaikei-nendo-ninyo",
     date: "2026-09-07",
     title: "市役所で働く人の47％は「1年ごとの職員」。大洲市の568人と、時給1,203円の中身",

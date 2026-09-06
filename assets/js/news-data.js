@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-atsusa-samusa-denkidai",
+    date: "2026-09-06",
+    title: "大洲の猛暑日は松山の2倍。なのに熱帯夜は19分の1だった",
+    category: "kurashi",
+    source: "気象庁「過去の気象データ検索」ほか",
+    sourceDate: "2026-09-06",
+    tags: ["防災", "合併・地域"],
+  },
+  {
     slug: "ozu-iinkai-jikko",
     date: "2026-09-06",
     title: "大洲市の例規826本に「実行委員会」は1本もない。なのに1億円が動いていた",

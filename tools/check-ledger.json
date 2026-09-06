@@ -10194,6 +10194,35 @@
         }
       ]
     },
+    "ozu-atsusa-samusa-denkidai": {
+      "path": "eachnews/ozu-atsusa-samusa-denkidai.html",
+      "checks": [
+        {
+          "date": "2026-09-06",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "d678a6caed17",
+          "note": "気象庁の日ごとの値を5地点×365日ダウンロードして自分で集計。省エネ基準の地域区分は告示265号別表第10の新旧表PDFを座標付きで開き、改正後(左列)と改正前(右列)を取り違えていないことを確認した"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "machine",
+          "by": "opus",
+          "result": "機械点検",
+          "hash": "d678a6caed17",
+          "note": "check_site.py エラー0(レビュー卓を除く)"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "numbers",
+          "by": "opus",
+          "result": "数字と出典の照合",
+          "hash": "d678a6caed17",
+          "note": "未照合5個は度日4個(自分で計算)と家計調査のExcel実額141,103円。いずれも一次資料で確認済み"
+        }
+      ]
+    },
     "ozu-ben": {
       "path": "eachnews/ozu-ben.html",
       "checks": [

@@ -5,8 +5,17 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Sun, 06 Sep 2026 22:51:36 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 06 Sep 2026 23:08:37 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大洲の猛暑日は松山の2倍。なのに熱帯夜は19分の1だった</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-atsusa-samusa-denkidai.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-atsusa-samusa-denkidai.html</guid>
+      <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
+      <description>大洲は盆地だから夏は暑くて冬は寒い、とよく言われる。気象庁のデータで松山・宇和島・長浜と比べたら、昼と夜で答えが逆になった。電気代への効き方まで計算した。</description>
+      <category>防災</category>
+      <category>合併・地域</category>
+    </item>
     <item>
       <title>大洲市の例規826本に「実行委員会」は1本もない。なのに1億円が動いていた</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-iinkai-jikko.html</link>
@@ -255,15 +264,6 @@
       <description>令和8年4月、小学校の給食費が全国一律で無償になった。ただしアレルギーなどで給食を食べられない子には届かない。大洲市はそこに新しい補助金を作った。予算は11万5,000円。</description>
       <category>子育て・教育</category>
       <category>議会・行政</category>
-    </item>
-    <item>
-      <title>市役所は議員の「お願い」を記録しているか。大洲市は9年前に「検討する」と答えた</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kuchikiki-kiroku.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kuchikiki-kiroku.html</guid>
-      <pubDate>Sat, 05 Sep 2026 09:00:00 +0900</pubDate>
-      <description>議員から行政への働きかけを記録する制度。全国調査では、記録の要件を「違法・不当なもの」に絞った56自治体のうち記録があったのは4市だけで、要件を絞らない神戸市は3万2千件を超えた。大洲市は2017年3月の議会でこの制度を取り上げ、「判断が難しい」として検討にとどめている。</description>
-      <category>議会・行政</category>
-      <category>まちづくり</category>
     </item>
   </channel>
 </rss>

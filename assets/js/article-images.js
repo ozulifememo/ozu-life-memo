@@ -139,6 +139,11 @@ const OZU_ARTICLE_NO_PHOTO = {
   "smart-shrink-ozu": "市長答弁と政策論。被写体が無い",
   "kishou-bosai-advisor": "県の人事と市の方針の話。被写体が無い",
   "gappei-tokureisai-owari": "合併特例債の借入額の話。被写体が無い"
+
+  // ── 2026-09-06 追加 ──────────────────────────────
+  "ozu-kyoshitsu-koza": { file: "photos/ozu-photo-16.jpg" },
+  "ozu-iinkai-jikko": { file: "photos/ozu-photo-20.jpg" },
+  "ozu-kinenbi-mise": { file: "photos/ozu-photo-03.jpg" },
 };
 
 const OZU_ARTICLE_PHOTO_WANTED = [

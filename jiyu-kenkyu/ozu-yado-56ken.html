@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>大洲の宿は56軒。予約サイトに出てくるのは11軒だった ｜ 大洲の自由研究 ｜ OZU LIFE MEMO</title>
+<meta name="description" content="大洲市にいくつ宿があるのかを、県のオープンデータ・市の観光サイト・予約サイトの3つで数えたら、56軒・26軒・11軒と全部違った。旅館業の許可一覧を1件ずつ集計して、種別の内訳、許可を取った年、市が持っている宿、チェーンと個人経営の比率、そして大洲市民が1泊するなら現実的にどこかまでを調べた。">
+<link rel="icon" href="../assets/img/favicon-192.png">
+<link rel="alternate" type="application/rss+xml" title="OZU LIFE MEMO の更新" href="../feed.xml">
+<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link data-ozu-fonts rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;family=Shippori+Mincho+B1:wght@600;700&amp;display=swap">
+<link rel="stylesheet" href="../assets/css/style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="OZU LIFE MEMO">
+<meta property="og:title" content="大洲の宿は56軒。予約サイトに出てくるのは11軒だった ｜ 大洲の自由研究">
+<meta property="og:description" content="大洲市にいくつ宿があるのかを、県のオープンデータ・市の観光サイト・予約サイトの3つで数えたら、56軒・26軒・11軒と全部違った。旅館業の許可一覧を1件ずつ集計して、種別の内訳、許可を取った年、市が持っている宿、チェーンと個人経営の比率、そして大洲市民が1泊するなら現実的にどこかまでを調べた。">
+<meta property="og:url" content="https://ozulifememo.github.io/ozu-life-memo/jiyu-kenkyu/ozu-yado-56ken.html">
+<meta property="og:image" content="https://ozulifememo.github.io/ozu-life-memo/assets/img/ogp-card.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://ozulifememo.github.io/ozu-life-memo/jiyu-kenkyu/ozu-yado-56ken.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "大洲の宿は56軒。予約サイトに出てくるのは11軒だった",
+  "description": "大洲市にいくつ宿があるのかを、県のオープンデータ・市の観光サイト・予約サイトの3つで数えたら、56軒・26軒・11軒と全部違った。旅館業の許可一覧を1件ずつ集計して、種別の内訳、許可を取った年、市が持っている宿、チェーンと個人経営の比率、そして大洲市民が1泊するなら現実的にどこかまでを調べた。",
+  "datePublished": "2026-09-06",
+  "dateModified": "2026-09-06",
+  "image": "https://ozulifememo.github.io/ozu-life-memo/assets/img/ogp-card.png",
+  "author": {"@type": "Organization", "name": "OZU LIFE MEMO"},
+  "publisher": {"@type": "Organization", "name": "OZU LIFE MEMO"},
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://ozulifememo.github.io/ozu-life-memo/jiyu-kenkyu/ozu-yado-56ken.html"}
+}
+</script>
+<style>
+  .jk-hero { background: linear-gradient(180deg, var(--color-surface-alt) 0%, transparent 100%); }
+  .jk-meta { display:flex; gap:14px; flex-wrap:wrap; margin-top:14px; font-size:.82rem; color:var(--color-text-muted); }
+  .jk-meta span { background:var(--color-surface); border:1px solid var(--color-border); border-radius:4px; padding:4px 12px; }
+  .jk-toc { background:var(--color-surface); border:1px solid var(--color-border); border-radius:var(--radius); padding:20px 24px; margin:32px 0; }
+  .jk-toc h2 { margin-top:0; font-size:1rem; }
+  .jk-toc ol { margin:0; padding-left:1.3em; color:var(--color-text-muted); line-height:2; font-size:.92rem; }
+  .jk-toc a { color:inherit; }
+  .jk-toc a:hover { color:var(--color-brand); }
+  .jk-section { max-width:760px; margin:0 auto; }
+  .jk-section h2 { color:var(--color-brand); font-size:1.35rem; margin:52px 0 16px; scroll-margin-top:20px; }
+  .jk-section h3 { color:var(--color-text); font-size:1.05rem; margin:28px 0 10px; }
+  .jk-section p.commentary { margin-bottom:16px; }
+  .jk-callout { background:var(--color-surface-alt); border-left:3px solid var(--color-brand); border-radius:4px; padding:14px 18px; margin:20px 0; font-size:.92rem; color:var(--color-text-muted); }
+  .jk-quote { border-left:3px solid var(--color-text-faint); background:var(--color-surface); padding:14px 20px; margin:20px 0; font-size:.93rem; line-height:1.9; }
+  .jk-quote .src { display:block; margin-top:8px; font-size:.78rem; color:var(--color-text-muted); }
+  .jk-code { background:var(--color-surface-alt); border:1px solid var(--color-border); border-radius:var(--radius); padding:16px 18px; margin:20px 0; overflow-x:auto; font-size:.85rem; line-height:1.7; }
+  .jk-code code { font-family:"SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace; white-space:pre; }
+  table.jk-table { width:100%; border-collapse:collapse; font-size:.88rem; margin:16px 0; }
+  table.jk-table th, table.jk-table td { text-align:left; padding:9px 12px; border-bottom:1px solid var(--color-border); vertical-align:top; }
+  table.jk-table th { color:var(--color-text-muted); font-weight:700; font-size:.78rem; }
+  .jk-table-wrap { overflow-x:auto; margin:16px 0; }
+  .jk-diagram { background:var(--color-surface); border:1px solid var(--color-border); border-radius:var(--radius); padding:16px 8px; overflow-x:auto; margin:24px 0; }
+  .jk-diagram svg { display:block; width:100%; height:auto; min-width:720px; }
+  .jk-fig-caption { text-align:center; font-size:.82rem; color:var(--color-text-muted); margin-top:10px; }
+  .jk-fn { font-size:.7em; vertical-align:super; color:var(--color-brand); text-decoration:none; }
+  .jk-footnotes { font-size:.85rem; color:var(--color-text-muted); border-top:1px solid var(--color-border); padding-top:20px; margin-top:56px; }
+  .jk-footnotes li { margin-bottom:8px; }
+  .jk-series-note { background:var(--color-surface-alt); border-radius:var(--radius); padding:16px 20px; font-size:.85rem; color:var(--color-text-muted); margin:32px auto; max-width:760px; }
+</style>
+</head>
+<body>
+
+<div data-site-header data-prefix="../"></div>
+
+<section class="jk-hero">
+  <div class="wrap" style="max-width:820px;">
+    <p style="font-size:.8rem;letter-spacing:.06em;color:var(--color-brand);font-weight:700;margin-bottom:10px;">大洲の自由研究 #24</p>
+    <h1 style="font-size:clamp(1.6rem,4vw,2.1rem);line-height:1.5;">大洲の宿は56軒。予約サイトに出てくるのは11軒だった</h1>
+    <p style="color:var(--color-text-muted);margin-top:14px;">
+      大洲市にある旅館業法の許可施設は56軒。ところが市の観光サイトに載っているのは26軒、楽天トラベルの大洲エリアで市内と確認できたのは11軒だった。同じ「大洲の宿」を数えているのに、名簿によって数が5倍違う。 56軒の内訳は簡易宿所が35軒でいちばん多い。そのうち12軒はNIPPONIA HOTEL 大洲 城下町の棟である。2020年以降に許可を取った23軒の半分以上が、この1軒の分散型ホテルだった。 全国チェーンと言えるのはスーパーホテル1軒だけ。残りは個人経営、地元法人、そして市の施設である。大洲市民が1泊するなら、温泉つき・作業向き・相部屋の3方向で現実的な選択肢を整理した。
+    </p>
+    <div class="jk-meta">
+      <span>読了目安 10〜15分</span>
+      <span>公開: 2026/09/06</span>
+      <span>調べた資料 21本</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap jk-section">
+
+    <div class="memou-intro">
+      <div class="memou-intro-figure">
+        <img src="../assets/img/memou-odoroki.svg" alt="" class="memou-intro-avatar" width="84" height="84" decoding="async">
+        <span class="memou-intro-name">メモう</span>
+      </div>
+      <div class="memou-intro-bubble">
+        <p>大洲に宿がいくつあるんか、3つの名簿で数えてみたんよ。</p>
+        <p>県の許可一覧は56軒、市の観光サイトは26軒、予約サイトで市内と分かったんは11軒。</p>
+        <p>おんなじもんを数えとるはずなのに、5倍ちがうんよ。</p>
+      </div>
+    </div>
+
+    <div class="jk-toc">
+      <h2>目次</h2>
+      <ol>
+        <li><a href="#ch1">同じ「大洲の宿」を、3つの名簿が違う数で言っている</a></li>
+        <li><a href="#ch2">いちばん確かな名簿は、県が持っている</a></li>
+        <li><a href="#ch3">内訳は簡易宿所が35軒。その3分の1がNIPPONIA</a></li>
+        <li><a href="#ch4">許可日で並べると、2020年に山ができる</a></li>
+        <li><a href="#ch5">市の名簿と県の名簿は、どこで食い違うのか</a></li>
+        <li><a href="#ch6">予約サイトに出てくるのは11軒</a></li>
+        <li><a href="#ch7">チェーンか、個人か</a></li>
+        <li><a href="#ch8">地区で見ると、半分が大洲地区にある</a></li>
+        <li><a href="#ch9">大洲市民が1泊するなら、どこか</a></li>
+        <li><a href="#ch10">「みんなで同じところに泊まる形」は、大洲にあるのか</a></li>
+        <li><a href="#ch11">青少年交流の家は、大人1泊2,500円。ただし条件がある</a></li>
+        <li><a href="#ch12">調べても分からなかったこと</a></li>
+      </ol>
+    </div>
+
+    <h2 id="ch1">同じ「大洲の宿」を、3つの名簿が違う数で言っている</h2>
+    <p class="commentary">大洲にいくつ宿があるのか。調べ始めてすぐ、答えが1つに決まらないことが分かった。</p>
+    <p class="commentary">・愛媛県が公開している<strong>旅館業法の許可施設一覧</strong>では、大洲市に<strong>56軒</strong><a href="#fn2" class="jk-fn">[二]</a></p>
+    <p class="commentary">・大洲市の公式観光サイト「VisitOzu」の「大洲のお宿」では、<strong>26軒</strong><a href="#fn8" class="jk-fn">[八]</a></p>
+    <p class="commentary">・市の観光情報ページ「宿泊情報」では、<strong>25軒</strong><a href="#fn7" class="jk-fn">[七]</a></p>
+    <p class="commentary">・楽天トラベルの「大洲」エリアの表示は26件だが、そのうち<strong>大洲市内にあると確認できたのは11軒</strong><a href="#fn9" class="jk-fn">[九]</a></p>
+    <p class="commentary">同じものを数えているつもりで、56軒と11軒が並んでいる。5倍の開きがある。</p>
+
+    <div class="jk-diagram">
+      <figure style="margin:0;">
+<svg viewBox="0 0 1140 250" role="img" aria-label="大洲の宿の数を3つの名簿で比べた横棒グラフ。愛媛県の旅館業許可一覧は56軒、大洲市公式観光サイトは26軒、楽天トラベルで市内と確認できたのは11軒。">
+<g font-size="13" fill="var(--color-text)">
+<text x="24" y="30" font-weight="700" font-size="14">同じ「大洲の宿」を、3つの名簿が違う数で言っている</text>
+<text x="318" y="85" text-anchor="end" font-size="12.5" fill="var(--color-text-muted)">愛媛県の旅館業許可一覧</text>
+<rect x="330" y="70" width="620" height="26" rx="3" fill="var(--color-brand)" fill-opacity="1"/>
+<text x="960" y="89" font-size="13" font-weight="700">56軒</text>
+<text x="318" y="141" text-anchor="end" font-size="12.5" fill="var(--color-text-muted)">大洲市公式観光サイト</text>
+<rect x="330" y="126" width="288" height="26" rx="3" fill="currentColor" fill-opacity="0.28"/>
+<text x="628" y="145" font-size="13" font-weight="700">26軒</text>
+<text x="318" y="197" text-anchor="end" font-size="12.5" fill="var(--color-text-muted)">楽天トラベル(市内と確認できた分)</text>
+<rect x="330" y="182" width="122" height="26" rx="3" fill="currentColor" fill-opacity="0.28"/>
+<text x="462" y="201" font-size="13" font-weight="700">11軒</text>
+<text x="24" y="238" font-size="11.5" fill="var(--color-text-muted)">許可を持つ56軒のうち45軒は、予約サイトの一覧に出てこない</text>
+</g></svg>
+      </figure>
+    </div>
+    <p class="jk-fig-caption">図1　同じ「大洲の宿」を数えた3つの名簿。出典は愛媛県オープンデータ・VisitOzu・楽天トラベル（2026年9月6日時点）</p>
+
+    <p class="commentary">この記事は、この差がどこから来るのかを追いかけたものだ。名簿を突き合わせると、大洲の宿がどういう構成でできているかが見えてくる。</p>
+    <h2 id="ch2">いちばん確かな名簿は、県が持っている</h2>
+    <p class="commentary">まず基準になる名簿を決める。予約サイトは載せる載せないを事業者が選べるので、母集団にならない。市の観光サイトも同じで、掲載を希望した施設が並ぶ。</p>
+    <p class="commentary">その点、<strong>旅館業法の許可</strong>は違う。宿泊料を受けて人を泊める営業をするには、都道府県知事（保健所を置く市は市長）の許可が要る。許可がなければ営業できない。だから許可の一覧は、営業している宿の全部が載る名簿に近い。</p>
+    <p class="commentary">愛媛県は、松山市を除く県内の許可施設一覧を<strong>オープンデータ</strong>として公開している<a href="#fn1" class="jk-fn">[一]</a>。毎年1回、全施設の一覧が更新される。この記事では「令和7年12月末時点」のファイル（県内726件）を落として、住所が「大洲市」で始まる行を抜き出した<a href="#fn2" class="jk-fn">[二]</a>。それが<strong>56軒</strong>である。</p>
+    <p class="commentary">なお県の注記どおり、この一覧は松山市分を含まない。大洲市を調べる分には関係がない。</p>
+    <h2 id="ch3">内訳は簡易宿所が35軒。その3分の1がNIPPONIA</h2>
+    <p class="commentary">56軒を、許可の種別で分けるとこうなる。</p>
+    <div class="article-table-wrap"><table class="jk-table">
+      <tr><th>種別</th><th>軒数</th></tr>
+      <tr><td>簡易宿所</td><td>35軒</td></tr>
+      <tr><td>旅館</td><td>15軒</td></tr>
+      <tr><td>ホテル</td><td>5軒</td></tr>
+      <tr><td>旅館・ホテル</td><td>1軒</td></tr>
+      <tr><td><strong>合計</strong></td><td><strong>56軒</strong></td></tr>
+    </table></div>
+    <p class="commentary">いちばん多いのは<strong>簡易宿所</strong>である。ここで「簡易」を安っぽいという意味に読むと間違える。旅館業法の定義では、簡易宿所営業は「客室を多数人で共用する構造及び設備を主とする施設を設け、宿泊料を受けて人を宿泊させる営業」<a href="#fn3" class="jk-fn">[三]</a>。つまり<strong>部屋の作りによる区分</strong>であって、値段や質の区分ではない。</p>
+    <p class="commentary">実際、大洲でいちばん高い宿もこの区分に入る。<strong>NIPPONIA HOTEL 大洲 城下町</strong>は、城下町に点在する古民家を1棟ずつ改装した分散型のホテルで、県の一覧には<strong>12件</strong>の簡易宿所として別々に登録されている。浦岡邸、いづみや別館、村上邸、MITI棟、MUNE棟、TAKE棟が2つ、YUKI棟、ATU棟、ZUMI棟、TOKI棟、MOTO棟。</p>
+    <p class="commentary">簡易宿所35軒のうち12軒、つまり<strong>3分の1がNIPPONIA1軒分</strong>である。予約サイトでは「NIPPONIA HOTEL 大洲 城下町」という1つの宿として出てくる<a href="#fn11" class="jk-fn">[十一]</a>。名簿の数え方と、泊まる側の数え方が、ここでいちばん大きくずれる。</p>
+    <p class="commentary">もう1つ、種別の欄を読むときの注意がある。「ホテル」と「旅館」と「旅館・ホテル」が混ざっているのは、<strong>法律が途中で変わったから</strong>だ。平成30年施行の改正で、それまで分かれていたホテル営業と旅館営業が「旅館・ホテル営業」に統合された<a href="#fn4" class="jk-fn">[四]</a>。だから改正前に許可を取った施設は今も「ホテル」「旅館」と書かれていて、改正後に取ったものだけが「旅館・ホテル」になる。大洲でこの表記なのは、令和2年1月に許可を取った<strong>ホテル フォレスト</strong>の1軒だけだった。</p>
+    <p class="commentary">名簿の中に、法律の年輪が残っている。</p>
+    <h2 id="ch4">許可日で並べると、2020年に山ができる</h2>
+    <p class="commentary">56軒を、許可を取った年で10年ごとに束ねた。</p>
+    <div class="article-table-wrap"><table class="jk-table">
+      <tr><th>年代</th><th>軒数</th></tr>
+      <tr><td>1960年代</td><td>3軒</td></tr>
+      <tr><td>1970年代</td><td>1軒</td></tr>
+      <tr><td>1980年代</td><td>7軒</td></tr>
+      <tr><td>1990年代</td><td>7軒</td></tr>
+      <tr><td>2000年代</td><td>6軒</td></tr>
+      <tr><td>2010年代</td><td>9軒</td></tr>
+      <tr><td>2020年代（〜2025年）</td><td><strong>23軒</strong></td></tr>
+    </table></div>
+
+    <div class="jk-diagram">
+      <figure style="margin:0;">
+<svg viewBox="0 0 1140 430" role="img" aria-label="大洲市の宿が旅館業の許可を取った年を10年ごとに数えた棒グラフ。1960年代3軒、1970年代1軒、1980年代7軒、1990年代7軒、2000年代6軒、2010年代9軒、2020年代23軒。2020年代の23軒のうち12軒はNIPPONIA HOTEL 大洲 城下町の棟である。">
+<g font-size="12" fill="var(--color-text)">
+<text x="24" y="30" font-weight="700" font-size="14">大洲市の宿が旅館業の許可を取った年（10年ごと・令和7年12月末時点の56軒）</text>
+<line x1="110" y1="360" x2="1010" y2="360" stroke="currentColor" stroke-opacity="0.1"/>
+<text x="102" y="364" text-anchor="end" font-size="10.5" fill="var(--color-text-muted)">0軒</text>
+<line x1="110" y1="300" x2="1010" y2="300" stroke="currentColor" stroke-opacity="0.1"/>
+<text x="102" y="304" text-anchor="end" font-size="10.5" fill="var(--color-text-muted)">5軒</text>
+<line x1="110" y1="239" x2="1010" y2="239" stroke="currentColor" stroke-opacity="0.1"/>
+<text x="102" y="243" text-anchor="end" font-size="10.5" fill="var(--color-text-muted)">10軒</text>
+<line x1="110" y1="179" x2="1010" y2="179" stroke="currentColor" stroke-opacity="0.1"/>
+<text x="102" y="183" text-anchor="end" font-size="10.5" fill="var(--color-text-muted)">15軒</text>
+<line x1="110" y1="118" x2="1010" y2="118" stroke="currentColor" stroke-opacity="0.1"/>
+<text x="102" y="122" text-anchor="end" font-size="10.5" fill="var(--color-text-muted)">20軒</text>
+<rect x="122" y="324" width="74" height="36" rx="2" fill="currentColor" fill-opacity="0.28"/>
+<text x="159" y="316" text-anchor="middle" font-size="13" font-weight="700">3</text>
+<text x="159" y="380" text-anchor="middle" font-size="11.5" fill="var(--color-text-muted)">1960年代</text>
+<rect x="250" y="348" width="74" height="12" rx="2" fill="currentColor" fill-opacity="0.28"/>
+<text x="287" y="340" text-anchor="middle" font-size="13" font-weight="700">1</text>
+<text x="287" y="380" text-anchor="middle" font-size="11.5" fill="var(--color-text-muted)">1970年代</text>
+<rect x="378" y="275" width="74" height="85" rx="2" fill="currentColor" fill-opacity="0.28"/>
+<text x="415" y="267" text-anchor="middle" font-size="13" font-weight="700">7</text>
+<text x="415" y="380" text-anchor="middle" font-size="11.5" fill="var(--color-text-muted)">1980年代</text>
+<rect x="506" y="275" width="74" height="85" rx="2" fill="currentColor" fill-opacity="0.28"/>
+<text x="543" y="267" text-anchor="middle" font-size="13" font-weight="700">7</text>
+<text x="543" y="380" text-anchor="middle" font-size="11.5" fill="var(--color-text-muted)">1990年代</text>
+<rect x="634" y="288" width="74" height="72" rx="2" fill="currentColor" fill-opacity="0.28"/>
+<text x="671" y="280" text-anchor="middle" font-size="13" font-weight="700">6</text>
+<text x="671" y="380" text-anchor="middle" font-size="11.5" fill="var(--color-text-muted)">2000年代</text>
+<rect x="762" y="251" width="74" height="109" rx="2" fill="currentColor" fill-opacity="0.28"/>
+<text x="799" y="243" text-anchor="middle" font-size="13" font-weight="700">9</text>
+<text x="799" y="380" text-anchor="middle" font-size="11.5" fill="var(--color-text-muted)">2010年代</text>
+<rect x="890" y="82" width="74" height="278" rx="2" fill="currentColor" fill-opacity="0.28"/>
+<rect x="890" y="82" width="74" height="145" rx="2" fill="var(--color-brand)"/>
+<text x="927" y="158" text-anchor="middle" font-size="11" fill="#fff" font-weight="700">うち12</text>
+<text x="927" y="58" text-anchor="middle" font-size="11" fill="var(--color-brand)" font-weight="700">NIPPONIA 12棟</text>
+<text x="927" y="74" text-anchor="middle" font-size="13" font-weight="700">23</text>
+<text x="927" y="380" text-anchor="middle" font-size="11.5" fill="var(--color-text-muted)">2020年代</text>
+<line x1="110" y1="360" x2="1010" y2="360" stroke="currentColor" stroke-opacity="0.35"/>
+<text x="24" y="408" font-size="11.5" fill="var(--color-text-muted)">直近6年の23軒が、それ以前の半世紀ぶん33軒より多い。ただしその半分以上は分散型ホテル1軒の棟数である</text>
+</g></svg>
+      </figure>
+    </div>
+    <p class="jk-fig-caption">図2　許可日で並べた56軒。出典は愛媛県オープンデータ「旅館業施設一覧（令和7年12月末時点）」を筆者が集計</p>
+
+    <p class="commentary">半世紀ぶんを合わせた33軒より、<strong>直近6年の23軒のほうが多い</strong>。56軒の41%が2020年以降の許可である。</p>
+    <p class="commentary">ただしこれは「大洲に宿が急増した」という話ではない。23軒のうち<strong>12軒がNIPPONIAの棟</strong>だからだ。それを除くと11軒で、2010年代の9軒と大きくは変わらない。</p>
+    <p class="commentary">いちばん古い許可は、<strong>旅館「寿」</strong>（大洲559）の昭和35年1月20日。次が<strong>ときわ</strong>（中村629）の昭和37年、<strong>松楽旅館</strong>（大洲727-2）の昭和44年である。ときわ旅館と松楽旅館は、いまも市の宿泊情報に載っている<a href="#fn7" class="jk-fn">[七]</a>。60年以上、同じ場所で営業を続けている宿が大洲にある。</p>
+    <p class="commentary">一覧を眺めていて意外だったのは、<strong>出石寺</strong>（豊茂乙1）が昭和53年に旅館の許可を取っていることだった。標高820mの山上にある寺で、区分は「旅館」。宿坊が旅館業の許可を取っている形である。</p>
+    <h2 id="ch5">市の名簿と県の名簿は、どこで食い違うのか</h2>
+    <p class="commentary">県の56軒と、市の25〜26軒を突き合わせた。</p>
+    <p class="commentary"><strong>市の名簿にあって県の名簿にない宿</strong>があった。市の宿泊情報に載っている「<strong>城下の宿 燈（ともしび）</strong>」（大洲935-8）が、旅館業の許可一覧に出てこない。</p>
+    <p class="commentary">理由は、別の法律で営業しているからだ。2018年に施行された<strong>住宅宿泊事業法</strong>、いわゆる民泊新法である。こちらは旅館業の「許可」ではなく「<strong>届出</strong>」で、名簿も別に管理されている<a href="#fn5" class="jk-fn">[五]</a>。</p>
+    <p class="commentary">愛媛県が公開している届出住宅一覧（令和8年6月18日現在）を見ると、大洲市内の届出は<strong>3件</strong><a href="#fn6" class="jk-fn">[六]</a>。所在地は「大洲市大洲935-8」「大洲市大洲936-7」「大洲市長浜町黒田甲180-2」で、<strong>施設の名前は載っていない</strong>。この一覧は所在地しか公表しない作りになっていて、しかも届出者の申出により所在地さえ公表していない住宅がある、と注記されている。</p>
+    <p class="commentary">つまり、大洲で泊まれる場所は「旅館業の許可56軒＋民泊の届出3軒」で<strong>少なくとも59軒</strong>あり、そのうち3軒は名前が公表されていない。</p>
+    <p class="commentary">逆に、<strong>県の名簿にあって市の名簿にない宿</strong>もある。「文麗」（新谷甲1990）、「おやど Chez 利太郎」（森山甲930-3）、「株式会社 暖暖」（菅田町菅田甲934）、「山荘 蔵川」、「春賀の里」、「松本旅館」、「大洲市移住お試し住宅」。市の観光サイトは観光客に紹介する宿を載せる場所なので、載らないものがあるのは当然でもある。</p>
+    <p class="commentary">同じ市が出している2つのページの間にも差がある。観光情報ページの25軒に対し、VisitOzuの26軒には「Palette STAYs」「農家民宿Tal」が入っていて、うめたこの表記も違う。<strong>どちらが正しいという話ではなく、更新のタイミングが違う</strong>のだと思う。</p>
+    <h2 id="ch6">予約サイトに出てくるのは11軒</h2>
+    <p class="commentary">楽天トラベルの「大洲」エリアには26件が並ぶ。ただしこのエリアは内子町を含んでいて、内子の一棟貸しの宿が10軒以上を占めている<a href="#fn9" class="jk-fn">[九]</a>。JR四国のリリースで所在地が確認できた「あかり by 4S STAY」も内子町だった<a href="#fn20" class="jk-fn">[二十]</a>。</p>
+    <p class="commentary">大洲市内にあると確認できたのは、次の11軒である。</p>
+    <p class="commentary">スーパーホテル愛媛・大洲インター、オオズプラザホテル、松楽旅館、ホテルオータ、NIPPONIA HOTEL 大洲 城下町、鹿野川荘、Cafe&amp;Hotel Palette STAYs、まろや四季、料苑たる井、城下の宿 燈、綿六旅館。</p>
+    <p class="commentary">じゃらんnetの大洲市のページも見たが、こちらは表示に鬼北町や内子町の宿が混ざっていて、市内だけを正確に数えることができなかった<a href="#fn10" class="jk-fn">[十]</a>。<strong>エリアの切り方がサイトごとに違う</strong>ので、「じゃらんにしかない宿」「楽天にしかない宿」を厳密に比べるのは、この方法では難しい。今回はそこまで届いていない。</p>
+    <p class="commentary">はっきり言えるのはこちらだ。<strong>許可を持っている56軒のうち、45軒は予約サイトの一覧に出てこない</strong>。電話でしか予約できない宿、市の施設として別の窓口で受け付けている宿、そもそも一般の観光客を主な客にしていない宿が、その45軒にあたる。</p>
+    <p class="commentary">「特定のサイトにしかない宿はあるか」という問いへの答えは、<strong>サイト同士の差より、サイトに載るか載らないかの差のほうがずっと大きい</strong>、になる。</p>
+    <h2 id="ch7">チェーンか、個人か</h2>
+    <p class="commentary">56軒を運営の形で見る。</p>
+    <p class="commentary">全国チェーンとはっきり言えるのは、<strong>スーパーホテル愛媛・大洲インター</strong>の1軒だけである。平成30年5月の許可で、東大洲1487。大洲インターのそばにある。</p>
+    <p class="commentary"><strong>NIPPONIA HOTEL</strong> は全国に展開しているブランドだが、大洲は事情が違う。市が出資してつくった一般社団法人<strong>キタ・マネジメント</strong>が、城下町の古民家の再生と運営に関わっている<a href="#fn21" class="jk-fn">[二十一]</a>。ブランドは全国、器と担い手は地元、という組み合わせだ。この1軒については別の自由研究で8都市と比べているので、ここでは深入りしない。</p>
+    <p class="commentary">残りは、個人経営か地元の法人か、<strong>市の施設</strong>である。名前を見ただけで公共のものと分かるものが5軒あった。</p>
+    <div class="article-table-wrap"><table class="jk-table">
+      <tr><th>施設</th><th>所在地</th><th>許可</th></tr>
+      <tr><td>大洲市交流促進センター「鹿野川荘」</td><td>肱川町宇和川588-1</td><td>平成9年</td></tr>
+      <tr><td>大洲家族旅行村コテージ</td><td>菅田町大竹乙938-1</td><td>平成10年</td></tr>
+      <tr><td>農村体験宿泊施設 望湖荘</td><td>肱川町予子林97-1</td><td>令和2年</td></tr>
+      <tr><td>ふれあいの里 鹿鳴園 ケビン</td><td>肱川町予子林94</td><td>令和2年</td></tr>
+      <tr><td>大洲市移住お試し住宅</td><td>田口甲2022-4</td><td>令和4年</td></tr>
+    </table></div>
+    <p class="commentary">このほか河辺町に「河辺ふるさとの宿」「交流館 才谷屋」「あまごの里」「いわな荘」の4軒があり、これらは旧河辺村時代からの地域の施設である。運営形態までは許可の一覧からは分からないので、断定はしない。</p>
+    <p class="commentary">さらに、<strong>「大洲城」そのものが令和2年6月に簡易宿所の許可を取っている</strong>。いわゆる城泊だ。名簿の上では、天守が宿の1軒として数えられている。</p>
+    <p class="commentary">まとめると、<strong>大洲の宿はチェーンより個人経営と公共施設のほうが圧倒的に多い</strong>。56軒のうち、全国チェーンは1軒。この構成は、宿の探し方にそのまま効いてくる。チェーンなら公式サイトを見れば料金が分かるが、個人経営の宿は電話をかけないと分からないことが多い。市の宿泊情報ページに「宿泊料金につきましては、各宿泊施設へお問い合わせください」と書かれているのは、そういう理由だろう<a href="#fn7" class="jk-fn">[七]</a>。</p>
+    <h2 id="ch8">地区で見ると、半分が大洲地区にある</h2>
+    <p class="commentary">56軒を地区で分けた。長浜・肱川・河辺・新谷・八多喜・菅田・平野・東大洲・徳森・田口を分けて数えると、残る<strong>大洲地区（旧市街と大洲本町を含む）に28軒</strong>、ちょうど半分が集まっている。</p>
+    <p class="commentary">肱川町4軒、河辺町4軒、徳森4軒、田口3軒、東大洲3軒、新谷2軒、菅田2軒、長浜2軒、平野2軒、八多喜1軒。</p>
+    <p class="commentary">大洲地区の28軒には、NIPPONIAの12棟が含まれる。それを引いても16軒で、やはりいちばん多い。<strong>歩いて居酒屋に行ける場所に宿がある</strong>という条件で言えば、選択肢は肱南に集中している。</p>
+
+    <div class="memou-aside">
+      <div class="memou-aside-figure">
+        <img src="../assets/img/memou-hirameki.svg" alt="" class="memou-aside-avatar" width="64" height="64" decoding="async">
+      </div>
+      <div class="memou-aside-bubble">
+        <p>ここまでが、名簿と数の話。</p>
+        <p>ここからは、大洲に住んどる人が自分で1泊するならどこか、っていう話。</p>
+        <p>温泉と、部屋で作業する用と、相部屋。3つの向きで並べてみたけん。</p>
+      </div>
+    </div>
+
+    <h2 id="ch9">大洲市民が1泊するなら、どこか</h2>
+    <p class="commentary">ここまでは名簿の話だ。ここからは、<strong>市内に住んでいる人が、自分の家ではない場所で1泊する</strong>という使い方で選び直す。</p>
+    <p class="commentary"><strong>温泉に入りたいなら3つある。</strong></p>
+    <p class="commentary">・<strong>スーパーホテル愛媛・大洲インター</strong>は天然温泉「朝霧の湯」を持っている。男女別の大浴場、無料の平面駐車場、朝食が無料。じゃらんのクチコミでは、朝食が無料なのにメニューが充実していること、石鎚コシヒカリやじゃこ天といった地元の食材が出ることが繰り返し挙げられている<a href="#fn15" class="jk-fn">[十五]</a>。</p>
+    <p class="commentary">・<strong>鹿野川荘</strong>は市の交流促進センターで、肱川町宇和川。鹿野川湖のそばにある。</p>
+    <p class="commentary">・<strong>小薮温泉</strong>は、日帰り入浴が<strong>大人600円・小人300円・貸しタオル50円</strong>、営業は10時から19時、第2・第4火曜が休み<a href="#fn13" class="jk-fn">[十三]</a>。桧風呂（男湯）と岩風呂（女湯）があり、木造3階建ての2階の大広間が無料の休憩室として開放されている。ここは建物そのものが見どころで、<strong>本館が国の登録有形文化財</strong>（平成12年9月26日登録）。大正11年ごろの建築とされる木造入母屋造の三層楼閣風の温泉旅館で、県内でも三層楼閣風の木造旅館建築は数少ない、と市の文化財のページに書かれている<a href="#fn12" class="jk-fn">[十二]</a>。ちなみに市の文化財のページは「小藪温泉」、県の許可一覧と宿の公式サイトは「小薮温泉」と表記が分かれている。</p>
+    <p class="commentary"><strong>部屋で作業や読書をするなら、オオズプラザホテル</strong>が現実的だ。楽天トラベルのクチコミは634件で総合3.85、項目別では朝食3.93がいちばん高い<a href="#fn14" class="jk-fn">[十四]</a>。卵かけご飯が繰り返し褒められている。ビジネスホテルにしては部屋が広い（ツインで23平米）という評価も多い。東大洲1341で大洲インターのそば、周りにショッピングセンターと飲食店がある。</p>
+    <p class="commentary"><strong>町中に歩いて出たいなら、肱南に泊まる。</strong> 大洲地区の宿なら、大洲城も臥龍山荘もおおず赤煉瓦館も徒歩圏にある。</p>
+    <h2 id="ch10">「みんなで同じところに泊まる形」は、大洲にあるのか</h2>
+    <p class="commentary">相部屋やドミトリーのことを、旅館業法は<strong>簡易宿所営業</strong>と呼ぶ。「客室を多数人で共用する構造及び設備を主とする施設」だからだ<a href="#fn3" class="jk-fn">[三]</a>。</p>
+    <p class="commentary">ただし、これまで見てきたとおり、<strong>大洲の簡易宿所35軒がそのまま相部屋を売っているわけではない</strong>。NIPPONIAの12棟も、コテージも、市の移住お試し住宅も、この区分に入っている。区分は建物の作りで決まるので、実際の泊まり方とは一致しない。</p>
+    <p class="commentary">ゲストハウスとして運営されているものは、<strong>はたご屋 霧中</strong>（大洲本町2丁目146）である。築140年ほどの文具店だった建物を改装して2019年に開いた宿で、共用のシャワーとWi-Fiがあり、1階に<strong>Cafe&amp;Bar 霧隠れ</strong>が入っている<a href="#fn17" class="jk-fn">[十七]</a>。臥龍山荘・大洲城・おおず赤煉瓦館が歩ける距離にある。市のふるさと納税の返礼品に、1名1泊5,000円分の宿泊券が出ている<a href="#fn16" class="jk-fn">[十六]</a>。</p>
+    <p class="commentary">カプセルホテルと漫画喫茶は、調べた範囲では大洲市内に見つからなかった。旅館業の許可一覧にカプセルホテル形式のものはなく、県内でその形態はほぼ松山に集中している。</p>
+    <h2 id="ch11">青少年交流の家は、大人1泊2,500円。ただし条件がある</h2>
+    <p class="commentary">安く泊まるという一点で言えば、いちばん安いのは<strong>国立大洲青少年交流の家</strong>である。</p>
+    <p class="commentary">令和8年4月からの価格表によると、宿泊棟の施設使用料はこうなっている<a href="#fn18" class="jk-fn">[十八]</a>。</p>
+    <div class="article-table-wrap"><table class="jk-table">
+      <tr><th>区分</th><th>1泊あたり</th></tr>
+      <tr><td>大人（18歳以上）</td><td>2,500円</td></tr>
+      <tr><td>学生</td><td>1,200円</td></tr>
+      <tr><td>子供（小学生〜高校生）</td><td>600円</td></tr>
+      <tr><td>幼児（年少〜年長）</td><td>300円</td></tr>
+      <tr><td>幼児（年少未満）</td><td>無料</td></tr>
+    </table></div>
+    <p class="commentary">テント泊なら大人1,200円、キャンプセンター泊なら1,500円。食事は別に注文でき、カヌー・マウンテンバイク・スポーツクライミング・天体観察・茶道といった活動プログラムも1人50円から用意されている。</p>
+    <p class="commentary">ただし、<strong>ふらっと1人で泊まれる施設ではない</strong>。公式の「はじめての方へ」によると、利用できるのは「成人または青年の引率責任者が定められていて、具体的な計画を持っている」場合で、対象は学校、ボランティア団体、スポーツ団体、子ども会、PTA、企業や官公庁の研修、そして<strong>家族</strong>である<a href="#fn19" class="jk-fn">[十九]</a>。家族での利用は認められている。</p>
+    <p class="commentary">申込の時期にも決まりがある。宿泊は、4〜7月と9〜10月なら6か月前から2か月前まで、8月と11月〜3月なら1年前から2か月前まで<a href="#fn19" class="jk-fn">[十九]</a>。<strong>2か月前には申し込みが締まる</strong>ので、思い立って明日というわけにはいかない。</p>
+    <p class="commentary">つまりこの施設は、<strong>宿の一覧に並べて値段で比べる相手ではない</strong>。56軒の名簿にも入っていない。同じ「大洲で泊まれる場所」でも、旅館業の許可でも民泊の届出でもなく、国の青少年教育施設として別の枠にいる。家族や仲間と何かをしに行くという条件を満たしたときだけ、1泊2,500円という数字が使えるものになる。</p>
+    <h2 id="ch12">調べても分からなかったこと</h2>
+    <p class="commentary">最後に、この調べ方の限界を書いておく。</p>
+    <p class="commentary"><strong>第一に、許可の一覧は「営業許可がある」ことしか示していない。</strong> 実際に営業しているかどうかは分からない。休業中の宿も、許可を返していなければ一覧に残る。56軒すべてが今日泊まれるとは限らない。</p>
+    <p class="commentary"><strong>第二に、部屋数と定員が分からない。</strong> 県の一覧に載っているのは施設名・所在地・電話番号・許可日・種別だけで、規模の情報がない。だから「大洲に何人泊まれるか」はこの方法では出せなかった。1軒が12棟に分かれるNIPPONIAのような形があると、軒数と収容力の関係はますますずれる。</p>
+    <p class="commentary"><strong>第三に、予約サイトごとの厳密な比較ができていない。</strong> エリアの区切りがサイトごとに違い、じゃらんの大洲市のページには近隣市町の宿が混ざって表示された。「このサイトにしかない宿」を確実に言うには、56軒を1軒ずつ各サイトで検索する必要がある。今回はそこまでやっていない。</p>
+    <p class="commentary"><strong>第四に、民泊の3件は名前が分からない。</strong> 所在地しか公表されていないので、どんな宿なのかは追えなかった。</p>
+    <p class="commentary">それでも、数えてみて分かったことが1つある。<strong>大洲の宿を「予約サイトで探す」と、実際の5分の1しか見ていないことになる</strong>。残りの45軒は、市の観光サイトか、電話か、地元の人の口からしか出てこない。宿が少ないのではなく、宿の名簿が、探す人の目に届く形になっていないだけだった。</p>
+
+    <div class="jk-footnotes">
+      <p style="font-weight:700;color:var(--color-text);margin-bottom:10px;">出典</p>
+      <ol>
+        <li id="fn1"><a href="https://www.pref.ehime.jp/opendata-catalog/dataset/2312.html" target="_blank" rel="noopener">旅館業一覧／愛媛県オープンデータ</a>（2026年9月6日取得）</li>
+        <li id="fn2"><a href="https://www.pref.ehime.jp/opendata-catalog/dataset/2312/resource/23278/%E6%97%85%E9%A4%A8%E6%A5%AD%E6%96%BD%E8%A8%AD%E4%B8%80%E8%A6%A7%EF%BC%88%E4%BB%A4%E5%92%8C%EF%BC%97%E5%B9%B412%E6%9C%88%E6%9C%AB%E6%99%82%E7%82%B9%EF%BC%89.xlsx" target="_blank" rel="noopener">旅館業施設一覧（令和7年12月末時点）／愛媛県オープンデータ</a>（2026年1月16日更新。県内726件のうち大洲市分56件をこの記事で集計した）</li>
+        <li id="fn3"><a href="https://www.pref.ehime.jp/page/74113.html" target="_blank" rel="noopener">旅館業に関する手続き／愛媛県</a>（2026年9月6日閲覧。営業の種別の定義）</li>
+        <li id="fn4"><a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000110603.html" target="_blank" rel="noopener">旅館業のページ／厚生労働省</a>（2026年9月6日閲覧。平成30年施行の改正でホテル営業と旅館営業が「旅館・ホテル営業」に統合されたことの出典）</li>
+        <li id="fn5"><a href="https://www.pref.ehime.jp/page/57100.html" target="_blank" rel="noopener">住宅宿泊事業について／愛媛県</a>（2026年9月6日閲覧）</li>
+        <li id="fn6"><a href="https://www.pref.ehime.jp/uploaded/attachment/183345.pdf" target="_blank" rel="noopener">住宅宿泊事業法に基づく届出住宅一覧（令和8年6月18日現在）／愛媛県</a>（大洲市内3件。届出者の申出により所在地を公表していない住宅がある旨の注記つき）</li>
+        <li id="fn7"><a href="https://www.city.ozu.ehime.jp/site/kanko/15461.html" target="_blank" rel="noopener">宿泊情報／大洲市観光情報</a>（掲載日 2025年4月16日。25軒。市サイトが応答しないため Internet Archive の2026年5月8日保存版で確認した）</li>
+        <li id="fn8"><a href="https://jp.visitozu.com/inn" target="_blank" rel="noopener">大洲のお宿／VisitOzu（大洲市公式観光情報）</a>（2026年9月6日閲覧。26軒）</li>
+        <li id="fn9"><a href="https://search.travel.rakuten.co.jp/ds/hotellist/Japan-Ehime-Ozu" target="_blank" rel="noopener">大洲のホテル・旅館 宿泊予約（愛媛県）／楽天トラベル</a>（2026年9月6日閲覧。エリア表示26件）</li>
+        <li id="fn10"><a href="https://www.jalan.net/380000/CTY_020000000001621/" target="_blank" rel="noopener">大洲市のホテル・旅館・宿泊施設／じゃらんnet</a>（2026年9月6日閲覧）</li>
+        <li id="fn11"><a href="https://www.ozucastle.com/stay" target="_blank" rel="noopener">ご宿泊／NIPPONIA HOTEL 大洲 城下町 公式</a>（2026年9月6日閲覧）</li>
+        <li id="fn12"><a href="https://www.city.ozu.ehime.jp/site/bunkazai/16879.html" target="_blank" rel="noopener">小藪温泉本館／大洲市「わがまちの文化財」</a>（掲載日 2016年12月26日。国登録有形文化財、平成12年9月26日登録。Internet Archive の2024年2月27日保存版で確認）</li>
+        <li id="fn13"><a href="http://www.oyabu-hotspring.com/nyuyoku.html" target="_blank" rel="noopener">日帰り入浴／小薮温泉 公式</a>（2026年9月6日閲覧。大人600円・小人300円・貸しタオル50円）</li>
+        <li id="fn14"><a href="https://travel.rakuten.co.jp/HOTEL/67302/review.html" target="_blank" rel="noopener">オオズプラザホテル クチコミ・レビュー／楽天トラベル</a>（2026年9月6日閲覧。634件・総合3.85）</li>
+        <li id="fn15"><a href="https://www.jalan.net/yad377042/kuchikomi/archive/" target="_blank" rel="noopener">スーパーホテル愛媛・大洲インター 天然温泉 朝霧の湯 クチコミ／じゃらんnet</a>（2026年9月6日閲覧）</li>
+        <li id="fn16"><a href="https://www.furusato-tax.jp/product/detail/38207/6346837" target="_blank" rel="noopener">カフェのあるゲストハウス「はたご屋 霧中」宿泊券／ふるさとチョイス（愛媛県大洲市）</a>（2026年9月6日閲覧）</li>
+        <li id="fn17"><a href="https://guide.visitozu.com/kirigakure01" target="_blank" rel="noopener">大洲に夢中になれる、地元の人が集う憩いの場／Cafe&amp;Bar 霧隠れ（VisitOzu ガイド）</a>（2026年9月6日閲覧）</li>
+        <li id="fn18"><a href="https://ozu.niye.go.jp/guide/assets/docs/R8kouryuunoiesiharai.pdf" target="_blank" rel="noopener">価格表（所要経費）令和8年4月〜／国立大洲青少年交流の家</a>（令和8年2月時点の予定）</li>
+        <li id="fn19"><a href="https://ozu.niye.go.jp/beginner/" target="_blank" rel="noopener">はじめての方へ／国立大洲青少年交流の家</a>（2026年9月6日閲覧。利用対象と申込時期）</li>
+        <li id="fn20"><a href="https://www.jr-shikoku.co.jp/03_news/press/assets/2026/03/06/2026%2003%2006%2001.pdf" target="_blank" rel="noopener">「4S STAY」9号店を愛媛県喜多郡内子町に開業／四国旅客鉄道</a>（2026年3月6日。「あかり by 4S STAY」が内子町であることの確認）</li>
+        <li id="fn21"><a href="https://kita-m.com/" target="_blank" rel="noopener">一般社団法人キタ・マネジメント</a>（2026年9月6日閲覧）</li>
+      </ol>
+    </div>
+
+    <div class="jk-series-note">
+      この記事は「大洲の自由研究」シリーズの24本目です。通常の<a href="../news/">大洲ノート</a>より
+      長く、専門的な内容を含みます。<a href="index.html">シリーズ一覧はこちら</a>。
+    </div>
+
+  </div>
+</section>
+
+<div data-site-footer></div>
+<div data-site-modal></div>
+<script src="../assets/js/site-chrome.js"></script>
+<script src="../assets/js/main.js"></script>
+<script data-goatcounter="https://ozulifememo.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

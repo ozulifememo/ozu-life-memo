@@ -5,8 +5,35 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Sun, 06 Sep 2026 19:03:05 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 06 Sep 2026 22:51:36 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大洲市の例規826本に「実行委員会」は1本もない。なのに1億円が動いていた</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-iinkai-jikko.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-iinkai-jikko.html</guid>
+      <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
+      <description>「〇〇委員会」と「〇〇実行委員会」は何が違うのかを、大洲市の例規集826本と市議会の会議録307回分を数えて調べた。市の例規に「実行委員会」は1本もないのに、会議録では国体の1億円やきずな博の1,736万円が実行委員会を通って動いている。作るのに手続きは要るのか、責任は分散するのかも調べた。</description>
+      <category>議会・行政</category>
+      <category>まちづくり</category>
+    </item>
+    <item>
+      <title>大洲の料理教室は受講料0円だった。市の教室13個と、自分で開くなら1時間100円</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kyoshitsu-koza.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kyoshitsu-koza.html</guid>
+      <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
+      <description>大洲市内に民間企業以外がやっている大人向けの教室はどれくらいあるのかを調べた。市の隣保館2館に13の教室があり、料理・木彫・編物・ヨーガまで受講料はすべて0円。無料の根拠は社会福祉法にあった。あわせて、自分で教室を開くときに部屋を借りる値段も調べている。</description>
+      <category>子育て・教育</category>
+      <category>まちづくり</category>
+    </item>
+    <item>
+      <title>記念日の店が大洲に少ない気がする。278軒を予算で並べたら8軒だった</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kinenbi-mise.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kinenbi-mise.html</guid>
+      <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
+      <description>結婚記念日に使えるような店が大洲には少ない、という感覚が正しいのかを数字で確かめた。食べログに載っている大洲市の飲食店278軒のうち、夜の予算が5,000円以上の店は8軒。南予9市町まで広げると31軒で、いちばん多いのは宇和島の9軒だった。8軒の顔ぶれと、ものさしの限界も書いた。</description>
+      <category>まちづくり</category>
+      <category>観光</category>
+    </item>
     <item>
       <title>大洲を変えられるのは誰か。327億円のうち、市が自分で決められるのは78億円だった</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-dare-ga-kimeru.html</link>
@@ -236,33 +263,6 @@
       <pubDate>Sat, 05 Sep 2026 09:00:00 +0900</pubDate>
       <description>議員から行政への働きかけを記録する制度。全国調査では、記録の要件を「違法・不当なもの」に絞った56自治体のうち記録があったのは4市だけで、要件を絞らない神戸市は3万2千件を超えた。大洲市は2017年3月の議会でこの制度を取り上げ、「判断が難しい」として検討にとどめている。</description>
       <category>議会・行政</category>
-      <category>まちづくり</category>
-    </item>
-    <item>
-      <title>大洲市に書店は何軒あるか。数え方を4通り試すと、1軒にも3軒にもなった</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-shoten-nanken.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-shoten-nanken.html</guid>
-      <pubDate>Sat, 05 Sep 2026 09:00:00 +0900</pubDate>
-      <description>大洲市内に書店は何軒あるのか。公式サイトで営業を確認できた店だけを、4通りのものさしで数え直した。全国の書店はピークの1998年度から27年で約6割減り、市町村の3割弱には1軒もない。</description>
-      <category>まちづくり</category>
-      <category>子育て・教育</category>
-    </item>
-    <item>
-      <title>「ひめボス宣言事業所」は大洲に何社あるのか。県の一覧1,049社を数えた</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/himeboss-ozu.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/himeboss-ozu.html</guid>
-      <pubDate>Sat, 05 Sep 2026 09:00:00 +0900</pubDate>
-      <description>愛媛県が認証する「ひめボス宣言事業所」は県内1,049社。一覧を最後まで数えたら大洲市内は40社で、事業所100社あたりに直すと県内4番目に多かった。県の認証と市の奨励金の違いも整理した。</description>
-      <category>産業・農業</category>
-      <category>子育て・教育</category>
-    </item>
-    <item>
-      <title>大洲ICから500m、9ヘクタールの産業団地。残り3区画の値段は坪9万円だった</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/higashi-ozu-sangyo-danchi.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/higashi-ozu-sangyo-danchi.html</guid>
-      <pubDate>Sat, 05 Sep 2026 09:00:00 +0900</pubDate>
-      <description>大洲市東大洲の産業団地は約9haを7区画に分けて分譲中で、2026年9月時点の募集は3区画。市のページに価格はないが、愛媛県の企業立地サイトには坪9万円と出ていた。調べた記録。</description>
-      <category>産業・農業</category>
       <category>まちづくり</category>
     </item>
   </channel>

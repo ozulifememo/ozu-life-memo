@@ -11360,6 +11360,35 @@
         }
       ]
     },
+    "ozu-iinkai-jikko": {
+      "path": "eachnews/ozu-iinkai-jikko.html",
+      "checks": [
+        {
+          "date": "2026-09-06",
+          "level": "human",
+          "by": "opus",
+          "result": "出典18本を実際に開いた",
+          "hash": "9cac8f12cf42",
+          "note": "最初895本と書いたが、各節ページに入る目次リンク69項目が混ざっていたので826本に訂正した。委員会も60→53本に訂正。金額は会議録4回分の該当答弁を本文で確認"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "machine",
+          "by": "opus",
+          "result": "エラー0",
+          "hash": "9cac8f12cf42",
+          "note": "check_site.py エラー0（レビュー卓を除く）"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "numbers",
+          "by": "opus",
+          "result": "826と307回が自作の集計",
+          "hash": "9cac8f12cf42",
+          "note": "例規集の体系目次101節をすべて取得し、全節共通のナビ69項目を除いて826本と数えた。会議録は tools/_gikai_cache の307ファイル"
+        }
+      ]
+    },
     "ozu-imotaki-makete": {
       "path": "eachnews/ozu-imotaki-makete.html",
       "checks": [
@@ -12325,6 +12354,35 @@
         }
       ]
     },
+    "ozu-kinenbi-mise": {
+      "path": "eachnews/ozu-kinenbi-mise.html",
+      "checks": [
+        {
+          "date": "2026-09-06",
+          "level": "human",
+          "by": "opus",
+          "result": "出典17本を実際に開いた",
+          "hash": "95eba98c0468",
+          "note": "食べログの予算別検索を大洲・宇和島・八幡浜・西予・内子・伊方・愛南・松野・鬼北の9市町ぶん個別に開いて件数と店名を確認。一休.comでルアンの席数36席と予算帯、ヒトサラで油屋のコース3種の価格、公式サイトで営業時間と定休日を確認した"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "machine",
+          "by": "opus",
+          "result": "エラー0",
+          "hash": "95eba98c0468",
+          "note": "check_site.py エラー0（レビュー卓を除く）"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "numbers",
+          "by": "opus",
+          "result": "26個中1個が自作の計算",
+          "hash": "95eba98c0468",
+          "note": "31/426=7.3% は自分で計算した数字。食べログ9市町の件数は各ページを個別に開いて数えた"
+        }
+      ]
+    },
     "ozu-kogyo-yosui": {
       "path": "eachnews/ozu-kogyo-yosui.html",
       "checks": [
@@ -12698,6 +12756,35 @@
           "result": "OK",
           "hash": "7d42573bf35a",
           "note": "2026-09-06、段落に落ちていた表と引用をarticle-table/blockquoteに組み直した。gitの前の版とタグを外した本文を突き合わせ、消えたのは表の区切り行(|---|---|)と、それに伴う読了時間の再計算だけで、文章そのものは変わっていないことを確かめたうえで記録し直した"
+        }
+      ]
+    },
+    "ozu-kyoshitsu-koza": {
+      "path": "eachnews/ozu-kyoshitsu-koza.html",
+      "checks": [
+        {
+          "date": "2026-09-06",
+          "level": "human",
+          "by": "opus",
+          "result": "出典14本を実際に開いた",
+          "hash": "a3c5e417b338",
+          "note": "隣保館2館の教室13個と施設使用料は市の該当ページ（Internet Archive保存版）を1行ずつ確認。無料の根拠は社会福祉法第2条第3項第11号の条文と厚労省の隣保館設置運営要綱まで当たった"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "machine",
+          "by": "opus",
+          "result": "エラー0",
+          "hash": "a3c5e417b338",
+          "note": "check_site.py エラー0（レビュー卓を除く）"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "numbers",
+          "by": "opus",
+          "result": "見つからず0個",
+          "hash": "a3c5e417b338",
+          "note": "櫛生福祉センターのページだけ市サイトが403で取れず。Internet Archive の保存版で目視確認済み"
         }
       ]
     },
@@ -15078,6 +15165,35 @@
           "by": "opus",
           "result": "61個中1個が未照合(通知書の生の桁22,230,485千円で、記事の222億3,000万円と一致)",
           "hash": "8d6600885ce3"
+        }
+      ]
+    },
+    "ozu-yado-56ken": {
+      "path": "jiyu-kenkyu/ozu-yado-56ken.html",
+      "checks": [
+        {
+          "date": "2026-09-06",
+          "level": "human",
+          "by": "opus",
+          "result": "出典21本を実際に開いた",
+          "hash": "d9644bbe9c56",
+          "note": "県オープンデータのxlsx（県内726件）を落として大洲市56件を自分で集計。種別内訳・許可年代・NIPPONIA12棟・公共施設5軒はこの集計から。民泊3件は県のPDFを開いて所在地を確認した"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "machine",
+          "by": "opus",
+          "result": "エラー0",
+          "hash": "d9644bbe9c56",
+          "note": "check_site.py エラー0（レビュー卓を除く）。図解2つ・調べても分からなかったことの章あり"
+        },
+        {
+          "date": "2026-09-06",
+          "level": "numbers",
+          "by": "opus",
+          "result": "4個は県のExcelから自分で集計した数字",
+          "hash": "d9644bbe9c56",
+          "note": "726件・大洲559・新谷甲1990・菅田町菅田甲934はいずれも旅館業施設一覧のxlsxの中身。テキスト抽出できないので照合に出ない"
         }
       ]
     },

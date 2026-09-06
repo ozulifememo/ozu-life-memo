@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-kaikei-nendo-ninyo",
+    date: "2026-09-07",
+    title: "市役所で働く人の47％は「1年ごとの職員」。大洲市の568人と、時給1,203円の中身",
+    category: "ima",
+    source: "大洲市「人事行政の運営等の状況」ほか",
+    sourceDate: "2026-09-06",
+    tags: ["議会・行政", "財政・税金"],
+  },
+  {
     slug: "ozu-joho-kokai-tsukaikata",
     date: "2026-09-07",
     title: "大洲市への情報公開請求は年9件。閲覧は無料で15日。ただし「ネットに載せる」は別の話",

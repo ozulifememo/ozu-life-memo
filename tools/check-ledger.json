@@ -11736,6 +11736,35 @@
         }
       ]
     },
+    "ozu-kaikei-nendo-ninyo": {
+      "path": "eachnews/ozu-kaikei-nendo-ninyo.html",
+      "checks": [
+        {
+          "date": "2026-09-07",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "fa9979b038d1",
+          "note": "長すぎる1文は総務省令和7年12月25日付通知の原文引用であることを確認し、意図的に残した"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "machine",
+          "by": "opus",
+          "result": "機械点検",
+          "hash": "fa9979b038d1",
+          "note": "check_site.py エラー0。1文157字の警告は総務省通知の引用文なので直さない"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "numbers",
+          "by": "opus",
+          "result": "数字と出典の照合",
+          "hash": "fa9979b038d1",
+          "note": "未照合2個(1.7%)。自分で出した割合の計算"
+        }
+      ]
+    },
     "ozu-kanko-5man-nin": {
       "path": "eachnews/ozu-kanko-5man-nin.html",
       "checks": [

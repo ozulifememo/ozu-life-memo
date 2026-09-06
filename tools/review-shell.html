@@ -127,6 +127,60 @@ button,select,input,textarea{font-family:inherit;color:inherit}
 .row .no{font-family:var(--mono);font-weight:300}
 .row .kd{border:1px solid var(--rule);border-radius:3px;padding:0 4px;font-size:9.5px}
 .row .kd.draft{border-color:#6a5a3a;color:#c9ac6f}
+/* ── 記事案の表(Excelのように、1行に全部が並ぶ) ────────────────
+   2026-09-06、本人の「これ、みにくい。表に近い感じにして。Excelみたいにして。
+   1行ごとにタイトル、一言、調べ方、〇、×、メモ欄を作成して。
+   上下のスクロールで全て見れるようにして。」に合わせて作った。
+   記事の1本ずつ読む形とは別物なので、画面ごと差し替える。 */
+#itWrap{position:fixed;inset:var(--topH) 0 0 0;background:var(--frame);
+  display:flex;flex-direction:column;z-index:5}
+#itBar{flex:0 0 auto;display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  padding:9px 14px;border-bottom:1px solid var(--rule);background:var(--frame2)}
+#itBar .t{font-size:13px;font-weight:700}
+#itBar .c{font-size:12px;color:var(--dim)}
+#itBar .c b{color:var(--fg);font-family:var(--mono)}
+#itBar .sp{flex:1}
+#itBar input[type=search]{background:var(--frame);border:1px solid var(--rule);
+  border-radius:4px;padding:5px 9px;font-size:12.5px;min-width:190px}
+#itBar button{background:var(--frame3);border:1px solid var(--rule);border-radius:4px;
+  color:var(--fg2);font-size:12px;padding:5px 11px;cursor:pointer}
+#itBar button:hover{background:var(--rule)}
+#itScroll{flex:1 1 auto;overflow:auto;-webkit-overflow-scrolling:touch}
+#itTable{width:100%;border-collapse:separate;border-spacing:0;font-size:12.5px}
+#itTable th{position:sticky;top:0;z-index:2;background:var(--frame3);
+  border-bottom:1px solid var(--rule);color:var(--fg2);font-size:11px;
+  font-weight:700;letter-spacing:.03em;text-align:left;padding:8px 10px;white-space:nowrap}
+#itTable td{border-bottom:1px solid #262d35;padding:9px 10px;vertical-align:top;
+  line-height:1.7;color:var(--fg2)}
+#itTable tr.grp td{background:#1b2734;color:#8fc0e8;font-weight:700;font-size:11.5px;
+  letter-spacing:.06em;padding:6px 10px;border-bottom:1px solid var(--rule)}
+#itTable tr.r:hover td{background:#1e242c}
+#itTable tr.r.ok td{background:#1b241d}
+#itTable tr.r.drop td{background:#241c1b}
+#itTable .no{font-family:var(--mono);color:var(--dim);font-size:11px;
+  text-align:right;width:34px;white-space:nowrap}
+#itTable .ti{color:var(--fg);font-weight:700;font-size:13px;min-width:210px}
+#itTable .hi{min-width:280px}
+#itTable .te{min-width:230px;color:var(--dim);font-size:12px}
+#itTable .jd{width:44px;text-align:center;padding:9px 4px}
+#itTable .mo{width:230px}
+.itB{width:34px;height:34px;border-radius:5px;border:1px solid var(--rule);
+  background:var(--frame2);color:var(--fg2);font-size:15px;cursor:pointer;line-height:1}
+.itB:hover{background:var(--frame3)}
+.itB.on[data-v="ok"]{background:var(--ok);border-color:var(--ok);color:#fff}
+.itB.on[data-v="drop"]{background:var(--drop);border-color:var(--drop);color:#fff}
+#itTable textarea{width:100%;min-height:52px;resize:vertical;background:var(--frame);
+  border:1px solid var(--rule);border-radius:4px;color:var(--fg);
+  font-size:12.5px;line-height:1.65;padding:6px 8px}
+#itTable textarea:focus{outline:none;border-color:#4a6b8a;background:#12161b}
+#itSaved{font-size:11px;color:var(--ok);opacity:0;transition:opacity .25s}
+#itSaved.on{opacity:1}
+@media(max-width:820px){
+  #itTable .te{display:none}
+  #itTable .hi{min-width:170px}
+  #itTable .mo{width:150px}
+}
+
 /* 記事案。記事と一目で見分けがつくように、札も左線も別の色にする
    (2026-09-06、本人の「ちゃんと区別するように」) */
 .row .kd.idea{border-color:#4a6b8a;color:#8fc0e8;background:#1b2734}
@@ -274,6 +328,27 @@ body.L-kan #kanbar{display:flex}
   <button class="nav" id="next" title="次 (→)" aria-label="次の記事">›</button>
 </div>
 
+
+<div id="itWrap" hidden>
+  <div id="itBar">
+    <span class="t">記事案</span>
+    <span class="c"><b id="itDone">0</b> / <b id="itAll">0</b> 判定ずみ
+      ◯ <b id="itOk">0</b>　✕ <b id="itNg">0</b>　メモ <b id="itMemo">0</b></span>
+    <span id="itSaved">保存しました</span>
+    <span class="sp"></span>
+    <input id="itQ" type="search" placeholder="題・ひと言から探す">
+    <button id="itBack">記事にもどる</button>
+  </div>
+  <div id="itScroll">
+    <table id="itTable">
+      <thead><tr>
+        <th class="no">#</th><th>題</th><th>クロコからのひと言</th>
+        <th>調べ方</th><th class="jd">◯</th><th class="jd">✕</th><th>メモ</th>
+      </tr></thead>
+      <tbody id="itBody"></tbody>
+    </table>
+  </div>
+</div>
 <div id="scrim" hidden></div>
 <aside id="drawer" hidden aria-label="記事の一覧">
   <div class="dhead">
@@ -748,6 +823,122 @@ memoT.addEventListener('keydown', function(e){
   if((e.ctrlKey || e.metaKey) && e.key === 'Enter'){ e.preventDefault(); sendMemo(); }
 });
 
+
+/* ---------- 記事案の表 ----------
+   記事は1本ずつ読むが、記事案は一覧で見て、その場で◯✕とメモを付ける。
+   判定とメモの置き場所は記事とまったく同じ(S と reviews コレクション)なので、
+   ここで付けたものは端末をまたいでそのまま同期する。                     */
+var itQ = '';
+function ideaRows(){
+  var out = [];
+  for(var i=0;i<N;i++) if(A[i].kind === 'idea') out.push(i);
+  if(itQ){
+    var q = itQ.toLowerCase();
+    out = out.filter(function(i){
+      var a = A[i];
+      return (a.title + ' ' + a.cat + ' ' + bodyOf(i)).toLowerCase().indexOf(q) >= 0;
+    });
+  }
+  return out;
+}
+/* 記事案の本文から、ひと言と調べ方だけ取り出す */
+function ideaParts(i){
+  var b = bodyOf(i), p = [];
+  var re = /<p class="commentary">([\s\S]*?)<\/p>/g, m;
+  while((m = re.exec(b))) p.push(m[1].replace(/<[^>]+>/g, ''));
+  return {hi: p[0] || '', te: p[1] || ''};
+}
+function renderIdeaTable(){
+  var list = ideaRows(), h = [], lastGrp = '';
+  for(var n=0;n<list.length;n++){
+    var i = list[n], a = A[i], r = S[a.slug] || {}, pt = ideaParts(i);
+    if(a.cat !== lastGrp){
+      lastGrp = a.cat;
+      h.push('<tr class="grp"><td colspan="7">'+esc(a.cat)+'</td></tr>');
+    }
+    h.push('<tr class="r'+(r.v==='ok'?' ok':'')+(r.v==='drop'?' drop':'')+'" data-s="'+a.slug+'">'
+      + '<td class="no">'+(n+1)+'</td>'
+      + '<td class="ti">'+esc(a.title)+'</td>'
+      + '<td class="hi">'+esc(pt.hi)+'</td>'
+      + '<td class="te">'+esc(pt.te)+'</td>'
+      + '<td class="jd"><button class="itB'+(r.v==='ok'?' on':'')+'" data-v="ok" '
+      +   'title="書いてほしい">◯</button></td>'
+      + '<td class="jd"><button class="itB'+(r.v==='drop'?' on':'')+'" data-v="drop" '
+      +   'title="いらない">✕</button></td>'
+      + '<td class="mo"><textarea placeholder="理由や注文。✕の理由がいちばん助かります"'
+      +   '>'+esc(r.m||'')+'</textarea></td>'
+      + '</tr>');
+  }
+  $('#itBody').innerHTML = h.join('')
+    || '<tr><td colspan="7" style="padding:40px;text-align:center;color:var(--dim)">'
+       + 'その言葉に当てはまる記事案はありません</td></tr>';
+  paintIdeaCount();
+}
+function paintIdeaCount(){
+  var all=0, done=0, ok=0, ng=0, mo=0;
+  for(var i=0;i<N;i++){
+    if(A[i].kind !== 'idea') continue;
+    all++;
+    var r = S[A[i].slug] || {};
+    if(r.v) done++;
+    if(r.v === 'ok') ok++;
+    if(r.v === 'drop') ng++;
+    if(r.m) mo++;
+  }
+  $('#itAll').textContent = all; $('#itDone').textContent = done;
+  $('#itOk').textContent = ok;   $('#itNg').textContent = ng;
+  $('#itMemo').textContent = mo;
+}
+var itSaveT;
+function itSaved(){
+  var e = $('#itSaved'); e.classList.add('on');
+  clearTimeout(itSaveT); itSaveT = setTimeout(function(){ e.classList.remove('on') }, 1100);
+}
+$('#itBody').addEventListener('click', function(e){
+  var b = e.target.closest('.itB'); if(!b) return;
+  var tr = b.closest('tr'), slug = tr.dataset.s, r = S[slug] || {};
+  mark(slug, {v: (r.v === b.dataset.v ? '' : b.dataset.v)});
+  var nv = (S[slug]||{}).v;
+  tr.classList.toggle('ok', nv === 'ok');
+  tr.classList.toggle('drop', nv === 'drop');
+  tr.querySelectorAll('.itB').forEach(function(x){
+    x.classList.toggle('on', x.dataset.v === nv);
+  });
+  paintIdeaCount(); itSaved();
+});
+var itMemoT = {};
+$('#itBody').addEventListener('input', function(e){
+  if(e.target.tagName !== 'TEXTAREA') return;
+  var tr = e.target.closest('tr'), slug = tr.dataset.s, v = e.target.value;
+  clearTimeout(itMemoT[slug]);
+  itMemoT[slug] = setTimeout(function(){
+    mark(slug, {m: v});
+    paintIdeaCount(); itSaved();
+  }, 600);
+});
+var itQT;
+$('#itQ').addEventListener('input', function(){
+  var v = this.value;
+  clearTimeout(itQT);
+  itQT = setTimeout(function(){ itQ = v; renderIdeaTable() }, 200);
+});
+$('#itBack').onclick = function(){
+  F.kind = ''; sync('#fKind','k',''); refresh();
+};
+/* 記事案を選んだら表に切り替える。それ以外は元の画面に戻す */
+function ideaMode(){
+  var on = (F.kind === 'idea');
+  $('#itWrap').hidden = !on;
+  paper.hidden = on;
+  $('#bot').hidden = on;
+  if(on){
+    $('#drawer').hidden = true; $('#scrim').hidden = true;
+    $('#memo').hidden = true;
+    renderIdeaTable();
+  }
+  return on;
+}
+
 /* ---------- 絞り込みUI ---------- */
 var KINDS = [['','ぜんぶ'],['news','記事'],['jk','自由研究'],['book','読書'],['draft','下書き'],['idea','記事案']];
 $('#fKind').innerHTML = KINDS.map(function(k){
@@ -810,7 +1001,7 @@ $('#q').addEventListener('input', function(){
   clearTimeout(qTimer);
   qTimer = setTimeout(function(){ F.q = v; refresh() }, 220);
 });
-function refresh(){ build(); paint(); }
+function refresh(){ build(); paint(); ideaMode(); }
 
 /* ---------- 暗さ ---------- */
 $('#btn-dim').onclick = function(){

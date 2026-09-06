@@ -85,7 +85,10 @@ for kind, d in (("news", "eachnews"), ("jk", "jiyu-kenkyu"), ("book", "book")):
 # 2026-09-06。本人が「記事案も卓で◯✕したい」と言ったので、記事と同じ行として
 # 並べる。判定・メモ・端末間の同期は、記事とまったく同じ仕組みに乗る。
 # 見分けは kind="idea" と、行の左に出る「記事案」の札でつける。
-KIKAKU = os.path.join(HERE, "kikaku-ledger.json")
+# 記事案の台帳は private-notes/ にある(.gitignore済み)。
+# クロコからのひと言に本人の名前を書けるようにするため、2026-09-06に移した。
+# 卓には作るときに焼き込まれるので、スマホやノートPCのブラウザからも見える。
+KIKAKU = os.path.join(ROOT, "private-notes", "kikaku-ledger.json")
 n_idea = 0
 if os.path.exists(KIKAKU):
     for k in json.load(open(KIKAKU, encoding="utf-8")):

@@ -12669,6 +12669,35 @@
         }
       ]
     },
+    "ozu-kotei-shisanzei-ie": {
+      "path": "eachnews/ozu-kotei-shisanzei-ie.html",
+      "checks": [
+        {
+          "date": "2026-09-07",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "cfca049d8c99",
+          "note": "都市計画税を課していないことは、市税条例の全文に規定が無いことと、会議録307本の全文検索で0件であることの2点から。断定は避けた書き方になっている"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "machine",
+          "by": "opus",
+          "result": "機械点検",
+          "hash": "cfca049d8c99",
+          "note": "check_site.py エラー0"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "numbers",
+          "by": "opus",
+          "result": "数字と出典の照合",
+          "hash": "cfca049d8c99",
+          "note": "未照合5個(4.3%)。モデル計算の中間値。地方税法・施行令・固定資産評価基準の原文と令和7年地価公示から自前で計算したもの"
+        }
+      ]
+    },
     "ozu-kotsu-seiri-ryo-kotoba": {
       "path": "eachnews/ozu-kotsu-seiri-ryo-kotoba.html",
       "checks": [

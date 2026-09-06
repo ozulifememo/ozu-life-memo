@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-kotei-shisanzei-ie",
+    date: "2026-09-07",
+    title: "大洲で家を建てると、固定資産税は4年目に1.7倍。20年ぶん計算してみた",
+    category: "kurashi",
+    source: "地方税法(e-Gov法令検索)、大洲市税条例、総務省「固定資産税の概要」ほか",
+    sourceDate: "2026-09-06",
+    tags: ["財政・税金", "空き家・住宅"],
+  },
+  {
     slug: "ozu-kokuho-kennai-hikaku",
     date: "2026-09-07",
     title: "同じ年収400万円で国保料は年13万円違う。大洲は県内15市町で安いほうから2番目",

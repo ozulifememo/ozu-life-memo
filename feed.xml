@@ -5,8 +5,17 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Mon, 07 Sep 2026 07:14:47 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 07 Sep 2026 07:16:28 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大洲で家を建てると、固定資産税は4年目に1.7倍。20年ぶん計算してみた</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kotei-shisanzei-ie.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kotei-shisanzei-ie.html</guid>
+      <pubDate>Mon, 07 Sep 2026 09:00:00 +0900</pubDate>
+      <description>新築の家は3年間だけ固定資産税が半額になる。では4年目にいくら上がるのか。大洲市の税率と地価公示、国が定めた評価の基準を使って、土地200平方メートル+木造2階建て100平方メートルのモデルで20年ぶんの年税額を計算した。大洲市が都市計画税を課していないことも条例で確かめた。</description>
+      <category>財政・税金</category>
+      <category>空き家・住宅</category>
+    </item>
     <item>
       <title>同じ年収400万円で国保料は年13万円違う。大洲は県内15市町で安いほうから2番目</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kokuho-kennai-hikaku.html</link>
@@ -255,15 +264,6 @@
       <description>大洲で創業年が確かめられる店を、古い順に並べた。400年分が並んだが、いちばん古いあたりで年号が食い違う。そして飲食店に絞ると、ほとんどの店の創業年は分からなかった。</description>
       <category>産業・農業</category>
       <category>合併・地域</category>
-    </item>
-    <item>
-      <title>いもたきの発祥は大洲。でも県内9か所のうち南予は2か所だけで、西条は半額だった</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-imotaki-makete.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-imotaki-makete.html</guid>
-      <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
-      <description>大洲が発祥とされるいもたきは、いま愛媛県内の9か所で行われている。発祥地は負けているのか。開催地・期間・料金を並べて確かめた。</description>
-      <category>観光</category>
-      <category>まちづくり</category>
     </item>
   </channel>
 </rss>

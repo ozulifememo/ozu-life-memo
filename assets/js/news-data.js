@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-kensaku-sajesuto",
+    date: "2026-09-07",
+    title: "「大洲」と検索する人が知りたいのは、城ではなく天気と病院だった",
+    category: "shiten",
+    source: "Googleサジェスト、Bingサジェスト、DuckDuckGo、Yahoo!検索の入力候補、Google検索ヘルプ",
+    sourceDate: "2026-09-07",
+    tags: ["まちづくり"],
+  },
+  {
     slug: "ozu-net-gokai",
     date: "2026-09-07",
     title: "大洲和紙は、大洲市で作られていない。ネットで見かける大洲の話を4つ確かめた",

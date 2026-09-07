@@ -5,8 +5,16 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Mon, 07 Sep 2026 18:44:34 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 07 Sep 2026 19:11:51 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>「大洲」と検索する人が知りたいのは、城ではなく天気と病院だった</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kensaku-sajesuto.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kensaku-sajesuto.html</guid>
+      <pubDate>Mon, 07 Sep 2026 09:00:00 +0900</pubDate>
+      <description>Googleの検索候補を1,057語集めて分けた。上位10語に観光は1つしか入らず、天気が2つ、病院が2つ入る。近隣8市町と比べると天気は9市町すべてで上位に来た。このサイトが答えられている検索と、答えられていない検索も数えた。</description>
+      <category>まちづくり</category>
+    </item>
     <item>
       <title>大洲和紙は、大洲市で作られていない。ネットで見かける大洲の話を4つ確かめた</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-net-gokai.html</link>
@@ -261,15 +269,6 @@
       <pubDate>Mon, 07 Sep 2026 09:00:00 +0900</pubDate>
       <description>大洲市情報公開条例を第1条から附則まで読み、誰が請求できて、何が黒くなり、いくらかかるのかを条文で整理した。そのうえで、開示された文書をそのままインターネットに載せてよいのかを、著作権法の条文に当たって考えた。</description>
       <category>議会・行政</category>
-    </item>
-    <item>
-      <title>大洲で家を建てると、固定資産税は4年目に1.7倍。20年ぶん計算してみた</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kotei-shisanzei-ie.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kotei-shisanzei-ie.html</guid>
-      <pubDate>Mon, 07 Sep 2026 09:00:00 +0900</pubDate>
-      <description>新築の家は3年間だけ固定資産税が半額になる。では4年目にいくら上がるのか。大洲市の税率と地価公示、国が定めた評価の基準を使って、土地200平方メートル+木造2階建て100平方メートルのモデルで20年ぶんの年税額を計算した。大洲市が都市計画税を課していないことも条例で確かめた。</description>
-      <category>財政・税金</category>
-      <category>空き家・住宅</category>
     </item>
   </channel>
 </rss>

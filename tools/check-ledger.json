@@ -12628,6 +12628,33 @@
         }
       ]
     },
+    "ozu-kensaku-sajesuto": {
+      "path": "eachnews/ozu-kensaku-sajesuto.html",
+      "checks": [
+        {
+          "date": "2026-09-07",
+          "level": "human",
+          "by": "opus",
+          "result": "開いていないページを閲覧と書いた出典3本の注記を訂正し、使っていない出典1本を削除",
+          "hash": "26b030322551"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "machine",
+          "by": "opus",
+          "result": "check_site.py この記事はエラー0",
+          "hash": "26b030322551"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "numbers",
+          "by": "opus",
+          "result": "1,057語・162通り・257本・54%を親が独立に数え直した",
+          "hash": "26b030322551",
+          "note": "126通り→162通り、189万字→194万字に訂正。数字はすべて自分で取得したデータからの集計"
+        }
+      ]
+    },
     "ozu-kentoshimasu-kaigiroku": {
       "path": "eachnews/ozu-kentoshimasu-kaigiroku.html",
       "checks": [

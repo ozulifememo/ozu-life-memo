@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-furusato-18nen",
+    date: "2026-09-07",
+    title: "ふるさと納税の18年。伸び続けたのではなく、一度だけ半分に落ちている",
+    category: "shiten",
+    source: "総務省 各団体のふるさと納税受入額及び受入件数(平成20年度〜令和7年度)、各団体の受入額等(平成30年度〜令和7年度)",
+    sourceDate: "2026-09-07",
+    tags: ["財政・税金"],
+  },
+  {
     slug: "ozu-kensaku-sajesuto",
     date: "2026-09-07",
     title: "「大洲」と検索する人が知りたいのは、城ではなく天気と病院だった",

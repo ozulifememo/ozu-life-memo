@@ -11151,6 +11151,33 @@
         }
       ]
     },
+    "ozu-furusato-18nen": {
+      "path": "eachnews/ozu-furusato-18nen.html",
+      "checks": [
+        {
+          "date": "2026-09-07",
+          "level": "human",
+          "by": "opus",
+          "result": "既存のふるさと納税6本と重複しないことを、43位・1201・12.6倍・事務費率の推移で確認",
+          "hash": "463f2c345df1"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "machine",
+          "by": "opus",
+          "result": "check_site.py この記事はエラー0",
+          "hash": "463f2c345df1"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "numbers",
+          "by": "opus",
+          "result": "12.6倍・55%・-18%・53.7%・57.6%・10.4倍・19.3倍を全部手で検算",
+          "hash": "463f2c345df1",
+          "note": "総務省のExcel9本を自分で落として集計。全国1,201団体の事務費率も自分で並べた"
+        }
+      ]
+    },
     "ozu-furusato-omakase": {
       "path": "eachnews/ozu-furusato-omakase.html",
       "checks": [

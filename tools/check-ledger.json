@@ -11852,6 +11852,35 @@
         }
       ]
     },
+    "ozu-kaigo-nyumon": {
+      "path": "eachnews/ozu-kaigo-nyumon.html",
+      "checks": [
+        {
+          "date": "2026-09-07",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "4f0f207391f4",
+          "note": "介護保険法・施行令・所得税法・平成12年厚生省告示第33号をe-Gov APIで原文取得。地域包括支援センター4か所は愛媛県の一覧(令和8年7月1日現在)。市のページ3本はすべてWayback経由で読み、市サーバーには一度も接触していない。認定者数の実数は時点がずれるため本文に書いていない"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "machine",
+          "by": "opus",
+          "result": "機械点検",
+          "hash": "4f0f207391f4",
+          "note": "check_site.py エラー0"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "numbers",
+          "by": "opus",
+          "result": "数字と出典の照合",
+          "hash": "4f0f207391f4",
+          "note": "未照合11個(10.8%)。厚労省Excelと総務省の住民基本台帳から自分で集計した値"
+        }
+      ]
+    },
     "ozu-kaikei-nendo-ninyo": {
       "path": "eachnews/ozu-kaikei-nendo-ninyo.html",
       "checks": [

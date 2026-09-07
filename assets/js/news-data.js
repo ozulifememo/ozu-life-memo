@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-kaigo-nyumon",
+    date: "2026-09-07",
+    title: "親の介護が始まったら、まず30日。大洲でいくらかかるのかを並べた",
+    category: "kurashi",
+    source: "e-Gov法令検索(介護保険法・同施行令・所得税法・同施行令)、厚生労働省、総務省、愛媛県、大洲市、大洲市議会会議録",
+    sourceDate: "2026-09-07",
+    tags: ["医療・福祉", "人口減少"],
+  },
+  {
     slug: "ozu-furusato-suru-gawa",
     date: "2026-09-07",
     title: "ふるさと納税の上限額、給与収入500万円なら6万1,030円。条文から計算した",

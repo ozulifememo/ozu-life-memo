@@ -5,8 +5,17 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Mon, 07 Sep 2026 13:32:36 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 07 Sep 2026 13:36:25 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>親の介護が始まったら、まず30日。大洲でいくらかかるのかを並べた</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kaigo-nyumon.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kaigo-nyumon.html</guid>
+      <pubDate>Mon, 07 Sep 2026 09:00:00 +0900</pubDate>
+      <description>要介護認定の申請から結果が出るまでは原則30日。大洲市の相談窓口は市役所の高齢福祉課の中と、長浜・肱川の合わせて4か所。要介護度ごとに月いくらまで使えるのか、施設に入ると月いくらか、大洲市の介護保険料は県内で何番目かを、法律と告示と統計から並べた。</description>
+      <category>医療・福祉</category>
+      <category>人口減少</category>
+    </item>
     <item>
       <title>ふるさと納税の上限額、給与収入500万円なら6万1,030円。条文から計算した</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-furusato-suru-gawa.html</link>
@@ -263,15 +272,6 @@
       <description>大洲市内に民間企業以外がやっている大人向けの教室はどれくらいあるのかを調べた。市の隣保館2館に13の教室があり、料理・木彫・編物・ヨーガまで受講料はすべて0円。無料の根拠は社会福祉法にあった。あわせて、自分で教室を開くときに部屋を借りる値段も調べている。</description>
       <category>子育て・教育</category>
       <category>まちづくり</category>
-    </item>
-    <item>
-      <title>記念日の店が大洲に少ない気がする。278軒を予算で並べたら8軒だった</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kinenbi-mise.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kinenbi-mise.html</guid>
-      <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
-      <description>結婚記念日に使えるような店が大洲には少ない、という感覚が正しいのかを数字で確かめた。食べログに載っている大洲市の飲食店278軒のうち、夜の予算が5,000円以上の店は8軒。南予9市町まで広げると31軒で、いちばん多いのは宇和島の9軒だった。8軒の顔ぶれと、ものさしの限界も書いた。</description>
-      <category>まちづくり</category>
-      <category>観光</category>
     </item>
   </channel>
 </rss>

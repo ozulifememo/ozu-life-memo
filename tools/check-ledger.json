@@ -11765,6 +11765,35 @@
         }
       ]
     },
+    "ozu-jumin-kansa": {
+      "path": "eachnews/ozu-jumin-kansa.html",
+      "checks": [
+        {
+          "date": "2026-09-07",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "f7542a197420",
+          "note": "会議録307本に「住民監査請求」が0件であることを独立に確認。8年6か月は提訴(平成19年12月)から確定(平成28年6月27日)まで。印紙代58,500円の自算出が会議録の控訴印紙代19,500円と一致することで裏が取れている"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "machine",
+          "by": "opus",
+          "result": "機械点検",
+          "hash": "f7542a197420",
+          "note": "check_site.py エラー0"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "numbers",
+          "by": "opus",
+          "result": "数字と出典の照合",
+          "hash": "f7542a197420",
+          "note": "数字119個すべて出典と照合できた(未照合0)"
+        }
+      ]
+    },
     "ozu-kaeru-shikumi": {
       "path": "jiyu-kenkyu/ozu-kaeru-shikumi.html",
       "checks": [

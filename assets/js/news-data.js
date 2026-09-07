@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-jumin-kansa",
+    date: "2026-09-07",
+    title: "市のお金の使い方は住民1人でも問える。答えは60日、決着まで8年6か月",
+    category: "shiten",
+    source: "地方自治法(e-Gov法令検索)、総務省 地方自治月報第62号、最高裁判所「裁判の迅速化に係る検証に関する報告書」ほか",
+    sourceDate: "2026-09-07",
+    tags: ["議会・行政", "財政・税金"],
+  },
+  {
     slug: "ozu-yachin-soba",
     date: "2026-09-07",
     title: "大洲の家賃は平均44,773円。10万円を超える部屋は、統計上1戸もない",

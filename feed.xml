@@ -5,8 +5,17 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Mon, 07 Sep 2026 12:25:34 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 07 Sep 2026 12:28:29 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>市のお金の使い方は住民1人でも問える。答えは60日、決着まで8年6か月</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-jumin-kansa.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-jumin-kansa.html</guid>
+      <pubDate>Mon, 07 Sep 2026 09:00:00 +0900</pubDate>
+      <description>住民監査請求は住民1人で出せて、答えは60日以内に来る。全国1,374件を数えると94.7%が期限内だった。だが裁判に進むと話が変わる。大洲の1件は提訴から確定まで8年6か月。条文と統計で時間だけを追った。</description>
+      <category>議会・行政</category>
+      <category>財政・税金</category>
+    </item>
     <item>
       <title>大洲の家賃は平均44,773円。10万円を超える部屋は、統計上1戸もない</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-yachin-soba.html</link>
@@ -264,15 +273,6 @@
       <description>大洲市民が動いて、市の予算や計画が実際に変わった記録はあるのか。市議会の会議録18年ぶん307回を「請願」「陳情」「署名」「要望書」で検索し、動いた人・議会の扱い・その後まで3つそろった事例を5件だけ数え出した。</description>
       <category>まちづくり</category>
       <category>議会・行政</category>
-    </item>
-    <item>
-      <title>冨士山公園2個分の山を、ただで町に渡した人がいる。90ヘクタールはいまどうなったのか</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kato-yasumichi-kifu.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kato-yasumichi-kifu.html</guid>
-      <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
-      <description>大洲藩最後の藩主の次男・加藤泰通が、昭和24年に冨士山の所有林90町8反を大洲町に寄付した。いまの単位で約90ヘクタール、冨士山公園ちょうど2個分。誰が、なぜ渡し、その土地はいまどうなっているのかを一次資料で追いかけた。</description>
-      <category>まちづくり</category>
-      <category>観光</category>
     </item>
   </channel>
 </rss>

@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-tsukin-shigai",
+    date: "2026-09-07",
+    title: "毎朝、大洲から3,278人が市外へ働きに出て、4,167人が入ってくる",
+    category: "ima",
+    source: "総務省「令和2年国勢調査 従業地・通学地による人口・就業状態等集計」ほか",
+    sourceDate: "2026-09-07",
+    tags: ["交通・インフラ", "人口減少"],
+  },
+  {
     slug: "ozu-gikai-kotoba",
     date: "2026-09-07",
     title: "18年で9,534回。市議会でいちばん多く使われた言葉は「今後」だった",

@@ -5,8 +5,17 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Mon, 07 Sep 2026 10:56:45 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 07 Sep 2026 11:26:21 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>毎朝、大洲から3,278人が市外へ働きに出て、4,167人が入ってくる</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-tsukin-shigai.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-tsukin-shigai.html</guid>
+      <pubDate>Mon, 07 Sep 2026 09:00:00 +0900</pubDate>
+      <description>令和2年国勢調査の従業地・通学地集計から、大洲市の通勤の出入りを行き先の市町別に数え直した。市外へ出るより入ってくるほうが多く、相手の1位は松山ではなく内子町だった。単身赴任の人数が出せるかどうかも探した。</description>
+      <category>交通・インフラ</category>
+      <category>人口減少</category>
+    </item>
     <item>
       <title>18年で9,534回。市議会でいちばん多く使われた言葉は「今後」だった</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-gikai-kotoba.html</link>
@@ -263,14 +272,6 @@
       <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
       <description>存在しないページを開くと、市役所のサイトは何と答えるのか。愛媛県内20市町を2026年9月6日に自分で測った。答えは全部「404（無い）」だった。ところが存在しないURLを15回続けて開いた瞬間、403に変わり、一度も触っていない他の市町まで同時に閉じた。403は「ページが無い」という意味ではない。</description>
       <category>議会・行政</category>
-    </item>
-    <item>
-      <title>大洲城の屋根に、名前入りの瓦が2,928枚。1枚2,000円だった</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-jo-kawara-kimei.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-jo-kawara-kimei.html</guid>
-      <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
-      <description>2004年に木造復元された大洲城天守。総工費15億9,427万6,496円のうち4億4,650万15円が寄付だった。集め方は7種類あり、そのひとつが1枚2,000円の瓦記名募金。市の復元事業報告書と広報の連載から、金額・件数・瓦の総数まで追って、あの屋根に何枚の名前が載っているのかを確かめた。</description>
-      <category>観光</category>
     </item>
   </channel>
 </rss>

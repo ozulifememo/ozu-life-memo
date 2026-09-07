@@ -15536,6 +15536,35 @@
         }
       ]
     },
+    "ozu-tsukin-shigai": {
+      "path": "eachnews/ozu-tsukin-shigai.html",
+      "checks": [
+        {
+          "date": "2026-09-07",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "5f3ee84a2e80",
+          "note": "常住就業者19,258人=市内従業15,980人+市外通勤3,278人の内部整合を確認。単身赴任は統計7本まで当たって市区町村別が存在しないことを確かめ、記事に明記されている"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "machine",
+          "by": "opus",
+          "result": "機械点検",
+          "hash": "5f3ee84a2e80",
+          "note": "check_site.py エラー0"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "numbers",
+          "by": "opus",
+          "result": "数字と出典の照合",
+          "hash": "5f3ee84a2e80",
+          "note": "未照合20個(12.4%)。e-Statの統計表IDは本文に明記されているが、表の中身はダウンロードファイル側にあるため照合機に出てこない。自分で計算した率も含む"
+        }
+      ]
+    },
     "ozu-ukai-guide": {
       "path": "eachnews/ozu-ukai-guide.html",
       "checks": [

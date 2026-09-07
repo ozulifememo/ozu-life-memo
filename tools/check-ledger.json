@@ -13099,6 +13099,35 @@
         }
       ]
     },
+    "ozu-kyujin-nenshu-sa": {
+      "path": "eachnews/ozu-kyujin-nenshu-sa.html",
+      "checks": [
+        {
+          "date": "2026-09-07",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "d27eb25dd817",
+          "note": "「62%」は誤りで賃金では68.0%。62%に一致するのは労働生産性比61.6%だった。シフト・シェア分解で産業構成の寄与が6.8〜12.6%しかないことを自算出。議会発言の292万円は出どころを再現できなかったと正直に書いている"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "machine",
+          "by": "opus",
+          "result": "機械点検",
+          "hash": "d27eb25dd817",
+          "note": "check_site.py エラー0"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "numbers",
+          "by": "opus",
+          "result": "数字と出典の照合",
+          "hash": "d27eb25dd817",
+          "note": "未照合6個(2.7%)のみ"
+        }
+      ]
+    },
     "ozu-kyujin-shokushu-betsu": {
       "path": "eachnews/ozu-kyujin-shokushu-betsu.html",
       "checks": [

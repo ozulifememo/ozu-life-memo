@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-kyujin-nenshu-sa",
+    date: "2026-09-07",
+    title: "働き口は東京より多いのに、年収は東京の68%。差の9割は「同じ産業の中」で生まれていた",
+    category: "shiten",
+    source: "厚生労働省「令和7年賃金構造基本統計調査」、総務省「令和2年国勢調査」ほか",
+    sourceDate: "2026-09-07",
+    tags: ["産業・農業", "人口減少"],
+  },
+  {
     slug: "ozu-tsukin-jikan",
     date: "2026-09-07",
     title: "大洲の通勤は片道17.6分。松山より短いのに、1時間超えは県平均の1.6倍",

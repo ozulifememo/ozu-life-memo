@@ -5,8 +5,17 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Mon, 07 Sep 2026 13:51:06 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 07 Sep 2026 14:06:09 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大洲のお金が決まる1年を、日付で並べた。予算は16日、決算は84日</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-yosan-calendar.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-yosan-calendar.html</guid>
+      <pubDate>Mon, 07 Sep 2026 09:00:00 +0900</pubDate>
+      <description>大洲市の予算はいつ動きはじめて、いつ決まるのか。地方自治法と地方交付税法の期限、財務省と総務省が公表した令和8年度の実日程、そして市議会の会議録307ファイルから拾った18年ぶんの開会日を、4月から翌年3月までの1本の表にした。</description>
+      <category>議会・行政</category>
+      <category>財政・税金</category>
+    </item>
     <item>
       <title>大洲で家を借りる手順。市営住宅は連帯保証人が2人、県営は2026年4月から不要になった</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kariru-tetsuzuki.html</link>
@@ -263,15 +272,6 @@
       <description>大洲は盆地だから夏は暑くて冬は寒い、とよく言われる。気象庁のデータで松山・宇和島・長浜と比べたら、昼と夜で答えが逆になった。電気代への効き方まで計算した。</description>
       <category>防災</category>
       <category>合併・地域</category>
-    </item>
-    <item>
-      <title>大洲市の例規826本に「実行委員会」は1本もない。なのに1億円が動いていた</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-iinkai-jikko.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-iinkai-jikko.html</guid>
-      <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
-      <description>「〇〇委員会」と「〇〇実行委員会」は何が違うのかを、大洲市の例規集826本と市議会の会議録307回分を数えて調べた。市の例規に「実行委員会」は1本もないのに、会議録では国体の1億円やきずな博の1,736万円が実行委員会を通って動いている。作るのに手続きは要るのか、責任は分散するのかも調べた。</description>
-      <category>議会・行政</category>
-      <category>まちづくり</category>
     </item>
   </channel>
 </rss>

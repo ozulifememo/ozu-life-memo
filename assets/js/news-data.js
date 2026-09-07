@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-yosan-calendar",
+    date: "2026-09-07",
+    title: "大洲のお金が決まる1年を、日付で並べた。予算は16日、決算は84日",
+    category: "shiten",
+    source: "地方自治法・地方交付税法(e-Gov法令検索)、財務省「令和8年度予算」、総務省「令和8年度地方財政計画」、大洲市議会 会議録(2008年3月〜2026年6月)ほか",
+    sourceDate: "2026-09-07",
+    tags: ["議会・行政", "財政・税金"],
+  },
+  {
     slug: "ozu-kariru-tetsuzuki",
     date: "2026-09-07",
     title: "大洲で家を借りる手順。市営住宅は連帯保証人が2人、県営は2026年4月から不要になった",

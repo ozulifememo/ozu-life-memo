@@ -16059,6 +16059,35 @@
         }
       ]
     },
+    "ozu-yosan-calendar": {
+      "path": "eachnews/ozu-yosan-calendar.html",
+      "checks": [
+        {
+          "date": "2026-09-07",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "c15a7f922ff9",
+          "note": "指示に書いた「議会への提出は30日前」が誤りで、地方自治法211条1項では市と町村は20日前であることを、エージェントが原文に当たって訂正した。定例会がのべ74回・年4回で例外なしという集計も独立に確認"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "machine",
+          "by": "opus",
+          "result": "機械点検",
+          "hash": "c15a7f922ff9",
+          "note": "check_site.py エラー0"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "numbers",
+          "by": "opus",
+          "result": "数字と出典の照合",
+          "hash": "c15a7f922ff9",
+          "note": "未照合3個(2.9%)のみ"
+        }
+      ]
+    },
     "ozu-zaisei-zentaizo": {
       "path": "jiyu-kenkyu/ozu-zaisei-zentaizo.html",
       "checks": [

@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-kyoin-ken-to-shi",
+    date: "2026-09-07",
+    title: "大洲市立の学校なのに、先生の給料は市が1円も払っていない",
+    category: "shiten",
+    source: "市町村立学校職員給与負担法ほか（e-Gov法令検索）／文部科学省／愛媛県教育委員会／大洲市議会会議録",
+    sourceDate: "2026-09-07",
+    tags: ["子育て・教育", "議会・行政"],
+  },
+  {
     slug: "ozu-yosan-calendar",
     date: "2026-09-07",
     title: "大洲のお金が決まる1年を、日付で並べた。予算は16日、決算は84日",

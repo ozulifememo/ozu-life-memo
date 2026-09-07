@@ -13215,6 +13215,35 @@
         }
       ]
     },
+    "ozu-kyoin-ken-to-shi": {
+      "path": "eachnews/ozu-kyoin-ken-to-shi.html",
+      "checks": [
+        {
+          "date": "2026-09-07",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "5f9575d242e9",
+          "note": "条文5本をe-Gov APIで原文取得。企画メモの「両方の教員は県の公務員」は制度上は誤りで、身分は市町村・給与負担と任命権が県であることを文科省資料で確認して訂正している。大洲市の教員不足の数字が無い理由(調査単位が任命権を持つ68団体で市町村は単位でない)も特定"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "machine",
+          "by": "opus",
+          "result": "機械点検",
+          "hash": "5f9575d242e9",
+          "note": "check_site.py エラー0"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "numbers",
+          "by": "opus",
+          "result": "数字と出典の照合",
+          "hash": "5f9575d242e9",
+          "note": "未照合2個(2.1%)のみ"
+        }
+      ]
+    },
     "ozu-kyoshitsu-koza": {
       "path": "eachnews/ozu-kyoshitsu-koza.html",
       "checks": [

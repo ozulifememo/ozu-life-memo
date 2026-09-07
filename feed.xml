@@ -5,8 +5,17 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Mon, 07 Sep 2026 14:06:09 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 07 Sep 2026 14:15:10 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大洲市立の学校なのに、先生の給料は市が1円も払っていない</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kyoin-ken-to-shi.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kyoin-ken-to-shi.html</guid>
+      <pubDate>Mon, 07 Sep 2026 09:00:00 +0900</pubDate>
+      <description>大洲市立の小中学校20校で働く先生の給料は、愛媛県が出している。校長を置くかどうかを決めるのも県だ。この不思議な二重構造がいつ、なぜできたのかを法律の条文と市議会の会議録でたどり、大洲市教育委員会がこの2〜3年でしたことも並べた。</description>
+      <category>子育て・教育</category>
+      <category>議会・行政</category>
+    </item>
     <item>
       <title>大洲のお金が決まる1年を、日付で並べた。予算は16日、決算は84日</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-yosan-calendar.html</link>
@@ -263,15 +272,6 @@
       <description>大洲市の汚水処理は公共下水道・農業集落排水・浄化槽の3つに分かれている。どれになるかは住所で決まり、払う額は20年で30万円以上違う。上水と下水の違いから、水がどこを通って家に届くかまで調べた。</description>
       <category>交通・インフラ</category>
       <category>財政・税金</category>
-    </item>
-    <item>
-      <title>大洲の猛暑日は松山の2倍。なのに熱帯夜は19分の1だった</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-atsusa-samusa-denkidai.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-atsusa-samusa-denkidai.html</guid>
-      <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
-      <description>大洲は盆地だから夏は暑くて冬は寒い、とよく言われる。気象庁のデータで松山・宇和島・長浜と比べたら、昼と夜で答えが逆になった。電気代への効き方まで計算した。</description>
-      <category>防災</category>
-      <category>合併・地域</category>
     </item>
   </channel>
 </rss>

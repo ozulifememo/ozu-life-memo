@@ -5,8 +5,17 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Mon, 07 Sep 2026 12:11:09 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 07 Sep 2026 12:25:34 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大洲の家賃は平均44,773円。10万円を超える部屋は、統計上1戸もない</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-yachin-soba.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-yachin-soba.html</guid>
+      <pubDate>Mon, 07 Sep 2026 09:00:00 +0900</pubDate>
+      <description>大洲市の民営借家の平均家賃は月44,773円。松山市の92%、全国の68%にあたる。国の住宅・土地統計調査から市区町村別の家賃を取り出し、広さ別・部屋数別に並べ、近隣5市町と比べた。公営住宅の家賃がまったく別の計算式で決まることも、法令の条文から確かめた。</description>
+      <category>空き家・住宅</category>
+      <category>まちづくり</category>
+    </item>
     <item>
       <title>大洲の地名100件を機械で採点した。いちばん読めないのは「黒田」だった</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-nandoku-chimei.html</link>
@@ -263,15 +272,6 @@
       <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
       <description>大洲藩最後の藩主の次男・加藤泰通が、昭和24年に冨士山の所有林90町8反を大洲町に寄付した。いまの単位で約90ヘクタール、冨士山公園ちょうど2個分。誰が、なぜ渡し、その土地はいまどうなっているのかを一次資料で追いかけた。</description>
       <category>まちづくり</category>
-      <category>観光</category>
-    </item>
-    <item>
-      <title>大洲城の天守に、松は1.1パーセントしかない。なぜ桧になったのか</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-jo-matsu-hinoki.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-jo-matsu-hinoki.html</guid>
-      <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
-      <description>2004年に木造復元された大洲城天守。使った木材447.692立方メートルのうち、松は4.894立方メートルしかない。市の報告書は、松枯れ病と、岩国の錦帯橋・金沢の五十間長屋による松材高騰を理由に挙げている。その裏をどこまで取れるか、岩国市の資料と林野庁の統計で確かめた。</description>
-      <category>産業・農業</category>
       <category>観光</category>
     </item>
   </channel>

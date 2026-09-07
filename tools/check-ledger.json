@@ -15827,6 +15827,35 @@
         }
       ]
     },
+    "ozu-yachin-soba": {
+      "path": "eachnews/ozu-yachin-soba.html",
+      "checks": [
+        {
+          "date": "2026-09-07",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "4ddd86a13f38",
+          "note": "素材メモに統計表ID(第112-2表 statInfId=000040210046ほか)と生の表が残っており、44,773円が第112-2表と第130表の両方で一致することを確認。間取り別は公的統計に存在しないため面積別で換算し推定と明記"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "machine",
+          "by": "opus",
+          "result": "機械点検",
+          "hash": "4ddd86a13f38",
+          "note": "check_site.py エラー0"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "numbers",
+          "by": "opus",
+          "result": "数字と出典の照合",
+          "hash": "4ddd86a13f38",
+          "note": "未照合79個(40.7%)。出典12本はすべて取得できているが、住宅・土地統計調査の数値はe-StatのExcel側にあるため照合機のHTMLに出てこない。表が5点ある記事なので比率が高い"
+        }
+      ]
+    },
     "ozu-yado-56ken": {
       "path": "jiyu-kenkyu/ozu-yado-56ken.html",
       "checks": [

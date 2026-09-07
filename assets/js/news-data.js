@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-yachin-soba",
+    date: "2026-09-07",
+    title: "大洲の家賃は平均44,773円。10万円を超える部屋は、統計上1戸もない",
+    category: "kurashi",
+    source: "令和5年住宅・土地統計調査(総務省統計局)、公営住宅法・同施行令(e-Gov法令検索) ほか",
+    sourceDate: "2026-09-07",
+    tags: ["空き家・住宅", "まちづくり"],
+  },
+  {
     slug: "ozu-nandoku-chimei",
     date: "2026-09-07",
     title: "大洲の地名100件を機械で採点した。いちばん読めないのは「黒田」だった",

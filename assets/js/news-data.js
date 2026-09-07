@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-suitengu-hashi",
+    date: "2026-09-07",
+    title: "水天宮の沈下橋は、なぜ消えたのか。変わったのは橋ではなく「毎秒700トン」だった",
+    category: "kurashi",
+    source: "肱川水系河川整備計画【中下流圏域】(国土交通省四国地方整備局・愛媛県) ほか",
+    sourceDate: "2026-09-07",
+    tags: ["交通・インフラ", "防災"],
+  },
+  {
     slug: "ozu-jiko-kaji",
     date: "2026-09-07",
     title: "大洲の交通事故は全国より少ない。なのに、亡くなる人は人口あたり3倍だった",

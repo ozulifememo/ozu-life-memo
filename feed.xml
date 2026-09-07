@@ -5,8 +5,17 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Mon, 07 Sep 2026 09:56:57 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 07 Sep 2026 10:25:09 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>水天宮の沈下橋は、なぜ消えたのか。変わったのは橋ではなく「毎秒700トン」だった</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-suitengu-hashi.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-suitengu-hashi.html</guid>
+      <pubDate>Mon, 07 Sep 2026 09:00:00 +0900</pubDate>
+      <description>大洲市柚木の如法寺河原にあった沈下橋「冨士橋」は2024年5月末に撤去された。事故が理由だという記録は市議会にも国の計画にも一つも無い。決め手は、河道整備の目標流量が毎秒3,900トンから4,600トンに上がったことだった。</description>
+      <category>交通・インフラ</category>
+      <category>防災</category>
+    </item>
     <item>
       <title>大洲の交通事故は全国より少ない。なのに、亡くなる人は人口あたり3倍だった</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-jiko-kaji.html</link>
@@ -260,14 +269,6 @@
       <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-jabara-10nen.html</guid>
       <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
       <description>大洲市は平成17年度から、花粉症に効くとされる柑橘「ジャバラ」を上須戒地区で試作していた。飲料「ジンじゃばら」は商標登録され200本が完売する。そして平成25年度、圃場は地権者に返された。本家の和歌山県北山村、隣の内子町と数字を並べて追った。</description>
-      <category>産業・農業</category>
-    </item>
-    <item>
-      <title>28軒のうち13軒が同じ年にやめた。大洲のたばこ畑12ヘクタールのその後</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-tabako-haisaku.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-tabako-haisaku.html</guid>
-      <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
-      <description>平成24年、大洲市の葉たばこ農家28戸のうち13戸が一斉に廃作し、約12ヘクタールの畑が空いた。きっかけは国のたばこ増税とJTの全国廃作募集だった。市と県とJAが選んだ「転換推進12品目」と、その後14年ぶんの会議録を追った。</description>
       <category>産業・農業</category>
     </item>
   </channel>

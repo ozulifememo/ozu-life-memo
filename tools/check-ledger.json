@@ -15069,6 +15069,35 @@
         }
       ]
     },
+    "ozu-suitengu-hashi": {
+      "path": "eachnews/ozu-suitengu-hashi.html",
+      "checks": [
+        {
+          "date": "2026-09-07",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "5168e35a1a7d",
+          "note": "事故説は、会議録307本と219ページの河川整備計画の全文検索でヒット0という否定側の確認をしたうえで「記録は一つも無かった」と書いている。撤去理由は計画本文の「流下阻害横断工作物」「老朽化」の2つ"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "machine",
+          "by": "opus",
+          "result": "機械点検",
+          "hash": "5168e35a1a7d",
+          "note": "check_site.py エラー0"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "numbers",
+          "by": "opus",
+          "result": "数字と出典の照合",
+          "hash": "5168e35a1a7d",
+          "note": "数字46個すべて出典と照合できた(未照合0)"
+        }
+      ]
+    },
     "ozu-supa-toho-10pun": {
       "path": "eachnews/ozu-supa-toho-10pun.html",
       "checks": [

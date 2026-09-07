@@ -1,5 +1,5 @@
 {
- "fingerprint": "aaf38861969b66cf9e3401b09ca1144917cd8100",
+ "fingerprint": "fe67e5dfbc733df29ffd31f4235efa05f86c649d",
  "built": "2026-09-07",
  "メモ": "レビュー卓に入れた記事本文の指紋。check_site.py がこれといまの記事を比べて、卓が古くなっていたら止める。build_review.py が書く。作り直したら publish も忘れないこと"
 }

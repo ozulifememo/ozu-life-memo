@@ -5,8 +5,17 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Mon, 07 Sep 2026 12:28:29 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 07 Sep 2026 13:31:16 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大洲で子どもが生まれると60万円入る。ただし請求しないと2年で消える</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kekkon-shussan.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kekkon-shussan.html</guid>
+      <pubDate>Mon, 07 Sep 2026 09:00:00 +0900</pubDate>
+      <description>婚姻届に期限はなく、出生届は14日以内。出産育児一時金50万円と妊婦支援給付金10万円は、申請しなければ2年で時効になる。妊娠から1歳までの手続きとお金を時系列で並べた。</description>
+      <category>子育て・教育</category>
+      <category>医療・福祉</category>
+    </item>
     <item>
       <title>市のお金の使い方は住民1人でも問える。答えは60日、決着まで8年6か月</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-jumin-kansa.html</link>
@@ -264,15 +273,6 @@
       <description>市長、市議会、県議、国、会社、会社員、株主、市職員。大洲市について誰がどこまで決められるのかを、地方自治法の条文と18年分の市議会会議録、令和6年度決算の実数で調べた。市が自分で集めて使い道も自分で決められるお金は、歳入327億円のうち78億円だった。</description>
       <category>議会・行政</category>
       <category>財政・税金</category>
-    </item>
-    <item>
-      <title>800人の署名で、駅前に屋根がついた。大洲で市民が動いて実際に変わった5件</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-shimin-ga-ugoita.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-shimin-ga-ugoita.html</guid>
-      <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
-      <description>大洲市民が動いて、市の予算や計画が実際に変わった記録はあるのか。市議会の会議録18年ぶん307回を「請願」「陳情」「署名」「要望書」で検索し、動いた人・議会の扱い・その後まで3つそろった事例を5件だけ数え出した。</description>
-      <category>まちづくり</category>
-      <category>議会・行政</category>
     </item>
   </channel>
 </rss>

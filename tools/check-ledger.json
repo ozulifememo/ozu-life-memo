@@ -12458,6 +12458,35 @@
         }
       ]
     },
+    "ozu-kekkon-shussan": {
+      "path": "eachnews/ozu-kekkon-shussan.html",
+      "checks": [
+        {
+          "date": "2026-09-07",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "c142b88980fc",
+          "note": "分娩取扱2施設は令和3年3月の副市長答弁が根拠。分娩件数549件と出生届241人の差から市外からのお産が半数以上という読みも会議録の実数から。出産祝金の新設時期は会議録307本で特定できず、その旨を本文に明記"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "machine",
+          "by": "opus",
+          "result": "機械点検",
+          "hash": "c142b88980fc",
+          "note": "check_site.py エラー0"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "numbers",
+          "by": "opus",
+          "result": "数字と出典の照合",
+          "hash": "c142b88980fc",
+          "note": "数字129個すべて出典と照合できた(未照合0)"
+        }
+      ]
+    },
     "ozu-kentoshimasu-kaigiroku": {
       "path": "eachnews/ozu-kentoshimasu-kaigiroku.html",
       "checks": [

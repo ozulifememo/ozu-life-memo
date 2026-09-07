@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-kekkon-shussan",
+    date: "2026-09-07",
+    title: "大洲で子どもが生まれると60万円入る。ただし請求しないと2年で消える",
+    category: "kurashi",
+    source: "e-Gov法令検索（健康保険法・戸籍法ほか）、こども家庭庁、厚生労働省、大洲市議会会議録",
+    sourceDate: "2026-09-07",
+    tags: ["子育て・教育", "医療・福祉"],
+  },
+  {
     slug: "ozu-jumin-kansa",
     date: "2026-09-07",
     title: "市のお金の使い方は住民1人でも問える。答えは60日、決着まで8年6か月",

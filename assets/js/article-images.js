@@ -120,7 +120,11 @@ const OZU_ARTICLE_IMAGES = {
   "michi-ijihi": { file: "photos/ozu-photo-60.jpg" },
   "ozu-toori-namae": { file: "photos/ozu-photo-63.jpg" },
   "shiyuchi-baikyaku": { file: "photos/ozu-photo-42.jpg" },
-  "sora-tobu-kuruma": { file: "photos/ozu-photo-14.jpg" }
+  "sora-tobu-kuruma": { file: "photos/ozu-photo-14.jpg" },
+  // ── 2026-09-06 追加 ──────────────────────────────
+  "ozu-kyoshitsu-koza": { file: "photos/ozu-photo-16.jpg" },
+  "ozu-iinkai-jikko": { file: "photos/ozu-photo-20.jpg" },
+  "ozu-kinenbi-mise": { file: "photos/ozu-photo-03.jpg" },
 };
 
 // 「この記事に合う写真がまだ無い」ものの一覧。
@@ -138,12 +142,7 @@ const OZU_ARTICLE_NO_PHOTO = {
   "ozu-toilecar-kumamoto": "車両が市外に出ていることが多く、確実に撮れない",
   "smart-shrink-ozu": "市長答弁と政策論。被写体が無い",
   "kishou-bosai-advisor": "県の人事と市の方針の話。被写体が無い",
-  "gappei-tokureisai-owari": "合併特例債の借入額の話。被写体が無い"
-
-  // ── 2026-09-06 追加 ──────────────────────────────
-  "ozu-kyoshitsu-koza": { file: "photos/ozu-photo-16.jpg" },
-  "ozu-iinkai-jikko": { file: "photos/ozu-photo-20.jpg" },
-  "ozu-kinenbi-mise": { file: "photos/ozu-photo-03.jpg" },
+  "gappei-tokureisai-owari": "合併特例債の借入額の話。被写体が無い",
 };
 
 const OZU_ARTICLE_PHOTO_WANTED = [

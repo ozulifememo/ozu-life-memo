@@ -1520,6 +1520,46 @@ LOCAL_PATH = [
 ]
 
 
+def check_js_syntax(rep):
+    """assets/js/*.js がJavaScriptとして読めるか(関所)
+
+    2026-09-07に実際に起きた。assets/js/article-images.js の中で
+    カンマが1つ抜けていて、しかも写真の割り当て3件が
+    OZU_ARTICLE_NO_PHOTO(写真が無い理由の一覧)の側に入っていた。
+
+    ブラウザはそこで読むのをやめるので、そのあとに読み込まれる
+    news-data.js も article-card.js も動かなくなり、
+    **サイト中の記事カードから写真が全部消えた**。
+
+    それでもHTMLの検査はすべて通る。imgタグが出ないだけで、
+    壊れたimgは1つも無いからである。本人が画面を見て
+    「画像が全部なくなってる」と言うまで、誰も気づけなかった。
+
+    node があれば node --check で見る。無ければ何もしない。
+    """
+    import shutil
+    import subprocess
+    node = shutil.which("node")
+    if not node:
+        return
+    js_dir = REPO / "assets" / "js"
+    if not js_dir.exists():
+        return
+    for f in sorted(js_dir.glob("*.js")):
+        try:
+            r = subprocess.run([node, "--check", str(f)], capture_output=True,
+                               text=True, timeout=20)
+        except Exception:
+            continue
+        if r.returncode != 0:
+            msg = [l.strip() for l in (r.stderr or "").splitlines() if l.strip()]
+            where = next((l for l in msg if "Error" in l), msg[0] if msg else "")
+            rep.error(rel(f), "JS構文", "JavaScriptとして読めません",
+                      "       " + where[:120] + "\n"
+                      "       ここで止まると、あとに読み込まれるJSも全部動きません\n"
+                      "       (記事カードの写真が全部消えるなど)。node --check で直す")
+
+
 def check_local_paths(rep):
     """開発機のローカルパスが、公開されるファイルに入っていないか(関所)
 
@@ -1945,6 +1985,15 @@ const OZU_NEWS = [
 ];
 """
 
+# 自己診断用の、わざと壊したJavaScript。
+# news-data.js のほうは他の検査(台帳・タグ)が読むので壊せない。別ファイルにする。
+BROKEN_JS = """// カンマが1つ抜けている。2026-09-07に実際に起きた形。
+const A = {
+  "one": { file: "a.jpg" }
+  "two": { file: "b.jpg" },
+};
+"""
+
 # わざと壊したページから、必ず見つかってほしい項目
 EXPECTED = [
     ("構造", "source-box"),
@@ -1994,6 +2043,7 @@ EXPECTED = [
     ("メモう", "原本"),
     ("メモう", "書きかけ"),
     ("レビュー卓", "作り直されていません"),
+    ("JS構文", "JavaScriptとして読めません"),
     ("文章", "1文が"),
     ("事実", "電車"),
     ("タイトル", "策定"),
@@ -2038,6 +2088,7 @@ def run_selftest() -> int:
         (root / "jiyu-kenkyu").mkdir(parents=True)
         (root / "jiyu-kenkyu" / "broken.html").write_text(BROKEN_KENKYU, encoding="utf-8")
         (root / "assets" / "js" / "news-data.js").write_text(BROKEN_REGISTRY, encoding="utf-8")
+        (root / "assets" / "js" / "kowareta.js").write_text(BROKEN_JS, encoding="utf-8")
 
         real_repo = REPO
         REPO = root
@@ -2086,6 +2137,7 @@ def run_selftest() -> int:
                 check_title_numbers(p, html, rep)
                 check_sources(p, html, rep)
             check_local_paths(rep)          # ローカルパスの検査も試す
+            check_js_syntax(rep)            # JSが読めるかも試す
             check_review_fresh(pages, rep)   # 卓が古いかを見る検査も試す
             check_registry_orphans(registry, pages, rep)
             check_registry_file(registry, rep)
@@ -2227,6 +2279,7 @@ def main():
         check_review_fresh(all_pages, rep)
         check_registry_orphans(registry, all_pages, rep)
         check_local_paths(rep)
+        check_js_syntax(rep)
         check_repo_anonymity(rep)
         check_commit_messages(rep)
         check_registry_file(registry, rep)

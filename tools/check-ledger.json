@@ -11591,6 +11591,35 @@
         }
       ]
     },
+    "ozu-jiko-kaji": {
+      "path": "eachnews/ozu-jiko-kaji.html",
+      "checks": [
+        {
+          "date": "2026-09-07",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "4a3d09c0873f",
+          "note": "304件と死者15人から致死率4.93%、人口10万人あたり件数134.6・死者6.64が内部で整合することを検算。死者15人は小標本なのでポアソンの95%区間(2.76〜8.14%)を本文に明記している点も確認"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "machine",
+          "by": "opus",
+          "result": "機械点検",
+          "hash": "4a3d09c0873f",
+          "note": "check_site.py エラー0"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "numbers",
+          "by": "opus",
+          "result": "数字と出典の照合",
+          "hash": "4a3d09c0873f",
+          "note": "数字233個中の未照合6個(2.6%)のみ。大半は自前集計値だが、警察庁オープンデータのCSVから直接出している"
+        }
+      ]
+    },
     "ozu-jo-kawara-kimei": {
       "path": "eachnews/ozu-jo-kawara-kimei.html",
       "checks": [

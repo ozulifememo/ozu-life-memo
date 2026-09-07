@@ -5,8 +5,17 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Mon, 07 Sep 2026 09:19:35 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 07 Sep 2026 09:56:57 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大洲の交通事故は全国より少ない。なのに、亡くなる人は人口あたり3倍だった</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-jiko-kaji.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-jiko-kaji.html</guid>
+      <pubDate>Mon, 07 Sep 2026 09:00:00 +0900</pubDate>
+      <description>警察庁のオープンデータから大洲市内の人身事故304件(2019〜2024年)を自分で抜き出して数えた。件数は全国平均より少ないが、死者は人口あたり約3倍。どんな道で、どんな時間に起きているかを、火災の統計とあわせて整理した。</description>
+      <category>防災</category>
+      <category>交通・インフラ</category>
+    </item>
     <item>
       <title>1.15倍までなら合法、1.35倍だと違法? 土地の値段で9年争った裁判</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-saiban-toshokan.html</link>
@@ -259,14 +268,6 @@
       <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-tabako-haisaku.html</guid>
       <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
       <description>平成24年、大洲市の葉たばこ農家28戸のうち13戸が一斉に廃作し、約12ヘクタールの畑が空いた。きっかけは国のたばこ増税とJTの全国廃作募集だった。市と県とJAが選んだ「転換推進12品目」と、その後14年ぶんの会議録を追った。</description>
-      <category>産業・農業</category>
-    </item>
-    <item>
-      <title>国が440ヘクタールの畑を作った。耕作放棄地は894ヘクタール。並べていい数字か調べた</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kokuei-nochi.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kokuei-nochi.html</guid>
-      <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
-      <description>大洲の山の中に、斜面が急に平らになっている場所がある。昭和51年から平成元年にかけて国が造成した農地で、正式には国営大洲喜多開拓建設事業という。植えるはずだった桑と葉たばこはどちらも消え、29あった維持管理組合は7つになった。造成440ヘクタールと耕作放棄地894ヘクタールが同じものさしの数字なのかも、会議録で確かめた。</description>
       <category>産業・農業</category>
     </item>
   </channel>

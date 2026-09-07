@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-jiko-kaji",
+    date: "2026-09-07",
+    title: "大洲の交通事故は全国より少ない。なのに、亡くなる人は人口あたり3倍だった",
+    category: "kurashi",
+    source: "警察庁「交通事故統計情報のオープンデータ」ほか",
+    sourceDate: "2026-09-07",
+    tags: ["防災", "交通・インフラ"],
+  },
+  {
     slug: "ozu-saiban-toshokan",
     date: "2026-09-07",
     title: "1.15倍までなら合法、1.35倍だと違法? 土地の値段で9年争った裁判",

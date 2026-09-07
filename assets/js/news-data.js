@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-furusato-suru-gawa",
+    date: "2026-09-07",
+    title: "ふるさと納税の上限額、給与収入500万円なら6万1,030円。条文から計算した",
+    category: "kurashi",
+    source: "地方税法・所得税法(e-Gov法令検索)、総務省ふるさと納税現況調査 ほか",
+    sourceDate: "2026-09-07",
+    tags: ["財政・税金"],
+  },
+  {
     slug: "ozu-kekkon-shussan",
     date: "2026-09-07",
     title: "大洲で子どもが生まれると60万円入る。ただし請求しないと2年で消える",

@@ -11181,6 +11181,35 @@
         }
       ]
     },
+    "ozu-furusato-suru-gawa": {
+      "path": "eachnews/ozu-furusato-suru-gawa.html",
+      "checks": [
+        {
+          "date": "2026-09-07",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "e9cbd2764ec0",
+          "note": "地方税法37条の2・314条の7・附則7条の2から上限額を自算出し、総務省の目安表と30円差で一致することを確認。2,000万円だけ8.5%ずれる原因を逆算し、目安表の社会保険料率の前提にあると特定している。Excelの寄附者欄が2種類あることに気づいて混同を自己修正済み"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "machine",
+          "by": "opus",
+          "result": "機械点検",
+          "hash": "e9cbd2764ec0",
+          "note": "check_site.py エラー0"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "numbers",
+          "by": "opus",
+          "result": "数字と出典の照合",
+          "hash": "e9cbd2764ec0",
+          "note": "未照合7個(4.5%)。自分で計算した上限額"
+        }
+      ]
+    },
     "ozu-gesuido-jokaso": {
       "path": "eachnews/ozu-gesuido-jokaso.html",
       "checks": [

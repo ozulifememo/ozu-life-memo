@@ -36,6 +36,24 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-furusato-omakase",
+    date: "2026-09-07",
+    title: "使い道を選ばなかった1億1,995万円は、どこへ行くのか。答えは議会にあった",
+    category: "shiten",
+    source: "令和7年度大洲市ふるさと納税報告書、大洲市議会会議録、総務省ふるさと納税現況調査",
+    sourceDate: "2026-09-07",
+    tags: ["財政・税金"],
+  },
+  {
+    slug: "ozu-furusato-tsukaimichi",
+    date: "2026-09-07",
+    title: "ふるさと納税で大洲が買ったもの。40万円のカヌーが、1億456万円のスクールバスになった",
+    category: "shiten",
+    source: "大洲市ふるさと納税報告書(平成27・29年度、令和2・3・7年度)、大洲市議会会議録、総務省ふるさと納税現況調査",
+    sourceDate: "2026-09-07",
+    tags: ["財政・税金", "まちづくり"],
+  },
+  {
     slug: "ozu-takai-tokoro-tenbo",
     date: "2026-09-07",
     title: "大洲で街がいちばんよく見えるのは、標高1,280mではなく318mだった",

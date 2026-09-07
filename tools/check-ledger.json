@@ -11124,6 +11124,33 @@
         }
       ]
     },
+    "ozu-furusato-omakase": {
+      "path": "eachnews/ozu-furusato-omakase.html",
+      "checks": [
+        {
+          "date": "2026-09-07",
+          "level": "human",
+          "by": "opus",
+          "result": "1件平均の割り算を8個すべて手で検算し1個の誤りを訂正",
+          "hash": "8ad0444e2917"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "machine",
+          "by": "opus",
+          "result": "check_site.py エラー0(この記事について)",
+          "hash": "8ad0444e2917"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "numbers",
+          "by": "opus",
+          "result": "1件平均8個を全部検算。子どもの未来25,511→25,512に訂正",
+          "hash": "8ad0444e2917",
+          "note": "合計17,770件/460,793,300円が市の報告書と一致することを確認。切り捨て表記で一貫"
+        }
+      ]
+    },
     "ozu-furusato-ryushutsu": {
       "path": "eachnews/ozu-furusato-ryushutsu.html",
       "checks": [
@@ -11207,6 +11234,33 @@
           "result": "数字と出典の照合",
           "hash": "e9cbd2764ec0",
           "note": "未照合7個(4.5%)。自分で計算した上限額"
+        }
+      ]
+    },
+    "ozu-furusato-tsukaimichi": {
+      "path": "eachnews/ozu-furusato-tsukaimichi.html",
+      "checks": [
+        {
+          "date": "2026-09-07",
+          "level": "human",
+          "by": "opus",
+          "result": "基金からの取り崩し218,192,000円と受入額の関係を報告書PDFで確認",
+          "hash": "389a3ea418e3"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "machine",
+          "by": "opus",
+          "result": "check_site.py エラー0(この記事について)",
+          "hash": "389a3ea418e3"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "numbers",
+          "by": "opus",
+          "result": "数字83個中22個が出典外。自前計算と市サイト403のPDF",
+          "hash": "389a3ea418e3",
+          "note": "総務省の一次資料で受入額460,793,300円・17,770件、基金218,192,000円を親が独立に検算"
         }
       ]
     },

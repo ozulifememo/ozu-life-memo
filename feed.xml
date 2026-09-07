@@ -5,8 +5,25 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Mon, 07 Sep 2026 14:40:47 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 07 Sep 2026 18:12:59 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使い道を選ばなかった1億1,995万円は、どこへ行くのか。答えは議会にあった</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-furusato-omakase.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-furusato-omakase.html</guid>
+      <pubDate>Mon, 07 Sep 2026 09:00:00 +0900</pubDate>
+      <description>大洲市のふるさと納税は使い道を9つから選べる。令和7年度は4,592件・1億1,995万8,700円が「市長におまかせ」だった。その配分先は議会の答弁に金額つきで残っていた。</description>
+      <category>財政・税金</category>
+    </item>
+    <item>
+      <title>ふるさと納税で大洲が買ったもの。40万円のカヌーが、1億456万円のスクールバスになった</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-furusato-tsukaimichi.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-furusato-tsukaimichi.html</guid>
+      <pubDate>Mon, 07 Sep 2026 09:00:00 +0900</pubDate>
+      <description>大洲市のふるさと納税報告書を平成27年度から令和7年度まで読み通し、寄附金が実際に何に充てられたのかを事業名と金額で並べた。最初の7年、寄附金は基金に積まれたままだった。</description>
+      <category>財政・税金</category>
+      <category>まちづくり</category>
+    </item>
     <item>
       <title>大洲で街がいちばんよく見えるのは、標高1,280mではなく318mだった</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-takai-tokoro-tenbo.html</link>
@@ -253,24 +270,6 @@
       <pubDate>Mon, 07 Sep 2026 09:00:00 +0900</pubDate>
       <description>40代夫婦と中学生の子1人・給与収入400万円という同じモデル世帯を立て、愛媛県内の市町の令和8年度の国民健康保険料(税)率を条例と公表資料から拾って全部計算した。大洲市は料率が確認できた15市町のうち14番目、持ち家なら最も安い。</description>
       <category>財政・税金</category>
-      <category>医療・福祉</category>
-    </item>
-    <item>
-      <title>市内の高校に進むのは55.9%。大洲の中学生は、どこへ行くのか</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-chugaku-shinro-shinai.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-chugaku-shinro-shinai.html</guid>
-      <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
-      <description>大洲市内の中学校を卒業して県内の高校に進んだ349人のうち、市内の高校に進んだのは195人で55.9%だった。市議会の答弁と県教育委員会の資料から、行き先の内訳と、この数字がどう動いてきたかを確かめた。</description>
-      <category>子育て・教育</category>
-      <category>人口減少</category>
-    </item>
-    <item>
-      <title>大洲の求人1.29倍は平均の数字。フルタイム1.79倍、パート0.78倍に割れていた</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kyujin-shokushu-betsu.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kyujin-shokushu-betsu.html</guid>
-      <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
-      <description>令和8年7月のハローワーク大洲の有効求人倍率は1.29倍。ただし公表表から働き方・職業・年齢で割り直すと、パートは0.78倍で県内最低、職業別では最大12倍の開きがあった。管轄区域から賃金まで、公表資料の表を自分で開いて数え直した。</description>
-      <category>産業・農業</category>
       <category>医療・福祉</category>
     </item>
   </channel>

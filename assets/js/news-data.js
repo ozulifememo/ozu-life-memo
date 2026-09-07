@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-gikai-kotoba",
+    date: "2026-09-07",
+    title: "18年で9,534回。市議会でいちばん多く使われた言葉は「今後」だった",
+    category: "shiten",
+    source: "大洲市議会 会議録(2008年3月〜2026年6月)、国会会議録検索システムAPI ほか",
+    sourceDate: "2026-09-07",
+    tags: ["議会・行政", "まちづくり"],
+  },
+  {
     slug: "ozu-suitengu-hashi",
     date: "2026-09-07",
     title: "水天宮の沈下橋は、なぜ消えたのか。変わったのは橋ではなく「毎秒700トン」だった",

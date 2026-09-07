@@ -5,8 +5,17 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Mon, 07 Sep 2026 10:25:09 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 07 Sep 2026 10:56:45 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>18年で9,534回。市議会でいちばん多く使われた言葉は「今後」だった</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-gikai-kotoba.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-gikai-kotoba.html</guid>
+      <pubDate>Mon, 07 Sep 2026 09:00:00 +0900</pubDate>
+      <description>大洲市議会の会議録307本・1,266万字から、出てきた言葉を機械で全部数えた。年ごとの上位語を並べると18年の年表になり、国会と比べると言葉が地方へ届くまでの時差が出て、自分の市の呼び方が「当市」から「本市」に入れ替わっていた。</description>
+      <category>議会・行政</category>
+      <category>まちづくり</category>
+    </item>
     <item>
       <title>水天宮の沈下橋は、なぜ消えたのか。変わったのは橋ではなく「毎秒700トン」だった</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-suitengu-hashi.html</link>
@@ -262,14 +271,6 @@
       <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
       <description>2004年に木造復元された大洲城天守。総工費15億9,427万6,496円のうち4億4,650万15円が寄付だった。集め方は7種類あり、そのひとつが1枚2,000円の瓦記名募金。市の復元事業報告書と広報の連載から、金額・件数・瓦の総数まで追って、あの屋根に何枚の名前が載っているのかを確かめた。</description>
       <category>観光</category>
-    </item>
-    <item>
-      <title>花粉症の柑橘を10年。大洲の収穫は年150キロ、本家の村は年100トンだった</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-jabara-10nen.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-jabara-10nen.html</guid>
-      <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
-      <description>大洲市は平成17年度から、花粉症に効くとされる柑橘「ジャバラ」を上須戒地区で試作していた。飲料「ジンじゃばら」は商標登録され200本が完売する。そして平成25年度、圃場は地権者に返された。本家の和歌山県北山村、隣の内子町と数字を並べて追った。</description>
-      <category>産業・農業</category>
     </item>
   </channel>
 </rss>

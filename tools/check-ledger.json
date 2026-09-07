@@ -11210,6 +11210,35 @@
         }
       ]
     },
+    "ozu-gikai-kotoba": {
+      "path": "eachnews/ozu-gikai-kotoba.html",
+      "checks": [
+        {
+          "date": "2026-09-07",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "61c98acaac0e",
+          "note": "会議録307本を独立に数え、今後11,691回・しっかり961回・鋭意161回が完全一致することを確認。記事は「文字列として数えると地域が上回る」ことも両方の数字を出して明示しており、数え方の限界の書き方も適切"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "machine",
+          "by": "opus",
+          "result": "機械点検",
+          "hash": "61c98acaac0e",
+          "note": "check_site.py エラー0"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "numbers",
+          "by": "opus",
+          "result": "数字と出典の照合",
+          "hash": "61c98acaac0e",
+          "note": "未照合36個(17.1%)はすべて自分で数えた語の出現回数。出典に無いのは当然"
+        }
+      ]
+    },
     "ozu-gouu-8nen": {
       "path": "jiyu-kenkyu/ozu-gouu-8nen.html",
       "checks": [

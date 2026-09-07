@@ -77,3 +77,8 @@ tools/_houjin_cache/
 
 # クイズ一覧の書き出し(build_quiz.py が作る。中身はquiz-data.jsにある)
 /_quiz-src.html
+
+# e-Gov から落とした法令の生データ(作業用。成果物ではない)
+*.xml
+!sitemap.xml
+!feed.xml

@@ -14094,6 +14094,35 @@
         }
       ]
     },
+    "ozu-saiban": {
+      "path": "eachnews/ozu-saiban.html",
+      "checks": [
+        {
+          "date": "2026-09-07",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "277bc535101f",
+          "note": "会議録307本を独立に数え直し、「訴えの提起」0回・「損害賠償の額」0回・「上告」0回、裁判の議案は平成24年3月の和解と同年6月の控訴の提起の2件だけ、を再現。記事と完全一致"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "machine",
+          "by": "opus",
+          "result": "機械点検",
+          "hash": "277bc535101f",
+          "note": "check_site.py エラー0"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "numbers",
+          "by": "opus",
+          "result": "数字と出典の照合",
+          "hash": "277bc535101f",
+          "note": "未照合2個(2.0%)のみ"
+        }
+      ]
+    },
     "ozu-sangyo-40nen": {
       "path": "jiyu-kenkyu/ozu-sangyo-40nen.html",
       "checks": [

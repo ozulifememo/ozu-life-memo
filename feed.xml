@@ -5,8 +5,17 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Mon, 07 Sep 2026 08:40:55 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 07 Sep 2026 09:18:27 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>5億3,800万円を請求された裁判が、市議会に出てこない。条文1行の理由</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-saiban.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-saiban.html</guid>
+      <pubDate>Mon, 07 Sep 2026 09:00:00 +0900</pubDate>
+      <description>大洲市が当事者になった裁判を、市議会の会議録307ファイルから機械的に数えた。18年余りで議案になったのは和解1件と控訴1件だけ。「訴えの提起」は0件だった。訴える側と訴えられる側で扱いが違う仕組みと、市長が1人で決められる範囲を、条文と市の規程から確かめた。</description>
+      <category>議会・行政</category>
+      <category>財政・税金</category>
+    </item>
     <item>
       <title>議員の紹介が要る「請願」を18年ぶん数えた。116件のうち採択は8件</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-seigan-hosoru.html</link>
@@ -259,14 +268,6 @@
       <description>昭和60年度に国が始めた「特定河岸地水害対策事業」の全国第1号は、大洲の五郎駅前地区だった。堤防を築くと家を立ち退かせることになるので、家ごと土地を持ち上げてしまう。国会の会議録で制度の生まれた瞬間まで確かめ、五郎駅前から上老松まで30年続いた5地区の記録を並べた。東大洲で市道が二線堤を兼ねている話も追った。</description>
       <category>防災</category>
       <category>まちづくり</category>
-    </item>
-    <item>
-      <title>日本最古の「動く橋」は大洲にある。しかも赤橋は市内に3つあった</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/nagahama-akabashi.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/nagahama-akabashi.html</guid>
-      <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
-      <description>長浜大橋（赤橋）は昭和10年8月完成。いまも動く道路可動橋としては日本最古で、平成26年に国の重要文化財になった。82トンの重りが54トンの橋桁を持ち上げる仕組み、なぜ長浜に開く橋が要ったのか、いつ開くのかを一次資料で確かめた。市議会に出てくる「長浜・五郎・小鳥越」の赤橋3つの正体も追った。</description>
-      <category>観光</category>
     </item>
   </channel>
 </rss>

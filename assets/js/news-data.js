@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-saiban",
+    date: "2026-09-07",
+    title: "5億3,800万円を請求された裁判が、市議会に出てこない。条文1行の理由",
+    category: "shiten",
+    source: "大洲市議会 会議録(2008年3月〜2026年6月)、裁判所「裁判例検索」、総務省「地方自治月報」ほか",
+    sourceDate: "2026-09-07",
+    tags: ["議会・行政", "財政・税金"],
+  },
+  {
     slug: "ozu-seigan-hosoru",
     date: "2026-09-07",
     title: "議員の紹介が要る「請願」を18年ぶん数えた。116件のうち採択は8件",

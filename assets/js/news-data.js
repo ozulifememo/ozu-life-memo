@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-nandoku-chimei",
+    date: "2026-09-07",
+    title: "大洲の地名100件を機械で採点した。いちばん読めないのは「黒田」だった",
+    category: "kurashi",
+    source: "日本郵便 郵便番号データ／デジタル庁 アドレス・ベース・レジストリ／平凡社『愛媛県の地名』ほか",
+    sourceDate: "2026-09-07",
+    tags: ["合併・地域"],
+  },
+  {
     slug: "ozu-kyujin-nenshu-sa",
     date: "2026-09-07",
     title: "働き口は東京より多いのに、年収は東京の68%。差の9割は「同じ産業の中」で生まれていた",

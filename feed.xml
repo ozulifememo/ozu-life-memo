@@ -5,8 +5,16 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Mon, 07 Sep 2026 12:09:44 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 07 Sep 2026 12:11:09 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大洲の地名100件を機械で採点した。いちばん読めないのは「黒田」だった</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-nandoku-chimei.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-nandoku-chimei.html</guid>
+      <pubDate>Mon, 07 Sep 2026 09:00:00 +0900</pubDate>
+      <description>大洲市の地名100件を郵便番号データと常用漢字表で採点し、読めなさの理由を江戸時代の村名までさかのぼって調べた。</description>
+      <category>合併・地域</category>
+    </item>
     <item>
       <title>働き口は東京より多いのに、年収は東京の68%。差の9割は「同じ産業の中」で生まれていた</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kyujin-nenshu-sa.html</link>
@@ -264,14 +272,6 @@
       <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
       <description>2004年に木造復元された大洲城天守。使った木材447.692立方メートルのうち、松は4.894立方メートルしかない。市の報告書は、松枯れ病と、岩国の錦帯橋・金沢の五十間長屋による松材高騰を理由に挙げている。その裏をどこまで取れるか、岩国市の資料と林野庁の統計で確かめた。</description>
       <category>産業・農業</category>
-      <category>観光</category>
-    </item>
-    <item>
-      <title>大洲のうかいは、いま1晩に33人。50年前は何人が乗っていたのか</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-ukai-kanransha.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-ukai-kanransha.html</guid>
-      <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
-      <description>大洲のうかいの観覧者数は、昭和49年の2万8,754人がピークだった。令和6年は3,726人。50年で87%減っている。市議会の会議録と愛媛県の統計11年分を突き合わせて、いつ・どれだけ落ちたのか、コロナのあとどこまで戻ったのかを年ごとに並べた。</description>
       <category>観光</category>
     </item>
   </channel>

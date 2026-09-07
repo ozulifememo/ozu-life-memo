@@ -13701,6 +13701,35 @@
         }
       ]
     },
+    "ozu-nandoku-chimei": {
+      "path": "eachnews/ozu-nandoku-chimei.html",
+      "checks": [
+        {
+          "date": "2026-09-07",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "8c4e13d1c7d1",
+          "note": "読みは郵便番号データとデジタル庁アドレス・ベース・レジストリの2系統で確認。黒田=クロンタの由来は平凡社の地名データセットの江戸期村名「黒ノ田村」で、推測ではない。難読率は数え方で54.0%と37.0%に割れることを本文に明記し「日本一」と書いていない"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "machine",
+          "by": "opus",
+          "result": "機械点検",
+          "hash": "8c4e13d1c7d1",
+          "note": "check_site.py エラー0"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "numbers",
+          "by": "opus",
+          "result": "数字と出典の照合",
+          "hash": "8c4e13d1c7d1",
+          "note": "未照合3個(4.6%)。自分で採点した集計値"
+        }
+      ]
+    },
     "ozu-nogyo-31nen": {
       "path": "jiyu-kenkyu/ozu-nogyo-31nen.html",
       "checks": [

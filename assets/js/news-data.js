@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-tsukin-jikan",
+    date: "2026-09-07",
+    title: "大洲の通勤は片道17.6分。松山より短いのに、1時間超えは県平均の1.6倍",
+    category: "kurashi",
+    source: "令和5年住宅・土地統計調査（総務省統計局）ほか",
+    sourceDate: "2026-09-07",
+    tags: ["交通・インフラ"],
+  },
+  {
     slug: "ozu-tsukin-shigai",
     date: "2026-09-07",
     title: "毎朝、大洲から3,278人が市外へ働きに出て、4,167人が入ってくる",

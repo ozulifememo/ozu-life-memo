@@ -5,8 +5,16 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Mon, 07 Sep 2026 11:26:21 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 07 Sep 2026 12:01:04 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大洲の通勤は片道17.6分。松山より短いのに、1時間超えは県平均の1.6倍</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-tsukin-jikan.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-tsukin-jikan.html</guid>
+      <pubDate>Mon, 07 Sep 2026 09:00:00 +0900</pubDate>
+      <description>大洲市民の通勤時間は片道17.6分（中位数）で、松山市の21.8分より短い。ところが「片道1時間以上」の割合は愛媛県平均の1.6倍あった。年間何時間になるか、何で通っているか、いくらかかるかまで計算した。</description>
+      <category>交通・インフラ</category>
+    </item>
     <item>
       <title>毎朝、大洲から3,278人が市外へ働きに出て、4,167人が入ってくる</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-tsukin-shigai.html</link>
@@ -264,14 +272,6 @@
       <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
       <description>大洲市南久米の野佐来地区で、7.4ヘクタールの田んぼが県の手で作り直されている。費用は国と県と市が持ち、地権者も耕す側も1円も出していない。代わりに約束したのが15年の貸し出しと、収益2割増しだった。市が足した水路3,500万円の内訳と、いまどこまで進んだかを調べた。</description>
       <category>産業・農業</category>
-    </item>
-    <item>
-      <title>「ページが消えた」は勘違いだった。愛媛20市町を測って分かった403の正体</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/jichitai-site-403.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/jichitai-site-403.html</guid>
-      <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
-      <description>存在しないページを開くと、市役所のサイトは何と答えるのか。愛媛県内20市町を2026年9月6日に自分で測った。答えは全部「404（無い）」だった。ところが存在しないURLを15回続けて開いた瞬間、403に変わり、一度も触っていない他の市町まで同時に閉じた。403は「ページが無い」という意味ではない。</description>
-      <category>議会・行政</category>
     </item>
   </channel>
 </rss>

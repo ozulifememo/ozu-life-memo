@@ -15536,6 +15536,35 @@
         }
       ]
     },
+    "ozu-tsukin-jikan": {
+      "path": "eachnews/ozu-tsukin-jikan.html",
+      "checks": [
+        {
+          "date": "2026-09-07",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "12485f34e4d0",
+          "note": "市町村別の通勤時間は住宅・土地統計調査 第58-2表から直接取得(片道17.6分・中位数)。国勢調査の従業地別人数をOSRMの実道路所要時間で重みづけした加重平均18.7分が近い値になることを検算として本文に残している"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "machine",
+          "by": "opus",
+          "result": "機械点検",
+          "hash": "12485f34e4d0",
+          "note": "check_site.py エラー0"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "numbers",
+          "by": "opus",
+          "result": "数字と出典の照合",
+          "hash": "12485f34e4d0",
+          "note": "未照合44個(16.7%)。住宅・土地統計とe-Statの表はダウンロードファイル側に数値があるため照合機に出ない。OSRMで出した所要時間と年間時間の換算も自分の計算"
+        }
+      ]
+    },
     "ozu-tsukin-shigai": {
       "path": "eachnews/ozu-tsukin-shigai.html",
       "checks": [

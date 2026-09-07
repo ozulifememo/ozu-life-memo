@@ -10,6 +10,7 @@
       '<a href="' + home + '">HOME</a>' +
       '<a href="' + prefix + 'concept/">サイト紹介</a>' +
       '<a href="' + prefix + 'link/">リンク集</a>' +
+      '<a href="' + prefix + 'sakuin/">こんなときは</a>' +
       '<div class="nav-dropdown">' +
       '<button type="button" class="nav-dropdown-trigger">読み物<span class="nav-caret">▾</span></button>' +
       '<div class="nav-dropdown-menu">' +
@@ -55,6 +56,7 @@
 
       '<div class="footer-col">' +
       "<h3>読み物</h3>" +
+      '<a href="' + prefix + 'sakuin/">こんなときは</a>' +
       '<a href="' + prefix + 'news/">大洲ノート</a>' +
       '<a href="' + prefix + 'best/">おすすめ10選</a>' +
       '<a href="' + prefix + 'jiyu-kenkyu/">大洲の自由研究</a>' +

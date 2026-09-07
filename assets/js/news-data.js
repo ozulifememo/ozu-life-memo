@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-takai-tokoro-tenbo",
+    date: "2026-09-07",
+    title: "大洲で街がいちばんよく見えるのは、標高1,280mではなく318mだった",
+    category: "kurashi",
+    source: "国土地理院 標高API・標高タイル、気象庁 過去の気象データ検索、大洲市議会会議録 ほか",
+    sourceDate: "2026-09-07",
+    tags: ["観光", "交通・インフラ"],
+  },
+  {
     slug: "ozu-matsuyama-seikatsuhi",
     date: "2026-09-07",
     title: "大洲と松山、1年の差は5万8,732円。家賃で得した分を、水道とごみで返していた",

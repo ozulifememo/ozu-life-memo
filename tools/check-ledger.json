@@ -15446,6 +15446,35 @@
         }
       ]
     },
+    "ozu-takai-tokoro-tenbo": {
+      "path": "eachnews/ozu-takai-tokoro-tenbo.html",
+      "checks": [
+        {
+          "date": "2026-09-07",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "5d8ef32aad06",
+          "note": "標高は観光サイトの数字を写さず国土地理院のAPIで実測。最高地点は市境の稜線上なので境界の引き方次第で変わる旨を本文に明記。石鎚山が見えるかは座標を数百mずらすと結果が反転したため保留し、記事から外している"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "machine",
+          "by": "opus",
+          "result": "機械点検",
+          "hash": "5d8ef32aad06",
+          "note": "check_site.py エラー0"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "numbers",
+          "by": "opus",
+          "result": "数字と出典の照合",
+          "hash": "5d8ef32aad06",
+          "note": "未照合33個(19.0%)。国土地理院の標高APIで自分で取った42地点の値と、可視解析の集計値。出典に無いのは当然"
+        }
+      ]
+    },
     "ozu-takuchi-kasaage": {
       "path": "eachnews/ozu-takuchi-kasaage.html",
       "checks": [

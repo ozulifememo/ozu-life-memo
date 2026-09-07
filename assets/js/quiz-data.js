@@ -1,4 +1,4 @@
-// 大洲検定。全250問。OZU LIFE MEMOのこれまでの記事を出典にしています。
+// 大洲検定。全260問。OZU LIFE MEMOのこれまでの記事を出典にしています。
 const OZU_QUIZ = [
   {
     q: "大洲城の「キャッスルステイ」、2名1泊の価格は現在いくらから？",
@@ -1754,5 +1754,75 @@ const OZU_QUIZ = [
     answer: 0,
     explain: "固定資産税は土地と建物にかかり、人が減っても土地は減らず、空き家も課税対象であり続ける。減っているのは人と会社に直接ひもづく部分で、法人市民税は24年でマイナス28.5パーセントだった。",
     url: "https://www.soumu.go.jp/iken/zaisei/card.html",
+  },
+  {
+    q: "Googleの検索窓に「大洲」と打ったとき、いちばん上に出る候補は？",
+    choices: ["大洲城", "大洲市天気", "大洲市役所", "大洲高校"],
+    answer: 1,
+    explain: "2026年9月7日に取得した候補の1位は「大洲市天気」で、3位も「大洲天気」だった。大洲城は9番目。天気は毎日変わるので同じ人が何度も引く。候補の並びに効くのは検索した人の数ではなく、引かれた回数のほうである。",
+    url: "https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kensaku-sajesuto.html",
+  },
+  {
+    q: "「大洲」の検索候補の上位10語に、2つ入っている業種は？",
+    choices: ["旅館", "病院", "スーパー", "ガソリンスタンド"],
+    answer: 1,
+    explain: "5位に大洲記念病院、8位に大洲中央病院が入る。近隣8市町と比べても、医療が2つ入るのは大洲と西予だけだった。ただし大洲の主な病院は名前が「大洲」で始まるため、検索語として並びやすいという事情もある。",
+    url: "https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kensaku-sajesuto.html",
+  },
+  {
+    q: "大洲・内子・八幡浜・宇和島・西予・松山・伊予・今治・新居浜。この9市町の検索候補の上位10語すべてに共通して入っていた分野は？",
+    choices: ["天気", "観光", "求人", "グルメ"],
+    answer: 0,
+    explain: "9市町すべてで天気が上位10に入っていた。例外は1つもない。一方で観光はどこでも上位を取れておらず、宇和島城は8番目、大洲城は9番目だった。城下町でも港町でも県庁所在地でも、人はまず天気を調べている。",
+    url: "https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kensaku-sajesuto.html",
+  },
+  {
+    q: "検索窓に「大洲」と打った場合と「大洲市」と打った場合。「大洲市」を付けたときにだけ上位に出てくるのは？",
+    choices: ["大洲高校", "大洲城", "大洲市立図書館", "大洲記念病院"],
+    answer: 2,
+    explain: "「大洲」だけだと高校・病院・城といった民間施設と観光地が並ぶ。「市」を1文字足すと、それらが落ちて市立図書館・空き家バンク・賃貸・市立病院が上がる。場所を探す人と、役所の仕事を探す人で、用件が分かれている。",
+    url: "https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kensaku-sajesuto.html",
+  },
+  {
+    q: "「大洲市」を含む検索候補のうち、行政まわりでいちばん語数が多かったのは？",
+    choices: ["ごみ(13語)", "補助金(6語)", "証明書(3語)", "税金(2語)"],
+    answer: 0,
+    explain: "ごみが13語で突出していた。しかもカレンダーが3語、分別が3語、粗大ごみが2語、持ち込みが2語。「いつ出すのか」「どれに入れるのか」「大きいものはどうするのか」に対応している。市民が自分から検索するのは、毎週やらなければならないことに集まる。",
+    url: "https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kensaku-sajesuto.html",
+  },
+  {
+    q: "大洲市内を走る循環バスの正式な名前は？",
+    choices: ["くるりんバス", "ぐるりんおおず", "おおずくるりん", "あいくる"],
+    answer: 1,
+    explain: "正式には「ぐるりんおおず」。ところが検索候補には「大洲 くるりんバス」「大洲市 くるりんバス 時刻表」と、濁点の落ちた語のほうが多く並んでいた。名前を覚えてもらえていないものは、探してもらえない。ちなみに「あいくる」は伊予市のコミュニティバス。",
+    url: "https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kensaku-sajesuto.html",
+  },
+  {
+    q: "DuckDuckGoで「大洲」の入力候補を出すと、どうなる？",
+    choices: ["Googleと同じ並びになる", "Bingと語も順番も完全に同じになる", "候補が1つも出ない", "Yahoo!と同じ並びになる"],
+    answer: 1,
+    explain: "2026年9月7日の取得では、DuckDuckGoの候補8語がBingの先頭8語と語も順番も一致した。Qwantも先頭7語が一致。DuckDuckGo自身がヘルプページで、通常のリンクと画像は「大部分をBingから調達している」と説明している。",
+    url: "https://ozulifememo.github.io/ozu-life-memo/jiyu-kenkyu/kensaku-enjin-2tsu.html",
+  },
+  {
+    q: "Yahoo! JAPANの検索について、正しいのはどれ？",
+    choices: ["検索結果もGoogleとは別に自前で作っている", "検索結果はGoogleの技術を使っているが、入力候補は別だった", "検索結果も入力候補もGoogleと同じ", "Bingの検索結果を使っている"],
+    answer: 1,
+    explain: "ヤフーは2010年にグーグルの検索エンジンと検索広告の技術を採用し、公正取引委員会が同年12月2日に審査の処理を公表している。それなのに入力候補はGoogleと違い、Yahoo!には5位に「大洲 観光」が入るなど別の並びだった。結果は貸し借りできても、誰が何と打ったかの記録までは渡していないと読める。",
+    url: "https://ozulifememo.github.io/ozu-life-memo/jiyu-kenkyu/kensaku-enjin-2tsu.html",
+  },
+  {
+    q: "ロシア発のYandexと韓国発のNaverで「大洲」の入力候補を出すと？",
+    choices: ["日本語の候補が大量に出る", "英語の候補だけ出る", "候補が0語だった", "エラーになる"],
+    answer: 2,
+    explain: "どちらも「大洲」に対する候補は0語だった。日本語の、しかも地方の地名になると、そもそも材料を持っていない。日本語で地名を調べるとき、独立した候補を返せたのはGoogleとBingとYahoo!の3つだけだった。",
+    url: "https://ozulifememo.github.io/ozu-life-memo/jiyu-kenkyu/kensaku-enjin-2tsu.html",
+  },
+  {
+    q: "Googleの公式説明によると、検索の入力候補が作られるときに考慮されないものはどれ？",
+    choices: ["クエリの言語", "クエリが実行される場所", "検索した人の年収", "注目を集めている関心事"],
+    answer: 2,
+    explain: "Google検索ヘルプは、候補が「クエリの言語」「クエリが実行される場所」「クエリで注目を集めている関心事」「ユーザーの過去の検索」から自動生成されると説明している。ログインしていれば過去の検索履歴も加わるが、ログインしなければ個人の履歴は混ざらない。",
+    url: "https://ozulifememo.github.io/ozu-life-memo/jiyu-kenkyu/kensaku-enjin-2tsu.html",
   },
 ];

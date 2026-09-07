@@ -13987,6 +13987,34 @@
         }
       ]
     },
+    "ozu-net-gokai": {
+      "path": "eachnews/ozu-net-gokai.html",
+      "checks": [
+        {
+          "date": "2026-09-07",
+          "level": "human",
+          "by": "opus",
+          "result": "会議録3本のURLと答弁者を原文で確認し2か所訂正。指定産地は経産省の産地情報で確認",
+          "hash": "111e51e17b48",
+          "note": "R01→H31のURL誤り、令和5年12月は3日目、答弁者は教育長。愛媛県441棟中102棟=23.1%は親が集計"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "machine",
+          "by": "opus",
+          "result": "check_site.py この記事はエラー0",
+          "hash": "111e51e17b48"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "numbers",
+          "by": "opus",
+          "result": "未照合16個はすべて総務省・文科省のExcel/PDFから親が直接読んだ数字",
+          "hash": "111e51e17b48",
+          "note": "check_numbers.pyはxlsxを読めないため出典に無いと出る。原本で確認済み"
+        }
+      ]
+    },
     "ozu-nogyo-31nen": {
       "path": "jiyu-kenkyu/ozu-nogyo-31nen.html",
       "checks": [

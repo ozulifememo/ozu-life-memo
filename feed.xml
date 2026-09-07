@@ -5,8 +5,16 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Mon, 07 Sep 2026 18:12:59 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 07 Sep 2026 18:29:22 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大洲和紙は、大洲市で作られていない。ネットで見かける大洲の話を4つ確かめた</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-net-gokai.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-net-gokai.html</guid>
+      <pubDate>Mon, 07 Sep 2026 09:00:00 +0900</pubDate>
+      <description>大洲和紙の指定産地に大洲市は入っていない。学校の体育館21棟にエアコンは1台もない。ふるさと納税の4億6,079万円は半分が経費に消える。ネット上で見かける大洲の話を、一次資料で4つ確かめた。</description>
+      <category>まちづくり</category>
+    </item>
     <item>
       <title>使い道を選ばなかった1億1,995万円は、どこへ行くのか。答えは議会にあった</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-furusato-omakase.html</link>
@@ -262,15 +270,6 @@
       <description>新築の家は3年間だけ固定資産税が半額になる。では4年目にいくら上がるのか。大洲市の税率と地価公示、国が定めた評価の基準を使って、土地200平方メートル+木造2階建て100平方メートルのモデルで20年ぶんの年税額を計算した。大洲市が都市計画税を課していないことも条例で確かめた。</description>
       <category>財政・税金</category>
       <category>空き家・住宅</category>
-    </item>
-    <item>
-      <title>同じ年収400万円で国保料は年13万円違う。大洲は県内15市町で安いほうから2番目</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kokuho-kennai-hikaku.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kokuho-kennai-hikaku.html</guid>
-      <pubDate>Mon, 07 Sep 2026 09:00:00 +0900</pubDate>
-      <description>40代夫婦と中学生の子1人・給与収入400万円という同じモデル世帯を立て、愛媛県内の市町の令和8年度の国民健康保険料(税)率を条例と公表資料から拾って全部計算した。大洲市は料率が確認できた15市町のうち14番目、持ち家なら最も安い。</description>
-      <category>財政・税金</category>
-      <category>医療・福祉</category>
     </item>
   </channel>
 </rss>

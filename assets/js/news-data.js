@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-net-gokai",
+    date: "2026-09-07",
+    title: "大洲和紙は、大洲市で作られていない。ネットで見かける大洲の話を4つ確かめた",
+    category: "shiten",
+    source: "経済産業大臣指定伝統的工芸品、文部科学省 体育館等の空調設備設置状況調査、総務省 ふるさと納税現況調査、大洲市議会会議録",
+    sourceDate: "2026-09-07",
+    tags: ["まちづくり"],
+  },
+  {
     slug: "ozu-furusato-omakase",
     date: "2026-09-07",
     title: "使い道を選ばなかった1億1,995万円は、どこへ行くのか。答えは議会にあった",

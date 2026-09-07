@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>日本の検索は実質2つしかない。BingとDuckDuckGoとQwantは、1語も違わなかった ｜ 大洲の自由研究 ｜ OZU LIFE MEMO</title>
+<meta name="description" content="検索サイトを4つ使って「大洲」の入力候補を取り、並べて比べた。DuckDuckGoとQwantはBingと語も順番も完全に一致した。一方でYahoo! JAPANは検索結果にGoogleの技術を使っているのに、入力候補だけはGoogleと違っていた。なぜ差が出るのかを考えた。">
+<link rel="icon" href="../assets/img/favicon-192.png">
+<link rel="alternate" type="application/rss+xml" title="OZU LIFE MEMO の更新" href="../feed.xml">
+<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link data-ozu-fonts rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;family=Shippori+Mincho+B1:wght@600;700&amp;display=swap">
+<link rel="stylesheet" href="../assets/css/style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="OZU LIFE MEMO">
+<meta property="og:title" content="日本の検索は実質2つしかない。BingとDuckDuckGoとQwantは、1語も違わなかった ｜ 大洲の自由研究">
+<meta property="og:description" content="検索サイトを4つ使って「大洲」の入力候補を取り、並べて比べた。DuckDuckGoとQwantはBingと語も順番も完全に一致した。一方でYahoo! JAPANは検索結果にGoogleの技術を使っているのに、入力候補だけはGoogleと違っていた。なぜ差が出るのかを考えた。">
+<meta property="og:url" content="https://ozulifememo.github.io/ozu-life-memo/jiyu-kenkyu/kensaku-enjin-2tsu.html">
+<meta property="og:image" content="https://ozulifememo.github.io/ozu-life-memo/assets/img/ogp-card.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://ozulifememo.github.io/ozu-life-memo/jiyu-kenkyu/kensaku-enjin-2tsu.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "日本の検索は実質2つしかない。BingとDuckDuckGoとQwantは、1語も違わなかった",
+  "description": "検索サイトを4つ使って「大洲」の入力候補を取り、並べて比べた。DuckDuckGoとQwantはBingと語も順番も完全に一致した。一方でYahoo! JAPANは検索結果にGoogleの技術を使っているのに、入力候補だけはGoogleと違っていた。なぜ差が出るのかを考えた。",
+  "datePublished": "2026-09-07",
+  "dateModified": "2026-09-07",
+  "image": "https://ozulifememo.github.io/ozu-life-memo/assets/img/ogp-card.png",
+  "author": {"@type": "Organization", "name": "OZU LIFE MEMO"},
+  "publisher": {"@type": "Organization", "name": "OZU LIFE MEMO"},
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://ozulifememo.github.io/ozu-life-memo/jiyu-kenkyu/kensaku-enjin-2tsu.html"}
+}
+</script>
+<style>
+  .jk-hero { background: linear-gradient(180deg, var(--color-surface-alt) 0%, transparent 100%); }
+  .jk-meta { display:flex; gap:14px; flex-wrap:wrap; margin-top:14px; font-size:.82rem; color:var(--color-text-muted); }
+  .jk-meta span { background:var(--color-surface); border:1px solid var(--color-border); border-radius:4px; padding:4px 12px; }
+  .jk-toc { background:var(--color-surface); border:1px solid var(--color-border); border-radius:var(--radius); padding:20px 24px; margin:32px 0; }
+  .jk-toc h2 { margin-top:0; font-size:1rem; }
+  .jk-toc ol { margin:0; padding-left:1.3em; color:var(--color-text-muted); line-height:2; font-size:.92rem; }
+  .jk-toc a { color:inherit; }
+  .jk-toc a:hover { color:var(--color-brand); }
+  .jk-section { max-width:760px; margin:0 auto; }
+  .jk-section h2 { color:var(--color-brand); font-size:1.35rem; margin:52px 0 16px; scroll-margin-top:20px; }
+  .jk-section h3 { color:var(--color-text); font-size:1.05rem; margin:28px 0 10px; }
+  .jk-section p.commentary { margin-bottom:16px; }
+  .jk-callout { background:var(--color-surface-alt); border-left:3px solid var(--color-brand); border-radius:4px; padding:14px 18px; margin:20px 0; font-size:.92rem; color:var(--color-text-muted); }
+  .jk-quote { border-left:3px solid var(--color-text-faint); background:var(--color-surface); padding:14px 20px; margin:20px 0; font-size:.93rem; line-height:1.9; }
+  .jk-quote .src { display:block; margin-top:8px; font-size:.78rem; color:var(--color-text-muted); }
+  .jk-code { background:var(--color-surface-alt); border:1px solid var(--color-border); border-radius:var(--radius); padding:16px 18px; margin:20px 0; overflow-x:auto; font-size:.85rem; line-height:1.7; }
+  .jk-code code { font-family:"SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace; white-space:pre; }
+  table.jk-table { width:100%; border-collapse:collapse; font-size:.88rem; margin:16px 0; }
+  table.jk-table th, table.jk-table td { text-align:left; padding:9px 12px; border-bottom:1px solid var(--color-border); vertical-align:top; }
+  table.jk-table th { color:var(--color-text-muted); font-weight:700; font-size:.78rem; }
+  .jk-table-wrap { overflow-x:auto; margin:16px 0; }
+  .jk-diagram { background:var(--color-surface); border:1px solid var(--color-border); border-radius:var(--radius); padding:16px 8px; overflow-x:auto; margin:24px 0; }
+  .jk-diagram svg { display:block; width:100%; height:auto; min-width:720px; }
+  .jk-fig-caption { text-align:center; font-size:.82rem; color:var(--color-text-muted); margin-top:10px; }
+  .jk-fn { font-size:.7em; vertical-align:super; color:var(--color-brand); text-decoration:none; }
+  .jk-footnotes { font-size:.85rem; color:var(--color-text-muted); border-top:1px solid var(--color-border); padding-top:20px; margin-top:56px; }
+  .jk-footnotes li { margin-bottom:8px; }
+  .jk-series-note { background:var(--color-surface-alt); border-radius:var(--radius); padding:16px 20px; font-size:.85rem; color:var(--color-text-muted); margin:32px auto; max-width:760px; }
+</style>
+</head>
+<body>
+
+<div data-site-header data-prefix="../"></div>
+
+<section class="jk-hero">
+  <div class="wrap" style="max-width:820px;">
+    <p style="font-size:.8rem;letter-spacing:.06em;color:var(--color-brand);font-weight:700;margin-bottom:10px;">大洲の自由研究 #25</p>
+    <h1 style="font-size:clamp(1.6rem,4vw,2.1rem);line-height:1.5;">日本の検索は実質2つしかない。BingとDuckDuckGoとQwantは、1語も違わなかった</h1>
+    <p style="color:var(--color-text-muted);margin-top:14px;">
+      検索サイトはたくさんあるように見える。実際に使ってみると、そうでもない。 「大洲」と打ったときに出る入力候補を、7つの経路から取って並べてみた。するとDuckDuckGoとQwantは、Bingと語も順番も1つ違わず同じだった。中身が同じなのだから当然といえば当然だが、目で見て確かめられる形にすると、ずいぶん違って見える。 一方で、日本でいちばん使われている2つ、GoogleとYahoo! JAPANは別の並びを出した。Yahoo! JAPANは検索結果にGoogleの技術を使っているのに、である。 この研究では、実際に取れた候補を全部並べたうえで、なぜ差が出るのかを4つの角度から考える。大洲市のサイトには一度も触れていない。
+    </p>
+    <div class="jk-meta">
+      <span>読了目安 5〜10分</span>
+      <span>公開: 2026/09/07</span>
+      <span>調べた資料 12本</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap jk-section">
+
+    <div class="memou-intro">
+      <div class="memou-intro-figure">
+        <img src="../assets/img/memou-hirameki.svg" alt="" class="memou-intro-avatar" width="84" height="84" decoding="async">
+        <span class="memou-intro-name">メモう</span>
+      </div>
+      <div class="memou-intro-bubble">
+        <p>検索サイトっていっぱいあるように見えるやろ。ためしに「大洲」で候補を出させてみたんよ。</p>
+        <p>ダックダックゴーとクワントは、ビングと1語も違わんかった。中身が同じなんよ。</p>
+        <p>ヤフーはグーグルの検索を借りとるのに、候補だけは自前やった。ふしぎやろ。</p>
+      </div>
+    </div>
+
+    <div class="jk-toc">
+      <h2>目次</h2>
+      <ol>
+        <li><a href="#ch1">何を調べたか</a></li>
+        <li><a href="#ch2">出てきた候補を、全部並べる</a></li>
+        <li><a href="#ch3">DuckDuckGoとQwantは、Bingと1語も違わなかった</a></li>
+        <li><a href="#ch4">Yahoo!は、Googleの検索を使っている。それなのに候補が違う</a></li>
+        <li><a href="#ch5">なぜ差が出るのか。4つ考えた</a></li>
+        <li><a href="#ch6">調べても分からなかったこと</a></li>
+        <li><a href="#ch7">分かったこと</a></li>
+      </ol>
+    </div>
+
+    <h2 id="ch1">何を調べたか</h2>
+    <p class="commentary">検索サイトを変えると、違う結果が出る。そう思っている人は多いと思う。私もそう思っていた。</p>
+    <p class="commentary">確かめる方法がある。<strong>入力候補</strong>である。検索の窓に文字を打つと、続きの候補が下に並ぶ。あれは各社が自分のところの検索の記録をもとに作っている。だから、候補を見比べれば、<strong>中身が同じかどうかが分かる。</strong></p>
+    <p class="commentary">2026年9月7日、「大洲」と打ったときの候補を、7つの経路から取った。取り方は2種類ある。公開されている入力候補の窓口(API)に直接聞いたものが5つ、ブラウザで実際に打ち込んで画面に出たものを読んだのが1つである。</p>
+    <p class="commentary">結果は、はっきり分かれた。</p>
+    <h2 id="ch2">出てきた候補を、全部並べる</h2>
+    <p class="commentary">まず、日本でよく使われている3つを並べる。数字は候補が出てきた順である。</p>
+    <div class="article-table-wrap"><table class="jk-table">
+      <tr><th>順</th><th>Google</th><th>Bing</th><th>Yahoo! JAPAN</th></tr>
+      <tr><td>1</td><td>大洲市天気</td><td>大洲市</td><td>大洲市</td></tr>
+      <tr><td>2</td><td>大洲市</td><td>大洲城</td><td>大洲城</td></tr>
+      <tr><td>3</td><td>大洲天気</td><td>大洲市役所 ホームページ</td><td>大洲市 天気</td></tr>
+      <tr><td>4</td><td>大洲高校</td><td>大洲高校</td><td>大洲高校</td></tr>
+      <tr><td>5</td><td>大洲記念病院</td><td>大洲青少年交流の家</td><td>大洲 観光</td></tr>
+      <tr><td>6</td><td>大洲市役所</td><td>大洲河川国道事務所</td><td>大洲記念病院</td></tr>
+      <tr><td>7</td><td>大洲</td><td>大洲市役所</td><td>大洲北中学校</td></tr>
+      <tr><td>8</td><td>大洲中央病院</td><td>大洲市 天気</td><td>大洲中央病院</td></tr>
+      <tr><td>9</td><td>大洲城</td><td>大洲記念病院</td><td>大洲ゴルフ倶楽部</td></tr>
+      <tr><td>10</td><td>大洲市民会館</td><td>大洲中央病院</td><td>大洲ゴルフクラブ競技結果</td></tr>
+    </table></div>
+    <p class="commentary">3つとも違う。<strong>同じ言葉を打っているのに、返ってくるものが違う。</strong></p>
+    <p class="commentary">Googleは1位と3位が天気で、5位と8位が病院。Bingは2位に大洲城が来て、5位と6位に<strong>大洲青少年交流の家と大洲河川国道事務所</strong>が入る。Yahoo!は5位に<strong>大洲 観光</strong>が入り、9位と10位がゴルフ場だった。</p>
+    <h2 id="ch3">DuckDuckGoとQwantは、Bingと1語も違わなかった</h2>
+    <p class="commentary">次に、Google・Bing以外の検索サイトを3つ試した。DuckDuckGo、Qwant、そしてYandexとNaverである。</p>
+    <p class="commentary">DuckDuckGoの候補は8語だった。</p>
+    <div class="jk-quote">
+      大洲市 / 大洲城 / 大洲市役所 ホームページ / 大洲高校 / 大洲青少年交流の家 / 大洲河川国道事務所 / 大洲市役所 / 大洲市 天気<br>
+    </div>
+    <p class="commentary">さきほどのBingの表と見比べてほしい。<strong>1位から8位まで、語も順番も完全に一致している。</strong></p>
+    <p class="commentary">Qwantも同じだった。返ってきたのは7語で、こちらも<strong>Bingの先頭7語と語も順番も完全に一致</strong>した。</p>
+    <p class="commentary">つまり、この3つは<strong>別のサイトだが、同じものを見ている</strong>。DuckDuckGoは「追跡されない検索」を掲げていて、Qwantはヨーロッパ発を掲げている。掲げているものは違うが、<strong>検索の中身はBingから来ている</strong>。</p>
+    <p class="commentary">これは推測ではない。DuckDuckGoは自分たちのヘルプページでこう説明している。独自のクローラー(DuckDuckBot)と複数の索引は持っているが、通常のリンクと画像は「<strong>大部分をBingから調達している</strong>(we largely source from Bing)」。今回の一致は、その説明どおりの結果だった。</p>
+    <p class="commentary">念のため、ロシア発のYandexと韓国発のNaverも試した。どちらも「大洲」に対する候補は<strong>0語</strong>だった。日本語の、しかも地方の地名になると、そもそも材料を持っていない。</p>
+    <p class="commentary">ここまでで、日本語で「大洲」を調べようとしたときに、独立した候補を出せたのは<strong>GoogleとBingとYahoo!の3つだけ</strong>だった。そのうちYahoo!には、次に見るような事情がある。</p>
+
+    <div class="jk-diagram">
+      <figure style="margin:0;">
+<svg viewBox="0 0 1140 430" role="img" aria-label="検索サイト6つの関係図。GoogleとBingは自前の入力候補を持ち、DuckDuckGoとQwantはBingの候補と完全に一致した。Yahoo! JAPANは検索結果をGoogleから借りているが入力候補は自前。YandexとNaverは候補ゼロ。">
+<defs>
+<marker id="ar" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="var(--color-brand)"/></marker>
+<marker id="ar2" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="var(--color-accent)"/></marker>
+</defs>
+<g font-size="13" fill="var(--color-text)">
+<text x="40" y="30" font-weight="700" font-size="15">「大洲」の入力候補は、どこから来ているか(2026年9月7日に取得)</text>
+
+<rect x="60" y="70" width="230" height="70" rx="8" fill="var(--color-surface)" stroke="var(--color-brand)" stroke-width="2"/>
+<text x="175" y="102" text-anchor="middle" font-weight="700" font-size="16">Google</text>
+<text x="175" y="124" text-anchor="middle" font-size="12" fill="var(--color-text-muted)">自前の候補 10語</text>
+
+<rect x="60" y="230" width="230" height="70" rx="8" fill="var(--color-surface)" stroke="var(--color-brand)" stroke-width="2"/>
+<text x="175" y="262" text-anchor="middle" font-weight="700" font-size="16">Bing</text>
+<text x="175" y="284" text-anchor="middle" font-size="12" fill="var(--color-text-muted)">自前の候補 11語</text>
+
+<path d="M292 105 L 428 105" stroke="var(--color-brand)" stroke-width="2" stroke-dasharray="6 5" fill="none" marker-end="url(#ar)"/>
+<text x="360" y="96" text-anchor="middle" font-size="11" fill="var(--color-text-muted)">検索結果だけ</text>
+
+<rect x="440" y="70" width="260" height="70" rx="8" fill="var(--color-surface)" stroke="var(--color-brand)" stroke-width="2"/>
+<text x="570" y="100" text-anchor="middle" font-weight="700" font-size="15">Yahoo! JAPAN</text>
+<text x="570" y="122" text-anchor="middle" font-size="12" fill="var(--color-text-muted)">結果はGoogle／候補は自前 10語</text>
+
+<path d="M292 252 L 428 208" stroke="var(--color-accent)" stroke-width="2" fill="none" marker-end="url(#ar2)"/>
+<path d="M292 278 L 428 322" stroke="var(--color-accent)" stroke-width="2" fill="none" marker-end="url(#ar2)"/>
+
+<rect x="440" y="170" width="260" height="70" rx="8" fill="var(--color-surface-alt)" stroke="var(--color-accent)" stroke-width="2"/>
+<text x="570" y="200" text-anchor="middle" font-weight="700" font-size="15">DuckDuckGo</text>
+<text x="570" y="222" text-anchor="middle" font-size="12" fill="var(--color-text-muted)">Bingの先頭8語と完全一致</text>
+
+<rect x="440" y="290" width="260" height="70" rx="8" fill="var(--color-surface-alt)" stroke="var(--color-accent)" stroke-width="2"/>
+<text x="570" y="320" text-anchor="middle" font-weight="700" font-size="15">Qwant</text>
+<text x="570" y="342" text-anchor="middle" font-size="12" fill="var(--color-text-muted)">Bingの先頭7語と完全一致</text>
+
+<rect x="790" y="170" width="290" height="90" rx="8" fill="var(--color-surface)" stroke="var(--color-border-strong)" stroke-width="2" stroke-dasharray="5 4"/>
+<text x="935" y="202" text-anchor="middle" font-weight="700" font-size="15">Yandex ／ Naver</text>
+<text x="935" y="226" text-anchor="middle" font-size="12" fill="var(--color-text-muted)">「大洲」の候補は 0語</text>
+<text x="935" y="246" text-anchor="middle" font-size="12" fill="var(--color-text-muted)">日本語の地名の材料を持たない</text>
+
+<text x="40" y="400" font-size="12" fill="var(--color-text-muted)">実線=入力候補がそのまま同じ／破線=検索結果だけを借りている</text>
+</g>
+</svg>
+      </figure>
+    </div>
+    <p class="jk-fig-caption">図1: 6つの検索サイトの関係。実際に取得した候補が一致するかどうかで描き分けた</p>
+
+    <h2 id="ch4">Yahoo!は、Googleの検索を使っている。それなのに候補が違う</h2>
+    <p class="commentary">Yahoo! JAPANは、検索の中身をGoogleから借りている。</p>
+    <p class="commentary">2010年7月、ヤフーはグーグルの検索エンジンと検索連動広告の技術を採用すると発表した。この取引については公正取引委員会が審査を行い、同年12月2日に処理の内容を公表している。相談の段階では独占禁止法に違反しないと判断し、予備的調査でも現時点で更なる調査は要しないと結論したうえで、実装の仕方が説明と違えば強い競争阻害効果を及ぼしうるとして、監視を続ける方針が示されていた。関係はその後も続き、2024年4月の時点でも公正取引委員会が両社の取引を問題として取り上げていたことが報じられている。</p>
+    <p class="commentary">つまり、<strong>Yahoo!で検索した結果は、もともとGoogleのものである。</strong></p>
+    <p class="commentary">それなのに、入力候補は違った。もう一度見比べる。</p>
+    <p class="commentary">・Google 1位「大洲市天気」／Yahoo! 1位「大洲市」</p>
+    <p class="commentary">・Googleの上位10に<strong>観光は大洲城の1つだけ</strong>／Yahoo!は5位に「大洲 観光」</p>
+    <p class="commentary">・Yahoo!には9位・10位にゴルフ場が入るが、Googleの上位10には無い</p>
+    <p class="commentary">検索の結果は同じものを使っていて、<strong>入力の候補だけが別</strong>。これがこの研究でいちばん面白かったところである。</p>
+    <p class="commentary">理由はおそらく単純で、<strong>候補を作る材料が共有されていない</strong>からだ。Googleの説明によれば、候補は「クエリの言語」「クエリが実行される場所」「クエリで注目を集めている関心事」「ユーザーの過去の検索」から自動で作られる。ここに出てくる「実際に打たれた言葉」の記録は、各社が自分のところで持っている。結果は貸し借りできても、<strong>誰が何と打ったかの記録までは渡していない</strong>、と読める。</p>
+    <h2 id="ch5">なぜ差が出るのか。4つ考えた</h2>
+    <p class="commentary">ここからは推測が混じる。裏が取れているものと、取れていないものを分けて書く。</p>
+    <p class="commentary"><strong>① 材料が別々である。</strong>(裏が取れている)</p>
+    <p class="commentary">Googleの公式の説明にあるとおり、候補の材料は実際に打たれた言葉である。Yahoo!の候補がYahoo!利用者の打った言葉から作られているなら、Googleとずれるのは当たり前になる。</p>
+    <p class="commentary"><strong>② 使っている人の層が違う。</strong>(推測)</p>
+    <p class="commentary">これがいちばん効いていそうだ。Bingだけ、上位に<strong>大洲青少年交流の家</strong>と<strong>大洲河川国道事務所</strong>という公的機関が2つ入っている。BingはWindowsとEdgeの初期設定の検索であり、<strong>職場のパソコンから引かれやすい</strong>。仕事で公的機関を探す人の言葉が上に来ている、と読める。同じように、Yahoo!に観光とゴルフ場が入るのは、ポータルサイト経由で「出かける前に調べる」使われ方が厚いから、と説明できる。ただしこれは並びから読み取った推測で、各社の利用者層の統計を突き合わせて確かめたわけではない。</p>
+    <p class="commentary"><strong>③ 言葉のそろえ方が違う。</strong>(裏が取れている)</p>
+    <p class="commentary">Googleは「大洲市天気」とくっつけて出し、Yahoo!とBingは「大洲市 天気」と空けて出す。同じ検索を指しているのに、表記の整え方が各社で違う。並びを比べるときは、ここを揃えないと数え間違える。</p>
+    <p class="commentary"><strong>④ 天気が上位なのは、知りたい人が多いからではない。</strong>(推測だが根拠はある)</p>
+    <p class="commentary">Googleの1位と3位はどちらも天気だった。ただし候補の並びに効くのは<strong>引かれた回数</strong>である。天気は毎日変わるから、同じ人が何度も引く。城は一度調べれば当分足りる。<strong>回数の多さと、知りたい人の多さは別のもの</strong>で、候補が拾っているのは前者のほうだ。</p>
+    <h2 id="ch6">調べても分からなかったこと</h2>
+    <p class="commentary">正直に書いておく。</p>
+    <p class="commentary"><strong>1つ目。今回取ったのは、2026年9月7日という1日の、しかも1回きりの記録である。</strong> 候補は日々変わる。翌週に同じことをすれば違う並びが出る可能性がある。</p>
+    <p class="commentary"><strong>2つ目。ログインしていない状態で取っている。</strong> Googleの説明では、ログインしていると過去の検索履歴に基づく候補が加わる。だから今回の並びには個人の履歴が混ざっていない。街の姿として読める一方で、<strong>実際に自分のパソコンで打ったときの並びとは違う</strong>ことがある。</p>
+    <p class="commentary"><strong>3つ目。取得した場所の影響を消せていない。</strong> 候補は「クエリが実行される場所」を考慮すると公式に書かれている。今回はすべて愛媛県内から取っている。東京から取れば、また違う並びになるはずだ。</p>
+    <p class="commentary"><strong>4つ目。Brave SearchとEcosiaは取れなかった。</strong> Braveは短時間に叩きすぎて拒否され、Ecosiaはサービス側の一時的な不調で応答が返らなかった。この2つを入れれば、独立した候補を持つ検索サイトがもう1つ見つかった可能性はある。<strong>「日本の検索は実質2つ」と言い切るには、ここが空いている。</strong></p>
+    <h2 id="ch7">分かったこと</h2>
+    <p class="commentary">検索サイトの数と、検索エンジンの数は違う。</p>
+    <p class="commentary">今回の範囲で言えば、日本語で地方の地名を調べるとき、独立した候補を返したのは<strong>GoogleとBingの2つ</strong>だった。DuckDuckGoもQwantもBingを見ていて、YandexとNaverは何も持っていなかった。そしてYahoo! JAPANは、検索結果をGoogleから借りながら、候補だけは自前で出していた。</p>
+    <p class="commentary">「検索サイトを変えて調べ直す」は、思っているほど別の答えにはたどりつかない。変えたつもりで、同じところを見ていることがある。</p>
+    <p class="commentary">ただし、<strong>入力候補だけは各社が別々に持っている</strong>。だから何かを調べるとき、GoogleとBingとYahoo!の3つで候補を見比べると、<strong>自分では思いつかなかった言い方</strong>が出てくることがある。今回でいえば、Bingを見なければ「大洲河川国道事務所」という言葉にはたどりつかなかった。</p>
+    <p class="commentary">検索は、答えを探す道具である前に、<strong>問いの言い方を探す道具</strong>でもあるらしい。</p>
+
+    <div class="jk-footnotes">
+      <p style="font-weight:700;color:var(--color-text);margin-bottom:10px;">出典</p>
+      <ol>
+        <li id="fn1"><a href="https://support.google.com/websearch/answer/7368877?hl=ja" target="_blank" rel="noopener">Google 検索の予測入力の仕組み／Google 検索ヘルプ</a>(閲覧: 2026年9月7日。候補が自動システムで生成されること、考慮される要因が「クエリの言語」「クエリが実行される場所」「クエリで注目を集めている関心事」「ユーザーの過去の検索」であること、ログイン時には過去の検索履歴に基づく候補が加わることを確認)</li>
+        <li id="fn2"><a href="https://suggestqueries.google.com/complete/search?client=firefox&amp;hl=ja&amp;q=%E5%A4%A7%E6%B4%B2" target="_blank" rel="noopener">Google サジェスト(suggestqueries.google.com)</a>(取得: 2026年9月7日。「大洲」の候補10語を、返ってきた順に記録した)</li>
+        <li id="fn3"><a href="https://api.bing.com/osjson.aspx?query=%E5%A4%A7%E6%B4%B2&amp;market=ja-JP" target="_blank" rel="noopener">Bing サジェスト(api.bing.com/osjson.aspx)</a>(取得: 2026年9月7日。「大洲」の候補11語を、返ってきた順に記録した)</li>
+        <li id="fn4"><a href="https://duckduckgo.com/ac/?q=%E5%A4%A7%E6%B4%B2&amp;kl=jp-jp" target="_blank" rel="noopener">DuckDuckGo 入力候補(duckduckgo.com/ac)</a>(取得: 2026年9月7日。候補8語が、Bingの候補の先頭8語と語も順番も一致した)</li>
+        <li id="fn5"><a href="https://api.qwant.com/v3/suggest?q=%E5%A4%A7%E6%B4%B2&amp;locale=ja_JP" target="_blank" rel="noopener">Qwant 入力候補(api.qwant.com)</a>(取得: 2026年9月7日。候補7語が、Bingの候補の先頭7語と語も順番も一致した)</li>
+        <li id="fn6"><a href="https://search.yahoo.co.jp/" target="_blank" rel="noopener">Yahoo! JAPAN 検索</a>(取得: 2026年9月7日。入力欄に1文字ずつ打ち込み、画面に表示された候補を出た順に記録した。11件目は候補ではなく生成AIへ質問を促すボタンだったので除き、10語を対象とした)</li>
+        <li id="fn7"><a href="https://duckduckgo.com/duckduckgo-help-pages/results/sources/" target="_blank" rel="noopener">Sources／DuckDuckGo Help Pages</a>(閲覧: 2026年9月7日。DuckDuckGo自身が、独自のクローラー(DuckDuckBot)と複数のインデックスを持ちつつ、通常のリンクと画像は「we largely source from Bing」=大部分をBingから調達していると説明していることを確認)</li>
+        <li id="fn8"><a href="https://suggest.yandex.com/suggest-ff.cgi?part=%E5%A4%A7%E6%B4%B2&amp;uil=ja" target="_blank" rel="noopener">Yandex 入力候補(suggest.yandex.com)</a>(取得: 2026年9月7日。「大洲」に対する候補が0語で返ることを確認)</li>
+        <li id="fn9"><a href="https://ac.search.naver.com/nx/ac?q=%E5%A4%A7%E6%B4%B2&amp;st=100" target="_blank" rel="noopener">Naver 入力候補(ac.search.naver.com)</a>(取得: 2026年9月7日。「大洲」に対する候補が0語で返ることを確認)</li>
+        <li id="fn10"><a href="https://www.jftc.go.jp/en/pressreleases/yearly-2010/dec/individual-000002.html" target="_blank" rel="noopener">ヤフーによるグーグルの検索エンジン等の技術サービスの利用について／公正取引委員会</a>(2010年12月2日公表。ヤフーがグーグルから検索エンジンと検索広告プラットフォームの提供を受けることについて、相談段階では独占禁止法に違反しないと判断し、予備的調査でも現時点で更なる調査は要しないと結論したこと、ただし実装方法が説明と異なる場合は強い競争阻害効果を及ぼす可能性があるとして監視を続ける方針が示されたことを確認)</li>
+        <li id="fn11"><a href="https://www.upi.com/Top_News/World-News/2024/04/22/Japan-Google-Yahoo-plan-Fair-trade-commission/8871713790026/" target="_blank" rel="noopener">Japan FTC to give Google chance to voluntarily resolve dispute with Yahoo Japan／UPI</a>(2024年4月22日。公正取引委員会がグーグルとヤフーの取引関係を問題としていた当時の報道。2024年の時点でも両社の関係が続いていたことの裏付けとして使った)</li>
+        <li id="fn12"><a href="https://www.taipeitimes.com/News/worldbiz/archives/2010/07/28/2003478965" target="_blank" rel="noopener">Yahoo Japan to use Google search engine technology／Taipei Times</a>(2010年7月28日。ヤフージャパンがグーグルの検索技術を採用すると発表した当時の報道)</li>
+      </ol>
+    </div>
+
+    <div class="jk-series-note">
+      この記事は「大洲の自由研究」シリーズの25本目です。通常の<a href="../news/">大洲ノート</a>より
+      長く、専門的な内容を含みます。<a href="index.html">シリーズ一覧はこちら</a>。
+    </div>
+
+  </div>
+</section>
+
+<div data-site-footer></div>
+<div data-site-modal></div>
+<script src="../assets/js/site-chrome.js"></script>
+<script src="../assets/js/main.js"></script>
+<script data-goatcounter="https://ozulifememo.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

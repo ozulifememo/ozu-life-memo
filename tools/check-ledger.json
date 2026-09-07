@@ -6696,6 +6696,33 @@
         }
       ]
     },
+    "kensaku-enjin-2tsu": {
+      "path": "jiyu-kenkyu/kensaku-enjin-2tsu.html",
+      "checks": [
+        {
+          "date": "2026-09-07",
+          "level": "human",
+          "by": "opus",
+          "result": "公取委の2010年12月2日公表資料とDuckDuckGo公式のSourcesページを実際に開いて確認",
+          "hash": "f5b511ce2c39"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "machine",
+          "by": "opus",
+          "result": "check_site.py この自由研究はエラー0・警告0",
+          "hash": "f5b511ce2c39"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "numbers",
+          "by": "opus",
+          "result": "DDG=Bing先頭8語、Qwant=Bing先頭7語の一致を取得し直して再確認",
+          "hash": "f5b511ce2c39",
+          "note": "Yahooの11件目は候補ではなくAI誘導ボタンだったので10語に訂正"
+        }
+      ]
+    },
     "kigyo-yuchi-kikuyocho-hikaku": {
       "path": "eachnews/kigyo-yuchi-kikuyocho-hikaku.html",
       "checks": [

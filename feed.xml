@@ -5,8 +5,17 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Mon, 07 Sep 2026 14:15:10 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 07 Sep 2026 14:16:20 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大洲と松山、1年の差は5万8,732円。家賃で得した分を、水道とごみで返していた</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-matsuyama-seikatsuhi.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-matsuyama-seikatsuhi.html</guid>
+      <pubDate>Mon, 07 Sep 2026 09:00:00 +0900</pubDate>
+      <description>同じ3人家族が大洲市と松山市に住んだら、1年でいくら違うのか。家賃・水道・下水道・ごみ袋・電気代・保育料・固定資産税を、条例と国の統計から1つずつ引いて足し算した。差が消える条件と、逆転する条件まで書いた。</description>
+      <category>財政・税金</category>
+      <category>空き家・住宅</category>
+    </item>
     <item>
       <title>大洲市立の学校なのに、先生の給料は市が1円も払っていない</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kyoin-ken-to-shi.html</link>
@@ -262,15 +271,6 @@
       <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
       <description>冨士山のつつじまつりで徴収されていた500円。議会で議員は「駐車場料金」と言い、市は「交通整理料」と答えた。同じお金に名前が2つある理由を、地方自治法の条文と大洲市の例規集で追いかけた。</description>
       <category>議会・行政</category>
-      <category>財政・税金</category>
-    </item>
-    <item>
-      <title>下水道と浄化槽、20年で30万円以上違う。大洲ではどっちになるか住所で決まる</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-gesuido-jokaso.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-gesuido-jokaso.html</guid>
-      <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
-      <description>大洲市の汚水処理は公共下水道・農業集落排水・浄化槽の3つに分かれている。どれになるかは住所で決まり、払う額は20年で30万円以上違う。上水と下水の違いから、水がどこを通って家に届くかまで調べた。</description>
-      <category>交通・インフラ</category>
       <category>財政・税金</category>
     </item>
   </channel>

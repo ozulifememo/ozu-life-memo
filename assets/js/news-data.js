@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-matsuyama-seikatsuhi",
+    date: "2026-09-07",
+    title: "大洲と松山、1年の差は5万8,732円。家賃で得した分を、水道とごみで返していた",
+    category: "kurashi",
+    source: "令和5年住宅・土地統計調査(総務省統計局)、大洲市・松山市の条例および公表資料 ほか",
+    sourceDate: "2026-09-07",
+    tags: ["財政・税金", "空き家・住宅"],
+  },
+  {
     slug: "ozu-kyoin-ken-to-shi",
     date: "2026-09-07",
     title: "大洲市立の学校なのに、先生の給料は市が1円も払っていない",

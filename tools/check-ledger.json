@@ -13394,6 +13394,35 @@
         }
       ]
     },
+    "ozu-matsuyama-seikatsuhi": {
+      "path": "eachnews/ozu-matsuyama-seikatsuhi.html",
+      "checks": [
+        {
+          "date": "2026-09-07",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "35da26686e0f",
+          "note": "合計58,732円が内訳(家賃62,808-上下水道2,892-ごみ4,368-電気2,600)と一致することを検算。企画の前提「松山には都市計画税がある」は誤りで、松山市も課していないことを市のページで確認して訂正している"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "machine",
+          "by": "opus",
+          "result": "機械点検",
+          "hash": "35da26686e0f",
+          "note": "check_site.py エラー0"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "numbers",
+          "by": "opus",
+          "result": "数字と出典の照合",
+          "hash": "35da26686e0f",
+          "note": "未照合24個(16.6%)。条例の別表から自分で計算した水道料金と、費目ごとの差額の集計"
+        }
+      ]
+    },
     "ozu-menma-takenoko": {
       "path": "eachnews/ozu-menma-takenoko.html",
       "checks": [

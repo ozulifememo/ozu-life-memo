@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-saiban-toshokan",
+    date: "2026-09-07",
+    title: "1.15倍までなら合法、1.35倍だと違法? 土地の値段で9年争った裁判",
+    category: "shiten",
+    source: "最高裁判所第一小法廷 平成28年6月27日判決、大洲市議会 会議録ほか",
+    sourceDate: "2026-09-07",
+    tags: ["議会・行政", "財政・税金"],
+  },
+  {
     slug: "ozu-saiban",
     date: "2026-09-07",
     title: "5億3,800万円を請求された裁判が、市議会に出てこない。条文1行の理由",

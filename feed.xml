@@ -5,8 +5,17 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Mon, 07 Sep 2026 09:18:27 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 07 Sep 2026 09:19:35 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1.15倍までなら合法、1.35倍だと違法? 土地の値段で9年争った裁判</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-saiban-toshokan.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-saiban-toshokan.html</guid>
+      <pubDate>Mon, 07 Sep 2026 09:00:00 +0900</pubDate>
+      <description>大洲市が図書館を建てるために買った909.75平方メートルの土地。その値段が高すぎたとして住民が起こした訴訟は、提訴から結審まで9年かかり、最高裁までもつれた。高裁と最高裁で結論が正反対になった理由を、公開されている判決文と市議会の会議録から追った。</description>
+      <category>議会・行政</category>
+      <category>財政・税金</category>
+    </item>
     <item>
       <title>5億3,800万円を請求された裁判が、市議会に出てこない。条文1行の理由</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-saiban.html</link>
@@ -259,15 +268,6 @@
       <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
       <description>大洲の山の中に、斜面が急に平らになっている場所がある。昭和51年から平成元年にかけて国が造成した農地で、正式には国営大洲喜多開拓建設事業という。植えるはずだった桑と葉たばこはどちらも消え、29あった維持管理組合は7つになった。造成440ヘクタールと耕作放棄地894ヘクタールが同じものさしの数字なのかも、会議録で確かめた。</description>
       <category>産業・農業</category>
-    </item>
-    <item>
-      <title>堤防の代わりに、家のほうを持ち上げた。全国で最初にやったのは大洲だった</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-takuchi-kasaage.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-takuchi-kasaage.html</guid>
-      <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
-      <description>昭和60年度に国が始めた「特定河岸地水害対策事業」の全国第1号は、大洲の五郎駅前地区だった。堤防を築くと家を立ち退かせることになるので、家ごと土地を持ち上げてしまう。国会の会議録で制度の生まれた瞬間まで確かめ、五郎駅前から上老松まで30年続いた5地区の記録を並べた。東大洲で市道が二線堤を兼ねている話も追った。</description>
-      <category>防災</category>
-      <category>まちづくり</category>
     </item>
   </channel>
 </rss>

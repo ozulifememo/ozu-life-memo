@@ -14123,6 +14123,35 @@
         }
       ]
     },
+    "ozu-saiban-toshokan": {
+      "path": "eachnews/ozu-saiban-toshokan.html",
+      "checks": [
+        {
+          "date": "2026-09-07",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "19b1b8c2847a",
+          "note": "裁判所の裁判例検索から判決全文PDFを取得して当たっている。エージェント側で事故件数35→32など3か所の誤りを自己修正済み"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "machine",
+          "by": "opus",
+          "result": "機械点検",
+          "hash": "19b1b8c2847a",
+          "note": "check_site.py エラー0"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "numbers",
+          "by": "opus",
+          "result": "数字と出典の照合",
+          "hash": "19b1b8c2847a",
+          "note": "数字84個すべて出典と照合できた(未照合0)"
+        }
+      ]
+    },
     "ozu-sangyo-40nen": {
       "path": "jiyu-kenkyu/ozu-sangyo-40nen.html",
       "checks": [

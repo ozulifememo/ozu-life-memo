@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-kariru-tetsuzuki",
+    date: "2026-09-07",
+    title: "大洲で家を借りる手順。市営住宅は連帯保証人が2人、県営は2026年4月から不要になった",
+    category: "kurashi",
+    source: "公営住宅法・同施行令・民法・宅地建物取引業法(e-Gov法令検索)、国土交通省、総務省中部管区行政評価局、愛媛県、大洲市議会会議録 ほか",
+    sourceDate: "2026-09-07",
+    tags: ["空き家・住宅", "まちづくり"],
+  },
+  {
     slug: "ozu-kaigo-nyumon",
     date: "2026-09-07",
     title: "親の介護が始まったら、まず30日。大洲でいくらかかるのかを並べた",

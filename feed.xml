@@ -5,8 +5,17 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Mon, 07 Sep 2026 13:36:25 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 07 Sep 2026 13:51:06 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大洲で家を借りる手順。市営住宅は連帯保証人が2人、県営は2026年4月から不要になった</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kariru-tetsuzuki.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kariru-tetsuzuki.html</guid>
+      <pubDate>Mon, 07 Sep 2026 09:00:00 +0900</pubDate>
+      <description>大洲で部屋を借りるときの手順を、公営住宅を中心に調べた。入居資格の「月収158,000円以下」が何を指すのかを政令の条文から計算式で示し、募集の時期、連帯保証人の扱い、民間賃貸の初期費用の内訳と法令上の上限までを、申込みから鍵を受け取るまでの順に並べた。</description>
+      <category>空き家・住宅</category>
+      <category>まちづくり</category>
+    </item>
     <item>
       <title>親の介護が始まったら、まず30日。大洲でいくらかかるのかを並べた</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kaigo-nyumon.html</link>
@@ -262,15 +271,6 @@
       <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
       <description>「〇〇委員会」と「〇〇実行委員会」は何が違うのかを、大洲市の例規集826本と市議会の会議録307回分を数えて調べた。市の例規に「実行委員会」は1本もないのに、会議録では国体の1億円やきずな博の1,736万円が実行委員会を通って動いている。作るのに手続きは要るのか、責任は分散するのかも調べた。</description>
       <category>議会・行政</category>
-      <category>まちづくり</category>
-    </item>
-    <item>
-      <title>大洲の料理教室は受講料0円だった。市の教室13個と、自分で開くなら1時間100円</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kyoshitsu-koza.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kyoshitsu-koza.html</guid>
-      <pubDate>Sun, 06 Sep 2026 09:00:00 +0900</pubDate>
-      <description>大洲市内に民間企業以外がやっている大人向けの教室はどれくらいあるのかを調べた。市の隣保館2館に13の教室があり、料理・木彫・編物・ヨーガまで受講料はすべて0円。無料の根拠は社会福祉法にあった。あわせて、自分で教室を開くときに部屋を借りる値段も調べている。</description>
-      <category>子育て・教育</category>
       <category>まちづくり</category>
     </item>
   </channel>

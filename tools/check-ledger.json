@@ -12284,6 +12284,35 @@
         }
       ]
     },
+    "ozu-kariru-tetsuzuki": {
+      "path": "eachnews/ozu-kariru-tetsuzuki.html",
+      "checks": [
+        {
+          "date": "2026-09-07",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "53252735d3d0",
+          "note": "公営住宅法をe-Gov APIで全文取得し「保証人」「連帯保証」が1か所も出てこないことを機械で確認。市営住宅の戸数1,084戸・政策空き家221戸・連帯保証人2名は会議録の答弁で、原文照合済み。県営の令和8年4月からの廃止は愛媛県のページで確認"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "machine",
+          "by": "opus",
+          "result": "機械点検",
+          "hash": "53252735d3d0",
+          "note": "check_site.py エラー0"
+        },
+        {
+          "date": "2026-09-07",
+          "level": "numbers",
+          "by": "opus",
+          "result": "数字と出典の照合",
+          "hash": "53252735d3d0",
+          "note": "未照合10個(9.9%)。政令月収の計算例と初期費用の自算出"
+        }
+      ]
+    },
     "ozu-kasoryo-shiminhyo": {
       "path": "eachnews/ozu-kasoryo-shiminhyo.html",
       "checks": [

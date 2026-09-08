@@ -29,7 +29,7 @@ DESC = ("家を建てる。親の介護が始まる。市に言いたいこと�
 ORDER = [
     "kodomo-umareru", "hikkoshi", "ie-tateru", "hatarakenai", "hitorioya",
     "kuruma-tebanasu", "menkyo", "oya-kaigo", "souzoku", "bosai",
-    "risai", "komatta-soudan", "shi-ni-iu",
+    "risai", "furusato-nozei", "komatta-soudan", "shi-ni-iu", "yosan-ni-noseru",
 ]
 
 COLORS = {

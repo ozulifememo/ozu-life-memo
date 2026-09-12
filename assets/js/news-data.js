@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "kanko-towa-nanika",
+    date: "2026-09-12",
+    title: "「観光」は、仕える国を探す言葉だった。日本人の50.6%は泊まりの旅に出ない",
+    category: "shiten",
+    source: "日本観光学会誌／観光庁 観光白書／国立国会図書館／国立公文書館／環境省／大洲市議会 会議録ほか",
+    sourceDate: "2026-09-12",
+    tags: ["観光"],
+  },
+  {
     slug: "ozu-mondai-nenpyo",
     date: "2026-09-12",
     title: "大洲にはもう日付が入っている。借金は2028年度、中学生568人は2036年度",

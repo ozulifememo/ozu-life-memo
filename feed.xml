@@ -5,8 +5,16 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Sat, 12 Sep 2026 19:33:37 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 12 Sep 2026 22:04:16 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>「観光」は、仕える国を探す言葉だった。日本人の50.6%は泊まりの旅に出ない</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/kanko-towa-nanika.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/kanko-towa-nanika.html</guid>
+      <pubDate>Sat, 12 Sep 2026 09:00:00 +0900</pubDate>
+      <description>「観光」の語源は『易経』で、もともと旅の意味ではなかった。日本語の書名に初めて出るのは1826年の囲碁の本で、明治には傘や織物の商品名だった。語源から令和の観光白書まで、旅の意味が何に押されて変わってきたかを一次資料と統計でたどり、大洲で同じ変化がどう起きたかを並べた。</description>
+      <category>観光</category>
+    </item>
     <item>
       <title>大洲にはもう日付が入っている。借金は2028年度、中学生568人は2036年度</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-mondai-nenpyo.html</link>
@@ -259,15 +267,6 @@
       <description>市民が市議会に意見を届ける「請願」と「陳情」。大洲市議会の会議録307ファイルを機械で数え直したところ、2008年3月から2026年6月までの請願は116件、陳情は13件だった。任期ごとの受理件数と結末、全国や松山市との比較、減った理由の候補までを並べた。</description>
       <category>議会・行政</category>
       <category>まちづくり</category>
-    </item>
-    <item>
-      <title>スーパーまで歩いて10分に住む大洲市民は9,282人。3年で5,057人減った</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-supa-toho-10pun.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-supa-toho-10pun.html</guid>
-      <pubDate>Mon, 07 Sep 2026 09:00:00 +0900</pubDate>
-      <description>大洲市でスーパーまで直線800メートル（徒歩10分）以内に住む人は9,282人、市の人口の23%だった。国勢調査の500mメッシュ人口と店舗7か所の座標を重ねて自分で数え、3年前の14,339人から5,057人減った理由まで追った。</description>
-      <category>まちづくり</category>
-      <category>人口減少</category>
     </item>
   </channel>
 </rss>

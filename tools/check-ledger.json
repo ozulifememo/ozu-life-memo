@@ -7242,6 +7242,35 @@
         }
       ]
     },
+    "kanko-towa-nanika": {
+      "path": "eachnews/kanko-towa-nanika.html",
+      "checks": [
+        {
+          "date": "2026-09-12",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "463ca72f53f7",
+          "note": "語源は易経・観卦六四の爻辞。日本語の書名の初出が文政8年の囲碁書『國技觀光』であることを国会図書館サーチで確認。書き手の人生論は入れず、調査と研究の紹介にとどめた"
+        },
+        {
+          "date": "2026-09-12",
+          "level": "machine",
+          "by": "opus",
+          "result": "機械点検",
+          "hash": "463ca72f53f7",
+          "note": "新記事。check_site.py エラー0"
+        },
+        {
+          "date": "2026-09-12",
+          "level": "numbers",
+          "by": "opus",
+          "result": "数字と出典の照合",
+          "hash": "463ca72f53f7",
+          "note": "見つからず4個のうち、いもたき4,978人(平成24年)とうかい8,724人(平成23年度)は会議録で確認。1482年と1855年は上田卓爾の論文に拠る"
+        }
+      ]
+    },
     "kanogawaso": {
       "path": "eachnews/kanogawaso.html",
       "checks": [

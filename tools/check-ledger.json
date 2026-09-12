@@ -11755,6 +11755,35 @@
         }
       ]
     },
+    "okane-01-dare-ga-atsumeru": {
+      "path": "eachnews/okane-01-dare-ga-atsumeru.html",
+      "checks": [
+        {
+          "date": "2026-09-12",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "690b4ac8c4d2",
+          "note": "総務省の地方税の5原則(応益性・安定性・普遍性・負担分任・自主性)を原文で確認。法人市民税の内訳(均等割1億3,857万8千円・法人税割1億9,725万1千円)が決算カードと一致することを目で確かめた"
+        },
+        {
+          "date": "2026-09-12",
+          "level": "machine",
+          "by": "opus",
+          "result": "機械点検",
+          "hash": "690b4ac8c4d2",
+          "note": "新記事(連載第1回)。check_site.py エラー0"
+        },
+        {
+          "date": "2026-09-12",
+          "level": "numbers",
+          "by": "opus",
+          "result": "数字と出典の照合",
+          "hash": "690b4ac8c4d2",
+          "note": "見つからず3個は丸めと別出典。地方交付税112億7,020万円は決算カードの11,270,196千円の丸めで、34.8%もカードと一致することを確認した"
+        }
+      ]
+    },
     "okane-02-chokusetsu-kansetsu": {
       "path": "eachnews/okane-02-chokusetsu-kansetsu.html",
       "checks": [

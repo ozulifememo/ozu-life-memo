@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "okane-01-dare-ga-atsumeru",
+    date: "2026-09-12",
+    title: "大洲で暮らすと31種類の税に関わる。市に納めるのは6つだけ",
+    category: "shiten",
+    source: "総務省「令和6年度市町村決算カード」「やさしい地方税」、地方税法、財務省「国税・地方税の税目」、愛媛県「県税のしおり」、国税庁、大洲市議会会議録",
+    sourceDate: "2026-09-12",
+    tags: ["財政・税金"],
+  },
+  {
     slug: "okane-02-chokusetsu-kansetsu",
     date: "2026-09-12",
     title: "大洲でたばこを1箱買うと131円が市に入る。誰が払い、誰が納めるか",

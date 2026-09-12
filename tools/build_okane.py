@@ -42,7 +42,7 @@ SERIES = [
     {"n": 1, "slug": "okane-01-dare-ga-atsumeru", "c": "#3d5473",
      "title": "税金は誰が集めているのか",
      "lead": "国税・県税・市税の分かれ目。なぜこの税は国で、この税は市なのか。大洲で払う税を全部並べた。",
-     "done": False},
+     "done": True},
     {"n": 2, "slug": "okane-02-chokusetsu-kansetsu", "c": "#8a5541",
      "title": "直接税と間接税",
      "lead": "払う人と納める人が違う税がある。大洲でたばこを買うと、そのお金は大洲市に入る。",

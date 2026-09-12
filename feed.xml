@@ -5,8 +5,16 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Sat, 12 Sep 2026 23:47:32 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 12 Sep 2026 23:54:37 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大洲で暮らすと31種類の税に関わる。市に納めるのは6つだけ</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/okane-01-dare-ga-atsumeru.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/okane-01-dare-ga-atsumeru.html</guid>
+      <pubDate>Sat, 12 Sep 2026 09:00:00 +0900</pubDate>
+      <description>所得税、住民税、固定資産税、たばこ税、入湯税。大洲に住む人が1年のうちに関わる税を、国・愛媛県・大洲市の3つの納め先に並べ直した。令和6年度の決算で大洲市に入った税は43億7,464万円。なぜこの税は国で、この税は市なのかを、総務省が挙げる5つの原則で読み解く。</description>
+      <category>財政・税金</category>
+    </item>
     <item>
       <title>大洲でたばこを1箱買うと131円が市に入る。誰が払い、誰が納めるか</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/okane-02-chokusetsu-kansetsu.html</link>
@@ -255,15 +263,6 @@
       <description>令和2年国勢調査の従業地・通学地集計から、大洲市の通勤の出入りを行き先の市町別に数え直した。市外へ出るより入ってくるほうが多く、相手の1位は松山ではなく内子町だった。単身赴任の人数が出せるかどうかも探した。</description>
       <category>交通・インフラ</category>
       <category>人口減少</category>
-    </item>
-    <item>
-      <title>18年で9,534回。市議会でいちばん多く使われた言葉は「今後」だった</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-gikai-kotoba.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-gikai-kotoba.html</guid>
-      <pubDate>Mon, 07 Sep 2026 09:00:00 +0900</pubDate>
-      <description>大洲市議会の会議録307本・1,266万字から、出てきた言葉を機械で全部数えた。年ごとの上位語を並べると18年の年表になり、国会と比べると言葉が地方へ届くまでの時差が出て、自分の市の呼び方が「当市」から「本市」に入れ替わっていた。</description>
-      <category>議会・行政</category>
-      <category>まちづくり</category>
     </item>
   </channel>
 </rss>

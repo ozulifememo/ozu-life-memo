@@ -5,8 +5,17 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Mon, 07 Sep 2026 21:30:24 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 12 Sep 2026 18:58:44 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>「節水にご協力を」で減る水は4.2%。本当に足りなくなった街は何をしたか</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/kassui-nani-ga-okiru.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/kassui-nani-ga-okiru.html</guid>
+      <pubDate>Sat, 12 Sep 2026 09:00:00 +0900</pubDate>
+      <description>呼びかけだけで水がどれだけ減るのかを、1994年の松山市の実測記録から調べた。水圧を下げ、1日8時間だけ出し、最後は5時間にするまでの日付と貯水率を並べている。</description>
+      <category>防災</category>
+      <category>交通・インフラ</category>
+    </item>
     <item>
       <title>ふるさと納税の18年。伸び続けたのではなく、一度だけ半分に落ちている</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-furusato-18nen.html</link>
@@ -260,15 +269,6 @@
       <description>大洲市議会の会議録307本(平成20年3月〜令和8年6月)を全部開き、「検討」「研究」「注視」が誰の発言に何回出るかを機械で数えた。そのうえで「検討」と言われた8件が実際どうなったかを後年の会議録で追跡した。</description>
       <category>議会・行政</category>
       <category>まちづくり</category>
-    </item>
-    <item>
-      <title>市役所で働く人の47％は「1年ごとの職員」。大洲市の568人と、時給1,203円の中身</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kaikei-nendo-ninyo.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kaikei-nendo-ninyo.html</guid>
-      <pubDate>Mon, 07 Sep 2026 09:00:00 +0900</pubDate>
-      <description>大洲市役所には正職員640人のほかに、1年ごとに任用し直される会計年度任用職員が568人いる。制度の成り立ち、条例から計算した時給、令和6年度に加わった勤勉手当、そして令和8年度に84人がフルタイムからパートへ移った経緯までを、会議録と条例で追った。</description>
-      <category>議会・行政</category>
-      <category>財政・税金</category>
     </item>
   </channel>
 </rss>

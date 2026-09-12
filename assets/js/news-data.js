@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "kassui-nani-ga-okiru",
+    date: "2026-09-12",
+    title: "「節水にご協力を」で減る水は4.2%。本当に足りなくなった街は何をしたか",
+    category: "shiten",
+    source: "国土交通省 渇水の記録（重信川水系・筑後川水系）、松山市水資源対策基本計画、水道法、大洲市議会会議録 ほか",
+    sourceDate: "2026-09-12",
+    tags: ["防災", "交通・インフラ"],
+  },
+  {
     slug: "ozu-furusato-18nen",
     date: "2026-09-07",
     title: "ふるさと納税の18年。伸び続けたのではなく、一度だけ半分に落ちている",

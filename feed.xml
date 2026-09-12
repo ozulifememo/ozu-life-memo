@@ -5,8 +5,32 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Sun, 13 Sep 2026 00:33:52 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 13 Sep 2026 07:47:38 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大洲市の職員の上限は条例で946人。実際は619人。誰がこの数を決めるのか</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/okane-07-shiyakusho-keiei.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/okane-07-shiyakusho-keiei.html</guid>
+      <pubDate>Sun, 13 Sep 2026 09:00:00 +0900</pubDate>
+      <description>市役所は「決める人」「やる人」「確かめる人」の3つに分かれている。市長が予算を作り、議会が議決し、監査委員と議会が確かめる。大洲市の職員数・人件費・特別職の報酬・議員定数の移り変わりと、議会にかける契約の金額の線を、令和6年度の決算カードと市議会の会議録で並べた。</description>
+      <category>議会・行政</category>
+    </item>
+    <item>
+      <title>大洲市は松山側に入りたかった。県の出先が5つから3つに減った日</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/okane-05-nanyo-chihokyoku.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/okane-05-nanyo-chihokyoku.html</guid>
+      <pubDate>Sun, 13 Sep 2026 09:00:00 +0900</pubDate>
+      <description>南予地方局は宇和島にあり、大洲市を含む9市町を受け持つ。平成20年4月、愛媛県は地方局を5つから3つに減らし、大洲市が求めた中予ではなく南予に編入された。県の出先が大洲市田口甲425-1に3つ同居していること、大洲の県道を市役所が閉められない理由、県から大洲市に来た17億9,339万3千円まで数えた。</description>
+      <category>議会・行政</category>
+    </item>
+    <item>
+      <title>大洲に入る324億円のうち189億円は、3つの違う理屈で配られていた</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/okane-06-kubarinaosi.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/okane-06-kubarinaosi.html</guid>
+      <pubDate>Sun, 13 Sep 2026 09:00:00 +0900</pubDate>
+      <description>令和6年度、大洲市の歳入324億1,644万円のうち自前の市税は13.5%だけだった。残りを埋める交付税・国庫県支出金・譲与税と交付金を全部並べ、それぞれが何で決まるのかを条文と決算で開いた。国庫支出金でいちばん大きいのは物価高騰の臨時交付金だった。</description>
+      <category>財政・税金</category>
+    </item>
     <item>
       <title>大洲市の消防職員は0人。保健所も持たない。誰がどの仕事をやっているのか</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/okane-04-kuni-ken-shi.html</link>
@@ -236,32 +260,6 @@
       <description>住民監査請求は住民1人で出せて、答えは60日以内に来る。全国1,374件を数えると94.7%が期限内だった。だが裁判に進むと話が変わる。大洲の1件は提訴から確定まで8年6か月。条文と統計で時間だけを追った。</description>
       <category>議会・行政</category>
       <category>財政・税金</category>
-    </item>
-    <item>
-      <title>大洲の家賃は平均44,773円。10万円を超える部屋は、統計上1戸もない</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-yachin-soba.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-yachin-soba.html</guid>
-      <pubDate>Mon, 07 Sep 2026 09:00:00 +0900</pubDate>
-      <description>大洲市の民営借家の平均家賃は月44,773円。松山市の92%、全国の68%にあたる。国の住宅・土地統計調査から市区町村別の家賃を取り出し、広さ別・部屋数別に並べ、近隣5市町と比べた。公営住宅の家賃がまったく別の計算式で決まることも、法令の条文から確かめた。</description>
-      <category>空き家・住宅</category>
-      <category>まちづくり</category>
-    </item>
-    <item>
-      <title>大洲の地名100件を機械で採点した。いちばん読めないのは「黒田」だった</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-nandoku-chimei.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-nandoku-chimei.html</guid>
-      <pubDate>Mon, 07 Sep 2026 09:00:00 +0900</pubDate>
-      <description>大洲市の地名100件を郵便番号データと常用漢字表で採点し、読めなさの理由を江戸時代の村名までさかのぼって調べた。</description>
-      <category>合併・地域</category>
-    </item>
-    <item>
-      <title>働き口は東京より多いのに年収は68%。差の9割は「同じ産業の中」だった</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kyujin-nenshu-sa.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kyujin-nenshu-sa.html</guid>
-      <pubDate>Mon, 07 Sep 2026 09:00:00 +0900</pubDate>
-      <description>有効求人倍率は愛媛のほうが東京より高いのに、賃金は東京の7割に届かない。国勢調査の産業別就業者数と賃金構造基本統計調査を突き合わせて、この差がどこで生まれているのかを自分で計算した。物価・企業規模・最低賃金・労働生産性まで、ものさしを1つずつ当てて確かめた記録。</description>
-      <category>産業・農業</category>
-      <category>人口減少</category>
     </item>
   </channel>
 </rss>

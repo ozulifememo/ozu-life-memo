@@ -11871,6 +11871,93 @@
         }
       ]
     },
+    "okane-05-nanyo-chihokyoku": {
+      "path": "eachnews/okane-05-nanyo-chihokyoku.html",
+      "checks": [
+        {
+          "date": "2026-09-13",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "5570ac616706",
+          "note": "20市町の県支出金表と3地域集計を出典から全行再計算。県職員20,240人の内訳合計・70.3%・44.4%・46.6倍も検算。疑問形の見出しは無い"
+        },
+        {
+          "date": "2026-09-13",
+          "level": "machine",
+          "by": "opus",
+          "result": "機械点検",
+          "hash": "5570ac616706",
+          "note": "check_site.py エラー0"
+        },
+        {
+          "date": "2026-09-13",
+          "level": "numbers",
+          "by": "opus",
+          "result": "数字と出典の照合",
+          "hash": "5570ac616706",
+          "note": "決算カードのキャッシュから3地域集計と20市町の1人あたり県支出金を全行再計算して一致。県計の1人あたりだけ丸め方が揃っていなかったので39,052→39,053に直した"
+        }
+      ]
+    },
+    "okane-06-kubarinaosi": {
+      "path": "eachnews/okane-06-kubarinaosi.html",
+      "checks": [
+        {
+          "date": "2026-09-13",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "bad5d3d177b3",
+          "note": "決算状況調のxlsxを落として大洲市の行を突き合わせ、歳入全項目の表と配り直し189億円の内訳を検算した"
+        },
+        {
+          "date": "2026-09-13",
+          "level": "machine",
+          "by": "opus",
+          "result": "機械点検",
+          "hash": "bad5d3d177b3",
+          "note": "check_site.py エラー0"
+        },
+        {
+          "date": "2026-09-13",
+          "level": "numbers",
+          "by": "opus",
+          "result": "数字と出典の照合",
+          "hash": "bad5d3d177b3",
+          "note": "未照合4件はすべて自分で計算した数字。国庫+県支出金=55億9,592万7千円、県支出金の残差4億3,807万8千円、譲与税・交付金の合計20億4,665万4千円、ふるさと納税差引3億7,789万円をそれぞれ検算して一致"
+        }
+      ]
+    },
+    "okane-07-shiyakusho-keiei": {
+      "path": "eachnews/okane-07-shiyakusho-keiei.html",
+      "checks": [
+        {
+          "date": "2026-09-13",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "061e84de9125",
+          "note": "疑問形の見出し3つ(契約の金額/職員数と人件費/健全化基準までの距離)に、直後の段落で答えが書かれていることを確認。実質公債費比率8.3%・将来負担比率35.4%と16.7ポイント・10.1%も決算カードで裏取り"
+        },
+        {
+          "date": "2026-09-13",
+          "level": "machine",
+          "by": "opus",
+          "result": "機械点検",
+          "hash": "061e84de9125",
+          "note": "check_site.py エラー0"
+        },
+        {
+          "date": "2026-09-13",
+          "level": "numbers",
+          "by": "opus",
+          "result": "数字と出典の照合",
+          "hash": "061e84de9125",
+          "note": "県内11市の人件費・歳出比・1人あたり・ラス指数を決算カードから全行再計算して一致。ラス94.2を「11市最低」と書いていたが西予93.1が下なので「2番目」に訂正した"
+        }
+      ]
+    },
     "okane-no-sentaku": {
       "path": "book/okane-no-sentaku.html",
       "checks": [

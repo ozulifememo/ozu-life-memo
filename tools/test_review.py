@@ -39,9 +39,17 @@ with sync_playwright() as pw:
 
     print("\n=== 読み込み ===")
     check("JSエラーなし", not errs, errs[:3])
-    check("記事217本", pg.evaluate("A.length") == 217, pg.evaluate("A.length"))
-    check("本文ブロック217個", pg.evaluate("document.querySelectorAll('script[type=\"text/plain\"]').length") == 217)
-    check("画像62枚", pg.evaluate("Object.keys(IMGS).length") == 62)
+    # 本数は記事を書くたびに増えるので、数を書き置かない(書き置くと、公開しただけで
+    # テストが赤くなり、本物の壊れと見分けがつかなくなる。2026-09-12に実際そうなった)。
+    # 見るのは「中身どうしが食い違っていないか」と「桁が落ちていないか」。
+    N_ALL = pg.evaluate("A.length")
+    N_ART = pg.evaluate("A.filter(function(a){return a.kind!=='idea'}).length")
+    check(f"記事と記事案で{N_ALL}件", N_ALL > 300, N_ALL)
+    check("本文ブロックの数が記事の数と合う",
+          pg.evaluate("document.querySelectorAll('script[type=\"text/plain\"]').length") == N_ALL,
+          pg.evaluate("document.querySelectorAll('script[type=\"text/plain\"]').length"))
+    check("画像が埋まっている", pg.evaluate("Object.keys(IMGS).length") > 40,
+          pg.evaluate("Object.keys(IMGS).length"))
 
     print("\n=== ここが前回のバグ: 開いた直後の見え方 ===")
     check("一覧は閉じている", not vis(pg, "#drawer"))
@@ -86,7 +94,7 @@ with sync_playwright() as pw:
       const t=document.querySelector('#paper').innerText.trim();
       const h=document.querySelectorAll('#paper h1').length;
       if(t.length<120||h!==1)b.push({i:i,slug:A[i].slug,len:t.length,h1:h});}return b})()""")
-    check("全217本で本文とh1が出る", len(bad) == 0, bad[:4])
+    check("どの記事でも本文とh1が出る", len(bad) == 0, bad[:4])
     check("巡回してもJSエラーなし", not errs, errs[:3])
 
     print("\n=== 判定したら「並び順の次」へ行くか ===")
@@ -107,12 +115,25 @@ with sync_playwright() as pw:
 
     print("\n=== 絞り込み ===")
     pg.keyboard.press("l"); pg.wait_for_timeout(300)
-    check("「まだ」だと215本", pg.evaluate("document.querySelectorAll('#rows .row').length") == 215,
+    check(f"「まだ」だと判定した2本ぶん減って{N_ART - 2}本",
+          pg.evaluate("document.querySelectorAll('#rows .row').length") == N_ART - 2,
           pg.evaluate("document.querySelectorAll('#rows .row').length"))
     pg.evaluate("F.state='';sync('#fState','s','');refresh()"); pg.wait_for_timeout(300)
-    check("「ぜんぶ」だと217本", pg.evaluate("document.querySelectorAll('#rows .row').length") == 217)
-    check("◯の行に印1つ", pg.evaluate("document.querySelectorAll('#rows .row.ok').length") == 1)
-    check("△の行に印1つ", pg.evaluate("document.querySelectorAll('#rows .row.fix').length") == 1)
+    # 判定を付けた記事は未読の層から出ていくので、「ぜんぶ」にしても戻ってこない。
+    # 層(未読/やり取り/完了)は、状態の絞り込みより上位にある。
+    check(f"「ぜんぶ」にしても未読の層は{N_ART - 2}本のまま",
+          pg.evaluate("document.querySelectorAll('#rows .row').length") == N_ART - 2,
+          pg.evaluate("document.querySelectorAll('#rows .row').length"))
+    pg.evaluate("setLayer('kan')"); pg.wait_for_timeout(400)
+    pg.evaluate("$('#drawer').hidden=false;$('#scrim').hidden=false"); pg.wait_for_timeout(200)
+    check("◯を付けた記事は完了の層へ移る",
+          pg.evaluate("!!document.querySelector('#rows .row.ok[data-i=\"'+IDX['%s']+'\"]')" % a0))
+    pg.evaluate("setLayer('yari')"); pg.wait_for_timeout(400)
+    pg.evaluate("$('#drawer').hidden=false;$('#scrim').hidden=false"); pg.wait_for_timeout(200)
+    check("△を付けた記事はやり取りの層へ移る",
+          pg.evaluate("!!document.querySelector('#rows .row.fix[data-i=\"'+IDX['%s']+'\"]')" % nxt))
+    pg.evaluate("setLayer('mi')"); pg.wait_for_timeout(400)
+    pg.evaluate("$('#drawer').hidden=false;$('#scrim').hidden=false"); pg.wait_for_timeout(200)
     pg.evaluate("F.kind='draft';sync('#fKind','k','draft');refresh()"); pg.wait_for_timeout(250)
     # 下書きの本数は公開のたびに変わる。数を書き置くと、公開しただけでテストが
     # 落ちるようになる(2026-09-03に33本を全部公開して実際に落ちた)。ここは数え直す。
@@ -120,7 +141,10 @@ with sync_playwright() as pw:
           pg.evaluate("document.querySelectorAll('#rows .row').length") == N_DRAFT,
           pg.evaluate("document.querySelectorAll('#rows .row').length"))
     pg.evaluate("F.kind='jk';sync('#fKind','k','jk');refresh()"); pg.wait_for_timeout(250)
-    check("自由研究21本", pg.evaluate("document.querySelectorAll('#rows .row').length") == 21)
+    N_JK = pg.evaluate("A.filter(function(a){return a.kind==='jk'&&!a.draft}).length")
+    check(f"自由研究だけ{N_JK}本",
+          pg.evaluate("document.querySelectorAll('#rows .row').length") == N_JK,
+          pg.evaluate("document.querySelectorAll('#rows .row').length"))
     pg.evaluate("F.kind='';F.q='肱川';refresh()"); pg.wait_for_timeout(500)
     check("本文検索が当たる", pg.evaluate("document.querySelectorAll('#rows .row').length") > 3,
           pg.evaluate("document.querySelectorAll('#rows .row').length"))
@@ -134,7 +158,16 @@ with sync_playwright() as pw:
     pg.locator("#memoT").type("導入の言い方が今の方向とずれている", delay=6)
     pg.wait_for_timeout(700)
     slug5 = pg.evaluate("A[5].slug")
-    check("メモが保存される", "ずれている" in (pg.evaluate("(S['%s']||{}).m" % slug5) or ""))
+    # 2026-09-06から、打っている途中は下書き(d)に貯まり、「送る」で初めてメモ(m)になる。
+    # クロコに届くのは m のほうだけ。
+    check("下書きが自動で残る", "ずれている" in (pg.evaluate("(S['%s']||{}).d" % slug5) or ""),
+          (pg.evaluate("(S['%s']||{}).d" % slug5) or "")[:20])
+    check("送る前はまだメモになっていない", not (pg.evaluate("(S['%s']||{}).m" % slug5) or ""))
+    pg.click("#memoSend"); pg.wait_for_timeout(600)
+    check("送るとメモになる", "ずれている" in (pg.evaluate("(S['%s']||{}).m" % slug5) or ""),
+          (pg.evaluate("(S['%s']||{}).m" % slug5) or "")[:20])
+    check("送ると下書きは空になる", not (pg.evaluate("(S['%s']||{}).d" % slug5) or ""))
+    pg.keyboard.press("m"); pg.wait_for_timeout(300)
     check("メモ有りの印が付く", pg.evaluate("document.querySelector('#memobtn').classList.contains('has')"))
     pg.keyboard.press("Escape"); pg.wait_for_timeout(250)
     check("Escでメモ欄が閉じる", not vis(pg, "#memo"))

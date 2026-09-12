@@ -181,6 +181,27 @@ button,select,input,textarea{font-family:inherit;color:inherit}
   #itTable .mo{width:150px}
 }
 
+/* ── 本人が思いついた案 ────────────────────────────────
+   2026-09-12、本人の「毎回claude code上で記事案をいれているけど、
+   ここにかいて、クロコが巡視してくれるほうが僕がやりやすい」。
+   クロコが出した案と同じ表に並べるが、紫の帯で別物だと分かるようにする。 */
+#itTable tr.mygrp td{background:#241f33;color:#c3b3ec}
+#itTable tr.r.mine td{background:#1d1b26}
+#itTable tr.r.mine:hover td{background:#242131}
+#itTable tr.r.mine .no{color:#b4a3e0}
+.myIn{width:100%;background:var(--frame);border:1px solid var(--rule);border-radius:4px;
+  color:var(--fg);font-size:13px;font-weight:700;line-height:1.6;padding:6px 8px}
+.myIn:focus{outline:none;border-color:#6a5a9a;background:#15121c}
+.myState{display:inline-block;font-size:10.5px;letter-spacing:.03em;white-space:nowrap;
+  border:1px solid #4a4270;color:#c3b3ec;background:#241f33;border-radius:3px;padding:2px 6px}
+.myState.read{border-color:#2f6b4a;color:#8fd8ae;background:#16261d}
+.myDel{width:32px;height:32px;border-radius:5px;border:1px solid var(--rule);
+  background:var(--frame2);color:var(--dim);font-size:13px;cursor:pointer;line-height:1}
+.myDel:hover{background:#3a2225;color:#e79aa0;border-color:#6b3b40}
+#itTable .myRe{color:#8fd8ae;white-space:pre-wrap}
+#itAdd{background:#2b2440;border-color:#4a4270;color:#d6cbf5;font-weight:700}
+#itAdd:hover{background:#3a3157}
+
 /* 記事案。記事と一目で見分けがつくように、札も左線も別の色にする
    (2026-09-06、本人の「ちゃんと区別するように」) */
 .row .kd.idea{border-color:#4a6b8a;color:#8fc0e8;background:#1b2734}
@@ -334,8 +355,10 @@ body.L-kan #kanbar{display:flex}
     <span class="t">記事案</span>
     <span class="c"><b id="itDone">0</b> / <b id="itAll">0</b> 判定ずみ
       ◯ <b id="itOk">0</b>　✕ <b id="itNg">0</b>　メモ <b id="itMemo">0</b></span>
+    <span class="c">自分の案 <b id="itMine">0</b></span>
     <span id="itSaved">保存しました</span>
     <span class="sp"></span>
+    <button id="itAdd">＋ 思いついた案</button>
     <input id="itQ" type="search" placeholder="題・ひと言から探す">
     <button id="itBack">記事にもどる</button>
   </div>
@@ -463,6 +486,56 @@ function mark(slug, patch){
   saveLocal(); pushDB(slug); paint();
 }
 
+/* ---------- 本人が思いついた案 ----------
+   2026-09-12、本人の指示。「記事案はNotionではなく…僕が思いついた記事案を
+   書くところも入れて。毎回claude code上で記事案をいれているけど、
+   ここにかいて、claudeが巡視してくれるほうが僕がやりやすい」。
+
+   クロコが出した案(kind==='idea')は記事の本体に焼き込まれていて書き換えられない。
+   本人が書く案はいつでも増えるので、別のコレクションに置いて画面で合流させる。
+   混ぜないのは、どちらが誰の考えか分からなくなると◯✕の意味も濁るため。      */
+var MY = {};          /* id -> {t:題, m:中身, ts:書いた時刻, done:クロコが見たか, re:クロコの返事} */
+var MYKEY = 'ozu-review-my-v1';
+
+function myLoad(){
+  try{ MY = JSON.parse(localStorage.getItem(MYKEY) || '{}') || {}; }catch(e){ MY = {}; }
+}
+function mySaveLocal(){
+  try{ localStorage.setItem(MYKEY, JSON.stringify(MY)); }catch(e){}
+}
+function myPush(id){
+  if(!DB) return;
+  var r = MY[id];
+  var p = r ? DB.doc('myideas/'+id).set({t:r.t||'', m:r.m||'', ts:r.ts||0,
+                                         done:r.done?1:0, re:r.re||''})
+            : DB.doc('myideas/'+id).delete();
+  if(p && p.catch) p.catch(function(){});
+}
+function myPull(){
+  if(!DB) return;
+  DB.collection('myideas').get().then(function(snap){
+    var changed = false;
+    snap.docs.forEach(function(d){
+      var v = d.data() || {}, k = d.id;
+      var n = {t:v.t||'', m:v.m||'', ts:v.ts||0, done:!!v.done, re:v.re||''};
+      var o = MY[k];
+      if(!o || o.t !== n.t || o.m !== n.m || !!o.done !== n.done || (o.re||'') !== n.re){
+        MY[k] = n; changed = true;
+      }
+    });
+    if(changed){ mySaveLocal(); if(F.kind === 'idea') renderIdeaTable(); }
+  }).catch(function(){});
+}
+function myMark(id, patch){
+  var r = MY[id] || {t:'', m:'', ts:Date.now(), done:false, re:''};
+  for(var k in patch) r[k] = patch[k];
+  MY[id] = r;
+  mySaveLocal(); myPush(id);
+}
+function myIds(){
+  return Object.keys(MY).sort(function(a,b){ return (MY[b].ts||0) - (MY[a].ts||0); });
+}
+
 /* ---------- サーバーの控えと突き合わせる ---------- */
 function pullReplies(){
   if(!DB) return;
@@ -498,7 +571,7 @@ function pullDB(){
   }).catch(function(){});
 }
 if(window.claude && window.claude.use){
-  window.claude.use('db').then(function(d){ if(d){ DB = d; pullDB(); } }).catch(function(){});
+  window.claude.use('db').then(function(d){ if(d){ DB = d; pullDB(); myPull(); } }).catch(function(){});
 }
 
 /* ---------- 層の判定 ----------
@@ -848,8 +921,38 @@ function ideaParts(i){
   while((m = re.exec(b))) p.push(m[1].replace(/<[^>]+>/g, ''));
   return {hi: p[0] || '', te: p[1] || ''};
 }
+/* 本人が書いた1行。題と中身はその場で書き換えられる。
+   クロコの返事は読むだけ(書き換えるとどちらの言葉か分からなくなる)。 */
+function myRowHtml(id, n){
+  var r = MY[id];
+  return '<tr class="r mine" data-mid="'+id+'">'
+    + '<td class="no">自'+n+'</td>'
+    + '<td class="ti"><input class="myIn" data-f="t" placeholder="思いついた題"'
+    +   ' value="'+esc(r.t||'')+'"></td>'
+    + '<td class="hi"><textarea data-f="m"'
+    +   ' placeholder="なぜ気になったか。知りたいこと。手がかり">'+esc(r.m||'')+'</textarea></td>'
+    + '<td class="te myRe">'+esc(r.re||'')+'</td>'
+    + '<td class="jd" colspan="2"><span class="myState'+(r.done?' read':'')+'">'
+    +   (r.done ? 'クロコが見た' : 'クロコ未読')+'</span></td>'
+    + '<td class="mo" style="text-align:center">'
+    +   '<button class="myDel" title="この案を消す">✕</button></td>'
+    + '</tr>';
+}
 function renderIdeaTable(){
   var list = ideaRows(), h = [], lastGrp = '';
+  var mine = myIds();
+  if(itQ){
+    var mq = itQ.toLowerCase();
+    mine = mine.filter(function(id){
+      return ((MY[id].t||'') + ' ' + (MY[id].m||'')).toLowerCase().indexOf(mq) >= 0;
+    });
+  }
+  if(mine.length || !itQ){
+    h.push('<tr class="grp mygrp"><td colspan="7">自分が思いついた案'
+      + (mine.length ? '（' + mine.length + '件）'
+                     : '（まだありません。右上の「＋ 思いついた案」で書けます）') + '</td></tr>');
+    for(var k=0;k<mine.length;k++) h.push(myRowHtml(mine[k], k+1));
+  }
   for(var n=0;n<list.length;n++){
     var i = list[n], a = A[i], r = S[a.slug] || {}, pt = ideaParts(i);
     if(a.cat !== lastGrp){
@@ -888,6 +991,7 @@ function paintIdeaCount(){
   $('#itAll').textContent = all; $('#itDone').textContent = done;
   $('#itOk').textContent = ok;   $('#itNg').textContent = ng;
   $('#itMemo').textContent = mo;
+  $('#itMine').textContent = Object.keys(MY).length;
 }
 var itSaveT;
 function itSaved(){
@@ -906,10 +1010,46 @@ $('#itBody').addEventListener('click', function(e){
   });
   paintIdeaCount(); itSaved();
 });
+/* 自分の案を1件増やす。空のまま置いておけるので、思いついた瞬間に押せる */
+$('#itAdd').onclick = function(){
+  var id = 'mine-' + Date.now().toString(36);
+  myMark(id, {t:'', m:'', ts:Date.now(), done:false, re:''});
+  if(itQ){ itQ = ''; $('#itQ').value = ''; }
+  renderIdeaTable(); paintIdeaCount();
+  var el = $('#itBody').querySelector('tr[data-mid="'+id+'"] .myIn');
+  if(el){ el.focus(); el.scrollIntoView({block:'center'}); }
+};
+$('#itBody').addEventListener('click', function(e){
+  var d = e.target.closest('.myDel'); if(!d) return;
+  var tr = d.closest('tr'), mid = tr.dataset.mid, r = MY[mid] || {};
+  if((r.t || r.m) && !confirm('この案を消しますか。元に戻せません。')) return;
+  delete MY[mid]; mySaveLocal(); myPush(mid);
+  renderIdeaTable(); paintIdeaCount(); itSaved();
+});
+
 var itMemoT = {};
 $('#itBody').addEventListener('input', function(e){
+  var tr = e.target.closest('tr'); if(!tr) return;
+  /* 自分の案は題と中身の2つがあるので、どちらを打っているかを data-f で見分ける。
+     書き換えたら「クロコ未読」に戻す。直したものをもう一度見てほしいはずだから。 */
+  if(tr.classList.contains('mine')){
+    var mid = tr.dataset.mid, f = e.target.dataset.f, mv = e.target.value;
+    if(!mid || !f) return;
+    /* 題と中身で待ち時間の鍵を分ける。同じ鍵にすると、題を打ったあと中身を打った
+       ときに題の保存が打ち消される(2026-09-12、実機テストで実際に落ちた) */
+    var key = mid + '/' + f;
+    clearTimeout(itMemoT[key]);
+    itMemoT[key] = setTimeout(function(){
+      var pa = {done:false}; pa[f] = mv;
+      myMark(mid, pa);
+      var st = tr.querySelector('.myState');
+      if(st){ st.classList.remove('read'); st.textContent = 'クロコ未読'; }
+      itSaved();
+    }, 600);
+    return;
+  }
   if(e.target.tagName !== 'TEXTAREA') return;
-  var tr = e.target.closest('tr'), slug = tr.dataset.s, v = e.target.value;
+  var slug = tr.dataset.s, v = e.target.value;
   clearTimeout(itMemoT[slug]);
   itMemoT[slug] = setTimeout(function(){
     mark(slug, {m: v});
@@ -1072,6 +1212,7 @@ paper.addEventListener('touchend', function(e){
 
 /* ---------- 起動 ---------- */
 loadLocal();
+myLoad();
 var L0 = 'mi';
 try{ var sl = localStorage.getItem('ozu-review-layer');
      if(sl==='mi'||sl==='yari'||sl==='kan') L0 = sl; }catch(e){}

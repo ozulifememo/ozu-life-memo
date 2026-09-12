@@ -2463,6 +2463,21 @@ section {
   white-space: nowrap;
 }
 
+/* 関連記事の「なぜ関連なのか」。本文のどの言葉で繋がっているかを見せる。
+   2026-09-12、関連記事をタグ順から本文の近さ順に変えたときに足した。
+   並びの理由が見えないと、ただの寄せ集めに見えてしまう。 */
+.related-list .rwhy {
+  flex: 0 0 auto;
+  min-width: 5.6em;
+  color: var(--color-accent-btn);
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+@media (max-width: 520px) {
+  .related-list li { flex-wrap: wrap; gap: 4px 10px; }
+  .related-list .rwhy { min-width: 0; }
+}
+
 .related-list a:hover {
   color: var(--color-brand);
 }

@@ -1455,6 +1455,39 @@ def check_review_fresh(pages, rep):
                   "       _review-src.html を同じURLに publish してください")
 
 
+RELATED_MAP = Path(__file__).resolve().parent.parent / "assets" / "js" / "related-map.js"
+
+
+def check_related_map(registry, rep):
+    """新しい記事が、関連記事の地図に入っているか(関所)
+
+    記事の下の「同じテーマの記事」は、tools/make_related.py が作った
+    assets/js/related-map.js を読んで並べている。
+    地図に載っていない記事を開くと、昔のタグ方式に落ちる。タグは12種類しかなく、
+    「まちづくり」だけで62本あるので、落ちた記事だけ**どれを開いても同じ5本**が並ぶ。
+
+    記事を公開したあと make_related.py を走らせ忘れると、そうなる。
+    見た目は壊れないので、言われるまで気づけない。だから機械に持たせる。
+
+    直し方: python tools/make_related.py
+    """
+    if not RELATED_MAP.exists():
+        rep.error("assets/js/related-map.js", "関連記事",
+                  "関連記事の地図がありません",
+                  "       python tools/make_related.py を走らせてください")
+        return
+    txt = RELATED_MAP.read_text(encoding="utf-8")
+    have = set(re.findall(r'^"([^"]+)":\[', txt, re.M))
+    missing = [s for s in sorted(registry)
+               if (REPO / "eachnews" / (s + ".html")).exists() and s not in have]
+    if missing:
+        rep.error("assets/js/related-map.js", "関連記事",
+                  "%d本が関連記事の地図に入っていません(%s)"
+                  % (len(missing), "、".join(missing[:4])),
+                  "       地図に無い記事は、下に並ぶ記事がタグ任せになります" + "\n"
+                  "       python tools/make_related.py を走らせてください")
+
+
 def check_promises(path, html, rep):
     """果たす保証のない「あとで追記します」を書かない(関所)
 
@@ -2054,6 +2087,7 @@ EXPECTED = [
     ("メモう", "原本"),
     ("メモう", "書きかけ"),
     ("レビュー卓", "作り直されていません"),
+    ("関連記事", "関連記事の地図に入っていません"),
     ("JS構文", "JavaScriptとして読めません"),
     ("文章", "1文が"),
     ("事実", "電車"),
@@ -2150,6 +2184,7 @@ def run_selftest() -> int:
             check_local_paths(rep)          # ローカルパスの検査も試す
             check_js_syntax(rep)            # JSが読めるかも試す
             check_review_fresh(pages, rep)   # 卓が古いかを見る検査も試す
+            check_related_map(registry, rep)  # 関連記事の地図に漏れがないかも試す
             check_registry_orphans(registry, pages, rep)
             check_registry_file(registry, rep)
             # コミットメッセージの検査(gitを叩かずに、文面だけ渡して確かめる)
@@ -2288,6 +2323,7 @@ def main():
 
     if not args.slug and not args.changed:
         check_review_fresh(all_pages, rep)
+        check_related_map(registry, rep)
         check_registry_orphans(registry, all_pages, rep)
         check_local_paths(rep)
         check_js_syntax(rep)
@@ -2300,6 +2336,9 @@ def main():
         # 記事に手が入ったなら、レビュー卓が置いていかれていないかも見る
         if pages:
             check_review_fresh(all_pages, rep)
+        # 記事が増えていれば、関連記事の地図に入っているかも見る
+        if "assets/js/news-data.js" in changed_files:
+            check_related_map(registry, rep)
         # 台帳・sitemap・RSSに手が入っているときは、その整合も見る(公開作業の消し忘れ対策)
         if "assets/js/news-data.js" in changed_files:
             check_registry_orphans(registry, all_pages, rep)

@@ -5,8 +5,16 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Sat, 12 Sep 2026 23:54:37 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 13 Sep 2026 00:24:09 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大洲の文化会館64億円に、市が自由に使えるお金は1円も入っていない</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/okane-03-tsukaimichi.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/okane-03-tsukaimichi.html</guid>
+      <pubDate>Sun, 13 Sep 2026 09:00:00 +0900</pubDate>
+      <description>税には使い道を決めずに集める普通税と、決めて集める目的税がある。大洲市の目的税は入湯税123万3千円だけだった。歳入324億円のうち自由に使える一般財源は176億円で、残りには「色」が付いている。文化会館64億円・給食センター40億円など、実際の建物の財源内訳から、その色を開いた。</description>
+      <category>財政・税金</category>
+    </item>
     <item>
       <title>大洲で暮らすと31種類の税に関わる。市に納めるのは6つだけ</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/okane-01-dare-ga-atsumeru.html</link>
@@ -254,15 +262,6 @@
       <pubDate>Mon, 07 Sep 2026 09:00:00 +0900</pubDate>
       <description>大洲市民の通勤時間は片道17.6分（中位数）で、松山市の21.8分より短い。ところが「片道1時間以上」の割合は愛媛県平均の1.6倍あった。年間何時間になるか、何で通っているか、いくらかかるかまで計算した。</description>
       <category>交通・インフラ</category>
-    </item>
-    <item>
-      <title>毎朝、大洲から3,278人が市外へ働きに出て、4,167人が入ってくる</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-tsukin-shigai.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-tsukin-shigai.html</guid>
-      <pubDate>Mon, 07 Sep 2026 09:00:00 +0900</pubDate>
-      <description>令和2年国勢調査の従業地・通学地集計から、大洲市の通勤の出入りを行き先の市町別に数え直した。市外へ出るより入ってくるほうが多く、相手の1位は松山ではなく内子町だった。単身赴任の人数が出せるかどうかも探した。</description>
-      <category>交通・インフラ</category>
-      <category>人口減少</category>
     </item>
   </channel>
 </rss>

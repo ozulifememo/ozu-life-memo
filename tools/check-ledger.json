@@ -11813,6 +11813,35 @@
         }
       ]
     },
+    "okane-03-tsukaimichi": {
+      "path": "eachnews/okane-03-tsukaimichi.html",
+      "checks": [
+        {
+          "date": "2026-09-13",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "486b8332caaa",
+          "note": "充当一般財源等12款の合計199億2,074万3千円が決算カードと1円一致。文化会館64億100万円の一般財源0円、給食センターPFIの一般財源67.4%も検算した。都市計画税を取る愛媛の市が新居浜と八幡浜の2つだけであることも確認"
+        },
+        {
+          "date": "2026-09-13",
+          "level": "machine",
+          "by": "opus",
+          "result": "機械点検",
+          "hash": "486b8332caaa",
+          "note": "新記事(連載第3回)。check_site.py エラー0"
+        },
+        {
+          "date": "2026-09-13",
+          "level": "numbers",
+          "by": "opus",
+          "result": "数字と出典の照合",
+          "hash": "486b8332caaa",
+          "note": "数字262個のうち見つからず3個。うち1つは既存記事との食い違い(223億対176億)を本文で説明している箇所で、繰越金・繰入金・諸収入の48億2,465万8千円ぶんだと分解されている"
+        }
+      ]
+    },
     "okane-no-sentaku": {
       "path": "book/okane-no-sentaku.html",
       "checks": [

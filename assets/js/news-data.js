@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "okane-03-tsukaimichi",
+    date: "2026-09-13",
+    title: "大洲の文化会館64億円に、市が自由に使えるお金は1円も入っていない",
+    category: "shiten",
+    source: "総務省「令和6年度 市町村決算カード（愛媛県）」、e-Gov法令検索（地方税法・地方財政法・介護保険法・過疎法・森林環境税法）、総務省、大洲市議会会議録",
+    sourceDate: "2026-09-13",
+    tags: ["財政・税金"],
+  },
+  {
     slug: "okane-01-dare-ga-atsumeru",
     date: "2026-09-12",
     title: "大洲で暮らすと31種類の税に関わる。市に納めるのは6つだけ",

@@ -66,11 +66,19 @@ def parse(path):
 
 
 def inline(t):
-    """**太字** と `コード` をHTMLにする。タグは書かせない前提でエスケープ済み。
+    """**太字** と `コード` と [題](リンク先) をHTMLにする。
+    タグは書かせない前提でエスケープ済み。
 
     `コード` を先に抜いて預かってから太字を処理する。順番が逆だと、
     コードの中に書いた ** が太字になってしまい、字面が変わる。
     字面をそのまま見せるための書式なので、変わっては意味がない。
+
+    本文中のリンクは、**サイトの中の記事へ送るためだけ**に使う(2026-09-12に追加)。
+    出典は `---出典---` の欄に書く決まりなので、本文から外へ出すリンクは受け付けない。
+    受け付けるのは `../eachnews/…` `../jiyu-kenkyu/…` `../book/…` と、
+    同じページの中の `#…` だけ。それ以外は、リンクにせず字のまま残す。
+    外に出すリンクには rel="noopener" が要るなど決まりが別にあり、
+    本文でそれを守らせるより、出典欄に書かせるほうが確かだからである。
     """
     t = html.escape(t, quote=False)
     kept = []
@@ -81,6 +89,14 @@ def inline(t):
 
     t = re.sub(r"`([^`]+?)`", keep, t)
     t = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", t)
+
+    def link(m):
+        label, href = m.group(1), m.group(2)
+        if not re.match(r"^(?:\.\./(?:eachnews|jiyu-kenkyu|book)/[\w\-]+\.html|#[\w\-]+)$", href):
+            return m.group(0)          # サイトの外。リンクにせず、書いたまま残す
+        return '<a href="%s">%s</a>' % (href, label)
+
+    t = re.sub(r"\[([^\]\[]+?)\]\(([^)\s]+?)\)", link, t)
     return re.sub(r"\x00(\d+)\x00",
                   lambda m: "<code>" + kept[int(m.group(1))] + "</code>", t)
 

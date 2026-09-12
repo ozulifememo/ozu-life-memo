@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-mondai-nenpyo",
+    date: "2026-09-12",
+    title: "大洲にはもう日付が入っている。借金は2028年度、中学生568人は2036年度",
+    category: "shiten",
+    source: "大洲市議会 会議録／文部科学省／総務省／経済産業省／愛媛県ほか",
+    sourceDate: "2026-09-12",
+    tags: ["財政・税金", "人口減少"],
+  },
+  {
     slug: "jr-1025oku-zeikin",
     date: "2026-09-12",
     title: "ＪＲ四国への1,025億円は何の税金か。所得税でも消費税でもなかった",

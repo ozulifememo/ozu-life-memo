@@ -17094,6 +17094,35 @@
         }
       ]
     },
+    "ozu-mondai-nenpyo": {
+      "path": "eachnews/ozu-mondai-nenpyo.html",
+      "checks": [
+        {
+          "date": "2026-09-12",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "88447aa9c1d0",
+          "note": "公債費のピークは令和6年12月の古い推計(約39.5億円)ではなく令和7年12月の39億2,300万円を採り、両方あることを本文に書いた。人口ビジョンの令和17年度はパブコメ後の31,000人を使った"
+        },
+        {
+          "date": "2026-09-12",
+          "level": "machine",
+          "by": "opus",
+          "result": "機械点検",
+          "hash": "88447aa9c1d0",
+          "note": "新記事。check_site.py エラー0"
+        },
+        {
+          "date": "2026-09-12",
+          "level": "numbers",
+          "by": "opus",
+          "result": "数字と出典の照合",
+          "hash": "88447aa9c1d0",
+          "note": "見つからず7個はすべて既存記事の本文に実在。2億8,780万は全角表記の２億8,780万でnagahama-umetate-shisetsuにあることを確認した"
+        }
+      ]
+    },
     "ozu-mugimiso-shoyu": {
       "path": "eachnews/ozu-mugimiso-shoyu.html",
       "checks": [

@@ -5,8 +5,17 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Sat, 12 Sep 2026 19:25:51 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 12 Sep 2026 19:33:37 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大洲にはもう日付が入っている。借金は2028年度、中学生568人は2036年度</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-mondai-nenpyo.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-mondai-nenpyo.html</guid>
+      <pubDate>Sat, 12 Sep 2026 09:00:00 +0900</pubDate>
+      <description>大洲でこれから起きることのうち、すでに日付と金額が決まっているものを年表にした。公債費のピークは令和10年度の39億2,300万円、市立中学校の生徒は令和18年度に568人。給食センターの契約は令和9年3月末に切れる。</description>
+      <category>財政・税金</category>
+      <category>人口減少</category>
+    </item>
     <item>
       <title>ＪＲ四国への1,025億円は何の税金か。所得税でも消費税でもなかった</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/jr-1025oku-zeikin.html</link>
@@ -258,15 +267,6 @@
       <pubDate>Mon, 07 Sep 2026 09:00:00 +0900</pubDate>
       <description>大洲市でスーパーまで直線800メートル（徒歩10分）以内に住む人は9,282人、市の人口の23%だった。国勢調査の500mメッシュ人口と店舗7か所の座標を重ねて自分で数え、3年前の14,339人から5,057人減った理由まで追った。</description>
       <category>まちづくり</category>
-      <category>人口減少</category>
-    </item>
-    <item>
-      <title>大洲の水道代、10年後は月4,650円？ 285億円を自分で割ってみた</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-suido-10nengo.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-suido-10nengo.html</guid>
-      <pubDate>Mon, 07 Sep 2026 09:00:00 +0900</pubDate>
-      <description>大洲市は水道施設の更新に令和3年度から令和40年度まで285億円かかると見込んでいる。市自身が「令和40年度には現行の約2.5倍」と議会で答弁している。この数字を年割りして、10年後の請求書がいくらになるかを試算した。</description>
-      <category>財政・税金</category>
       <category>人口減少</category>
     </item>
   </channel>

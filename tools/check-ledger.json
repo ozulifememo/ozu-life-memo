@@ -6311,6 +6311,35 @@
         }
       ]
     },
+    "jr-1025oku-zeikin": {
+      "path": "eachnews/jr-1025oku-zeikin.html",
+      "checks": [
+        {
+          "date": "2026-09-12",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "86b03af05f46",
+          "note": "財源が鉄道建設・運輸施設整備支援機構の特例業務勘定であることを確認。財政法13条と特別会計ガイドブックで、一般会計が税目に紐づかない理由(予算単一の原則)も条文で確かめた"
+        },
+        {
+          "date": "2026-09-12",
+          "level": "machine",
+          "by": "opus",
+          "result": "機械点検",
+          "hash": "86b03af05f46",
+          "note": "新記事。check_site.py エラー0"
+        },
+        {
+          "date": "2026-09-12",
+          "level": "numbers",
+          "by": "opus",
+          "result": "数字と出典の照合",
+          "hash": "86b03af05f46",
+          "note": "数字119個すべて照合、見つからず0。出典24本すべて取得できた"
+        }
+      ]
+    },
     "jr-akaji-jinko": {
       "path": "eachnews/jr-akaji-jinko.html",
       "checks": [

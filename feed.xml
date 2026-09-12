@@ -5,8 +5,16 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Sun, 13 Sep 2026 00:24:09 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 13 Sep 2026 00:33:52 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大洲市の消防職員は0人。保健所も持たない。誰がどの仕事をやっているのか</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/okane-04-kuni-ken-shi.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/okane-04-kuni-ken-shi.html</guid>
+      <pubDate>Sun, 13 Sep 2026 09:00:00 +0900</pubDate>
+      <description>小中学校は市、高校は県、警察は県、消防は市。国と県と市の分担を、法律の条文と令和6年度の決算カードで20項目並べた。大洲市の職員に消防職員が1人もいない理由と、歳出303億円のうち104億円が「色のついたお金」だったことも数えた。</description>
+      <category>議会・行政</category>
+    </item>
     <item>
       <title>大洲の文化会館64億円に、市が自由に使えるお金は1円も入っていない</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/okane-03-tsukaimichi.html</link>
@@ -254,14 +262,6 @@
       <description>有効求人倍率は愛媛のほうが東京より高いのに、賃金は東京の7割に届かない。国勢調査の産業別就業者数と賃金構造基本統計調査を突き合わせて、この差がどこで生まれているのかを自分で計算した。物価・企業規模・最低賃金・労働生産性まで、ものさしを1つずつ当てて確かめた記録。</description>
       <category>産業・農業</category>
       <category>人口減少</category>
-    </item>
-    <item>
-      <title>大洲の通勤は片道17.6分。松山より短いのに、1時間超えは県平均の1.6倍</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-tsukin-jikan.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-tsukin-jikan.html</guid>
-      <pubDate>Mon, 07 Sep 2026 09:00:00 +0900</pubDate>
-      <description>大洲市民の通勤時間は片道17.6分（中位数）で、松山市の21.8分より短い。ところが「片道1時間以上」の割合は愛媛県平均の1.6倍あった。年間何時間になるか、何で通っているか、いくらかかるかまで計算した。</description>
-      <category>交通・インフラ</category>
     </item>
   </channel>
 </rss>

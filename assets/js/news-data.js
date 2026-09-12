@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "okane-04-kuni-ken-shi",
+    date: "2026-09-13",
+    title: "大洲市の消防職員は0人。保健所も持たない。誰がどの仕事をやっているのか",
+    category: "shiten",
+    source: "e-Gov法令検索（地方自治法・地方財政法ほか9法）、総務省「令和6年度 市町村決算カード」、総務省、厚生労働省、国土交通省、愛媛県、大洲市議会会議録",
+    sourceDate: "2026-09-13",
+    tags: ["議会・行政"],
+  },
+  {
     slug: "okane-03-tsukaimichi",
     date: "2026-09-13",
     title: "大洲の文化会館64億円に、市が自由に使えるお金は1円も入っていない",

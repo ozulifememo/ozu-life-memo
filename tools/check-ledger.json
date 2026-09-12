@@ -11842,6 +11842,35 @@
         }
       ]
     },
+    "okane-04-kuni-ken-shi": {
+      "path": "eachnews/okane-04-kuni-ken-shi.html",
+      "checks": [
+        {
+          "date": "2026-09-13",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "bac1c5215500",
+          "note": "地方財政法10条で義務教育職員の給与と生活保護が同じ条文に並ぶことを確認。愛媛が旅券事務を全市町へ移譲していること、その根拠の地方自治法252条の17の2が市の側から要請できると書いていることも条文で確かめた"
+        },
+        {
+          "date": "2026-09-13",
+          "level": "machine",
+          "by": "opus",
+          "result": "機械点検",
+          "hash": "bac1c5215500",
+          "note": "新記事(連載第4回)。check_site.py エラー0"
+        },
+        {
+          "date": "2026-09-13",
+          "level": "numbers",
+          "by": "opus",
+          "result": "数字と出典の照合",
+          "hash": "bac1c5215500",
+          "note": "見つからず31個を1件ずつ確認。番地(737・3395)は数字ではなく住所、一部事務組合負担金1,083,553千円と国保の被保険者8,105人・5,566世帯は決算カードの大洲市シートに実在、市道1,701km/2,061kmは既存記事michi-ijihiにある。gikai_to_cache.pyで403の会議録もキャッシュに入れた"
+        }
+      ]
+    },
     "okane-no-sentaku": {
       "path": "book/okane-no-sentaku.html",
       "checks": [

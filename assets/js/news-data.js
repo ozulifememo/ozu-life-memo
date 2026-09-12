@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "uchiko-ozu-kanko",
+    date: "2026-09-12",
+    title: "内子と大洲、泊まる客は3.4%と6.0%だった",
+    category: "shiten",
+    source: "愛媛県、文化庁、観光庁、大洲市議会会議録、内子町例規集、国土地理協会",
+    sourceDate: "2026-09-12",
+    tags: ["観光", "まちづくり"],
+  },
+  {
     slug: "kanko-towa-nanika",
     date: "2026-09-12",
     title: "「観光」は、仕える国を探す言葉だった。日本人の50.6%は泊まりの旅に出ない",

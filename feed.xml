@@ -5,8 +5,17 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Sat, 12 Sep 2026 22:04:16 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 12 Sep 2026 22:14:29 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>内子と大洲、泊まる客は3.4%と6.0%だった</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/uchiko-ozu-kanko.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/uchiko-ozu-kanko.html</guid>
+      <pubDate>Sat, 12 Sep 2026 09:00:00 +0900</pubDate>
+      <description>内子の観光はいい、と言われることがある。その印象を数字で確かめられるのか、入込客数・宿泊比率・1人あたり消費額と、運営の仕組みの違いから調べた。消費額の正体は掛け算だった。</description>
+      <category>観光</category>
+      <category>まちづくり</category>
+    </item>
     <item>
       <title>「観光」は、仕える国を探す言葉だった。日本人の50.6%は泊まりの旅に出ない</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/kanko-towa-nanika.html</link>
@@ -258,15 +267,6 @@
       <description>大洲市が当事者になった裁判を、市議会の会議録307ファイルから機械的に数えた。18年余りで議案になったのは和解1件と控訴1件だけ。「訴えの提起」は0件だった。訴える側と訴えられる側で扱いが違う仕組みと、市長が1人で決められる範囲を、条文と市の規程から確かめた。</description>
       <category>議会・行政</category>
       <category>財政・税金</category>
-    </item>
-    <item>
-      <title>議員の紹介が要る「請願」を18年ぶん数えた。116件のうち採択は8件</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-seigan-hosoru.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-seigan-hosoru.html</guid>
-      <pubDate>Mon, 07 Sep 2026 09:00:00 +0900</pubDate>
-      <description>市民が市議会に意見を届ける「請願」と「陳情」。大洲市議会の会議録307ファイルを機械で数え直したところ、2008年3月から2026年6月までの請願は116件、陳情は13件だった。任期ごとの受理件数と結末、全国や松山市との比較、減った理由の候補までを並べた。</description>
-      <category>議会・行政</category>
-      <category>まちづくり</category>
     </item>
   </channel>
 </rss>

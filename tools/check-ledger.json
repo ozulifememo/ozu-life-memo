@@ -23421,6 +23421,35 @@
         }
       ]
     },
+    "uchiko-ozu-kanko": {
+      "path": "eachnews/uchiko-ozu-kanko.html",
+      "checks": [
+        {
+          "date": "2026-09-12",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "e037167ae88b",
+          "note": "愛媛県の観光客数PDF(令和6年・令和2年)を実際に開いて表を読んだ。消費額が観光客数×1,100円＋宿泊者数×8,000円の掛け算であることも確かめた"
+        },
+        {
+          "date": "2026-09-12",
+          "level": "machine",
+          "by": "opus",
+          "result": "機械点検",
+          "hash": "e037167ae88b",
+          "note": "新記事。check_site.py エラー0"
+        },
+        {
+          "date": "2026-09-12",
+          "level": "numbers",
+          "by": "opus",
+          "result": "数字と出典の照合",
+          "hash": "e037167ae88b",
+          "note": "見つからず6個のうち施設別4個は県のPDFで一致を確認。大洲の合計4個は記事自身の足し算で、県のPDFから15行を取り出して検算した。差は宿泊施設4つ(望湖荘・ふるさとの宿・才谷屋・鹿野川荘)ぶんで4年とも完全一致し、主要観光施設11件の合計として正しい"
+        }
+      ]
+    },
     "ukai-baru": {
       "path": "eachnews/ukai-baru.html",
       "checks": [

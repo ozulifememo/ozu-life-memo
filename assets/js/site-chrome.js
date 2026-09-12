@@ -20,6 +20,7 @@
       '<a href="' + prefix + 'history/">大洲の歴史</a>' +
       '<a href="' + prefix + 'book/">大洲と読書</a>' +
       '<a href="' + prefix + 'jiyu-kenkyu/">大洲の自由研究</a>' +
+      '<a href="' + prefix + 'okane/">大洲のお金の教科書</a>' +
       "</div>" +
       "</div>" +
       '<a href="' + prefix + 'photo/">フリー写真</a>' +
@@ -60,6 +61,7 @@
       '<a href="' + prefix + 'news/">大洲ノート</a>' +
       '<a href="' + prefix + 'best/">おすすめ10選</a>' +
       '<a href="' + prefix + 'jiyu-kenkyu/">大洲の自由研究</a>' +
+      '<a href="' + prefix + 'okane/">大洲のお金の教科書</a>' +
       '<a href="' + prefix + 'monthly/">月間まとめ</a>' +
       '<a href="' + prefix + 'history/">大洲の歴史</a>' +
       '<a href="' + prefix + 'book/">大洲と読書</a>' +

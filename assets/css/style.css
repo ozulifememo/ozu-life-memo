@@ -4492,3 +4492,64 @@ section {
   padding: 0.08em 0.34em;
   word-break: break-all;
 }
+
+/* ── 連載「大洲のお金の教科書」の入口(okane/) ────────────────────
+   2026-09-12。第1回から順に読める形にするため、札を横に並べず
+   縦に1列で置く。番号を左に固定して、どこまで来たかが分かるようにした。
+   まだ書いていない回も灰色で見せる。全体像が先に見えるほうが、
+   「体系的に読む」という連載の目的に合うため。 */
+.kk-list { list-style: none; margin: 0 auto; padding: 0; max-width: 860px; }
+.kk-item {
+  display: block;
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--c, var(--color-border-strong));
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  margin-bottom: 10px;
+  transition: border-color 0.18s ease, background 0.18s ease;
+}
+.kk-item > a, .kk-item > span:first-child {
+  display: grid;
+  grid-template-columns: 88px minmax(0, 1fr);
+  gap: 2px 18px;
+  padding: 16px 20px;
+  align-items: baseline;
+}
+.kk-item > a { text-decoration: none; color: inherit; }
+.kk-item:not(.kk-yet):hover { border-color: var(--c); }
+.kk-item .kk-no {
+  grid-row: 1 / span 2;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--c);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.kk-item b { grid-column: 2; font-size: var(--text-md); font-weight: 700; line-height: 1.55; }
+.kk-item .kk-lead {
+  grid-column: 2;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  line-height: 1.75;
+  margin-top: 4px;
+}
+.kk-item:not(.kk-yet) > a b:hover { color: var(--color-brand); }
+/* まだ書いていない回 */
+.kk-yet { background: var(--color-surface-alt); border-left-color: var(--color-border-strong); }
+.kk-yet .kk-no, .kk-yet b { color: var(--color-text-faint); }
+.kk-yet { display: grid; grid-template-columns: 88px minmax(0, 1fr) auto;
+  gap: 2px 18px; padding: 16px 20px; align-items: baseline; }
+.kk-yet .kk-soon {
+  grid-column: 3; grid-row: 1 / span 2;
+  font-size: 0.72rem; font-weight: 700; white-space: nowrap;
+  color: var(--color-text-faint);
+  border: 1px solid var(--color-border-strong);
+  border-radius: 3px; padding: 3px 9px; align-self: center;
+}
+@media (max-width: 560px) {
+  .kk-item > a, .kk-yet { grid-template-columns: 1fr; gap: 4px; }
+  .kk-item .kk-no { grid-row: auto; }
+  .kk-yet .kk-soon { grid-column: 1; grid-row: auto; justify-self: start; }
+  .kk-item b, .kk-item .kk-lead { grid-column: 1; }
+}

@@ -5,8 +5,33 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Sat, 12 Sep 2026 22:14:29 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 12 Sep 2026 23:08:08 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>「扶助費」「物件費」「繰出金」― 決算の日本語は、なぜこんなに読めないのか</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/kessan-nihongo.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/kessan-nihongo.html</guid>
+      <pubDate>Sat, 12 Sep 2026 09:00:00 +0900</pubDate>
+      <description>大洲市の令和6年度決算303億円は、11個の費目名で書かれている。そのうち「物件費」には土地も建物も入っていない。費目名の中身と出どころを、法令と明治の条文まで遡って確かめた。</description>
+      <category>財政・税金</category>
+      <category>議会・行政</category>
+    </item>
+    <item>
+      <title>あなたが納めた市民税10万円は、どこへ行ったのか</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-shiminzei-yukue.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-shiminzei-yukue.html</guid>
+      <pubDate>Sat, 12 Sep 2026 09:00:00 +0900</pubDate>
+      <description>大洲市の個人市民税は令和6年度で14億1,778万円。だがこのお金は市に入った瞬間に他の収入と混ざり、原理的に追跡できない。総務省の決算カードと課税状況調から、追えないかわりに割合で分ける方法を組み立て、10万円の行き先を1円単位まで計算した。</description>
+      <category>財政・税金</category>
+    </item>
+    <item>
+      <title>大洲市に来る交付税94億円は、引き算1本で決まっていた</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kofuzei-hikizan.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kofuzei-hikizan.html</guid>
+      <pubDate>Sat, 12 Sep 2026 09:00:00 +0900</pubDate>
+      <description>大洲市の収入でいちばん大きいのは市税ではなく地方交付税だ。令和6年度の普通交付税94億8,224万円が、国の見積り2つの引き算とぴったり一致することを、総務省の資料で確かめた。需要額の積み上げ方、税収の75%しか数えない理由、人口が減ったらどうなるかまで追った。</description>
+      <category>財政・税金</category>
+    </item>
     <item>
       <title>内子と大洲、泊まる客は3.4%と6.0%だった</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/uchiko-ozu-kanko.html</link>
@@ -92,7 +117,7 @@
       <category>財政・税金</category>
     </item>
     <item>
-      <title>ふるさと納税で大洲が買ったもの。40万円のカヌーが、1億456万円のスクールバスになった</title>
+      <title>ふるさと納税で大洲が買ったもの。40万円のカヌーと1億456万円のバス</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-furusato-tsukaimichi.html</link>
       <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-furusato-tsukaimichi.html</guid>
       <pubDate>Mon, 07 Sep 2026 09:00:00 +0900</pubDate>
@@ -137,7 +162,7 @@
       <category>財政・税金</category>
     </item>
     <item>
-      <title>大洲で家を借りる手順。市営住宅は連帯保証人が2人、県営は2026年4月から不要になった</title>
+      <title>大洲で家を借りる手順。市営は連帯保証人2人、県営は2026年4月から不要</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kariru-tetsuzuki.html</link>
       <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kariru-tetsuzuki.html</guid>
       <pubDate>Mon, 07 Sep 2026 09:00:00 +0900</pubDate>
@@ -198,7 +223,7 @@
       <category>合併・地域</category>
     </item>
     <item>
-      <title>働き口は東京より多いのに、年収は東京の68%。差の9割は「同じ産業の中」で生まれていた</title>
+      <title>働き口は東京より多いのに年収は68%。差の9割は「同じ産業の中」だった</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kyujin-nenshu-sa.html</link>
       <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kyujin-nenshu-sa.html</guid>
       <pubDate>Mon, 07 Sep 2026 09:00:00 +0900</pubDate>
@@ -233,40 +258,13 @@
       <category>まちづくり</category>
     </item>
     <item>
-      <title>水天宮の沈下橋は、なぜ消えたのか。変わったのは橋ではなく「毎秒700トン」だった</title>
+      <title>水天宮の沈下橋はなぜ消えたのか。変わったのは「毎秒700トン」だった</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-suitengu-hashi.html</link>
       <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-suitengu-hashi.html</guid>
       <pubDate>Mon, 07 Sep 2026 09:00:00 +0900</pubDate>
       <description>大洲市柚木の如法寺河原にあった沈下橋「冨士橋」は2024年5月末に撤去された。事故が理由だという記録は市議会にも国の計画にも一つも無い。決め手は、河道整備の目標流量が毎秒3,900トンから4,600トンに上がったことだった。</description>
       <category>交通・インフラ</category>
       <category>防災</category>
-    </item>
-    <item>
-      <title>大洲の交通事故は全国より少ない。なのに、亡くなる人は人口あたり3倍だった</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-jiko-kaji.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-jiko-kaji.html</guid>
-      <pubDate>Mon, 07 Sep 2026 09:00:00 +0900</pubDate>
-      <description>警察庁のオープンデータから大洲市内の人身事故304件(2019〜2024年)を自分で抜き出して数えた。件数は全国平均より少ないが、死者は人口あたり約3倍。どんな道で、どんな時間に起きているかを、火災の統計とあわせて整理した。</description>
-      <category>防災</category>
-      <category>交通・インフラ</category>
-    </item>
-    <item>
-      <title>1.15倍までなら合法、1.35倍だと違法? 土地の値段で9年争った裁判</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-saiban-toshokan.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-saiban-toshokan.html</guid>
-      <pubDate>Mon, 07 Sep 2026 09:00:00 +0900</pubDate>
-      <description>大洲市が図書館を建てるために買った909.75平方メートルの土地。その値段が高すぎたとして住民が起こした訴訟は、提訴から結審まで9年かかり、最高裁までもつれた。高裁と最高裁で結論が正反対になった理由を、公開されている判決文と市議会の会議録から追った。</description>
-      <category>議会・行政</category>
-      <category>財政・税金</category>
-    </item>
-    <item>
-      <title>5億3,800万円を請求された裁判が、市議会に出てこない。条文1行の理由</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-saiban.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-saiban.html</guid>
-      <pubDate>Mon, 07 Sep 2026 09:00:00 +0900</pubDate>
-      <description>大洲市が当事者になった裁判を、市議会の会議録307ファイルから機械的に数えた。18年余りで議案になったのは和解1件と控訴1件だけ。「訴えの提起」は0件だった。訴える側と訴えられる側で扱いが違う仕組みと、市長が1人で決められる範囲を、条文と市の規程から確かめた。</description>
-      <category>議会・行政</category>
-      <category>財政・税金</category>
     </item>
   </channel>
 </rss>

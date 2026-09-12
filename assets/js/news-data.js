@@ -36,6 +36,33 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "kessan-nihongo",
+    date: "2026-09-12",
+    title: "「扶助費」「物件費」「繰出金」― 決算の日本語は、なぜこんなに読めないのか",
+    category: "shiten",
+    source: "総務省、e-Gov法令検索、国立国会図書館デジタルコレクション、大洲市議会会議録",
+    sourceDate: "2026-09-12",
+    tags: ["財政・税金", "議会・行政"],
+  },
+  {
+    slug: "ozu-shiminzei-yukue",
+    date: "2026-09-12",
+    title: "あなたが納めた市民税10万円は、どこへ行ったのか",
+    category: "shiten",
+    source: "総務省「令和6年度 市町村決算カード」愛媛県版、総務省「令和6年度 市町村税課税状況等の調」、総務省「令和7年版 地方財政白書」、地方税法・地方交付税法・地方財政法・森林環境税法(e-Gov法令検索)、大洲市議会 会議録",
+    sourceDate: "2026-09-12",
+    tags: ["財政・税金"],
+  },
+  {
+    slug: "ozu-kofuzei-hikizan",
+    date: "2026-09-12",
+    title: "大洲市に来る交付税94億円は、引き算1本で決まっていた",
+    category: "shiten",
+    source: "総務省「令和6年度 市町村決算カード」「市町村別普通交付税変更決定額」ほか、地方交付税法、大洲市議会会議録",
+    sourceDate: "2026-09-12",
+    tags: ["財政・税金"],
+  },
+  {
     slug: "uchiko-ozu-kanko",
     date: "2026-09-12",
     title: "内子と大洲、泊まる客は3.4%と6.0%だった",
@@ -128,7 +155,7 @@ const OZU_NEWS = [
   {
     slug: "ozu-furusato-tsukaimichi",
     date: "2026-09-07",
-    title: "ふるさと納税で大洲が買ったもの。40万円のカヌーが、1億456万円のスクールバスになった",
+    title: "ふるさと納税で大洲が買ったもの。40万円のカヌーと1億456万円のバス",
     category: "shiten",
     source: "大洲市ふるさと納税報告書(平成27・29年度、令和2・3・7年度)、大洲市議会会議録、総務省ふるさと納税現況調査",
     sourceDate: "2026-09-07",
@@ -173,7 +200,7 @@ const OZU_NEWS = [
   {
     slug: "ozu-kariru-tetsuzuki",
     date: "2026-09-07",
-    title: "大洲で家を借りる手順。市営住宅は連帯保証人が2人、県営は2026年4月から不要になった",
+    title: "大洲で家を借りる手順。市営は連帯保証人2人、県営は2026年4月から不要",
     category: "kurashi",
     source: "公営住宅法・同施行令・民法・宅地建物取引業法(e-Gov法令検索)、国土交通省、総務省中部管区行政評価局、愛媛県、大洲市議会会議録 ほか",
     sourceDate: "2026-09-07",
@@ -236,7 +263,7 @@ const OZU_NEWS = [
   {
     slug: "ozu-kyujin-nenshu-sa",
     date: "2026-09-07",
-    title: "働き口は東京より多いのに、年収は東京の68%。差の9割は「同じ産業の中」で生まれていた",
+    title: "働き口は東京より多いのに年収は68%。差の9割は「同じ産業の中」だった",
     category: "shiten",
     source: "厚生労働省「令和7年賃金構造基本統計調査」、総務省「令和2年国勢調査」ほか",
     sourceDate: "2026-09-07",
@@ -272,7 +299,7 @@ const OZU_NEWS = [
   {
     slug: "ozu-suitengu-hashi",
     date: "2026-09-07",
-    title: "水天宮の沈下橋は、なぜ消えたのか。変わったのは橋ではなく「毎秒700トン」だった",
+    title: "水天宮の沈下橋はなぜ消えたのか。変わったのは「毎秒700トン」だった",
     category: "kurashi",
     source: "肱川水系河川整備計画【中下流圏域】(国土交通省四国地方整備局・愛媛県) ほか",
     sourceDate: "2026-09-07",
@@ -353,7 +380,7 @@ const OZU_NEWS = [
   {
     slug: "ozu-kaikei-nendo-ninyo",
     date: "2026-09-07",
-    title: "市役所で働く人の47％は「1年ごとの職員」。大洲市の568人と、時給1,203円の中身",
+    title: "市役所で働く人の47%は「1年ごとの職員」。568人、時給1,203円",
     category: "ima",
     source: "大洲市「人事行政の運営等の状況」ほか",
     sourceDate: "2026-09-06",
@@ -362,7 +389,7 @@ const OZU_NEWS = [
   {
     slug: "ozu-joho-kokai-tsukaikata",
     date: "2026-09-07",
-    title: "大洲市への情報公開請求は年9件。閲覧は無料で15日。ただし「ネットに載せる」は別の話",
+    title: "大洲市への情報公開請求は年9件。閲覧は無料で15日で届く",
     category: "shiten",
     source: "大洲市情報公開条例(大洲市例規集)、著作権法(e-Gov法令検索)ほか",
     sourceDate: "2026-09-06",
@@ -380,7 +407,7 @@ const OZU_NEWS = [
   {
     slug: "ozu-kokuho-kennai-hikaku",
     date: "2026-09-07",
-    title: "同じ年収400万円で国保料は年13万円違う。大洲は県内15市町で安いほうから2番目",
+    title: "同じ年収400万円で国保料は年13万円違う。大洲は安いほうから2番目",
     category: "kurashi",
     source: "大洲市国民健康保険税条例、愛媛県「標準保険料率(令和7年度)」ほか",
     sourceDate: "2026-09-06",
@@ -461,7 +488,7 @@ const OZU_NEWS = [
   {
     slug: "ozu-dare-ga-kimeru",
     date: "2026-09-06",
-    title: "大洲を変えられるのは誰か。327億円のうち、市が自分で決められるのは78億円だった",
+    title: "327億円のうち、市が自分で決められるのは78億円だった",
     category: "shiten",
     source: "大洲市「令和6年度大洲市の決算」／決算審査意見書／e-Gov法令検索／大洲市議会会議録",
     sourceDate: "2026-09-06",
@@ -479,7 +506,7 @@ const OZU_NEWS = [
   {
     slug: "ozu-kato-yasumichi-kifu",
     date: "2026-09-06",
-    title: "冨士山公園2個分の山を、ただで町に渡した人がいる。90ヘクタールはいまどうなったのか",
+    title: "冨士山公園2個分の山を、ただで町に渡した人がいる。いまどうなったか",
     category: "shiten",
     source: "大洲市ホームページ／大洲市名誉市民条例／大洲市議会 会議録／愛媛県史",
     sourceDate: "2026-09-06",
@@ -551,7 +578,7 @@ const OZU_NEWS = [
   {
     slug: "ozu-kokuei-nochi",
     date: "2026-09-06",
-    title: "国が440ヘクタールの畑を作った。耕作放棄地は894ヘクタール。並べていい数字か調べた",
+    title: "国が440ヘクタールの畑を作った。耕作放棄地は894ヘクタールある",
     category: "shiten",
     source: "大洲市議会会議録／会計検査院決算検査報告／えひめの記憶／愛媛県",
     sourceDate: "2026-09-06",
@@ -605,7 +632,7 @@ const OZU_NEWS = [
   {
     slug: "tomisuyama-tsutsuji",
     date: "2026-09-06",
-    title: "6万3,000本のツツジが咲かなかった年。大洲市が調べて、それでも原因は分からなかった",
+    title: "6万3,000本のツツジが咲かなかった年。市が調べても原因は分からなかった",
     category: "shiten",
     source: "大洲市議会 会議録／大洲市ホームページ／気象庁",
     sourceDate: "2026-09-06",
@@ -614,7 +641,7 @@ const OZU_NEWS = [
   {
     slug: "ozu-conveni-itsukara",
     date: "2026-09-06",
-    title: "セブン-イレブンが愛媛に来たのは2014年。43番目の県だった。大洲のコンビニ23店を数えた",
+    title: "セブン-イレブンが愛媛に来たのは2014年で、43番目の県だった",
     category: "shiten",
     source: "セブン-イレブン・ジャパン／ファミリーマートの公式発表ほか",
     sourceDate: "2014-02-28",
@@ -623,7 +650,7 @@ const OZU_NEWS = [
   {
     slug: "ozu-ramenshop-nazo",
     date: "2026-09-06",
-    title: "週2日しか開かないラーメン屋が大洲にある。営業日は月と木の昼だけで、いまは休業していた",
+    title: "週2日しか開かないラーメン屋が大洲にある。月と木の昼だけだった",
     category: "shiten",
     source: "大洲市議会議員のSNS投稿ほか",
     sourceDate: "2026-06-17",
@@ -632,7 +659,7 @@ const OZU_NEWS = [
   {
     slug: "ozu-furui-mise",
     date: "2026-09-06",
-    title: "大洲でいちばん古い店は1624年の菓子屋。ただし1688年創業の割烹に、1617年の記録もある",
+    title: "大洲でいちばん古い店は1624年の菓子屋。ただし1617年の記録もある",
     category: "shiten",
     source: "大洲ええモンセレクション／大洲市公式観光ガイドほか",
     sourceDate: "2026-09-06",
@@ -641,7 +668,7 @@ const OZU_NEWS = [
   {
     slug: "ozu-imotaki-makete",
     date: "2026-09-06",
-    title: "いもたきの発祥は大洲。でも県内9か所のうち南予は2か所だけで、西条は半額だった",
+    title: "いもたきの発祥は大洲。でも県内9か所のうち南予は2か所だけだった",
     category: "shiten",
     source: "大洲市ホームページ／日本交通公社 全国観光資源台帳ほか",
     sourceDate: "2026-08-03",
@@ -650,7 +677,7 @@ const OZU_NEWS = [
   {
     slug: "ozu-mugimiso-shoyu",
     date: "2026-09-06",
-    title: "大洲の麦みそはなぜ甘いのか。愛媛の麦は明治40年に9割が主食で、いまは7割が味噌になっていた",
+    title: "大洲の麦みそはなぜ甘いのか。愛媛の麦は7割が味噌になっていた",
     category: "shiten",
     source: "愛媛県農産園芸課「はだか麦の生産振興と需要拡大について」ほか",
     sourceDate: "2021-03-01",
@@ -659,7 +686,7 @@ const OZU_NEWS = [
   {
     slug: "ozu-houjin-kiesaki",
     date: "2026-09-06",
-    title: "大洲の法人1,607件を全部数えた。もう無いのは189件、うち66件は1月のある日にまとめて消えた",
+    title: "大洲の法人1,607件のうち189件はもう無い。66件は同じ日に消えた",
     category: "shiten",
     source: "国税庁 法人番号公表サイト（令和8年8月31日更新）ほか",
     sourceDate: "2026-08-31",
@@ -668,7 +695,7 @@ const OZU_NEWS = [
   {
     slug: "ozu-furui-homepage",
     date: "2026-09-05",
-    title: "大洲でいちばん古いホームページを探した。市の1年前に、人口1,100人の村が出していた",
+    title: "大洲でいちばん古いHPは、市の1年前に人口1,100人の村が出していた",
     category: "shiten",
     source: "インターネットアーカイブ（Wayback Machine）ほか",
     sourceDate: "2000-09-17",
@@ -677,7 +704,7 @@ const OZU_NEWS = [
   {
     slug: "ozu-kuri-nakayama",
     date: "2026-09-05",
-    title: "栗の生産量は愛媛で1位。なのに有名なのは中山栗。地域ブランド11件に大洲は1つもなかった",
+    title: "栗の生産量は愛媛で1位。なのに地域ブランド11件に大洲は1つもない",
     category: "shiten",
     source: "大洲市議会 令和5年9月定例会 会議録ほか",
     sourceDate: "2023-09-01",
@@ -686,7 +713,7 @@ const OZU_NEWS = [
   {
     slug: "kyushoku-taberarenai-ko",
     date: "2026-09-05",
-    title: "給食が無料になっても、食べられない子には1円も届かない。大洲は11万5,000円を置いた",
+    title: "給食が無料になっても、食べられない子には1円も届かない",
     category: "shiten",
     source: "大洲市議会 令和8年3月定例会 会議録ほか",
     sourceDate: "2026-03-01",
@@ -695,7 +722,7 @@ const OZU_NEWS = [
   {
     slug: "ozu-kuchikiki-kiroku",
     date: "2026-09-05",
-    title: "市役所は議員の「お願い」を記録しているか。大洲市は9年前に「検討する」と答えた",
+    title: "市役所は議員の「お願い」を記録しているか。9年前に「検討する」と答えた",
     category: "shiten",
     source: "全国市民オンブズマン連絡会議／大洲市議会会議録／名古屋地裁判決ほか計7本",
     sourceDate: "2021-09-24",
@@ -740,7 +767,7 @@ const OZU_NEWS = [
   {
     slug: "juden-denchi-dashikata",
     date: "2026-09-05",
-    title: "モバイルバッテリーはもやすごみに出せない。大洲で回収している店を数えたら7店あった",
+    title: "モバイルバッテリーはもやすごみに出せない。大洲の回収は7店だった",
     category: "kurashi",
     source: "大洲市「小型充電式電池の排出方法およびリサイクル協力店マップのご案内」／環境省「リチウムイオン電池の適正処理の現状」／消防庁「リチウムイオン電池等から出火した火災の調査結果」ほか",
     sourceDate: "2026-08-03",
@@ -749,7 +776,7 @@ const OZU_NEWS = [
   {
     slug: "shimin-post-teigen",
     date: "2026-09-05",
-    title: "「市民ポスト」に出した意見は、本当に返ってくるのか。公開された回答76本を数えた",
+    title: "「市民ポスト」に出した意見は返ってくるのか。回答76本を数えた",
     category: "kurashi",
     source: "大洲市「市民ポスト」ほか",
     sourceDate: "2026-09-02",
@@ -785,7 +812,7 @@ const OZU_NEWS = [
   {
     slug: "kokubunsai-2028-ehime",
     date: "2026-09-05",
-    title: "2028年、愛媛で38年ぶりの国民文化祭。大洲の新しい文化会館の工期は、その後だった",
+    title: "2028年、愛媛で38年ぶりの国民文化祭。文化会館の工期はその後だった",
     category: "ima",
     source: "愛媛県「愛顔えひめの文化祭2028とは」ほか",
     sourceDate: "2026-09-01",
@@ -803,7 +830,7 @@ const OZU_NEWS = [
   {
     slug: "nankai-kakuritsu-murotsu",
     date: "2026-09-04",
-    title: "南海トラフの確率のもとは、江戸時代の古文書だった。「竿」の解釈で1.4mか1.9mか変わる",
+    title: "南海トラフの確率のもとは江戸時代の古文書。「竿」の読みで数字が変わる",
     category: "shiten",
     source: "地震調査委員会「南海トラフの地震活動の長期評価(第二版一部改訂)」ほか",
     sourceDate: "2025-09-26",
@@ -830,7 +857,7 @@ const OZU_NEWS = [
   {
     slug: "ozu-cci-shigoto",
     date: "2026-09-03",
-    title: "大洲まつりの問い合わせ先は、商工会議所だった。議員70人の団体が大洲でやっていること",
+    title: "大洲まつりの問い合わせ先は商工会議所。議員70人の団体がやっている",
     category: "shiten",
     source: "大洲商工会議所公式サイト・大洲市議会会議録",
     sourceDate: "2026-08-25",
@@ -866,7 +893,7 @@ const OZU_NEWS = [
   {
     slug: "ozu-inuneko-hikitori",
     date: "2026-09-03",
-    title: "大洲で飼えなくなった犬猫はどこへ行くのか。愛媛の殺処分は5,753匹から361匹になった",
+    title: "愛媛の犬猫の殺処分は5,753匹から361匹に。大洲の分はどこへ行くのか",
     category: "kurashi",
     source: "環境省統計・愛媛県・大洲市議会会議録",
     sourceDate: "2023-11-14",
@@ -983,7 +1010,7 @@ const OZU_NEWS = [
   {
     slug: "ozu-solar-yama",
     date: "2026-09-03",
-    title: "山に置く太陽光は、2027年度で国の支援が終わる。大洲市は13年前に誘致を断っていた",
+    title: "山に置く太陽光は2027年度で国の支援が終わる。大洲は13年前に断っていた",
     category: "shiten",
     source: "内閣官房・経済産業省・資源エネルギー庁・大洲市議会会議録",
     sourceDate: "2025-12-23",
@@ -1109,7 +1136,7 @@ const OZU_NEWS = [
   {
     slug: "toyogabashi-henro-isan",
     date: "2026-08-28",
-    title: "「大洲の人は冷たい」と言われる話には、もとになった橋がある。それは誤読だった",
+    title: "「大洲の人は冷たい」と言われる話のもとは橋で、それは誤読だった",
     category: "shiten",
     source: "大洲市議会 令和5年6月定例会会議録ほか",
     sourceDate: "2023-06-01",
@@ -1118,7 +1145,7 @@ const OZU_NEWS = [
   {
     slug: "suido-ryokin-toitsu-15pct",
     date: "2026-08-28",
-    title: "大洲の水道代は、3つの値段がばらばらだった。合併18年目にやっとひとつになった",
+    title: "大洲の水道代は3つの値段がばらばらで、合併18年目にひとつになった",
     category: "kurashi",
     source: "大洲市議会 令和5年3月定例会会議録ほか",
     sourceDate: "2023-03-01",
@@ -1127,7 +1154,7 @@ const OZU_NEWS = [
   {
     slug: "smartlock-community-center",
     date: "2026-08-28",
-    title: "体育館の鍵を、メールで届く暗証番号で開けるか。市30か所分の値段は、管理人1人分と同じだった",
+    title: "体育館の鍵を暗証番号で開ける。30か所分が管理人1人分と同じ値段だった",
     category: "kurashi",
     source: "大洲市議会会議録（令和6年3月・6月・9月）ほか",
     sourceDate: "2024-09-01",
@@ -1136,7 +1163,7 @@ const OZU_NEWS = [
   {
     slug: "rikkoho-hoikusho-nyusho",
     date: "2026-08-28",
-    title: "市議選に出るために仕事を辞めたら、子どもを保育所に預けられるのか。大洲の答えは「預けられる」だった",
+    title: "選挙に出るため仕事を辞めたら、子どもは保育所に預けられるのか",
     category: "shiten",
     source: "大洲市議会 令和6年3月定例会会議録ほか",
     sourceDate: "2024-03-01",
@@ -1145,7 +1172,7 @@ const OZU_NEWS = [
   {
     slug: "ozu-kogyo-yosui",
     date: "2026-08-28",
-    title: "大洲には水道がもう1本ある。入ってくるのは850万円で、市が1,800万円を入れている",
+    title: "大洲には水道がもう1本ある。収入850万円に市が1,800万円を入れている",
     category: "shiten",
     source: "大洲市議会会議録（平成20年9月・平成21年12月・令和5年12月）ほか",
     sourceDate: "2023-12-01",
@@ -1163,7 +1190,7 @@ const OZU_NEWS = [
   {
     slug: "gosaiji-kenshin-ozu",
     date: "2026-08-28",
-    title: "5歳児健診は、やらなくてもいい健診だった。大洲ができない理由は子どもの数ではなかった",
+    title: "5歳児健診は、やらなくてもいい健診だった。大洲ができない理由は別にある",
     category: "shiten",
     source: "大洲市議会会議録（令和7年6月・令和7年12月）ほか",
     sourceDate: "2025-12-01",
@@ -1272,7 +1299,7 @@ const OZU_NEWS = [
   {
     slug: "kyokenbyo-yobo-2027",
     date: "2026-08-18",
-    title: "狂犬病予防注射、令和９年３月からルールが変わる。「４月～６月の期間限定」が廃止に",
+    title: "狂犬病予防注射、令和9年3月から「4月〜6月の期間限定」が廃止に",
     category: "kurashi",
     source: "大洲市役所/新潟県・越谷市など他自治体の同一内容お知らせ",
     sourceDate: "2026-08-07",
@@ -1340,7 +1367,7 @@ const OZU_NEWS = [
   {
     slug: "akiya-kaitai-soneki-bunkiten",
     date: "2026-08-18",
-    title: "大洲市の空き家、「壊す」と「放置」どちらが得か。固定資産税の分かれ目を計算してみた",
+    title: "大洲の空き家、「壊す」と「放置」どちらが得か。固定資産税で計算してみた",
     category: "kurashi",
     source: "大洲市(危険空き家除却事業補助金・市有地売却物件・固定資産税)、総務省(固定資産税の概要・家屋評価・負担調整措置)、国土交通省(空家等対策特別措置法・住宅用地特例)",
     sourceDate: "2025-07-30",
@@ -1660,7 +1687,7 @@ const OZU_NEWS = [
     slug: "gikai-futoko-suii",
     date: "2026-08-18",
     sourceDate: "2026-06-01",
-    title: "大洲市の不登校、令和８年５月末時点８人まで減少。前年同時期比６割減という数字",
+    title: "大洲市の不登校は8人まで減少。前年同時期比6割減という数字",
     category: "ima",
     source: "大洲市議会中継配信(YouTube)",
     tags: ["子育て・教育"],
@@ -1831,7 +1858,7 @@ const OZU_NEWS = [
     date: "2026-08-18",
     sourceDate: "2026-03-23",
     sourceDateKind: "公表",
-    title: "大洲市の当初予算479億円は「骨格予算」だった。６月に29億円が足されて508億円に",
+    title: "当初予算479億円は「骨格予算」だった。6月に29億円が足されて508億円に",
     category: "shiten",
     source: "大洲市「令和8年度予算の概要」/6月補正予算の概要/過疎地域持続的発展計画/総務省市町村決算",
     tags: ["財政・税金"],
@@ -1997,7 +2024,7 @@ const OZU_NEWS = [
     slug: "kigyo-yuchi-kikuyocho-hikaku",
     date: "2026-08-18",
     sourceDate: "2009-01-01",
-    title: "企業誘致は絵空事か。人口ほぼ同じ菊陽町がTSMCを呼べた理由から、大洲の現実を考える",
+    title: "企業誘致は絵空事か。人口ほぼ同じ菊陽町はTSMCを呼べた",
     category: "shiten",
     source: "大洲市公式サイト、日本経済新聞 ほか",
     tags: ["産業・農業", "人口減少"],
@@ -2006,7 +2033,7 @@ const OZU_NEWS = [
     slug: "ozu-kasseika-keikaku-kenshou",
     date: "2026-08-18",
     sourceDate: "2025-12-01",
-    title: "大洲の活性化計画は「絵に描いた餅」か。５年ぶりに改定された「守り」の計画で答え合わせをした",
+    title: "大洲の活性化計画は「絵に描いた餅」か。5年ぶりの改定で答え合わせをした",
     category: "shiten",
     source: "大洲市立地適正化計画(令和8年3月変更)/大洲市人口ビジョン/第3次総合計画パブコメ結果/令和8年度当初予算",
     tags: ["人口減少", "まちづくり"],
@@ -2470,7 +2497,7 @@ const OZU_NEWS = [
     slug: "ozu-555-project",
     date: "2026-08-08",
     sourceDate: "2024-06-10",
-    title: "「OZU 555 PROJECT」始動。2030年に５事例・50事業・500人雇用を目指す構想",
+    title: "OZU 555 PROJECT。2030年に500人雇用を目指す構想",
     category: "shiten",
     source: "キタ・マネジメント、バリューマネジメント、山陽新聞デジタル ほか",
     tags: ["まちづくり", "産業・農業"],

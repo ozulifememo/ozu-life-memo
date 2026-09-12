@@ -8196,6 +8196,35 @@
         }
       ]
     },
+    "kessan-nihongo": {
+      "path": "eachnews/kessan-nihongo.html",
+      "checks": [
+        {
+          "date": "2026-09-12",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "7aebadab285d",
+          "note": "明治22年の会計法と明治21年の市制をNDLデジタルコレクションの原本で確認。市制97条の「物件」が土地・営造物・家屋であることも見た"
+        },
+        {
+          "date": "2026-09-12",
+          "level": "machine",
+          "by": "opus",
+          "result": "機械点検",
+          "hash": "7aebadab285d",
+          "note": "新記事。check_site.py エラー0"
+        },
+        {
+          "date": "2026-09-12",
+          "level": "numbers",
+          "by": "opus",
+          "result": "数字と出典の照合",
+          "hash": "7aebadab285d",
+          "note": "数字96個のうち見つからず1個"
+        }
+      ]
+    },
     "kigyo-yuchi-kikuyocho-hikaku": {
       "path": "eachnews/kigyo-yuchi-kikuyocho-hikaku.html",
       "checks": [
@@ -15864,6 +15893,35 @@
         }
       ]
     },
+    "ozu-kofuzei-hikizan": {
+      "path": "eachnews/ozu-kofuzei-hikizan.html",
+      "checks": [
+        {
+          "date": "2026-09-12",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "54d03b019792",
+          "note": "総務省の市町村決算カード(愛媛県)をExcelで開き、基準財政需要額14,529,870千円−基準財政収入額5,047,635千円=9,482,235千円が普通交付税と1円も違わないことを自分で確かめた"
+        },
+        {
+          "date": "2026-09-12",
+          "level": "machine",
+          "by": "opus",
+          "result": "機械点検",
+          "hash": "54d03b019792",
+          "note": "新記事。check_site.py エラー0"
+        },
+        {
+          "date": "2026-09-12",
+          "level": "numbers",
+          "by": "opus",
+          "result": "数字と出典の照合",
+          "hash": "54d03b019792",
+          "note": "決算カードのPDFとExcelをキャッシュに入れて照合。残る4個は丸めと記事自身の計算で、標準財政規模15,774,772−標準税収入額等6,253,141−普通交付税9,482,235=39,396千円を検算した"
+        }
+      ]
+    },
     "ozu-kogyo-yosui": {
       "path": "eachnews/ozu-kogyo-yosui.html",
       "checks": [
@@ -18720,6 +18778,35 @@
           "result": "数字103個中 1個が出典に見つからず(出典39/39本)",
           "hash": "c9524f7c7b42",
           "note": "要確認: 2008"
+        }
+      ]
+    },
+    "ozu-shiminzei-yukue": {
+      "path": "eachnews/ozu-shiminzei-yukue.html",
+      "checks": [
+        {
+          "date": "2026-09-12",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "62a042b681e1",
+          "note": "一般財源に色が付かない根拠を地方交付税法3条2項で確認。10万円の内訳は決算カードの目的別歳出の充当一般財源等から按分したもので、12款の合計19,920,743千円がカードと一致する"
+        },
+        {
+          "date": "2026-09-12",
+          "level": "machine",
+          "by": "opus",
+          "result": "機械点検",
+          "hash": "62a042b681e1",
+          "note": "新記事。check_site.py エラー0"
+        },
+        {
+          "date": "2026-09-12",
+          "level": "numbers",
+          "by": "opus",
+          "result": "数字と出典の照合",
+          "hash": "62a042b681e1",
+          "note": "残る7個は按分の計算値と丸め。歳入32,416,438千円・一般財源17,687,746千円(54.6%)が決算カードと一致することを確認"
         }
       ]
     },

@@ -46,7 +46,7 @@ SERIES = [
     {"n": 2, "slug": "okane-02-chokusetsu-kansetsu", "c": "#8a5541",
      "title": "直接税と間接税",
      "lead": "払う人と納める人が違う税がある。大洲でたばこを買うと、そのお金は大洲市に入る。",
-     "done": False},
+     "done": True},
     {"n": 3, "slug": "okane-03-tsukaimichi", "c": "#3a6a64",
      "title": "その税は何に使えるのか",
      "lead": "普通税と目的税。一般財源と特定財源。お金に色が付いているものと、付いていないもの。",

@@ -11755,6 +11755,35 @@
         }
       ]
     },
+    "okane-02-chokusetsu-kansetsu": {
+      "path": "eachnews/okane-02-chokusetsu-kansetsu.html",
+      "checks": [
+        {
+          "date": "2026-09-12",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "5b36db53afef",
+          "note": "決算カードPDFを画像にして原典を読み、市たばこ税3億2,299万9千円・入湯税123万3千円・地方消費税交付金11億471万2千円を確認。入湯税を150円で割った8,220人が実数でないことも本文に明記されている"
+        },
+        {
+          "date": "2026-09-12",
+          "level": "machine",
+          "by": "opus",
+          "result": "機械点検",
+          "hash": "5b36db53afef",
+          "note": "新記事(連載第2回)。check_site.py エラー0"
+        },
+        {
+          "date": "2026-09-12",
+          "level": "numbers",
+          "by": "opus",
+          "result": "数字と出典の照合",
+          "hash": "5b36db53afef",
+          "note": "数字215個すべて照合、見つからず0。出典25本すべて取得できた"
+        }
+      ]
+    },
     "okane-no-sentaku": {
       "path": "book/okane-no-sentaku.html",
       "checks": [

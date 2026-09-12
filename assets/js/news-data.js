@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "okane-02-chokusetsu-kansetsu",
+    date: "2026-09-12",
+    title: "大洲でたばこを1箱買うと131円が市に入る。誰が払い、誰が納めるか",
+    category: "shiten",
+    source: "財務省、国税庁、総務省、e-Gov法令検索（地方税法・消費税法）、総務省「令和6年度 市町村決算カード」、大洲市議会会議録",
+    sourceDate: "2026-09-12",
+    tags: ["財政・税金"],
+  },
+  {
     slug: "kessan-nihongo",
     date: "2026-09-12",
     title: "「扶助費」「物件費」「繰出金」― 決算の日本語は、なぜこんなに読めないのか",

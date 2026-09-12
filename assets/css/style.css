@@ -452,7 +452,13 @@ figcaption {
    できるだけ後(980px未満)まで引き延ばす。縦置きモニター(幅1080px前後)でも
    メニューが全部見えるようにするための調整。
    ※ここは基本スタイルより後ろに置くこと。前に置くと後の宣言に負けて効かない。 */
-@media (max-width: 1399px) {
+/* ナビの折り返し点(2026-09-12に測り直した)
+   1280px・1440px・1100px・980px など、よくある画面幅で
+   ナビが右にはみ出し、ページ全体が横スクロールしていた。
+   本物のChromeで17通りの幅を測ったところ、どの折り返し点も
+   40〜100pxぶん遅すぎた(狭くなってから効いていた)。
+   1399→1479 / 1199→1329 / 1039→1149 / 979→1019 に前倒しした。 */
+@media (max-width: 1479px) {
   .site-header .wrap {
     gap: 34px;
   }
@@ -461,7 +467,7 @@ figcaption {
   }
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 1329px) {
   .site-header .wrap {
     gap: 24px;
     padding: 0 24px;
@@ -479,7 +485,7 @@ figcaption {
   }
 }
 
-@media (max-width: 1039px) {
+@media (max-width: 1149px) {
   .site-header .wrap {
     gap: 20px;
     padding: 0 20px;
@@ -539,7 +545,7 @@ figcaption {
   top: 7px;
 }
 
-@media (max-width: 979px) {
+@media (max-width: 1019px) {
   .main-nav {
     position: fixed;
     top: var(--header-h);

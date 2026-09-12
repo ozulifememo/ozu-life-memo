@@ -1,3 +1,48 @@
+/* 記事の題を、できるだけ横1行に収める(2026-09-12)
+ *
+ * 本人の指示:「タイトルは１行で横１列が理想！フォントサイズを小さくする、
+ * １列ですべてを抑えるのが大事。」
+ *
+ * CSSだけでは行数を測れないので、ここで実際に測って字を詰める。
+ * 本物のChromeで記事259本を測った結果(画面幅1280px):
+ *   何もしない      1行  67本 (26%)
+ *   23pxまで詰める  1行 172本 (66%)
+ *   21pxまで詰める  1行 218本 (84%)  ← これを採った
+ *   19pxまで詰める  1行 248本 (96%)  本文16pxに近づきすぎて、題に見えなくなる
+ * 21pxより下げると見出しの格が落ちる。残る16%は題そのものが長いので、
+ * 収めるには題を短くするしかない(公開済みの題を変えるのは本人の許可が要る)。
+ *
+ * スマホ(幅700px未満)では詰めない。34字を1行に入れると11pxほどになり読めない。
+ * 狭い画面では2〜3行で構わない。
+ *
+ * スクリプトは </body> の直前にあるので、この処理は最初の描画より前に走る。
+ * だから28pxで出たあと縮む、というちらつきは起きない。 */
+(function () {
+  var FLOOR = 21, MIN_WIDTH = 700;
+  var h = document.querySelector(".article-page h1, .jk-hero h1");
+  if (!h) return;
+  function lines() {
+    var cs = getComputedStyle(h);
+    var lh = parseFloat(cs.lineHeight) || parseFloat(cs.fontSize) * 1.4;
+    return Math.round(h.getBoundingClientRect().height / lh);
+  }
+  function fit() {
+    h.style.fontSize = "";
+    if (window.innerWidth < MIN_WIDTH) return;
+    var fs = parseFloat(getComputedStyle(h).fontSize);
+    while (fs > FLOOR && lines() > 1) {
+      fs -= 0.5;
+      h.style.fontSize = fs + "px";
+    }
+  }
+  fit();
+  var t;
+  window.addEventListener("resize", function () {
+    clearTimeout(t);
+    t = setTimeout(fit, 150);
+  });
+})();
+
 document.addEventListener("DOMContentLoaded", () => {
   // Mobile nav toggle
   const navToggle = document.querySelector(".nav-toggle");

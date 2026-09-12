@@ -294,7 +294,15 @@ body.L-kan  #paper{background:#f2f4f6}
 #talk .none{max-width:760px;margin:0 auto;font-size:12px;color:#8a7a55;text-align:center;padding:6px}
 
 /* ---------- 完了の画面 ---------- */
+/* 完了の層では、◯✕は隠して検索を前に出す。
+   ただし△だけは残す(2026-09-12、本人の「完了の記事にもコメントと三角に戻すように
+   してほしい」)。一度終わった記事でも、読み返して気になったらその場で戻せる。
+   メモの釦(#memobtn)は .v ではないので、もともとこの層でも押せる。 */
 body.L-kan #bot .v{display:none}
+body.L-kan #bot .v[data-v=fix]{display:flex;flex:0 0 auto;padding:0 14px}
+body.L-kan #bot .v[data-v=fix] .lb{display:none}
+body.L-kan #bot .v[data-v=fix] .lb2{display:inline}
+#bot .v .lb2{display:none}
 #kanbar{display:none;align-items:center;gap:8px;flex:1 1 auto;min-width:0}
 body.L-kan #kanbar{display:flex}
 #kanq{flex:1 1 auto;min-width:0;height:38px;background:var(--frame2);
@@ -342,7 +350,8 @@ body.L-kan #kanbar{display:flex}
 <div id="bot">
   <button class="nav" id="prev" title="前 (←)" aria-label="前の記事">‹</button>
   <button class="v" data-v="ok"><span class="mk">◯</span><span class="lb">そのまま</span></button>
-  <button class="v" data-v="fix"><span class="mk">△</span><span class="lb">直す</span></button>
+  <button class="v" data-v="fix"><span class="mk">△</span><span class="lb">直す</span
+    ><span class="lb2">直すに戻す</span></button>
   <button class="v" data-v="drop"><span class="mk">✕</span><span class="lb">下げる</span></button>
   <div id="kanbar"><input id="kanq" type="search" placeholder="完了した記事から探す"></div>
   <button id="memobtn">メモ</button>
@@ -592,9 +601,20 @@ function myLastT(r){
   if(r.ms && r.ms.length) return r.ms[r.ms.length-1].t || 0;
   return r.m ? (r.t || 0) : 0;      /* 昔の形(mだけ)にも合わせる */
 }
+/* やり取りの中の3つの向き(2026-09-12に「メモ待ち」を足した)
+
+   メモ待ち  … △を付けたが、メモがまだ無い。**クロコは動けない**
+   クロコ待ち … メモが送られていて、クロコの返事がまだ
+   見てほしい … クロコが返した。本人が読む番
+
+   「メモ待ち」を分けたのは、本人の指摘から。
+   「△にしたけど、メモがないから、クロコが改善できない記事」が
+   クロコ待ちに混ざっていて、外から見分けがつかなかった。
+   実際に「記念日の店」と「空飛ぶクルマ」の2本がこの状態で止まっていた。 */
 function turnOf(slug){
   var r = S[slug] || {}, k = (R[slug] && R[slug].items) || [];
-  if(!k.length) return 'kuroko';
+  var hasMemo = !!(r.m || (r.ms && r.ms.length));
+  if(!k.length) return hasMemo ? 'kuroko' : 'memo';
   var last = k[k.length-1].t || 0;
   /* 判定を押しただけでは向きを変えない。メモを送った時刻で見る */
   return myLastT(r) > last ? 'kuroko' : 'harada';
@@ -762,7 +782,12 @@ function renderTalk(){
         + '<span class="tm">'+fmtT(e.t)+'</span></div>' + esc(e.text) + '</div>');
     }
   });
-  if(!ks.length) h.push('<div class="none">クロコはまだ見ていません。</div>');
+  if(turnOf(a.slug)==='memo')
+    h.push('<div class="again">△が付いていますが、<b>メモがまだありません。</b>'
+         + 'このままだとクロコは何を直せばよいか分からず、動けません。'
+         + '<br>気になったところを、下の<b>メモ</b>から一言だけでも送ってください。'
+         + '押し間違いだったときは、<b>◯そのまま</b>を押し直せば完了へ移ります。</div>');
+  else if(!ks.length) h.push('<div class="none">クロコはまだ見ていません。</div>');
   else if(turnOf(a.slug)==='kuroko') h.push('<div class="none">新しいコメントを、クロコはまだ見ていません。</div>');
   else h.push('<div class="again">クロコが手を入れました。読んでから、下でもう一度どうするか選んでください。'
             + '<br><b>◯そのまま</b> … これで終わり(完了へ移ります)　'
@@ -1085,11 +1110,21 @@ $('#fKind').innerHTML = KINDS.map(function(k){
   return '<button class="chip'+(k[0]===F.kind?' on':'')+'" data-k="'+k[0]+'">'+k[1]+'<span class="n"></span></button>';
 }).join('');
 /* 状態の絞り込みは「層」に置き換えた。ここは向き(クロコ待ち/確認待ち)だけ */
-var TURNS = [['','やり取り ぜんぶ'],['kuroko','クロコ待ち'],['harada','見てほしい']];
+var TURNS = [['','やり取り ぜんぶ'],['memo','メモ待ち'],['kuroko','クロコ待ち'],['harada','見てほしい']];
 function paintTurns(){
-  $('#fState').innerHTML = (F.layer==='yari' ? TURNS.map(function(k){
-    return '<button class="chip'+(k[0]===(F.turn||'')?' on':'')+'" data-s="'+k[0]+'">'+k[1]+'</button>';
-  }).join('') : '');
+  if(F.layer !== 'yari'){ $('#fState').innerHTML = ''; return; }
+  /* 何本ずつあるかを数えて札に出す。どこが詰まっているかが一目で分かるように */
+  var n = {'':0, memo:0, kuroko:0, harada:0};
+  for(var i=0;i<N;i++){
+    var a = A[i];
+    if(a.kind === 'idea') continue;
+    if(layerOf(a.slug) !== 'yari') continue;
+    n['']++; n[turnOf(a.slug)]++;
+  }
+  $('#fState').innerHTML = TURNS.map(function(k){
+    return '<button class="chip'+(k[0]===(F.turn||'')?' on':'')+'" data-s="'+k[0]+'">'
+      + k[1] + '<span class="n">' + n[k[0]] + '</span></button>';
+  }).join('');
 }
 $('#fKind').addEventListener('click', function(e){
   var c = e.target.closest('.chip'); if(!c) return;

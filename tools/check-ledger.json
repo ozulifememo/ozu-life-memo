@@ -18563,6 +18563,35 @@
         }
       ]
     },
+    "ozu-shakyo-nanimono": {
+      "path": "eachnews/ozu-shakyo-nanimono.html",
+      "checks": [
+        {
+          "date": "2026-09-12",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "79c4feb0d2d4",
+          "note": "社会福祉法22条・109条をe-Govで確認。公務員でない根拠は定款34条(職員は会長が任免)と福祉医療機構の退職手当共済。9,400万円は運営費の助成で、委託料の内訳(成年後見757万円=職員1名分)から性格を示した"
+        },
+        {
+          "date": "2026-09-12",
+          "level": "machine",
+          "by": "opus",
+          "result": "機械点検",
+          "hash": "79c4feb0d2d4",
+          "note": "新記事。check_site.py エラー0"
+        },
+        {
+          "date": "2026-09-12",
+          "level": "numbers",
+          "by": "opus",
+          "result": "数字と出典の照合",
+          "hash": "79c4feb0d2d4",
+          "note": "見つからず4個は桁区切りの書き方の違い。人件費431,798,363円と会費3,796,350円は既存記事ozu-shakyo-kessanの決算表と完全一致することを確認した"
+        }
+      ]
+    },
     "ozu-shimin-ga-ugoita": {
       "path": "eachnews/ozu-shimin-ga-ugoita.html",
       "checks": [

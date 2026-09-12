@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-shakyo-nanimono",
+    date: "2026-09-12",
+    title: "大洲市社協の108人は公務員ではない。では、市が出す9,400万円は何のお金か",
+    category: "shiten",
+    source: "社会福祉法（e-Gov法令検索）・大洲市社会福祉協議会の定款と現況報告書・大洲市議会会議録・全国社会福祉協議会",
+    sourceDate: "2026-09-12",
+    tags: ["医療・福祉"],
+  },
+  {
     slug: "kassui-nani-ga-okiru",
     date: "2026-09-12",
     title: "「節水にご協力を」で減る水は4.2%。本当に足りなくなった街は何をしたか",

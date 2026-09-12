@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-shohinken-nagare",
+    date: "2026-09-13",
+    title: "1万円が1万2,500円になる。その2,500円はどこから来るのか",
+    category: "shiten",
+    source: "会計検査院、内閣府地方創生推進室、大洲市議会会議録、e-Gov法令検索、総務省",
+    sourceDate: "2026-09-13",
+    tags: ["財政・税金"],
+  },
+  {
     slug: "okane-07-shiyakusho-keiei",
     date: "2026-09-13",
     title: "大洲市の職員の上限は条例で946人。実際は619人。誰がこの数を決めるのか",

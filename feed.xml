@@ -5,8 +5,16 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Sun, 13 Sep 2026 07:47:38 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 13 Sep 2026 08:03:06 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1万円が1万2,500円になる。その2,500円はどこから来るのか</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-shohinken-nagare.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-shohinken-nagare.html</guid>
+      <pubDate>Sun, 13 Sep 2026 09:00:00 +0900</pubDate>
+      <description>大洲市が配ってきた商品券・クーポンのお金の流れを、出どころから使われなかった券の行方まで端から追った。上乗せ分は国から来て、券は市役所を通らず、余った分は行き先が二つに分かれる。</description>
+      <category>財政・税金</category>
+    </item>
     <item>
       <title>大洲市の職員の上限は条例で946人。実際は619人。誰がこの数を決めるのか</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/okane-07-shiyakusho-keiei.html</link>
@@ -251,15 +259,6 @@
       <description>婚姻届に期限はなく、出生届は14日以内。出産育児一時金50万円と妊婦支援給付金10万円は、申請しなければ2年で時効になる。妊娠から1歳までの手続きとお金を時系列で並べた。</description>
       <category>子育て・教育</category>
       <category>医療・福祉</category>
-    </item>
-    <item>
-      <title>市のお金の使い方は住民1人でも問える。答えは60日、決着まで8年6か月</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-jumin-kansa.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-jumin-kansa.html</guid>
-      <pubDate>Mon, 07 Sep 2026 09:00:00 +0900</pubDate>
-      <description>住民監査請求は住民1人で出せて、答えは60日以内に来る。全国1,374件を数えると94.7%が期限内だった。だが裁判に進むと話が変わる。大洲の1件は提訴から確定まで8年6か月。条文と統計で時間だけを追った。</description>
-      <category>議会・行政</category>
-      <category>財政・税金</category>
     </item>
   </channel>
 </rss>

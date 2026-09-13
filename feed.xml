@@ -5,8 +5,16 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Sun, 13 Sep 2026 09:32:53 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 13 Sep 2026 12:13:12 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大洲の通帳。1日に8,311万円が出て、残高は2つある</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/okane-10-ozu-no-tsucho.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/okane-10-ozu-no-tsucho.html</guid>
+      <pubDate>Sun, 13 Sep 2026 09:00:00 +0900</pubDate>
+      <description>令和6年度の大洲市の決算を、通帳の「入金・出金・残高」の形に1枚で書き直した。歳入324億1,644万円と歳出303億3,553万9千円を向かい合わせに並べ、1人・1世帯・1日あたりに直す。借金330億5,126万9千円と貯金103億3,901万円という2つの残高、10年の推移、県内20市町での位置まで。連載の最終回。</description>
+      <category>財政・税金</category>
+    </item>
     <item>
       <title>市役所の外に34億円。大洲の消防もし尿も、市がやっていない</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/okane-09-dare-ga-yaru.html</link>
@@ -249,15 +257,6 @@
       <description>大洲で部屋を借りるときの手順を、公営住宅を中心に調べた。入居資格の「月収158,000円以下」が何を指すのかを政令の条文から計算式で示し、募集の時期、連帯保証人の扱い、民間賃貸の初期費用の内訳と法令上の上限までを、申込みから鍵を受け取るまでの順に並べた。</description>
       <category>空き家・住宅</category>
       <category>まちづくり</category>
-    </item>
-    <item>
-      <title>親の介護が始まったら、まず30日。大洲でいくらかかるのかを並べた</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kaigo-nyumon.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kaigo-nyumon.html</guid>
-      <pubDate>Mon, 07 Sep 2026 09:00:00 +0900</pubDate>
-      <description>要介護認定の申請から結果が出るまでは原則30日。大洲市の相談窓口は市役所の高齢福祉課の中と、長浜・肱川の合わせて4か所。要介護度ごとに月いくらまで使えるのか、施設に入ると月いくらか、大洲市の介護保険料は県内で何番目かを、法律と告示と統計から並べた。</description>
-      <category>医療・福祉</category>
-      <category>人口減少</category>
     </item>
   </channel>
 </rss>

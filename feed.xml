@@ -5,8 +5,16 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Sun, 13 Sep 2026 13:15:54 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 13 Sep 2026 14:16:41 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>人はなぜ旅に出るのか。休日の外出率は34年で24.5%減った</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/naze-tabi-ni-deru.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/naze-tabi-ni-deru.html</guid>
+      <pubDate>Sun, 13 Sep 2026 09:00:00 +0900</pubDate>
+      <description>家で見られることが増え、移動がおっくうになったと言われる。それは本当か。国の全国都市交通特性調査の生データ7回分を自分で集計し、休日の外出率が34年でどう動いたかを出した。減ったのは若い世代だけで、70代以上は増えていた。観光白書から「オンラインツアー」が消えるまでも数えた。そのうえで、大洲の観光施設を「画面で足りるもの」と「体を運ばないと成立しないもの」に分けてみる。</description>
+      <category>観光</category>
+    </item>
     <item>
       <title>ポコペン横丁の「ポコペン」は、中国語の「元値に足りない」</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-namae-no-yurai.html</link>
@@ -248,15 +256,6 @@
       <description>大洲市立の小中学校20校で働く先生の給料は、愛媛県が出している。校長を置くかどうかを決めるのも県だ。この不思議な二重構造がいつ、なぜできたのかを法律の条文と市議会の会議録でたどり、大洲市教育委員会がこの2〜3年でしたことも並べた。</description>
       <category>子育て・教育</category>
       <category>議会・行政</category>
-    </item>
-    <item>
-      <title>大洲のお金が決まる1年を、日付で並べた。予算は16日、決算は84日</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-yosan-calendar.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-yosan-calendar.html</guid>
-      <pubDate>Mon, 07 Sep 2026 09:00:00 +0900</pubDate>
-      <description>大洲市の予算はいつ動きはじめて、いつ決まるのか。地方自治法と地方交付税法の期限、財務省と総務省が公表した令和8年度の実日程、そして市議会の会議録307ファイルから拾った18年ぶんの開会日を、4月から翌年3月までの1本の表にした。</description>
-      <category>議会・行政</category>
-      <category>財政・税金</category>
     </item>
   </channel>
 </rss>

@@ -13164,6 +13164,35 @@
         }
       ]
     },
+    "naze-tabi-ni-deru": {
+      "path": "eachnews/naze-tabi-ni-deru.html",
+      "checks": [
+        {
+          "date": "2026-09-13",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "7c64d704fe40",
+          "note": "疑問形の見出し2つに直後の答えを確認。kanko-towa-nanikaとの重複はエージェントが機械照合し、20字以上一致するのはリンクのタイトルだけ。書き手の人生論は書かず、林幸史ほかの研究の紹介にとどめてある。要点3行は原稿に無かったのでこちらで書いた(指示が矛盾していた)"
+        },
+        {
+          "date": "2026-09-13",
+          "level": "machine",
+          "by": "opus",
+          "result": "機械点検",
+          "hash": "7c64d704fe40",
+          "note": "check_site.py エラー0"
+        },
+        {
+          "date": "2026-09-13",
+          "level": "numbers",
+          "by": "opus",
+          "result": "数字と出典の照合",
+          "hash": "7c64d704fe40",
+          "note": "313個中の未照合1件は既存記事ozu-kanko-jisseki-r7から引いた宿泊者数。芯の計算を全部再計算して一致(外出率69.5→52.5で24.5%減、大洲城48,663÷54=901倍、キャッスルステイ235÷4.36年=53.9人、レジャー白書47.7÷36.4=1.310倍、しない23.6%と行きたくない6.4%の差17.2点)"
+        }
+      ]
+    },
     "nihon-naze-kowareta": {
       "path": "book/nihon-naze-kowareta.html",
       "checks": [

@@ -163,6 +163,7 @@ button,select,input,textarea{font-family:inherit;color:inherit}
 #itTable .hi{min-width:280px}
 #itTable .te{min-width:230px;color:var(--dim);font-size:12px}
 #itTable .jd{width:44px;text-align:center;padding:9px 4px}
+#itTable .st{width:40px;text-align:center;padding:9px 4px}
 #itTable .mo{width:230px}
 .itB{width:34px;height:34px;border-radius:5px;border:1px solid var(--rule);
   background:var(--frame2);color:var(--fg2);font-size:15px;cursor:pointer;line-height:1}
@@ -175,6 +176,20 @@ button,select,input,textarea{font-family:inherit;color:inherit}
 #itTable textarea:focus{outline:none;border-color:#4a6b8a;background:#12161b}
 #itSaved{font-size:11px;color:var(--ok);opacity:0;transition:opacity .25s}
 #itSaved.on{opacity:1}
+
+/* ── お気に入りの星 ──────────────────────────────────
+   2026-09-13、本人の「記事案に、星マークのお気に入りをつけたい。
+   お気に入りにしているものから優先的に記事にしていく」。
+   ◯✕とは別の軸。◯=書いてよい、★=これを先に書いてほしい。
+   クロコが出した案(reviews)にも、本人が書いた案(myideas)にも同じように付く。 */
+.itStar{width:32px;height:32px;border-radius:5px;border:1px solid var(--rule);
+  background:var(--frame2);color:#6b737d;font-size:15px;cursor:pointer;line-height:1}
+.itStar:hover{background:var(--frame3);color:#d9bb62}
+.itStar.on{background:#3a3116;border-color:#8a6f28;color:#f4d67a}
+#itTable tr.r.fav .ti{color:#f4d67a}
+#itTable tr.r.fav .no{color:#c9a94e}
+#itFavOnly.on{background:#3a3116;border-color:#8a6f28;color:#f4d67a;font-weight:700}
+#itBar .c b.fav{color:#f4d67a}
 @media(max-width:820px){
   #itTable .te{display:none}
   #itTable .hi{min-width:170px}
@@ -364,9 +379,10 @@ body.L-kan #kanbar{display:flex}
     <span class="t">記事案</span>
     <span class="c"><b id="itDone">0</b> / <b id="itAll">0</b> 判定ずみ
       ◯ <b id="itOk">0</b>　✕ <b id="itNg">0</b>　メモ <b id="itMemo">0</b></span>
-    <span class="c">自分の案 <b id="itMine">0</b></span>
+    <span class="c">自分の案 <b id="itMine">0</b>　★ <b id="itFav" class="fav">0</b></span>
     <span id="itSaved">保存しました</span>
     <span class="sp"></span>
+    <button id="itFavOnly" title="お気に入りだけを出す">★だけ</button>
     <button id="itAdd">＋ 思いついた案</button>
     <input id="itQ" type="search" placeholder="題・ひと言から探す">
     <button id="itBack">記事にもどる</button>
@@ -374,7 +390,8 @@ body.L-kan #kanbar{display:flex}
   <div id="itScroll">
     <table id="itTable">
       <thead><tr>
-        <th class="no">#</th><th>題</th><th>クロコからのひと言</th>
+        <th class="no">#</th><th class="st" title="お気に入り。先に書いてほしいもの">★</th>
+        <th>題</th><th>クロコからのひと言</th>
         <th>調べ方</th><th class="jd">◯</th><th class="jd">✕</th><th>メモ</th>
       </tr></thead>
       <tbody id="itBody"></tbody>
@@ -481,7 +498,7 @@ function pushDB(slug){
     keys.forEach(function(k){
       var r = S[k];
       var p = r ? DB.doc('reviews/'+k).set({v:r.v||'', m:r.m||'', t:r.t||0, done:r.done?1:0,
-                                            ms:r.ms||[], mt:r.mt||0, d:r.d||''})
+                                            ms:r.ms||[], mt:r.mt||0, d:r.d||'', f:r.f?1:0})
                 : DB.doc('reviews/'+k).delete();
       p.catch(function(){});
     });
@@ -491,7 +508,8 @@ function mark(slug, patch){
   var r = S[slug] || {v:'', m:'', t:0};
   for(var k in patch) r[k] = patch[k];
   r.t = Date.now();
-  if(!r.v && !r.m && !r.d && !(r.ms && r.ms.length)) delete S[slug]; else S[slug] = r;
+  /* 星だけ付いた行も残す。判定もメモも無いが「先に書いてほしい」は立派な情報 */
+  if(!r.v && !r.m && !r.d && !r.f && !(r.ms && r.ms.length)) delete S[slug]; else S[slug] = r;
   saveLocal(); pushDB(slug); paint();
 }
 
@@ -503,7 +521,7 @@ function mark(slug, patch){
    クロコが出した案(kind==='idea')は記事の本体に焼き込まれていて書き換えられない。
    本人が書く案はいつでも増えるので、別のコレクションに置いて画面で合流させる。
    混ぜないのは、どちらが誰の考えか分からなくなると◯✕の意味も濁るため。      */
-var MY = {};          /* id -> {t:題, m:中身, ts:書いた時刻, done:クロコが見たか, re:クロコの返事} */
+var MY = {};          /* id -> {t:題, m:中身, ts:書いた時刻, done:クロコが見たか, re:クロコの返事, f:お気に入り} */
 var MYKEY = 'ozu-review-my-v1';
 
 function myLoad(){
@@ -516,7 +534,7 @@ function myPush(id){
   if(!DB) return;
   var r = MY[id];
   var p = r ? DB.doc('myideas/'+id).set({t:r.t||'', m:r.m||'', ts:r.ts||0,
-                                         done:r.done?1:0, re:r.re||''})
+                                         done:r.done?1:0, re:r.re||'', f:r.f?1:0})
             : DB.doc('myideas/'+id).delete();
   if(p && p.catch) p.catch(function(){});
 }
@@ -526,9 +544,10 @@ function myPull(){
     var changed = false;
     snap.docs.forEach(function(d){
       var v = d.data() || {}, k = d.id;
-      var n = {t:v.t||'', m:v.m||'', ts:v.ts||0, done:!!v.done, re:v.re||''};
+      var n = {t:v.t||'', m:v.m||'', ts:v.ts||0, done:!!v.done, re:v.re||'', f:!!v.f};
       var o = MY[k];
-      if(!o || o.t !== n.t || o.m !== n.m || !!o.done !== n.done || (o.re||'') !== n.re){
+      if(!o || o.t !== n.t || o.m !== n.m || !!o.done !== n.done || (o.re||'') !== n.re
+            || !!o.f !== n.f){
         MY[k] = n; changed = true;
       }
     });
@@ -536,13 +555,18 @@ function myPull(){
   }).catch(function(){});
 }
 function myMark(id, patch){
-  var r = MY[id] || {t:'', m:'', ts:Date.now(), done:false, re:''};
+  var r = MY[id] || {t:'', m:'', ts:Date.now(), done:false, re:'', f:false};
   for(var k in patch) r[k] = patch[k];
   MY[id] = r;
   mySaveLocal(); myPush(id);
 }
+/* 星が付いたものを上に。同じ中では新しい順 */
 function myIds(){
-  return Object.keys(MY).sort(function(a,b){ return (MY[b].ts||0) - (MY[a].ts||0); });
+  return Object.keys(MY).sort(function(a,b){
+    var fa = MY[a].f ? 1 : 0, fb = MY[b].f ? 1 : 0;
+    if(fa !== fb) return fb - fa;
+    return (MY[b].ts||0) - (MY[a].ts||0);
+  });
 }
 
 /* ---------- サーバーの控えと突き合わせる ---------- */
@@ -564,9 +588,9 @@ function pullDB(){
     snap.docs.forEach(function(d){
       var v = d.data() || {}, k = d.id, mine = S[k];
       if(!mine || (v.t||0) > (mine.t||0)){
-        if(v.v || v.m || (v.ms && v.ms.length)){
+        if(v.v || v.m || v.f || (v.ms && v.ms.length)){
           S[k] = {v:v.v||'', m:v.m||'', t:v.t||0, done:!!v.done,
-                  ms:v.ms||[], mt:v.mt||0, d:v.d||''};
+                  ms:v.ms||[], mt:v.mt||0, d:v.d||'', f:!!v.f};
           changed = true; }
       }
     });
@@ -926,10 +950,12 @@ memoT.addEventListener('keydown', function(e){
    記事は1本ずつ読むが、記事案は一覧で見て、その場で◯✕とメモを付ける。
    判定とメモの置き場所は記事とまったく同じ(S と reviews コレクション)なので、
    ここで付けたものは端末をまたいでそのまま同期する。                     */
-var itQ = '';
+var itQ = '', itFav = false;
+function isFav(slug){ return !!(S[slug] && S[slug].f); }
 function ideaRows(){
   var out = [];
   for(var i=0;i<N;i++) if(A[i].kind === 'idea') out.push(i);
+  if(itFav) out = out.filter(function(i){ return isFav(A[i].slug); });
   if(itQ){
     var q = itQ.toLowerCase();
     out = out.filter(function(i){
@@ -937,7 +963,24 @@ function ideaRows(){
       return (a.title + ' ' + a.cat + ' ' + bodyOf(i)).toLowerCase().indexOf(q) >= 0;
     });
   }
+  /* 星が付いたものを、そのまとまりの先頭へ。まとまりの並び順は変えない。
+     まとまりの出てくる順を先に控えてから、[まとまり, 星, もとの位置] で並べ替える。
+     「同じまとまりのときだけ比べる」書き方にすると、並べ替えの規則が破綻する */
+  var ord = {}, seq = 0;
+  out.forEach(function(i){ if(!(A[i].cat in ord)) ord[A[i].cat] = seq++; });
+  var pos = {};
+  out.forEach(function(i, k){ pos[i] = k; });
+  out.sort(function(x, y){
+    if(ord[A[x].cat] !== ord[A[y].cat]) return ord[A[x].cat] - ord[A[y].cat];
+    var fx = isFav(A[x].slug) ? 0 : 1, fy = isFav(A[y].slug) ? 0 : 1;
+    if(fx !== fy) return fx - fy;
+    return pos[x] - pos[y];
+  });
   return out;
+}
+function starCell(on){
+  return '<td class="st"><button class="itStar'+(on?' on':'')+'"'
+    + ' title="お気に入り。先に書いてほしいもの">'+(on?'★':'☆')+'</button></td>';
 }
 /* 記事案の本文から、ひと言と調べ方だけ取り出す */
 function ideaParts(i){
@@ -950,8 +993,9 @@ function ideaParts(i){
    クロコの返事は読むだけ(書き換えるとどちらの言葉か分からなくなる)。 */
 function myRowHtml(id, n){
   var r = MY[id];
-  return '<tr class="r mine" data-mid="'+id+'">'
+  return '<tr class="r mine'+(r.f?' fav':'')+'" data-mid="'+id+'">'
     + '<td class="no">自'+n+'</td>'
+    + starCell(r.f)
     + '<td class="ti"><input class="myIn" data-f="t" placeholder="思いついた題"'
     +   ' value="'+esc(r.t||'')+'"></td>'
     + '<td class="hi"><textarea data-f="m"'
@@ -972,8 +1016,9 @@ function renderIdeaTable(){
       return ((MY[id].t||'') + ' ' + (MY[id].m||'')).toLowerCase().indexOf(mq) >= 0;
     });
   }
-  if(mine.length || !itQ){
-    h.push('<tr class="grp mygrp"><td colspan="7">自分が思いついた案'
+  if(itFav) mine = mine.filter(function(id){ return !!MY[id].f; });
+  if(mine.length || !(itQ || itFav)){
+    h.push('<tr class="grp mygrp"><td colspan="8">自分が思いついた案'
       + (mine.length ? '（' + mine.length + '件）'
                      : '（まだありません。右上の「＋ 思いついた案」で書けます）') + '</td></tr>');
     for(var k=0;k<mine.length;k++) h.push(myRowHtml(mine[k], k+1));
@@ -982,10 +1027,12 @@ function renderIdeaTable(){
     var i = list[n], a = A[i], r = S[a.slug] || {}, pt = ideaParts(i);
     if(a.cat !== lastGrp){
       lastGrp = a.cat;
-      h.push('<tr class="grp"><td colspan="7">'+esc(a.cat)+'</td></tr>');
+      h.push('<tr class="grp"><td colspan="8">'+esc(a.cat)+'</td></tr>');
     }
-    h.push('<tr class="r'+(r.v==='ok'?' ok':'')+(r.v==='drop'?' drop':'')+'" data-s="'+a.slug+'">'
+    h.push('<tr class="r'+(r.v==='ok'?' ok':'')+(r.v==='drop'?' drop':'')
+      + (r.f?' fav':'')+'" data-s="'+a.slug+'">'
       + '<td class="no">'+(n+1)+'</td>'
+      + starCell(r.f)
       + '<td class="ti">'+esc(a.title)+'</td>'
       + '<td class="hi">'+esc(pt.hi)+'</td>'
       + '<td class="te">'+esc(pt.te)+'</td>'
@@ -998,12 +1045,13 @@ function renderIdeaTable(){
       + '</tr>');
   }
   $('#itBody').innerHTML = h.join('')
-    || '<tr><td colspan="7" style="padding:40px;text-align:center;color:var(--dim)">'
-       + 'その言葉に当てはまる記事案はありません</td></tr>';
+    || '<tr><td colspan="8" style="padding:40px;text-align:center;color:var(--dim)">'
+       + (itFav ? 'まだ★を付けた案がありません。☆を押すと、ここに集まります'
+                : 'その言葉に当てはまる記事案はありません') + '</td></tr>';
   paintIdeaCount();
 }
 function paintIdeaCount(){
-  var all=0, done=0, ok=0, ng=0, mo=0;
+  var all=0, done=0, ok=0, ng=0, mo=0, fav=0;
   for(var i=0;i<N;i++){
     if(A[i].kind !== 'idea') continue;
     all++;
@@ -1012,17 +1060,45 @@ function paintIdeaCount(){
     if(r.v === 'ok') ok++;
     if(r.v === 'drop') ng++;
     if(r.m) mo++;
+    if(r.f) fav++;
   }
+  Object.keys(MY).forEach(function(k){ if(MY[k].f) fav++; });
   $('#itAll').textContent = all; $('#itDone').textContent = done;
   $('#itOk').textContent = ok;   $('#itNg').textContent = ng;
   $('#itMemo').textContent = mo;
   $('#itMine').textContent = Object.keys(MY).length;
+  $('#itFav').textContent = fav;
 }
 var itSaveT;
 function itSaved(){
   var e = $('#itSaved'); e.classList.add('on');
   clearTimeout(itSaveT); itSaveT = setTimeout(function(){ e.classList.remove('on') }, 1100);
 }
+/* 星。クロコの案(data-s)と自分の案(data-mid)で置き場所が違うだけで、
+   見た目も意味も同じ。◯✕と違って、押しても行は消えたり並び替わったりしない
+   (押した瞬間に行が飛ぶと、続けて押せなくなる)。並び替えは次に開いたときに効く */
+$('#itBody').addEventListener('click', function(e){
+  var b = e.target.closest('.itStar'); if(!b) return;
+  var tr = b.closest('tr'), on;
+  if(tr.dataset.mid){
+    var mid = tr.dataset.mid;
+    on = !(MY[mid] && MY[mid].f);
+    myMark(mid, {f: on});
+  }else{
+    var slug = tr.dataset.s;
+    on = !((S[slug]||{}).f);
+    mark(slug, {f: on});
+  }
+  b.classList.toggle('on', on);
+  b.textContent = on ? '★' : '☆';
+  tr.classList.toggle('fav', on);
+  paintIdeaCount(); itSaved();
+});
+$('#itFavOnly').onclick = function(){
+  itFav = !itFav;
+  this.classList.toggle('on', itFav);
+  renderIdeaTable();
+};
 $('#itBody').addEventListener('click', function(e){
   var b = e.target.closest('.itB'); if(!b) return;
   var tr = b.closest('tr'), slug = tr.dataset.s, r = S[slug] || {};
@@ -1038,7 +1114,7 @@ $('#itBody').addEventListener('click', function(e){
 /* 自分の案を1件増やす。空のまま置いておけるので、思いついた瞬間に押せる */
 $('#itAdd').onclick = function(){
   var id = 'mine-' + Date.now().toString(36);
-  myMark(id, {t:'', m:'', ts:Date.now(), done:false, re:''});
+  myMark(id, {t:'', m:'', ts:Date.now(), done:false, re:'', f:false});
   if(itQ){ itQ = ''; $('#itQ').value = ''; }
   renderIdeaTable(); paintIdeaCount();
   var el = $('#itBody').querySelector('tr[data-mid="'+id+'"] .myIn');

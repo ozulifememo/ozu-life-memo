@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-namae-no-yurai",
+    date: "2026-09-13",
+    title: "ポコペン横丁の「ポコペン」は、中国語の「元値に足りない」",
+    category: "shiten",
+    source: "大洲市議会 会議録(平成20年3月〜令和8年6月)、精選版 日本国語大辞典、JA愛媛たいき、臥龍山荘、愛媛県都市整備課 ほか",
+    sourceDate: "2026-09-13",
+    tags: ["議会・行政", "まちづくり"],
+  },
+  {
     slug: "okane-10-ozu-no-tsucho",
     date: "2026-09-13",
     title: "大洲の通帳。1日に8,311万円が出て、残高は2つある",

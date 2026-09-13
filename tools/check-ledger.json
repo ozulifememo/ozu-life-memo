@@ -21140,6 +21140,35 @@
         }
       ]
     },
+    "ozu-namae-no-yurai": {
+      "path": "eachnews/ozu-namae-no-yurai.html",
+      "checks": [
+        {
+          "date": "2026-09-13",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "d86ec85e2195",
+          "note": "疑問形の見出し1つ(なぜ名前が2つあるのか)に直後の答えがあることを確認。憶測で由来を書いていないことをエージェントが5件の不採用例つきで報告し、こちらでも本文に「〜と思われる」が無いことを確認。引用中の「昨年」は議会答弁の原文なので直していない"
+        },
+        {
+          "date": "2026-09-13",
+          "level": "machine",
+          "by": "opus",
+          "result": "機械点検",
+          "hash": "d86ec85e2195",
+          "note": "check_site.py エラー0"
+        },
+        {
+          "date": "2026-09-13",
+          "level": "numbers",
+          "by": "opus",
+          "result": "数字と出典の照合",
+          "hash": "d86ec85e2195",
+          "note": "数字47個中、出典に見つからなかったのは年号の2008だけ。命名権の268年(62億8,000万円÷2,340万8,000円=268.28)を再計算して一致"
+        }
+      ]
+    },
     "ozu-nandoku-chimei": {
       "path": "eachnews/ozu-nandoku-chimei.html",
       "checks": [

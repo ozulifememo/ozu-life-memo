@@ -5,8 +5,17 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Sun, 13 Sep 2026 12:13:12 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 13 Sep 2026 13:15:54 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ポコペン横丁の「ポコペン」は、中国語の「元値に足りない」</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-namae-no-yurai.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-namae-no-yurai.html</guid>
+      <pubDate>Sun, 13 Sep 2026 09:00:00 +0900</pubDate>
+      <description>大洲の施設と店の名前の由来を、市議会会議録307本と各施設の公式発信から調べた。名前のつけ方には型が9つあった。条例の名前と看板の名前が違う13組、公募で決まった5つ、字を入れ替えた3つ、由来が取れなかった10個を並べる。ポコペンの語源は国語辞典に載っていた。</description>
+      <category>議会・行政</category>
+      <category>まちづくり</category>
+    </item>
     <item>
       <title>大洲の通帳。1日に8,311万円が出て、残高は2つある</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/okane-10-ozu-no-tsucho.html</link>
@@ -248,15 +257,6 @@
       <description>大洲市の予算はいつ動きはじめて、いつ決まるのか。地方自治法と地方交付税法の期限、財務省と総務省が公表した令和8年度の実日程、そして市議会の会議録307ファイルから拾った18年ぶんの開会日を、4月から翌年3月までの1本の表にした。</description>
       <category>議会・行政</category>
       <category>財政・税金</category>
-    </item>
-    <item>
-      <title>大洲で家を借りる手順。市営は連帯保証人2人、県営は2026年4月から不要</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kariru-tetsuzuki.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kariru-tetsuzuki.html</guid>
-      <pubDate>Mon, 07 Sep 2026 09:00:00 +0900</pubDate>
-      <description>大洲で部屋を借りるときの手順を、公営住宅を中心に調べた。入居資格の「月収158,000円以下」が何を指すのかを政令の条文から計算式で示し、募集の時期、連帯保証人の扱い、民間賃貸の初期費用の内訳と法令上の上限までを、申込みから鍵を受け取るまでの順に並べた。</description>
-      <category>空き家・住宅</category>
-      <category>まちづくり</category>
     </item>
   </channel>
 </rss>

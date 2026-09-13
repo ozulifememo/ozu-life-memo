@@ -61,12 +61,33 @@ def candidates(y_from: int, y_to: int):
                 yield year, f"{folder}/{year}{mm}teirei-{n}.html"
 
 
+# 既定ではキャッシュしか読まない。--online を付けたときだけ市サイトへ取りに行く。
+#
+# 2026-09-13、事故った。エージェントに「市サイトに触るな」と言ったうえで
+# この道具を使わせたところ、キャッシュに無い回(候補380 - キャッシュ307 = 約73回)を
+# 取りに行っていた。しかも下の time.sleep(0.3) は**成功したときにしか効かない**ので、
+# 全部403で落ちる状況では73回が全速力で飛ぶ。CLAUDE.md の「30秒以上あける」が
+# まったく効いていなかった。文章のルールでは防げないので、既定を変えた。
+ONLINE = False
+_skipped = 0
+
+
 def fetch(rel: str) -> str | None:
-    """会議録1ページを取る。キャッシュがあればそれを使う。"""
+    """会議録1ページを取る。キャッシュがあればそれを使う。
+
+    キャッシュに無いときは、既定では**取りに行かない**。
+    取りに行かせたいときだけ --online を付ける。
+    """
+    global _skipped
     cached = CACHE / rel.replace("/", "_")
     if cached.exists():
         return cached.read_text(encoding="utf-8", errors="replace")
 
+    if not ONLINE:
+        _skipped += 1
+        return None
+
+    time.sleep(30)  # 失敗しても必ず待つ。403が続くときこそ間隔が要る
     req = urllib.request.Request(BASE + rel, headers={"User-Agent": UA})
     try:
         raw = urllib.request.urlopen(req, timeout=45).read()
@@ -115,11 +136,19 @@ def main():
     ap.add_argument("--width", type=int, default=400, help="前後に表示する文字数(既定400)")
     ap.add_argument("--max", type=int, default=3, help="1つの会議録で表示する最大ヒット数")
     ap.add_argument("--list", action="store_true", help="ヒットした会議の一覧だけ出す")
+    ap.add_argument("--online", action="store_true",
+                    help="キャッシュに無い回を市サイトへ取りに行く(既定は取りに行かない)")
     args = ap.parse_args()
+
+    global ONLINE
+    ONLINE = args.online
 
     kw = args.keyword
     hits = 0
-    print(f"「{kw}」を{args.y_from}〜{args.y_to}年の会議録から探します...\n")
+    print(f"「{kw}」を{args.y_from}〜{args.y_to}年の会議録から探します...")
+    if ONLINE:
+        print("  ★ --online: キャッシュに無い回は市サイトへ取りに行きます(1件ごとに30秒あけます)")
+    print()
 
     for _year, rel in candidates(args.y_from, args.y_to):
         html = fetch(rel)
@@ -149,6 +178,11 @@ def main():
     else:
         print(f"{hits}件の会議録にありました。")
         print("記事の出典に使うときは、上のURLをそのまま貼れます。")
+
+    if _skipped:
+        print()
+        print(f"※ キャッシュに無い回 {_skipped}件は**見ていません**(市サイトに触らないため)。")
+        print("  どうしても要るときだけ --online を付けてください。1件ごとに30秒あきます。")
 
 
 if __name__ == "__main__":

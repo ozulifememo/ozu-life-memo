@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-dare-ga-kaite-iru",
+    date: "2026-09-13",
+    title: "大洲のブロガーを探した。21年で6,498本書く人がいた",
+    category: "shiten",
+    source: "note検索API、にほんブログ村「大洲市情報」、WordPress.com公開API、アメーバブログのハッシュタグ、フォートラベル、Wayback Machine、Impress Watch、総務省「令和6年通信利用動向調査報告書（世帯編）」「住民基本台帳に基づく人口、人口動態及び世帯数」",
+    sourceDate: "2026-09-13",
+    tags: ["まちづくり"],
+  },
+  {
     slug: "naze-tabi-ni-deru",
     date: "2026-09-13",
     title: "人はなぜ旅に出るのか。休日の外出率は34年で24.5%減った",

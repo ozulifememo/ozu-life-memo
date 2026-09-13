@@ -15843,6 +15843,35 @@
         }
       ]
     },
+    "ozu-dare-ga-kaite-iru": {
+      "path": "eachnews/ozu-dare-ga-kaite-iru.html",
+      "checks": [
+        {
+          "date": "2026-09-13",
+          "level": "human",
+          "by": "opus",
+          "result": "人が読んで裏取り",
+          "hash": "fbfe97e9bea0",
+          "note": "本人の判断でB案を採用し、市議会議員のチャンネルを本文・出典・内訳表の3か所から外した。外したこと自体は本文に明記してある。写真家の実名は屋号として公開されているが厳しい側に倒して肩書きのみ。こなつさんはハンドル名のままで、主張は一切引かず、あっせん収賄事件に触れた1本は題も内容も出していない。論評語・要望表現・禁止語はいずれも0件"
+        },
+        {
+          "date": "2026-09-13",
+          "level": "machine",
+          "by": "opus",
+          "result": "機械点検",
+          "hash": "fbfe97e9bea0",
+          "note": "check_site.py エラー0"
+        },
+        {
+          "date": "2026-09-13",
+          "level": "numbers",
+          "by": "opus",
+          "result": "数字と出典の照合",
+          "hash": "fbfe97e9bea0",
+          "note": "【訂正】1つ前の記録で理由を取り違えていた。取れなかった出典2本は、noteやWordPressのAPIではなく、フォートラベル(HTTP 403)とYouTube(文章のないページ)だった。未照合16個はそこから引いた数字。自分で計算した数字は再計算して一致(21年1か月=7,725日、ブログ村7.43/万人、note4.61/万人、フォートラベル263÷29=9.1倍)"
+        }
+      ]
+    },
     "ozu-dare-ga-kimeru": {
       "path": "eachnews/ozu-dare-ga-kimeru.html",
       "checks": [

@@ -5,8 +5,16 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Sun, 13 Sep 2026 14:16:41 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 13 Sep 2026 14:34:21 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大洲のブロガーを探した。21年で6,498本書く人がいた</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-dare-ga-kaite-iru.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-dare-ga-kaite-iru.html</guid>
+      <pubDate>Sun, 13 Sep 2026 09:00:00 +0900</pubDate>
+      <description>大洲に住んで大洲を書いている人を、note・にほんブログ村・アメブロ・gooブログ・livedoor・はてな・フォートラベル・YouTube・Instagram・Xの10媒体、37の言い方で探した。にほんブログ村の「大洲市情報」は29ブログ、noteでプロフィールに大洲市と書く人は18人、うち在住の個人は5人だった。いちばん長い人は2005年7月から6,498本を書き続けていて、中身は鳥4,268本・花2,210本・雲745本。探した記録と、書き手ごとの大洲の捉え方をそのまま並べる。</description>
+      <category>まちづくり</category>
+    </item>
     <item>
       <title>人はなぜ旅に出るのか。休日の外出率は34年で24.5%減った</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/naze-tabi-ni-deru.html</link>
@@ -247,15 +255,6 @@
       <description>同じ3人家族が大洲市と松山市に住んだら、1年でいくら違うのか。家賃・水道・下水道・ごみ袋・電気代・保育料・固定資産税を、条例と国の統計から1つずつ引いて足し算した。差が消える条件と、逆転する条件まで書いた。</description>
       <category>財政・税金</category>
       <category>空き家・住宅</category>
-    </item>
-    <item>
-      <title>大洲市立の学校なのに、先生の給料は市が1円も払っていない</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kyoin-ken-to-shi.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kyoin-ken-to-shi.html</guid>
-      <pubDate>Mon, 07 Sep 2026 09:00:00 +0900</pubDate>
-      <description>大洲市立の小中学校20校で働く先生の給料は、愛媛県が出している。校長を置くかどうかを決めるのも県だ。この不思議な二重構造がいつ、なぜできたのかを法律の条文と市議会の会議録でたどり、大洲市教育委員会がこの2〜3年でしたことも並べた。</description>
-      <category>子育て・教育</category>
-      <category>議会・行政</category>
     </item>
   </channel>
 </rss>

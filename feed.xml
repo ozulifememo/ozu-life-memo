@@ -5,8 +5,16 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Sun, 13 Sep 2026 08:03:06 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 13 Sep 2026 09:21:07 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大洲は毎年のお金の99.7%を使い切る。なのに49億円が建った</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/okane-08-doko-ni-tsukau.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/okane-08-doko-ni-tsukau.html</guid>
+      <pubDate>Sun, 13 Sep 2026 09:00:00 +0900</pubDate>
+      <description>令和6年度の大洲市の経常収支比率は99.7%。毎年決まって入るお金は、毎年決まって出るお金でほぼ消える。それでも投資的経費は49億7,612万2千円動いた。何で賄ったのか、そして何を建てたのかを、決算カードと市議会の会議録で施設名まで開いた。建てた額の74.6%は建て替えだった。</description>
+      <category>財政・税金</category>
+    </item>
     <item>
       <title>1万円が1万2,500円になる。その2,500円はどこから来るのか</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-shohinken-nagare.html</link>
@@ -250,15 +258,6 @@
       <pubDate>Mon, 07 Sep 2026 09:00:00 +0900</pubDate>
       <description>ふるさと納税で自己負担が2,000円で済む上限額は、地方税法の条文どおりに計算すれば自分で出せる。大洲市民1,396人の使い方と、得の裏側で減っている市の税収まで数字で並べた。</description>
       <category>財政・税金</category>
-    </item>
-    <item>
-      <title>大洲で子どもが生まれると60万円入る。ただし請求しないと2年で消える</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kekkon-shussan.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kekkon-shussan.html</guid>
-      <pubDate>Mon, 07 Sep 2026 09:00:00 +0900</pubDate>
-      <description>婚姻届に期限はなく、出生届は14日以内。出産育児一時金50万円と妊婦支援給付金10万円は、申請しなければ2年で時効になる。妊娠から1歳までの手続きとお金を時系列で並べた。</description>
-      <category>子育て・教育</category>
-      <category>医療・福祉</category>
     </item>
   </channel>
 </rss>

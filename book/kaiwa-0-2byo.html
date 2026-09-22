@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>会話の0.2秒を言語学する ｜ OZU LIFE MEMO</title>
+<meta name="description" content="水野太貴『会話の0.2秒を言語学する』を読んで、アプリ開発の趣味やこのＨＰのレスポンス速度設計について考えた。">
+<link rel="icon" href="../assets/img/favicon-192.png">
+<link rel="alternate" type="application/rss+xml" title="OZU LIFE MEMO の更新" href="../feed.xml">
+<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link data-ozu-fonts rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;family=Shippori+Mincho+B1:wght@600;700&amp;display=swap">
+<link rel="stylesheet" href="../assets/css/style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="OZU LIFE MEMO">
+<meta property="og:title" content="会話の0.2秒を言語学する">
+<meta property="og:description" content="水野太貴『会話の0.2秒を言語学する』を読んで、アプリ開発の趣味やこのＨＰのレスポンス速度設計について考えた。">
+<meta property="og:url" content="https://ozulifememo.github.io/ozu-life-memo/book/kaiwa-0-2byo.html">
+<meta property="og:image" content="https://ozulifememo.github.io/ozu-life-memo/assets/img/ogp-card.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://ozulifememo.github.io/ozu-life-memo/book/kaiwa-0-2byo.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "会話の0.2秒を言語学する",
+  "description": "水野太貴『会話の0.2秒を言語学する』を読んで、アプリ開発の趣味やこのＨＰのレスポンス速度設計について考えた。",
+  "datePublished": "2026-08-17",
+  "dateModified": "2026-08-17",
+  "image": "https://ozulifememo.github.io/ozu-life-memo/assets/img/ogp-card.png",
+  "author": {"@type": "Organization", "name": "OZU LIFE MEMO"},
+  "publisher": {"@type": "Organization", "name": "OZU LIFE MEMO"},
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://ozulifememo.github.io/ozu-life-memo/book/kaiwa-0-2byo.html"}
+}
+</script>
+<style>
+.book-meta { display:flex; gap:20px; align-items:flex-start; flex-wrap:wrap; margin-bottom:var(--space-5); padding:var(--space-4); background:var(--color-surface-alt); border-radius:var(--radius); }
+.book-meta dl { margin:0; font-size:.85rem; color:var(--color-text-muted); line-height:1.8; }
+.book-meta dt { display:inline; font-weight:700; color:var(--color-text); }
+.book-meta dt::after { content:"："; }
+.book-meta dd { display:inline; margin:0 16px 0 0; }
+.book-section-title { display:flex; align-items:center; gap:10px; margin:var(--space-8) 0 var(--space-3); }
+.book-section-title .tag { font-size:.75rem; font-weight:700; color:#fff; background:var(--color-accent-btn); border-radius:4px; padding:4px 12px; white-space:nowrap; }
+.book-section-title h2 { margin:0; font-size:var(--text-lg); font-weight:700; color:var(--color-brand-dark); }
+</style>
+</head>
+
+<body>
+
+<div data-site-header data-prefix="../"></div>
+
+<section>
+  <div class="wrap article-page">
+    <p class="article-date">2026/08/17 ・ 大洲と読書</p>
+    <h1>会話の<span class="nb">0.2秒</span>を言語学する</h1>
+
+    <div class="book-meta">
+      <dl>
+        <dt>本のタイトル</dt><dd>会話の0.2秒を言語学する</dd>
+        <dt>著者</dt><dd>水野太貴</dd>
+        <dt>出版社</dt><dd>新潮社</dd>
+      </dl>
+    </div>
+
+    <div class="book-section-title">
+      <span class="tag">読んだ本</span>
+      <h2 style="margin:0;">人間の会話は、UI設計より速い</h2>
+    </div>
+
+    <p class="commentary">
+      『会話の0.2秒を言語学する』を読みました。「ドハティの閾値」という言葉が紹介されていました。
+    </p>
+    <p class="commentary">
+      ウェブやアプリの開発では、ユーザーは400ミリ秒以上待たされると興味を失いやすくなる、という経験則です。
+    </p>
+    <p class="commentary">
+      それに対して、人と人との会話でターン（話す人）が交代するのにかかる時間は、わずか0.2秒（200ミリ秒）。
+    </p>
+    <p class="commentary">
+      UI設計の基準よりも、人間の会話の方がずっと速いという指摘に、強く反応してメモを取っていました。
+    </p>
+
+    <div class="book-section-title">
+      <span class="tag">大洲で調べた</span>
+      <h2 style="margin:0;">大洲は、県内でただ一つ「高低の型」を持たない土地です</h2>
+    </div>
+
+    <p class="commentary">0.2秒で話し手が入れ替わるということは、<strong>相手の話が終わる前に、終わりを予測している</strong>ということです。聞き終わってから考え始めたのでは、200ミリ秒には到底間に合いません。</p>
+    <p class="commentary">では、その予測の手がかりは何か。ここで大洲の話がつながります。</p>
+    <p class="commentary">大洲では、<strong>「雨」と「飴」が同じ発音になります。</strong> 共通語では「雨」はアが高くメが低い、「飴」はアが低くメが高い、というふうに音の高さで区別します。大洲にはこの高低の区別がありません。「橋」と「箸」、「型」と「肩」も同じです。言語学ではこれを<strong>無アクセント</strong>と呼びます。</p>
+    <p class="commentary">驚いたのは分布のほうでした。愛媛県は県内でアクセントが4つに分かれています。東予は讃岐式、中予（松山）は京阪式、南予（宇和島）は内輪東京式。そして<strong>大洲市から鬼北町、高知県檮原町にかけてだけが、型の区別を持たない一型式</strong>です。</p>
+    <div class="article-table-wrap">
+    <table class="article-table">
+      <thead><tr><th>地域</th><th>アクセント</th></tr></thead>
+      <tbody>
+        <tr><td>東予（新居浜・西条など）</td><td>讃岐式</td></tr>
+        <tr><td>中予（松山など）</td><td>京阪式</td></tr>
+        <tr><td>南予（宇和島など）</td><td>内輪東京式</td></tr>
+        <tr><td>大洲〜鬼北・檮原</td><td>型を持たない一型式</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p class="commentary">つまり<strong>愛媛のなかで大洲だけが型を持たず、しかも北を京阪式、南を内輪東京式に挟まれています。</strong> 京阪式は日本のなかでもとくに音の上下が大きいアクセントなので、松山の人が大洲の話し方を平坦だと感じるのは、分布から見れば当然のことになります。この話は<a href="../eachnews/ozu-ben.html">「大洲の人はイントネーションがない」と言われる理由</a>に詳しくまとめました。</p>
+    <h2>ここから先は、調べても分かりませんでした</h2>
+    <p class="commentary">そうなると気になるのは、<strong>語の高低で意味を区別しない土地では、0.2秒の予測も変わるのか</strong>という問いです。</p>
+    <p class="commentary">先に断っておくと、無アクセントは「抑揚がない」という意味ではありません。語ごとの高低の型を持たないという話であって、疑問文の語尾が上がるといった<strong>文レベルのイントネーションは別のもの</strong>です。ですから「大洲の人は予測の手がかりが少ない」と単純に言うことはできません。</p>
+    <p class="commentary">そのうえで、<strong>無アクセント地域の話者のターン交代が、型を持つ地域と比べて速いのか遅いのか。それを調べた研究を、私は見つけられませんでした。</strong> 大洲のアクセントについては、県が編纂した『愛媛県史 民俗 下』が「一型（無アクセント）」と記し、一方で文節の最初を高く発音する傾向から「頭高一型アクセント」と見るべきだという説もあって、<strong>分類そのものがまだ決着していません。</strong> 分類が決まっていないものについて交代の速さを比べた研究があれば、それは相当に新しい仕事のはずです。</p>
+    <p class="commentary">分からないと分かったところまでは進めた、ということにしておきます。<strong>0.2秒という基準を知ったあとで自分の地元の話し方を見に行くと、こういう空白に当たる。</strong> それ自体が、この本を読んだ成果でした。</p>
+
+    <div class="book-section-title">
+      <span class="tag">大洲とつながったこと</span>
+      <h2 style="margin:0;">アプリ開発の趣味と、このＨＰのレスポンス速度</h2>
+    </div>
+
+    <p class="commentary">
+      趣味でアプリ開発をしていると、この「0.2秒」の感覚は他人事ではありません。
+    </p>
+    <p class="commentary">
+      ボタンを押してから反応が返ってくるまでの、ほんの一瞬の遅れが、使う人のストレスになる。
+    </p>
+    <p class="commentary">
+      このＨＰ（OZU LIFE MEMO）のようなサイト運営でも、ページの表示速度や反応の速さは、地味だけど大事な要素です。
+    </p>
+    <p class="commentary">
+      人間の会話の速さに、テクノロジーはまだ追いついていないのかもしれません。
+    </p>
+
+    <div class="content-block" style="max-width:720px;">
+      <h2 style="margin-top:0;">出典・参考にした資料</h2>
+      <a class="source-link" href="https://www.shinchosha.co.jp/book/356431/" target="_blank" rel="noopener">会話の0.2秒を言語学する（新潮社、出版社公式ページ）</a>
+      <a class="source-link" href="https://www.i-manabi.jp/system/regionals/regionals/ecode:2/50/view/6637" target="_blank" rel="noopener">『愛媛県史 民俗 下』／愛媛県生涯学習センター「えひめの記憶」</a>
+      <a class="source-link" href="https://odjl.net/oozu.html" target="_blank" rel="noopener">宮岡大「愛媛県大洲方言」（2022、方言文法研究会編）　— 大洲方言の音韻の整理。無アクセント説と頭高一型説の並記</a>
+      <a class="source-link" href="https://ja.wikipedia.org/wiki/%E7%84%A1%E3%82%A2%E3%82%AF%E3%82%BB%E3%83%B3%E3%83%88" target="_blank" rel="noopener">Wikipedia「無アクセント」　— 定義と、全国の無アクセント地域の分布</a>
+    </div>
+
+    <div class="related-list">
+      <h2>あわせて読みたい</h2>
+      <ul>
+        <li><a href="../book/">大洲と読書 一覧に戻る</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div data-site-footer="article"></div>
+
+<div data-site-modal></div>
+
+<script src="../assets/js/site-chrome.js"></script>
+<script src="../assets/js/main.js"></script>
+<script data-goatcounter="https://ozulifememo.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

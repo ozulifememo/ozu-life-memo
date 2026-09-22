@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>とくにおすすめの記事 ｜ OZU LIFE MEMO</title>
+<meta name="description" content="運営者本人が「これは書けてよかった」と思う記事だけを集めたページ。">
+<link rel="icon" href="../assets/img/favicon-192.png">
+<link rel="alternate" type="application/rss+xml" title="OZU LIFE MEMO の更新" href="../feed.xml">
+<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link data-ozu-fonts rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;family=Shippori+Mincho+B1:wght@600;700&amp;display=swap">
+<link rel="stylesheet" href="../assets/css/style.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="OZU LIFE MEMO">
+<meta property="og:title" content="とくにおすすめの記事">
+<meta property="og:description" content="運営者本人が「これは書けてよかった」と思う記事だけを集めたページ。">
+<meta property="og:url" content="https://ozulifememo.github.io/ozu-life-memo/highlights/">
+<meta property="og:image" content="https://ozulifememo.github.io/ozu-life-memo/assets/img/ogp-card.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://ozulifememo.github.io/ozu-life-memo/highlights/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "とくにおすすめの記事 ｜ OZU LIFE MEMO",
+  "url": "https://ozulifememo.github.io/ozu-life-memo/highlights/",
+  "description": "運営者本人が「これは書けてよかった」と思う記事だけを集めたページ。",
+  "isPartOf": {"@type": "WebSite", "name": "OZU LIFE MEMO", "url": "https://ozulifememo.github.io/ozu-life-memo/"}
+}
+</script>
+</head>
+<body>
+
+<div data-site-header data-prefix="../"></div>
+
+<section class="page-hero" style="padding-bottom:0;">
+  <div class="wrap">
+    <h1>とくにおすすめの記事</h1>
+    <p style="color:var(--color-text-muted);">数ある記事の中から、運営者本人が「これは書けてよかった」と思うものだけを選んでいます。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="news-cards" id="highlights-body"></div>
+    <p class="stub-note" id="highlights-empty" style="display:none;">
+      まだ「おすすめ」に選ばれた記事はありません。記事を読んで「これは良かった」と思うものがあれば、
+      お問い合わせから教えてください。
+    </p>
+  </div>
+</section>
+
+<div data-site-footer></div>
+
+<div data-site-modal></div>
+
+<script src="../assets/js/site-chrome.js"></script>
+<script src="../assets/js/news-data.js"></script>
+<script src="../assets/js/tag-colors.js"></script>
+<script>
+  (function renderHighlights() {
+    const body = document.getElementById("highlights-body");
+    const empty = document.getElementById("highlights-empty");
+    if (!body || typeof OZU_NEWS === "undefined") return;
+
+    const picked = OZU_NEWS.filter((item) => item.pick).sort((a, b) => (a.date < b.date ? 1 : -1));
+
+    if (picked.length === 0) {
+      empty.style.display = "block";
+      return;
+    }
+
+    body.innerHTML = picked
+      .map((item) => {
+        const tags = (item.tags || [])
+          .map((t) => `<span class="card-tag" style="--tag-c:${ozuTagColorVar(t)}">${t}</span>`)
+          .join("");
+        return `
+      <div class="news-card" data-category="${item.category}" style="--tag-c:${ozuCategoryColorVar(item.category)}">
+        <span class="news-date">${item.date.replace(/-/g, "/")}</span>
+        <a class="news-title" href="../eachnews/${item.slug}.html">${item.title}</a>
+        <span class="news-source">${item.pickNote || item.source}</span>
+        <div class="card-tags-row">${tags}</div>
+      </div>`;
+      })
+      .join("");
+  })();
+</script>
+<script src="../assets/js/main.js"></script>
+<script data-goatcounter="https://ozulifememo.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>大洲ノート ｜ OZU LIFE MEMO</title>
+<meta name="description" content="市役所の発表やSNS、noteの記事から拾い上げた大洲の話題を、3つの視点で整理しています。">
+<link rel="icon" href="../assets/img/favicon-192.png">
+<link rel="alternate" type="application/rss+xml" title="OZU LIFE MEMO の更新" href="../feed.xml">
+<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link data-ozu-fonts rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;family=Shippori+Mincho+B1:wght@600;700&amp;display=swap">
+<link rel="stylesheet" href="../assets/css/style.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="OZU LIFE MEMO">
+<meta property="og:title" content="大洲ノート">
+<meta property="og:description" content="市役所の発表やSNS、noteの記事から拾い上げた大洲の話題を、3つの視点で整理しています。">
+<meta property="og:url" content="https://ozulifememo.github.io/ozu-life-memo/news/">
+<meta property="og:image" content="https://ozulifememo.github.io/ozu-life-memo/assets/img/ogp-card.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://ozulifememo.github.io/ozu-life-memo/news/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "大洲ノート ｜ OZU LIFE MEMO",
+  "url": "https://ozulifememo.github.io/ozu-life-memo/news/",
+  "description": "市役所の発表やSNS、noteの記事から拾い上げた大洲の話題を、3つの視点で整理しています。",
+  "isPartOf": {"@type": "WebSite", "name": "OZU LIFE MEMO", "url": "https://ozulifememo.github.io/ozu-life-memo/"}
+}
+</script>
+</head>
+<body>
+
+<div data-site-header data-prefix="../"></div>
+
+<section class="page-hero news-page-hero" style="padding-bottom:0;">
+  <div class="wrap">
+    <h1>大洲ノート</h1>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <details class="news-intro">
+      <summary>このサイトの3つのカテゴリについて</summary>
+    <div class="news-categories">
+      <div class="news-category-card">
+        <h2>1. [大洲のいま]</h2>
+        <p>Yahoo!ニュースやX、市役所の発表などから拾い上げた現在進行形の街の動き。</p>
+      </div>
+      <div class="news-category-card">
+        <h2>2. [大洲の暮らし]</h2>
+        <p>市役所などの公的情報の中から良いと思ったものを厳選し、翻訳します。</p>
+      </div>
+      <div class="news-category-card">
+        <h2>3. [大洲の視点]</h2>
+        <p>noteの長文記事や市の施策など、僕なりの本音と考察を乗せて読み解くコラム。</p>
+      </div>
+    </div>
+    </details>
+
+    <div class="news-layout">
+      <aside class="news-sidebar">
+        <!-- カテゴリだけは常に見えるところに置く。スマホでは横スクロールの
+             タブになり、これ以外の絞り込みは下の「絞り込み」に畳んである。
+             記事より先に置くものを減らさないと、最初の画面に記事が1本も出ない -->
+        <div class="sidebar-filter-group sidebar-primary">
+          <p class="tag-filter-label">カテゴリ</p>
+          <div class="news-tabs">
+            <button class="news-tab active" data-category="all">全般</button>
+            <button class="news-tab" data-category="ima">大洲のいま</button>
+            <button class="news-tab" data-category="kurashi">大洲の暮らし</button>
+            <button class="news-tab" data-category="shiten">大洲の視点</button>
+          </div>
+        </div>
+
+        <details class="news-filter-more">
+          <summary>並び替え・絞り込み</summary>
+          <div class="sidebar-filter-group">
+            <p class="tag-filter-label">並び順</p>
+            <div class="tag-filter" id="sort-filter">
+              <button class="tag-chip active" data-sort="source-desc">出典が新しい順</button>
+              <button class="tag-chip" data-sort="source-asc">出典が古い順</button>
+              <button class="tag-chip" data-sort="posted">サイト掲載順</button>
+            </div>
+          </div>
+          <div class="sidebar-filter-group">
+            <p class="tag-filter-label">テーマで絞り込む</p>
+            <div class="tag-filter" id="tag-filter"></div>
+            <a href="../data/" class="tag-chip" style="display:inline-block;margin-top:8px;text-decoration:none;">→ タグをクラウドで見る</a>
+          </div>
+          <div class="sidebar-filter-group">
+            <p class="tag-filter-label">情報源で絞り込む</p>
+            <div class="tag-filter" id="source-filter"></div>
+          </div>
+        </details>
+      </aside>
+
+      <div class="news-main">
+        <div class="news-cards" id="news-table-body"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section class="home-kenkyu">
+    <div class="wrap">
+      <h2 class="section-title">大洲の自由研究</h2>
+      <p class="home-kenkyu-lead">
+        1本の記事に収めるにはもったいない題材を、時間のあるときにじっくり読んでもらうための長文コーナーです。
+        出典を並べて、分からなかったことも正直に書いています。
+        <a href="../jiyu-kenkyu/" class="home-kenkyu-more">「大洲の自由研究」の一覧を見る →</a>
+      </p>
+      <div class="kenkyu-panel">
+        <ol class="kenkyu-list">
+          <li><a href="../jiyu-kenkyu/ozu-okane-no-nagare.html"><span class="kenkyu-no">#01</span>大洲城下町、12億円はどこから来たのか</a></li>
+          <li><a href="../jiyu-kenkyu/heisei-gappei-20nen.html"><span class="kenkyu-no">#02</span>平成の大合併、大洲は何を得て何を失ったか</a></li>
+          <li><a href="../jiyu-kenkyu/daito-kijun-horitsuron.html"><span class="kenkyu-no">#03</span>豪雨訴訟と「大東基準」を、法律論として読む</a></li>
+          <li><a href="../jiyu-kenkyu/ozu-zaisei-zentaizo.html"><span class="kenkyu-no">#04</span>大洲市の財政、数字で全体像をつかむ</a></li>
+          <li><a href="../jiyu-kenkyu/nipponia-8toshi-hikaku.html"><span class="kenkyu-no">#05</span>NIPPONIA HOTEL、全国8都市を比較する</a></li>
+          <li><a href="../jiyu-kenkyu/shirohaku-160man.html"><span class="kenkyu-no">#06</span>大洲城キャッスルステイ、160万円の中身</a></li>
+          <li><a href="../jiyu-kenkyu/jinko-47nen-graph.html"><span class="kenkyu-no">#07</span>大洲市の人口減少、47年分のグラフで見る</a></li>
+          <li><a href="../jiyu-kenkyu/hijikawa-474-shisen.html"><span class="kenkyu-no">#08</span>肱川、474本の支川を持つ川</a></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+<div data-site-footer></div>
+
+<div data-site-modal></div>
+
+<script src="../assets/js/site-chrome.js"></script>
+<script src="../assets/js/photos-data.js"></script>
+<script src="../assets/js/article-images.js"></script>
+<script src="../assets/js/news-data.js"></script>
+<script src="../assets/js/article-card.js"></script>
+<script src="../assets/js/tag-colors.js"></script>
+<script>
+  (function renderNewsTable() {
+    const body = document.getElementById("news-table-body");
+    if (!body || typeof OZU_NEWS === "undefined") return;
+
+    // 掲載日(date)は129記事のうち78件が同じ日に集まっており、一覧に並べても
+    // 順序の意味がほとんど無かった。そこで既定では「出典そのものの日付」
+    // (sourceDate)で並べる。出典に日付が無い記事(市役所の制度ページなど)は
+    // 順序を作れないので、掲載日順でうしろにまとめる。
+    const withSrc = OZU_NEWS.filter((i) => i.sourceDate);
+    const noSrc = OZU_NEWS.filter((i) => !i.sourceDate);
+
+    function order(mode) {
+      if (mode === "posted") {
+        return [...OZU_NEWS].sort((a, b) => (a.date < b.date ? 1 : -1));
+      }
+      // 比較関数は「正なら後ろ」。新しい順(既定)は a<b のとき a を後ろへ回す。
+      const dir = mode === "source-asc" ? -1 : 1;
+      const head = [...withSrc].sort((a, b) => (a.sourceDate < b.sourceDate ? dir : -dir));
+      const tail = [...noSrc].sort((a, b) => (a.date < b.date ? 1 : -1));
+      return head.concat(tail);
+    }
+
+    function dateCell(item, mode) {
+      if (mode === "posted" || !item.sourceDate) {
+        return `<span class="news-date"><span class="date-kind">掲載</span>${item.date.replace(/-/g, "/")}</span>`;
+      }
+      const kind = item.sourceDateKind || "出典";
+      return `<span class="news-date"><span class="date-kind">${kind}</span>${item.sourceDate.replace(/-/g, "/")}</span>`;
+    }
+
+    function render(mode) {
+      body.innerHTML = order(mode)
+        .map((item) => {
+          const sourceType = typeof ozuSourceType === "function" ? ozuSourceType(item.source) : "その他";
+          const tags = (item.tags || [])
+            .map((t) => `<span class="card-tag" style="--tag-c:${ozuTagColorVar(t)}">${t}</span>`)
+            .join("");
+          // 記事に写真がひもづいていればサムネイルを出す。
+          // 無い記事は枠だけ残して空にする(列がずれると一覧がガタつくため)。
+          const photo = typeof OzuCard !== "undefined" ? OzuCard.articlePhoto(item.slug, "../") : null;
+          const thumb = photo
+            ? `<span class="news-thumb"><img src="${photo.thumbSrc}" alt="${OzuCard.escapeHtml(photo.alt)}" loading="lazy" decoding="async"></span>`
+            : `<span class="news-thumb news-thumb--none" aria-hidden="true"></span>`;
+          return `
+      <div class="news-card" data-category="${item.category}" data-tags="${(item.tags || []).join(",")}" data-source-type="${sourceType}" style="--tag-c:${ozuCategoryColorVar(item.category)}">
+        ${dateCell(item, mode)}
+        <a class="news-title" href="../eachnews/${item.slug}.html">${item.title}</a>
+        <span class="news-source">${item.source}</span>
+        <div class="card-tags-row">${tags}</div>
+        ${thumb}
+      </div>`;
+        })
+        .join("");
+      // 並べ替えで作り直したので、いま効いている絞り込みをかけ直す
+      if (typeof window.ozuApplyNewsFilters === "function") window.ozuApplyNewsFilters();
+    }
+
+    render("source-desc");
+
+    document.querySelectorAll("#sort-filter [data-sort]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll("#sort-filter [data-sort]").forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        render(btn.dataset.sort);
+      });
+    });
+  })();
+
+  (function renderTagFilter() {
+    const wrap = document.getElementById("tag-filter");
+    if (!wrap || typeof OZU_TAGS === "undefined") return;
+
+    const chips = ['<button class="tag-chip active" data-tag="all">すべて</button>'].concat(
+      OZU_TAGS.map((tag) => `<button class="tag-chip" data-tag="${tag}">${tag}</button>`)
+    );
+    wrap.innerHTML = chips.join("");
+  })();
+
+  (function renderSourceFilter() {
+    const wrap = document.getElementById("source-filter");
+    if (!wrap || typeof OZU_SOURCE_TYPES === "undefined") return;
+
+    const chips = ['<button class="tag-chip active" data-source-type="all">すべて</button>'].concat(
+      OZU_SOURCE_TYPES.map((t) => `<button class="tag-chip" data-source-type="${t}">${t}</button>`)
+    );
+    wrap.innerHTML = chips.join("");
+  })();
+</script>
+<script src="../assets/js/main.js"></script>
+<script data-goatcounter="https://ozulifememo.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

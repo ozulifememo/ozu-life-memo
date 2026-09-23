@@ -5,8 +5,16 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Thu, 24 Sep 2026 00:04:04 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 24 Sep 2026 06:05:01 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>広報おおずは、隣のまちの広報と何がちがうのか。48冊を数えたら、紙面の45%が「お知らせ」だった</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/kouhou-4shi-hikaku.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/kouhou-4shi-hikaku.html</guid>
+      <pubDate>Thu, 24 Sep 2026 09:00:00 +0900</pubDate>
+      <description>広報おおず・広報うちこ・広報やわたはま・広報うわじまの直近12号、48冊・1,404ページを1ページずつ区分に分けて数えた。大洲は紙面の45%が「お知らせ」で、4紙でいちばん多い。ニュースの面の65%に市長が出てくるのも大洲だけだった。内子は全国一になった広報紙で、人とまちの話に紙面を使っている。</description>
+      <category>議会・行政</category>
+    </item>
     <item>
       <title>肱川で鮎を釣るには、いくら払って、どこなら釣っていいのか</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/hijikawa-ayu-yugyo.html</link>
@@ -244,15 +252,6 @@
       <pubDate>Sat, 12 Sep 2026 09:00:00 +0900</pubDate>
       <description>大洲市の収入でいちばん大きいのは市税ではなく地方交付税だ。令和6年度の普通交付税94億8,224万円が、国の見積り2つの引き算とぴったり一致することを、総務省の資料で確かめた。需要額の積み上げ方、税収の75%しか数えない理由、人口が減ったらどうなるかまで追った。</description>
       <category>財政・税金</category>
-    </item>
-    <item>
-      <title>内子と大洲、泊まる客は3.4%と6.0%だった</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/uchiko-ozu-kanko.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/uchiko-ozu-kanko.html</guid>
-      <pubDate>Sat, 12 Sep 2026 09:00:00 +0900</pubDate>
-      <description>内子の観光はいい、と言われることがある。その印象を数字で確かめられるのか、入込客数・宿泊比率・1人あたり消費額と、運営の仕組みの違いから調べた。消費額の正体は掛け算だった。</description>
-      <category>観光</category>
-      <category>まちづくり</category>
     </item>
   </channel>
 </rss>

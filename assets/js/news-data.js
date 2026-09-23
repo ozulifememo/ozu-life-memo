@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "kouhou-4shi-hikaku",
+    date: "2026-09-24",
+    title: "広報おおずは、隣のまちの広報と何がちがうのか。48冊を数えたら、紙面の45%が「お知らせ」だった",
+    category: "shiten",
+    source: "広報おおず・広報うちこ・広報やわたはま・広報うわじま（2025年10月号〜2026年9月号）、愛媛県、日本広報協会ほか",
+    sourceDate: "2026-09-01",
+    tags: ["議会・行政"],
+  },
+  {
     slug: "hijikawa-ayu-yugyo",
     date: "2026-09-24",
     title: "肱川で鮎を釣るには、いくら払って、どこなら釣っていいのか",

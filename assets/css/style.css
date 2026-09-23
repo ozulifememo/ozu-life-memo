@@ -3245,6 +3245,106 @@ section {
   content: " →";
 }
 
+/* トップの名乗りは h1 にしてある(公開370ページで h1 が無いのはトップだけだった。2026-09-23)。
+   見た目は前の p のまま。見出しの既定(明朝・太字・大きい字)を打ち消す。 */
+h1.site-intro-text {
+  font-family: inherit;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+/* ── 記事の掲載日・目次・確認の記録(main.js が足す。2026-09-23) ──────── */
+.article-pubdate {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.article-toc {
+  margin: 0 0 var(--space-5);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-surface);
+  padding: 6px 14px;
+  font-size: var(--text-sm);
+}
+
+.article-toc summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  padding: 6px 0;
+  list-style: none;
+}
+
+.article-toc summary::-webkit-details-marker {
+  display: none;
+}
+
+.article-toc summary::before {
+  content: "▸ ";
+  color: var(--color-brand);
+}
+
+.article-toc[open] summary::before {
+  content: "▾ ";
+}
+
+.article-toc ol {
+  margin: 4px 0 8px;
+  padding-left: 1.4em;
+  line-height: 1.9;
+}
+
+.article-toc a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.article-toc a:hover {
+  color: var(--color-brand);
+}
+
+.source-box-verified {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-top: 6px;
+}
+
+/* ── トップの「こんなときは」の帯(2026-09-23) ─────────────── */
+.home-sakuin {
+  background: var(--color-surface);
+  padding-top: var(--space-6);
+  padding-bottom: var(--space-6);
+}
+
+.sakuin-strip {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+}
+
+.sakuin-strip a {
+  display: inline-block;
+  padding: 8px 14px;
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--c, var(--color-brand));
+  border-radius: 6px;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  line-height: 1.4;
+  text-decoration: none;
+}
+
+.sakuin-strip a:hover {
+  border-color: var(--c, var(--color-brand));
+  color: var(--color-brand-dark);
+}
+
 /* ── 主役記事(新聞の1面型: 大1本+サブ2本) ─────────────── */
 .lead-grid {
   display: grid;

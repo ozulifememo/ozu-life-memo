@@ -54,6 +54,18 @@
   </div>
 </section>
 
+<!-- かつて highlights/ にあった「とくにおすすめの記事」をここに寄せた(2026-09-23)。
+     似た入口が2つあると、どちらも信用されない。 -->
+<section>
+  <div class="wrap">
+    <h2 class="section-title">10本に入れなかった、おすすめの記事</h2>
+    <p class="section-lead" style="max-width:640px;">
+      運営者が「これは書けてよかった」と思う記事は、上の10本のほかにもあります。新しい順に並べています。
+    </p>
+    <div class="story-grid" id="best-more"></div>
+  </div>
+</section>
+
 <div data-site-footer></div>
 
 <div data-site-modal></div>
@@ -117,6 +129,15 @@
         ${thumb}
       </li>`;
     }).join("");
+
+    // 10本のほかに pick が付いている記事。新しい順(かつて highlights/ が出していたもの)
+    const more = document.getElementById("best-more");
+    if (more && typeof OzuCard !== "undefined") {
+      const chosen = new Set(BEST.map((b) => b.slug));
+      const rest = OZU_NEWS.filter((n) => n.pick && !chosen.has(n.slug))
+        .sort((a, b) => (a.date < b.date ? 1 : -1));
+      more.innerHTML = rest.map((i) => OzuCard.storyCard(i, "../", { showNote: true })).join("");
+    }
   })();
 </script>
 <script src="../assets/js/main.js"></script>

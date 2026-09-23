@@ -256,4 +256,74 @@ document.addEventListener("DOMContentLoaded", () => {
     if (related) related.parentNode.insertBefore(p, related);
     else page.appendChild(p);
   })();
+
+  // ── 記事の頭に掲載日、長い記事に目次、出典欄に「いつ確かめたか」(2026-09-23) ──
+  // 記事293本は静的なHTMLで、頭には日付が無く、目次も無かった(日付は最下部だけ)。
+  // 1本ずつ書き換えるより、台帳(news-data.js)と確認の記録(assets/data/verified.json)から
+  // ここで足すほうが、記事を足しても増やし忘れない。
+  (function articleExtras() {
+    const page = document.querySelector(".article-page[data-slug]");
+    if (!page) return;
+    const slug = page.dataset.slug;
+    const item = typeof OZU_NEWS !== "undefined" ? OZU_NEWS.find((n) => n.slug === slug) : null;
+
+    // 掲載日を、カテゴリ・出典・読了時間の行の先頭に
+    const meta = page.querySelector(".article-date");
+    if (meta && item && item.date && !meta.querySelector(".article-pubdate")) {
+      const s = document.createElement("span");
+      s.className = "article-pubdate";
+      s.textContent = item.date.replace(/-/g, "/") + " 掲載";
+      meta.prepend(s, " ・ ");
+    }
+
+    // 目次。本文の見出し(h2)が4つ以上ある記事だけ。出典欄と関連記事の見出しは数えない
+    const heads = [...page.querySelectorAll("h2")].filter(
+      (h) => !h.closest(".source-box") && !h.closest(".related-list") && !/同じテーマの記事|出典・参考/.test(h.textContent)
+    );
+    const summary = page.querySelector(".article-summary");
+    if (heads.length >= 4 && summary && !page.querySelector(".article-toc")) {
+      const details = document.createElement("details");
+      details.className = "article-toc";
+      const sum = document.createElement("summary");
+      sum.textContent = "目次（" + heads.length + "項目）";
+      const ol = document.createElement("ol");
+      heads.forEach((h, i) => {
+        if (!h.id) h.id = "sec-" + (i + 1);
+        const li = document.createElement("li");
+        const a = document.createElement("a");
+        a.href = "#" + h.id;
+        a.textContent = h.textContent.trim();
+        li.appendChild(a);
+        ol.appendChild(li);
+      });
+      details.append(sum, ol);
+      summary.insertAdjacentElement("afterend", details);
+    }
+
+    // いつ確かめたか。点検台帳から書き出した日付だけを読む(台帳そのものは公開していない)
+    const posted = page.querySelector(".source-box-posted");
+    const header = document.querySelector("[data-site-header]");
+    const prefix = header ? header.dataset.prefix || "" : "../";
+    if (posted && window.fetch) {
+      fetch(prefix + "assets/data/verified.json")
+        .then((r) => (r.ok ? r.json() : null))
+        .then((v) => {
+          const rec = v && v[slug];
+          if (!rec) return;
+          const parts = [];
+          if (rec.human) parts.push(rec.human.replace(/-/g, "/") + " に出典を読んで裏取り");
+          if (rec.numbers) parts.push(rec.numbers.replace(/-/g, "/") + " に数字と出典を機械で照合");
+          if (rec.machine) parts.push(rec.machine.replace(/-/g, "/") + " に機械点検");
+          if (!parts.length) return;
+          const p = document.createElement("p");
+          p.className = "source-box-verified";
+          const a = document.createElement("a");
+          a.href = prefix + "teisei/";
+          a.textContent = "直した記録";
+          p.append("この記事の確認: " + parts.join("、") + "。（", a, "）");
+          posted.insertAdjacentElement("afterend", p);
+        })
+        .catch(() => {});
+    }
+  })();
 });

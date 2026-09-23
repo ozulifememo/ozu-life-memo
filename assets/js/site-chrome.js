@@ -81,6 +81,7 @@
       '<div class="footer-col">' +
       "<h3>このサイトについて</h3>" +
       '<a href="' + prefix + 'concept/">サイト紹介</a>' +
+      '<a href="' + prefix + 'teisei/">直した記録</a>' +
       '<a href="' + home + '">トップページ</a>' +
       '<a href="#" data-modal-open>お問い合わせ</a>' +
       // 外部の発信先。なりすまし防止も兼ねて、本物はここから辿れる状態にしておく。

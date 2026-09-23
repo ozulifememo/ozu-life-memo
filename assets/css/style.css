@@ -2232,6 +2232,19 @@ section {
   font-size: var(--text-xs);
 }
 
+/* 1つの出典の中で、別のファイル(PDF・保存版など)も見たときの小さなリンク(2026-09-24)。
+   出典リンクの中にリンクは置けないので、すぐ下に一段下げて置く。「調べた資料 N本」には数えない */
+.source-sub {
+  display: block;
+  color: var(--color-brand);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  overflow-wrap: anywhere;
+  font-size: var(--text-xs);
+  margin: calc(-1 * var(--space-1)) 0 var(--space-2) 1.2em;
+  break-before: avoid;
+}
+
 .article-page blockquote {
   border-left: 3px solid var(--color-accent);
   background: var(--color-surface-alt);
@@ -2246,6 +2259,21 @@ section {
   font-size: var(--text-md);
   margin: 0 0 var(--space-5);
   overflow-wrap: break-word;
+}
+
+/* 本文の中のリンク(ほかの記事へ送るもの)。全体の a は色も下線も消してあるので、
+   ここで付けないとリンクだと気づけない(2026-09-24に数えたら54ページ・315か所が見えなかった)。
+   クラスの付いた部品(脚注の番号など)は、それぞれの見た目のままにする */
+.article-page .commentary a:not([class]),
+.jk-section .commentary a:not([class]) {
+  color: var(--color-brand);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+.article-page .commentary a:not([class]):hover,
+.jk-section .commentary a:not([class]):hover {
+  text-decoration-thickness: 2px;
 }
 
 .article-page p,

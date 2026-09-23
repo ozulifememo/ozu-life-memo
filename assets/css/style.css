@@ -2316,6 +2316,38 @@ section {
   text-align: right;
 }
 
+/* ── 本文の中に地図を埋める枠 ─────────────────────────────────
+   2026-09-23に共通化した。もともと matsushita-ato-shido.html の
+   <style> の中だけに書いてあり、同じ class を別の記事で使うと
+   iframe が既定の 300x150 のまま出る状態だった(実測で見つけた)。
+   記事側の <style> に同じ指定がある場合は、あとに来るあちらが勝つ。 */
+.fig-map {
+  max-width: 760px;
+  margin: var(--space-6) auto var(--space-3);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+.fig-map iframe {
+  display: block;
+  width: 100%;
+  height: 400px;
+  border: 0;
+}
+
+.fig-caption {
+  max-width: 760px;
+  margin: 0 auto var(--space-5);
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+  line-height: 1.8;
+}
+
+@media (max-width: 640px) {
+  .fig-map iframe { height: 300px; }
+}
+
 /* Article self-made data chart (no external images, no copyright risk) */
 .article-chart {
   background: var(--color-surface-alt);

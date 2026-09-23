@@ -52,10 +52,26 @@
   .jk-quote .src { display:block; margin-top:8px; font-size:.78rem; color:var(--color-text-muted); }
   .jk-code { background:var(--color-surface-alt); border:1px solid var(--color-border); border-radius:var(--radius); padding:16px 18px; margin:20px 0; overflow-x:auto; font-size:.85rem; line-height:1.7; }
   .jk-code code { font-family:"SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace; white-space:pre; }
+  /* 表の見た目(2026-09-23に直した)。本人の「この自由研究は表が命。なんか、分かりにくい。
+     見にくい」から。原因は3つあった。数字が左寄せ／行の区切りが無い／字幅がそろわない。 */
   table.jk-table { width:100%; border-collapse:collapse; font-size:.88rem; margin:16px 0; }
-  table.jk-table th, table.jk-table td { text-align:left; padding:9px 12px; border-bottom:1px solid var(--color-border); vertical-align:top; }
-  table.jk-table th { color:var(--color-text-muted); font-weight:700; font-size:.78rem; }
+  table.jk-table th, table.jk-table td { text-align:left; padding:8px 12px; border-bottom:1px solid var(--color-border); vertical-align:top; }
+  table.jk-table th { color:var(--color-text-muted); font-weight:700; font-size:.78rem; white-space:nowrap; }
+  /* 2列目から先は数字が入ることが多いので右寄せ。数字は等幅にして桁をそろえる */
+  table.jk-table th:not(:first-child), table.jk-table td:not(:first-child) {
+    text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; }
+  table.jk-table tr:nth-child(even) td { background:var(--color-surface-alt); }
+  table.jk-table tr:hover td { background:var(--color-surface); }
+  table.jk-table td:first-child { white-space:nowrap; }
+  /* 行頭が「　」(全角空白)で始まる内訳の行は、一段下げて細く見せる */
+  table.jk-table td.jk-sub:first-child { padding-left:26px; color:var(--color-text-muted); font-size:.84rem; }
+  /* まとまりの先頭(太字で始まる行)の上に、区切りの線を引く */
+  table.jk-table tr.jk-group td { border-top:2px solid var(--color-border); }
   .jk-table-wrap { overflow-x:auto; margin:16px 0; }
+  @media (max-width:640px){
+    table.jk-table { font-size:.8rem; }
+    table.jk-table th, table.jk-table td { padding:7px 8px; }
+  }
   .jk-diagram { background:var(--color-surface); border:1px solid var(--color-border); border-radius:var(--radius); padding:16px 8px; overflow-x:auto; margin:24px 0; }
   .jk-diagram svg { display:block; width:100%; height:auto; min-width:720px; }
   .jk-fig-caption { text-align:center; font-size:.82rem; color:var(--color-text-muted); margin-top:10px; }
@@ -190,21 +206,21 @@
     <div class="article-table-wrap"><table class="jk-table">
       <tr><th>ライフステージ</th><th>人数</th><th>1日の自由時間</th></tr>
       <tr><td>教育を受けている時期</td><td>1,268万人</td><td>380分(6時間20分)</td></tr>
-      <tr><td><strong>独身期</strong></td><td>3,093万人</td><td><strong>400分(6時間40分)</strong></td></tr>
+      <tr class="jk-group"><td><strong>独身期</strong></td><td>3,093万人</td><td><strong>400分(6時間40分)</strong></td></tr>
       <tr><td>35歳未満</td><td>1,103万人</td><td>363分(6時間03分)</td></tr>
       <tr><td>35〜44歳</td><td>460万人</td><td>369分(6時間09分)</td></tr>
       <tr><td>45〜64歳</td><td>803万人</td><td>371分(6時間11分)</td></tr>
       <tr><td>65歳以上</td><td>727万人</td><td><strong>508分(8時間28分)</strong></td></tr>
-      <tr><td><strong>子供のいない夫・妻</strong></td><td>2,543万人</td><td><strong>421分(7時間01分)</strong></td></tr>
+      <tr class="jk-group"><td><strong>子供のいない夫・妻</strong></td><td>2,543万人</td><td><strong>421分(7時間01分)</strong></td></tr>
       <tr><td>35歳未満</td><td>158万人</td><td>302分(5時間02分)</td></tr>
       <tr><td>45〜64歳</td><td>829万人</td><td>346分(5時間46分)</td></tr>
       <tr><td>65歳以上</td><td>1,426万人</td><td>488分(8時間08分)</td></tr>
-      <tr><td><strong>子育て期の夫・妻</strong></td><td>2,017万人</td><td><strong>254分(4時間14分)</strong></td></tr>
+      <tr class="jk-group"><td><strong>子育て期の夫・妻</strong></td><td>2,017万人</td><td><strong>254分(4時間14分)</strong></td></tr>
       <tr><td>末子が就学前</td><td>799万人</td><td><strong>202分(3時間22分)</strong></td></tr>
       <tr><td>末子が小学生</td><td>578万人</td><td>272分(4時間32分)</td></tr>
       <tr><td>末子が中学生</td><td>262万人</td><td>293分(4時間53分)</td></tr>
       <tr><td>末子が高校生</td><td>223万人</td><td>307分(5時間07分)</td></tr>
-      <tr><td><strong>子育て期のひとり親</strong></td><td>156万人</td><td>260分(4時間20分)</td></tr>
+      <tr class="jk-group"><td><strong>子育て期のひとり親</strong></td><td>156万人</td><td>260分(4時間20分)</td></tr>
     </table></div>
     <p class="commentary"><strong>いちばん短いのは「末子が就学前」の202分、3時間22分。いちばん長いのは「独身・65歳以上」の508分、8時間28分。その差は2.5倍。</strong></p>
     <p class="commentary">同じ国の同じ年に、1日の自由時間が3時間半の人と8時間半の人がいる。世代の違いでも収入の違いでもなく、<strong>家に小さい子どもがいるかどうか</strong>で、ここまで変わる。</p>
@@ -212,21 +228,21 @@
     <div class="article-table-wrap"><table class="jk-table">
       <tr><th>ライフステージ</th><th>仕事</th><th>家事</th><th>育児</th><th>テレビ等</th><th>趣味・娯楽</th><th>交際</th></tr>
       <tr><td>教育を受けている時期</td><td>24</td><td>6</td><td>0</td><td>40</td><td>76</td><td>13</td></tr>
-      <tr><td><strong>独身期</strong></td><td>259</td><td>56</td><td>2</td><td>133</td><td>65</td><td>14</td></tr>
+      <tr class="jk-group"><td><strong>独身期</strong></td><td>259</td><td>56</td><td>2</td><td>133</td><td>65</td><td>14</td></tr>
       <tr><td>35歳未満</td><td>332</td><td>21</td><td>2</td><td>50</td><td><strong>90</strong></td><td><strong>17</strong></td></tr>
       <tr><td>35〜44歳</td><td>331</td><td>33</td><td>4</td><td>94</td><td>74</td><td>11</td></tr>
       <tr><td>45〜64歳</td><td>297</td><td>62</td><td>1</td><td>150</td><td>47</td><td>9</td></tr>
       <tr><td>65歳以上</td><td>63</td><td>118</td><td>2</td><td><strong>267</strong></td><td>40</td><td>14</td></tr>
-      <tr><td><strong>子供のいない夫・妻</strong></td><td>174</td><td>113</td><td>3</td><td>186</td><td>45</td><td>9</td></tr>
+      <tr class="jk-group"><td><strong>子供のいない夫・妻</strong></td><td>174</td><td>113</td><td>3</td><td>186</td><td>45</td><td>9</td></tr>
       <tr><td>35歳未満</td><td>328</td><td>65</td><td>6</td><td>33</td><td>67</td><td>7</td></tr>
       <tr><td>45〜64歳</td><td>279</td><td>112</td><td>3</td><td>134</td><td>33</td><td>9</td></tr>
       <tr><td>65歳以上</td><td>83</td><td>122</td><td>3</td><td>245</td><td>48</td><td>9</td></tr>
-      <tr><td><strong>子育て期の夫・妻</strong></td><td>314</td><td>118</td><td>62</td><td>55</td><td>26</td><td>7</td></tr>
+      <tr class="jk-group"><td><strong>子育て期の夫・妻</strong></td><td>314</td><td>118</td><td>62</td><td>55</td><td>26</td><td>7</td></tr>
       <tr><td>末子が就学前</td><td>298</td><td>102</td><td><strong>140</strong></td><td>29</td><td><strong>22</strong></td><td>7</td></tr>
       <tr><td>末子が小学生</td><td>323</td><td>126</td><td>19</td><td>55</td><td>29</td><td>7</td></tr>
       <tr><td>末子が中学生</td><td>332</td><td>134</td><td>3</td><td>78</td><td>28</td><td>7</td></tr>
       <tr><td>末子が高校生</td><td>331</td><td>130</td><td>1</td><td>87</td><td>27</td><td>6</td></tr>
-      <tr><td><strong>子育て期のひとり親</strong></td><td>295</td><td>137</td><td>45</td><td>63</td><td>22</td><td>10</td></tr>
+      <tr class="jk-group"><td><strong>子育て期のひとり親</strong></td><td>295</td><td>137</td><td>45</td><td>63</td><td>22</td><td>10</td></tr>
     </table></div>
     <p class="commentary">目を引くのが<strong>趣味・娯楽の減り方</strong>である。独身の35歳未満は90分。子育て期になると26分。末子が就学前だと22分。<strong>4分の1以下になる。</strong> そして子どもが高校生になっても27分のままで、戻らない。</p>
     <p class="commentary">戻るのは自由時間の総量のほうだ。末子が就学前202分 → 小学生272分 → 中学生293分 → 高校生307分と増えていく。ただしその増えた分は、趣味には回らず、<strong>テレビ(29分→87分)</strong>に回っている。</p>
@@ -361,7 +377,7 @@
       <tr><td>有業者</td><td>6,823万人</td><td>130</td><td>153</td><td>75</td><td>17</td><td>460</td></tr>
       <tr><td>無業者</td><td>3,834万人</td><td>222</td><td>139</td><td>67</td><td>13</td><td>526</td></tr>
       <tr><td>無業・家事</td><td>1,983万人</td><td>219</td><td>118</td><td>50</td><td>13</td><td>467</td></tr>
-      <tr><td><strong>無業・その他</strong></td><td>1,286万人</td><td><strong>300</strong></td><td>147</td><td>73</td><td>10</td><td><strong>615</strong></td></tr>
+      <tr class="jk-group"><td><strong>無業・その他</strong></td><td>1,286万人</td><td><strong>300</strong></td><td>147</td><td>73</td><td>10</td><td><strong>615</strong></td></tr>
       <tr><td>うち男</td><td>874万人</td><td><strong>321</strong></td><td>136</td><td>88</td><td><strong>9</strong></td><td><strong>647</strong></td></tr>
       <tr><td>うち女</td><td>411万人</td><td>255</td><td>172</td><td>42</td><td>12</td><td>549</td></tr>
     </table></div>
@@ -398,6 +414,16 @@
     <h2 id="ch7">働いている人の日曜は、平日より何がどれだけ増えるのか</h2>
     <p class="commentary">ここまでは週全体の平均だった。ここからは、日曜と平日の差を見る。</p>
     <p class="commentary">全員の平均で日曜と平日を並べると、平日の仕事が4時間12分、日曜が1時間14分という数字が出てくる<a href="#fn1" class="jk-fn">[一]</a><a href="#fn2" class="jk-fn">[二]</a>。ただ、この4時間12分は誰の姿でもない。10歳以上の全員を平均しているので、小学生も定年後の人も分母に入り、働いている人の平日とはかけ離れた数になる。</p>
+    <p class="commentary">この「誰の姿でもない」を、<strong>別の統計を持ってこなくても分解できる</strong>ことが分かった。社会生活基本調査は、1つの行動について3つの数字を並べて公表している。<strong>総平均時間</strong>(しなかった人も0分として全員で割った平均)、<strong>行動者率</strong>(その日にその行動をした人の割合)、<strong>行動者平均時間</strong>(した人だけの平均)の3つである<a href="#fn1" class="jk-fn">[一]</a><a href="#fn2" class="jk-fn">[二]</a>。仕事について並べると、こうなる。</p>
+    <div class="article-table-wrap"><table class="jk-table">
+      <tr><th>仕事</th><th>平日</th><th>日曜</th></tr>
+      <tr><td>その日に仕事をした人の割合(行動者率)</td><td><strong>50.7%</strong></td><td><strong>17.7%</strong></td></tr>
+      <tr><td>した人だけの平均(行動者平均時間)</td><td><strong>8時間17分</strong></td><td><strong>7時間00分</strong></td></tr>
+      <tr><td>掛けたもの(＝総平均時間)</td><td>4時間12分</td><td>1時間14分</td></tr>
+    </table></div>
+    <p class="commentary"><strong>8時間17分 × 50.7% ＝ 4時間12分。</strong> 平日の4時間12分は、「10歳以上の2人に1人が働いた」と「働いた人は8時間17分働いた」という2つの数字が、1つに潰れたものだった。重みを付け直す必要はない。<strong>重みの内訳のほうが、最初から同じ表に載っている。</strong></p>
+    <p class="commentary">23の行動すべてで同じ掛け算を確かめた。平日も日曜も、<strong>表の総平均時間との差は全部1分未満</strong>で合った(この検算は自分でやった)。</p>
+    <p class="commentary">驚いたのは日曜のほうである。<strong>日曜に仕事をした人は17.7%しかいないが、その人たちは7時間00分働いている。</strong> 平日の8時間17分と比べて1時間17分しか短くない。日曜の仕事は「少し顔を出す」ではなく、ほぼ1日だった。「日曜の仕事は1時間14分」という総平均時間だけを見ていると、ここが完全に見えなくなる。</p>
     <p class="commentary">そこで、<strong>ふだん働いている人(有業者、15歳以上)だけ</strong>の表を使う<a href="#fn19" class="jk-fn">[十九]</a><a href="#fn7" class="jk-fn">[七]</a>。6,820万人ぶんの平均で、単位は分。</p>
     <div class="article-table-wrap"><table class="jk-table">
       <tr><th>行動</th><th>平日</th><th>日曜</th><th>差</th></tr>
@@ -414,11 +440,11 @@
       <tr><td>交際・付き合い</td><td>6分</td><td>17分</td><td>+11分</td></tr>
       <tr><td>ボランティア活動・社会参加活動</td><td>1分</td><td>4分</td><td>+3分</td></tr>
       <tr><td>学習・自己啓発・訓練</td><td>6分</td><td>10分</td><td>+4分</td></tr>
-      <tr><td><strong>3次活動(自由時間)</strong></td><td><strong>252分(4時間12分)</strong></td><td><strong>460分(7時間40分)</strong></td><td><strong>+208分</strong></td></tr>
+      <tr class="jk-group"><td><strong>3次活動(自由時間)</strong></td><td><strong>252分(4時間12分)</strong></td><td><strong>460分(7時間40分)</strong></td><td><strong>+208分</strong></td></tr>
     </table></div>
     <p class="commentary"><strong>働いている人の日曜は、平日より自由時間が208分、3時間28分増える。</strong> 仕事が293分減り、通勤が40分減り、そのぶん睡眠が61分伸びる。</p>
     <p class="commentary">予想と違ったのは<strong>家事である。日曜でも14分しか増えない。</strong> 休みの日だから家事をまとめてやる、という像は、平均で見るかぎり成立していない。育児も7分しか増えない。</p>
-    <p class="commentary">日曜に仕事が120分残っているのも見ておきたい。日曜日に仕事をした人は、10歳以上の全員のうち17.7%いる<a href="#fn1" class="jk-fn">[一]</a>。6人に1人である。この記事では日曜日を「休日」として扱っているが、<strong>「休日」という言葉が全員に等しく当てはまるわけではない。</strong> 土曜が休みの人も、平日が休みの人もいる。日曜の数字は「多くの人にとっての休日」の平均である。</p>
+    <p class="commentary">日曜に仕事が120分残っているのも見ておきたい。上で見たとおり、日曜に仕事をした人は10歳以上の6人に1人で、しかもほぼ1日働いている。この記事では日曜日を「休日」として扱っているが、<strong>「休日」という言葉が全員に等しく当てはまるわけではない。</strong> 土曜が休みの人も、平日が休みの人もいる。日曜の数字は「多くの人にとっての休日」の平均である。</p>
     <p class="commentary">なお、10歳以上の全員で同じ差を取ると、自由時間の増え方は152分、2時間32分になる<a href="#fn1" class="jk-fn">[一]</a><a href="#fn2" class="jk-fn">[二]</a>。この記事の題に置いた数字はこちらで、働いている人だけで見た208分より1時間近く小さい。全員の平均には、平日も日曜も自由な人が混ざっているからだ。</p>
     <h2 id="ch8">増えた3時間28分の行き先を追う</h2>
     <p class="commentary">働いている人の日曜に増える208分は、どこへ行ったのか。増えた分だけで割ってみた。</p>
@@ -480,7 +506,7 @@
       <tr><td>家事</td><td>49.2%</td></tr>
       <tr><td>買い物</td><td>40.8%</td></tr>
       <tr><td>趣味・娯楽</td><td>31.3%</td></tr>
-      <tr><td><strong>仕事</strong></td><td><strong>17.7%</strong></td></tr>
+      <tr class="jk-group"><td><strong>仕事</strong></td><td><strong>17.7%</strong></td></tr>
       <tr><td>スポーツ</td><td>12.3%</td></tr>
       <tr><td>交際・付き合い</td><td>8.7%</td></tr>
       <tr><td>ボランティア活動・社会参加活動</td><td>2.4%</td></tr>
@@ -512,7 +538,7 @@
     <div class="article-table-wrap"><table class="jk-table">
       <tr><th>順位</th><th>都道府県</th><th>自由時間</th></tr>
       <tr><td>1</td><td>北海道</td><td>402分(6時間42分)</td></tr>
-      <tr><td><strong>2</strong></td><td><strong>愛媛県</strong></td><td><strong>395分(6時間35分)</strong></td></tr>
+      <tr class="jk-group"><td><strong>2</strong></td><td><strong>愛媛県</strong></td><td><strong>395分(6時間35分)</strong></td></tr>
       <tr><td>3</td><td>山口県</td><td>389分</td></tr>
       <tr><td>4</td><td>和歌山県</td><td>387分</td></tr>
       <tr><td>5</td><td>徳島県</td><td>386分</td></tr>
@@ -597,7 +623,7 @@
       <tr><td>14</td><td>鬼北町</td><td>2,078</td><td>794</td><td>38.2%</td><td>46.7%</td><td>29.5%</td></tr>
       <tr><td>15</td><td>今治市</td><td>45,840</td><td>17,301</td><td>37.7%</td><td>42.7%</td><td>32.4%</td></tr>
       <tr><td>16</td><td>内子町</td><td>3,799</td><td>1,432</td><td>37.7%</td><td>43.6%</td><td>31.7%</td></tr>
-      <tr><td><strong>17</strong></td><td><strong>大洲市</strong></td><td><strong>10,888</strong></td><td><strong>4,040</strong></td><td><strong>37.1%</strong></td><td><strong>42.2%</strong></td><td><strong>32.1%</strong></td></tr>
+      <tr class="jk-group"><td><strong>17</strong></td><td><strong>大洲市</strong></td><td><strong>10,888</strong></td><td><strong>4,040</strong></td><td><strong>37.1%</strong></td><td><strong>42.2%</strong></td><td><strong>32.1%</strong></td></tr>
       <tr><td>18</td><td>西予市</td><td>8,187</td><td>2,999</td><td>36.6%</td><td>43.6%</td><td>29.5%</td></tr>
       <tr><td>19</td><td>西条市</td><td>32,581</td><td>11,614</td><td>35.6%</td><td>41.1%</td><td>29.7%</td></tr>
       <tr><td>20</td><td>新居浜市</td><td>36,890</td><td>13,109</td><td>35.5%</td><td>40.6%</td><td>30.2%</td></tr>
@@ -626,13 +652,13 @@
     <p class="commentary">この調査には、まさに知りたかった設問があった。<strong>「あなたは現在、どのような活動に参加をしていますか。人と交流する活動についてお答えください」</strong>という複数回答の問いである<a href="#fn16" class="jk-fn">[十六]</a>。</p>
     <div class="article-table-wrap"><table class="jk-table">
       <tr><th>活動</th><th>参加している人</th></tr>
-      <tr><td><strong>スポーツ・趣味・娯楽・教養・自己啓発などの活動(部活動等を含む)</strong></td><td><strong>30.5%</strong></td></tr>
+      <tr class="jk-group"><td><strong>スポーツ・趣味・娯楽・教養・自己啓発などの活動(部活動等を含む)</strong></td><td><strong>30.5%</strong></td></tr>
       <tr><td>PTA・自治会・町内会などの活動</td><td>16.9%</td></tr>
       <tr><td>その他の活動(同窓会活動・宗教や信仰上の活動など)</td><td>5.5%</td></tr>
       <tr><td>子ども・障害者・高齢者など、家族以外の人の手助けをする活動</td><td>4.3%</td></tr>
       <tr><td>上記以外のボランティア活動</td><td>4.1%</td></tr>
       <tr><td>いずれかの活動に参加している(再掲)</td><td>45.8%</td></tr>
-      <tr><td><strong>特に参加はしていない</strong></td><td><strong>53.3%</strong></td></tr>
+      <tr class="jk-group"><td><strong>特に参加はしていない</strong></td><td><strong>53.3%</strong></td></tr>
     </table></div>
     <p class="commentary"><strong>人が集まっているのは、圧倒的に「スポーツ・趣味・娯楽」である。</strong> 30.5%で、2位のPTA・自治会・町内会(16.9%)のほぼ2倍。ボランティア活動は4.1%しかない。</p>
     <p class="commentary">参加している人が45.8%で、そのうち30.5ポイントが趣味の活動だから、<strong>人が集まる場のかなりの部分は「やりたいからやる集まり」</strong>でできている。役が回ってくる集まりではない。</p>
@@ -642,7 +668,7 @@
       <tr><td>家族・親族</td><td>95.3%</td></tr>
       <tr><td>友人・知人</td><td>54.2%</td></tr>
       <tr><td>仕事・学校関係者(職場の同僚・学校の先生等)</td><td>20.6%</td></tr>
-      <tr><td><strong>自治会・町内会・近所の人</strong></td><td><strong>8.4%</strong></td></tr>
+      <tr class="jk-group"><td><strong>自治会・町内会・近所の人</strong></td><td><strong>8.4%</strong></td></tr>
       <tr><td>行政機関(国や自治体)</td><td>5.6%</td></tr>
       <tr><td>社会福祉協議会</td><td>2.2%</td></tr>
       <tr><td>NPO等の民間団体・ボランティア団体</td><td>1.0%</td></tr>

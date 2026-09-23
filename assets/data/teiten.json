@@ -1,0 +1,69 @@
+{
+  "_about": "「データで見る大洲」の定点数字。記事の中で自分で数えた・出典から取った数字を、年1回くらいの目安で入れ替える。値は必ずその記事の本文にある数字と一致させる(tools/make_data_page.py が本文にあるか確かめる)。",
+  "updated": "2026-09-23",
+  "groups": [
+    {
+      "name": "人と暮らし",
+      "items": [
+        {"value": "40,575人", "label": "大洲市の人口(国勢調査)。ピークの昭和30年は78,319人", "asof": "令和2年(2020年)国勢調査", "dir": "eachnews", "slug": "tokei-jinko", "check": "40,575"},
+        {"value": "37,931人", "label": "住民基本台帳の人口。旧大洲地区だけで8割超", "asof": "令和8年3月末", "dir": "eachnews", "slug": "juki-jinko-chiku", "check": "37,931"},
+        {"value": "568人", "label": "大洲の中学生の推計。令和6年度の1,043人から半分近くに", "asof": "令和18年度(2036年度)の推計", "dir": "eachnews", "slug": "ozu-mondai-nenpyo", "check": "568人"},
+        {"value": "44,773円", "label": "民営借家の家賃の平均(月)。10万円超の部屋は統計上ゼロ", "asof": "令和5年住宅・土地統計調査", "dir": "eachnews", "slug": "ozu-yachin-soba", "check": "44,773"},
+        {"value": "19.2%", "label": "市の空家等対策計画が使っている空き家率", "asof": "平成25年(2013年)住宅・土地統計調査", "dir": "eachnews", "slug": "akiya-taisaku-keikaku", "check": "19.2"},
+        {"value": "1.76倍", "label": "南予8市町の水道代の開き(口径13ミリ・月20立方メートル)。大洲は安いほう", "asof": "2026年9月の各市町の料金表", "dir": "eachnews", "slug": "nanyo-suido-ryokin", "check": "1.76倍"},
+        {"value": "年13万円", "label": "同じ年収400万円の3人世帯で、国保料が県内の市町でいちばん違う額。大洲は安いほうから2番目", "asof": "令和8年度の料率で計算", "dir": "eachnews", "slug": "ozu-kokuho-kennai-hikaku", "check": "13万円"},
+        {"value": "3市", "label": "指定ごみ袋がタダの市の数(愛媛20市町のうち)", "asof": "環境省 令和6年度調査", "dir": "eachnews", "slug": "ehime-gomibukuro-20", "check": "3つ"},
+        {"value": "年2,400円", "label": "防犯灯1灯の電気代。市ではなく区・自治会が払う", "asof": "四国電力の料金表で計算(2026年)", "dir": "eachnews", "slug": "ozu-bohantou-denkidai", "check": "2,400円"},
+        {"value": "5万8,732円", "label": "同じ3人家族が大洲と松山に住んだときの1年の差(大洲が安い)", "asof": "2026年9月に計算", "dir": "eachnews", "slug": "ozu-matsuyama-seikatsuhi", "check": "5万8,732"},
+        {"value": "63万7,640円", "label": "軽自動車と普通車の10年の差(法律で決まる税と保険だけ)", "asof": "2026年5月からの税額表で計算", "dir": "eachnews", "slug": "kei-futsu-10nen", "check": "63万7,640"},
+        {"value": "23日", "label": "2025年の猛暑日(35℃以上)。松山は11日。いっぽう熱帯夜は大洲3日・松山56日", "asof": "2025年(気象庁)", "dir": "eachnews", "slug": "ozu-atsusa-samusa-denkidai", "check": "大洲23日"},
+        {"value": "小中とも無償", "label": "給食費。小学校は国の制度、中学校は市の臨時のお金", "asof": "令和8年度", "dir": "eachnews", "slug": "chugakko-kyushoku-muryoka", "check": "小中学校とも無償"}
+      ]
+    },
+    {
+      "name": "市のお金",
+      "items": [
+        {"value": "508億円", "label": "令和8年度の予算(全会計)。当初479億円の骨格予算に6月に29億円が足された", "asof": "令和8年度(6月補正後)", "dir": "eachnews", "slug": "yosan-jishu-zaigen", "check": "508億円"},
+        {"value": "308億7,000万円", "label": "一般会計の歳入。自主財源はその33.3%", "asof": "令和7年度", "dir": "jiyu-kenkyu", "slug": "ozu-zaisei-zentaizo", "check": "308億7,000万円"},
+        {"value": "78億円", "label": "市に入る327億円のうち、市が自分で使い道を決められる額", "asof": "令和6年度決算", "dir": "eachnews", "slug": "ozu-dare-ga-kimeru", "check": "78億円"},
+        {"value": "95億円(34.2%)", "label": "予算でいちばん大きい民生費(福祉)", "asof": "令和8年度当初予算", "dir": "eachnews", "slug": "minsei-hi-saidai", "check": "34.2%"},
+        {"value": "99.7%", "label": "経常収支比率(家計でいう固定費率)。県内20市町で19番目", "asof": "令和6年度決算", "dir": "eachnews", "slug": "ozu-keijoshushi-hiritsu", "check": "99.7%"},
+        {"value": "330億5,127万円", "label": "市の借金(地方債現在高)。人口で割ると1人84万6,600円", "asof": "令和6年度末", "dir": "eachnews", "slug": "ozu-shakkin-hitori-atari", "check": "330億5,127万円"},
+        {"value": "39億2,300万円", "label": "借金の返済がいちばん重くなる年の額", "asof": "令和10年度(2028年度)の計画", "dir": "eachnews", "slug": "ozu-mondai-nenpyo", "check": "39億2,300万円"},
+        {"value": "43億7,464万円", "label": "市税の合計。24年で人口は26%減ったが税収は4.5%減", "asof": "令和6年度", "dir": "jiyu-kenkyu", "slug": "ozu-zeishu-24nen", "check": "43億7,464万円"},
+        {"value": "4億6,079万円", "label": "ふるさと納税の受入額。9年で12.6倍", "asof": "令和7年度", "dir": "eachnews", "slug": "ozu-furusato-18nen", "check": "4億6,079万円"},
+        {"value": "64億100万円", "label": "新しい文化会館の事業費(継続費)", "asof": "令和8年6月定例会", "dir": "eachnews", "slug": "gikai-bunka-kaikan-zaigen", "check": "64億100万円"},
+        {"value": "92.8億円", "label": "長浜港の埋立ての総事業費。工期は令和14年2月まで", "asof": "市の計画", "dir": "eachnews", "slug": "nagahama-umetate-pabukome", "check": "92.8億円"}
+      ]
+    },
+    {
+      "name": "市役所と議会",
+      "items": [
+        {"value": "640人", "label": "市の職員数。20年で240人減ったが、人口1,000人あたりではほぼ変わらない", "asof": "令和7年4月1日", "dir": "eachnews", "slug": "ozu-shokuinsu-kenai-hikaku", "check": "640人"},
+        {"value": "9件", "label": "市への公文書公開請求の件数(1年間)", "asof": "令和5年度", "dir": "eachnews", "slug": "ozu-joho-kokai-tsukaikata", "check": "9件"},
+        {"value": "76本", "label": "「市民ポスト」の回答として市のサイトに残っている数", "asof": "2018年からの8年半ぶん", "dir": "eachnews", "slug": "shimin-post-teigen", "check": "76本"},
+        {"value": "116件・採択8件", "label": "市議会への請願の数と、通った数", "asof": "2008年3月〜2026年6月の会議録", "dir": "eachnews", "slug": "ozu-seigan-hosoru", "check": "116件"},
+        {"value": "307本", "label": "市のサイトで全文が読める市議会の会議録の数", "asof": "平成20年3月〜令和8年6月", "dir": "eachnews", "slug": "ozu-kentoshimasu-kaigiroku", "check": "307本"},
+        {"value": "14回・無投票4回", "label": "合併後の市長選・市議選の回数と、投票が無かった回数", "asof": "合併後の21年(2005〜2026年)", "dir": "jiyu-kenkyu", "slug": "ozu-senkyo-14kai", "check": "14回"},
+        {"value": "5件", "label": "市民が動いて、市の予算や計画が実際に変わった記録", "asof": "2008年3月〜2026年6月の会議録", "dir": "eachnews", "slug": "ozu-shimin-ga-ugoita", "check": "5件"},
+        {"value": "1,374件", "label": "住民監査請求の全国の件数(2年間)。83.3%は請求人1人", "asof": "総務省の調査(2年間)", "dir": "eachnews", "slug": "ozu-jumin-kansa", "check": "1,374件"}
+      ]
+    },
+    {
+      "name": "街と仕事",
+      "items": [
+        {"value": "1,701km", "label": "市道の長さ。県内で松山市に次ぐ2位", "asof": "令和3年4月1日(愛媛の道路2022)", "dir": "eachnews", "slug": "michi-ijihi", "check": "1,701km"},
+        {"value": "0.97%", "label": "水道管の更新率(1年に入れ替える割合)。県内18事業で2位", "asof": "令和6年度", "dir": "eachnews", "slug": "ozu-suido-10nengo", "check": "0.97%"},
+        {"value": "99.6% / 0%", "label": "普通教室(全国)と大洲の学校体育館のエアコン設置率", "asof": "令和8年5月1日現在(文部科学省)", "dir": "eachnews", "slug": "taiikukan-kucho", "check": "99.6%"},
+        {"value": "医療・福祉", "label": "大洲でいちばん多い仕事。40年前は農業だった", "asof": "令和2年(2020年)国勢調査", "dir": "jiyu-kenkyu", "slug": "ozu-sangyo-40nen", "check": "医療・福祉"},
+        {"value": "2,265ヘクタール", "label": "31年で消えた田畑の広さ", "asof": "農林業センサスの31年間", "dir": "jiyu-kenkyu", "slug": "ozu-nogyo-31nen", "check": "2,265"},
+        {"value": "1996年", "label": "地価が下がり始めた年。44年分を並べてもバブルは来ていない", "asof": "44年分の地価(2026年9月時点)", "dir": "jiyu-kenkyu", "slug": "ozu-rosenka-44nen", "check": "1996年"},
+        {"value": "56軒", "label": "旅館業の許可がある宿の数。予約サイトに出てくるのは11軒", "asof": "令和7年12月末", "dir": "jiyu-kenkyu", "slug": "ozu-yado-56ken", "check": "56軒"},
+        {"value": "年12組", "label": "大洲城キャッスルステイの利用組数。平均193万円", "asof": "令和7年度", "dir": "jiyu-kenkyu", "slug": "shirohaku-160man", "check": "年12組"},
+        {"value": "1晩33人", "label": "うかいの乗船客(3,726人÷112日)。昭和49年のピークは1晩257人", "asof": "令和6年", "dir": "eachnews", "slug": "ozu-ukai-kanransha", "check": "1晩33人"},
+        {"value": "1軒〜3軒", "label": "市内の書店の数。数え方で変わる", "asof": "2026年9月5日時点", "dir": "eachnews", "slug": "ozu-shoten-nanken", "check": "1軒"},
+        {"value": "37市町", "label": "「小京都」の会(全国京都会議)の加盟数。大洲はもう入っていない", "asof": "令和7年4月現在", "dir": "eachnews", "slug": "iyo-no-shokyoto", "check": "37市町"}
+      ]
+    }
+  ]
+}

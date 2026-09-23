@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "hijikawa-ayu-yugyo",
+    date: "2026-09-24",
+    title: "肱川で鮎を釣るには、いくら払って、どこなら釣っていいのか",
+    category: "kurashi",
+    source: "愛媛県報（肱川漁業協同組合の遊漁規則）、愛媛県漁業調整規則、水産庁、大洲市議会会議録ほか",
+    sourceDate: "2026-06-16",
+    tags: ["産業・農業"],
+  },
+  {
     slug: "ozu-mieru-yama",
     date: "2026-09-15",
     title: "大洲の町なかから、どの山が見えるのか計算した。市役所から神南山は見えず、北の壺神山は伊予市の山だった",

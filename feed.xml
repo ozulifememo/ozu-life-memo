@@ -5,8 +5,16 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Wed, 23 Sep 2026 23:34:57 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 24 Sep 2026 00:04:04 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>肱川で鮎を釣るには、いくら払って、どこなら釣っていいのか</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/hijikawa-ayu-yugyo.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/hijikawa-ayu-yugyo.html</guid>
+      <pubDate>Thu, 24 Sep 2026 09:00:00 +0900</pubDate>
+      <description>肱川で鮎を釣るには、肱川漁協に遊漁料を払う。友釣りは1日1,500円・1年4,000円、竿釣りは1日1,000円・1年2,500円で、中学生以下はどちらも無料。解禁は6月1日の午前5時。釣ってはいけない区域は、漁協の規則と県の規則を合わせて14か所ある。県内11の漁協と、高知の仁淀川・四万十川の料金とも比べた。</description>
+      <category>産業・農業</category>
+    </item>
     <item>
       <title>大洲の町なかから、どの山が見えるのか計算した。市役所から神南山は見えず、北の壺神山は伊予市の山だった</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-mieru-yama.html</link>
@@ -245,14 +253,6 @@
       <description>内子の観光はいい、と言われることがある。その印象を数字で確かめられるのか、入込客数・宿泊比率・1人あたり消費額と、運営の仕組みの違いから調べた。消費額の正体は掛け算だった。</description>
       <category>観光</category>
       <category>まちづくり</category>
-    </item>
-    <item>
-      <title>「観光」は、仕える国を探す言葉だった。日本人の50.6%は泊まりの旅に出ない</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/kanko-towa-nanika.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/kanko-towa-nanika.html</guid>
-      <pubDate>Sat, 12 Sep 2026 09:00:00 +0900</pubDate>
-      <description>「観光」の語源は『易経』で、もともと旅の意味ではなかった。日本語の書名に初めて出るのは1826年の囲碁の本で、明治には傘や織物の商品名だった。語源から令和の観光白書まで、旅の意味が何に押されて変わってきたかを一次資料と統計でたどり、大洲で同じ変化がどう起きたかを並べた。</description>
-      <category>観光</category>
     </item>
   </channel>
 </rss>

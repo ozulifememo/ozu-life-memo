@@ -2305,6 +2305,8 @@ section {
 
 .article-random-photo img {
   width: 100%;
+  /* img の height 属性(1200など)がそのまま高さになり、スマホで縦に伸びて切れるのを防ぐ(頭の写真と同じ直し。2026-09-24) */
+  height: auto;
   max-height: 420px;
   object-fit: cover;
   border-radius: var(--radius-lg);

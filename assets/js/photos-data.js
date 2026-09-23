@@ -106,7 +106,12 @@ const OZU_PHOTO_LIBRARY = [
   { file: "photos/ozu-photo-78.jpg", alt: "大洲市立病院の建物と駐車場", topics: ["医療", "病院", "公共施設"] },
   { file: "photos/ozu-photo-80.jpg", alt: "霧のかかる山あいの橋", topics: ["山間部", "道路", "天気"] },
   { file: "photos/ozu-photo-81.jpg", alt: "木立の向こうに見える高架橋の建設現場", topics: ["高速道路", "道路建設", "インフラ"] },
-  { file: "photos/ozu-photo-82.jpg", alt: "山あいで進む高架橋の建設工事", topics: ["高速道路", "道路建設", "インフラ"] }
+  { file: "photos/ozu-photo-82.jpg", alt: "山あいで進む高架橋の建設工事", topics: ["高速道路", "道路建設", "インフラ"] },  // ↓2026-09-20 撮影(9/23に掲載)
+  { file: "photos/ozu-photo-83.jpg", alt: "石垣の下から見上げる大洲城の天守と台所櫓", topics: ["大洲城", "観光", "歴史"] },
+  { file: "photos/ozu-photo-84.jpg", alt: "木々の間から見上げる大洲城の天守と石垣", topics: ["大洲城", "観光", "歴史"] },
+  { file: "photos/ozu-photo-85.jpg", alt: "山すその線路を走る列車と、肱川にかかる鉄橋", topics: ["鉄道", "肱川", "交通"] },
+  { file: "photos/ozu-photo-86.jpg", alt: "城山から見た肱川と大洲の市街地、山並みと空", topics: ["肱川", "市街地", "俯瞰", "空"] },
+  { file: "photos/ozu-photo-87.jpg", alt: "肱川の岸に立つ肱川漁業協同組合の禁漁区の看板", topics: ["肱川", "鮎", "漁業", "川"], board: true }
 ];
 
 // 記事のメイン写真に使える写真(掲示物が主役のものを除く)

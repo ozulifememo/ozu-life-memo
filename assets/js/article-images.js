@@ -13,6 +13,11 @@
 // ぶつからないようにするため)。
 
 const OZU_ARTICLE_IMAGES = {
+  // ── 2026-09-20 撮影の写真(9/23に掲載) ────────────────
+  "ozu-jo-nihonichi": { file: "photos/ozu-photo-83.jpg" },
+  "ozu-jo-kawara-kimei": { file: "photos/ozu-photo-83.jpg" },
+  "ozu-jo-matsu-hinoki": { file: "photos/ozu-photo-84.jpg" },
+  "ozu-kisha-densha": { file: "photos/ozu-photo-85.jpg" },
   // ── 行政・市役所 ──────────────────────────────
   "furusato-nozei-r5-jisseki": { file: "photos/ozu-photo-17.jpg" },
   "furusato-nozei-yukue": { file: "photos/ozu-photo-17.jpg" },
@@ -118,7 +123,7 @@ const OZU_ARTICLE_IMAGES = {
   "michi-ijihi": { file: "photos/ozu-photo-60.jpg" },
   "ozu-toori-namae": { file: "photos/ozu-photo-63.jpg" },
   "shiyuchi-baikyaku": { file: "photos/ozu-photo-42.jpg" },
-  "sora-tobu-kuruma": { file: "photos/ozu-photo-14.jpg" },
+  "sora-tobu-kuruma": { file: "photos/ozu-photo-86.jpg" },
   // ── 2026-09-06 追加 ──────────────────────────────
   "ozu-kyoshitsu-koza": { file: "photos/ozu-photo-16.jpg" },
   "ozu-iinkai-jikko": { file: "photos/ozu-photo-20.jpg" },
@@ -334,7 +339,7 @@ const OZU_ARTICLE_PHOTO_WANTED = [
     theme: "駅・道路・タクシー",
     subjects: "伊予大洲駅の駅舎とタクシー乗り場、松山自動車道の4車線化工事の区間(歩道橋などから)、高速のインター入口。",
     slugs: ["ozu-taxi-rideshare", "shikoku-shinkansen-53nen", "matsuyama-do-4shasen-zando",
-            "ozu-kisha-densha", "ozu-kotsu-anzen-kofukin", "jr-1025oku-zeikin", "ozu-shimin-ga-ugoita", "seikatsu-doro-30km"]
+            "ozu-kotsu-anzen-kofukin", "jr-1025oku-zeikin", "ozu-shimin-ga-ugoita", "seikatsu-doro-30km"]
   },
   {
     theme: "電波・通信のインフラ",
@@ -345,7 +350,7 @@ const OZU_ARTICLE_PHOTO_WANTED = [
     theme: "城下町の観光施設",
     subjects: "しろしたテラスの外観と看板、大洲城の入口と券売所、おおず赤煉瓦館、まちなかの観光客の流れ(顔が写らない角度で)。",
     slugs: ["shiroshita-terrace-unei", "ozu-shitei-kanrisha", "kanko-rieki-yukue",
-            "ozu-namae-no-yurai", "uchiko-ozu-kanko", "ozu-jo-matsu-hinoki", "ozu-jo-kawara-kimei", "ozu-jo-nihonichi"]
+            "ozu-namae-no-yurai", "uchiko-ozu-kanko"]
   },
   {
     theme: "大洲の会社・経済",

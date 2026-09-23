@@ -2260,6 +2260,9 @@ section {
 
 .article-hero-img img {
   width: 100%;
+  /* 高さは幅から決める。img の height 属性(750など)が残っていると aspect-ratio より優先され、
+     スマホで幅372px・高さ750pxの縦長になっていた(2026-09-23に実測して直した) */
+  height: auto;
   aspect-ratio: 16 / 9;
   object-fit: cover;
   border-radius: var(--radius-lg);
@@ -4134,6 +4137,7 @@ h1.site-intro-text {
 
 .article-hero-img img {
   width: 100%;
+  height: auto;
   aspect-ratio: 16 / 9;
   object-fit: cover;
   border-radius: var(--radius-sm);

@@ -29,6 +29,24 @@
   "description": "お探しのページは見つかりませんでした。OZU LIFE MEMOは大洲市の非公式生活情報サイトです。記事一覧から探し直せます。"
 }
 </script>
+<script>
+// 移った記事・下げた記事の対応表(2026-09-23〜)。記事のファイルを消したあと、古いリンクから来た人をここで案内する。
+// 値が文字列なら、その場所へ自動で移る。null なら「下げた」と表示する。
+window.OZU_MOVED = {
+  "eachnews/danjo-kyuyo-sai.html": "eachnews/danjo-kyuyo-naiwake.html",   // 2026-09-23 まとめた
+  "eachnews/shoene-hojo-keisan.html": "eachnews/shoene-kaden-hojo.html",   // 2026-09-23 まとめた
+  "eachnews/ozu-kinenbi-mise.html": null,   // 2026-09-23 下げた
+};
+(function () {
+  var base = "/ozu-life-memo/", p = location.pathname, i = p.indexOf(base);
+  if (i < 0) return;
+  var key = decodeURIComponent(p.slice(i + base.length));
+  if (!Object.prototype.hasOwnProperty.call(window.OZU_MOVED, key)) return;
+  var to = window.OZU_MOVED[key];
+  if (to) { location.replace(base + to + location.hash); return; }
+  window.OZU_REMOVED = true;
+})();
+</script>
 </head>
 <body>
 
@@ -37,8 +55,8 @@
 
 <section class="page-hero">
   <div class="wrap">
-    <h1>ページが見つかりません</h1>
-    <p>アドレスが変わったか、記事のタイトルと一緒にファイル名も変わった可能性があります。</p>
+    <h1 id="nf-title">ページが見つかりません</h1>
+    <p id="nf-lead">アドレスが変わったか、記事のタイトルと一緒にファイル名も変わった可能性があります。</p>
   </div>
 </section>
 
@@ -58,6 +76,12 @@
 <div data-site-footer></div>
 <div data-site-modal></div>
 
+<script>
+  if (window.OZU_REMOVED) {
+    document.getElementById("nf-title").textContent = "この記事は下げました";
+    document.getElementById("nf-lead").textContent = "内容を見直して、サイトから外しました。ほかの記事は、下の一覧から探せます。";
+  }
+</script>
 <script src="/ozu-life-memo/assets/js/site-chrome.js"></script>
 <script src="/ozu-life-memo/assets/js/main.js"></script>
   <script data-goatcounter="https://ozulifememo.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>

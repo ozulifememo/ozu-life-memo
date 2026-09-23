@@ -23,8 +23,6 @@ const OZU_ARTICLE_IMAGES = {
   "aihara-san": { file: "photos/ozu-photo-17.jpg" },
   "note-taiyou-konatsu-matome": { file: "photos/ozu-photo-18.jpg" },
   "seikatsuhogo-tsuika-kyufu": { file: "photos/ozu-photo-17.jpg" },
-
-  "danjo-kyuyo-sai": { file: "photos/ozu-photo-20.jpg" },
   "danjo-kyuyo-naiwake": { file: "photos/ozu-photo-20.jpg" },
   "nyusatsu-jitsurei": { file: "photos/ozu-photo-20.jpg" },
   "chokai-shobun-kouhyo": { file: "photos/ozu-photo-20.jpg" },
@@ -124,7 +122,6 @@ const OZU_ARTICLE_IMAGES = {
   // ── 2026-09-06 追加 ──────────────────────────────
   "ozu-kyoshitsu-koza": { file: "photos/ozu-photo-16.jpg" },
   "ozu-iinkai-jikko": { file: "photos/ozu-photo-20.jpg" },
-  "ozu-kinenbi-mise": { file: "photos/ozu-photo-03.jpg" },
 };
 
 // 「この記事に合う写真がまだ無い」ものの一覧。
@@ -142,7 +139,8 @@ const OZU_ARTICLE_NO_PHOTO = {
   "ozu-toilecar-kumamoto": "車両が市外に出ていることが多く、確実に撮れない",
   "smart-shrink-ozu": "市長答弁と政策論。被写体が無い",
   "kishou-bosai-advisor": "県の人事と市の方針の話。被写体が無い",
-  "gappei-tokureisai-owari": "合併特例債の借入額の話。被写体が無い",
+  "gappei-tokureisai-owari": "合併特例債の借入額の話。被写体が無い",
+
 
   // ── 2026-09-20、どこにも登録されていなかった112本を仕分けた。
   //    ここは「撮るべき被写体が無い」と判断した46本。
@@ -222,7 +220,7 @@ const OZU_ARTICLE_PHOTO_WANTED = [
     theme: "スーパー・商業施設",
     subjects: "マルナカ大洲店の外観、フレスポ大洲、アクトピア大洲の解体現場・跡地、家電量販店、カラオケ店の外観と料金表、コンビニのマルチコピー機。",
     slugs: ["fuji-point", "fuji-marunaka-aeon-keii", "actopia-ozu-kaitai",
-            "shoene-kaden-hojo", "shoene-hojo-keisan",
+            "shoene-kaden-hojo",
             "ozu-karaoke-hikaku", "ozu-conveni-kofu",
             "ozu-shohinken-nagare", "ozu-supa-toho-10pun", "ozu-conveni-itsukara", "ozu-ramenshop-nazo", "ozu-shoten-nanken"]
   },
@@ -380,7 +378,8 @@ const OZU_ARTICLE_PHOTO_WANTED = [
     theme: "ハゼの細道",
     subjects: "「ハゼの細道」に植えられたハゼの並木、樹名板、紅葉の時期の様子。",
     slugs: ["ozu-haze-no-hosomichi"]
-  },
+  },
+
 
   // ── 2026-09-20に足した新しいテーマ
   {

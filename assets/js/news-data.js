@@ -2267,7 +2267,7 @@ const OZU_NEWS = [
     slug: "kosodate-ranking-1i",
     date: "2026-08-16",
     sourceDate: "2023-06-12",
-    title: "「子育てしやすい自治体」愛媛1位は2023年。落ちたのではなく、数えられなくなった",
+    title: "大洲が「子育てしやすい」1位だったのは2023年。追いつかれ、ものさしが変わった",
     category: "ima",
     source: "大洲市ホームページ ほか",
     tags: ["子育て・教育"],

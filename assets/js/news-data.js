@@ -2306,7 +2306,7 @@ const OZU_NEWS = [
     date: "2026-08-15",
     sourceDate: "2025-01-01",
     sourceDateKind: "版",
-    title: "大洲市のＤＸ（デジタル化）、結局どこまで進んでいるの？",
+    title: "生成AIの予算110万円が0円になっていた。やめたのではなく、選べなかった",
     category: "shiten",
     source: "市役所ＨＰ",
     tags: ["議会・行政"],

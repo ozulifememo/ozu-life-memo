@@ -4957,6 +4957,9 @@ figure.zu p.zu-note {
   font-variant-numeric: tabular-nums;
 }
 .zu-seg.is-light .zu-seg-v { color: var(--color-text); }
+@media (max-width: 560px) {
+  .zu-seg-v.is-wide { display: none; }
+}
 
 /* 縦棒(年ごと) */
 .zu-col { --zu-mark: var(--zu-c1); }
@@ -5108,6 +5111,22 @@ figure.zu p.zu-note {
 }
 .zu-pt.is-below.is-start { transform: translate(-4px, calc(100% + 9px)); }
 .zu-pt.is-below.is-end { transform: translate(calc(-100% + 4px), calc(100% + 9px)); }
+/* 最後の点の数字は、右の余白に。系列の色の短い線で、どの線の数字かを示す */
+.zu-pt.is-gut {
+  left: calc(100% + 8px);
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transform: translateY(50%);
+}
+.zu-pt.is-gut i {
+  display: inline-block;
+  width: 10px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--c, var(--zu-c1));
+}
 .zu-line-x {
   position: relative;
   height: 2.6em;
@@ -5310,6 +5329,76 @@ figure.zu-table .article-table-wrap { margin: 0; }
   background: var(--c, var(--zu-c1));
   vertical-align: -1px;
 }
+
+/* 月のカレンダー(あてはまる月を、色の帯でつなげる) */
+.zu-cal { --zu-mark: var(--zu-c6); }
+figure.zu-cal .article-table-wrap { margin: 0; }
+.zu-cal-table { table-layout: fixed; }
+/* 幅は rem で決める(見出しの字が小さいので、em だと列が細くなりすぎる) */
+.zu-cal-table th:first-child { width: 9rem; }
+.zu-cal-table thead th {
+  padding: 6px 0;
+  text-align: center;
+  font-size: 11px;
+}
+.zu-cal-table thead th:first-child { padding-left: 12px; }
+.zu-cal-table tbody th {
+  padding: 8px 10px 8px 12px;
+  font-size: var(--text-xs);
+  line-height: 1.5;
+  white-space: normal;
+}
+.zu-cal-table tbody td {
+  padding: 0;
+  vertical-align: middle;
+}
+/* 月の区切りは、帯の下にだけ薄く見せる(帯の上に線を引くと帯が細切れに見える) */
+.zu-cal-table tbody td:not(.zu-cal-on) {
+  background-image: linear-gradient(var(--zu-grid), var(--zu-grid));
+  background-size: 1px 14px;
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+.zu-cal-on span {
+  display: block;
+  height: 14px;
+  background: var(--c, var(--zu-c1));
+}
+.zu-cal-on.is-s span { margin-left: 3px; border-radius: 4px 0 0 4px; }
+.zu-cal-on.is-e span { margin-right: 3px; border-radius: 0 4px 4px 0; }
+.zu-cal-on.is-s.is-e span { border-radius: 4px; }
+@media (max-width: 560px) {
+  .zu-cal-table th:first-child { width: 6.8rem; }
+  .zu-cal-table thead th { font-size: 10px; }
+}
+
+/* スマホでは、表の見出しを折り返してよいことにする。
+   見出しを1行に固定すると、長い見出しの列だけが広がり、1列目の名前が1字ずつ縦に折れて、
+   右の列が画面の外に押し出されていた(記事の表ぜんぶに効く) */
+@media (max-width: 560px) {
+  .article-table thead th { white-space: normal; }
+  .article-table tbody tr > :first-child { min-width: 5.5em; }
+}
+
+/* 方位の図(真ん中の地点から見た方角と距離) */
+.zu-compass { --zu-mark: var(--zu-c3); }
+.zu-compass-svg {
+  display: block;
+  width: 100%;
+  max-width: 440px;
+  height: auto;
+  margin: 0 auto;
+  overflow: visible;
+}
+.zu-cp-axis { stroke: var(--zu-grid); stroke-width: 1; }
+.zu-cp-ring { fill: none; stroke: var(--zu-axis); stroke-width: 1; }
+.zu-cp-rlab { font-size: 11px; fill: var(--color-text-faint); }
+.zu-cp-dir { font-size: 14px; font-weight: 700; fill: var(--color-text-muted); }
+.zu-cp-center { fill: var(--color-text); }
+.zu-cp-clab { font-size: 12px; font-weight: 700; fill: var(--color-text); }
+.zu-cp-pt { stroke: var(--zu-surface); stroke-width: 2; }
+.zu-cp-name { font-size: 15px; font-weight: 700; fill: var(--color-text); }
+.zu-cp-sub { font-size: 12px; fill: var(--color-text-muted); }
 
 /* 数字の表(図のとなりに置く、読み上げ・確かめ用) */
 details.zu-data {

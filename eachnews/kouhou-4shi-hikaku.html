@@ -106,8 +106,9 @@
 
     <h2>大洲は、紙面の45%が「お知らせ」</h2>
     <p class="commentary">結果はこうなった。</p>
+    <!-- zuhyo:kubun-hl -->
     <div class="article-table-wrap">
-    <table class="article-table">
+    <table data-zu="kubun-hl" class="article-table">
       <thead><tr><th>区分</th><th>大洲</th><th>内子</th><th>八幡浜</th><th>宇和島</th></tr></thead>
       <tbody>
         <tr><td>表紙まわり</td><td>3.4%</td><td>6.6%</td><td>6.8%</td><td>10.7%</td></tr>
@@ -115,12 +116,13 @@
         <tr><td>まちの話題</td><td>10.4%</td><td>14.9%</td><td>16.1%</td><td>14.3%</td></tr>
         <tr><td>人の紹介</td><td>12.1%</td><td>15.7%</td><td>0%</td><td>7.1%</td></tr>
         <tr><td>連載・文化・図書館</td><td>6.7%</td><td>6.4%</td><td>16.1%</td><td>3.6%</td></tr>
-        <tr><td><strong>お知らせ</strong></td><td><strong>44.9%</strong></td><td><strong>32.4%</strong></td><td><strong>31.0%</strong></td><td><strong>34.2%</strong></td></tr>
+        <tr class="zu-hl"><td><strong>お知らせ</strong></td><td><strong>44.9%</strong></td><td><strong>32.4%</strong></td><td><strong>31.0%</strong></td><td><strong>34.2%</strong></td></tr>
         <tr><td>健康・子育て・福祉</td><td>6.7%</td><td>6.9%</td><td>14.0%</td><td>7.1%</td></tr>
         <tr><td>首長・議会</td><td>1.1%</td><td>0%</td><td>0.6%</td><td>0.9%</td></tr>
       </tbody>
     </table>
     </div>
+    <!-- /zuhyo:kubun-hl -->
     <div class="article-diagram">
       <div class="diagram-title">紙面を何に使っているか（12号・1,404ページを区分ごとに数えた割合）</div>
       <svg viewBox="0 0 420 272" role="img" aria-label="広報紙4紙の紙面を区分ごとに分けた割合の帯グラフ。お知らせは大洲44.9%、内子32.4%、八幡浜31.0%、宇和島34.2%。特集・巻頭は宇和島22.0%がいちばん多く、健康・子育て・福祉は八幡浜14.0%がいちばん多い。">
@@ -200,6 +202,38 @@
     <p class="commentary">中身は、手続きや募集だけではない。10月号には前の年度の決算と財政の健全化の数字、12月号には職員の人事行政の報告、5月号にはその年度の予算が載る。市の決まった報告の多くが、この欄に入っている。</p>
     <p class="commentary">健康や子育ての欄まで「お知らせ」に足すと、大洲は51.6%、八幡浜45.0%、宇和島41.3%、内子39.3%になる。八幡浜は、お知らせの欄は少ないが、健康と子育ての欄が厚い。</p>
     <p class="commentary">文字の量も、大洲がいちばん多かった。表紙を除いた1ページあたりの文字数は、大洲<strong>1,129字</strong>、内子960字、宇和島891字、八幡浜877字。<strong>大洲の広報は、4紙でいちばん文字の詰まった紙面</strong>である。</p>
+    <!-- zuhyo:mojisu -->
+    <figure class="zu zu-bar" data-zu="mojisu">
+      <figcaption class="zu-title">表紙を除いた1ページあたりの文字数</figcaption>
+      <p class="zu-sub">大洲の広報は、4紙でいちばん文字が詰まっている</p>
+      <div class="zu-bars has-hl">
+        <div class="zu-bar-row is-hl">
+          <span class="zu-bar-label">広報おおず</span>
+          <span class="zu-bar-lines">
+            <span class="zu-bar-line"><span class="zu-bar-fill" style="--w:100%"></span><span class="zu-bar-v">1,129字</span></span>
+          </span>
+        </div>
+        <div class="zu-bar-row">
+          <span class="zu-bar-label">広報うちこ</span>
+          <span class="zu-bar-lines">
+            <span class="zu-bar-line"><span class="zu-bar-fill" style="--w:85.03%"></span><span class="zu-bar-v">960字</span></span>
+          </span>
+        </div>
+        <div class="zu-bar-row">
+          <span class="zu-bar-label">広報うわじま</span>
+          <span class="zu-bar-lines">
+            <span class="zu-bar-line"><span class="zu-bar-fill" style="--w:78.92%"></span><span class="zu-bar-v">891字</span></span>
+          </span>
+        </div>
+        <div class="zu-bar-row">
+          <span class="zu-bar-label">広報やわたはま</span>
+          <span class="zu-bar-lines">
+            <span class="zu-bar-line"><span class="zu-bar-fill" style="--w:77.68%"></span><span class="zu-bar-v">877字</span></span>
+          </span>
+        </div>
+      </div>
+    </figure>
+    <!-- /zuhyo:mojisu -->
     <h2>ほかの3紙は、何にページを使っているのか</h2>
     <p class="commentary">お知らせが少ない分、ほかの3紙はそれぞれ別のところにページを使っている。</p>
     <p class="commentary"><strong>宇和島</strong>は特集が厚い。紙面の22.0%、1号平均6.2ページで、4紙でいちばん多い。表紙の次の見開きには、インスタグラムに投稿された写真から選ぶ「宇和島百景」と目次が入る。4月号の特集は、市長が議会で述べた施政方針を8ページで紹介していた。</p>
@@ -209,17 +243,19 @@
     <h2>市長が出てくるのは、どこか</h2>
     <p class="commentary">市長や町長があいさつするページそのものは、4紙とも少なかった。大洲は1月号の新年のあいさつと、7月号の「二宮市政3期目がスタート」。八幡浜と宇和島も、1月号の新年のあいさつと、宇和島は11月号の所信表明の1ページである。内子には、町長のあいさつのページは無かった。</p>
     <p class="commentary">違いが出たのは、<strong>ニュースの面</strong>だった。まちの話題のページのうち、市長（内子は町長）という言葉が出てくるページの割合を数えた。</p>
+    <!-- zuhyo:shicho-bar -->
     <div class="article-table-wrap">
-    <table class="article-table">
+    <table data-zu="shicho-bar" class="article-table">
       <thead><tr><th>広報紙</th><th>まちの話題のページ</th><th>市長・町長が出てくる</th><th>割合</th></tr></thead>
       <tbody>
-        <tr><td>広報おおず</td><td>37</td><td>24</td><td><strong>65%</strong></td></tr>
-        <tr><td>広報うちこ</td><td>56</td><td>12</td><td>21%</td></tr>
-        <tr><td>広報やわたはま</td><td>54</td><td>5</td><td>9%</td></tr>
-        <tr><td>広報うわじま</td><td>48</td><td>3</td><td>6%</td></tr>
+        <tr class="zu-hl"><td>広報おおず</td><td>37</td><td>24</td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v"><strong>65%</strong></span><span class="zu-cb-bar" style="--w:100%"></span></span></td></tr>
+        <tr><td>広報うちこ</td><td>56</td><td>12</td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v">21%</span><span class="zu-cb-bar" style="--w:32.31%"></span></span></td></tr>
+        <tr><td>広報やわたはま</td><td>54</td><td>5</td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v">9%</span><span class="zu-cb-bar" style="--w:13.85%"></span></span></td></tr>
+        <tr><td>広報うわじま</td><td>48</td><td>3</td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v">6%</span><span class="zu-cb-bar" style="--w:9.23%"></span></span></td></tr>
       </tbody>
     </table>
     </div>
+    <!-- /zuhyo:shicho-bar -->
 
     <p class="commentary">大洲のニュースの面は、<strong>3ページに2ページ</strong>に市長が出てくる。</p>
     <p class="commentary">出方には型がある。大会の結果を「二宮市長に報告しました」、受賞者が「二宮市長を表敬訪問しました」、地域おこし協力隊に「二宮市長から辞令が手渡されました」、寄付に「二宮市長より感謝状の贈呈」、新しい施設の落成式で「二宮市長が」あいさつ。<strong>市長に報告したり、市長から何かを受け取ったりしたできごと</strong>が、ニュースの面の多くを占めている。</p>

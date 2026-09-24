@@ -5296,8 +5296,8 @@ figure.zu-table .article-table tbody th {
   white-space: normal;
   min-width: 7em;
 }
-.article-table .zu-nw { white-space: nowrap; }
-.article-table .zu-small {
+table .zu-nw { white-space: nowrap; }
+table .zu-small {
   display: block;
   margin-top: 2px;
   font-size: var(--text-xs);
@@ -5306,11 +5306,12 @@ figure.zu-table .article-table tbody th {
   color: var(--color-text-muted);
 }
 figure.zu-table .article-table-wrap { margin: 0; }
-.article-table tr.zu-hl > * {
+/* 自由研究の表(jk-table)など、どの表でも効くように table で書く */
+table tr.zu-hl > * {
   background: var(--zu-hl-bg);
   font-weight: 700;
 }
-.article-table td.zu-cb-cell { min-width: 7.5em; }
+table td.zu-cb-cell { min-width: 7.5em; }
 .zu-cb {
   display: flex;
   flex-direction: column;
@@ -5330,8 +5331,8 @@ figure.zu-table .article-table-wrap { margin: 0; }
   border-radius: 3px;
   background: var(--c, var(--zu-c1));
 }
-.article-table tr.zu-hl .zu-cb-bar { background: var(--zu-hl); }
-.article-table .zu-mark {
+table tr.zu-hl .zu-cb-bar { background: var(--zu-hl); }
+table .zu-mark {
   display: inline-block;
   width: 10px;
   height: 10px;

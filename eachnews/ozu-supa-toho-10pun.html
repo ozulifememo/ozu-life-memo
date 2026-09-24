@@ -88,6 +88,33 @@
     </div>
 
     <p class="commentary">ここでいちばん気になったのは、<strong>年齢で数字がずれること</strong>だ。人口全体では23.2%が800メートル圏内にいるのに、65歳以上に限ると圏内は17.5%しかいない。逆に、最寄り店まで4キロ以上ある場所に住む人は人口の19.3%だが、65歳以上でみると26.2%にはね上がる。高齢単身世帯も同じで、市内2,895世帯のうち800メートル圏内は531世帯、18.3%にとどまる。<strong>歩く距離が伸びるほど、そこに住んでいるのは高齢者になる。</strong></p>
+    <!-- zuhyo:nenrei -->
+    <figure class="zu zu-bar" data-zu="nenrei">
+      <figcaption class="zu-title">歩く距離が伸びるほど、そこに住んでいるのは高齢者になる</figcaption>
+      <p class="zu-sub">最寄りのスーパーまでの直線距離ごとの割合</p>
+      <ul class="zu-legend">
+        <li><span class="zu-sw" style="--c:var(--zu-mute)"></span>人口全体</li>
+        <li><span class="zu-sw" style="--c:var(--zu-c2)"></span>65歳以上</li>
+      </ul>
+      <div class="zu-bars" style="--fmax:0.76">
+        <div class="zu-bar-row">
+          <span class="zu-bar-label">800m以内に住む</span>
+          <span class="zu-bar-lines is-multi">
+            <span class="zu-bar-line"><span class="zu-bar-fill" style="--w:23.2%;--c:var(--zu-mute)"></span><span class="zu-bar-v">23.2%</span></span>
+            <span class="zu-bar-line"><span class="zu-bar-fill" style="--w:17.5%;--c:var(--zu-c2)"></span><span class="zu-bar-v">17.5%</span></span>
+          </span>
+        </div>
+        <div class="zu-bar-row">
+          <span class="zu-bar-label">4km以上離れて住む</span>
+          <span class="zu-bar-lines is-multi">
+            <span class="zu-bar-line"><span class="zu-bar-fill" style="--w:19.3%;--c:var(--zu-mute)"></span><span class="zu-bar-v">19.3%</span></span>
+            <span class="zu-bar-line"><span class="zu-bar-fill" style="--w:26.2%;--c:var(--zu-c2)"></span><span class="zu-bar-v">26.2%</span></span>
+          </span>
+        </div>
+      </div>
+      <p class="zu-note">高齢単身世帯は、市内2,895世帯のうち800m圏内が531世帯(18.3%)。</p>
+    </figure>
+    <!-- /zuhyo:nenrei -->
     <h2>どうやって数えたか。500mメッシュの上に、7つの店を置いた</h2>
     <p class="commentary">使った材料は3つだ。</p>
     <p class="commentary">1つ目は、<strong>国勢調査の500メートルメッシュ人口</strong>。国は国勢調査の結果を、緯度経度で切った500メートル四方のマス目ごとに公開している。e-Statの統計GISから、大洲市が入る1次メッシュ「5032」の表をまるごと落とした。マス目は5,159個あり、そのうち中心点が大洲市域に入るものは<strong>751個</strong>だった。</p>
@@ -115,6 +142,39 @@
     <p class="commentary">3つの店が続けて閉じたからだ。</p>
     <p class="commentary">同じ計算を、閉店前の2023年春の店舗配置でやり直すと、800メートル圏内は<strong>14,339人（35.8%）</strong>になる。いまは9,282人だから、<strong>5,057人</strong>が圏外に出た計算になる。65歳以上でみると4,384人が2,575人へ、<strong>1,809人</strong>減った。高齢単身世帯は971世帯から531世帯へ、ほぼ半分になっている。</p>
     <p class="commentary">500メートル圏内はもっと激しい。8,178人が4,411人へ、<strong>3,767人</strong>の減である。</p>
+    <!-- zuhyo:sannen -->
+    <figure class="zu zu-bar" data-zu="sannen">
+      <figcaption class="zu-title">中心部の3店が閉じて、800m圏内の人は5,057人減った</figcaption>
+      <ul class="zu-legend">
+        <li><span class="zu-sw" style="--c:var(--zu-mute)"></span>2023年春の店の配置</li>
+        <li><span class="zu-sw" style="--c:var(--zu-c2)"></span>2026年9月の店の配置</li>
+      </ul>
+      <div class="zu-bars" style="--fmax:0.73">
+        <div class="zu-bar-row">
+          <span class="zu-bar-label">800m以内に住む人</span>
+          <span class="zu-bar-lines is-multi">
+            <span class="zu-bar-line"><span class="zu-bar-fill" style="--w:100%;--c:var(--zu-mute)"></span><span class="zu-bar-v">14,339人</span></span>
+            <span class="zu-bar-line"><span class="zu-bar-fill" style="--w:64.73%;--c:var(--zu-c2)"></span><span class="zu-bar-v">9,282人</span></span>
+          </span>
+        </div>
+        <div class="zu-bar-row">
+          <span class="zu-bar-label">500m以内に住む人</span>
+          <span class="zu-bar-lines is-multi">
+            <span class="zu-bar-line"><span class="zu-bar-fill" style="--w:57.03%;--c:var(--zu-mute)"></span><span class="zu-bar-v">8,178人</span></span>
+            <span class="zu-bar-line"><span class="zu-bar-fill" style="--w:30.76%;--c:var(--zu-c2)"></span><span class="zu-bar-v">4,411人</span></span>
+          </span>
+        </div>
+        <div class="zu-bar-row">
+          <span class="zu-bar-label">800m以内に住む65歳以上</span>
+          <span class="zu-bar-lines is-multi">
+            <span class="zu-bar-line"><span class="zu-bar-fill" style="--w:30.57%;--c:var(--zu-mute)"></span><span class="zu-bar-v">4,384人</span></span>
+            <span class="zu-bar-line"><span class="zu-bar-fill" style="--w:17.96%;--c:var(--zu-c2)"></span><span class="zu-bar-v">2,575人</span></span>
+          </span>
+        </div>
+      </div>
+      <p class="zu-note">閉じたのは、フレッシュバリュー大洲店(2023年6月末)、ショッパーズ大洲三の丸店(2024年6月上旬)、フジグラン大洲(2025年1月31日)。</p>
+    </figure>
+    <!-- /zuhyo:sannen -->
     <p class="commentary">閉じた3店の経緯は、市議会の会議録にすべて残っていた。</p>
     <p class="commentary"><strong>1店目は、フレッシュバリュー大洲店。2023年6月末に閉店した。</strong> 大洲市若宮504-1、伊予大洲駅の東およそ330メートルの場所にあった。運営していた株式会社ママイは、その後ドラッグストア大手に吸収合併されている。</p>
     <p class="commentary"><strong>2店目は、ショッパーズ大洲三の丸店。2024年6月上旬に閉じた。</strong> 2024年6月定例会で環境商工部長が「先週末にショッパーズ大洲三の丸店が閉店したと伺っております」と答弁している。建物はJA愛媛たいきの所有で、活用方法を検討中とされた。場所は大洲城の南側、肱南地区である。</p>
@@ -127,17 +187,19 @@
     <p class="commentary">いまは<strong>814メートル</strong>になっている。いちばん近いのは木村チェーン大洲店で、<strong>800メートルの線を14メートル超える</strong>。市内でいちばん人が集まっているマス目が、10メートル台の差で徒歩10分圏から外れた。</p>
     <p class="commentary">同じことが周辺でも起きている。肱南の三の丸あたりのマス目（846人）は179メートルから1,414メートルへ、その隣（617人）は551メートルから1,362メートルへ。中村地区のマス目（472人）は298メートルが1,556メートルになった。<strong>いずれも中心市街地である。</strong></p>
     <p class="commentary">地域別に見ると、次のようになる。市の合併前の区分にならい、マス目の中心にいちばん近い大字で振り分けた概算だ。</p>
+    <!-- zuhyo:chiiki -->
     <div class="article-table-wrap">
-    <table class="article-table">
+    <table data-zu="chiiki" class="article-table">
       <thead><tr><th>地域</th><th>800m圏内</th><th>その地域の人口</th><th>割合</th></tr></thead>
       <tbody>
-        <tr><td>大洲</td><td>7,862人</td><td>32,755人</td><td>24.0%</td></tr>
-        <tr><td>長浜</td><td>1,320人</td><td>5,078人</td><td>26.0%</td></tr>
-        <tr><td>肱川</td><td>100人</td><td>1,658人</td><td>6.0%</td></tr>
-        <tr><td>河辺</td><td><strong>0人</strong></td><td>563人</td><td><strong>0.0%</strong></td></tr>
+        <tr><td>大洲</td><td>7,862人</td><td>32,755人</td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v">24.0%</span><span class="zu-cb-bar" style="--w:92.31%"></span></span></td></tr>
+        <tr><td>長浜</td><td>1,320人</td><td>5,078人</td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v">26.0%</span><span class="zu-cb-bar" style="--w:100%"></span></span></td></tr>
+        <tr><td>肱川</td><td>100人</td><td>1,658人</td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v">6.0%</span><span class="zu-cb-bar" style="--w:23.08%"></span></span></td></tr>
+        <tr><td>河辺</td><td><strong>0人</strong></td><td>563人</td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v"><strong>0.0%</strong></span><span class="zu-cb-bar" style="--w:0%"></span></span></td></tr>
       </tbody>
     </table>
     </div>
+    <!-- /zuhyo:chiiki -->
 
     <p class="commentary">河辺地域はスーパーが1軒もないので、800メートル圏内は<strong>ゼロ</strong>になる。肱川地域も、道の駅にある1店の周りだけで6.0%だ。この振り分けは概算で、国勢調査の公式の地域別人口（大洲32,408人、長浜5,808人、肱川1,807人、河辺552人）と比べると長浜地域で730人少なく出るが、順番が入れ替わるほどの差ではない。</p>
     <p class="commentary">面白いのは、<strong>割合でみると長浜地域が大洲地域を上回っている</strong>ことだ。長浜は駅前にショッパーズ長浜店があり、人が港と駅のまわりに固まっている。数が少なくても、店と人が同じ場所にあれば割合は上がる。<strong>買物の便利さは店の数ではなく、店と人の重なり方で決まる</strong>、というのがこの表の言っていることだと思う。</p>
@@ -147,8 +209,9 @@
     <p class="commentary">2020年国勢調査ベースの推計で、全国は<strong>904万人</strong>。65歳以上の<strong>25.6%</strong>にあたる。75歳以上に限ると566万人、31.0%だ。市町村別の表を開くと、大洲市は<strong>4,260.7人、28.5%</strong>と出ている。</p>
     <p class="commentary">この表は1,741市区町村ぶんある。割合の載っている1,740市区町村を自分で並べ替えてみたところ、<strong>大洲市は835位</strong>だった。中央値は28.0%、平均は29.2%。つまり大洲市は、この指標では<strong>全国のちょうど真ん中あたり</strong>にいる。</p>
     <p class="commentary">愛媛県内20市町だと14番目になる。</p>
+    <!-- zuhyo:kennai -->
     <div class="article-table-wrap">
-    <table class="article-table">
+    <table data-zu="kennai" class="article-table">
       <thead><tr><th>順位</th><th>市町</th><th>割合</th></tr></thead>
       <tbody>
         <tr><td>1</td><td>上島町</td><td>49.1%</td></tr>
@@ -156,12 +219,13 @@
         <tr><td>6</td><td>西予市</td><td>35.7%</td></tr>
         <tr><td>10</td><td>八幡浜市</td><td>31.0%</td></tr>
         <tr><td>11</td><td>内子町</td><td>30.5%</td></tr>
-        <tr><td><strong>14</strong></td><td><strong>大洲市</strong></td><td><strong>28.5%</strong></td></tr>
+        <tr class="zu-hl"><td><strong>14</strong></td><td><strong>大洲市</strong></td><td><strong>28.5%</strong></td></tr>
         <tr><td>17</td><td>松山市</td><td>25.7%</td></tr>
         <tr><td>20</td><td>新居浜市</td><td>24.7%</td></tr>
       </tbody>
     </table>
     </div>
+    <!-- /zuhyo:kennai -->
 
     <p class="commentary">大洲市の推移も同じ表に載っている。2005年39.8%、2010年35.4%、2015年35.8%、そして2020年28.5%。ただし表そのものに「2020年とは定義・データが異なるため連続しない」と注記がある。<strong>下がったように見える最後の一段は、実態の改善なのか定義の変更なのか、この表だけでは切り分けられない。</strong> 2005年から2015年の3時点だけを見ると、いったん4ポイント下がってから横ばい、というのが大洲市の動きだった。</p>
     <p class="commentary">そして、もっと大事なことがある。この推計が使っているのは<strong>2020年の国勢調査と、その時点の店舗</strong>である。フジグラン大洲もフレッシュバリューも三の丸のショッパーズも、まだ全部あった。<strong>大洲の中心部から3店が消えたのは、この推計より後の話だ。</strong></p>
@@ -175,6 +239,23 @@
     <p class="commentary">つまり、抜けたスーパーの穴は、<strong>ドラッグストアとコンビニの生鮮コーナーで埋めにいっている</strong>。2024年12月定例会で副市長は「現在の大洲駅から500メートル範囲内には、生鮮食料品等の日常の買物ができる場所っていうのは、販売量や種類によって差はございますけれども、フジのほかにドラッグストア等はございます」と答弁していた。私の計算はスーパーだけを数えているので、この分は入っていない。</p>
     <p class="commentary">もう一つ動いているのが<strong>移動スーパー</strong>だ。オズメッセ21の公式サイトによれば、「とくし丸」が<strong>4台</strong>走っている。担当区域が公開されていて、1号車が春賀・八多喜・白滝・大和・長浜・今坊・櫛生・出海、2号車が新谷・菅田・梅川・蔵川・大川・肱川・予子林・大谷、4号車が上須戒・五十崎・河辺。私の計算で800メートル圏外に出た地名と、きれいに重なる。</p>
     <p class="commentary">そして3号車の担当区域は、<strong>田口・大洲市街・五郎・阿蔵・平野・北只</strong>である。「大洲市街」が移動スーパーの巡回先に入っている。2024年6月定例会の一般質問には、河辺や肱川や長浜でとくし丸が走るのを見ていた中心部で、いま同じことが起きている、という趣旨の指摘が出ていた。<strong>巡回ルートの地名は、その指摘をそのまま裏づけている。</strong></p>
+    <!-- zuhyo:tokushimaru -->
+    <figure class="zu zu-table" data-zu="tokushimaru">
+      <figcaption class="zu-title">移動スーパー「とくし丸」4台の担当区域。3号車は大洲市街も回る</figcaption>
+      <p class="zu-sub">オズメッセ21の公式サイトから</p>
+      <div class="article-table-wrap">
+      <table class="article-table">
+        <thead><tr><th class="zu-nw">車</th><th>担当区域</th></tr></thead>
+        <tbody>
+          <tr><th scope="row" class="zu-nw">1号車</th><td>春賀・八多喜・白滝・大和・長浜・今坊・櫛生・出海</td></tr>
+          <tr><th scope="row" class="zu-nw">2号車</th><td>新谷・菅田・梅川・蔵川・大川・肱川・予子林・大谷</td></tr>
+          <tr class="zu-hl"><th scope="row" class="zu-nw">3号車</th><td>田口・大洲市街・五郎・阿蔵・平野・北只</td></tr>
+          <tr><th scope="row" class="zu-nw">4号車</th><td>上須戒・五十崎・河辺</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </figure>
+    <!-- /zuhyo:tokushimaru -->
     <p class="commentary">このほか、市内中心部を回る循環バス「ぐるりんおおず」がマルナカ、オズメッセ、フレスポに乗り入れていることも答弁で示されている。</p>
     <p class="commentary">800メートルの円を描いてみて、いちばん驚いたのは合計の9,282人ではなかった。<strong>市内でいちばん人が住んでいるマス目が、14メートル足りずに円の外へ出ていたこと</strong>である。数字の上では、買物の便利さは連続的に悪くなるのではなく、店が1つ閉じた日に、線の内と外がまとめて入れ替わる。</p>
 

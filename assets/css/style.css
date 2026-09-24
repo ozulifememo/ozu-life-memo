@@ -5311,6 +5311,9 @@ table tr.zu-hl > * {
   background: var(--zu-hl-bg);
   font-weight: 700;
 }
+/* 自由研究の表は、記事の中の <style> が偶数行に縞の色を付けている(table.jk-table tr:nth-child(even) td)。
+   そちらのほうが強いので、色の行の背景が縞に負けていた。同じ表の中でだけ、もう一段強くする */
+table.jk-table tr.zu-hl:nth-child(n) > * { background: var(--zu-hl-bg); }
 table td.zu-cb-cell { min-width: 7.5em; }
 .zu-cb {
   display: flex;

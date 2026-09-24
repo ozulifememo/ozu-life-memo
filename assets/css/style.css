@@ -5397,6 +5397,11 @@ figure.zu-cal .article-table-wrap { margin: 0; }
   .article-table tbody tr > :first-child { min-width: 5.5em; }
   /* 小さな棒の列は、スマホでは細くてよい(1列目の名前が3行に折れないように) */
   table td.zu-cb-cell { min-width: 5em; }
+  /* マスの余白をスマホでは少し詰める(上下10→8px、左右14→10px)。
+     390px幅で数ミリだけ横にはみ出していた表の多くが画面に収まる
+     (2026-09-25の実測: 表1,051個のうち42個が収まるようになり、悪くなる表は0) */
+  .article-table th,
+  .article-table td { padding: 8px 10px; }
 }
 
 /* 方位の図(真ん中の地点から見た方角と距離) */

@@ -5390,6 +5390,8 @@ figure.zu-cal .article-table-wrap { margin: 0; }
 @media (max-width: 560px) {
   .article-table thead th { white-space: normal; }
   .article-table tbody tr > :first-child { min-width: 5.5em; }
+  /* 小さな棒の列は、スマホでは細くてよい(1列目の名前が3行に折れないように) */
+  table td.zu-cb-cell { min-width: 5em; }
 }
 
 /* 方位の図(真ん中の地点から見た方角と距離) */

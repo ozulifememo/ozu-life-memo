@@ -5297,6 +5297,8 @@ figure.zu-table .article-table tbody th {
   min-width: 7em;
 }
 table .zu-nw { white-space: nowrap; }
+/* 行の見出し(th)に nowrap を付けたときは、上の「長ければ折り返す」より優先する */
+figure.zu-table .article-table tbody th.zu-nw { white-space: nowrap; }
 table .zu-small {
   display: block;
   margin-top: 2px;

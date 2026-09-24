@@ -138,12 +138,13 @@
 
     <h2>近隣4市町と並べてみた</h2>
     <p class="commentary">大洲の1,050円は高いのか、安いのか。近隣の市町の公式資料を当たった。まず、家に取りに来てもらう場合。</p>
+    <!-- zuhyo:shushu4 -->
     <div class="jk-scroll" style="overflow-x:auto;">
-    <table class="article-table">
+    <table data-zu="shushu4" class="article-table">
       <caption>粗大ごみ収集の料金比較</caption>
       <thead><tr><th>市町</th><th>収集の料金</th><th>備考</th></tr></thead>
       <tbody>
-        <tr><th scope="row">大洲市</th><td>1個1,050円</td><td>品目を問わず一律。予約制</td></tr>
+        <tr class="zu-hl"><th scope="row">大洲市</th><td>1個1,050円</td><td>品目を問わず一律。予約制</td></tr>
         <tr><th scope="row">八幡浜市</th><td>1台の配車料1,570円＋家具・建具1個100円、自転車1台100円、スプリングマット・ソファ1個520円</td><td>予約制</td></tr>
         <tr><th scope="row">西予市</th><td>粗大ごみ1個500円＋戸別収集1回100円</td><td>条例の粗大ごみの定義は家庭用電気製品・自転車・ストーブ等</td></tr>
         <tr><th scope="row">内子町</th><td>品目ごとに500〜2,000円＋収集運搬手数料1回2,000円</td><td>年4回(6月・9月・12月・3月)のみ</td></tr>
@@ -151,24 +152,88 @@
       </tbody>
     </table>
     </div>
+    <!-- /zuhyo:shushu4 -->
     <p class="commentary">面白いのは、<strong>1点だけか、まとめて出すかで順位が入れ替わる</strong>ところだ。八幡浜と比べてみる。タンスを1棹だけなら大洲1,050円、八幡浜1,670円で大洲が安い。ところが家具を2点にすると大洲2,100円、八幡浜1,770円で逆転する。3点なら大洲3,150円、八幡浜1,870円だ。<strong>大洲の一律1,050円は、まとめて出す人ほど不利になる</strong>(両市の公表額から自分で計算した)。</p>
+    <!-- zuhyo:matomete -->
+    <figure class="zu zu-bar" data-zu="matomete">
+      <figcaption class="zu-title">まとめて出すほど、大洲の一律1,050円は不利になる</figcaption>
+      <p class="zu-sub">粗大ごみの収集を頼んだときの料金</p>
+      <ul class="zu-legend">
+        <li><span class="zu-sw" style="--c:var(--zu-c2)"></span>大洲市</li>
+        <li><span class="zu-sw" style="--c:var(--zu-c1)"></span>八幡浜市</li>
+      </ul>
+      <div class="zu-bars" style="--fmax:0.76">
+        <div class="zu-bar-row">
+          <span class="zu-bar-label">家具1点</span>
+          <span class="zu-bar-lines is-multi">
+            <span class="zu-bar-line"><span class="zu-bar-fill" style="--w:33.33%;--c:var(--zu-c2)"></span><span class="zu-bar-v">1,050円</span></span>
+            <span class="zu-bar-line"><span class="zu-bar-fill" style="--w:53.02%;--c:var(--zu-c1)"></span><span class="zu-bar-v">1,670円</span></span>
+          </span>
+        </div>
+        <div class="zu-bar-row">
+          <span class="zu-bar-label">家具2点</span>
+          <span class="zu-bar-lines is-multi">
+            <span class="zu-bar-line"><span class="zu-bar-fill" style="--w:66.67%;--c:var(--zu-c2)"></span><span class="zu-bar-v">2,100円</span></span>
+            <span class="zu-bar-line"><span class="zu-bar-fill" style="--w:56.19%;--c:var(--zu-c1)"></span><span class="zu-bar-v">1,770円</span></span>
+          </span>
+        </div>
+        <div class="zu-bar-row">
+          <span class="zu-bar-label">家具3点</span>
+          <span class="zu-bar-lines is-multi">
+            <span class="zu-bar-line"><span class="zu-bar-fill" style="--w:100%;--c:var(--zu-c2)"></span><span class="zu-bar-v">3,150円</span></span>
+            <span class="zu-bar-line"><span class="zu-bar-fill" style="--w:59.37%;--c:var(--zu-c1)"></span><span class="zu-bar-v">1,870円</span></span>
+          </span>
+        </div>
+      </div>
+      <p class="zu-note">八幡浜市は、1台の配車料1,570円に家具1個100円を足す。両市の公表額から記事で計算した。</p>
+    </figure>
+    <!-- /zuhyo:matomete -->
     <p class="commentary">内子町の申込票には、大洲にはない一文がある。「戸別収集の場合は、品目ごとの処理料金に加えて、収集運搬手数料2,000円が加算されます」。そして持ち込みなら「収集運搬手数料2,000円は不要です」と明記している。<strong>運ぶ手間の値段を、制度がはっきり言葉にしている。</strong></p>
     <p class="commentary">次に、自分で運ぶ場合。重さで料金が変わる自治体が多いので、50キロと90キロの2点で並べた。</p>
-    <div class="article-table-wrap"><table class="article-table">
+    <!-- zuhyo:mochikomi4 -->
+    <div class="article-table-wrap"><table data-zu="mochikomi4" class="article-table">
       <caption>持ち込み料金の比較（各市町の公表額から独自計算）</caption>
       <thead><tr><th>市町・施設</th><th>50キロ</th><th>90キロ</th></tr></thead>
       <tbody>
-        <tr class="hl"><th scope="row">大洲市 環境センター</th><td><strong>310円</strong></td><td><strong>310円</strong></td></tr>
-        <tr><th scope="row">八幡浜市 環境センター</th><td>350円</td><td>550円</td></tr>
-        <tr><th scope="row">内子町 クリーンセンター</th><td>500円</td><td>900円</td></tr>
-        <tr><th scope="row">松山市 クリーンセンター等</th><td>950円</td><td>1,710円</td></tr>
+        <tr class="zu-hl hl"><th scope="row">大洲市 環境センター</th><td class="zu-nw"><strong>310円</strong></td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v"><strong>310円</strong></span><span class="zu-cb-bar" style="--w:18.13%"></span></span></td></tr>
+        <tr><th scope="row">八幡浜市 環境センター</th><td class="zu-nw">350円</td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v">550円</span><span class="zu-cb-bar" style="--w:32.16%"></span></span></td></tr>
+        <tr><th scope="row">内子町 クリーンセンター</th><td class="zu-nw">500円</td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v">900円</span><span class="zu-cb-bar" style="--w:52.63%"></span></span></td></tr>
+        <tr><th scope="row">松山市 クリーンセンター等</th><td class="zu-nw">950円</td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v">1,710円</span><span class="zu-cb-bar" style="--w:100%"></span></span></td></tr>
       </tbody>
     </table></div>
+    <!-- /zuhyo:mochikomi4 -->
     <p class="commentary">(八幡浜市は10キロにつき50円＋基本料金100円、内子町は50キロまで500円で以後10キロごとに100円、松山市は30キロ超40キロ以下が760円で以後10キロごとに190円という規定にもとづく)</p>
     <p class="commentary"><strong>大洲の持ち込みは、この4つの中でいちばん安い。</strong>しかも100キロ未満は定額なので、重くなるほど差が開く。90キロだと松山の5分の1以下になる。</p>
     <p class="commentary">逆に軽いときは順位が変わる。松山は30キロ以下なら無料で、八幡浜も10キロ以下なら150円だ。大洲は1キロでも310円である。<strong>大洲の料金表は、少しだけ運ぶ人には向いていない。</strong></p>
     <p class="commentary">内子町が令和7年10月に持込料金を改定して「50キロまで500円」にしたこと、松山市が令和7年4月に手数料を変えたことも確認できた。近隣は動いている。大洲の環境センターの手数料が変わったのは令和3年4月1日で、それ以降は据え置かれている。</p>
     <p class="commentary">その令和3年の改定は、実はかなり性格の違うものだった。改定前の料金表を保存版で確認したところ、100キロ未満300円、100〜200キロ600円、200〜300キロ900円、という<strong>100キロ刻みの階段</strong>だった。101キロになった瞬間に倍になる形である。これを10キロ刻みに直したのが令和3年の改定だ。100キロ未満は300円から310円に上がったが、<strong>150キロなら600円から510円に下がっている</strong>(旧料金表と現行条例から自分で計算した)。値上げのようで、中量帯はむしろ安くなっている。</p>
+    <!-- zuhyo:kaitei -->
+    <figure class="zu zu-bar" data-zu="kaitei">
+      <figcaption class="zu-title">令和3年の改定は、値上げのようで、中量帯はむしろ安くなった</figcaption>
+      <p class="zu-sub">環境センターに家庭のごみを持ち込むときの料金</p>
+      <ul class="zu-legend">
+        <li><span class="zu-sw" style="--c:var(--zu-mute)"></span>改定前</li>
+        <li><span class="zu-sw" style="--c:var(--zu-c2)"></span>令和3年4月から</li>
+      </ul>
+      <div class="zu-bars" style="--fmax:0.76">
+        <div class="zu-bar-row">
+          <span class="zu-bar-label">100キロ未満</span>
+          <span class="zu-bar-lines is-multi">
+            <span class="zu-bar-line"><span class="zu-bar-fill" style="--w:50%;--c:var(--zu-mute)"></span><span class="zu-bar-v">300円</span></span>
+            <span class="zu-bar-line"><span class="zu-bar-fill" style="--w:51.67%;--c:var(--zu-c2)"></span><span class="zu-bar-v">310円</span></span>
+          </span>
+        </div>
+        <div class="zu-bar-row">
+          <span class="zu-bar-label">150キロ</span>
+          <span class="zu-bar-lines is-multi">
+            <span class="zu-bar-line"><span class="zu-bar-fill" style="--w:100%;--c:var(--zu-mute)"></span><span class="zu-bar-v">600円</span></span>
+            <span class="zu-bar-line"><span class="zu-bar-fill" style="--w:85%;--c:var(--zu-c2)"></span><span class="zu-bar-v">510円</span></span>
+          </span>
+        </div>
+      </div>
+      <p class="zu-note">改定前は100キロ刻みの階段(100キロ未満300円、100〜200キロ600円、200〜300キロ900円)。いまは100キロを超えると、10キロまで増すごとに40円を足す。</p>
+    </figure>
+    <!-- /zuhyo:kaitei -->
 
     <h2>車がない人のところで、話はひっくり返る</h2>
     <p class="commentary">ここまで書いてきて、答えははっきりしている。運べるなら運んだほうが安い。3分の1から17分の1になる。</p>

@@ -4886,8 +4886,8 @@ figure.zu p.zu-note {
 .zu-bar-fill {
   flex: none;
   display: block;
-  /* 棒の長さの上限を幅の76%にして、残りに数字を置く */
-  width: calc(var(--w) * 0.76);
+  /* 棒の長さの上限(--fmax。ふつうは幅の76%)。残りに数字を置く。数字が長い図は zuhyo.py が短めにする */
+  width: calc(var(--w) * var(--fmax, 0.76));
   min-width: 3px;
   height: 16px;
   border-radius: 0 4px 4px 0;

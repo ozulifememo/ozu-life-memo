@@ -79,8 +79,9 @@
     <h2>愛媛20市町を測ったら、全部「無い」と答えた</h2>
     <p class="commentary"><strong>2026年9月6日13時26分から13時28分</strong>にかけて、県内20市町の公式サイトに、存在しないURL（<code>/nonexistent-page-check-20260906</code>）を1回ずつ開いた。ブラウザと同じ名乗り方をして、1件ごとに6秒あけた。中身は受け取らず、返ってきた番号だけを見た。</p>
     <p class="commentary">続けて<strong>13時30分から13時32分</strong>に、同じことをもう一巡した。今度は名乗らずに（コマンドの既定のまま）開いた。</p>
+    <!-- zuhyo:junme -->
     <div class="article-table-wrap">
-    <table class="article-table">
+    <table data-zu="junme" class="article-table">
       <thead><tr><th>市町</th><th>1巡目 13:26〜13:28</th><th>2巡目 13:30〜13:32</th></tr></thead>
       <tbody>
         <tr><td>松山市</td><td>404</td><td>403</td></tr>
@@ -94,7 +95,7 @@
         <tr><td>四国中央市</td><td>404</td><td>403</td></tr>
         <tr><td>西予市</td><td>404</td><td>403</td></tr>
         <tr><td>東温市</td><td>404</td><td>403</td></tr>
-        <tr><td>上島町</td><td>※</td><td>404</td></tr>
+        <tr class="zu-hl"><td>上島町</td><td>※</td><td>404</td></tr>
         <tr><td>久万高原町</td><td>※</td><td>403</td></tr>
         <tr><td>松前町</td><td>404</td><td>403</td></tr>
         <tr><td>砥部町</td><td>404</td><td>403</td></tr>
@@ -106,6 +107,7 @@
       </tbody>
     </table>
     </div>
+    <!-- /zuhyo:junme -->
 
     <p class="commentary">※ 上島町と久万高原町は他の18市町と違うドメインを使っていて、1巡目は届かなかった。上島町は<code>town.kamijima.lg.jp</code>、久万高原町は<code>kumakogen.jp</code>である。</p>
     <p class="commentary">1巡目は、届いた18市町すべてが<strong>404</strong>だった。<strong>南予も松山も変わらない。市役所のサイトは、無いときにはちゃんと「無い」と答えている。</strong></p>
@@ -129,19 +131,21 @@
     <p class="commentary">確かめるために、<strong>13時56分35秒から13時57分28秒</strong>にかけて、八幡浜市のサイトだけに、存在しないURLを1.5秒おきに15回開いた。他の市町には一切触っていない。</p>
     <p class="commentary">結果は、<strong>14回目まで404、15回目で403</strong>。境目がはっきり出た。</p>
     <p class="commentary">その直後、他の市町のトップページを開いてみた。</p>
+    <!-- zuhyo:chokugo -->
     <div class="article-table-wrap">
-    <table class="article-table">
+    <table data-zu="chokugo" class="article-table">
       <thead><tr><th>開いた先</th><th>直後の答え</th></tr></thead>
       <tbody>
         <tr><td>八幡浜市（叩いた本人）</td><td>403</td></tr>
-        <tr><td>松野町（触っていない）</td><td><strong>403</strong></td></tr>
-        <tr><td>大洲市（触っていない）</td><td><strong>403</strong></td></tr>
+        <tr class="zu-hl"><td>松野町（触っていない）</td><td><strong>403</strong></td></tr>
+        <tr class="zu-hl"><td>大洲市（触っていない）</td><td><strong>403</strong></td></tr>
         <tr><td>内子町（触っていない）</td><td>200</td></tr>
         <tr><td>愛媛県（触っていない）</td><td>200</td></tr>
         <tr><td>上島町（触っていない）</td><td>200</td></tr>
       </tbody>
     </table>
     </div>
+    <!-- /zuhyo:chokugo -->
 
     <p class="commentary"><strong>一度も触っていない松野町と大洲市が、同時に閉じた。</strong> しかも閉じたのは「存在しないページ」ではない。<strong>トップページが、普通のブラウザで403になった。</strong></p>
     <p class="commentary">そのあと45秒おきに見ていると、内子町が403になり次に200に戻り、八幡浜市が200に戻ってまた403になる、という揺れ方をした。答える機械が複数あって、締め出しの記録が全部には行き渡っていないように見える。</p>
@@ -167,6 +171,27 @@
     <p class="commentary">この間こちらがしていたのは、5分に2回この表を取ることだけである。しかもその2回は空振りではなく、どれも普通のトップページだった。<strong>引き金を引いた覚えがないのに、また閉まっている。</strong></p>
     <p class="commentary">なぜ戻るのかは分からなかった。締め出しの記録が長く残っていて、たまたまそれを持っている機械に当たると閉まる、という読み方はできる。だがこれは推測で、外から測っただけでは確かめられない。</p>
     <p class="commentary">15回の空振りを1分足らずで出す相手は、機械的にURLを総当たりしている侵入者とほとんど区別がつかない。それを止めるのは、防御の仕組みとして自然な動きである。<strong>誰かが意地悪をしているわけではない。</strong></p>
+    <!-- zuhyo:jikoku -->
+    <figure class="zu zu-tl" data-zu="jikoku">
+      <figcaption class="zu-title">測った順に並べると、403は一度開いたあとにまた閉まっていた</figcaption>
+      <p class="zu-sub">2026年9月6日。色は、そのとき返ってきた番号</p>
+      <ul class="zu-legend">
+        <li><span class="zu-sw" style="--c:var(--zu-c1)"></span>404(無い)</li>
+        <li><span class="zu-sw" style="--c:var(--zu-c2)"></span>403(見せない)</li>
+        <li><span class="zu-sw" style="--c:var(--zu-c3)"></span>200(開いた)</li>
+      </ul>
+      <ol class="zu-tl-list">
+        <li class="zu-tl-item" style="--c:var(--zu-c1)"><span class="zu-tl-when">13:26〜<small>13:28</small></span><span class="zu-tl-what">1巡目。20市町の存在しないURLを1回ずつ開く(6秒おき、ブラウザと同じ名乗り方)。届いた18市町は、すべて404</span></li>
+        <li class="zu-tl-item" style="--c:var(--zu-c2)"><span class="zu-tl-when">13:30〜<small>13:32</small></span><span class="zu-tl-what">2巡目。名乗らずに、もう一巡。20市町のうち19市町が403に変わった</span></li>
+        <li class="zu-tl-item" style="--c:var(--zu-c3)"><span class="zu-tl-when">13:44→<small>13:49</small></span><span class="zu-tl-what">大洲市のトップページは、403から200へ。時間が経つと開いた</span></li>
+        <li class="zu-tl-item" style="--c:var(--zu-c1)"><span class="zu-tl-when">13:53</span><span class="zu-tl-what">間隔を18秒に広げて、八幡浜市・松野町・西予市を測り直す。名乗っても名乗らなくても404</span></li>
+        <li class="zu-tl-item is-hl" style="--c:var(--zu-c2)"><span class="zu-tl-when">13:56〜<small>13:57</small></span><span class="zu-tl-what">八幡浜市だけに1.5秒おきに15回。14回目まで404、15回目で403。直後、触っていない松野町と大洲市のトップページも403</span></li>
+        <li class="zu-tl-item" style="--c:var(--zu-c2)"><span class="zu-tl-when">13:59・<small>14:04</small></span><span class="zu-tl-what">大洲市も松山市も、トップページが403</span></li>
+        <li class="zu-tl-item" style="--c:var(--zu-c3)"><span class="zu-tl-when">14:09</span><span class="zu-tl-what">大洲市も松山市も200。いったん開いた</span></li>
+        <li class="zu-tl-item" style="--c:var(--zu-c2)"><span class="zu-tl-when">14:19・<small>14:24</small></span><span class="zu-tl-what">5分おきにトップページを見ていただけなのに、また403(14:19は松山市だけ、14:24は両方)</span></li>
+      </ol>
+    </figure>
+    <!-- /zuhyo:jikoku -->
     <div class="memou-aside">
       <img src="../assets/img/memou-odoroki.svg" alt="" class="memou-aside-avatar" width="54" height="54" decoding="async">
       <p>ここまでが、いつ閉まるかを測った話。<br>ここからは、誰が閉めとるんかを探した話。<br>これがなかなか分からんかった。</p>

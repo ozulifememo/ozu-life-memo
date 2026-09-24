@@ -130,8 +130,9 @@
 
     <p class="commentary">○が6つ、×が8つである。</p>
     <p class="commentary">県内20市町を全部並べると、この○×の癖が見えてくる。</p>
+    <!-- zuhyo:maru-batsu -->
     <div class="article-table-wrap">
-    <table class="article-table">
+    <table data-zu="maru-batsu" class="article-table">
       <thead><tr><th>団体</th><th>議員公災</th><th>退職手当</th><th>税務事務</th><th>老人福祉</th><th>その他</th><th>し尿</th><th>ごみ</th><th>火葬場</th><th>常備消防</th><th>小・中学校</th></tr></thead>
       <tbody>
         <tr><td>松山市</td><td>×</td><td>×</td><td>○</td><td>○</td><td>○</td><td>○</td><td>×</td><td>×</td><td>×</td><td>×</td></tr>
@@ -140,7 +141,7 @@
         <tr><td>八幡浜市</td><td>×</td><td>×</td><td>○</td><td>×</td><td>○</td><td>○</td><td>×</td><td>×</td><td>○</td><td>×</td></tr>
         <tr><td>新居浜市</td><td>×</td><td>×</td><td>○</td><td>×</td><td>○</td><td>×</td><td>×</td><td>×</td><td>×</td><td>×</td></tr>
         <tr><td>西条市</td><td>×</td><td>×</td><td>○</td><td>×</td><td>○</td><td>×</td><td>×</td><td>×</td><td>×</td><td>×</td></tr>
-        <tr><td><strong>大洲市</strong></td><td>×</td><td><strong>○</strong></td><td><strong>○</strong></td><td><strong>○</strong></td><td><strong>○</strong></td><td><strong>○</strong></td><td><strong>×</strong></td><td>×</td><td><strong>○</strong></td><td>×</td></tr>
+        <tr class="zu-hl"><td><strong>大洲市</strong></td><td>×</td><td><strong>○</strong></td><td><strong>○</strong></td><td><strong>○</strong></td><td><strong>○</strong></td><td><strong>○</strong></td><td><strong>×</strong></td><td>×</td><td><strong>○</strong></td><td>×</td></tr>
         <tr><td>伊予市</td><td>×</td><td>○</td><td>○</td><td>○</td><td>○</td><td>○</td><td>○</td><td>○</td><td>○</td><td>×</td></tr>
         <tr><td>四国中央市</td><td>×</td><td>○</td><td>○</td><td>×</td><td>○</td><td>×</td><td>×</td><td>×</td><td>×</td><td>×</td></tr>
         <tr><td>西予市</td><td>○</td><td>○</td><td>○</td><td>×</td><td>○</td><td>×</td><td>×</td><td>×</td><td>○</td><td>×</td></tr>
@@ -157,6 +158,7 @@
       </tbody>
     </table>
     </div>
+    <!-- /zuhyo:maru-batsu -->
 
     <p class="commentary">（大洲市の行だけ太字にした。非常勤公務災害・事務機共同・伝染病は20市町すべてが×なので省いた）</p>
     <p class="commentary">読み取れることが3つある。</p>
@@ -164,22 +166,57 @@
     <p class="commentary"><strong>ふたつ。退職手当は、市では大洲・伊予・四国中央・西予・東温の5市だけが○で、町は9町すべてが○だった。</strong>松山・今治・宇和島・八幡浜・新居浜・西条の6市は×である。<strong>大きい市ほど単独でやっている。</strong></p>
     <p class="commentary"><strong>みっつ。愛南町だけ、小学校と中学校が○になっている。</strong>20市町で1つだけだ。これが何なのかは、あとで分かった。</p>
     <p class="commentary">さて、全国ではどうなのか。総務省が令和5年7月1日現在で、共同処理の6つの仕組みをまとめている。</p>
+    <!-- zuhyo:kyodo6 -->
     <div class="article-table-wrap">
-    <table class="article-table">
+    <table data-zu="kyodo6" class="article-table">
       <thead><tr><th>制度</th><th>中身</th><th>件数</th><th>いちばん多い事務</th></tr></thead>
       <tbody>
-        <tr><td>連携協約</td><td>連携の基本方針と役割分担を決める</td><td>467件</td><td>連携中枢都市圏の形成348件（74.5%）</td></tr>
-        <tr><td>協議会</td><td>法人を作らず共同で管理執行・連絡調整・計画作成</td><td>227件</td><td><strong>消防59件（26.0%）</strong></td></tr>
-        <tr><td>機関等の共同設置</td><td>委員会や内部組織を共同で置く</td><td>445件</td><td>介護区分認定審査128件（28.8%）</td></tr>
-        <tr><td><strong>事務の委託</strong></td><td>事務の管理執行を他の団体に委ねる</td><td><strong>6,815件</strong></td><td><strong>住民票の写し等の交付1,338件（19.6%）</strong></td></tr>
-        <tr><td>事務の代替執行</td><td>元の団体の名において他の団体に行わせる</td><td><strong>3件</strong></td><td>上水道・簡易水道・公害防止が各1件</td></tr>
-        <tr><td><strong>一部事務組合</strong></td><td>別の法人（特別地方公共団体）を作る</td><td><strong>1,392件</strong></td><td><strong>ごみ処理387件（27.8%）</strong></td></tr>
-        <tr><td><strong>広域連合</strong></td><td>別の法人。国・県から直接権限をもらえる</td><td><strong>117件</strong></td><td><strong>後期高齢者医療52件（44.4%）</strong></td></tr>
+        <tr><td>連携協約</td><td>連携の基本方針と役割分担を決める</td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v">467件</span><span class="zu-cb-bar" style="--w:6.85%"></span></span></td><td>連携中枢都市圏の形成348件（74.5%）</td></tr>
+        <tr><td>協議会</td><td>法人を作らず共同で管理執行・連絡調整・計画作成</td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v">227件</span><span class="zu-cb-bar" style="--w:3.33%"></span></span></td><td><strong>消防59件（26.0%）</strong></td></tr>
+        <tr><td>機関等の共同設置</td><td>委員会や内部組織を共同で置く</td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v">445件</span><span class="zu-cb-bar" style="--w:6.53%"></span></span></td><td>介護区分認定審査128件（28.8%）</td></tr>
+        <tr><td><strong>事務の委託</strong></td><td>事務の管理執行を他の団体に委ねる</td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v"><strong>6,815件</strong></span><span class="zu-cb-bar" style="--w:100%"></span></span></td><td><strong>住民票の写し等の交付1,338件（19.6%）</strong></td></tr>
+        <tr><td>事務の代替執行</td><td>元の団体の名において他の団体に行わせる</td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v"><strong>3件</strong></span><span class="zu-cb-bar" style="--w:0.04%"></span></span></td><td>上水道・簡易水道・公害防止が各1件</td></tr>
+        <tr class="zu-hl"><td><strong>一部事務組合</strong></td><td>別の法人（特別地方公共団体）を作る</td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v"><strong>1,392件</strong></span><span class="zu-cb-bar" style="--w:20.43%"></span></span></td><td><strong>ごみ処理387件（27.8%）</strong></td></tr>
+        <tr><td><strong>広域連合</strong></td><td>別の法人。国・県から直接権限をもらえる</td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v"><strong>117件</strong></span><span class="zu-cb-bar" style="--w:1.72%"></span></span></td><td><strong>後期高齢者医療52件（44.4%）</strong></td></tr>
       </tbody>
     </table>
     </div>
+    <!-- /zuhyo:kyodo6 -->
 
     <p class="commentary"><strong>全国でいちばん多い「一部事務組合の仕事」は、ごみ処理である。</strong>1,392件のうち387件、27.8%を占める。次がし尿処理の304件（21.8%）、その次が消防と救急の各267件（19.2%）だ。</p>
+    <!-- zuhyo:kumiai-shigoto -->
+    <figure class="zu zu-bar" data-zu="kumiai-shigoto">
+      <figcaption class="zu-title">全国の一部事務組合(1,392件)で多い仕事</figcaption>
+      <p class="zu-sub">令和5年7月1日現在</p>
+      <div class="zu-bars has-hl" style="--fmax:0.76">
+        <div class="zu-bar-row is-hl">
+          <span class="zu-bar-label">ごみ処理</span>
+          <span class="zu-bar-lines">
+            <span class="zu-bar-line"><span class="zu-bar-fill" style="--w:100%"></span><span class="zu-bar-v">387件</span></span>
+          </span>
+        </div>
+        <div class="zu-bar-row">
+          <span class="zu-bar-label">し尿処理</span>
+          <span class="zu-bar-lines">
+            <span class="zu-bar-line"><span class="zu-bar-fill" style="--w:78.55%"></span><span class="zu-bar-v">304件</span></span>
+          </span>
+        </div>
+        <div class="zu-bar-row">
+          <span class="zu-bar-label">消防</span>
+          <span class="zu-bar-lines">
+            <span class="zu-bar-line"><span class="zu-bar-fill" style="--w:68.99%"></span><span class="zu-bar-v">267件</span></span>
+          </span>
+        </div>
+        <div class="zu-bar-row">
+          <span class="zu-bar-label">救急</span>
+          <span class="zu-bar-lines">
+            <span class="zu-bar-line"><span class="zu-bar-fill" style="--w:68.99%"></span><span class="zu-bar-v">267件</span></span>
+          </span>
+        </div>
+      </div>
+      <p class="zu-note">大洲市は、し尿処理と消防は組合で、ごみ処理だけを自前でやっている。</p>
+    </figure>
+    <!-- /zuhyo:kumiai-shigoto -->
     <p class="commentary">ここで表を見直してほしい。<strong>大洲市は、し尿処理も消防も○なのに、ごみ処理だけが×である。</strong></p>
     <p class="commentary">いちばんみんなが組んでいる仕事を、大洲市は単独でやっている。</p>
     <h2>ごみ処理が×なのに、大洲のごみはどこで焼いているのか</h2>
@@ -497,36 +534,53 @@
     </div>
 
     <p class="commentary">（人口は令和7年1月1日の住民基本台帳39,040人）</p>
+    <!-- zuhyo:soto -->
+    <figure class="zu zu-stack" data-zu="soto">
+      <figcaption class="zu-title">歳出303億3,553万9千円のうち、市役所の外に出る形のお金は11.45%</figcaption>
+      <ul class="zu-legend">
+        <li><span class="zu-sw" style="--c:var(--zu-c2)"></span>委託料 <b>7.88%</b></li>
+        <li><span class="zu-sw" style="--c:var(--zu-c1)"></span>一部事務組合負担金 <b>3.57%</b></li>
+        <li><span class="zu-sw" style="--c:var(--zu-mute)"></span>そのほかの歳出 <b>88.55%</b></li>
+      </ul>
+      <div class="zu-stacks is-single">
+        <div class="zu-stack-row">
+          <span class="zu-stack-bar"><span class="zu-seg" style="--w:7.88%;--c:var(--zu-c2)" title="委託料 7.88%"><span class="zu-seg-v is-wide">7.88%</span></span><span class="zu-seg" style="--w:3.57%;--c:var(--zu-c1)" title="一部事務組合負担金 3.57%"></span><span class="zu-seg is-light" style="--w:88.55%;--c:var(--zu-mute)" title="そのほかの歳出 88.55%"><span class="zu-seg-v">88.55%</span></span></span>
+        </div>
+      </div>
+    </figure>
+    <!-- /zuhyo:soto -->
     <p class="commentary"><strong>市の歳出の9分の1近くが、市役所の外に出す形のお金である。</strong></p>
     <p class="commentary">比べる相手になる人件費のほうは、<a href="../eachnews/okane-07-shiyakusho-keiei.html">大洲市の職員の上限は条例で946人。実際は619人。誰がこの数を決めるのか</a>に書いた。歳出に占める割合18.5%は県内11市でいちばん高い。<strong>その人件費の4割を超える額が、委託料として別に出ている。</strong></p>
     <p class="commentary">県内20市町を、市民1人あたりの委託料で並べる。</p>
+    <!-- zuhyo:itaku20 -->
     <div class="article-table-wrap">
-    <table class="article-table">
+    <table data-zu="itaku20" class="article-table">
       <thead><tr><th>順</th><th>団体</th><th>委託料</th><th>1人あたり</th><th>物件費に占める割合</th></tr></thead>
       <tbody>
-        <tr><td>1</td><td>久万高原町</td><td>8億7,188万5千円</td><td>126,562円</td><td>54.8%</td></tr>
-        <tr><td>2</td><td>上島町</td><td>6億6,985万7千円</td><td>110,083円</td><td>55.2%</td></tr>
-        <tr><td>3</td><td>伊方町</td><td>8億3,137万6千円</td><td>107,081円</td><td>52.7%</td></tr>
-        <tr><td>4</td><td>松野町</td><td>3億3,305万4千円</td><td>95,595円</td><td>52.8%</td></tr>
-        <tr><td>5</td><td>愛南町</td><td>14億396万円</td><td>75,591円</td><td>45.1%</td></tr>
-        <tr><td>6</td><td>八幡浜市</td><td>22億500万3千円</td><td>73,454円</td><td>57.5%</td></tr>
-        <tr><td>7</td><td>鬼北町</td><td>5億7,335万9千円</td><td>62,951円</td><td>51.2%</td></tr>
-        <tr><td><strong>8</strong></td><td><strong>大洲市</strong></td><td><strong>23億9,023万2千円</strong></td><td><strong>61,225円</strong></td><td><strong>56.9%</strong></td></tr>
-        <tr><td>9</td><td>伊予市</td><td>21億3,094万6千円</td><td>60,585円</td><td>72.0%</td></tr>
-        <tr><td>10</td><td>西予市</td><td>19億3,115万4千円</td><td>57,269円</td><td>59.6%</td></tr>
-        <tr><td>11</td><td>今治市</td><td>84億2,929万7千円</td><td>57,070円</td><td>69.8%</td></tr>
-        <tr><td>12</td><td>東温市</td><td>15億9,792万3千円</td><td>48,482円</td><td>64.4%</td></tr>
-        <tr><td>13</td><td>砥部町</td><td>9億5,833万3千円</td><td>47,466円</td><td>58.3%</td></tr>
-        <tr><td>14</td><td>四国中央市</td><td>38億1,514万7千円</td><td>47,121円</td><td>63.8%</td></tr>
-        <tr><td>15</td><td>内子町</td><td>6億3,057万7千円</td><td>42,873円</td><td>43.6%</td></tr>
-        <tr><td>16</td><td>新居浜市</td><td>48億1,707万2千円</td><td>42,733円</td><td>63.8%</td></tr>
-        <tr><td>17</td><td>松山市</td><td>190億1,448万4千円</td><td>38,284円</td><td>63.4%</td></tr>
-        <tr><td>18</td><td>西条市</td><td>35億1,981万8千円</td><td>34,037円</td><td>56.3%</td></tr>
-        <tr><td>19</td><td>宇和島市</td><td>22億6,816万5千円</td><td>33,863円</td><td>42.8%</td></tr>
-        <tr><td>20</td><td>松前町</td><td>9億8,773万6千円</td><td>32,712円</td><td>66.0%</td></tr>
+        <tr><td>1</td><td>久万高原町</td><td>8億7,188万5千円</td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v">126,562円</span><span class="zu-cb-bar" style="--w:100%"></span></span></td><td>54.8%</td></tr>
+        <tr><td>2</td><td>上島町</td><td>6億6,985万7千円</td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v">110,083円</span><span class="zu-cb-bar" style="--w:86.98%"></span></span></td><td>55.2%</td></tr>
+        <tr><td>3</td><td>伊方町</td><td>8億3,137万6千円</td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v">107,081円</span><span class="zu-cb-bar" style="--w:84.61%"></span></span></td><td>52.7%</td></tr>
+        <tr><td>4</td><td>松野町</td><td>3億3,305万4千円</td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v">95,595円</span><span class="zu-cb-bar" style="--w:75.53%"></span></span></td><td>52.8%</td></tr>
+        <tr><td>5</td><td>愛南町</td><td>14億396万円</td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v">75,591円</span><span class="zu-cb-bar" style="--w:59.73%"></span></span></td><td>45.1%</td></tr>
+        <tr><td>6</td><td>八幡浜市</td><td>22億500万3千円</td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v">73,454円</span><span class="zu-cb-bar" style="--w:58.04%"></span></span></td><td>57.5%</td></tr>
+        <tr><td>7</td><td>鬼北町</td><td>5億7,335万9千円</td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v">62,951円</span><span class="zu-cb-bar" style="--w:49.74%"></span></span></td><td>51.2%</td></tr>
+        <tr class="zu-hl"><td><strong>8</strong></td><td><strong>大洲市</strong></td><td><strong>23億9,023万2千円</strong></td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v"><strong>61,225円</strong></span><span class="zu-cb-bar" style="--w:48.38%"></span></span></td><td><strong>56.9%</strong></td></tr>
+        <tr><td>9</td><td>伊予市</td><td>21億3,094万6千円</td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v">60,585円</span><span class="zu-cb-bar" style="--w:47.87%"></span></span></td><td>72.0%</td></tr>
+        <tr><td>10</td><td>西予市</td><td>19億3,115万4千円</td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v">57,269円</span><span class="zu-cb-bar" style="--w:45.25%"></span></span></td><td>59.6%</td></tr>
+        <tr><td>11</td><td>今治市</td><td>84億2,929万7千円</td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v">57,070円</span><span class="zu-cb-bar" style="--w:45.09%"></span></span></td><td>69.8%</td></tr>
+        <tr><td>12</td><td>東温市</td><td>15億9,792万3千円</td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v">48,482円</span><span class="zu-cb-bar" style="--w:38.31%"></span></span></td><td>64.4%</td></tr>
+        <tr><td>13</td><td>砥部町</td><td>9億5,833万3千円</td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v">47,466円</span><span class="zu-cb-bar" style="--w:37.5%"></span></span></td><td>58.3%</td></tr>
+        <tr><td>14</td><td>四国中央市</td><td>38億1,514万7千円</td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v">47,121円</span><span class="zu-cb-bar" style="--w:37.23%"></span></span></td><td>63.8%</td></tr>
+        <tr><td>15</td><td>内子町</td><td>6億3,057万7千円</td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v">42,873円</span><span class="zu-cb-bar" style="--w:33.88%"></span></span></td><td>43.6%</td></tr>
+        <tr><td>16</td><td>新居浜市</td><td>48億1,707万2千円</td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v">42,733円</span><span class="zu-cb-bar" style="--w:33.76%"></span></span></td><td>63.8%</td></tr>
+        <tr><td>17</td><td>松山市</td><td>190億1,448万4千円</td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v">38,284円</span><span class="zu-cb-bar" style="--w:30.25%"></span></span></td><td>63.4%</td></tr>
+        <tr><td>18</td><td>西条市</td><td>35億1,981万8千円</td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v">34,037円</span><span class="zu-cb-bar" style="--w:26.89%"></span></span></td><td>56.3%</td></tr>
+        <tr><td>19</td><td>宇和島市</td><td>22億6,816万5千円</td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v">33,863円</span><span class="zu-cb-bar" style="--w:26.76%"></span></span></td><td>42.8%</td></tr>
+        <tr><td>20</td><td>松前町</td><td>9億8,773万6千円</td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v">32,712円</span><span class="zu-cb-bar" style="--w:25.85%"></span></span></td><td>66.0%</td></tr>
       </tbody>
     </table>
     </div>
+    <!-- /zuhyo:itaku20 -->
 
     <p class="commentary"><strong>小さい町ほど、1人あたりの委託料が大きい。上位5つはすべて町である。</strong>大洲市は20市町の8番目にいる。</p>
     <p class="commentary">では、何を委託しているのか。会議録から拾える大きなものを並べる。</p>
@@ -617,33 +671,35 @@
     <p class="commentary">一方で、組合の側も10年後を数字で見ている。組合が作った「<strong>消防力カード</strong>」には、<strong>10年後の管轄人口、通信指令室等の更新時期や費用の見通し</strong>が書かれるという。市長は、そこでの判断をこう伝えている。<strong>「当消防本部を取り巻く環境、財政面は非常に厳しい状況であり、その対策の一つの案として消防の広域化が検討されております」</strong>。それでも、現段階では「<strong>消防広域化に頼らず現状で取り組める方策を考慮して、住民サービスの向上へ努めていきたい</strong>」という結論だった。</p>
     <p class="commentary"><strong>組む方向とは逆に動いた例もある。</strong>内山衛生事務組合は、「同じ自治体内で取り扱いが異なる地域が生じる」ことを理由に解散した。<strong>組むほうが得なときもあれば、畳むほうが得なときもある。</strong></p>
     <p class="commentary"><strong>では、いまの大洲市の負担金は重いのか。</strong>県内20市町を、市民1人あたりの一部事務組合負担金で並べてみた。</p>
+    <!-- zuhyo:futan20 -->
     <div class="article-table-wrap">
-    <table class="article-table">
+    <table data-zu="futan20" class="article-table">
       <thead><tr><th>順</th><th>団体</th><th>負担金</th><th>1人あたり</th><th>歳出に占める割合</th></tr></thead>
       <tbody>
-        <tr><td>1</td><td>伊方町</td><td>4億764万7千円</td><td>52,505円</td><td>3.95%</td></tr>
-        <tr><td>2</td><td>松野町</td><td>1億7,938万5千円</td><td>51,488円</td><td>4.42%</td></tr>
-        <tr><td>3</td><td>鬼北町</td><td>3億8,299万5千円</td><td>42,050円</td><td>4.27%</td></tr>
-        <tr><td>4</td><td>伊予市</td><td>12億4,804万6千円</td><td>35,483円</td><td>6.28%</td></tr>
-        <tr><td>5</td><td>砥部町</td><td>6億9,726万5千円</td><td>34,535円</td><td>6.12%</td></tr>
-        <tr><td>6</td><td>内子町</td><td>5億376万9千円</td><td>34,251円</td><td>4.39%</td></tr>
-        <tr><td>7</td><td>松前町</td><td>9億5,988万円</td><td>31,789円</td><td>7.03%</td></tr>
-        <tr><td>8</td><td>宇和島市</td><td>19億4,505万1千円</td><td>29,039円</td><td>3.93%</td></tr>
-        <tr><td><strong>9</strong></td><td><strong>大洲市</strong></td><td><strong>10億8,355万3千円</strong></td><td><strong>27,755円</strong></td><td><strong>3.57%</strong></td></tr>
-        <tr><td>10</td><td>八幡浜市</td><td>7億4,693万円</td><td>24,882円</td><td>3.12%</td></tr>
-        <tr><td>11</td><td>愛南町</td><td>3億2,105万3千円</td><td>17,286円</td><td>1.80%</td></tr>
-        <tr><td>12</td><td>西予市</td><td>2億3,703万1千円</td><td>7,029円</td><td>0.72%</td></tr>
-        <tr><td>13</td><td>久万高原町</td><td>4,349万円</td><td>6,313円</td><td>0.46%</td></tr>
-        <tr><td>14</td><td>東温市</td><td>8,443万6千円</td><td>2,562円</td><td>0.42%</td></tr>
-        <tr><td>15</td><td>松山市</td><td>9億4,977万円</td><td>1,912円</td><td>0.42%</td></tr>
-        <tr><td>16</td><td>上島町</td><td>1,020万円</td><td>1,676円</td><td>0.15%</td></tr>
-        <tr><td>17</td><td>四国中央市</td><td>3,979万4千円</td><td>491円</td><td>0.09%</td></tr>
-        <tr><td>18</td><td>西条市</td><td>5,054万円</td><td>489円</td><td>0.09%</td></tr>
-        <tr><td>19</td><td>新居浜市</td><td>983万5千円</td><td>87円</td><td>0.02%</td></tr>
-        <tr><td>20</td><td>今治市</td><td>1,158万3千円</td><td>78円</td><td>0.01%</td></tr>
+        <tr><td>1</td><td>伊方町</td><td>4億764万7千円</td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v">52,505円</span><span class="zu-cb-bar" style="--w:100%"></span></span></td><td>3.95%</td></tr>
+        <tr><td>2</td><td>松野町</td><td>1億7,938万5千円</td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v">51,488円</span><span class="zu-cb-bar" style="--w:98.06%"></span></span></td><td>4.42%</td></tr>
+        <tr><td>3</td><td>鬼北町</td><td>3億8,299万5千円</td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v">42,050円</span><span class="zu-cb-bar" style="--w:80.09%"></span></span></td><td>4.27%</td></tr>
+        <tr><td>4</td><td>伊予市</td><td>12億4,804万6千円</td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v">35,483円</span><span class="zu-cb-bar" style="--w:67.58%"></span></span></td><td>6.28%</td></tr>
+        <tr><td>5</td><td>砥部町</td><td>6億9,726万5千円</td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v">34,535円</span><span class="zu-cb-bar" style="--w:65.77%"></span></span></td><td>6.12%</td></tr>
+        <tr><td>6</td><td>内子町</td><td>5億376万9千円</td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v">34,251円</span><span class="zu-cb-bar" style="--w:65.23%"></span></span></td><td>4.39%</td></tr>
+        <tr><td>7</td><td>松前町</td><td>9億5,988万円</td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v">31,789円</span><span class="zu-cb-bar" style="--w:60.54%"></span></span></td><td>7.03%</td></tr>
+        <tr><td>8</td><td>宇和島市</td><td>19億4,505万1千円</td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v">29,039円</span><span class="zu-cb-bar" style="--w:55.31%"></span></span></td><td>3.93%</td></tr>
+        <tr class="zu-hl"><td><strong>9</strong></td><td><strong>大洲市</strong></td><td><strong>10億8,355万3千円</strong></td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v"><strong>27,755円</strong></span><span class="zu-cb-bar" style="--w:52.86%"></span></span></td><td><strong>3.57%</strong></td></tr>
+        <tr><td>10</td><td>八幡浜市</td><td>7億4,693万円</td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v">24,882円</span><span class="zu-cb-bar" style="--w:47.39%"></span></span></td><td>3.12%</td></tr>
+        <tr><td>11</td><td>愛南町</td><td>3億2,105万3千円</td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v">17,286円</span><span class="zu-cb-bar" style="--w:32.92%"></span></span></td><td>1.80%</td></tr>
+        <tr><td>12</td><td>西予市</td><td>2億3,703万1千円</td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v">7,029円</span><span class="zu-cb-bar" style="--w:13.39%"></span></span></td><td>0.72%</td></tr>
+        <tr><td>13</td><td>久万高原町</td><td>4,349万円</td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v">6,313円</span><span class="zu-cb-bar" style="--w:12.02%"></span></span></td><td>0.46%</td></tr>
+        <tr><td>14</td><td>東温市</td><td>8,443万6千円</td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v">2,562円</span><span class="zu-cb-bar" style="--w:4.88%"></span></span></td><td>0.42%</td></tr>
+        <tr><td>15</td><td>松山市</td><td>9億4,977万円</td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v">1,912円</span><span class="zu-cb-bar" style="--w:3.64%"></span></span></td><td>0.42%</td></tr>
+        <tr><td>16</td><td>上島町</td><td>1,020万円</td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v">1,676円</span><span class="zu-cb-bar" style="--w:3.19%"></span></span></td><td>0.15%</td></tr>
+        <tr><td>17</td><td>四国中央市</td><td>3,979万4千円</td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v">491円</span><span class="zu-cb-bar" style="--w:0.94%"></span></span></td><td>0.09%</td></tr>
+        <tr><td>18</td><td>西条市</td><td>5,054万円</td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v">489円</span><span class="zu-cb-bar" style="--w:0.93%"></span></span></td><td>0.09%</td></tr>
+        <tr><td>19</td><td>新居浜市</td><td>983万5千円</td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v">87円</span><span class="zu-cb-bar" style="--w:0.17%"></span></span></td><td>0.02%</td></tr>
+        <tr><td>20</td><td>今治市</td><td>1,158万3千円</td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v">78円</span><span class="zu-cb-bar" style="--w:0.15%"></span></span></td><td>0.01%</td></tr>
       </tbody>
     </table>
     </div>
+    <!-- /zuhyo:futan20 -->
 
     <p class="commentary"><strong>開きが異常に大きい。</strong>いちばん上の伊方町52,505円と、いちばん下の今治市78円では<strong>約670倍</strong>である（自分で計算）。大洲市と今治市でも<strong>約354倍</strong>だ。</p>
     <p class="commentary"><strong>これは「多く払っている／少なく払っている」という話ではない。</strong>組合に出した仕事は組合の負担金に化け、単独でやっている仕事は市の人件費と委託料に化ける。<strong>同じ仕事が、どの欄に立つかが違うだけである。</strong></p>

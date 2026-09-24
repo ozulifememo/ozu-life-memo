@@ -5028,6 +5028,17 @@ figure.zu p.zu-note {
   right: 0;
   transform: none;
 }
+/* 端の年のラベルも、はみ出すなら内側へはみ出させる */
+.zu-cols.is-dense .zu-col-item:first-child .zu-col-x {
+  align-self: flex-start;
+  width: max-content;
+  text-align: left;
+}
+.zu-cols.is-dense .zu-col-item:last-child .zu-col-x {
+  align-self: flex-end;
+  width: max-content;
+  text-align: right;
+}
 .zu-col-item.is-hl .zu-col-x {
   color: var(--color-text);
   font-weight: 700;

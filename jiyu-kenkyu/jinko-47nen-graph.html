@@ -438,19 +438,21 @@
     <p class="commentary">
       しかし人口そのものが年々小さくなっているのだから、同じ800人でも、５万人のときと４万人のときでは意味が違う。そこで<strong>減少「率」</strong>に直してみた。
     </p>
-    <div style="overflow-x:auto;"><table class="jk-table">
+    <!-- zuhyo:ritsu -->
+    <div style="overflow-x:auto;"><table data-zu="ritsu" class="jk-table">
       <thead><tr><th>年</th><th class="num">減少数</th><th class="num">前年人口</th><th class="num">減少率</th><th>その年の出来事</th></tr></thead>
       <tbody>
-        <tr><td>2006年</td><td class="num">-581</td><td class="num">51,841</td><td class="num">-1.12％</td><td>合併の翌年</td></tr>
-        <tr><td>2008年</td><td class="num">-891</td><td class="num">50,712</td><td class="num">-1.76％</td><td>減少数では最大</td></tr>
-        <tr><td>2012年</td><td class="num">-303</td><td class="num">47,817</td><td class="num">-0.63％</td><td>最も減らなかった年</td></tr>
-        <tr><td>2018年</td><td class="num">-866</td><td class="num">44,266</td><td class="num">-1.96％</td><td>西日本豪雨</td></tr>
-        <tr><td>2020年</td><td class="num">-702</td><td class="num">42,706</td><td class="num">-1.64％</td><td>コロナ１年目</td></tr>
-        <tr><td>2021年</td><td class="num">-704</td><td class="num">42,004</td><td class="num">-1.68％</td><td>コロナ２年目</td></tr>
-        <tr><td>2024年</td><td class="num">-827</td><td class="num">39,867</td><td class="num">-2.07％</td><td>—</td></tr>
-        <tr class="hl"><td>2025年</td><td class="num">-842</td><td class="num">39,040</td><td class="num">-2.16％</td><td>21年間で最も速い</td></tr>
+        <tr><td class="zu-nw">2006年</td><td class="num">-581</td><td class="num">51,841</td><td class="num">-1.12％</td><td>合併の翌年</td></tr>
+        <tr><td class="zu-nw">2008年</td><td class="num">-891</td><td class="num">50,712</td><td class="num">-1.76％</td><td>減少数では最大</td></tr>
+        <tr><td class="zu-nw">2012年</td><td class="num">-303</td><td class="num">47,817</td><td class="num">-0.63％</td><td>最も減らなかった年</td></tr>
+        <tr><td class="zu-nw">2018年</td><td class="num">-866</td><td class="num">44,266</td><td class="num">-1.96％</td><td>西日本豪雨</td></tr>
+        <tr><td class="zu-nw">2020年</td><td class="num">-702</td><td class="num">42,706</td><td class="num">-1.64％</td><td>コロナ１年目</td></tr>
+        <tr><td class="zu-nw">2021年</td><td class="num">-704</td><td class="num">42,004</td><td class="num">-1.68％</td><td>コロナ２年目</td></tr>
+        <tr class="zu-hl"><td class="zu-nw">2024年</td><td class="num">-827</td><td class="num">39,867</td><td class="num">-2.07％</td><td>—</td></tr>
+        <tr class="zu-hl hl"><td class="zu-nw">2025年</td><td class="num">-842</td><td class="num">39,040</td><td class="num">-2.16％</td><td>21年間で最も速い</td></tr>
       </tbody>
     </table></div>
+    <!-- /zuhyo:ritsu -->
     <p class="commentary">
       <strong>減少率で見ると、いちばん速いのは2025年（-2.16％）だった。</strong>
     </p>
@@ -511,6 +513,21 @@
     <p class="commentary">
       つまり人口減少の３分の２は、人が出ていくからではなく、亡くなる人が生まれる人の3.8倍いるからだ。
     </p>
+    <!-- zuhyo:uchiwake -->
+    <figure class="zu zu-stack" data-zu="uchiwake">
+      <figcaption class="zu-title">2024年の人口減少827人の内訳。3分の2は自然減</figcaption>
+      <ul class="zu-legend">
+        <li><span class="zu-sw" style="--c:var(--zu-c2)"></span>自然減(出生185人・死亡711人) <b>526人</b></li>
+        <li><span class="zu-sw" style="--c:var(--zu-c1)"></span>社会減(転入944人・転出1,245人) <b>301人</b></li>
+      </ul>
+      <div class="zu-stacks is-single">
+        <div class="zu-stack-row">
+          <span class="zu-stack-bar"><span class="zu-seg" style="--w:63.6%;--c:var(--zu-c2)" title="自然減(出生185人・死亡711人) 526人"><span class="zu-seg-v">526人</span></span><span class="zu-seg" style="--w:36.4%;--c:var(--zu-c1)" title="社会減(転入944人・転出1,245人) 301人"><span class="zu-seg-v">301人</span></span></span>
+        </div>
+      </div>
+      <p class="zu-note">自然減が全体の64%、社会減が36%。移住や雇用で社会減を止められても、効くのは減少の36%の部分。</p>
+    </figure>
+    <!-- /zuhyo:uchiwake -->
     <p class="commentary">
       １日あたりに直すと、出生0.51人・死亡1.95人。２日に１人生まれるペースに対して、ほぼ毎日誰かが亡くなっている計算になる。
     </p>
@@ -598,6 +615,46 @@
     <p class="commentary">
       ただし、この増加はすでに反転している。今回集計した住民基本台帳のデータで世帯数を追うと、2012年の20,284世帯をピークに、2025年は19,252世帯まで減っている。
     </p>
+    <!-- zuhyo:setai -->
+    <figure class="zu zu-line" data-zu="setai">
+      <figcaption class="zu-title">人口は減り続け、世帯数はほとんど減っていない(各年12月末の住民基本台帳)</figcaption>
+      <ul class="zu-legend">
+        <li><span class="zu-sw is-line" style="--c:var(--zu-c1)"></span>人口</li>
+        <li><span class="zu-sw is-line" style="--c:var(--zu-c2)"></span>世帯数</li>
+      </ul>
+      <div class="zu-line-box" style="margin-right:87px">
+        <div class="zu-line-plot">
+          <span class="zu-line-grid" style="bottom:0%"><span class="zu-line-y">0</span></span>
+          <span class="zu-line-grid" style="bottom:33.33%"><span class="zu-line-y">20,000</span></span>
+          <span class="zu-line-grid" style="bottom:66.67%"><span class="zu-line-y">40,000</span></span>
+          <span class="zu-line-grid" style="bottom:100%"><span class="zu-line-y">60,000</span></span>
+          <svg class="zu-line-svg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+            <polyline points="0.00,13.60 35.00,20.81 65.00,27.67 100.00,36.34" style="stroke:var(--zu-c1)"></polyline>
+            <polyline points="0.00,66.48 35.00,66.19 65.00,66.91 100.00,67.91" style="stroke:var(--zu-c2)"></polyline>
+          </svg>
+          <span class="zu-dot" style="left:0%;bottom:86.4%;--c:var(--zu-c1)"></span>
+          <span class="zu-dot" style="left:35%;bottom:79.19%;--c:var(--zu-c1)"></span>
+          <span class="zu-dot" style="left:65%;bottom:72.33%;--c:var(--zu-c1)"></span>
+          <span class="zu-dot" style="left:100%;bottom:63.66%;--c:var(--zu-c1)"></span>
+          <span class="zu-pt is-start" style="left:0%;bottom:86.4%">51,841人</span>
+          <span class="zu-dot" style="left:0%;bottom:33.52%;--c:var(--zu-c2)"></span>
+          <span class="zu-dot" style="left:35%;bottom:33.81%;--c:var(--zu-c2)"></span>
+          <span class="zu-dot" style="left:65%;bottom:33.09%;--c:var(--zu-c2)"></span>
+          <span class="zu-dot" style="left:100%;bottom:32.09%;--c:var(--zu-c2)"></span>
+          <span class="zu-pt is-start" style="left:0%;bottom:33.52%">20,109世帯</span>
+          <span class="zu-pt is-gut" style="bottom:32.09%"><i style="--c:var(--zu-c2)"></i>19,252世帯</span>
+          <span class="zu-pt is-gut" style="bottom:63.66%"><i style="--c:var(--zu-c1)"></i>38,198人</span>
+        </div>
+        <div class="zu-line-x">
+          <span class="is-start" style="left:0%">2005年</span>
+          <span class="is-mid" style="left:35%">2012年</span>
+          <span class="is-mid" style="left:65%">2018年</span>
+          <span class="is-end" style="left:100%">2025年</span>
+        </div>
+      </div>
+      <p class="zu-note">世帯数のピークは2012年の20,284世帯。1世帯あたりの人数は2.58人から1.98人になり、2人を割った。</p>
+    </figure>
+    <!-- /zuhyo:setai -->
     <p class="commentary">
       <strong>人口減少に遅れること数年で、世帯数も減少局面に入った</strong>ということになる。
     </p>
@@ -647,6 +704,32 @@
     <p class="commentary">
       推計どおりに進むと、2060年の大洲市は19,842人。これに対して市が掲げている目標は30,000人で、<strong>約１万人の開きがある</strong><a href="#fn3" class="jk-fn">[３]</a>。
     </p>
+    <!-- zuhyo:mirai -->
+    <figure class="zu zu-bar" data-zu="mirai">
+      <figcaption class="zu-title">2060年の大洲市。推計と市の目標のあいだに、約1万人の開きがある</figcaption>
+      <div class="zu-bars has-hl" style="--fmax:0.73">
+        <div class="zu-bar-row">
+          <span class="zu-bar-label">2025年(実績・国勢調査の速報値)</span>
+          <span class="zu-bar-lines">
+            <span class="zu-bar-line"><span class="zu-bar-fill" style="--w:100%;--c:var(--zu-mute)"></span><span class="zu-bar-v">37,365人</span></span>
+          </span>
+        </div>
+        <div class="zu-bar-row is-hl">
+          <span class="zu-bar-label">2060年(推計)</span>
+          <span class="zu-bar-lines">
+            <span class="zu-bar-line"><span class="zu-bar-fill" style="--w:53.1%"></span><span class="zu-bar-v">19,842人</span></span>
+          </span>
+        </div>
+        <div class="zu-bar-row">
+          <span class="zu-bar-label">2060年(市の目標)</span>
+          <span class="zu-bar-lines">
+            <span class="zu-bar-line"><span class="zu-bar-fill" style="--w:80.29%;--c:var(--zu-mute)"></span><span class="zu-bar-v">30,000人</span></span>
+          </span>
+        </div>
+      </div>
+      <p class="zu-note">推計は、社人研の推計に準拠した市の記載。目標は第2期大洲市まち・ひと・しごと創生総合戦略。</p>
+    </figure>
+    <!-- /zuhyo:mirai -->
     <p class="commentary">
       表に2045年が２行あるのは、推計の年次が違うからだ。25,670人は平成30年（2018年）推計の数字で、市の総合戦略がこれを引いている。社人研はその後、令和２年国勢調査をもとに令和５年（2023年）推計を出していて、そこでは2045年が<strong>24,124人</strong>、2050年が<strong>21,366人</strong>になる<a href="#fn15" class="jk-fn">[15]</a>。５年で見通しが約1,500人下がった。
     </p>
@@ -722,7 +805,7 @@
     </p>
     <p class="commentary">
       <strong>③2018年の西日本豪雨は、確かに数字に出ている。</strong>
-      １年で866人という減少は、前後の年より200人以上多い。
+      １年で866人という減少は、前年より260人、翌年より172人多い。
       持ち直しかけていた2017年の直後だった。
     </p>
     <p class="commentary">

@@ -92,8 +92,9 @@
     <p class="commentary">
       まず基本の枠を確認する。診療があるのは<strong>火・木・金曜のみ</strong>。<strong>月曜と水曜は休診</strong>だ。
     </p>
+    <!-- zuhyo:jougen -->
     <div style="overflow-x:auto;margin:1rem 0;">
-      <table style="width:100%;border-collapse:separate;border-spacing:0;border:1px solid var(--color-border);border-radius:var(--radius);overflow:hidden;">
+      <table data-zu="jougen" style="width:100%;border-collapse:separate;border-spacing:0;border:1px solid var(--color-border);border-radius:var(--radius);overflow:hidden;">
         <thead>
           <tr style="background:#eaf3f6;">
             <th style="text-align:left;padding:12px 16px;color:var(--color-brand);font-weight:600;font-size:0.85rem;border-bottom:1px solid var(--color-border);">曜日</th>
@@ -102,13 +103,14 @@
           </tr>
         </thead>
         <tbody>
-          <tr><td style="padding:12px 16px;border-bottom:1px solid var(--color-border);color:var(--color-text-muted);">火曜</td><td style="padding:12px 16px;border-bottom:1px solid var(--color-border);color:var(--color-text-muted);">午前９時～午後２時</td><td style="padding:12px 16px;border-bottom:1px solid var(--color-border);color:var(--color-text-muted);"><strong>45名</strong></td></tr>
-          <tr><td style="padding:12px 16px;border-bottom:1px solid var(--color-border);color:var(--color-text-muted);">木曜（午前）</td><td style="padding:12px 16px;border-bottom:1px solid var(--color-border);color:var(--color-text-muted);">午前９時～午後１時30分</td><td style="padding:12px 16px;border-bottom:1px solid var(--color-border);color:var(--color-text-muted);"><strong>35名</strong></td></tr>
-          <tr><td style="padding:12px 16px;border-bottom:1px solid var(--color-border);color:var(--color-text-muted);">木曜（午後）</td><td style="padding:12px 16px;border-bottom:1px solid var(--color-border);color:var(--color-text-muted);">午後２時～５時</td><td style="padding:12px 16px;border-bottom:1px solid var(--color-border);color:var(--color-text-muted);"><strong>20名</strong></td></tr>
-          <tr><td style="padding:12px 16px;color:var(--color-text-muted);">金曜</td><td style="padding:12px 16px;color:var(--color-text-muted);">午前９時～午後２時</td><td style="padding:12px 16px;color:var(--color-text-muted);"><strong>40名</strong></td></tr>
+          <tr><td style="padding:12px 16px;border-bottom:1px solid var(--color-border);color:var(--color-text-muted);">火曜</td><td style="padding:12px 16px;border-bottom:1px solid var(--color-border);color:var(--color-text-muted);">午前９時～午後２時</td><td style="padding:12px 16px;border-bottom:1px solid var(--color-border);color:var(--color-text-muted);" class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v"><strong>45名</strong></span><span class="zu-cb-bar" style="--w:100%"></span></span></td></tr>
+          <tr><td style="padding:12px 16px;border-bottom:1px solid var(--color-border);color:var(--color-text-muted);">木曜（午前）</td><td style="padding:12px 16px;border-bottom:1px solid var(--color-border);color:var(--color-text-muted);">午前９時～午後１時30分</td><td style="padding:12px 16px;border-bottom:1px solid var(--color-border);color:var(--color-text-muted);" class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v"><strong>35名</strong></span><span class="zu-cb-bar" style="--w:77.78%"></span></span></td></tr>
+          <tr><td style="padding:12px 16px;border-bottom:1px solid var(--color-border);color:var(--color-text-muted);">木曜（午後）</td><td style="padding:12px 16px;border-bottom:1px solid var(--color-border);color:var(--color-text-muted);">午後２時～５時</td><td style="padding:12px 16px;border-bottom:1px solid var(--color-border);color:var(--color-text-muted);" class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v"><strong>20名</strong></span><span class="zu-cb-bar" style="--w:44.44%"></span></span></td></tr>
+          <tr><td style="padding:12px 16px;color:var(--color-text-muted);">金曜</td><td style="padding:12px 16px;color:var(--color-text-muted);">午前９時～午後２時</td><td style="padding:12px 16px;color:var(--color-text-muted);" class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v"><strong>40名</strong></span><span class="zu-cb-bar" style="--w:88.89%"></span></span></td></tr>
         </tbody>
       </table>
     </div>
+    <!-- /zuhyo:jougen -->
     <p class="commentary">
       受付時間は、午前が<strong>８時15分から11時30分</strong>まで。木曜午後は<strong>１時30分から４時30分</strong>まで。
     </p>
@@ -185,6 +187,27 @@
     <p class="commentary">
       もう一つ、この統計には特徴的な数字がある。<strong>皮膚科は女性医師の比率が高い診療科</strong>で、女性医師の主たる診療科としては内科（14.9％）、小児科（8.3％）に次いで<strong>眼科と並ぶ6.5％</strong>。一方、男性では1.9％にとどまる。
     </p>
+    <!-- zuhyo:seibetsu -->
+    <figure class="zu zu-bar" data-zu="seibetsu">
+      <figcaption class="zu-title">主たる診療科が皮膚科の医師の割合。女性は6.5％、男性は1.9％</figcaption>
+      <p class="zu-sub">令和６年 医師・歯科医師・薬剤師統計</p>
+      <div class="zu-bars has-hl" style="--fmax:0.76">
+        <div class="zu-bar-row is-hl">
+          <span class="zu-bar-label">女性医師</span>
+          <span class="zu-bar-lines">
+            <span class="zu-bar-line"><span class="zu-bar-fill" style="--w:100%"></span><span class="zu-bar-v">6.5%</span></span>
+          </span>
+        </div>
+        <div class="zu-bar-row">
+          <span class="zu-bar-label">男性医師</span>
+          <span class="zu-bar-lines">
+            <span class="zu-bar-line"><span class="zu-bar-fill" style="--w:29.23%;--c:var(--zu-mute)"></span><span class="zu-bar-v">1.9%</span></span>
+          </span>
+        </div>
+      </div>
+      <p class="zu-note">女性医師の主たる診療科としては、内科(14.9％)、小児科(8.3％)に次いで、眼科と並ぶ。</p>
+    </figure>
+    <!-- /zuhyo:seibetsu -->
     <p class="commentary">
       平均年齢は<strong>51.4歳</strong>で、全診療科の平均50.6歳よりわずかに高い。
     </p>
@@ -257,6 +280,22 @@
     <p class="commentary">
       うち器械備品購入費が<strong>４億1,500万円</strong>で、その大半は<strong>病院情報システム（電子カルテ）の更新３億9,540万円</strong>だ。
     </p>
+    <!-- zuhyo:kikai -->
+    <figure class="zu zu-stack" data-zu="kikai">
+      <figcaption class="zu-title">器械備品購入費４億1,500万円の大半は、電子カルテの更新</figcaption>
+      <p class="zu-sub">病院事業会計(令和８年度当初予算)</p>
+      <ul class="zu-legend">
+        <li><span class="zu-sw" style="--c:var(--zu-c2)"></span>病院情報システム(電子カルテ)の更新 <b>３億9,540万円</b></li>
+        <li><span class="zu-sw" style="--c:var(--zu-mute)"></span>そのほか <b>1,960万円</b></li>
+      </ul>
+      <div class="zu-stacks is-single">
+        <div class="zu-stack-row">
+          <span class="zu-stack-bar"><span class="zu-seg" style="--w:95.28%;--c:var(--zu-c2)" title="病院情報システム(電子カルテ)の更新 ３億9,540万円"><span class="zu-seg-v">３億9,540万円</span></span><span class="zu-seg is-light" style="--w:4.72%;--c:var(--zu-mute)" title="そのほか 1,960万円"></span></span>
+        </div>
+      </div>
+      <p class="zu-note">病院事業会計の全体は40億426万６千円(前年度比３億2,567万１千円増)。</p>
+    </figure>
+    <!-- /zuhyo:kikai -->
     <p class="commentary">
       <strong>医師は非常勤４人で回しているが、電子カルテには４億円近くかける。</strong>
     </p>

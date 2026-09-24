@@ -45,7 +45,7 @@
   <div class="wrap">
     <div class="article-layout">
       <div class="article-page" data-slug="ozu-denpa-kengai">
-    <p class="article-date"><span class="article-cat">大洲の視点</span> ・ 出典: 大洲市議会会議録／総務省 電波利用ポータル「無線局等情報検索」（情報源日付: 2025-12-16） ・ <span class="article-readtime">約8分で読める</span></p>
+    <p class="article-date"><span class="article-cat">大洲の視点</span> ・ 出典: 大洲市議会会議録／総務省 電波利用ポータル「無線局等情報検索」（情報源日付: 2025-12-16） ・ <span class="article-readtime">約9分で読める</span></p>
     <h1>開通したばかりのトンネルが圏外。<span class="nb">大洲</span>で電波が届かない場所を調べた</h1>
 
     <div class="memou-intro">
@@ -152,6 +152,21 @@
     <p class="commentary">
       ここに答えがある。<strong>人口カバー率という指標では、人が少ない場所はほとんど数に効かない。</strong>10人の集落が丸ごと圏外でも、1億2千万人の分母のなかでは0.00001％にもならない。だから「99.99％」と「山に入ると圏外になる」は矛盾せず、同時に成立する。
     </p>
+    <!-- zuhyo:shuraku -->
+    <figure class="zu zu-stack" data-zu="shuraku">
+      <figcaption class="zu-title">全国のエリア外集落526箇所のうち、4分の3は住む人が10人以下</figcaption>
+      <ul class="zu-legend">
+        <li><span class="zu-sw" style="--c:var(--zu-c2)"></span>居住人口10人以下 <b>75.1%</b></li>
+        <li><span class="zu-sw" style="--c:var(--zu-mute)"></span>10人を超える <b>24.9%</b></li>
+      </ul>
+      <div class="zu-stacks is-single">
+        <div class="zu-stack-row">
+          <span class="zu-stack-bar"><span class="zu-seg" style="--w:75.1%;--c:var(--zu-c2)" title="居住人口10人以下 75.1%"><span class="zu-seg-v">75.1%</span></span><span class="zu-seg is-light" style="--w:24.9%;--c:var(--zu-mute)" title="10人を超える 24.9%"><span class="zu-seg-v">24.9%</span></span></span>
+        </div>
+      </div>
+      <p class="zu-note">総務省「携帯電話を利用できない不感地域の状況について」(令和6年度末現在)。人口カバー率は99.99%。</p>
+    </figure>
+    <!-- /zuhyo:shuraku -->
     <p class="commentary">
       さらにこの資料には、少し重い区分がある。エリア外人口約0.56万人のうち、<strong>「エリア化を要望しない地域」を除くと約0.54万人</strong>、エリア外集落526箇所のうち「エリア化を要望しない集落」を除くと477箇所——という書き方だ。つまり、<strong>基地局を建ててほしいと望まなかった集落が、全国に49ある</strong>。景観や健康不安、あるいは高齢化で必要性を感じないなど理由はさまざまだろうが、統計の上ではそう分類されている。
     </p>
@@ -173,21 +188,23 @@
       ただし、まったく分からないわけではない。詳細画面には<strong>市区町村ごとの局数の内訳</strong>が載っている。そこで6帯域ぶんの免許を重複を除いて数え直し、大洲市の行だけを拾ってみた。結果がこれである。
     </p>
 
+    <!-- zuhyo:kyokusu -->
     <div class="article-table-wrap">
-      <table class="article-table">
+      <table data-zu="kyokusu" class="article-table">
         <caption>大洲市内の携帯電話基地局数（総務省 無線局等情報検索・2026年8月24日調べ）</caption>
         <thead><tr><th>事業者</th><th>大洲市</th><th>愛媛県</th></tr></thead>
         <tbody>
-          <tr><th scope="row">ＫＤＤＩ（au）</th><td>53局</td><td>923局</td></tr>
-          <tr><th scope="row">楽天モバイル</th><td>52局</td><td>936局</td></tr>
-          <tr><th scope="row">ＮＴＴドコモ</th><td>48局</td><td>873局</td></tr>
-          <tr><th scope="row">ソフトバンク</th><td>32局</td><td>718局</td></tr>
-          <tr><th scope="row">Wireless City Planning</th><td>9局</td><td>733局</td></tr>
-          <tr><th scope="row">ＵＱコミュニケーションズ</th><td>7局</td><td>314局</td></tr>
+          <tr><th scope="row">ＫＤＤＩ（au）</th><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v">53局</span><span class="zu-cb-bar" style="--w:100%"></span></span></td><td>923局</td></tr>
+          <tr><th scope="row">楽天モバイル</th><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v">52局</span><span class="zu-cb-bar" style="--w:98.11%"></span></span></td><td>936局</td></tr>
+          <tr><th scope="row">ＮＴＴドコモ</th><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v">48局</span><span class="zu-cb-bar" style="--w:90.57%"></span></span></td><td>873局</td></tr>
+          <tr><th scope="row">ソフトバンク</th><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v">32局</span><span class="zu-cb-bar" style="--w:60.38%"></span></span></td><td>718局</td></tr>
+          <tr><th scope="row">Wireless City Planning</th><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v">9局</span><span class="zu-cb-bar" style="--w:16.98%"></span></span></td><td>733局</td></tr>
+          <tr><th scope="row">ＵＱコミュニケーションズ</th><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v">7局</span><span class="zu-cb-bar" style="--w:13.21%"></span></span></td><td>314局</td></tr>
           <tr><th scope="row">合計</th><td>201局</td><td>4,497局</td></tr>
         </tbody>
       </table>
     </div>
+    <!-- /zuhyo:kyokusu -->
     <p class="article-table-note">700MHz・800MHz・1.5GHz・1.7GHz・2GHz・2.5GHz帯の包括免許を、免許番号で重複を除いて集計したもの。件数が多すぎる3.4GHz帯・3.5GHz帯（5G向け）は含んでいない</p>
 
     <p class="commentary">
@@ -196,6 +213,26 @@
     <p class="commentary">
       もう一つ。大洲市の201局は、愛媛県4,497局の<strong>4.5％</strong>にあたる。大洲市の人口は約4万人で、これは県の人口の3％ほどだ。単純計算にすぎないが、<strong>人口の割には基地局が多い</strong>ことになる。山と谷で電波が遮られる土地では、同じ人数をカバーするのにより多くの局が要る——という事情の裏返しだろう。
     </p>
+    <!-- zuhyo:wariai -->
+    <figure class="zu zu-bar" data-zu="wariai">
+      <figcaption class="zu-title">大洲市が愛媛県に占める割合。基地局は、人口の割合より多い</figcaption>
+      <div class="zu-bars has-hl" style="--fmax:0.76">
+        <div class="zu-bar-row is-hl">
+          <span class="zu-bar-label">携帯電話の基地局(201局 / 4,497局)</span>
+          <span class="zu-bar-lines">
+            <span class="zu-bar-line"><span class="zu-bar-fill" style="--w:45%"></span><span class="zu-bar-v">4.5%</span></span>
+          </span>
+        </div>
+        <div class="zu-bar-row">
+          <span class="zu-bar-label">人口</span>
+          <span class="zu-bar-lines">
+            <span class="zu-bar-line"><span class="zu-bar-fill" style="--w:30%"></span><span class="zu-bar-v">約3%</span></span>
+          </span>
+        </div>
+      </div>
+      <p class="zu-note">基地局は、この記事で数えた6つの周波数帯の包括免許の局数。</p>
+    </figure>
+    <!-- /zuhyo:wariai -->
 
     <h2>自分の家がどうかを調べる方法</h2>
     <p class="commentary">

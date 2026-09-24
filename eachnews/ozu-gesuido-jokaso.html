@@ -45,7 +45,7 @@
   <div class="wrap">
     <div class="article-layout">
       <div class="article-page" data-slug="ozu-gesuido-jokaso">
-    <p class="article-date"><span class="article-cat">大洲の暮らし</span> ・ 出典: 大洲市「下水道事業について」「公共下水道供用開始区域および使用料金について」ほか（情報源日付: 2026-09-06） ・ <span class="article-readtime">約9分で読める</span></p>
+    <p class="article-date"><span class="article-cat">大洲の暮らし</span> ・ 出典: 大洲市「下水道事業について」「公共下水道供用開始区域および使用料金について」ほか（情報源日付: 2026-09-06） ・ <span class="article-readtime">約10分で読める</span></p>
     <h1>下水道と浄化槽、<span class="nb">20年</span>で<span class="nb">30万円</span>以上違う。<span class="nb">大洲</span>ではどっちになるか住所で決まる</h1>
 
     <div class="memou-intro">
@@ -94,15 +94,17 @@
 
     <p class="commentary">つまり<strong>市域の大部分は、下水道ではなく浄化槽</strong>だ。中心部の一部だけが下水道につながっている。</p>
     <p class="commentary">公共下水道の実績を令和元年度末で見ると、こうなる。</p>
+    <!-- zuhyo:shoriku -->
     <div class="article-table-wrap">
-    <table class="article-table">
+    <table data-zu="shoriku" class="article-table">
       <thead><tr><th>処理区</th><th>事業開始</th><th>全体計画区域</th><th>整備済面積</th><th>接続済人口</th><th>水洗化率</th></tr></thead>
       <tbody>
-        <tr><td>肱南処理区</td><td>昭和63年度</td><td>101.2ha</td><td>87.0ha</td><td>3,443人</td><td><strong>90.6%</strong></td></tr>
-        <tr><td>肱北処理区</td><td>平成10年度</td><td>234.7ha</td><td>119.4ha</td><td>1,571人</td><td><strong>38.5%</strong></td></tr>
+        <tr><td>肱南処理区</td><td>昭和63年度</td><td>101.2ha</td><td>87.0ha</td><td>3,443人</td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v"><strong>90.6%</strong></span><span class="zu-cb-bar" style="--w:100%"></span></span></td></tr>
+        <tr class="zu-hl"><td>肱北処理区</td><td>平成10年度</td><td>234.7ha</td><td>119.4ha</td><td>1,571人</td><td class="zu-cb-cell"><span class="zu-cb"><span class="zu-cb-v"><strong>38.5%</strong></span><span class="zu-cb-bar" style="--w:42.49%"></span></span></td></tr>
       </tbody>
     </table>
     </div>
+    <!-- /zuhyo:shoriku -->
 
     <p class="commentary">肱南浄化センターが平成7年7月に、<strong>東大洲</strong>にある肱北浄化センターが平成20年5月に、それぞれ供用を開始した。市内のマンホール蓋は約1,700か所ある。</p>
     <p class="commentary">目を引くのは水洗化率だ。肱南は90.6%だが、<strong>肱北は38.5%</strong>しかない。管が家の前まで来ているのに、6割の家がつないでいないということになる。理由は後で出てくる。</p>
@@ -114,18 +116,53 @@
     <p class="commentary"><strong>浄化槽の場合。</strong> 市議会での説明によると、小型の合併処理浄化槽の維持管理費用は<strong>年約5万円から7万円</strong>。20年なら<strong>100万円から140万円</strong>だ。</p>
     <p class="commentary">内訳は浄化槽法が決めている。第10条で、浄化槽管理者は環境省令で定めるところにより毎年1回(定める場合はその回数)、<strong>保守点検と清掃</strong>をしなければならない。さらに第11条で、毎年1回、<strong>指定検査機関の行う水質に関する検査</strong>を受けなければならない。加えて、汚水をかき混ぜるブロワが24時間動き続けるので、その電気代もかかる。<strong>放っておくと違法になる装置</strong>だ、というのが下水道といちばん違うところだと思う。</p>
     <p class="commentary">並べるとこうなる。</p>
-    <div class="article-table-wrap">
-    <table class="article-table">
-      <thead><tr><th></th><th>20年で払う額</th><th>内訳</th></tr></thead>
-      <tbody>
-        <tr><td>公共下水道</td><td>約<strong>64万円</strong> + 受益者負担金</td><td>使用料31,944円×20年、負担金は200平方メートルで74,000円</td></tr>
-        <tr><td>合併処理浄化槽</td><td><strong>100万〜140万円</strong></td><td>保守点検・清掃・法定検査・ブロワの電気代</td></tr>
-      </tbody>
-    </table>
-    </div>
+    <!-- zuhyo:nijunen -->
+    <figure class="zu zu-bar" data-zu="nijunen">
+      <figcaption class="zu-title">20年で払う額。浄化槽のほうが30万円から70万円高い</figcaption>
+      <p class="zu-sub">4人家族。下水道は月20立方メートル使うとして計算</p>
+      <div class="zu-bars" style="--fmax:0.75">
+        <div class="zu-bar-row">
+          <span class="zu-bar-label">公共下水道<br>使用料31,944円×20年</span>
+          <span class="zu-bar-lines">
+            <span class="zu-bar-line"><span class="zu-bar-fill" style="--w:45.71%;--c:var(--zu-c3)"></span><span class="zu-bar-v">約64万円</span></span>
+          </span>
+        </div>
+        <div class="zu-bar-row">
+          <span class="zu-bar-label">合併処理浄化槽(維持管理が年約5万円)<br>保守点検・清掃・法定検査・ブロワの電気代</span>
+          <span class="zu-bar-lines">
+            <span class="zu-bar-line"><span class="zu-bar-fill" style="--w:71.43%;--c:var(--zu-c2)"></span><span class="zu-bar-v">100万円</span></span>
+          </span>
+        </div>
+        <div class="zu-bar-row">
+          <span class="zu-bar-label">合併処理浄化槽(年約7万円)</span>
+          <span class="zu-bar-lines">
+            <span class="zu-bar-line"><span class="zu-bar-fill" style="--w:100%;--c:var(--zu-c2)"></span><span class="zu-bar-v">140万円</span></span>
+          </span>
+        </div>
+      </div>
+      <p class="zu-note">下水道には、このほか受益者負担金がかかる(200平方メートルで74,000円)。どちらも工事費は入っていない。</p>
+    </figure>
+    <!-- /zuhyo:nijunen -->
 
     <p class="commentary"><strong>差は20年で30万円から70万円。</strong> 浄化槽のほうが高くつく。</p>
     <p class="commentary">ただしこの表には、どちらも<strong>工事費が入っていない</strong>。下水道は宅内の排水設備工事(便器や台所を下水管につなぐ工事)が要る。浄化槽は本体の設置工事が要る。市はどちらにも支援を用意していて、下水道側には水洗便所改造資金融資あっせん制度が、浄化槽側には補助金がある。浄化槽の補助限度額は公表されていて、<strong>新築なら5人槽166,000円・7人槽207,000円・10人槽274,000円</strong>、単独処理浄化槽やくみ取り便槽からの入れ替えならその倍の<strong>5人槽332,000円・7人槽414,000円・10人槽548,000円</strong>。入れ替えには宅内配管工事に30万円、既存の単独槽の撤去に12万円、便槽の撤去に9万円が加算される。ちなみに人槽は実際の人数ではなく<strong>延床面積</strong>で決まる。160平方メートル以下なら5人槽、超えると7人槽、二世帯住宅なら10人槽だ。<strong>工事費そのものの相場は、市の公表資料からは確認できなかった。</strong></p>
+    <!-- zuhyo:hojo -->
+    <figure class="zu zu-table" data-zu="hojo">
+      <figcaption class="zu-title">浄化槽の補助の限度額。入れ替えなら新築の倍</figcaption>
+      <p class="zu-sub">入れ替えは、単独処理浄化槽やくみ取り便槽から替える場合</p>
+      <div class="article-table-wrap">
+      <table class="article-table">
+        <thead><tr><th>人槽</th><th class="num">新築</th><th class="num">入れ替え</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">5人槽<small class="zu-small">延床160平方メートル以下</small></th><td class="num">166,000円</td><td class="num">332,000円</td></tr>
+          <tr><th scope="row">7人槽<small class="zu-small">160平方メートルを超える</small></th><td class="num">207,000円</td><td class="num">414,000円</td></tr>
+          <tr><th scope="row">10人槽<small class="zu-small">二世帯住宅</small></th><td class="num">274,000円</td><td class="num">548,000円</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p class="zu-note">入れ替えには、宅内配管工事に30万円、既存の単独槽の撤去に12万円、便槽の撤去に9万円が加算される。</p>
+    </figure>
+    <!-- /zuhyo:hojo -->
     <h2>市の説明が、3か月で食い違っている</h2>
     <p class="commentary">調べていていちばん引っかかったのは、市自身の説明が場所によって違うことだった。</p>
     <p class="commentary">2023年12月の定例会で、議員が合併処理浄化槽の維持管理費補助を求めたのに対し、副市長はこう答えている。</p>
@@ -139,7 +176,38 @@
     <h2>選べる人が、そもそも少ない</h2>
     <p class="commentary">最後に、この記事の前提そのものを崩す数字を書いておく。</p>
     <p class="commentary">大洲市の<strong>汚水処理人口普及率</strong>は、令和4年度末で<strong>61.1%</strong>。公共下水道・農業集落排水・合併処理浄化槽を合計した数字だ。<strong>愛媛県内11市のなかで最下位</strong>で、全国の人口5万人未満の市町村の平均83.4%と比べても20ポイント以上低い。内訳は合併浄化槽が38.2%、下水道が20.6%で、<strong>下水道より浄化槽のほうが多い。</strong></p>
+    <!-- zuhyo:fukyu -->
+    <figure class="zu zu-stack" data-zu="fukyu">
+      <figcaption class="zu-title">汚水処理人口普及率は61.1%。下水道より浄化槽のほうが多い</figcaption>
+      <p class="zu-sub">令和4年度末。県内11市のなかで最下位</p>
+      <ul class="zu-legend">
+        <li><span class="zu-sw" style="--c:var(--zu-c2)"></span>合併処理浄化槽 <b>38.2%</b></li>
+        <li><span class="zu-sw" style="--c:var(--zu-c3)"></span>公共下水道 <b>20.6%</b></li>
+        <li><span class="zu-sw" style="--c:var(--zu-c6)"></span>農業集落排水 <b>2.3%</b></li>
+        <li><span class="zu-sw" style="--c:var(--zu-mute)"></span>単独処理浄化槽・くみ取りのまま <b>38.9%</b></li>
+      </ul>
+      <div class="zu-stacks is-single">
+        <div class="zu-stack-row">
+          <span class="zu-stack-bar"><span class="zu-seg" style="--w:38.2%;--c:var(--zu-c2)" title="合併処理浄化槽 38.2%"><span class="zu-seg-v">38.2%</span></span><span class="zu-seg" style="--w:20.6%;--c:var(--zu-c3)" title="公共下水道 20.6%"><span class="zu-seg-v">20.6%</span></span><span class="zu-seg" style="--w:2.3%;--c:var(--zu-c6)" title="農業集落排水 2.3%"></span><span class="zu-seg is-light" style="--w:38.9%;--c:var(--zu-mute)" title="単独処理浄化槽・くみ取りのまま 38.9%"><span class="zu-seg-v">38.9%</span></span></span>
+        </div>
+      </div>
+      <p class="zu-note">農業集落排水と、単独処理浄化槽・くみ取りの割合は、本文の数字から引き算で出した。</p>
+    </figure>
+    <!-- /zuhyo:fukyu -->
     <p class="commentary">残りの約4割は、単独処理浄化槽かくみ取りのままということになる。転換の進みも速くない。令和4年度の浄化槽設置整備事業は、100基分の予算を組んだのに交付は<strong>55基分・1,923万1,000円</strong>にとどまった。しかもそのうち転換は18基だけで、内訳は単独処理浄化槽から5基、くみ取り便槽から13基。市は理由として、改修費用が高額になることと、住宅所有者の高齢化を挙げている。</p>
+    <!-- zuhyo:tenkan -->
+    <figure class="zu zu-dots" data-zu="tenkan">
+      <figcaption class="zu-title">令和4年度、浄化槽100基分の予算のうち、交付は55基。転換は18基だけ</figcaption>
+      <p class="zu-sub">四角1つが1基</p>
+      <ul class="zu-legend">
+        <li><span class="zu-sw" style="--c:var(--zu-c2)"></span>単独処理浄化槽から転換 <b>5基</b></li>
+        <li><span class="zu-sw" style="--c:var(--zu-c8)"></span>くみ取り便槽から転換 <b>13基</b></li>
+        <li><span class="zu-sw" style="--c:var(--zu-c1)"></span>そのほかの交付 <b>37基</b></li>
+        <li><span class="zu-sw" style="--c:var(--zu-mute)"></span>使われなかった予算の分 <b>45基</b></li>
+      </ul>
+      <div class="zu-dot-grid" role="img" aria-label="単独処理浄化槽から転換 5基、くみ取り便槽から転換 13基、そのほかの交付 37基、使われなかった予算の分 45基"><span style="--c:var(--zu-c2)"></span><span style="--c:var(--zu-c2)"></span><span style="--c:var(--zu-c2)"></span><span style="--c:var(--zu-c2)"></span><span style="--c:var(--zu-c2)"></span><span style="--c:var(--zu-c8)"></span><span style="--c:var(--zu-c8)"></span><span style="--c:var(--zu-c8)"></span><span style="--c:var(--zu-c8)"></span><span style="--c:var(--zu-c8)"></span><span style="--c:var(--zu-c8)"></span><span style="--c:var(--zu-c8)"></span><span style="--c:var(--zu-c8)"></span><span style="--c:var(--zu-c8)"></span><span style="--c:var(--zu-c8)"></span><span style="--c:var(--zu-c8)"></span><span style="--c:var(--zu-c8)"></span><span style="--c:var(--zu-c8)"></span><span style="--c:var(--zu-c1)"></span><span style="--c:var(--zu-c1)"></span><span style="--c:var(--zu-c1)"></span><span style="--c:var(--zu-c1)"></span><span style="--c:var(--zu-c1)"></span><span style="--c:var(--zu-c1)"></span><span style="--c:var(--zu-c1)"></span><span style="--c:var(--zu-c1)"></span><span style="--c:var(--zu-c1)"></span><span style="--c:var(--zu-c1)"></span><span style="--c:var(--zu-c1)"></span><span style="--c:var(--zu-c1)"></span><span style="--c:var(--zu-c1)"></span><span style="--c:var(--zu-c1)"></span><span style="--c:var(--zu-c1)"></span><span style="--c:var(--zu-c1)"></span><span style="--c:var(--zu-c1)"></span><span style="--c:var(--zu-c1)"></span><span style="--c:var(--zu-c1)"></span><span style="--c:var(--zu-c1)"></span><span style="--c:var(--zu-c1)"></span><span style="--c:var(--zu-c1)"></span><span style="--c:var(--zu-c1)"></span><span style="--c:var(--zu-c1)"></span><span style="--c:var(--zu-c1)"></span><span style="--c:var(--zu-c1)"></span><span style="--c:var(--zu-c1)"></span><span style="--c:var(--zu-c1)"></span><span style="--c:var(--zu-c1)"></span><span style="--c:var(--zu-c1)"></span><span style="--c:var(--zu-c1)"></span><span style="--c:var(--zu-c1)"></span><span style="--c:var(--zu-c1)"></span><span style="--c:var(--zu-c1)"></span><span style="--c:var(--zu-c1)"></span><span style="--c:var(--zu-c1)"></span><span style="--c:var(--zu-c1)"></span><span style="--c:var(--zu-mute)"></span><span style="--c:var(--zu-mute)"></span><span style="--c:var(--zu-mute)"></span><span style="--c:var(--zu-mute)"></span><span style="--c:var(--zu-mute)"></span><span style="--c:var(--zu-mute)"></span><span style="--c:var(--zu-mute)"></span><span style="--c:var(--zu-mute)"></span><span style="--c:var(--zu-mute)"></span><span style="--c:var(--zu-mute)"></span><span style="--c:var(--zu-mute)"></span><span style="--c:var(--zu-mute)"></span><span style="--c:var(--zu-mute)"></span><span style="--c:var(--zu-mute)"></span><span style="--c:var(--zu-mute)"></span><span style="--c:var(--zu-mute)"></span><span style="--c:var(--zu-mute)"></span><span style="--c:var(--zu-mute)"></span><span style="--c:var(--zu-mute)"></span><span style="--c:var(--zu-mute)"></span><span style="--c:var(--zu-mute)"></span><span style="--c:var(--zu-mute)"></span><span style="--c:var(--zu-mute)"></span><span style="--c:var(--zu-mute)"></span><span style="--c:var(--zu-mute)"></span><span style="--c:var(--zu-mute)"></span><span style="--c:var(--zu-mute)"></span><span style="--c:var(--zu-mute)"></span><span style="--c:var(--zu-mute)"></span><span style="--c:var(--zu-mute)"></span><span style="--c:var(--zu-mute)"></span><span style="--c:var(--zu-mute)"></span><span style="--c:var(--zu-mute)"></span><span style="--c:var(--zu-mute)"></span><span style="--c:var(--zu-mute)"></span><span style="--c:var(--zu-mute)"></span><span style="--c:var(--zu-mute)"></span><span style="--c:var(--zu-mute)"></span><span style="--c:var(--zu-mute)"></span><span style="--c:var(--zu-mute)"></span><span style="--c:var(--zu-mute)"></span><span style="--c:var(--zu-mute)"></span><span style="--c:var(--zu-mute)"></span><span style="--c:var(--zu-mute)"></span><span style="--c:var(--zu-mute)"></span></div>
+    </figure>
+    <!-- /zuhyo:tenkan -->
     <p class="commentary">大洲市には<strong>肱川清流保全条例</strong>があり、市民は浄化装置を設置して生活排水の浄化に努めなければならない、と定められている。2008年の市議会でそう説明されている。努力義務としての線は、ずいぶん前から引かれている。</p>
     <p class="commentary">「下水道と浄化槽、どっちが安いか」を調べ始めたのだが、20年で30万円以上という答えより、そこにたどり着く前の事実のほうが大きかった。<strong>大洲市で自分の家の汚水処理方式を選べる人は、ほとんどいない。</strong> 肱南か肱北の整備区域に住んでいれば下水道、八多喜の一部なら農業集落排水、それ以外は浄化槽。住所で決まる。そして安いはずの下水道が使える肱北でさえ、6割の家がまだつないでいない。</p>
     <p class="commentary">蛇口をひねると五郎の水が出て、流すと家の下か東大洲の浄化センターへ行く。同じ市に住んでいても、その後半の道筋は人によって別物だった。</p>

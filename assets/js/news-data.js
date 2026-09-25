@@ -1781,7 +1781,7 @@ const OZU_NEWS = [
     date: "2026-08-18",
     sourceDate: "2026-01-30",
     sourceDateKind: "報告",
-    title: "大洲城下、観光消費3.5億円。国交大臣賞も受賞した令和７年度の実績",
+    title: "大洲城下、再生35棟・進出34社。国交大臣賞も受賞した令和７年度の実績",
     category: "shiten",
     source: "大洲市役所",
     tags: ["観光"],

@@ -5,8 +5,17 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Sat, 26 Sep 2026 13:11:36 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 26 Sep 2026 22:01:17 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大洲の町を案内する人になるには。講座は無料、最後に市の認定試験</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/hanakairo-annainin.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/hanakairo-annainin.html</guid>
+      <pubDate>Sat, 26 Sep 2026 09:00:00 +0900</pubDate>
+      <description>大洲の城下町を案内する「おおず歴史華回廊」の案内人は、無料の講座を受けて市の認定試験に合格した人がなる。講座の時期と申し込み方、試験の中身、教科書がネットにあるのかを調べた。</description>
+      <category>観光</category>
+      <category>まちづくり</category>
+    </item>
     <item>
       <title>災害の夜、避難所は誰が開けるのか。96か所ある大洲で「避難所ごとのマニュアル」づくりが始まった</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/hinanjo-goto-manual.html</link>
@@ -245,14 +254,6 @@
       <description>大洲市の令和6年度決算303億円は、11個の費目名で書かれている。そのうち「物件費」には土地も建物も入っていない。費目名の中身と出どころを、法令と明治の条文まで遡って確かめた。</description>
       <category>財政・税金</category>
       <category>議会・行政</category>
-    </item>
-    <item>
-      <title>あなたが納めた市民税10万円は、どこへ行ったのか</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-shiminzei-yukue.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-shiminzei-yukue.html</guid>
-      <pubDate>Sat, 12 Sep 2026 09:00:00 +0900</pubDate>
-      <description>大洲市の個人市民税は令和6年度で14億1,778万円。だがこのお金は市に入った瞬間に他の収入と混ざり、原理的に追跡できない。総務省の決算カードと課税状況調から、追えないかわりに割合で分ける方法を組み立て、10万円の行き先を1円単位まで計算した。</description>
-      <category>財政・税金</category>
     </item>
   </channel>
 </rss>

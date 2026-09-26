@@ -36,6 +36,16 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "hanakairo-annainin",
+    date: "2026-09-26",
+    title: "大洲の町を案内する人になるには。講座は無料、最後に市の認定試験",
+    category: "kurashi",
+    source: "キタ・マネジメント、大洲市、大洲市議会会議録、観光庁ほか",
+    sourceDate: "2026-03-23",
+    sourceDateKind: "掲載",
+    tags: ["観光", "まちづくり"],
+  },
+  {
     slug: "hinanjo-goto-manual",
     date: "2026-09-26",
     title: "災害の夜、避難所は誰が開けるのか。96か所ある大洲で「避難所ごとのマニュアル」づくりが始まった",

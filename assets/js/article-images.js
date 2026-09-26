@@ -26,7 +26,6 @@ const OZU_ARTICLE_IMAGES = {
   "ozu-keijoshushi-hiritsu": { file: "photos/ozu-photo-20.jpg" },
   "kurashi-benricho-2026": { file: "photos/ozu-photo-17.jpg" },
   "aihara-san": { file: "photos/ozu-photo-17.jpg" },
-  "note-taiyou-konatsu-matome": { file: "photos/ozu-photo-18.jpg" },
   "seikatsuhogo-tsuika-kyufu": { file: "photos/ozu-photo-17.jpg" },
   "danjo-kyuyo-naiwake": { file: "photos/ozu-photo-20.jpg" },
   "nyusatsu-jitsurei": { file: "photos/ozu-photo-20.jpg" },

@@ -1953,15 +1953,6 @@ const OZU_NEWS = [
     tags: ["議会・行政", "まちづくり"],
   },
   {
-    slug: "note-taiyou-konatsu-matome",
-    date: "2026-08-18",
-    sourceDate: "2026-06-21",
-    title: "大洲市議会を傍聴し発信し続けるnoteアカウントを紹介",
-    category: "shiten",
-    source: "noteアカウント「郷土愛は売るほどあるこなつ」の各投稿",
-    tags: ["議会・行政"],
-  },
-  {
     slug: "ozu-ukai-guide",
     date: "2026-08-18",
     title: "大洲のうかい、初めてでもわかる乗り方ガイド",

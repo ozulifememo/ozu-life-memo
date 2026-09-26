@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "hinanjo-goto-manual",
+    date: "2026-09-26",
+    title: "災害の夜、避難所は誰が開けるのか。96か所ある大洲で「避難所ごとのマニュアル」づくりが始まった",
+    category: "shiten",
+    source: "大洲市議会 会議録、大洲市「指定避難所運営管理マニュアル」、内閣府ほか",
+    sourceDate: "2026-09-26",
+    tags: ["防災", "議会・行政"],
+  },
+  {
     slug: "kouhou-4shi-hikaku",
     date: "2026-09-24",
     title: "広報おおずは、隣のまちの広報と何がちがうのか。48冊を数えたら、紙面の45%が「お知らせ」だった",

@@ -5,8 +5,17 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Thu, 24 Sep 2026 06:05:01 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 26 Sep 2026 13:11:36 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>災害の夜、避難所は誰が開けるのか。96か所ある大洲で「避難所ごとのマニュアル」づくりが始まった</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/hinanjo-goto-manual.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/hinanjo-goto-manual.html</guid>
+      <pubDate>Sat, 26 Sep 2026 09:00:00 +0900</pubDate>
+      <description>大洲市の避難所運営マニュアルは、令和2年4月に改正した市全体の1冊である。市は令和6年3月の議会で「避難所ごとのマニュアルは作成いたしておりません」と答え、菅田地区をモデルに作り始めた。国と愛媛県がいつから何を求めていたか、能登半島地震のあと何が変わったか、南予の宇和島市・西予市はどうしているかを、会議録と国・県・市の資料で追った。</description>
+      <category>防災</category>
+      <category>議会・行政</category>
+    </item>
     <item>
       <title>広報おおずは、隣のまちの広報と何がちがうのか。48冊を数えたら、紙面の45%が「お知らせ」だった</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/kouhou-4shi-hikaku.html</link>
@@ -243,14 +252,6 @@
       <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-shiminzei-yukue.html</guid>
       <pubDate>Sat, 12 Sep 2026 09:00:00 +0900</pubDate>
       <description>大洲市の個人市民税は令和6年度で14億1,778万円。だがこのお金は市に入った瞬間に他の収入と混ざり、原理的に追跡できない。総務省の決算カードと課税状況調から、追えないかわりに割合で分ける方法を組み立て、10万円の行き先を1円単位まで計算した。</description>
-      <category>財政・税金</category>
-    </item>
-    <item>
-      <title>大洲市に来る交付税94億円は、引き算1本で決まっていた</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kofuzei-hikizan.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kofuzei-hikizan.html</guid>
-      <pubDate>Sat, 12 Sep 2026 09:00:00 +0900</pubDate>
-      <description>大洲市の収入でいちばん大きいのは市税ではなく地方交付税だ。令和6年度の普通交付税94億8,224万円が、国の見積り2つの引き算とぴったり一致することを、総務省の資料で確かめた。需要額の積み上げ方、税収の75%しか数えない理由、人口が減ったらどうなるかまで追った。</description>
       <category>財政・税金</category>
     </item>
   </channel>

@@ -1,0 +1,28 @@
+# 改行コードをリポジトリの中ではLFにそろえる。
+#
+# なぜ要るか(2026-09-07)。
+# このリポジトリは中身がCRLFで入っていて、Windowsの core.autocrlf=true が
+# 効いていたため、1文字も直していないファイルが git status に「変更あり」と
+# 出続けていた。289件ぶん。中身は同じなので、コミットしても何も起きない。
+# 本物の変更が埋もれて見えなくなるのが困る(実際に、直すべき212本を
+# 「別チャットのもの」と決めつけて放置した)。
+#
+# text=auto eol=lf にすると、リポジトリの中は必ずLF、手元に出すときもLFになる。
+# エディタもブラウザもGitHub PagesもLFで問題ない。
+* text=auto eol=lf
+
+# 中身をそのまま扱うもの(改行の変換をしない)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.pdf binary
+*.zip binary
+*.xlsx binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.mp3 binary
+*.mp4 binary

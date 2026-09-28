@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>大洲検定(β版) ｜ OZU LIFE MEMO</title>
+<meta name="description" content="OZU LIFE MEMOのこれまでの記事から出題する、大洲市についての4択クイズ。">
+<link rel="icon" href="../assets/img/favicon-192.png">
+<link rel="alternate" type="application/rss+xml" title="OZU LIFE MEMO の更新" href="../feed.xml">
+<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link data-ozu-fonts rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;family=Shippori+Mincho+B1:wght@600;700&amp;display=swap">
+<link rel="stylesheet" href="../assets/css/style.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="OZU LIFE MEMO">
+<meta property="og:title" content="大洲検定(β版)">
+<meta property="og:description" content="OZU LIFE MEMOのこれまでの記事から出題する、大洲市についての4択クイズ。">
+<meta property="og:url" content="https://ozulifememo.github.io/ozu-life-memo/quiz/">
+<meta property="og:image" content="https://ozulifememo.github.io/ozu-life-memo/assets/img/ogp-card.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://ozulifememo.github.io/ozu-life-memo/quiz/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "大洲検定(β版) ｜ OZU LIFE MEMO",
+  "url": "https://ozulifememo.github.io/ozu-life-memo/quiz/",
+  "description": "OZU LIFE MEMOのこれまでの記事から出題する、大洲市についての4択クイズ。",
+  "isPartOf": {"@type": "WebSite", "name": "OZU LIFE MEMO", "url": "https://ozulifememo.github.io/ozu-life-memo/"}
+}
+</script>
+<style>
+  .quiz-wrap { max-width: 640px; margin: 0 auto; }
+  .quiz-progress { text-align: center; color: var(--color-text-muted); font-size: 0.9rem; margin-bottom: 12px; }
+  .quiz-card { border: 1px solid var(--color-border); border-radius: var(--radius); padding: 24px; background: #fff; }
+  .quiz-question { font-size: 1.15rem; font-weight: 700; margin-bottom: 20px; line-height: 1.6; }
+  .quiz-choice {
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    width: 100%; text-align: left; padding: 14px 16px; margin-bottom: 10px;
+    border: 1px solid var(--color-border); border-radius: var(--radius-sm); background: #fff; cursor: pointer;
+    font-size: 1rem; color: var(--color-text); transition: background 0.15s, border-color 0.15s;
+  }
+  .quiz-choice:hover { border-color: var(--color-brand); }
+  .quiz-choice-text { flex: 1; }
+  .quiz-choice-badge {
+    flex-shrink: 0; font-size: 0.82rem; font-weight: 700; padding: 3px 12px; border-radius: 4px;
+  }
+  .quiz-choice.correct { background: #e6f4ea; border-color: #2e7d46; font-weight: 700; }
+  .quiz-choice.correct .quiz-choice-badge { background: #2e7d46; color: #fff; }
+  .quiz-choice.wrong { background: #fbe9e7; border-color: #c0392b; }
+  .quiz-choice.wrong .quiz-choice-badge { background: #c0392b; color: #fff; }
+  .quiz-choice[disabled] { cursor: default; }
+  .quiz-explain { margin-top: 16px; padding: 14px; background: var(--color-bg); border-radius: var(--radius-sm); color: var(--color-text-muted); font-size: 0.92rem; line-height: 1.7; display: none; }
+  .quiz-explain.show { display: block; }
+  .quiz-explain-text { margin: 0; }
+  .quiz-source-link { display: inline-block; margin-top: 10px; font-size: 0.85rem; font-weight: 700; color: var(--color-brand); text-decoration: none; }
+  .quiz-source-link:hover { text-decoration: underline; }
+  .quiz-next { display: none; margin-top: 16px; text-align: right; }
+  .quiz-next.show { display: block; }
+  .quiz-result { text-align: center; }
+  .quiz-result-score { font-size: 2.4rem; font-weight: 800; color: var(--color-brand); margin: 12px 0; }
+  .quiz-result-badge {
+    display: inline-block; font-size: 1.1rem; font-weight: 800; padding: 8px 24px; border-radius: 4px; margin-bottom: 14px;
+  }
+  .quiz-result-badge.pass { background: #e6f4ea; color: #2e7d46; }
+  .quiz-result-badge.fail { background: #fbe9e7; color: #c0392b; }
+  .quiz-result-badge.perfect { background: #fdf1d6; color: #8a6d1d; }
+  .quiz-start { text-align: center; padding: 40px 20px; }
+  .quiz-review-list { text-align: left; margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--color-border); }
+  .quiz-review-title { font-weight: 700; margin-bottom: 12px; color: var(--color-text); }
+  .quiz-review-item { display: flex; align-items: flex-start; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--color-border); font-size: 0.92rem; }
+  .quiz-review-item:last-child { border-bottom: none; }
+  .quiz-review-mark { flex-shrink: 0; font-weight: 800; font-size: 0.8rem; padding: 3px 10px; border-radius: 4px; }
+  .quiz-review-item.correct .quiz-review-mark { background: #e6f4ea; color: #2e7d46; }
+  .quiz-review-item.wrong .quiz-review-mark { background: #fbe9e7; color: #c0392b; }
+  .quiz-review-body { flex: 1; }
+  .quiz-review-q { color: var(--color-text); line-height: 1.6; }
+  .quiz-review-a { color: var(--color-text-muted); font-size: 0.85rem; margin-top: 4px; }
+</style>
+</head>
+<body>
+
+<div data-site-header data-prefix="../"></div>
+
+<section class="page-hero" style="padding-bottom:0;">
+  <div class="wrap">
+    <h1 style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;"><img src="../assets/img/memou-icon.svg" alt="" width="44" height="44" style="flex-shrink:0;">大洲検定(β版)</h1>
+    <p style="color:var(--color-text-muted);">OZU LIFE MEMOのこれまでの記事から出題する、大洲市についての4択クイズです。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap quiz-wrap">
+    <div id="quiz-start" class="quiz-card quiz-start">
+      <p style="font-size:1.05rem;margin-bottom:20px;">大洲のこと、どれだけ知っていますか？<br>全<span id="quiz-total-1"></span>問の中からランダムに7問、4択形式で出題します。<br>5問正解で合格です。</p>
+      <button id="quiz-start-btn" class="cta-btn" style="background:var(--color-brand);border:none;cursor:pointer;font-size:1rem;">はじめる</button>
+    </div>
+
+    <div id="quiz-game" style="display:none;">
+      <p class="quiz-progress"><span id="quiz-progress-text"></span></p>
+      <div class="quiz-card">
+        <p class="quiz-question" id="quiz-question"></p>
+        <div id="quiz-choices"></div>
+        <div class="quiz-explain" id="quiz-explain"></div>
+        <div class="quiz-next" id="quiz-next-wrap">
+          <button id="quiz-next-btn" class="cta-btn" style="background:var(--color-brand);border:none;cursor:pointer;">次へ →</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="quiz-result" class="quiz-card quiz-result" style="display:none;">
+      <p id="quiz-result-badge" class="quiz-result-badge"></p>
+      <p>あなたの正解数</p>
+      <p class="quiz-result-score"><span id="quiz-score"></span> / <span id="quiz-total-2"></span></p>
+      <p id="quiz-result-comment" style="color:var(--color-text-muted);margin-bottom:20px;"></p>
+      <button id="quiz-retry-btn" class="cta-btn" style="background:var(--color-brand);border:none;cursor:pointer;">もう一度挑戦する</button>
+      <div id="quiz-review-list" class="quiz-review-list"></div>
+    </div>
+
+    <p class="stub-note" style="margin-top:24px;">
+      出題内容はOZU LIFE MEMOの掲載記事をもとにしています。
+      「こんな問題も出してほしい」というリクエストがあれば、お問い合わせからどうぞ。
+    </p>
+  </div>
+</section>
+
+<div data-site-footer></div>
+
+<div data-site-modal></div>
+
+<script src="../assets/js/site-chrome.js"></script>
+<script src="../assets/js/quiz-data.js"></script>
+<script src="../assets/js/quiz-page.js"></script>
+<script src="../assets/js/main.js"></script>
+<script data-goatcounter="https://ozulifememo.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

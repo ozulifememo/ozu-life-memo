@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="メモうのアイコン版">
+  <title>メモう（案B・アイコン/アバター用）</title>
+  <!-- SNSのアイコンや favicon で潰れないように、要素を減らして輪郭を太くしたもの -->
+  <!-- 円は既存ロゴ icon-a と同じ「二重丸」の構え -->
+
+  <circle cx="100" cy="100" r="99" fill="#f6f5f2"/>
+  <circle cx="100" cy="100" r="91" fill="none" stroke="#1e435f" stroke-width="6"/>
+  <circle cx="100" cy="100" r="81" fill="none" stroke="#1e435f" stroke-width="1.6"/>
+
+  <g transform="translate(7,4)">
+  <!-- 首（円の下辺から立ち上がる。先細り） -->
+  <path d="M76 176 C64 142 60 104 74 84 L91 91 C80 112 76 146 94 176 Z" fill="#1e435f"/>
+
+  <!-- 頭 -->
+  <ellipse cx="80" cy="79" rx="19" ry="16" fill="#1e435f"/>
+
+  <!-- くちばし（細長く、先がわずかに下へ） -->
+  <path d="M95 74 L133 69 L130 80 L95 86 Z" fill="#9a6238"/>
+  <path d="M133 69 L130 80 L140 79 Z" fill="#8a5541"/>
+
+  <!-- 目（ハイライトなし） -->
+  <circle cx="86" cy="75" r="6" fill="#f6f5f2"/>
+  <circle cx="87.5" cy="75" r="2.8" fill="#16232f"/>
+
+  <!-- 鵜飼の手縄 -->
+  <path d="M64 128 q12 9 23 -3" stroke="#9a6238" stroke-width="6" stroke-linecap="round" fill="none"/>
+
+  <!-- くわえているメモ用紙 -->
+  <g transform="rotate(-9 143 89)">
+    <rect x="127" y="75" width="32" height="28" rx="2" fill="#f6f5f2" stroke="#8a5541" stroke-width="4.5"/>
+    <path d="M134 85 H152" stroke="#8a5541" stroke-width="3.4" stroke-linecap="round"/>
+    <path d="M134 94 H145" stroke="#8a5541" stroke-width="3.4" stroke-linecap="round"/>
+  </g>
+  </g>
+</svg>

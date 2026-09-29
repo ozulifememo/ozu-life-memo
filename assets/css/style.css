@@ -2401,11 +2401,15 @@ div.jk-quote.jk-quote .src::before,
   text-align: right;
 }
 
-/* 記事末尾のランダム実写真(大洲市内で撮影) */
+/* 本文の途中に置く写真(大洲市内で撮影)。
+   article-random-photo は、2026-08に全廃したランダム写真の名前。
+   2026-09-29に本文の写真を article-photo へ移した(古い名前は念のため残す) */
+.article-photo,
 .article-random-photo {
   margin: var(--space-6) 0 var(--space-5);
 }
 
+.article-photo img,
 .article-random-photo img {
   width: 100%;
   /* img の height 属性(1200など)がそのまま高さになり、スマホで縦に伸びて切れるのを防ぐ(頭の写真と同じ直し。2026-09-24) */
@@ -2417,6 +2421,7 @@ div.jk-quote.jk-quote .src::before,
   display: block;
 }
 
+.article-photo figcaption,
 .article-random-photo figcaption {
   margin-top: 8px;
   font-size: var(--text-xs);
@@ -5685,6 +5690,14 @@ details.zu-data .article-table-wrap { margin: var(--space-2) 0 0; }
   color: var(--color-brand);
   text-decoration: underline;
   text-underline-offset: 3px;
+}
+
+/* 本文の写真(2026-09-29)。箱に入れず、写真と小さな説明だけ(見た目は .article-photo) */
+figure.zu.zu-photo {
+  padding: 0;
+  background: none;
+  border: 0;
+  border-radius: 0;
 }
 
 

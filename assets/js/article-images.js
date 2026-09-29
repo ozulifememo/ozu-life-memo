@@ -125,6 +125,38 @@ const OZU_ARTICLE_IMAGES = {
   // ── 2026-09-06 追加 ──────────────────────────────
   "ozu-kyoshitsu-koza": { file: "photos/ozu-photo-16.jpg" },
   "ozu-iinkai-jikko": { file: "photos/ozu-photo-20.jpg" },
+  // ── 2026-09-29 ドライブの使っていなかった写真から(本人:「もっと、適当に載せてよい」) ──
+  "toyogabashi-henro-isan": { file: "photos/ozu-photo-88.jpg" },
+  "hijikawa-ayu-yugyo": { file: "photos/ozu-photo-92.jpg" },
+  "ozu-ukai-kanransha": { file: "photos/ozu-photo-93.jpg", caption: "大洲城のある城山から見た肱川（昼）" },
+  "ozu-shinrin-kankyozei-tsukue": { file: "photos/ozu-photo-103.jpg" },
+  "ozu-karaoke-hikaku": { file: "photos/ozu-photo-106.jpg" },
+  "ozmesse-kijitsuzen-tohyo": { file: "photos/ozu-photo-109.jpg" },
+  "ozu-conveni-kofu": { file: "photos/ozu-photo-108.jpg" },
+  "ozu-cci-shigoto": { file: "photos/ozu-photo-112.jpg" },
+  "ozu-uriage-ranking": { file: "photos/ozu-photo-112.jpg" },
+  "nanyo-kabu-jojo": { file: "photos/ozu-photo-112.jpg" },
+  "seikatsu-doro-30km": { file: "photos/ozu-photo-97.jpg" },
+  "ozu-supa-toho-10pun": { file: "photos/ozu-photo-96.jpg" },
+  "uchiko-ozu-kanko": { file: "photos/ozu-photo-115.jpg" },
+  "ozu-shitei-kanrisha": { file: "photos/ozu-photo-114.jpg" },
+  "kanko-rieki-yukue": { file: "photos/ozu-photo-116.jpg" },
+  "shiroshita-terrace-unei": { file: "photos/ozu-photo-72.jpg" },
+  "ozu-shiyakusho-zangyo": { file: "photos/ozu-photo-111.jpg" },
+  "ozu-shokuinsu-kenai-hikaku": { file: "photos/ozu-photo-111.jpg" },
+  "okane-07-shiyakusho-keiei": { file: "photos/ozu-photo-111.jpg" },
+  "ozu-kaikei-nendo-ninyo": { file: "photos/ozu-photo-111.jpg" },
+  "ozu-shokuin-tsukin": { file: "photos/ozu-photo-111.jpg" },
+  "ozu-koyosha-ev": { file: "photos/ozu-photo-111.jpg" },
+  "ozu-gikai-kotoba": { file: "photos/ozu-photo-20.jpg" },
+  "ozu-seigan-hosoru": { file: "photos/ozu-photo-20.jpg" },
+  "ozu-kentoshimasu-kaigiroku": { file: "photos/ozu-photo-20.jpg" },
+  "gikai-2026-09-tsukoku": { file: "photos/ozu-photo-20.jpg" },
+  "ozu-joho-kokai-tsukaikata": { file: "photos/ozu-photo-17.jpg" },
+  "shimin-post-teigen": { file: "photos/ozu-photo-17.jpg" },
+  "ozu-yosan-calendar": { file: "photos/ozu-photo-17.jpg" },
+  "ozu-kouhou-genka": { file: "photos/ozu-photo-17.jpg" },
+  "nankotsu-dendo-earphone": { file: "photos/ozu-photo-17.jpg" },
 };
 
 // 「この記事に合う写真がまだ無い」ものの一覧。
@@ -216,16 +248,14 @@ const OZU_ARTICLE_PHOTO_WANTED = [
     subjects: "小中学校の校舎(外観)、大洲高校の正門、体育館、通学路、給食センターの外観、教室の木製の机。児童生徒が写らない時間帯に。",
     slugs: ["chugakko-kyushoku-muryoka", "gikai-futoko-suii", "sogo-kyoiku-kaigi-honne",
             "bukatsu-chiiki-ido", "gikai-ozukoko-teiinware",
-            "kyushoku-center-yoryoku", "ozu-shinrin-kankyozei-tsukue",
-            "ozu-furusato-tsukaimichi", "ozu-kyoin-ken-to-shi", "ozu-chugaku-shinro-shinai", "kyushoku-taberarenai-ko", "taiikukan-kucho"]
+            "kyushoku-center-yoryoku", "ozu-furusato-tsukaimichi", "ozu-kyoin-ken-to-shi", "ozu-chugaku-shinro-shinai", "kyushoku-taberarenai-ko", "taiikukan-kucho"]
   },
   {
     theme: "スーパー・商業施設",
     subjects: "マルナカ大洲店の外観、フレスポ大洲、アクトピア大洲の解体現場・跡地、家電量販店、カラオケ店の外観と料金表、コンビニのマルチコピー機。",
     slugs: ["fuji-point", "fuji-marunaka-aeon-keii", "actopia-ozu-kaitai",
             "shoene-kaden-hojo",
-            "ozu-karaoke-hikaku", "ozu-conveni-kofu",
-            "ozu-shohinken-nagare", "ozu-supa-toho-10pun", "ozu-conveni-itsukara", "ozu-ramenshop-nazo", "ozu-shoten-nanken"]
+            "ozu-shohinken-nagare", "ozu-conveni-itsukara", "ozu-ramenshop-nazo", "ozu-shoten-nanken"]
   },
   {
     theme: "循環バス「ぐるりんおおず」",
@@ -258,7 +288,7 @@ const OZU_ARTICLE_PHOTO_WANTED = [
     theme: "鵜飼",
     subjects: "うかいの屋形船、鵜飼の船着場、鵜匠(顔が写らない角度で)。",
     slugs: [
-            "ozu-ukai-kanransha"]
+            ]
   },
   {
     theme: "臥龍山荘",
@@ -303,9 +333,7 @@ const OZU_ARTICLE_PHOTO_WANTED = [
   {
     theme: "市役所まわりのバリエーション(急がないが効く)",
     subjects: "議場・委員会室、市役所の窓口フロア、市役所の別角度・別の季節、庁舎前の掲示板、庁舎の駐車場に並ぶ公用車、窓口に置いてある軟骨伝導イヤホン、広報おおずの配布ラック。行政・財政の記事が19本あり、いまは同じ3枚を使い回しているため、角度違いが数枚あるだけで一覧の見え方が変わる。",
-    slugs: ["nankotsu-dendo-earphone", "ozu-koyosha-ev", "ozu-shiyakusho-zangyo",
-            "ozu-shokuinsu-kenai-hikaku", "ozu-kouhou-genka",
-            "ozu-shokuin-tsukin", "okane-07-shiyakusho-keiei", "ozu-yosan-calendar", "ozu-gikai-kotoba", "ozu-seigan-hosoru", "ozu-kentoshimasu-kaigiroku", "ozu-kaikei-nendo-ninyo", "ozu-joho-kokai-tsukaikata", "shimin-post-teigen", "gikai-2026-09-tsukoku"]
+    slugs: []
   },
   {
     theme: "まちづくりの現場",
@@ -320,7 +348,7 @@ const OZU_ARTICLE_PHOTO_WANTED = [
   {
     theme: "選挙・投票の現場",
     subjects: "選挙ポスターの掲示板、オズメッセ大洲店の入口と期日前投票所の案内、選挙公報を置いてある棚。",
-    slugs: ["ozmesse-kijitsuzen-tohyo", "ozu-senkyo-kouhou"]
+    slugs: ["ozu-senkyo-kouhou"]
   },
   {
     theme: "太陽光パネル",
@@ -337,7 +365,7 @@ const OZU_ARTICLE_PHOTO_WANTED = [
     theme: "駅・道路・タクシー",
     subjects: "伊予大洲駅の駅舎とタクシー乗り場、松山自動車道の4車線化工事の区間(歩道橋などから)、高速のインター入口。",
     slugs: ["ozu-taxi-rideshare", "shikoku-shinkansen-53nen", "matsuyama-do-4shasen-zando",
-            "ozu-kotsu-anzen-kofukin", "jr-1025oku-zeikin", "ozu-shimin-ga-ugoita", "seikatsu-doro-30km"]
+            "ozu-kotsu-anzen-kofukin", "jr-1025oku-zeikin", "ozu-shimin-ga-ugoita"]
   },
   {
     theme: "電波・通信のインフラ",
@@ -347,19 +375,17 @@ const OZU_ARTICLE_PHOTO_WANTED = [
   {
     theme: "城下町の観光施設",
     subjects: "しろしたテラスの外観と看板、大洲城の入口と券売所、おおず赤煉瓦館、まちなかの観光客の流れ(顔が写らない角度で)。",
-    slugs: ["shiroshita-terrace-unei", "ozu-shitei-kanrisha", "kanko-rieki-yukue",
-            "ozu-namae-no-yurai", "uchiko-ozu-kanko"]
+    slugs: ["ozu-namae-no-yurai"]
   },
   {
     theme: "大洲の会社・経済",
     subjects: "大洲商工会議所の建物と看板、大洲まつりのポスターやのぼり、市内の主な会社の社屋(公道から、表札が読める程度に)。",
-    slugs: ["ozu-cci-shigoto", "ozu-uriage-ranking", "nanyo-kabu-jojo"]
+    slugs: []
   },
   {
     theme: "まちなかの川と橋",
     subjects: "都谷川の護岸と流れ(まちなかを通る区間)、十夜ヶ橋と橋の下、川沿いの水位標。",
-    slugs: ["tsuyagawa-tokutei-toshi-kasen", "toyogabashi-henro-isan",
-            "ozu-suitengu-hashi", "ozu-takuchi-kasaage"]
+    slugs: ["tsuyagawa-tokutei-toshi-kasen", "ozu-suitengu-hashi", "ozu-takuchi-kasaage"]
   },
   {
     theme: "防犯灯・電気まわり",

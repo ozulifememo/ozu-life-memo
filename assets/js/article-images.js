@@ -157,7 +157,7 @@ const OZU_ARTICLE_IMAGES = {
   "ozu-yosan-calendar": { file: "photos/ozu-photo-17.jpg" },
   "ozu-kouhou-genka": { file: "photos/ozu-photo-17.jpg" },
   "nankotsu-dendo-earphone": { file: "photos/ozu-photo-17.jpg" },
-  "ozu-haze-no-hosomichi": { file: "real-photo-16.jpg", caption: "ハゼの木が植えられた市有地の近くにある、フラワーパークおおず（2026年4月）" },
+  "ozu-haze-no-hosomichi": { file: "real-photo-16.jpg", caption: "ハゼの木が植えられた市有地の近くにある、春のフラワーパークおおず" },
 };
 
 // 「この記事に合う写真がまだ無い」ものの一覧。

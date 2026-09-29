@@ -157,6 +157,7 @@ const OZU_ARTICLE_IMAGES = {
   "ozu-yosan-calendar": { file: "photos/ozu-photo-17.jpg" },
   "ozu-kouhou-genka": { file: "photos/ozu-photo-17.jpg" },
   "nankotsu-dendo-earphone": { file: "photos/ozu-photo-17.jpg" },
+  "ozu-haze-no-hosomichi": { file: "real-photo-16.jpg", caption: "ハゼの木が植えられた市有地の近くにある、フラワーパークおおず（2026年4月）" },
 };
 
 // 「この記事に合う写真がまだ無い」ものの一覧。
@@ -405,8 +406,8 @@ const OZU_ARTICLE_PHOTO_WANTED = [
   },
   {
     theme: "ハゼの細道",
-    subjects: "「ハゼの細道」に植えられたハゼの並木、樹名板、紅葉の時期の様子。",
-    slugs: ["ozu-haze-no-hosomichi"]
+    subjects: "「ハゼの細道」に植えられたハゼの並木、樹名板、紅葉の時期の様子。いまは近くのフラワーパークおおずの写真で代わりにしている(撮れたら差し替える)。",
+    slugs: []
   },
 
 

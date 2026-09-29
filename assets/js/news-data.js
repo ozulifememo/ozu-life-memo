@@ -2029,7 +2029,7 @@ const OZU_NEWS = [
   {
     slug: "hifuka-hijoukin",
     date: "2026-08-18",
-    title: "皮膚科なのに常勤医ゼロ。大洲市立病院の非常勤ローテーションを見る",
+    title: "皮膚科なのに常勤医ゼロ。市立大洲病院の非常勤ローテーションを見る",
     category: "ima",
     source: "大洲市「皮膚科(市立大洲病院)」",
     sourceDate: "2026-07-29",

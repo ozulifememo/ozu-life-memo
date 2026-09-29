@@ -32,10 +32,10 @@ const OZU_PHOTO_LIBRARY = [
   { file: "real-photo-13.jpg", alt: "大洲の中心商店街の通り", topics: ["商店街", "中心市街地", "商業"], free: false },
   { file: "real-photo-14.jpg", alt: "青空の下の大洲城天守と台所櫓", topics: ["大洲城", "観光", "歴史"], free: false },
   { file: "real-photo-15.jpg", alt: "冬の田園とビニールハウス、山並み", topics: ["農業", "冬"], free: false },
-  { file: "real-photo-16.jpg", alt: "冨士山公園の花まつり会場", topics: ["花", "公園", "イベント", "観光"], group: "season" },
-  { file: "real-photo-17.jpg", alt: "咲きそろった黄色いチューリップ", topics: ["花", "公園"], group: "season" },
-  { file: "real-photo-18.jpg", alt: "ネモフィラの青い花畑", topics: ["花", "公園"], group: "season" },
-  { file: "real-photo-19.jpg", alt: "畝ごとに色分けされたチューリップ畑", topics: ["花", "公園"], group: "season" },
+  { file: "real-photo-16.jpg", alt: "フラワーパークおおずのチューリップ畑と来場者", topics: ["フラワーパーク", "花", "公園", "イベント", "観光"], group: "season" },
+  { file: "real-photo-17.jpg", alt: "フラワーパークおおずの、咲きそろった黄色いチューリップ", topics: ["フラワーパーク", "花", "公園"], group: "season" },
+  { file: "real-photo-18.jpg", alt: "フラワーパークおおずの、ネモフィラの青い花畑", topics: ["フラワーパーク", "花", "公園"], group: "season" },
+  { file: "real-photo-19.jpg", alt: "フラワーパークおおずの、畝ごとに色分けされたチューリップ畑", topics: ["フラワーパーク", "花", "公園"], group: "season" },
 
   { file: "photos/ozu-photo-01.jpg", alt: "夜明けの山の稜線と、ふもとを走る列車", topics: ["鉄道", "山間部"], group: "river" },
   { file: "photos/ozu-photo-02.jpg", alt: "菜の花畑と駅のホーム", topics: ["鉄道", "駅", "春"], group: "season" },
@@ -63,12 +63,12 @@ const OZU_PHOTO_LIBRARY = [
   { file: "photos/ozu-photo-24.jpg", alt: "夜空に浮かぶ桜", topics: ["桜", "夜"], group: "season" },
   { file: "photos/ozu-photo-25.jpg", alt: "夜の大洲城天守と櫓", topics: ["大洲城", "観光", "夜"], group: "castle" },
   { file: "photos/ozu-photo-26.jpg", alt: "ライトアップされた大洲城の天守", topics: ["大洲城", "観光", "夜"], group: "castle" },
-  { file: "photos/ozu-photo-27.jpg", alt: "冨士山公園のチューリップ畑", topics: ["花", "公園", "観光"], group: "season" },
-  { file: "photos/ozu-photo-28.jpg", alt: "黄色いチューリップのアップ", topics: ["花"], group: "season" },
-  { file: "photos/ozu-photo-29.jpg", alt: "ネモフィラとチューリップの花畑", topics: ["花", "公園"], group: "season" },
-  { file: "photos/ozu-photo-30.jpg", alt: "菜の花が咲く丘の小道", topics: ["花", "春", "農業"], group: "season" },
-  { file: "photos/ozu-photo-31.jpg", alt: "観覧車の見えるチューリップ畑", topics: ["花", "公園", "観光"], group: "season" },
-  { file: "photos/ozu-photo-32.jpg", alt: "色とりどりのチューリップ畑と来場者", topics: ["花", "イベント", "観光"], group: "season" },
+  { file: "photos/ozu-photo-27.jpg", alt: "フラワーパークおおずのチューリップ畑", topics: ["フラワーパーク", "花", "公園", "観光"], group: "season" },
+  { file: "photos/ozu-photo-28.jpg", alt: "フラワーパークおおずの黄色いチューリップ(アップ)", topics: ["フラワーパーク", "花"], group: "season" },
+  { file: "photos/ozu-photo-29.jpg", alt: "フラワーパークおおずのネモフィラとチューリップ", topics: ["フラワーパーク", "花", "公園"], group: "season" },
+  { file: "photos/ozu-photo-30.jpg", alt: "フラワーパークおおずの菜の花畑と小道", topics: ["フラワーパーク", "花", "春", "農業"], group: "season" },
+  { file: "photos/ozu-photo-31.jpg", alt: "フラワーパークおおずのチューリップ畑。奥に赤い輪のアーチ", topics: ["フラワーパーク", "花", "公園", "観光"], group: "season" },
+  { file: "photos/ozu-photo-32.jpg", alt: "フラワーパークおおずの、色とりどりのチューリップ畑と来場者", topics: ["フラワーパーク", "花", "イベント", "観光"], group: "season" },
   { file: "photos/ozu-photo-33.jpg", alt: "フレスポ大洲のラ・ムー大洲店の外観", topics: ["商業", "買い物", "郊外店", "フレスポ", "物価"], group: "town" },
   { file: "photos/ozu-photo-34.jpg", alt: "林の中に立つ説明板", topics: ["史跡"], board: true },
   { file: "photos/ozu-photo-35.jpg", alt: "山の斜面に懸造りで建つ少彦名神社の参籠殿", topics: ["少彦名神社", "寺社", "歴史建築", "観光"], group: "shrine" },
@@ -153,8 +153,6 @@ const OZU_PHOTO_LIBRARY = [
   { file: "photos/ozu-photo-116.jpg", alt: "ライトアップされた夜桜と、大洲城の建物", topics: ["大洲城", "桜", "夜", "春"], group: "castle" },
   { file: "photos/ozu-photo-117.jpg", alt: "夜桜の向こうに光る大洲城", topics: ["桜", "夜", "春", "大洲城"], group: "season" },
   { file: "photos/ozu-photo-118.jpg", alt: "夜の幹線道路と山の影", topics: ["道路", "夜", "交通"], group: "town" },
-  { file: "photos/ozu-photo-119.jpg", alt: "一面に咲いた菜の花", topics: ["花", "春"], group: "season" },
-  { file: "photos/ozu-photo-120.jpg", alt: "色とりどりのチューリップの畝", topics: ["花", "春"], group: "season" }
 ];
 
 // 記事のメイン写真に使える写真(掲示物が主役のものを除く)

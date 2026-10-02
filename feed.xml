@@ -5,8 +5,16 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Sat, 03 Oct 2026 02:08:18 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 03 Oct 2026 02:17:33 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大洲のまわり5市町は、どこまで「1つの町」か。仕事は95％が中で足りて、入院は4人に1人が外へ出る</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-5shichou-hitotsu.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-5shichou-hitotsu.html</guid>
+      <pubDate>Sat, 03 Oct 2026 09:00:00 +0900</pubDate>
+      <description>大洲市・内子町・八幡浜市・西予市・伊方町の5市町は、県の医療圏や保健所で1つの区域として扱われる。人は実際にその中で動いているのか。2020年の国勢調査で数えると、5市町に住んで働く人の95.3％は5市町の中で働いていた。松山へ通うのは966人で、松山から来る1,028人より少ない。ところが入院の患者は25.4％が圏域の外へ出ていて、県内6圏域でいちばん高い。仕事・通学・買い物・入院の4つで比べた。</description>
+      <category>合併・地域</category>
+    </item>
     <item>
       <title>売上は県内の市で1位なのに、出ていきたい理由の1位は「交通や買物が不便」だった</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kaimono-fuben.html</link>
@@ -252,14 +260,6 @@
       <description>消防も、県の土木も、税務署も、ハローワークも、警察署も、県議会の選挙区も、農協も、医師会も、受け持ちが「大洲市と内子町」でぴったり同じだった。別々の役所が別々の理由で引いた線を24本数えたら、13本が一致し11本はズレた。手がかりは、100年前に役所を失った「喜多郡」にあった。</description>
       <category>議会・行政</category>
       <category>合併・地域</category>
-    </item>
-    <item>
-      <title>大洲のブロガーを探した。21年で6,498本書く人がいた</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-dare-ga-kaite-iru.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-dare-ga-kaite-iru.html</guid>
-      <pubDate>Sun, 13 Sep 2026 09:00:00 +0900</pubDate>
-      <description>大洲に住んで大洲を書いている人を、note・にほんブログ村・アメブロ・gooブログ・livedoor・はてな・フォートラベル・YouTube・Instagram・Xの10媒体、37の言い方で探した。にほんブログ村の「大洲市情報」は29ブログ、noteでプロフィールに大洲市と書く人は18人、うち在住の個人は5人だった。いちばん長い人は2005年7月から6,498本を書き続けていて、中身は鳥4,268本・花2,210本・雲745本。探した記録と、書き手ごとの大洲の捉え方をそのまま並べる。</description>
-      <category>まちづくり</category>
     </item>
   </channel>
 </rss>

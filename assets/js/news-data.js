@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-5shichou-hitotsu",
+    date: "2026-10-03",
+    title: "大洲のまわり5市町は、どこまで「1つの町」か。仕事は95％が中で足りて、入院は4人に1人が外へ出る",
+    category: "shiten",
+    source: "総務省統計局「令和2年国勢調査 従業地・通学地による人口・就業状態等集計」ほか",
+    sourceDate: "2022-07-22",
+    tags: ["合併・地域"],
+  },
+  {
     slug: "ozu-kaimono-fuben",
     date: "2026-10-03",
     title: "売上は県内の市で1位なのに、出ていきたい理由の1位は「交通や買物が不便」だった",

@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-kaimono-fuben",
+    date: "2026-10-03",
+    title: "売上は県内の市で1位なのに、出ていきたい理由の1位は「交通や買物が不便」だった",
+    category: "shiten",
+    source: "大洲市総合計画審議会 第2回・第3回会議資料ほか",
+    sourceDate: "2026-05-19",
+    tags: ["まちづくり"],
+  },
+  {
     slug: "ozu-kouri-135man",
     date: "2026-10-03",
     title: "大洲の店は、住民より1万1千人ぶん多く売っている。1人あたりの売上は松山市より高かった",

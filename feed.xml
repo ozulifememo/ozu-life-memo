@@ -5,8 +5,16 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Fri, 02 Oct 2026 22:48:14 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 02 Oct 2026 22:57:26 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大洲市は県内20市町でいちばん「たばこが買われる町」。1人あたり年63箱、7年続けて1位</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-tabako-kennai.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-tabako-kennai.html</guid>
+      <pubDate>Fri, 02 Oct 2026 09:00:00 +0900</pubDate>
+      <description>市のたばこ税は、たばこを売った店がある市町村に入る。税収を税率で割ると、その町の店に卸された本数が出る。令和6年度、大洲市は住民1人あたり1,262.8本(約63箱)で、県内20市町の1位だった。平成30年度から7年続けて1位である。大洲の人がよく吸うのか、まわりの町から買いに来ているのか。総務省の決算の表、県の健診の報告書、地方税法で確かめた。</description>
+      <category>財政・税金</category>
+    </item>
     <item>
       <title>大洲の給食の野菜は、3年で地元産が19.2％から62.1％になった。何を変えたのか</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kyushoku-jimoto.html</link>
@@ -253,14 +261,6 @@
       <pubDate>Sun, 13 Sep 2026 09:00:00 +0900</pubDate>
       <description>大洲市の消防は大洲地区広域消防事務組合、し尿は大洲・喜多衛生事務組合の清流園がやっている。一部事務組合・指定管理者・業務委託という3つの形を、組織名と施設名で並べた。令和6年度の一部事務組合負担金10億8,355万3千円と委託料23億9,023万2千円、来年度から30のコミュニティセンターが自治会に移ることまで数えた。</description>
       <category>議会・行政</category>
-    </item>
-    <item>
-      <title>大洲は毎年のお金の99.7%を使い切る。なのに49億円が建った</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/okane-08-doko-ni-tsukau.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/okane-08-doko-ni-tsukau.html</guid>
-      <pubDate>Sun, 13 Sep 2026 09:00:00 +0900</pubDate>
-      <description>令和6年度の大洲市の経常収支比率は99.7%。毎年決まって入るお金は、毎年決まって出るお金でほぼ消える。それでも投資的経費は49億7,612万2千円動いた。何で賄ったのか、そして何を建てたのかを、決算カードと市議会の会議録で施設名まで開いた。建てた額の74.6%は建て替えだった。</description>
-      <category>財政・税金</category>
     </item>
   </channel>
 </rss>

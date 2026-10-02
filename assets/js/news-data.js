@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-tabako-kennai",
+    date: "2026-10-02",
+    title: "大洲市は県内20市町でいちばん「たばこが買われる町」。1人あたり年63箱、7年続けて1位",
+    category: "shiten",
+    source: "総務省「市町村別決算状況調」、地方税法(e-Gov法令検索)、愛媛県の健診データの報告書ほか",
+    sourceDate: "2026-04-01",
+    tags: ["財政・税金"],
+  },
+  {
     slug: "ozu-kyushoku-jimoto",
     date: "2026-10-02",
     title: "大洲の給食の野菜は、3年で地元産が19.2％から62.1％になった。何を変えたのか",

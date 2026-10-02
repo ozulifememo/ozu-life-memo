@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-kouri-135man",
+    date: "2026-10-03",
+    title: "大洲の店は、住民より1万1千人ぶん多く売っている。1人あたりの売上は松山市より高かった",
+    category: "shiten",
+    source: "総務省・経済産業省「令和3年経済センサス‐活動調査」産業編ほか",
+    sourceDate: "2023-03-28",
+    tags: ["産業・農業"],
+  },
+  {
     slug: "ozu-mise-90hinmoku",
     date: "2026-10-02",
     title: "大洲の店では新車が全国の1.85倍売れ、中古車は半分も売れていない。90品目の通信簿",

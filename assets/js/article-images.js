@@ -215,6 +215,7 @@ const OZU_ARTICLE_NO_PHOTO = {
   "ozu-kojin-joho-file": "個人情報の台帳の制度の話。被写体が無い",
   "ozu-tabako-kennai": "たばこ税の県内比較の計算。被写体が無い",
   "ozu-mise-90hinmoku": "店の売上の統計の話。特定の店を撮ると、その店の売上の話に見えるので避ける",
+  "ozu-kouri-135man": "店の売上の統計の話。特定の店を撮ると、その店の売上の話に見えるので避ける",
   "ozu-kokuho-kennai-hikaku": "国保料の県内比較の計算。被写体が無い",
   "ozu-kotei-shisanzei-ie": "固定資産税の20年の計算。家を撮ると持ち主が特定されるので避ける",
   "kotei-shisanzei-r9": "固定資産税の制度の話。家を撮ると持ち主が特定されるので避ける",

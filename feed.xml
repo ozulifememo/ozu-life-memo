@@ -5,8 +5,16 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Fri, 02 Oct 2026 23:11:31 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 03 Oct 2026 01:58:38 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大洲の店は、住民より1万1千人ぶん多く売っている。1人あたりの売上は松山市より高かった</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kouri-135man.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kouri-135man.html</guid>
+      <pubDate>Sat, 03 Oct 2026 09:00:00 +0900</pubDate>
+      <description>国の経済センサスで、大洲市の小売の売上を住民の数で割ると1人あたり135.2万円。全国の1.28倍で、県内20市町の2番目、市では1番高い。全国なみの売れ方なら約5万1,900人ぶんにあたり、住民より1万1千人ぶん多い。まわりの4市町と足すと全国の0.93倍に落ち着いた。店の数は14年で742から446に減ったのに、売上はほとんど変わっていない。</description>
+      <category>産業・農業</category>
+    </item>
     <item>
       <title>大洲の店では新車が全国の1.85倍売れ、中古車は半分も売れていない。90品目の通信簿</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-mise-90hinmoku.html</link>
@@ -252,15 +260,6 @@
       <pubDate>Sun, 13 Sep 2026 09:00:00 +0900</pubDate>
       <description>家で見られることが増え、移動がおっくうになったと言われる。それは本当か。国の全国都市交通特性調査の生データ7回分を自分で集計し、休日の外出率が34年でどう動いたかを出した。減ったのは若い世代だけで、70代以上は増えていた。観光白書から「オンラインツアー」が消えるまでも数えた。そのうえで、大洲の観光施設を「画面で足りるもの」と「体を運ばないと成立しないもの」に分けてみる。</description>
       <category>観光</category>
-    </item>
-    <item>
-      <title>ポコペン横丁の「ポコペン」は、中国語の「元値に足りない」</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-namae-no-yurai.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-namae-no-yurai.html</guid>
-      <pubDate>Sun, 13 Sep 2026 09:00:00 +0900</pubDate>
-      <description>大洲の施設と店の名前の由来を、市議会会議録307本と各施設の公式発信から調べた。名前のつけ方には型が9つあった。条例の名前と看板の名前が違う13組、公募で決まった5つ、字を入れ替えた3つ、由来が取れなかった10個を並べる。ポコペンの語源は国語辞典に載っていた。</description>
-      <category>議会・行政</category>
-      <category>まちづくり</category>
     </item>
   </channel>
 </rss>

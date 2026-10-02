@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-kojin-joho-file",
+    date: "2026-10-02",
+    title: "大洲市が持つ個人情報のファイルは1,405。身長や貯金まで入っているのか、公開された162を全部読んだ",
+    category: "kurashi",
+    source: "大洲市「個人情報ファイル簿」、個人情報の保護に関する法律(e-Gov法令検索)、大洲市の条例ほか",
+    sourceDate: "2026-04-20",
+    tags: ["議会・行政"],
+  },
+  {
     slug: "kotei-shisanzei-r9",
     date: "2026-10-02",
     title: "2027年度から、家の固定資産税は「30万円未満ならゼロ」に。36年ぶりの変更で、自分は何をすればよいか",

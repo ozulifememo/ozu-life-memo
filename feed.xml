@@ -5,8 +5,16 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Fri, 02 Oct 2026 21:19:53 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 02 Oct 2026 21:39:24 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大洲市が持つ個人情報のファイルは1,405。身長や貯金まで入っているのか、公開された162を全部読んだ</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kojin-joho-file.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kojin-joho-file.html</guid>
+      <pubDate>Fri, 02 Oct 2026 09:00:00 +0900</pubDate>
+      <description>大洲市は「個人情報ファイルを1,405件持っている」と公表している。1人について1,405あるのではなく、名簿や台帳の種類の数だった。中身を誰でも読めるのは、1,000人以上が入った162件。「身長」「体重」「預貯金」という言葉はどこにも無かったが、所得は43件、口座番号は44件に入っていた。自分の分は、無料で開示を請求できる。ファイル簿と法律、市の条例で確かめた。</description>
+      <category>議会・行政</category>
+    </item>
     <item>
       <title>2027年度から、家の固定資産税は「30万円未満ならゼロ」に。36年ぶりの変更で、自分は何をすればよいか</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/kotei-shisanzei-r9.html</link>
@@ -252,14 +260,6 @@
       <pubDate>Sun, 13 Sep 2026 09:00:00 +0900</pubDate>
       <description>大洲市が配ってきた商品券・クーポンのお金の流れを、出どころから使われなかった券の行方まで端から追った。上乗せ分は国から来て、券は市役所を通らず、余った分は行き先が二つに分かれる。</description>
       <category>財政・税金</category>
-    </item>
-    <item>
-      <title>大洲市の職員の上限は条例で946人。実際は619人。誰がこの数を決めるのか</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/okane-07-shiyakusho-keiei.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/okane-07-shiyakusho-keiei.html</guid>
-      <pubDate>Sun, 13 Sep 2026 09:00:00 +0900</pubDate>
-      <description>市役所は「決める人」「やる人」「確かめる人」の3つに分かれている。市長が予算を作り、議会が議決し、監査委員と議会が確かめる。大洲市の職員数・人件費・特別職の報酬・議員定数の移り変わりと、議会にかける契約の金額の線を、令和6年度の決算カードと市議会の会議録で並べた。</description>
-      <category>議会・行政</category>
     </item>
   </channel>
 </rss>

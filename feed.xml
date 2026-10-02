@@ -5,8 +5,17 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Fri, 02 Oct 2026 21:39:24 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 02 Oct 2026 22:48:14 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大洲の給食の野菜は、3年で地元産が19.2％から62.1％になった。何を変えたのか</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kyushoku-jimoto.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kyushoku-jimoto.html</guid>
+      <pubDate>Fri, 02 Oct 2026 09:00:00 +0900</pubDate>
+      <description>大洲市の学校給食で使う野菜と果物のうち、大洲産は令和6年度で64.5％。15年前は19.2％だった。3年で3倍になったのは、野菜を買う先を農協の市場から産直市に変え、農家がニンジンやジャガイモを増やし、給食の側も畑に合わせて献立を変えたからだった。値段は割高になっていない。ただ、目標の77％には届かず、年ごとに上下している。市議会の会議録と市の資料で確かめた。</description>
+      <category>子育て・教育</category>
+      <category>産業・農業</category>
+    </item>
     <item>
       <title>大洲市が持つ個人情報のファイルは1,405。身長や貯金まで入っているのか、公開された162を全部読んだ</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kojin-joho-file.html</link>
@@ -251,14 +260,6 @@
       <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/okane-08-doko-ni-tsukau.html</guid>
       <pubDate>Sun, 13 Sep 2026 09:00:00 +0900</pubDate>
       <description>令和6年度の大洲市の経常収支比率は99.7%。毎年決まって入るお金は、毎年決まって出るお金でほぼ消える。それでも投資的経費は49億7,612万2千円動いた。何で賄ったのか、そして何を建てたのかを、決算カードと市議会の会議録で施設名まで開いた。建てた額の74.6%は建て替えだった。</description>
-      <category>財政・税金</category>
-    </item>
-    <item>
-      <title>1万円が1万2,500円になる。その2,500円はどこから来るのか</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-shohinken-nagare.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-shohinken-nagare.html</guid>
-      <pubDate>Sun, 13 Sep 2026 09:00:00 +0900</pubDate>
-      <description>大洲市が配ってきた商品券・クーポンのお金の流れを、出どころから使われなかった券の行方まで端から追った。上乗せ分は国から来て、券は市役所を通らず、余った分は行き先が二つに分かれる。</description>
       <category>財政・税金</category>
     </item>
   </channel>

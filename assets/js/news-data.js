@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-kyushoku-jimoto",
+    date: "2026-10-02",
+    title: "大洲の給食の野菜は、3年で地元産が19.2％から62.1％になった。何を変えたのか",
+    category: "kurashi",
+    source: "大洲市議会会議録、大洲市総合教育会議の資料、愛媛県「行革甲子園2014」の大洲市の資料ほか",
+    sourceDate: "2026-06-16",
+    tags: ["子育て・教育", "産業・農業"],
+  },
+  {
     slug: "ozu-kojin-joho-file",
     date: "2026-10-02",
     title: "大洲市が持つ個人情報のファイルは1,405。身長や貯金まで入っているのか、公開された162を全部読んだ",

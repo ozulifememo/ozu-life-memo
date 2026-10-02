@@ -252,7 +252,8 @@ const OZU_ARTICLE_PHOTO_WANTED = [
     subjects: "小中学校の校舎(外観)、大洲高校の正門、体育館、通学路、給食センターの外観、教室の木製の机。児童生徒が写らない時間帯に。",
     slugs: ["chugakko-kyushoku-muryoka", "gikai-futoko-suii", "sogo-kyoiku-kaigi-honne",
             "bukatsu-chiiki-ido", "gikai-ozukoko-teiinware",
-            "kyushoku-center-yoryoku", "ozu-furusato-tsukaimichi", "ozu-kyoin-ken-to-shi", "ozu-chugaku-shinro-shinai", "kyushoku-taberarenai-ko", "taiikukan-kucho"]
+            "kyushoku-center-yoryoku", "ozu-furusato-tsukaimichi", "ozu-kyoin-ken-to-shi", "ozu-chugaku-shinro-shinai", "kyushoku-taberarenai-ko", "taiikukan-kucho",
+            "ozu-kyushoku-jimoto"]
   },
   {
     theme: "スーパー・商業施設",

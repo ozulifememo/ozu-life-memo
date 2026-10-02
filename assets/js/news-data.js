@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "kotei-shisanzei-r9",
+    date: "2026-10-02",
+    title: "2027年度から、家の固定資産税は「30万円未満ならゼロ」に。36年ぶりの変更で、自分は何をすればよいか",
+    category: "kurashi",
+    source: "地方税法(e-Gov法令検索)、総務省「固定資産税の概要」、大洲市税条例ほか",
+    sourceDate: "2026-09-15",
+    tags: ["財政・税金", "空き家・住宅"],
+  },
+  {
     slug: "ozu-kokyo-shisetsu-737",
     date: "2026-10-02",
     title: "大洲市の建物は737。ぜんぶ直して建て替えると年87.5億円、使えているのは48.8億円",

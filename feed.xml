@@ -5,8 +5,17 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Fri, 02 Oct 2026 21:10:42 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 02 Oct 2026 21:19:53 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2027年度から、家の固定資産税は「30万円未満ならゼロ」に。36年ぶりの変更で、自分は何をすればよいか</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/kotei-shisanzei-r9.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/kotei-shisanzei-r9.html</guid>
+      <pubDate>Fri, 02 Oct 2026 09:00:00 +0900</pubDate>
+      <description>令和9年度(2027年度)の固定資産税は、3年に1度の評価替えの年。同じ年に、家屋と商売道具の「税がかからない線」が36年ぶりに上がる。対象になる人は何もしなくてよいが、商売道具の申告は続ける必要がある。大洲市では今でも家屋の4棟に1棟がこの線の下にある。評価額に納得がいかないときに不服を言えるのも、原則この年だけ。法律と総務省の資料、市の条例で確かめた。</description>
+      <category>財政・税金</category>
+      <category>空き家・住宅</category>
+    </item>
     <item>
       <title>大洲市の建物は737。ぜんぶ直して建て替えると年87.5億円、使えているのは48.8億円</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kokyo-shisetsu-737.html</link>
@@ -250,14 +259,6 @@
       <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/okane-07-shiyakusho-keiei.html</guid>
       <pubDate>Sun, 13 Sep 2026 09:00:00 +0900</pubDate>
       <description>市役所は「決める人」「やる人」「確かめる人」の3つに分かれている。市長が予算を作り、議会が議決し、監査委員と議会が確かめる。大洲市の職員数・人件費・特別職の報酬・議員定数の移り変わりと、議会にかける契約の金額の線を、令和6年度の決算カードと市議会の会議録で並べた。</description>
-      <category>議会・行政</category>
-    </item>
-    <item>
-      <title>大洲市は松山側に入りたかった。県の出先が5つから3つに減った日</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/okane-05-nanyo-chihokyoku.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/okane-05-nanyo-chihokyoku.html</guid>
-      <pubDate>Sun, 13 Sep 2026 09:00:00 +0900</pubDate>
-      <description>南予地方局は宇和島にあり、大洲市を含む9市町を受け持つ。平成20年4月、愛媛県は地方局を5つから3つに減らし、大洲市が求めた中予ではなく南予に編入された。県の出先が大洲市田口甲425-1に3つ同居していること、大洲の県道を市役所が閉められない理由、県から大洲市に来た17億9,339万3千円まで数えた。</description>
       <category>議会・行政</category>
     </item>
   </channel>

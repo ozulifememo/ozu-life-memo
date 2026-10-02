@@ -214,6 +214,7 @@ const OZU_ARTICLE_NO_PHOTO = {
   "ozu-kofuzei-hikizan": "交付税の計算式の話。被写体が無い",
   "ozu-kokuho-kennai-hikaku": "国保料の県内比較の計算。被写体が無い",
   "ozu-kotei-shisanzei-ie": "固定資産税の20年の計算。家を撮ると持ち主が特定されるので避ける",
+  "kotei-shisanzei-r9": "固定資産税の制度の話。家を撮ると持ち主が特定されるので避ける",
   "ozu-kuchikiki-kiroku": "議員の口利きの記録があるかの話。被写体が無い",
   "ozu-kyujin-nenshu-sa": "求人と年収の統計の話。被写体が無い",
   "ozu-kyujin-shokushu-betsu": "求人倍率の内訳の話。被写体が無い",

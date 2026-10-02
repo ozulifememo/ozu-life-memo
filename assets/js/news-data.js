@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-michinoeki-kessan",
+    date: "2026-10-03",
+    title: "大洲の道の駅の売上高は、1年で7,420万円から3,874万円になった。客は5％しか減っていない",
+    category: "shiten",
+    source: "大洲市「指定管理者制度導入施設に係るモニタリングシート」令和5年度・令和6年度ほか",
+    sourceDate: "2025-11-12",
+    tags: ["財政・税金"],
+  },
+  {
     slug: "ozu-jusho-kou-otsu",
     date: "2026-10-03",
     title: "大洲の住所の「甲・乙・丙」は、地名ではなく番号の一部だった。同じ大字に「100番」が4つある",

@@ -5,8 +5,16 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Sat, 03 Oct 2026 02:31:45 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 03 Oct 2026 02:39:42 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大洲の道の駅の売上高は、1年で7,420万円から3,874万円になった。客は5％しか減っていない</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-michinoeki-kessan.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-michinoeki-kessan.html</guid>
+      <pubDate>Sat, 03 Oct 2026 09:00:00 +0900</pubDate>
+      <description>市が公表している道の駅「清流の里ひじかわ」の決算で、売上高は令和5年度の7,420万円から令和6年度の3,874万円へ、ほぼ半分になった。客は5.2％しか減っていない。2年ぶんを並べると、仕入も同じ額だけ減っていて、売上から仕入を引いた残りは2,385万円と2,366万円で変わらなかった。変わらないものがもう1つある。市が払う指定管理料1,837万円で、これが無ければ1,654万円足りない。決算書を1行ずつ読んだ。</description>
+      <category>財政・税金</category>
+    </item>
     <item>
       <title>大洲の住所の「甲・乙・丙」は、地名ではなく番号の一部だった。同じ大字に「100番」が4つある</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-jusho-kou-otsu.html</link>
@@ -251,14 +259,6 @@
       <description>軽自動車と普通車を10年持ったときの差額を、法律で決まっている分だけ全部足して計算した。軽自動車税と自動車税、自動車重量税、自賠責保険、車検の検査手数料、そして任意保険の全国平均。合計で63万7,640円、月にすると5,314円の差になった。ただし自賠責だけは2026年11月から軽のほうが高くなる。愛媛県は1世帯に0.82台の軽があり、全国平均の1.5倍である。</description>
       <category>財政・税金</category>
       <category>交通・インフラ</category>
-    </item>
-    <item>
-      <title>市役所の職員は、職場に車を止めるのに月1,570円払っている</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-shokuin-tsukin.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-shokuin-tsukin.html</guid>
-      <pubDate>Sun, 13 Sep 2026 09:00:00 +0900</pubDate>
-      <description>大洲市職員駐車場利用規程の第9条は、職員が通勤の車を市の施設に止める使用料を月額1,570円と定めている。なぜ職員が自分の職場で駐車場代を払うのかを、地方自治法の条文と平成20年の議会からたどった。636人の通勤手段の内訳、民間の月極相場や高知市・阿南市・燕市との比較、通勤手当とのお金の往復、学校の先生の扱い、そして令和8年4月に駐車場代への手当を新設した国の動きまで。</description>
-      <category>議会・行政</category>
     </item>
   </channel>
 </rss>

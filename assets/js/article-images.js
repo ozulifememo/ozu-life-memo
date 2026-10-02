@@ -413,7 +413,8 @@ const OZU_ARTICLE_PHOTO_WANTED = [
   {
     theme: "道の駅・あさもや",
     subjects: "道の駅「清流の里ひじかわ」の看板とトイレ棟、あさもやの外観と駐車場、直売所の棚。",
-    slugs: ["ozu-michinoeki-machinoeki"]
+    slugs: ["ozu-michinoeki-machinoeki",
+            "ozu-michinoeki-kessan"]
   },
   {
     theme: "ハゼの細道",

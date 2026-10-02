@@ -5,8 +5,16 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Fri, 02 Oct 2026 23:04:55 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 02 Oct 2026 23:11:31 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大洲の店では新車が全国の1.85倍売れ、中古車は半分も売れていない。90品目の通信簿</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-mise-90hinmoku.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-mise-90hinmoku.html</guid>
+      <pubDate>Fri, 02 Oct 2026 09:00:00 +0900</pubDate>
+      <description>国の経済センサスに、市ごとに「店で何がいくら売れたか」を90の品目に分けた表がある。大洲市は、新車と処方薬が住民1人あたりで全国の1.85倍。同じくらいの人口の市の中で、新車は1位、処方薬は2位だった。逆に中古車と市販薬は県内11市の最下位。まわりの市と足すと、新車は全国なみになり、処方薬は多いままだった。表を1品目ずつ読んだ。</description>
+      <category>産業・農業</category>
+    </item>
     <item>
       <title>大洲のリサイクル率は6.4％。全国792市で低いほうから9番目なのは、分別をしていないからなのか</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-recycle-ritsu.html</link>
@@ -253,14 +261,6 @@
       <description>大洲の施設と店の名前の由来を、市議会会議録307本と各施設の公式発信から調べた。名前のつけ方には型が9つあった。条例の名前と看板の名前が違う13組、公募で決まった5つ、字を入れ替えた3つ、由来が取れなかった10個を並べる。ポコペンの語源は国語辞典に載っていた。</description>
       <category>議会・行政</category>
       <category>まちづくり</category>
-    </item>
-    <item>
-      <title>大洲の通帳。1日に8,311万円が出て、残高は2つある</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/okane-10-ozu-no-tsucho.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/okane-10-ozu-no-tsucho.html</guid>
-      <pubDate>Sun, 13 Sep 2026 09:00:00 +0900</pubDate>
-      <description>令和6年度の大洲市の決算を、通帳の「入金・出金・残高」の形に1枚で書き直した。歳入324億1,644万円と歳出303億3,553万9千円を向かい合わせに並べ、1人・1世帯・1日あたりに直す。借金330億5,126万9千円と貯金103億3,901万円という2つの残高、10年の推移、県内20市町での位置まで。連載の最終回。</description>
-      <category>財政・税金</category>
     </item>
   </channel>
 </rss>

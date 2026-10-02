@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-mise-90hinmoku",
+    date: "2026-10-02",
+    title: "大洲の店では新車が全国の1.85倍売れ、中古車は半分も売れていない。90品目の通信簿",
+    category: "shiten",
+    source: "総務省・経済産業省「令和3年経済センサス‐活動調査」品目編ほか",
+    sourceDate: "2023-03-28",
+    tags: ["産業・農業"],
+  },
+  {
     slug: "ozu-recycle-ritsu",
     date: "2026-10-02",
     title: "大洲のリサイクル率は6.4％。全国792市で低いほうから9番目なのは、分別をしていないからなのか",

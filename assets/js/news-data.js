@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-jusho-kou-otsu",
+    date: "2026-10-03",
+    title: "大洲の住所の「甲・乙・丙」は、地名ではなく番号の一部だった。同じ大字に「100番」が4つある",
+    category: "kurashi",
+    source: "デジタル庁「アドレス・ベース・レジストリ 地番マスター」ほか",
+    sourceDate: "2026-10-03",
+    tags: ["合併・地域"],
+  },
+  {
     slug: "ozu-kanko-22bai",
     date: "2026-10-03",
     title: "統計では、大洲の観光客が1年で2.2倍になっている。変わったのは、数える場所だった",

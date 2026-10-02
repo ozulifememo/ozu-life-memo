@@ -5,8 +5,16 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Sat, 03 Oct 2026 02:25:05 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 03 Oct 2026 02:31:45 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大洲の住所の「甲・乙・丙」は、地名ではなく番号の一部だった。同じ大字に「100番」が4つある</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-jusho-kou-otsu.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-jusho-kou-otsu.html</guid>
+      <pubDate>Sat, 03 Oct 2026 09:00:00 +0900</pubDate>
+      <description>大洲市の住所には「阿蔵甲」「新谷乙」のように、大字と番地のあいだに甲・乙・丙が入る所が多い。市に本店を置く法人の46.8％の住所に入っていて、県内20市町でいちばん高い。国の台帳を開くと、甲・乙・丙は小さい地名ではなく、番号の頭に付く字だった。甲も乙も1番から番号が付いているので、五郎には「100番」の土地が4つある。乙は甲より高い所にあることが多かった。なぜ甲と乙に分けたのかを書いた資料は、見つからなかった。</description>
+      <category>合併・地域</category>
+    </item>
     <item>
       <title>統計では、大洲の観光客が1年で2.2倍になっている。変わったのは、数える場所だった</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kanko-22bai.html</link>
@@ -251,14 +259,6 @@
       <pubDate>Sun, 13 Sep 2026 09:00:00 +0900</pubDate>
       <description>大洲市職員駐車場利用規程の第9条は、職員が通勤の車を市の施設に止める使用料を月額1,570円と定めている。なぜ職員が自分の職場で駐車場代を払うのかを、地方自治法の条文と平成20年の議会からたどった。636人の通勤手段の内訳、民間の月極相場や高知市・阿南市・燕市との比較、通勤手当とのお金の往復、学校の先生の扱い、そして令和8年4月に駐車場代への手当を新設した国の動きまで。</description>
       <category>議会・行政</category>
-    </item>
-    <item>
-      <title>自分の市にふるさと納税はできるのか。大洲では11件あった</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-furusato-shinai.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-furusato-shinai.html</guid>
-      <pubDate>Sun, 13 Sep 2026 09:00:00 +0900</pubDate>
-      <description>大洲市が令和7年度に受け入れたふるさと納税17,770件のうち、市内からの寄附は11件・41万8,000円。そもそも自分の住む市に寄附できるのか。地方税法と総務省告示で確かめ、1万円のお金の流れを計算し、県内11市と全国1,741市区町村の「市内からの寄附」を独自集計した。返礼品は受け取れないのに、市の手元には市外からの寄附より多く残る。</description>
-      <category>財政・税金</category>
     </item>
   </channel>
 </rss>

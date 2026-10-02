@@ -24,6 +24,7 @@ const OZU_ARTICLE_IMAGES = {
   "minsei-hi-saidai": { file: "photos/ozu-photo-18.jpg" },
   "yosan-jishu-zaigen": { file: "photos/ozu-photo-18.jpg" },
   "ozu-keijoshushi-hiritsu": { file: "photos/ozu-photo-20.jpg" },
+  "ozu-kokyo-shisetsu-737": { file: "photos/ozu-photo-111.jpg" },
   "kurashi-benricho-2026": { file: "photos/ozu-photo-17.jpg" },
   "aihara-san": { file: "photos/ozu-photo-17.jpg" },
   "seikatsuhogo-tsuika-kyufu": { file: "photos/ozu-photo-17.jpg" },

@@ -5,8 +5,17 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Wed, 30 Sep 2026 21:31:06 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 02 Oct 2026 21:10:42 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大洲市の建物は737。ぜんぶ直して建て替えると年87.5億円、使えているのは48.8億円</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kokyo-shisetsu-737.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kokyo-shisetsu-737.html</guid>
+      <pubDate>Fri, 02 Oct 2026 09:00:00 +0900</pubDate>
+      <description>大洲市が持つ建物を、市の「公共施設等総合管理計画」で数えた。施設は737で、半分は集会所と消防団の詰所。市民1人あたりの床は全国の2.2倍だが、県内20市町を全部並べると10番目だった。ぜんぶを30年で直し60年で建て替える計算では年87.5億円が要り、これまで使えた額との差は年38.8億円。5年で床は2.3％減ったが、人口が7.9％減ったので、1人あたりは逆に増えていた。</description>
+      <category>財政・税金</category>
+      <category>まちづくり</category>
+    </item>
     <item>
       <title>コンパクトシティを「実現した」市はあるのか。住む場所を選ぶ自由と、国の答え</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/compact-city-jitsugen.html</link>
@@ -250,14 +259,6 @@
       <pubDate>Sun, 13 Sep 2026 09:00:00 +0900</pubDate>
       <description>南予地方局は宇和島にあり、大洲市を含む9市町を受け持つ。平成20年4月、愛媛県は地方局を5つから3つに減らし、大洲市が求めた中予ではなく南予に編入された。県の出先が大洲市田口甲425-1に3つ同居していること、大洲の県道を市役所が閉められない理由、県から大洲市に来た17億9,339万3千円まで数えた。</description>
       <category>議会・行政</category>
-    </item>
-    <item>
-      <title>大洲に入る324億円のうち189億円は、3つの違う理屈で配られていた</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/okane-06-kubarinaosi.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/okane-06-kubarinaosi.html</guid>
-      <pubDate>Sun, 13 Sep 2026 09:00:00 +0900</pubDate>
-      <description>令和6年度、大洲市の歳入324億1,644万円のうち自前の市税は13.5%だけだった。残りを埋める交付税・国庫県支出金・譲与税と交付金を全部並べ、それぞれが何で決まるのかを条文と決算で開いた。国庫支出金でいちばん大きいのは物価高騰の臨時交付金だった。</description>
-      <category>財政・税金</category>
     </item>
   </channel>
 </rss>

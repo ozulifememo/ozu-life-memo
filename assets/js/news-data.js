@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-kokyo-shisetsu-737",
+    date: "2026-10-02",
+    title: "大洲市の建物は737。ぜんぶ直して建て替えると年87.5億円、使えているのは48.8億円",
+    category: "shiten",
+    source: "大洲市公共施設等総合管理計画、総務省「公共施設状況調経年比較表」ほか",
+    sourceDate: "2022-03-01",
+    tags: ["財政・税金", "まちづくり"],
+  },
+  {
     slug: "compact-city-jitsugen",
     date: "2026-09-28",
     title: "コンパクトシティを「実現した」市はあるのか。住む場所を選ぶ自由と、国の答え",

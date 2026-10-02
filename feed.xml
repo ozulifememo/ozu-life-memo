@@ -5,8 +5,16 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Sat, 03 Oct 2026 02:39:42 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 03 Oct 2026 02:47:38 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大洲市の名前が出た記事は、約10年ぶんの4分の1が、たった1か月に集まっていた</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-news-kazu.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-news-kazu.html</guid>
+      <pubDate>Sat, 03 Oct 2026 09:00:00 +0900</pubDate>
+      <description>世界のニュースを数えている民間のデータ「GDELT」で、日本語の記事に「大洲市」が出てくる本数を数えた。2017年1月から2026年10月1日までに1,619本。そのうち399本、24.6％が2018年7月の1か月に集まっていた。愛媛の外のサイトが大洲市の名前を書くのは、ふだん月に5本。それがこの月は269本になり、2か月後には22本に戻った。数え方の弱いところと、国会・ウィキペディアとの違いも確かめた。</description>
+      <category>防災</category>
+    </item>
     <item>
       <title>大洲の道の駅の売上高は、1年で7,420万円から3,874万円になった。客は5％しか減っていない</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-michinoeki-kessan.html</link>
@@ -250,15 +258,6 @@
       <pubDate>Mon, 14 Sep 2026 09:00:00 +0900</pubDate>
       <description>指定ごみ袋がある市と、ない市がある。環境省の一般廃棄物処理実態調査から愛媛県20市町を全部数えたら、指定袋が無いのは松山市・新居浜市・四国中央市の3市だけだった。残る17市町はすべて「有料化」と答えている。徴収の型は15市町が排出量単純比例型で、大洲市だけが排出量多段階比例型、東温市だけが一定量無料型。なぜ市によって違うのか、有料にするとごみは減るのかを、法律と実データで確かめた。</description>
       <category>財政・税金</category>
-    </item>
-    <item>
-      <title>軽と普通車、10年でいくら違うのか。全部足したら63万7,640円だった</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/kei-futsu-10nen.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/kei-futsu-10nen.html</guid>
-      <pubDate>Mon, 14 Sep 2026 09:00:00 +0900</pubDate>
-      <description>軽自動車と普通車を10年持ったときの差額を、法律で決まっている分だけ全部足して計算した。軽自動車税と自動車税、自動車重量税、自賠責保険、車検の検査手数料、そして任意保険の全国平均。合計で63万7,640円、月にすると5,314円の差になった。ただし自賠責だけは2026年11月から軽のほうが高くなる。愛媛県は1世帯に0.82台の軽があり、全国平均の1.5倍である。</description>
-      <category>財政・税金</category>
-      <category>交通・インフラ</category>
     </item>
   </channel>
 </rss>

@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-news-kazu",
+    date: "2026-10-03",
+    title: "大洲市の名前が出た記事は、約10年ぶんの4分の1が、たった1か月に集まっていた",
+    category: "shiten",
+    source: "The GDELT Project「DOC 2.0 API」ほか",
+    sourceDate: "2026-10-02",
+    tags: ["防災"],
+  },
+  {
     slug: "ozu-michinoeki-kessan",
     date: "2026-10-03",
     title: "大洲の道の駅の売上高は、1年で7,420万円から3,874万円になった。客は5％しか減っていない",

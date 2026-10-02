@@ -316,7 +316,7 @@ const OZU_ARTICLE_PHOTO_WANTED = [
     theme: "ごみ・環境",
     subjects: "ごみステーションと分別の掲示、ごみ収集カレンダーの掲示板、粗大ごみ処理券を売っている店の棚、清掃センターの受付。",
     slugs: ["gomi-dashi-7bunbetsu", "ozu-sodai-gomi-hikaku",
-            "ehime-gomibukuro-20", "juden-denchi-dashikata"]
+            "ehime-gomibukuro-20", "juden-denchi-dashikata", "ozu-recycle-ritsu"]
   },
   {
     theme: "工場・工業団地",

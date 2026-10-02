@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-recycle-ritsu",
+    date: "2026-10-02",
+    title: "大洲のリサイクル率は6.4％。全国792市で低いほうから9番目なのは、分別をしていないからなのか",
+    category: "shiten",
+    source: "環境省「一般廃棄物処理実態調査結果」、大洲市一般廃棄物処理基本計画、大洲市議会会議録ほか",
+    sourceDate: "2026-03-27",
+    tags: ["まちづくり"],
+  },
+  {
     slug: "ozu-tabako-kennai",
     date: "2026-10-02",
     title: "大洲市は県内20市町でいちばん「たばこが買われる町」。1人あたり年63箱、7年続けて1位",

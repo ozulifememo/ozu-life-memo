@@ -5,8 +5,16 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Fri, 02 Oct 2026 22:57:26 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 02 Oct 2026 23:04:55 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大洲のリサイクル率は6.4％。全国792市で低いほうから9番目なのは、分別をしていないからなのか</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-recycle-ritsu.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-recycle-ritsu.html</guid>
+      <pubDate>Fri, 02 Oct 2026 09:00:00 +0900</pubDate>
+      <description>環境省の調査で、大洲市の令和6年度のリサイクル率は6.4％。全国792の市で低いほうから9番目、県内20市町では11年続けて最下位だった。ただ、この率に入るのは市が集めて資源にした物だけで、スーパーの回収箱に出した分は入らない。率の高い町が使っている手段が大洲には無く、20年で減った資源の8割は紙だった。数字の作られ方から調べた。</description>
+      <category>まちづくり</category>
+    </item>
     <item>
       <title>大洲市は県内20市町でいちばん「たばこが買われる町」。1人あたり年63箱、7年続けて1位</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-tabako-kennai.html</link>
@@ -253,14 +261,6 @@
       <pubDate>Sun, 13 Sep 2026 09:00:00 +0900</pubDate>
       <description>令和6年度の大洲市の決算を、通帳の「入金・出金・残高」の形に1枚で書き直した。歳入324億1,644万円と歳出303億3,553万9千円を向かい合わせに並べ、1人・1世帯・1日あたりに直す。借金330億5,126万9千円と貯金103億3,901万円という2つの残高、10年の推移、県内20市町での位置まで。連載の最終回。</description>
       <category>財政・税金</category>
-    </item>
-    <item>
-      <title>市役所の外に34億円。大洲の消防もし尿も、市がやっていない</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/okane-09-dare-ga-yaru.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/okane-09-dare-ga-yaru.html</guid>
-      <pubDate>Sun, 13 Sep 2026 09:00:00 +0900</pubDate>
-      <description>大洲市の消防は大洲地区広域消防事務組合、し尿は大洲・喜多衛生事務組合の清流園がやっている。一部事務組合・指定管理者・業務委託という3つの形を、組織名と施設名で並べた。令和6年度の一部事務組合負担金10億8,355万3千円と委託料23億9,023万2千円、来年度から30のコミュニティセンターが自治会に移ることまで数えた。</description>
-      <category>議会・行政</category>
     </item>
   </channel>
 </rss>

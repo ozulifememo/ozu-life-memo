@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-kanko-22bai",
+    date: "2026-10-03",
+    title: "統計では、大洲の観光客が1年で2.2倍になっている。変わったのは、数える場所だった",
+    category: "shiten",
+    source: "日本観光振興協会「デジタル観光統計オープンデータ」ほか",
+    sourceDate: "2026-04-14",
+    tags: ["観光"],
+  },
+  {
     slug: "ozu-5shichou-hitotsu",
     date: "2026-10-03",
     title: "大洲のまわり5市町は、どこまで「1つの町」か。仕事は95％が中で足りて、入院は4人に1人が外へ出る",

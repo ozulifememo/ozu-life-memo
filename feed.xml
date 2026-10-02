@@ -5,8 +5,16 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Sat, 03 Oct 2026 02:17:33 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 03 Oct 2026 02:25:05 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>統計では、大洲の観光客が1年で2.2倍になっている。変わったのは、数える場所だった</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kanko-22bai.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kanko-22bai.html</guid>
+      <pubDate>Sat, 03 Oct 2026 09:00:00 +0900</pubDate>
+      <description>スマホの位置情報で観光客を数える全国の統計がある。年ごとのファイルを並べると、大洲市は2024年の366,355人から2025年の819,094人へ、2.24倍になっている。ところが同じ時期、市の観光施設に入った人は5.0％しか増えていない。公開元は2026年4月に、観光地点を見直して2025年の数字を作り直していた。県内20市町のうち8つが2倍以上。同じ物差しどうしで比べられる2025年と2026年では、大洲市は7.5％増だった。</description>
+      <category>観光</category>
+    </item>
     <item>
       <title>大洲のまわり5市町は、どこまで「1つの町」か。仕事は95％が中で足りて、入院は4人に1人が外へ出る</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-5shichou-hitotsu.html</link>
@@ -251,15 +259,6 @@
       <pubDate>Sun, 13 Sep 2026 09:00:00 +0900</pubDate>
       <description>大洲市が令和7年度に受け入れたふるさと納税17,770件のうち、市内からの寄附は11件・41万8,000円。そもそも自分の住む市に寄附できるのか。地方税法と総務省告示で確かめ、1万円のお金の流れを計算し、県内11市と全国1,741市区町村の「市内からの寄附」を独自集計した。返礼品は受け取れないのに、市の手元には市外からの寄附より多く残る。</description>
       <category>財政・税金</category>
-    </item>
-    <item>
-      <title>役所の線を24本数えた。13本が大洲市と内子町で同じだった</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-uchiko-setto.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-uchiko-setto.html</guid>
-      <pubDate>Sun, 13 Sep 2026 09:00:00 +0900</pubDate>
-      <description>消防も、県の土木も、税務署も、ハローワークも、警察署も、県議会の選挙区も、農協も、医師会も、受け持ちが「大洲市と内子町」でぴったり同じだった。別々の役所が別々の理由で引いた線を24本数えたら、13本が一致し11本はズレた。手がかりは、100年前に役所を失った「喜多郡」にあった。</description>
-      <category>議会・行政</category>
-      <category>合併・地域</category>
     </item>
   </channel>
 </rss>

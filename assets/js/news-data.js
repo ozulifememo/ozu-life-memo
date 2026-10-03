@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "nagahama-umetate-keiyaku",
+    date: "2026-10-04",
+    title: "長浜港の埋立工事、3億1,130万円で契約が決まった。入札は3社、次は12月ごろから土が入る見込み",
+    category: "ima",
+    source: "大洲市「長浜港内港埋立事業について」(2026年10月1日更新)・令和8年9月11日入札結果・大洲市議会の表決結果・愛媛県報",
+    sourceDate: "2026-10-01",
+    tags: ["まちづくり", "議会・行政"],
+  },
+  {
     slug: "ozu-shitei-kanri-okane",
     date: "2026-10-03",
     title: "大洲市が外に任せた30施設の一覧。市が払うお金は1年で1億8,661万円、0円の施設も9つある",

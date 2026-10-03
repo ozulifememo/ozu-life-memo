@@ -5,8 +5,17 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Sat, 03 Oct 2026 09:24:52 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 04 Oct 2026 08:11:56 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>長浜港の埋立工事、3億1,130万円で契約が決まった。入札は3社、次は12月ごろから土が入る見込み</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/nagahama-umetate-keiyaku.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/nagahama-umetate-keiyaku.html</guid>
+      <pubDate>Sun, 04 Oct 2026 09:00:00 +0900</pubDate>
+      <description>大洲市の「長浜港内港埋立事業について」のページが2026年10月1日に更新され、埋立工事の請負契約が9月議会で議決されたことが載った。契約額は3億1,130万円、入札は3社で落札額は予定価格の98.3％、工期は令和14年2月27日まで。あわせて免許書と県報を読むと、免許は市と県に1件ずつ出ていた。新しく分かったこと、決まったこと、次に起こることを、入札結果と議会の表決と法律から並べた。</description>
+      <category>まちづくり</category>
+      <category>議会・行政</category>
+    </item>
     <item>
       <title>大洲市が外に任せた30施設の一覧。市が払うお金は1年で1億8,661万円、0円の施設も9つある</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-shitei-kanri-okane.html</link>
@@ -250,15 +259,6 @@
       <pubDate>Mon, 14 Sep 2026 09:00:00 +0900</pubDate>
       <description>口径13ミリ・1か月20立方メートルという同じ条件で、南予8市町の水道料金を各市町の料金表から計算し直した。いちばん高い鬼北町5,170円と、いちばん安い内子町2,940円で1.76倍。年にすると26,760円の差になる。大洲市は3,652円で安いほうだった。西予市は合併から22年たっても旧4町で値段が違う。「使うほど高くなる」料金になっているのは10通りのうち4つだけ。クレジットカードで払えるのは、確かめた6市町のうち宇和島市だけだった。</description>
       <category>財政・税金</category>
-    </item>
-    <item>
-      <title>大洲の交通安全のお金が、4年で34%減っていた。原資は交通違反の反則金である</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kotsu-anzen-kofukin.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kotsu-anzen-kofukin.html</guid>
-      <pubDate>Mon, 14 Sep 2026 09:00:00 +0900</pubDate>
-      <description>ガードレールやカーブミラーの設置費用に充てられる交通安全対策特別交付金は、交通違反の反則金を原資にしている。総額は反則金収入そのもので、市町村への配分は交通事故の発生件数・人口集中地区人口・改良済道路延長を2対1対1で割ったもの。大洲市の交付実績は令和2年度567万円から令和6年度374万7千円へ33.9%減っていた。同じ期間に大洲の事故も減っている。条文と政令、総務省の交付決定、市議会の答弁で確かめた。</description>
-      <category>財政・税金</category>
-      <category>交通・インフラ</category>
     </item>
   </channel>
 </rss>

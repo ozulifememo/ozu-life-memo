@@ -253,7 +253,7 @@ const OZU_ARTICLE_PHOTO_WANTED = [
     subjects: "長浜港の岸壁と埋立予定地、長浜大橋、海と町並み、長浜高校の外観。",
     slugs: ["nagahama-umetate-pabukome", "nagahama-tsunami-takasa", "nagahama-umetate-shisetsu",
             "nagahama-umetate-keii", "nagahama-kihonkeikaku-nyusatsu", "gikai-tsunami-sotei",
-            "shichosen-ryoheika",
+            "shichosen-ryoheika", "nagahama-umetate-keiyaku",
             "nagahama-akabashi"]
   },
   {

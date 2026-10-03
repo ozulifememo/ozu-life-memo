@@ -5,8 +5,17 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Sat, 03 Oct 2026 02:47:38 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 03 Oct 2026 09:24:52 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大洲市が外に任せた30施設の一覧。市が払うお金は1年で1億8,661万円、0円の施設も9つある</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-shitei-kanri-okane.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-shitei-kanri-okane.html</guid>
+      <pubDate>Sat, 03 Oct 2026 09:00:00 +0900</pubDate>
+      <description>大洲市が指定管理者に任せている30施設について、市が公表しているモニタリングシート23枚を全部開き、施設ごとの指定管理料と利用者数と収支を並べた。令和6年度の指定管理料は合わせて1億8,661万円で、半分は旧肱川町と旧河辺村の5枚のシートだった。0円の9施設は介護保険の報酬や売上で回っている。大洲城と臥龍山荘は、市のお金を除いても黒字だった。</description>
+      <category>財政・税金</category>
+      <category>議会・行政</category>
+    </item>
     <item>
       <title>大洲市の名前が出た記事は、約10年ぶんの4分の1が、たった1か月に集まっていた</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-news-kazu.html</link>
@@ -250,14 +259,6 @@
       <description>ガードレールやカーブミラーの設置費用に充てられる交通安全対策特別交付金は、交通違反の反則金を原資にしている。総額は反則金収入そのもので、市町村への配分は交通事故の発生件数・人口集中地区人口・改良済道路延長を2対1対1で割ったもの。大洲市の交付実績は令和2年度567万円から令和6年度374万7千円へ33.9%減っていた。同じ期間に大洲の事故も減っている。条文と政令、総務省の交付決定、市議会の答弁で確かめた。</description>
       <category>財政・税金</category>
       <category>交通・インフラ</category>
-    </item>
-    <item>
-      <title>ごみ袋がタダの市は、愛媛に3つしかない。大洲だけ値段のつけ方が違う</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ehime-gomibukuro-20.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ehime-gomibukuro-20.html</guid>
-      <pubDate>Mon, 14 Sep 2026 09:00:00 +0900</pubDate>
-      <description>指定ごみ袋がある市と、ない市がある。環境省の一般廃棄物処理実態調査から愛媛県20市町を全部数えたら、指定袋が無いのは松山市・新居浜市・四国中央市の3市だけだった。残る17市町はすべて「有料化」と答えている。徴収の型は15市町が排出量単純比例型で、大洲市だけが排出量多段階比例型、東温市だけが一定量無料型。なぜ市によって違うのか、有料にするとごみは減るのかを、法律と実データで確かめた。</description>
-      <category>財政・税金</category>
     </item>
   </channel>
 </rss>

@@ -141,6 +141,7 @@ const OZU_ARTICLE_IMAGES = {
   "ozu-supa-toho-10pun": { file: "photos/ozu-photo-96.jpg" },
   "uchiko-ozu-kanko": { file: "photos/ozu-photo-115.jpg" },
   "ozu-shitei-kanrisha": { file: "photos/ozu-photo-114.jpg" },
+  "ozu-shitei-kanri-okane": { file: "photos/ozu-photo-83.jpg" },
   "kanko-rieki-yukue": { file: "photos/ozu-photo-116.jpg" },
   "shiroshita-terrace-unei": { file: "photos/ozu-photo-72.jpg" },
   "ozu-shiyakusho-zangyo": { file: "photos/ozu-photo-111.jpg" },

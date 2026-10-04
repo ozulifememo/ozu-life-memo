@@ -5,8 +5,17 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Sun, 04 Oct 2026 08:11:56 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 04 Oct 2026 14:06:20 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大洲のキャラクターを数えたら17体。鵜が2羽いて、龍は1体もいなかった</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-character-ichiran.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-character-ichiran.html</guid>
+      <pubDate>Sun, 04 Oct 2026 09:00:00 +0900</pubDate>
+      <description>大洲市内のキャラクターを、持ち主の公式ページと市の資料で1体ずつ確かめて並べた。南海放送の県内一覧に11体、ほかに6体。公式キャラクター「うつつじ」の生まれ方と使うときの決まり、県内20市町との比べも。</description>
+      <category>まちづくり</category>
+      <category>観光</category>
+    </item>
     <item>
       <title>長浜港の埋立工事、3億1,130万円で契約が決まった。入札は3社、次は12月ごろから土が入る見込み</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/nagahama-umetate-keiyaku.html</link>
@@ -251,14 +260,6 @@
       <pubDate>Tue, 15 Sep 2026 09:00:00 +0900</pubDate>
       <description>日本郵便の郵便番号データとデジタル庁の住所データを突き合わせると、大洲市で郵便番号の割り当てが無い大字は冨士・阿部・下新谷の3つだった。郵便番号は町域ごとに付き、載っていない住所は795-0000を書く。「冨士(とみす)」は冨士山(とみすやま)の山頂ではなく東のふもとの谷で、そこにある老人ホームの住所は菅田町菅田丙だった。冨士山の住所も、調べる先によって柚木・菅田町菅田・菅田町大竹と分かれた。</description>
       <category>合併・地域</category>
-    </item>
-    <item>
-      <title>南予の水道代を全部並べたら、1.76倍の開きがあった。大洲は安いほうだった</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/nanyo-suido-ryokin.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/nanyo-suido-ryokin.html</guid>
-      <pubDate>Mon, 14 Sep 2026 09:00:00 +0900</pubDate>
-      <description>口径13ミリ・1か月20立方メートルという同じ条件で、南予8市町の水道料金を各市町の料金表から計算し直した。いちばん高い鬼北町5,170円と、いちばん安い内子町2,940円で1.76倍。年にすると26,760円の差になる。大洲市は3,652円で安いほうだった。西予市は合併から22年たっても旧4町で値段が違う。「使うほど高くなる」料金になっているのは10通りのうち4つだけ。クレジットカードで払えるのは、確かめた6市町のうち宇和島市だけだった。</description>
-      <category>財政・税金</category>
     </item>
   </channel>
 </rss>

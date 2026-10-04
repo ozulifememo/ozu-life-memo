@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-character-ichiran",
+    date: "2026-10-04",
+    title: "大洲のキャラクターを数えたら17体。鵜が2羽いて、龍は1体もいなかった",
+    category: "kurashi",
+    source: "南海放送「愛媛県のゆるキャラ・キャラクター625種類一覧」、大洲市「うつつじ デザインマニュアル」ほか",
+    sourceDate: "2026-08-15",
+    tags: ["まちづくり", "観光"],
+  },
+  {
     slug: "nagahama-umetate-keiyaku",
     date: "2026-10-04",
     title: "長浜港の埋立工事、3億1,130万円で契約が決まった。入札は3社、次は12月ごろから土が入る見込み",

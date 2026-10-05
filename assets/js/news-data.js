@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "chihou-ba-9rei-quiz",
+    date: "2026-10-05",
+    title: "大洲でクイズ大会を開いたら、何人来るのか。地方で場を続けている9つの実例を読んだ",
+    category: "shiten",
+    source: "北陸中日新聞・東京新聞・ニュースイッチ・調布経済新聞・十勝毎日新聞／各地の場の公式ページ／令和7年国勢調査 人口速報集計",
+    sourceDate: "2026-05-29",
+    tags: ["まちづくり"],
+  },
+  {
     slug: "ozu-character-ichiran",
     date: "2026-10-04",
     title: "大洲のキャラクターを数えたら17体。鵜が2羽いて、龍は1体もいなかった",

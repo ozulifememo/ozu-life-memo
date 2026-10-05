@@ -5,8 +5,16 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Mon, 05 Oct 2026 19:41:28 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 05 Oct 2026 19:54:36 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大洲でクイズ大会を開いたら、何人来るのか。地方で場を続けている9つの実例を読んだ</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/chihou-ba-9rei-quiz.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/chihou-ba-9rei-quiz.html</guid>
+      <pubDate>Mon, 05 Oct 2026 09:00:00 +0900</pubDate>
+      <description>大洲の数字をクイズにする会を開いたら、人は来るのか。地方で「まちを数えて書く人」「結論を出さずに話す場」「ご当地クイズ・検定」を続けている9つの実例を、元のページで確かめた。</description>
+      <category>まちづくり</category>
+    </item>
     <item>
       <title>大洲のキャラクターを数えたら17体。鵜が2羽いて、龍は1体もいなかった</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-character-ichiran.html</link>
@@ -252,14 +260,6 @@
       <pubDate>Tue, 15 Sep 2026 09:00:00 +0900</pubDate>
       <description>大洲を通る予讃線に架線は無く、走っているのは電車ではない。法律の言葉では「列車」、国会では「汽車」という発言が1950年代の2,158件から2020年代は7件に減った。それでも四国では「汽車」が生きている。伊予鉄道の開業(1888年)、電車の計画から始まった愛媛鉄道、全国より6年早い蒸気機関車の廃止、電化率6.4%で出発したJR四国、そして電車が1本も走らない徳島までを、資料でたどった。</description>
       <category>交通・インフラ</category>
-    </item>
-    <item>
-      <title>郵便番号が無い大洲の地名「冨士(とみす)」。冨士山の上ではなく、ふもとの谷にあった</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-yubin-bango-nai.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-yubin-bango-nai.html</guid>
-      <pubDate>Tue, 15 Sep 2026 09:00:00 +0900</pubDate>
-      <description>日本郵便の郵便番号データとデジタル庁の住所データを突き合わせると、大洲市で郵便番号の割り当てが無い大字は冨士・阿部・下新谷の3つだった。郵便番号は町域ごとに付き、載っていない住所は795-0000を書く。「冨士(とみす)」は冨士山(とみすやま)の山頂ではなく東のふもとの谷で、そこにある老人ホームの住所は菅田町菅田丙だった。冨士山の住所も、調べる先によって柚木・菅田町菅田・菅田町大竹と分かれた。</description>
-      <category>合併・地域</category>
     </item>
   </channel>
 </rss>

@@ -2067,7 +2067,7 @@ const OZU_NEWS = [
     sourceDate: "2026-06-01",
     title: "大洲高校の入学倍率0.51倍。定員割れの背景",
     category: "ima",
-    source: "大洲市議会中継配信（YouTube）",
+    source: "大洲市議会の録画配信（YouTube）",
     tags: ["子育て・教育"],
   },
   {
@@ -2076,7 +2076,7 @@ const OZU_NEWS = [
     sourceDate: "2026-06-01",
     title: "循環バス「ぐるりんおおず」、運賃収入は運行経費の３割程度という実態",
     category: "shiten",
-    source: "大洲市議会中継配信（YouTube）",
+    source: "大洲市議会の録画配信（YouTube）",
     tags: ["交通・インフラ"],
   },
   {
@@ -2085,7 +2085,7 @@ const OZU_NEWS = [
     sourceDate: "2026-06-01",
     title: "「おおず買物等割引チケット」、なぜ現金ではなく500円券だったのか",
     category: "shiten",
-    source: "大洲市議会中継配信（YouTube）",
+    source: "大洲市議会の録画配信（YouTube）",
     tags: ["財政・税金"],
   },
   {
@@ -2094,7 +2094,7 @@ const OZU_NEWS = [
     sourceDate: "2026-06-01",
     title: "猫の不妊手術補助、大洲市の単価は県内でも低い水準",
     category: "shiten",
-    source: "大洲市議会中継配信（YouTube）",
+    source: "大洲市議会の録画配信（YouTube）",
     tags: ["医療・福祉"],
   },
   {
@@ -2103,7 +2103,7 @@ const OZU_NEWS = [
     sourceDate: "2026-06-01",
     title: "64億円の新しい文化会館、お金はどこから出るのか",
     category: "ima",
-    source: "大洲市議会中継配信（YouTube）",
+    source: "大洲市議会の録画配信（YouTube）",
     tags: ["財政・税金", "まちづくり"],
   },
   {
@@ -2112,7 +2112,7 @@ const OZU_NEWS = [
     sourceDate: "2026-06-01",
     title: "大洲市の民生委員、充足率100％の裏にある担い手不足",
     category: "ima",
-    source: "大洲市議会中継配信（YouTube）",
+    source: "大洲市議会の録画配信（YouTube）",
     tags: ["医療・福祉"],
   },
   {
@@ -2121,7 +2121,7 @@ const OZU_NEWS = [
     sourceDate: "2026-06-01",
     title: "南海トラフ地震の津波、大洲市長浜地区に約90分で到達するという想定",
     category: "ima",
-    source: "大洲市議会中継配信(YouTube)",
+    source: "大洲市議会の録画配信(YouTube)",
     tags: ["防災"],
   },
   {
@@ -2130,7 +2130,7 @@ const OZU_NEWS = [
     sourceDate: "2026-06-01",
     title: "大洲市の不登校は8人まで減少。前年同時期比6割減という数字",
     category: "ima",
-    source: "大洲市議会中継配信(YouTube)",
+    source: "大洲市議会の録画配信(YouTube)",
     tags: ["子育て・教育"],
   },
   {
@@ -2139,7 +2139,7 @@ const OZU_NEWS = [
     sourceDate: "2026-06-01",
     title: "大洲市の公式LINE、他自治体との差を議会で問われる",
     category: "shiten",
-    source: "大洲市議会中継配信(YouTube)",
+    source: "大洲市議会の録画配信(YouTube)",
     tags: ["議会・行政"],
   },
   {
@@ -2967,7 +2967,7 @@ const OZU_NEWS = [
 const OZU_SOURCE_TYPES = [
   "広報おおず",
   "市役所HP",
-  "市議会中継(YouTube)",
+  "市議会の録画配信(YouTube)",
   "新聞・報道機関",
   "Yahoo!ニュース",
   "note",
@@ -2979,7 +2979,7 @@ const OZU_SOURCE_TYPES = [
 function ozuSourceType(source) {
   if (!source) return "その他";
   if (source.includes("広報おおず")) return "広報おおず";
-  if (source.includes("議会") || source.includes("YouTube")) return "市議会中継(YouTube)";
+  if (source.includes("議会") || source.includes("YouTube")) return "市議会の録画配信(YouTube)";
   if (source.includes("Yahoo")) return "Yahoo!ニュース";
   if (/note(?!書)/.test(source)) return "note";
   if (source.includes("新聞") || source.includes("NP") || source.includes("放送")) return "新聞・報道機関";

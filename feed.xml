@@ -5,8 +5,17 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Wed, 07 Oct 2026 19:33:19 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 07 Oct 2026 21:00:07 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>市が議会で「令和7年度に」と言ったこと31件。言ったとおりは20件、延びたのは8件だった</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/gikai-r7-kotae-awase.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/gikai-r7-kotae-awase.html</guid>
+      <pubDate>Wed, 07 Oct 2026 09:00:00 +0900</pubDate>
+      <description>大洲市が議会で「令和7年度に」と口にした予定を会議録から31件ひろい、年度が終わって半年の時点で、どうなったかを会議録と市・国の公開資料で確かめた。言ったとおりになった物が20件、延びた物・変わった物が8件、まだ確かめられない物が3件だった。</description>
+      <category>議会・行政</category>
+      <category>財政・税金</category>
+    </item>
     <item>
       <title>市が議会で「今年度に」と言ったこと11件。半年たった10月の現在地</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/gikai-konnendo-11ken.html</link>
@@ -252,15 +261,6 @@
       <pubDate>Tue, 15 Sep 2026 09:00:00 +0900</pubDate>
       <description>国土地理院の標高データで、大洲城・伊予大洲駅・大洲市役所・肱川橋・冨士山の山頂から、名前の付いた147の山が見えるかを1本ずつ計算した。町なかの4か所すべてから見えたのは壺神山・感応寺山・冨士山の3つ。いちばん高い壺神山(971m)は伊予市の山だった。市役所や肱川橋からは、神南山は冨士山の陰に入って見えない。冨士山に登ると、はっきり見える山は9つになった。</description>
       <category>観光</category>
-    </item>
-    <item>
-      <title>南予のふるさと納税、八幡浜は47億円で大洲の10倍。みかん畑が近い宇和島は9億円だった</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/nanyo-furusato-mikan.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/nanyo-furusato-mikan.html</guid>
-      <pubDate>Tue, 15 Sep 2026 09:00:00 +0900</pubDate>
-      <description>総務省の令和7年度の数字で南予9市町のふるさと納税を並べると、八幡浜市が47億7,766万円で南予全体の49.4%、愛媛20市町でも1位だった。大洲市は4億6,079万円。みかんの栽培面積が八幡浜の84%ある宇和島市は9億1,223万円にとどまる。差はみかんの量だけでは説明できず、八幡浜は返礼品の仕入れ費用のほぼ全額をポータルサイト事業者を通して払っていた。大洲の果樹の主役はみかんではなく栗だった。</description>
-      <category>財政・税金</category>
-      <category>産業・農業</category>
     </item>
   </channel>
 </rss>

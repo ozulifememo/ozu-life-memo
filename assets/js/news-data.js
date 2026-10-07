@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "gikai-r7-kotae-awase",
+    date: "2026-10-07",
+    title: "市が議会で「令和7年度に」と言ったこと31件。言ったとおりは20件、延びたのは8件だった",
+    category: "shiten",
+    source: "大洲市議会会議録（令和3年6月〜令和8年6月）／大洲市・国の公開資料",
+    sourceDate: "2026-10-07",
+    tags: ["議会・行政", "財政・税金"],
+  },
+  {
     slug: "gikai-konnendo-11ken",
     date: "2026-10-07",
     title: "市が議会で「今年度に」と言ったこと11件。半年たった10月の現在地",

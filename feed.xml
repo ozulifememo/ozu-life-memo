@@ -5,8 +5,17 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Tue, 06 Oct 2026 20:24:54 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 07 Oct 2026 19:33:19 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>市が議会で「今年度に」と言ったこと11件。半年たった10月の現在地</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/gikai-konnendo-11ken.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/gikai-konnendo-11ken.html</guid>
+      <pubDate>Wed, 07 Oct 2026 09:00:00 +0900</pubDate>
+      <description>大洲市が議会で「令和8年度に」と口にした予定を会議録から11件ひろい、10月の時点でどこまで進んだかを市の公開資料で確かめた。議決や公募まで進んだ物が4件、入札でつまずいた物が1件、まだ確かめられない物が6件だった。</description>
+      <category>議会・行政</category>
+      <category>財政・税金</category>
+    </item>
     <item>
       <title>大洲でクイズ大会を開いたら、何人来るのか。地方で場を続けている9つの実例を読んだ</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/chihou-ba-9rei-quiz.html</link>
@@ -252,14 +261,6 @@
       <description>総務省の令和7年度の数字で南予9市町のふるさと納税を並べると、八幡浜市が47億7,766万円で南予全体の49.4%、愛媛20市町でも1位だった。大洲市は4億6,079万円。みかんの栽培面積が八幡浜の84%ある宇和島市は9億1,223万円にとどまる。差はみかんの量だけでは説明できず、八幡浜は返礼品の仕入れ費用のほぼ全額をポータルサイト事業者を通して払っていた。大洲の果樹の主役はみかんではなく栗だった。</description>
       <category>財政・税金</category>
       <category>産業・農業</category>
-    </item>
-    <item>
-      <title>大洲に電車は走っていない。国会では消えかけた「汽車」が、四国で残っているわけを歴史からたどった</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kisha-densha.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kisha-densha.html</guid>
-      <pubDate>Tue, 15 Sep 2026 09:00:00 +0900</pubDate>
-      <description>大洲を通る予讃線に架線は無く、走っているのは電車ではない。法律の言葉では「列車」、国会では「汽車」という発言が1950年代の2,158件から2020年代は7件に減った。それでも四国では「汽車」が生きている。伊予鉄道の開業(1888年)、電車の計画から始まった愛媛鉄道、全国より6年早い蒸気機関車の廃止、電化率6.4%で出発したJR四国、そして電車が1本も走らない徳島までを、資料でたどった。</description>
-      <category>交通・インフラ</category>
     </item>
   </channel>
 </rss>

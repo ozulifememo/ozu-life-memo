@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "gikai-konnendo-11ken",
+    date: "2026-10-07",
+    title: "市が議会で「今年度に」と言ったこと11件。半年たった10月の現在地",
+    category: "shiten",
+    source: "大洲市議会会議録（令和8年3月・6月ほか）／大洲市の公開資料",
+    sourceDate: "2026-10-07",
+    tags: ["議会・行政", "財政・税金"],
+  },
+  {
     slug: "chihou-ba-9rei-quiz",
     date: "2026-10-05",
     title: "大洲でクイズ大会を開いたら、何人来るのか。地方で場を続けている9つの実例を読んだ",

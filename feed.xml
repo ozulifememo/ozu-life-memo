@@ -5,8 +5,16 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Thu, 08 Oct 2026 20:23:15 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 08 Oct 2026 23:14:45 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>レーシックは大洲で受けられるのか。眼科5か所を調べた。松山なら両眼23万円から、通うのは1年で8〜9回</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/lasik-ozu-ehime.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/lasik-ozu-ehime.html</guid>
+      <pubDate>Thu, 08 Oct 2026 09:00:00 +0900</pubDate>
+      <description>大洲市の眼科5か所の公式サイトに、レーシックやICLの案内は確かめた範囲で無かった。県内の値段、通う回数、学会の指針、受けた人の調査を、事実だけ並べた。</description>
+      <category>医療・福祉</category>
+    </item>
     <item>
       <title>市が議会で「令和7年度に」と言ったこと31件。言ったとおりは20件、延びたのは8件だった</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/gikai-r7-kotae-awase.html</link>
@@ -253,14 +261,6 @@
       <pubDate>Thu, 24 Sep 2026 09:00:00 +0900</pubDate>
       <description>肱川で鮎を釣るには、肱川漁協に遊漁料を払う。友釣りは1日1,500円・1年4,000円、竿釣りは1日1,000円・1年2,500円で、中学生以下はどちらも無料。解禁は6月1日の午前5時。釣ってはいけない区域は、漁協の規則と県の規則を合わせて14か所ある。県内11の漁協と、高知の仁淀川・四万十川の料金とも比べた。</description>
       <category>産業・農業</category>
-    </item>
-    <item>
-      <title>大洲の町なかから、どの山が見えるのか計算した。市役所から神南山は見えず、北の壺神山は伊予市の山だった</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-mieru-yama.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-mieru-yama.html</guid>
-      <pubDate>Tue, 15 Sep 2026 09:00:00 +0900</pubDate>
-      <description>国土地理院の標高データで、大洲城・伊予大洲駅・大洲市役所・肱川橋・冨士山の山頂から、名前の付いた147の山が見えるかを1本ずつ計算した。町なかの4か所すべてから見えたのは壺神山・感応寺山・冨士山の3つ。いちばん高い壺神山(971m)は伊予市の山だった。市役所や肱川橋からは、神南山は冨士山の陰に入って見えない。冨士山に登ると、はっきり見える山は9つになった。</description>
-      <category>観光</category>
     </item>
   </channel>
 </rss>

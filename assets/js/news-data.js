@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "lasik-ozu-ehime",
+    date: "2026-10-08",
+    title: "レーシックは大洲で受けられるのか。眼科5か所を調べた。松山なら両眼23万円から、通うのは1年で8〜9回",
+    category: "kurashi",
+    source: "日本眼科学会「屈折矯正手術のガイドライン（第8版）」ほか",
+    sourceDate: "2024-02-10",
+    tags: ["医療・福祉"],
+  },
+  {
     slug: "gikai-r7-kotae-awase",
     date: "2026-10-07",
     title: "市が議会で「令和7年度に」と言ったこと31件。言ったとおりは20件、延びたのは8件だった",

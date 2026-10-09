@@ -66,6 +66,7 @@
       '<a href="' + prefix + 'okane/">大洲のお金の教科書</a>' +
       '<a href="' + prefix + 'nengaku/">暮らしの年額</a>' +
       '<a href="' + prefix + 'dogubako/">市を動かす道具箱</a>' +
+      '<a href="' + prefix + 'gimon/">大洲の疑問</a>' +
       '<a href="' + prefix + 'data/">データで見る大洲</a>' +
       '<a href="' + prefix + 'monthly/">月間まとめ</a>' +
       '<a href="' + prefix + 'history/">大洲の歴史</a>' +

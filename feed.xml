@@ -5,8 +5,17 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Fri, 09 Oct 2026 13:46:11 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 09 Oct 2026 14:34:52 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>避難所を回すのは、学校の先生なのか。大洲では入れる人数の半分が学校。東日本大震災では、7割の学校で、はじめは先生が回した</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/hinanjo-sensei-yakuwari.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/hinanjo-sensei-yakuwari.html</guid>
+      <pubDate>Fri, 09 Oct 2026 09:00:00 +0900</pubDate>
+      <description>大洲市の避難所96か所のうち、いま使っている学校は24か所で、入れる人数では半分を超える。そこを運営するのはだれか。市のマニュアルと会議録、国の通知と法律、阪神・淡路と東日本大震災の調べを読んだ。</description>
+      <category>防災</category>
+      <category>子育て・教育</category>
+    </item>
     <item>
       <title>お金の相談（FP）は、大洲からどこにできるのか。相談料は1時間5,000円がまんなか、協会の催しが大洲に来たのは2016年から1回</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/fp-soudan-ozu.html</link>
@@ -252,14 +261,6 @@
       <pubDate>Sat, 26 Sep 2026 09:00:00 +0900</pubDate>
       <description>大洲市の避難所運営マニュアルは、令和2年4月に改正した市全体の1冊である。市は令和6年3月の議会で「避難所ごとのマニュアルは作成いたしておりません」と答え、菅田地区をモデルに作り始めた。国と愛媛県がいつから何を求めていたか、能登半島地震のあと何が変わったか、南予の宇和島市・西予市はどうしているかを、会議録と国・県・市の資料で追った。</description>
       <category>防災</category>
-      <category>議会・行政</category>
-    </item>
-    <item>
-      <title>広報おおずは、隣のまちの広報と何がちがうのか。48冊を数えたら、紙面の45%が「お知らせ」だった</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/kouhou-4shi-hikaku.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/kouhou-4shi-hikaku.html</guid>
-      <pubDate>Thu, 24 Sep 2026 09:00:00 +0900</pubDate>
-      <description>広報おおず・広報うちこ・広報やわたはま・広報うわじまの直近12号、48冊・1,404ページを1ページずつ区分に分けて数えた。大洲は紙面の45%が「お知らせ」で、4紙でいちばん多い。ニュースの面の65%に市長が出てくるのも大洲だけだった。内子は全国一になった広報紙で、人とまちの話に紙面を使っている。</description>
       <category>議会・行政</category>
     </item>
   </channel>

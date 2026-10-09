@@ -5,8 +5,16 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Fri, 09 Oct 2026 18:36:57 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 09 Oct 2026 19:20:25 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>議会の言葉を引いた1,800か所のうち、52か所が原文と違っていた。自分の記事を、機械で1字ずつ照らした</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/inyo-52kasho.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/inyo-52kasho.html</guid>
+      <pubDate>Fri, 09 Oct 2026 09:00:00 +0900</pubDate>
+      <description>このサイトが市議会の会議録から引いた言葉1,800か所あまりを、原文と機械で照らした。52か所が違っていた。言葉の抜け、出どころの回、話した人。何を、なぜ間違えたのかを書く。</description>
+      <category>議会・行政</category>
+    </item>
     <item>
       <title>避難所を回すのは、学校の先生なのか。大洲では入れる人数の半分が学校。東日本大震災では、7割の学校で、はじめは先生が回した</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/hinanjo-sensei-yakuwari.html</link>
@@ -253,15 +261,6 @@
       <description>大洲の城下町を案内する「おおず歴史華回廊」の案内人は、無料の講座を受けて市の認定試験に合格した人がなる。講座の時期と申し込み方、試験の中身、教科書がネットにあるのかを調べた。</description>
       <category>観光</category>
       <category>まちづくり</category>
-    </item>
-    <item>
-      <title>災害の夜、避難所は誰が開けるのか。96か所ある大洲で「避難所ごとのマニュアル」づくりが始まった</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/hinanjo-goto-manual.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/hinanjo-goto-manual.html</guid>
-      <pubDate>Sat, 26 Sep 2026 09:00:00 +0900</pubDate>
-      <description>大洲市の避難所運営マニュアルは、令和2年4月に改正した市全体の1冊である。市は令和6年3月の議会で「避難所ごとのマニュアルは作成いたしておりません」と答え、菅田地区をモデルに作り始めた。国と愛媛県がいつから何を求めていたか、能登半島地震のあと何が変わったか、南予の宇和島市・西予市はどうしているかを、会議録と国・県・市の資料で追った。</description>
-      <category>防災</category>
-      <category>議会・行政</category>
     </item>
   </channel>
 </rss>

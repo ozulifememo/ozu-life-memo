@@ -36,6 +36,16 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "inyo-52kasho",
+    date: "2026-10-09",
+    title: "議会の言葉を引いた1,800か所のうち、52か所が原文と違っていた。自分の記事を、機械で1字ずつ照らした",
+    category: "shiten",
+    source: "大洲市議会 会議録、大洲市議会会議規則ほか",
+    sourceDate: "2026-10-09",
+    sourceDateKind: "確認",
+    tags: ["議会・行政"],
+  },
+  {
     slug: "hinanjo-sensei-yakuwari",
     date: "2026-10-09",
     title: "避難所を回すのは、学校の先生なのか。大洲では入れる人数の半分が学校。東日本大震災では、7割の学校で、はじめは先生が回した",

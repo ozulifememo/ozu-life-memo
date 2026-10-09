@@ -1566,6 +1566,26 @@ section {
   font-size: clamp(1.45rem, 1.05rem + 1.5vw, 1.75rem) !important;
 }
 
+/* 題を「大きい1行＋小さい副題」に分けて見せる(分けるのは main.js。2026-10-09)。
+   題が2文以上あるとき、1つ目の文が .h1-main、残りが .h1-sub に入る。
+   題の字そのものは変えていない。字の色は h1 のまま受けつぎ、濃さだけ少し下げる
+   (自由研究の頭は地の色が違うので、色を決め打ちにしない)。 */
+.article-page h1 .h1-main,
+.jk-hero h1 .h1-main {
+  display: block;
+}
+
+.article-page h1 .h1-sub,
+.jk-hero h1 .h1-sub {
+  display: block;
+  margin-top: 0.4em;
+  font-size: clamp(15px, 0.62em, 18px);
+  font-weight: 600;
+  line-height: 1.6;
+  letter-spacing: 0;
+  opacity: 0.85;
+}
+
 /* トップ・大洲ノートに置いた「大洲の自由研究」への導線。
    サイト共通ナビはJavaScriptで生成しているため、検索エンジンが最初に読む
    HTMLにはコーナーの存在が出てこない。ここだけは素の <a href> で書いてある。 */

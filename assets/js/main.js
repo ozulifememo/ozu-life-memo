@@ -19,23 +19,61 @@
  * 狭い画面では2〜3行で構わない。
  *
  * スクリプトは </body> の直前にあるので、この処理は最初の描画より前に走る。
- * だから28pxで出たあと縮む、というちらつきは起きない。 */
+ * だから28pxで出たあと縮む、というちらつきは起きない。
+ *
+ * 2026-10-09: 題が2文以上あるときは、1つ目の文を大きい1行に、残りを小さい副題に
+ * 分けて見せる(.h1-main と .h1-sub)。題の字は変えない。見せ方だけ。
+ * HTMLの h1 は1つのままなので、検索や読み上げには、今までどおり1つの題として届く。
+ * 1行に収める処理は、分けたあとの「1つ目の文」にかける。
+ * 自由研究の題(.jk-hero h1)は、CSSの字の大きさに !important が付いていて、
+ * これまで字を詰める処理が効いていなかった。important を付けて書くように直した。
+ * 下限は21pxから20pxに下げた(21pxでは、1文で39字の題が1本だけ2行に残った)。
+ * 測った結果(画面幅1440px・377ページ): 前は2行が60本 → いまは全部1行。副題も全部1行。 */
 (function () {
-  var FLOOR = 21, MIN_WIDTH = 700;
+  var FLOOR = 20, MIN_WIDTH = 700;
   var h = document.querySelector(".article-page h1, .jk-hero h1");
   if (!h) return;
+
+  // 1つ目の文の終わり(。？！)で、題を2つに分ける。あとに字が残らないときは分けない。
+  function split() {
+    if (h.querySelector(".h1-main")) return;
+    var walker = document.createTreeWalker(h, NodeFilter.SHOW_TEXT);
+    var node, pos = -1;
+    while ((node = walker.nextNode())) {
+      pos = node.nodeValue.search(/[。？?！!]/);
+      if (pos >= 0) break;
+    }
+    if (!node || pos < 0) return;
+    var r = document.createRange();
+    r.setStart(node, pos + 1);
+    r.setEnd(h, h.childNodes.length);
+    if (!r.toString().replace(/[\s　]/g, "")) return;
+    var sub = document.createElement("span");
+    sub.className = "h1-sub";
+    sub.appendChild(r.extractContents());
+    var first = sub.firstChild;
+    if (first && first.nodeType === 3) first.nodeValue = first.nodeValue.replace(/^[\s　]+/, "");
+    var main = document.createElement("span");
+    main.className = "h1-main";
+    while (h.firstChild) main.appendChild(h.firstChild);
+    h.appendChild(main);
+    h.appendChild(sub);
+  }
+  split();
+  var target = h.querySelector(".h1-main") || h;
+
   function lines() {
-    var cs = getComputedStyle(h);
+    var cs = getComputedStyle(target);
     var lh = parseFloat(cs.lineHeight) || parseFloat(cs.fontSize) * 1.4;
-    return Math.round(h.getBoundingClientRect().height / lh);
+    return Math.round(target.getBoundingClientRect().height / lh);
   }
   function fit() {
-    h.style.fontSize = "";
+    target.style.removeProperty("font-size");
     if (window.innerWidth < MIN_WIDTH) return;
-    var fs = parseFloat(getComputedStyle(h).fontSize);
+    var fs = parseFloat(getComputedStyle(target).fontSize);
     while (fs > FLOOR && lines() > 1) {
       fs -= 0.5;
-      h.style.fontSize = fs + "px";
+      target.style.setProperty("font-size", fs + "px", "important");
     }
   }
   fit();

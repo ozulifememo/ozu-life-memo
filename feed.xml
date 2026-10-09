@@ -5,8 +5,16 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Thu, 08 Oct 2026 23:14:45 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 09 Oct 2026 13:46:11 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>お金の相談（FP）は、大洲からどこにできるのか。相談料は1時間5,000円がまんなか、協会の催しが大洲に来たのは2016年から1回</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/fp-soudan-ozu.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/fp-soudan-ozu.html</guid>
+      <pubDate>Fri, 09 Oct 2026 09:00:00 +0900</pubDate>
+      <description>FPは何をしてくれる人で、いくらかかり、大洲からどこに相談できるのか。協会と国の資料で確かめた。相談の前に見ておく国の保障を、ひとり暮らしと夫婦に分けて並べた。</description>
+      <category>財政・税金</category>
+    </item>
     <item>
       <title>レーシックは大洲で受けられるのか。眼科5か所を調べた。松山なら両眼23万円から、通うのは1年で8〜9回</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/lasik-ozu-ehime.html</link>
@@ -253,14 +261,6 @@
       <pubDate>Thu, 24 Sep 2026 09:00:00 +0900</pubDate>
       <description>広報おおず・広報うちこ・広報やわたはま・広報うわじまの直近12号、48冊・1,404ページを1ページずつ区分に分けて数えた。大洲は紙面の45%が「お知らせ」で、4紙でいちばん多い。ニュースの面の65%に市長が出てくるのも大洲だけだった。内子は全国一になった広報紙で、人とまちの話に紙面を使っている。</description>
       <category>議会・行政</category>
-    </item>
-    <item>
-      <title>肱川で鮎を釣るには、いくら払って、どこなら釣っていいのか</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/hijikawa-ayu-yugyo.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/hijikawa-ayu-yugyo.html</guid>
-      <pubDate>Thu, 24 Sep 2026 09:00:00 +0900</pubDate>
-      <description>肱川で鮎を釣るには、肱川漁協に遊漁料を払う。友釣りは1日1,500円・1年4,000円、竿釣りは1日1,000円・1年2,500円で、中学生以下はどちらも無料。解禁は6月1日の午前5時。釣ってはいけない区域は、漁協の規則と県の規則を合わせて14か所ある。県内11の漁協と、高知の仁淀川・四万十川の料金とも比べた。</description>
-      <category>産業・農業</category>
     </item>
   </channel>
 </rss>

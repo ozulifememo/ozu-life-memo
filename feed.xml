@@ -5,8 +5,17 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Sat, 10 Oct 2026 13:37:13 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 10 Oct 2026 13:50:21 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大洲は中予？南予？ 線引きを18本並べたら、「南予」と書いてあるのは6本。高校の学区では、中予にも入っていた</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-chuyo-nanyo.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-chuyo-nanyo.html</guid>
+      <pubDate>Sat, 10 Oct 2026 09:00:00 +0900</pubDate>
+      <description>「大洲高校は中予に入る」に根拠は在るのかを、役所と連盟の公表物で確かめた。県立高校の普通科の学区を決める県の規則では、大洲市と大洲高校・長浜高校が、中予地区と南予地区の両方に書いてある。国・県・連盟の線引きを18本並べると、「南予」と名が付くのは6本だった。</description>
+      <category>合併・地域</category>
+      <category>子育て・教育</category>
+    </item>
     <item>
       <title>大洲の果樹でいちばん広いのは、みかんではなく栗だった。1キロ889円の栗は、どこへ行くのか</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kuri-ikura-doko.html</link>
@@ -250,15 +259,6 @@
       <description>大洲の図書館、コミュニティセンター、しろしたテラスは夜何時まで使えるのか。条例と規則を読み、公民館のころから住民が夜の鍵を預かってきたこと、暗証番号の鍵箱への切り替えと費用、「借りる」と「開ける」の制度の違い、雲南・指宿・西条・松山の例、保険までを調べた。</description>
       <category>まちづくり</category>
       <category>議会・行政</category>
-    </item>
-    <item>
-      <title>掘って24年で「温泉」でなくなった。市が買った源泉と、臥龍の湯のお金</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/garyunoyu-onsen.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/garyunoyu-onsen.html</guid>
-      <pubDate>Sun, 27 Sep 2026 09:00:00 +0900</pubDate>
-      <description>臥龍淵のそばの臥龍の湯は、2023年まで「少彦名温泉」の湯を使っていた。源泉は行き詰まった第三セクターから市が買い取ったもの。土地の買い取り、燃料費の高騰、損失補償をめぐる和解、そして温泉法の基準割れまで、24年のお金の流れを市議会の会議録でたどった。</description>
-      <category>財政・税金</category>
-      <category>観光</category>
     </item>
   </channel>
 </rss>

@@ -5,8 +5,16 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Sat, 10 Oct 2026 13:20:02 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 10 Oct 2026 13:37:13 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大洲の果樹でいちばん広いのは、みかんではなく栗だった。1キロ889円の栗は、どこへ行くのか</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kuri-ikura-doko.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kuri-ikura-doko.html</guid>
+      <pubDate>Sat, 10 Oct 2026 09:00:00 +0900</pubDate>
+      <description>大洲市の果樹でいちばん広いのは、みかんではなく栗だった(2020年で217ヘクタール)。その栗は1キロいくらで売れ、どこへ行くのか。国・県・市場の統計を開いて計算した。庭先の値段は1キロ約889円でみかんの3倍。行き先は東京ではなく京都・大阪だった。</description>
+      <category>産業・農業</category>
+    </item>
     <item>
       <title>大洲で車を1台手放すと、年にいくら浮くのか。軽で17万7,133円、タクシーなら110回ぶんだった</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/kuruma-1dai-tebanasu.html</link>
@@ -251,15 +259,6 @@
       <description>臥龍淵のそばの臥龍の湯は、2023年まで「少彦名温泉」の湯を使っていた。源泉は行き詰まった第三セクターから市が買い取ったもの。土地の買い取り、燃料費の高騰、損失補償をめぐる和解、そして温泉法の基準割れまで、24年のお金の流れを市議会の会議録でたどった。</description>
       <category>財政・税金</category>
       <category>観光</category>
-    </item>
-    <item>
-      <title>大洲の文化財243件、ふだん見に行けるのはどれか。直すお金は誰が払っているのか</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-shitei-bunkazai.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-shitei-bunkazai.html</guid>
-      <pubDate>Sun, 27 Sep 2026 09:00:00 +0900</pubDate>
-      <description>大洲市の指定文化財と国の登録文化財を、市の一覧31ページから全部数えると243件。市の文化財分布図の注意書きで「ふだん見に行けるか」を1件ずつ分け、修理のお金を国・県・市の補助の決まり、予算書、市議会の会議録で追った。</description>
-      <category>観光</category>
-      <category>財政・税金</category>
     </item>
   </channel>
 </rss>

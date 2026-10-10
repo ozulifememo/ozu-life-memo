@@ -5,8 +5,17 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Fri, 09 Oct 2026 19:38:44 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 10 Oct 2026 13:20:02 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大洲で車を1台手放すと、年にいくら浮くのか。軽で17万7,133円、タクシーなら110回ぶんだった</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/kuruma-1dai-tebanasu.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/kuruma-1dai-tebanasu.html</guid>
+      <pubDate>Sat, 10 Oct 2026 09:00:00 +0900</pubDate>
+      <description>大洲で軽自動車を1台持つと1年にいくらかかるかを、税・車検・保険・ガソリン・点検まで、公表されている数字だけで積み上げた。合計は17万7,133円。このうち8万5,783円は1kmも走らなくても出ていく。愛媛のタクシーは4kmで1,600円なので、浮いたお金は110回ぶんにあたる。</description>
+      <category>交通・インフラ</category>
+      <category>財政・税金</category>
+    </item>
     <item>
       <title>統計で大洲に似ている6市は、リサイクル率がみな大洲より高い。生ごみを20年分けた日田市は、やめると決めた</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/niteru-6shi-recycle.html</link>
@@ -251,15 +260,6 @@
       <description>大洲市の指定文化財と国の登録文化財を、市の一覧31ページから全部数えると243件。市の文化財分布図の注意書きで「ふだん見に行けるか」を1件ずつ分け、修理のお金を国・県・市の補助の決まり、予算書、市議会の会議録で追った。</description>
       <category>観光</category>
       <category>財政・税金</category>
-    </item>
-    <item>
-      <title>役所がやらない「若い人の居場所」を大洲につくるなら。公務員はどこまで来られるのか</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/wakamono-ibasho-minkan.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/wakamono-ibasho-minkan.html</guid>
-      <pubDate>Sun, 27 Sep 2026 09:00:00 +0900</pubDate>
-      <description>役所が運営しない若い人の居場所を大洲につくるなら、何を知っておけばいいか。若い働き手のうち役所・学校・JAなどで働く人の割合を国勢調査と就業構造基本調査で数え、公務員の政治的行為を縛る条文と最高裁の判断、塩尻・豊岡・鹿角・茅野の場の仕組みと決まりを調べた。</description>
-      <category>まちづくり</category>
-      <category>議会・行政</category>
     </item>
   </channel>
 </rss>

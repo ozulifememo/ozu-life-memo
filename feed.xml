@@ -5,8 +5,17 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Sat, 10 Oct 2026 13:50:21 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 10 Oct 2026 14:14:22 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大洲の図書館を19時まで開けると、年にいくらかかるのか。数えたら170万〜231万円。県内16館の閉館は平均18時40分だった</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/toshokan-heikan-jikan.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/toshokan-heikan-jikan.html</guid>
+      <pubDate>Sat, 10 Oct 2026 09:00:00 +0900</pubDate>
+      <description>大洲市立図書館は18時に閉まる。県内で図書館のある16市町の本館を並べると、平日の閉館は平均18時40分で、大洲は遅い順に11番目だった。本館を毎日19時まで開けると、増える費用は年170万〜231万円。予算書から前提を置いて数えた概算である。</description>
+      <category>財政・税金</category>
+      <category>子育て・教育</category>
+    </item>
     <item>
       <title>大洲は中予？南予？ 線引きを18本並べたら、「南予」と書いてあるのは6本。高校の学区では、中予にも入っていた</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-chuyo-nanyo.html</link>
@@ -250,15 +259,6 @@
       <description>住む場所を町なかにまとめるコンパクトシティ。「実現した」と言える市はあるのか、法律は住む場所を縛れるのか、憲法22条とどう折り合ってきたのかを、国の検証・国会の会議録・富山市と青森市の例で確かめ、大洲市の計画に当てはめた。</description>
       <category>まちづくり</category>
       <category>人口減少</category>
-    </item>
-    <item>
-      <title>夜の図書館や公民館を、市民が開けられるのか。大洲では住民がもう鍵を預かっていた</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/yoru-kaikan.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/yoru-kaikan.html</guid>
-      <pubDate>Mon, 28 Sep 2026 09:00:00 +0900</pubDate>
-      <description>大洲の図書館、コミュニティセンター、しろしたテラスは夜何時まで使えるのか。条例と規則を読み、公民館のころから住民が夜の鍵を預かってきたこと、暗証番号の鍵箱への切り替えと費用、「借りる」と「開ける」の制度の違い、雲南・指宿・西条・松山の例、保険までを調べた。</description>
-      <category>まちづくり</category>
-      <category>議会・行政</category>
     </item>
   </channel>
 </rss>

@@ -5,8 +5,16 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Sat, 10 Oct 2026 17:48:19 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 10 Oct 2026 19:30:26 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大洲で働く人の仕事は、何種類あるのか。事業所の種類で数えたら234、松山は367だった</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/shokugyo-35000.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/shokugyo-35000.html</guid>
+      <pubDate>Sat, 10 Oct 2026 09:00:00 +0900</pubDate>
+      <description>大洲市で働く約2万人の仕事は何種類あるのかを、国の統計で数えた。国勢調査は、市町村ごとには12区分までしか出ていない。事業所の種類で数えると大洲市は234、松山市は367。よく引かれる「大正9年は職業3万5千種」が何を数えた数字なのかも、当時の名鑑を開いて確かめた。</description>
+      <category>産業・農業</category>
+    </item>
     <item>
       <title>ＪＲ四国は2031年度に「自立」できるのか。計画を開いたら、2030年度は42億円の赤字だった</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/jr-shikoku-jiritsu-2031.html</link>
@@ -250,15 +258,6 @@
       <pubDate>Fri, 02 Oct 2026 09:00:00 +0900</pubDate>
       <description>大洲市は「個人情報ファイルを1,405件持っている」と公表している。1人について1,405あるのではなく、名簿や台帳の種類の数だった。中身を誰でも読めるのは、1,000人以上が入った162件。「身長」「体重」「預貯金」という言葉はどこにも無かったが、所得は43件、口座番号は44件に入っていた。自分の分は、無料で開示を請求できる。ファイル簿と法律、市の条例で確かめた。</description>
       <category>議会・行政</category>
-    </item>
-    <item>
-      <title>2027年度から、家の固定資産税は「30万円未満ならゼロ」に。36年ぶりの変更で、自分は何をすればよいか</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/kotei-shisanzei-r9.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/kotei-shisanzei-r9.html</guid>
-      <pubDate>Fri, 02 Oct 2026 09:00:00 +0900</pubDate>
-      <description>令和9年度(2027年度)の固定資産税は、3年に1度の評価替えの年。同じ年に、家屋と商売道具の「税がかからない線」が36年ぶりに上がる。対象になる人は何もしなくてよいが、商売道具の申告は続ける必要がある。大洲市では今でも家屋の4棟に1棟がこの線の下にある。評価額に納得がいかないときに不服を言えるのも、原則この年だけ。法律と総務省の資料、市の条例で確かめた。</description>
-      <category>財政・税金</category>
-      <category>空き家・住宅</category>
     </item>
   </channel>
 </rss>

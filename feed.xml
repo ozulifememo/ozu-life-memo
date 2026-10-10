@@ -5,8 +5,17 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Sat, 10 Oct 2026 14:41:52 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 10 Oct 2026 17:48:19 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ＪＲ四国は2031年度に「自立」できるのか。計画を開いたら、2030年度は42億円の赤字だった</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/jr-shikoku-jiritsu-2031.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/jr-shikoku-jiritsu-2031.html</guid>
+      <pubDate>Sat, 10 Oct 2026 09:00:00 +0900</pubDate>
+      <description>国はＪＲ四国に「令和13年度の経営自立」を求めている。計画と決算を開くと、自立は鉄道が黒字になることではなかった。2025年度は57億円の黒字でも本業は137億円の赤字。2030年度の計画は42億円の赤字で、目標は別の数字に置かれていた。</description>
+      <category>交通・インフラ</category>
+      <category>財政・税金</category>
+    </item>
     <item>
       <title>大洲の校歌は、どの山と川を歌っているのか。22曲を数えたら、肱川12曲・神南山6曲・冨士山2曲だった</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-koka-chimei.html</link>
@@ -250,15 +259,6 @@
       <description>令和9年度(2027年度)の固定資産税は、3年に1度の評価替えの年。同じ年に、家屋と商売道具の「税がかからない線」が36年ぶりに上がる。対象になる人は何もしなくてよいが、商売道具の申告は続ける必要がある。大洲市では今でも家屋の4棟に1棟がこの線の下にある。評価額に納得がいかないときに不服を言えるのも、原則この年だけ。法律と総務省の資料、市の条例で確かめた。</description>
       <category>財政・税金</category>
       <category>空き家・住宅</category>
-    </item>
-    <item>
-      <title>大洲市の建物は737。ぜんぶ直して建て替えると年87.5億円、使えているのは48.8億円</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kokyo-shisetsu-737.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kokyo-shisetsu-737.html</guid>
-      <pubDate>Fri, 02 Oct 2026 09:00:00 +0900</pubDate>
-      <description>大洲市が持つ建物を、市の「公共施設等総合管理計画」で数えた。施設は737で、半分は集会所と消防団の詰所。市民1人あたりの床は全国の2.2倍だが、県内20市町を全部並べると10番目だった。ぜんぶを30年で直し60年で建て替える計算では年87.5億円が要り、これまで使えた額との差は年38.8億円。5年で床は2.3％減ったが、人口が7.9％減ったので、1人あたりは逆に増えていた。</description>
-      <category>財政・税金</category>
-      <category>まちづくり</category>
     </item>
   </channel>
 </rss>

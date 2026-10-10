@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "jr-shikoku-jiritsu-2031",
+    date: "2026-10-10",
+    title: "ＪＲ四国は2031年度に「自立」できるのか。計画を開いたら、2030年度は42億円の赤字だった",
+    category: "shiten",
+    source: "四国旅客鉄道、国土交通省、参議院『立法と調査』、大洲市議会会議録",
+    sourceDate: "2026-05-13",
+    tags: ["交通・インフラ", "財政・税金"],
+  },
+  {
     slug: "ozu-koka-chimei",
     date: "2026-10-10",
     title: "大洲の校歌は、どの山と川を歌っているのか。22曲を数えたら、肱川12曲・神南山6曲・冨士山2曲だった",

@@ -5,8 +5,17 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Sat, 10 Oct 2026 14:14:22 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 10 Oct 2026 14:41:52 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大洲の校歌は、どの山と川を歌っているのか。22曲を数えたら、肱川12曲・神南山6曲・冨士山2曲だった</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-koka-chimei.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-koka-chimei.html</guid>
+      <pubDate>Sat, 10 Oct 2026 09:00:00 +0900</pubDate>
+      <description>大洲市内の小・中・高25校のうち24校、22曲の校歌を各校の公式サイトなどで読み、歌詞に出てくる地名だけを数えた。いちばん多いのは肱川の12曲。山は学校の場所で分かれ、神南山が6曲、冨士山は2曲だった。肱川を歌わない歌が10曲あり、新谷の3曲は矢落川を歌う。</description>
+      <category>子育て・教育</category>
+      <category>合併・地域</category>
+    </item>
     <item>
       <title>大洲の図書館を19時まで開けると、年にいくらかかるのか。数えたら170万〜231万円。県内16館の閉館は平均18時40分だった</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/toshokan-heikan-jikan.html</link>
@@ -250,15 +259,6 @@
       <description>大洲市が持つ建物を、市の「公共施設等総合管理計画」で数えた。施設は737で、半分は集会所と消防団の詰所。市民1人あたりの床は全国の2.2倍だが、県内20市町を全部並べると10番目だった。ぜんぶを30年で直し60年で建て替える計算では年87.5億円が要り、これまで使えた額との差は年38.8億円。5年で床は2.3％減ったが、人口が7.9％減ったので、1人あたりは逆に増えていた。</description>
       <category>財政・税金</category>
       <category>まちづくり</category>
-    </item>
-    <item>
-      <title>コンパクトシティを「実現した」市はあるのか。住む場所を選ぶ自由と、国の答え</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/compact-city-jitsugen.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/compact-city-jitsugen.html</guid>
-      <pubDate>Mon, 28 Sep 2026 09:00:00 +0900</pubDate>
-      <description>住む場所を町なかにまとめるコンパクトシティ。「実現した」と言える市はあるのか、法律は住む場所を縛れるのか、憲法22条とどう折り合ってきたのかを、国の検証・国会の会議録・富山市と青森市の例で確かめ、大洲市の計画に当てはめた。</description>
-      <category>まちづくり</category>
-      <category>人口減少</category>
     </item>
   </channel>
 </rss>

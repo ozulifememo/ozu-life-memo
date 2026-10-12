@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ozulifememo.github.io/ozu-life-memo/sitemap.xml

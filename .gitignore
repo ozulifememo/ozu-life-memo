@@ -1,0 +1,30 @@
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+node_modules/
+__pycache__/
+
+# サイトに使わない物(手元だけに置く)
+private-notes/
+docs/
+/.claude/
+/pr/
+/tools/
+/_tools/
+/_review-img/
+/_review-body/
+
+# 直下の文書は README だけを入れる
+/*.md
+!/README.md
+/*.pdf
+
+# 作業用(_ で始まる物)
+_*.html
+_*.json
+
+# 取ってきた生データ
+*.xml
+!sitemap.xml
+!feed.xml

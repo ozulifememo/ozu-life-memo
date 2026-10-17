@@ -472,8 +472,11 @@ figcaption {
    ナビが右にはみ出し、ページ全体が横スクロールしていた。
    本物のChromeで17通りの幅を測ったところ、どの折り返し点も
    40〜100pxぶん遅すぎた(狭くなってから効いていた)。
-   1399→1479 / 1199→1329 / 1039→1149 / 979→1019 に前倒しした。 */
-@media (max-width: 1479px) {
+   1399→1479 / 1199→1329 / 1039→1149 / 979→1019 に前倒しした。
+   2026-10-17: 9/20にナビへ「さがす」を足したあと、1330〜1399px(ノートPCの1366pxなど)で
+   また横にはみ出していた(月次点検で441ページ全部に出た)。980〜1700pxを10px刻みで測り直し、
+   1479→1569 / 1329→1399 / 1149→1209 / 1019→1089 に前倒しした(どの幅でも横スクロールが出ない)。 */
+@media (max-width: 1569px) {
   .site-header .wrap {
     gap: 34px;
   }
@@ -482,7 +485,7 @@ figcaption {
   }
 }
 
-@media (max-width: 1329px) {
+@media (max-width: 1399px) {
   .site-header .wrap {
     gap: 24px;
     padding: 0 24px;
@@ -500,7 +503,7 @@ figcaption {
   }
 }
 
-@media (max-width: 1149px) {
+@media (max-width: 1209px) {
   .site-header .wrap {
     gap: 20px;
     padding: 0 20px;
@@ -560,7 +563,7 @@ figcaption {
   top: 7px;
 }
 
-@media (max-width: 1019px) {
+@media (max-width: 1089px) {
   .main-nav {
     position: fixed;
     top: var(--header-h);

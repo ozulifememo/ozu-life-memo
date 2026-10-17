@@ -122,6 +122,7 @@
     '<img src="' + prefix + 'assets/img/memou.svg" alt="" class="modal-memou" width="76" height="76" decoding="async">' +
     "<h3>お問い合わせ・Googleフォームはこちら</h3>" +
     '<p class="modal-note">＼ 名前やメールアドレスの入力は一切不要です ／</p>' +
+    '<p class="modal-note">調べてほしいことがあれば、1行で。それが次の記事の種になります。</p>' +
     '<p class="modal-warning">' +
     "<strong>【非公式・個人ボランティアです】</strong>" +
     "制度の詳細は必ず公式HPを確認してください。情報のまとめ・感想は個人の見解です。" +

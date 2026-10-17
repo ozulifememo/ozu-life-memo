@@ -5850,3 +5850,13 @@ figure.zu.zu-photo {
 }
 
 /* ── 記事の図表(.zu) ここまで ────────────────────────────── */
+
+/* 静的なリンク(2026-10-17)。Googleは JavaScript を動かしていなかったので、一覧と関連記事を静的にも書いた(tools/make_static_links.py)。
+   JS が動く画面では、news-table-body と home-latest-news と related-list-items の中身は JS が上書きする。 */
+.static-list { list-style: none; margin: 0; padding: 0; }
+.static-list li { padding: 8px 0; border-bottom: 1px solid #e6e6e6; font-size: 0.95rem; line-height: 1.5; }
+.static-list .rdate { margin-left: 0.6em; color: #777; font-size: 0.82rem; white-space: nowrap; }
+.home-hubs { margin: 36px 0 8px; color: #666; font-size: 0.86rem; }
+.home-hubs-title { margin: 0 0 6px; font-weight: 700; color: #555; }
+.home-hubs ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 18px; }
+.home-hubs a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }

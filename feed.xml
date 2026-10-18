@@ -5,8 +5,26 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Sat, 17 Oct 2026 23:37:20 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 18 Oct 2026 17:53:42 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大洲の社会福祉法人8つで年30億円。500人の給料は、どこから来るのか</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-fukushi-hojin.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-fukushi-hojin.html</guid>
+      <pubDate>Sun, 18 Oct 2026 09:00:00 +0900</pubDate>
+      <description>大洲市に本部を置く社会福祉法人8つの決算を、国の開示システムで全部開いて足した。令和7年度の収益は約30億円、働く人は500人。お金の入口と出口、5年で6億円増えた理由、社会福祉法人だけ決算が誰でも見られる理由を一次資料で調べた。</description>
+      <category>医療・福祉</category>
+      <category>財政・税金</category>
+    </item>
+    <item>
+      <title>大洲の建設会社196社のうち88社は、なぜ売上まで丸見えなのか</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kensetsu-keishin.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kensetsu-keishin.html</guid>
+      <pubDate>Sun, 18 Oct 2026 09:00:00 +0900</pubDate>
+      <description>大洲市に本店がある建設業の許可業者196社のうち88社は、売上や利益、技術者の数まで誰でも見られる。建設業法の経営事項審査という仕組みと、結果が公開される理由、大洲市の格付けとの関係を一次資料で調べた。</description>
+      <category>産業・農業</category>
+      <category>議会・行政</category>
+    </item>
     <item>
       <title>大洲で働く人の仕事は、何種類あるのか。事業所の種類で数えたら234、松山は367だった</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/shokugyo-35000.html</link>
@@ -241,23 +259,6 @@
       <pubDate>Fri, 02 Oct 2026 09:00:00 +0900</pubDate>
       <description>市のたばこ税は、たばこを売った店がある市町村に入る。税収を税率で割ると、その町の店に卸された本数が出る。令和6年度、大洲市は住民1人あたり1,262.8本(約63箱)で、県内20市町の1位だった。平成30年度から7年続けて1位である。大洲の人がよく吸うのか、まわりの町から買いに来ているのか。総務省の決算の表、県の健診の報告書、地方税法で確かめた。</description>
       <category>財政・税金</category>
-    </item>
-    <item>
-      <title>大洲の給食の野菜は、3年で地元産が19.2％から62.1％になった。何を変えたのか</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kyushoku-jimoto.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kyushoku-jimoto.html</guid>
-      <pubDate>Fri, 02 Oct 2026 09:00:00 +0900</pubDate>
-      <description>大洲市の学校給食で使う野菜と果物のうち、大洲産は令和6年度で64.5％。15年前は19.2％だった。3年で3倍になったのは、野菜を買う先を農協の市場から産直市に変え、農家がニンジンやジャガイモを増やし、給食の側も畑に合わせて献立を変えたからだった。値段は割高になっていない。ただ、目標の77％には届かず、年ごとに上下している。市議会の会議録と市の資料で確かめた。</description>
-      <category>子育て・教育</category>
-      <category>産業・農業</category>
-    </item>
-    <item>
-      <title>大洲市が持つ個人情報のファイルは1,405。身長や貯金まで入っているのか、公開された162を全部読んだ</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kojin-joho-file.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kojin-joho-file.html</guid>
-      <pubDate>Fri, 02 Oct 2026 09:00:00 +0900</pubDate>
-      <description>大洲市は「個人情報ファイルを1,405件持っている」と公表している。1人について1,405あるのではなく、名簿や台帳の種類の数だった。中身を誰でも読めるのは、1,000人以上が入った162件。「身長」「体重」「預貯金」という言葉はどこにも無かったが、所得は43件、口座番号は44件に入っていた。自分の分は、無料で開示を請求できる。ファイル簿と法律、市の条例で確かめた。</description>
-      <category>議会・行政</category>
     </item>
   </channel>
 </rss>

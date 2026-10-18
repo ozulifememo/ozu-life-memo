@@ -5901,3 +5901,8 @@ figure.zu.zu-photo {
   color: var(--color-brand);
   font-weight: 700;
 }
+
+/* 記事の書き出し(2026-10-18) */
+.kakidashi { margin: 18px 0 24px; padding: 2px 0 2px 16px; border-left: 3px solid var(--color-brand); }
+.kakidashi p { margin: 0 0 .5em; font-size: 1.05rem; line-height: 1.9; color: var(--color-text); }
+.kakidashi p:last-child { margin-bottom: 0; }

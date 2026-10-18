@@ -88,6 +88,7 @@
       '<a href="' + prefix + 'concept/">サイト紹介</a>' +
       '<a href="' + prefix + 'uta/">サイトの歌</a>' +
       '<a href="' + prefix + 'teisei/">直した記録</a>' +
+      '<a href="' + prefix + 'koe/">読者の声</a>' +
       '<a href="' + home + '">トップページ</a>' +
       '<a href="#" data-modal-open>お問い合わせ</a>' +
       // 外部の発信先。なりすまし防止も兼ねて、本物はここから辿れる状態にしておく。
@@ -123,6 +124,7 @@
     "<h3>お問い合わせ・Googleフォームはこちら</h3>" +
     '<p class="modal-note">＼ 名前やメールアドレスの入力は一切不要です ／</p>' +
     '<p class="modal-note">調べてほしいことがあれば、1行で。それが次の記事の種になります。</p>' +
+    '<p class="modal-note">大洲で小さな集まりを開くとき、知らせてほしい方は「知らせて」とだけ送ってください。メールアドレスの欄に書いてくれた方にだけ、知らせます。</p>' +
     '<p class="modal-warning">' +
     "<strong>【非公式・個人ボランティアです】</strong>" +
     "制度の詳細は必ず公式HPを確認してください。情報のまとめ・感想は個人の見解です。" +
@@ -170,6 +172,47 @@
   }
 
   markCurrentNav();
+
+  // ── 読者の声(記事のページだけ。2026-10-18) ──────────────
+  // assets/js/koe-data.js に、この記事への声があれば、フッターのすぐ上に3件まで出す。
+  // 声が1件も無い記事には何も出さない(空の箱を見せない)。一覧は koe/ のページ。
+  if (variant === "article") {
+    var here = (location.pathname.match(/[^\/]+\/[^\/]+\.html$/) || [""])[0];
+    var koePrefix = headerEl ? headerEl.getAttribute("data-prefix") || "" : "";
+    var koeScript = document.createElement("script");
+    koeScript.src = koePrefix + "assets/js/koe-data.js";
+    koeScript.onload = function () {
+      var all = (typeof OZU_KOE !== "undefined" && OZU_KOE) || [];
+      var mine = all.filter(function (k) { return here && k.page === here; }).slice(0, 3);
+      var footer = document.querySelector(".site-footer");
+      if (!mine.length || !footer) return;
+      var esc = function (s) {
+        return String(s || "").replace(/[&<>"]/g, function (c) {
+          return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
+        });
+      };
+      var box = document.createElement("section");
+      box.className = "koe-box";
+      box.innerHTML =
+        '<div class="wrap"><h2>この記事に届いた声</h2><ul>' +
+        mine.map(function (k) {
+          var m = /^(\d{4})-(\d{2})$/.exec(k.month || "");
+          return "<li><blockquote>" + esc(k.text) + "</blockquote>" +
+            (m ? "<p>" + m[1] + "年" + Number(m[2]) + "月に届いた声</p>" : "") + "</li>";
+        }).join("") +
+        '</ul><p class="koe-box-more"><a href="' + koePrefix + 'koe/">ほかの記事に届いた声</a> ・ ' +
+        '<a href="#" class="koe-box-send">声を送る</a></p></div>';
+      footer.parentNode.insertBefore(box, footer);
+      // main.js は読み込んだときに [data-modal-open] へ印を付けるので、あとから足したこのリンクには付かない。
+      // フッターの「お問い合わせ」を押したのと同じにする
+      box.querySelector(".koe-box-send").addEventListener("click", function (e) {
+        e.preventDefault();
+        var opener = footer.querySelector("[data-modal-open]");
+        if (opener) opener.click();
+      });
+    };
+    document.body.appendChild(koeScript);
+  }
 
   // ── 累計訪問数(トップページのフッターだけ) ──────────────
   // GoatCounterの公式カウンターAPIで、サイト全体の累計訪問数を取って表示する。

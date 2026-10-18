@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>読者の声 ｜ OZU LIFE MEMO</title>
+<meta name="description" content="記事を読んだ人から届いた声のうち、選んだものを載せるページ。名前は載せません。反対の意見も載せます。">
+<link rel="icon" href="../assets/img/favicon-192.png">
+<link rel="alternate" type="application/rss+xml" title="OZU LIFE MEMO の更新" href="../feed.xml">
+<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link data-ozu-fonts rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&amp;family=Shippori+Mincho+B1:wght@600;700&amp;display=swap">
+<link rel="stylesheet" href="../assets/css/style.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="OZU LIFE MEMO">
+<meta property="og:title" content="読者の声">
+<meta property="og:description" content="記事を読んだ人から届いた声のうち、選んだものを載せるページ。名前は載せません。反対の意見も載せます。">
+<meta property="og:url" content="https://ozulifememo.github.io/ozu-life-memo/koe/">
+<meta property="og:image" content="https://ozulifememo.github.io/ozu-life-memo/assets/img/ogp-card.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://ozulifememo.github.io/ozu-life-memo/koe/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "読者の声 ｜ OZU LIFE MEMO",
+  "url": "https://ozulifememo.github.io/ozu-life-memo/koe/",
+  "description": "記事を読んだ人から届いた声のうち、選んだものを載せるページ。名前は載せません。反対の意見も載せます。",
+  "isPartOf": {"@type": "WebSite", "name": "OZU LIFE MEMO", "url": "https://ozulifememo.github.io/ozu-life-memo/"}
+}
+</script>
+<style>
+  .koe-lead { max-width: 640px; }
+  .koe-rules { max-width: 640px; margin-top: var(--space-5); padding: 14px 18px; border: 1px solid var(--color-border); border-radius: 10px; background: var(--color-surface); }
+  .koe-rules h2 { font-size: 1rem; margin: 0 0 6px; }
+  .koe-rules ul { margin: 0; padding-left: 1.3em; font-size: var(--text-sm); line-height: 1.9; }
+  .koe-rules p { margin: 8px 0 0; font-size: var(--text-sm); color: var(--color-text-muted); }
+  .koe-list { list-style: none; margin: var(--space-5) 0 0; padding: 0; max-width: 760px; }
+  .koe-list li { border-top: 1px solid var(--color-border); padding: 16px 0 18px; }
+  .koe-list li:last-child { border-bottom: 1px solid var(--color-border); }
+  .koe-list .koe-to { display: block; font-weight: 700; line-height: 1.6; margin-bottom: 4px; }
+  .koe-list .koe-to a { color: var(--color-text); }
+  .koe-list .koe-to a:hover { color: var(--color-brand); }
+  .koe-list time { display: inline-block; font-size: .8rem; color: var(--color-text-muted); font-weight: 700; margin-bottom: 6px; }
+  .koe-list blockquote { margin: 0; padding-left: 14px; border-left: 3px solid var(--color-border-strong); font-size: var(--text-sm); line-height: 1.9; white-space: pre-line; }
+  .koe-empty { max-width: 640px; margin-top: var(--space-5); padding: 22px 20px; border: 1px dashed var(--color-border-strong); border-radius: 10px; }
+  .koe-empty h2 { font-size: 1.05rem; margin: 0 0 8px; }
+  .koe-empty ol { margin: 8px 0 0; padding-left: 1.4em; font-size: var(--text-sm); line-height: 1.9; }
+  .koe-empty .koe-send { display: inline-block; margin-top: 14px; }
+</style>
+</head>
+<body>
+
+<div data-site-header data-prefix="../"></div>
+
+<section class="page-hero" style="padding-bottom:0;">
+  <div class="wrap">
+    <h1>読者の声</h1>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="section-lead koe-lead">
+      記事を読んだ人から届いた声のうち、選んだものを、記事の題・届いた月・声の順に載せています。
+      名前は載せません。年代や住んでいる地区も書きません。記事への反対の意見も、そのまま載せます。
+      記事の数字は、市の資料や国の統計から拾ったものです。その数字を、暮らしている人がどう読んだかが、ここに並びます。
+    </p>
+
+    <div class="koe-rules">
+      <h2>載せない声は3つだけ</h2>
+      <ul>
+        <li>人の名前が出るもの</li>
+        <li>選挙の候補者や政党に触れるもの</li>
+        <li>店や会社の宣伝</li>
+      </ul>
+      <p>それ以外は、短くても、記事とちがう考えでも載せます。載せた声は、その記事のいちばん下にも出ます。</p>
+    </div>
+
+    <ul class="koe-list" id="koe-list" hidden></ul>
+
+    <div class="koe-empty" id="koe-empty">
+      <h2>まだ、ここに載せた声はありません</h2>
+      <p>最初の1件を待っています。送り方は、次のとおりです。</p>
+      <ol>
+        <li>下の「声を送る」から、お問い合わせのフォームを開く(名前もメールアドレスも要りません)</li>
+        <li>1〜3行で書く。どの記事への声かも添えてもらえると、その記事の下にも載せられます</li>
+        <li>載せるかどうかは月に1回まとめて読んで決めます。載せたときも、知らせは届きません</li>
+      </ol>
+      <a href="#" class="cta-btn koe-send" data-modal-open>声を送る</a>
+    </div>
+
+    <p class="teisei-note" style="font-size:var(--text-sm);color:var(--color-text-muted);max-width:640px;margin-top:var(--space-5);">
+      記事の誤りを教えてもらったときは、確かめて直し、<a href="../teisei/">直した記録</a>にも残します。
+    </p>
+  </div>
+</section>
+
+<div data-site-footer></div>
+
+<div data-site-modal></div>
+
+<script src="../assets/js/koe-data.js"></script>
+<script>
+(function () {
+  var list = document.getElementById("koe-list");
+  var empty = document.getElementById("koe-empty");
+  var koe = (typeof OZU_KOE !== "undefined" && OZU_KOE) || [];
+  if (!koe.length) return;
+  function esc(s) {
+    return String(s || "").replace(/[&<>"]/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
+    });
+  }
+  list.innerHTML = koe.map(function (k) {
+    var m = /^(\d{4})-(\d{2})$/.exec(k.month || "");
+    var when = m ? m[1] + "年" + Number(m[2]) + "月に届いた" : "";
+    var to = k.page ? '<span class="koe-to"><a href="../' + esc(k.page) + '">' + esc(k.title) + "</a></span>"
+                    : '<span class="koe-to">記事を名指ししない声</span>';
+    return "<li>" + to + (when ? "<time>" + when + "</time>" : "") + "<blockquote>" + esc(k.text) + "</blockquote></li>";
+  }).join("");
+  list.hidden = false;
+  empty.hidden = true;
+})();
+</script>
+<script src="../assets/js/site-chrome.js"></script>
+<script src="../assets/js/main.js"></script>
+<script data-goatcounter="https://ozulifememo.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

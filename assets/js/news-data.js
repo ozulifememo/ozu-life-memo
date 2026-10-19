@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "shometsu-kanosei-ozu",
+    date: "2026-10-19",
+    title: "大洲はいまも「消滅可能性自治体」。20〜39歳の女性は2050年に1,253人の見込み",
+    category: "shiten",
+    source: "人口戦略会議（2024年）、日本創成会議（2014年）、国立社会保障・人口問題研究所、大洲市",
+    sourceDate: "2024-04-24",
+    tags: ["人口減少"],
+  },
+  {
     slug: "ozu-fukushi-hojin",
     date: "2026-10-18",
     title: "大洲の社会福祉法人8つで年30億円。500人の給料は、どこから来るのか",

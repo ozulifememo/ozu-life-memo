@@ -5,8 +5,16 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Sun, 18 Oct 2026 18:09:04 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 19 Oct 2026 18:37:46 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大洲はいまも「消滅可能性自治体」。20〜39歳の女性は2050年に1,253人の見込み</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/shometsu-kanosei-ozu.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/shometsu-kanosei-ozu.html</guid>
+      <pubDate>Mon, 19 Oct 2026 09:00:00 +0900</pubDate>
+      <description>2014年に「消滅可能性都市」と名指しされた大洲は、2024年の新しい分析でも「消滅可能性自治体」のままだった。何を数えた言葉なのか、12年前の推計は当たったのか、2050年の大洲はどんな数字になる見込みなのかを、元の表から調べた。</description>
+      <category>人口減少</category>
+    </item>
     <item>
       <title>大洲の社会福祉法人8つで年30億円。500人の給料は、どこから来るのか</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-fukushi-hojin.html</link>
@@ -251,14 +259,6 @@
       <pubDate>Fri, 02 Oct 2026 09:00:00 +0900</pubDate>
       <description>環境省の調査で、大洲市の令和6年度のリサイクル率は6.4％。全国792の市で低いほうから9番目、県内20市町では11年続けて最下位だった。ただ、この率に入るのは市が集めて資源にした物だけで、スーパーの回収箱に出した分は入らない。率の高い町が使っている手段が大洲には無く、20年で減った資源の8割は紙だった。数字の作られ方から調べた。</description>
       <category>まちづくり</category>
-    </item>
-    <item>
-      <title>大洲市は県内20市町でいちばん「たばこが買われる町」。1人あたり年63箱、7年続けて1位</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-tabako-kennai.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-tabako-kennai.html</guid>
-      <pubDate>Fri, 02 Oct 2026 09:00:00 +0900</pubDate>
-      <description>市のたばこ税は、たばこを売った店がある市町村に入る。税収を税率で割ると、その町の店に卸された本数が出る。令和6年度、大洲市は住民1人あたり1,262.8本(約63箱)で、県内20市町の1位だった。平成30年度から7年続けて1位である。大洲の人がよく吸うのか、まわりの町から買いに来ているのか。総務省の決算の表、県の健診の報告書、地方税法で確かめた。</description>
-      <category>財政・税金</category>
     </item>
   </channel>
 </rss>

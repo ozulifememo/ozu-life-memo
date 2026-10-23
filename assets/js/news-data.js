@@ -36,6 +36,15 @@ const OZU_TAGS = [
 
 const OZU_NEWS = [
   {
+    slug: "ozu-gikai-fukushi",
+    date: "2026-10-24",
+    title: "「鋭意」は半分、「しっかり」は3倍に。大洲市議会の言い方42個を18年分数えた",
+    category: "shiten",
+    source: "大洲市議会 会議録(2008年3月〜2026年6月)、国会会議録検索システムAPI、國學院大學大學院紀要 ほか",
+    sourceDate: "2026-10-24",
+    tags: ["議会・行政", "まちづくり"],
+  },
+  {
     slug: "ozu-wakamono-178nin",
     date: "2026-10-24",
     title: "大洲市は「外出を避けている若者」を178人と見積もった。もとになった回答は5人だった",

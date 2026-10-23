@@ -5,8 +5,17 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Sat, 24 Oct 2026 07:36:42 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 24 Oct 2026 08:51:26 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>「鋭意」は半分、「しっかり」は3倍に。大洲市議会の言い方42個を18年分数えた</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-gikai-fukushi.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-gikai-fukushi.html</guid>
+      <pubDate>Sat, 24 Oct 2026 09:00:00 +0900</pubDate>
+      <description>大洲市議会の会議録307本(2008年3月〜2026年6月)で、「鋭意」「しっかり」「何とぞ」「やはり」など、意味の近い言い方42個を先に決めてから全部数えた。総字数あたりにそろえ、答弁と議員の質問に分け、国会の会議録とも比べた。</description>
+      <category>議会・行政</category>
+      <category>まちづくり</category>
+    </item>
     <item>
       <title>大洲市は「外出を避けている若者」を178人と見積もった。もとになった回答は5人だった</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-wakamono-178nin.html</link>
@@ -253,14 +262,6 @@
       <pubDate>Sat, 03 Oct 2026 09:00:00 +0900</pubDate>
       <description>スマホの位置情報で観光客を数える全国の統計がある。年ごとのファイルを並べると、大洲市は2024年の366,355人から2025年の819,094人へ、2.24倍になっている。ところが同じ時期、市の観光施設に入った人は5.0％しか増えていない。公開元は2026年4月に、観光地点を見直して2025年の数字を作り直していた。県内20市町のうち8つが2倍以上。同じ物差しどうしで比べられる2025年と2026年では、大洲市は7.5％増だった。</description>
       <category>観光</category>
-    </item>
-    <item>
-      <title>大洲のまわり5市町は、どこまで「1つの町」か。仕事は95％が中で足りて、入院は4人に1人が外へ出る</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-5shichou-hitotsu.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-5shichou-hitotsu.html</guid>
-      <pubDate>Sat, 03 Oct 2026 09:00:00 +0900</pubDate>
-      <description>大洲市・内子町・八幡浜市・西予市・伊方町の5市町は、県の医療圏や保健所で1つの区域として扱われる。人は実際にその中で動いているのか。2020年の国勢調査で数えると、5市町に住んで働く人の95.3％は5市町の中で働いていた。松山へ通うのは966人で、松山から来る1,028人より少ない。ところが入院の患者は25.4％が圏域の外へ出ていて、県内6圏域でいちばん高い。仕事・通学・買い物・入院の4つで比べた。</description>
-      <category>合併・地域</category>
     </item>
   </channel>
 </rss>

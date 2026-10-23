@@ -5,8 +5,42 @@
     <link>https://ozulifememo.github.io/ozu-life-memo/</link>
     <description>愛媛県大洲市の非公式・生活情報サイト。市役所や議会の硬い資料を、1人の市民の目線で読み解いています。</description>
     <language>ja</language>
-    <lastBuildDate>Mon, 19 Oct 2026 18:37:46 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 24 Oct 2026 07:36:42 +0900</lastBuildDate>
     <atom:link href="https://ozulifememo.github.io/ozu-life-memo/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大洲市は「外出を避けている若者」を178人と見積もった。もとになった回答は5人だった</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-wakamono-178nin.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-wakamono-178nin.html</guid>
+      <pubDate>Sat, 24 Oct 2026 09:00:00 +0900</pubDate>
+      <description>大洲市こども計画は、アンケートの割合を人数に直して「外出を避けている若者は178人」と書いている。元の表を開くと、答えた222人のうちの5人から出た数字だった。計画の中のほかの「◯人」も並べ、割合を人数に直すと何が見えて何が見えなくなるのかを、国の調査のやり方と比べた。</description>
+      <category>子育て・教育</category>
+      <category>議会・行政</category>
+    </item>
+    <item>
+      <title>免許を返すと、大洲市から出るのは1,150円の1回だけ。同じ大洲警察署で返す内子町の人には1万5千円分</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-menkyo-henno.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-menkyo-henno.html</guid>
+      <pubDate>Sat, 24 Oct 2026 09:00:00 +0900</pubDate>
+      <description>大洲で運転免許を返すと、手元に何が残り、市から何が出て、そのあとどう動くことになるのか。市のページ、県警の一覧、市議会の答弁、県内19市町の公式ページを1つずつ開いて並べた。市の支援は運転経歴証明書の手数料1,150円の1回だけで、県内では1万5千円分の券や、3年続く券を出す町もあった。</description>
+      <category>交通・インフラ</category>
+      <category>議会・行政</category>
+    </item>
+    <item>
+      <title>全国の同じ問いで、大洲の「防犯対策が整っていて治安がよい」は2.59点。比べた21市町で最も低かったが、刑法犯は県全体より少なかった</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kofukudo-101nin.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kofukudo-101nin.html</guid>
+      <pubDate>Sat, 24 Oct 2026 09:00:00 +0900</pubDate>
+      <description>デジタル庁の地域幸福度(Well-Being)の全国調査で、大洲市の101人が「防犯対策が整っていて治安がよい」につけた点は5点満点で2.59点だった。比べた21市町で最も低い。一方、愛媛県警の数字では、大洲の刑法犯は人口千人あたり4.63件で県全体の5.51件より少なく、出ていった人は大洲の良いところの1位に治安を挙げていた。101人の答えでどこまで言えるかを、西条市の同じ問いの調査や、市の満足度調査と並べて確かめた。</description>
+      <category>まちづくり</category>
+    </item>
+    <item>
+      <title>大洲を出ていった人の79.1％が「大洲は暮らしやすい」と答えた。今の町と比べると、大洲のほうが住みやすいは33.3％</title>
+      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-tenshutsusha-792nin.html</link>
+      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-tenshutsusha-792nin.html</guid>
+      <pubDate>Sat, 24 Oct 2026 09:00:00 +0900</pubDate>
+      <description>大洲市は2025年、前の年に市外へ転出した18歳以上の792人にアンケートを送り、177人が答えた。79.1％が「大洲市は暮らしやすい」と答えた一方、今住んでいる町と比べると「住みやすい」で大洲を選んだのは33.3％だった。公開された資料に載っている転出者の答えを全部読み、177人の答えでどこまで言えるかを確かめ、熊本県八代市の出身者調査とも比べた。</description>
+      <category>人口減少</category>
+    </item>
     <item>
       <title>大洲はいまも「消滅可能性自治体」。20〜39歳の女性は2050年に1,253人の見込み</title>
       <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/shometsu-kanosei-ozu.html</link>
@@ -227,38 +261,6 @@
       <pubDate>Sat, 03 Oct 2026 09:00:00 +0900</pubDate>
       <description>大洲市・内子町・八幡浜市・西予市・伊方町の5市町は、県の医療圏や保健所で1つの区域として扱われる。人は実際にその中で動いているのか。2020年の国勢調査で数えると、5市町に住んで働く人の95.3％は5市町の中で働いていた。松山へ通うのは966人で、松山から来る1,028人より少ない。ところが入院の患者は25.4％が圏域の外へ出ていて、県内6圏域でいちばん高い。仕事・通学・買い物・入院の4つで比べた。</description>
       <category>合併・地域</category>
-    </item>
-    <item>
-      <title>売上は県内の市で1位なのに、出ていきたい理由の1位は「交通や買物が不便」だった</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kaimono-fuben.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kaimono-fuben.html</guid>
-      <pubDate>Sat, 03 Oct 2026 09:00:00 +0900</pubDate>
-      <description>大洲市の店の売上は、住民1人あたりで県内の市の1位。ところが市が2025年に行った住民アンケートでは、ほかの市町に移りたい理由の1位が「交通や買物などいろいろな面で不便」だった。困りごとの2番目も「近くで食料品や日用品を買えない」で30.5％。市の取り組み34項目の満足度のうち、4年でいちばん下がったのが「買い物等の利便性」だった。売れている町で、なぜ買い物の不満が増えたのかを、市の資料で読んだ。</description>
-      <category>まちづくり</category>
-    </item>
-    <item>
-      <title>大洲の店は、住民より1万1千人ぶん多く売っている。1人あたりの売上は松山市より高かった</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kouri-135man.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-kouri-135man.html</guid>
-      <pubDate>Sat, 03 Oct 2026 09:00:00 +0900</pubDate>
-      <description>国の経済センサスで、大洲市の小売の売上を住民の数で割ると1人あたり135.2万円。全国の1.28倍で、県内20市町の2番目、市では1番高い。全国なみの売れ方なら約5万1,900人ぶんにあたり、住民より1万1千人ぶん多い。まわりの4市町と足すと全国の0.93倍に落ち着いた。店の数は14年で742から446に減ったのに、売上はほとんど変わっていない。</description>
-      <category>産業・農業</category>
-    </item>
-    <item>
-      <title>大洲の店では新車が全国の1.85倍売れ、中古車は半分も売れていない。90品目の通信簿</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-mise-90hinmoku.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-mise-90hinmoku.html</guid>
-      <pubDate>Fri, 02 Oct 2026 09:00:00 +0900</pubDate>
-      <description>国の経済センサスに、市ごとに「店で何がいくら売れたか」を90の品目に分けた表がある。大洲市は、新車と処方薬が住民1人あたりで全国の1.85倍。同じくらいの人口の市の中で、新車は1位、処方薬は2位だった。逆に中古車と市販薬は県内11市の最下位。まわりの市と足すと、新車は全国なみになり、処方薬は多いままだった。表を1品目ずつ読んだ。</description>
-      <category>産業・農業</category>
-    </item>
-    <item>
-      <title>大洲のリサイクル率は6.4％。全国792市で低いほうから9番目なのは、分別をしていないからなのか</title>
-      <link>https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-recycle-ritsu.html</link>
-      <guid isPermaLink="true">https://ozulifememo.github.io/ozu-life-memo/eachnews/ozu-recycle-ritsu.html</guid>
-      <pubDate>Fri, 02 Oct 2026 09:00:00 +0900</pubDate>
-      <description>環境省の調査で、大洲市の令和6年度のリサイクル率は6.4％。全国792の市で低いほうから9番目、県内20市町では11年続けて最下位だった。ただ、この率に入るのは市が集めて資源にした物だけで、スーパーの回収箱に出した分は入らない。率の高い町が使っている手段が大洲には無く、20年で減った資源の8割は紙だった。数字の作られ方から調べた。</description>
-      <category>まちづくり</category>
     </item>
   </channel>
 </rss>

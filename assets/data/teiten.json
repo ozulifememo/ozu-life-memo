@@ -57,7 +57,7 @@
         {"value": "99.6% / 0%", "label": "普通教室(全国)と大洲の学校体育館のエアコン設置率", "asof": "令和8年5月1日現在(文部科学省)", "dir": "eachnews", "slug": "taiikukan-kucho", "check": "99.6%"},
         {"value": "医療・福祉", "label": "大洲でいちばん多い仕事。40年前は農業だった", "asof": "令和2年(2020年)国勢調査", "dir": "jiyu-kenkyu", "slug": "ozu-sangyo-40nen", "check": "医療・福祉"},
         {"value": "2,265ヘクタール", "label": "31年で消えた田畑の広さ", "asof": "農林業センサスの31年間", "dir": "jiyu-kenkyu", "slug": "ozu-nogyo-31nen", "check": "2,265"},
-        {"value": "1996年", "label": "地価が下がり始めた年。44年分を並べてもバブルは来ていない", "asof": "44年分の地価(2026年9月時点)", "dir": "jiyu-kenkyu", "slug": "ozu-rosenka-44nen", "check": "1996年"},
+        {"value": "2002年", "label": "地価が下がり始めた年。44年分を並べてもバブルは来ていない", "asof": "44年分の地価(2026年9月時点)", "dir": "jiyu-kenkyu", "slug": "ozu-rosenka-44nen", "check": "2002年"},
         {"value": "56軒", "label": "旅館業の許可がある宿の数。予約サイトに出てくるのは11軒", "asof": "令和7年12月末", "dir": "jiyu-kenkyu", "slug": "ozu-yado-56ken", "check": "56軒"},
         {"value": "年12組", "label": "大洲城キャッスルステイの利用組数。平均193万円", "asof": "令和7年度", "dir": "jiyu-kenkyu", "slug": "shirohaku-160man", "check": "年12組"},
         {"value": "1晩33人", "label": "うかいの乗船客(3,726人÷112日)。昭和49年のピークは1晩257人", "asof": "令和6年", "dir": "eachnews", "slug": "ozu-ukai-kanransha", "check": "1晩33人"},

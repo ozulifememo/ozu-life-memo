@@ -4936,6 +4936,9 @@ figure.zu li {
   font-weight: 700;
   line-height: 1.6;
   color: var(--color-text);
+  /* 長いひと続きの語(「畜犬登録事業及び野犬等対策経費」など)が、320pxの画面で箱からはみ出さないように。
+     ふだんの折り返しは変わらない(入りきらないときだけ、語の途中で折る)。2026-11-14 */
+  overflow-wrap: anywhere;
 }
 .zu-title::before {
   content: "";

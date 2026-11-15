@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>「ページが消えた」は勘違いだった。愛媛20市町を測って分かった403の正体 ｜ OZU LIFE MEMO</title>
-<meta name="description" content="存在しないページを開くと、市役所のサイトは何と答えるのか。愛媛県内20市町を2026年9月6日に自分で測った。答えは全部「404（無い）」だった。ところが存在しないURLを15回続けて開いた瞬間、403に変わり、一度も触っていない他の市町まで同時に閉じた。403は「ページが無い」という意味ではない。">
+<meta name="description" content="存在しないページを開くと、市役所のサイトは何と答えるのか。愛媛県内20市町を2026年9月6日に自分で測った。1巡目に届いた18市町の答えは、全部「404（無い）」だった。ところが存在しないURLを15回続けて開いた瞬間、403に変わり、一度も触っていない他の市町まで同時に閉じた。403は「ページが無い」という意味ではない。">
 <link rel="icon" href="../assets/img/favicon-192.png">
 <link rel="alternate" type="application/rss+xml" title="OZU LIFE MEMO の更新" href="../feed.xml">
 <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
@@ -15,7 +15,7 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="OZU LIFE MEMO">
 <meta property="og:title" content="「ページが消えた」は勘違いだった。愛媛20市町を測って分かった403の正体">
-<meta property="og:description" content="存在しないページを開くと、市役所のサイトは何と答えるのか。愛媛県内20市町を2026年9月6日に自分で測った。答えは全部「404（無い）」だった。ところが存在しないURLを15回続けて開いた瞬間、403に変わり、一度も触っていない他の市町まで同時に閉じた。403は「ページが無い」という意味ではない。">
+<meta property="og:description" content="存在しないページを開くと、市役所のサイトは何と答えるのか。愛媛県内20市町を2026年9月6日に自分で測った。1巡目に届いた18市町の答えは、全部「404（無い）」だった。ところが存在しないURLを15回続けて開いた瞬間、403に変わり、一度も触っていない他の市町まで同時に閉じた。403は「ページが無い」という意味ではない。">
 <meta property="og:url" content="https://ozulifememo.github.io/ozu-life-memo/eachnews/jichitai-site-403.html">
 <meta property="og:image" content="https://ozulifememo.github.io/ozu-life-memo/assets/img/ogp-card.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -26,7 +26,7 @@
   "@context": "https://schema.org",
   "@type": "NewsArticle",
   "headline": "「ページが消えた」は勘違いだった。愛媛20市町を測って分かった403の正体",
-  "description": "存在しないページを開くと、市役所のサイトは何と答えるのか。愛媛県内20市町を2026年9月6日に自分で測った。答えは全部「404（無い）」だった。ところが存在しないURLを15回続けて開いた瞬間、403に変わり、一度も触っていない他の市町まで同時に閉じた。403は「ページが無い」という意味ではない。",
+  "description": "存在しないページを開くと、市役所のサイトは何と答えるのか。愛媛県内20市町を2026年9月6日に自分で測った。1巡目に届いた18市町の答えは、全部「404（無い）」だった。ところが存在しないURLを15回続けて開いた瞬間、403に変わり、一度も触っていない他の市町まで同時に閉じた。403は「ページが無い」という意味ではない。",
   "datePublished": "2026-09-06",
   "dateModified": "2026-09-06",
   "image": "https://ozulifememo.github.io/ozu-life-memo/assets/img/ogp-card.png",
@@ -63,7 +63,7 @@
     <div class="article-summary">
       <p class="article-summary-label">3行でいうと<span class="article-summary-sources">調べた資料 10本</span></p>
       <ul>
-        <li><span class="nb">愛媛県</span>内20市町のサイトを測ったら、存在しないページには<strong>全部404</strong>（無い）が返ってきた</li>
+        <li><span class="nb">愛媛県</span>内20市町のサイトを測ったら、1巡目に届いた18市町は、存在しないページに<strong>全部404</strong>（無い）を返した</li>
         <li>存在しないURLを<strong><span class="nb">15回</span></strong>続けて開いた瞬間403に変わり、一度も触っていない他の市町まで同時に閉じた</li>
         <li>403は「ページが消えた」ではなく「あなたが弾かれている」。時間を置くと戻るが、<strong>また閉じることもある</strong></li>
       </ul>
@@ -90,7 +90,7 @@
       <cite>RFC 9110 15.5.4節（英語の原文を訳したもの）</cite>
     </blockquote>
     <p class="commentary">理由を書いてもよいが、書く義務はない。MDNの日本語解説には、逆にサーバー側が存在を知られたくないときは403の代わりに404を返してよい、とも書かれている。<strong>二つのコードは、もともと入れ替え可能な関係にある。</strong></p>
-    <h2>愛媛20市町を測ったら、全部「無い」と答えた</h2>
+    <h2>愛媛20市町を測ったら、届いた18市町は全部「無い」と答えた</h2>
     <p class="commentary"><strong>2026年9月6日13時26分から13時28分</strong>にかけて、県内20市町の公式サイトに、存在しないURL（<code>/nonexistent-page-check-20260906</code>）を1回ずつ開いた。ブラウザと同じ名乗り方をして、1件ごとに6秒あけた。中身は受け取らず、返ってきた番号だけを見た。</p>
     <p class="commentary">続けて<strong>13時30分から13時32分</strong>に、同じことをもう一巡した。今度は名乗らずに（コマンドの既定のまま）開いた。</p>
     <!-- zuhyo:junme -->

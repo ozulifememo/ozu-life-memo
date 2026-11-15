@@ -1710,7 +1710,7 @@ const OZU_NEWS = [
     title: "大洲の会社の株は買えない。南予で買えるのは宇和島の2社だけだった",
     category: "shiten",
     source: "東京証券取引所・両社の決算短信ほか",
-    sourceDate: "2026-08-29",
+    sourceDate: "2026-08-31",
     tags: ["産業・農業", "まちづくり"],
   },
   {

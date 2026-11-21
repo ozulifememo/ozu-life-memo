@@ -1131,7 +1131,7 @@ const OZU_NEWS = [
   {
     slug: "ozu-iinkai-jikko",
     date: "2026-09-06",
-    title: "大洲市の例規826本に「実行委員会」は1本もない。なのに1億円が動いていた",
+    title: "大洲市の例規826本に「実行委員会」は1本もない。なのに1億円を減らす補正が組まれていた",
     category: "shiten",
     source: "大洲市例規集（体系目次・各例規）／大洲市議会会議録／地方自治法（e-Gov法令検索）／国税庁／金融庁「コンテンツ事業に関するQ&A」",
     sourceDate: "2026-09-06",
@@ -1221,7 +1221,7 @@ const OZU_NEWS = [
   {
     slug: "ozu-jabara-10nen",
     date: "2026-09-06",
-    title: "花粉症の柑橘を10年。大洲の収穫は年150キロ、本家の村は年100トンだった",
+    title: "花粉症の柑橘を8年。大洲の収穫は年150キロ、本家の村は年100トンだった",
     category: "shiten",
     source: "大洲市議会 会議録／和歌山県北山村／内子フレッシュパークからり",
     sourceDate: "2026-09-06",
@@ -1617,7 +1617,7 @@ const OZU_NEWS = [
   {
     slug: "ozu-senkyo-kouhou",
     date: "2026-09-03",
-    title: "候補者の主張が載った紙が、大洲にはなかった。今年4月、初めて配られた",
+    title: "候補者の主張が載った紙が、大洲にはなかった。2026年4月、初めて配られた",
     category: "shiten",
     source: "大洲市選挙管理委員会・大洲市議会会議録・総務省",
     sourceDate: "2026-04-20",
@@ -1662,7 +1662,7 @@ const OZU_NEWS = [
   {
     slug: "ozu-solar-katei",
     date: "2026-09-03",
-    title: "太陽光パネルの値段は、2021年から上がっている。いま載せて元は取れるのか",
+    title: "太陽光パネルの値段は、2022年を底に上がっている。いま載せて元は取れるのか",
     category: "kurashi",
     source: "資源エネルギー庁・経済産業省・環境省・大洲市",
     sourceDate: "2026-03-19",
@@ -1671,7 +1671,7 @@ const OZU_NEWS = [
   {
     slug: "ozu-solar-yama",
     date: "2026-09-03",
-    title: "山に置く太陽光は2027年度で国の支援が終わる。大洲は13年前に断っていた",
+    title: "山に新しく置く太陽光は、2027年度から国の支援の対象外。大洲は13年前に断っていた",
     category: "shiten",
     source: "内閣官房・経済産業省・資源エネルギー庁・大洲市議会会議録",
     sourceDate: "2025-12-23",
@@ -1806,7 +1806,7 @@ const OZU_NEWS = [
   {
     slug: "suido-ryokin-toitsu-15pct",
     date: "2026-08-28",
-    title: "大洲の水道代は3つの値段がばらばらで、合併18年目にひとつになった",
+    title: "大洲の水道代は3つの値段がばらばらで、合併20年目にひとつになった",
     category: "kurashi",
     source: "大洲市議会 令和5年3月定例会会議録ほか",
     sourceDate: "2023-03-01",
@@ -2404,7 +2404,7 @@ const OZU_NEWS = [
     date: "2026-08-18",
     sourceDate: "2025-01-01",
     sourceDateKind: "版",
-    title: "大洲市のふるさと納税4.6億円。そのうち2.2億円は経費で消えていた",
+    title: "大洲市のふるさと納税4.6億円。そのうち2.3億円は経費で消えていた",
     category: "ima",
     source: "総務省ふるさと納税現況調査(令和8年度実施)/大洲市ふるさと納税報告書/令和8年度地方税制改正",
     tags: ["財政・税金"],
@@ -2639,7 +2639,7 @@ const OZU_NEWS = [
     slug: "fuji-marunaka-aeon-keii",
     date: "2026-08-18",
     sourceDate: "2024-12-10",
-    title: "フジがイオンの子会社になったのは2022年３月。マルナカは11年早かった",
+    title: "フジがイオンの子会社になったのは2022年３月。マルナカは10年あまり早かった",
     category: "kurashi",
     source: "イオン・フジの適時開示、大洲市議会会議録、愛媛新聞",
     tags: ["産業・農業", "まちづくり"],
@@ -3060,7 +3060,7 @@ const OZU_NEWS = [
   {
     slug: "ozu-muryo-chushajo",
     date: "2026-08-08",
-    title: "大洲の無料駐車場は５か所あった。城下町観光での使い分け",
+    title: "大洲の無料駐車場は4か所あった。城下町観光での使い分け",
     category: "kurashi",
     source: "大洲市ホームページ、大洲市公式観光情報VisitOzu",
     sourceDate: "2021-10-11",

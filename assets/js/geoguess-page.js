@@ -114,6 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
     progressText.textContent = `第${current + 1}問 / 全${ROUND_LENGTH}問(正解数: ${score})`;
     photoEl.src = `../assets/img/geoguess/${p.file}`;
     photoEl.alt = "この写真の撮影場所を地図上で当ててください";
+    photoEl.hidden = false;
 
     if (guessMarker) {
       map.removeLayer(guessMarker);

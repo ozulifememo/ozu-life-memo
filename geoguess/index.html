@@ -40,6 +40,8 @@
   .geo-photo-wrap img {
     width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius); box-shadow: var(--shadow-md); display: block;
   }
+  /* 写真はJSが入れる。入れる前は中身の無い画像を出さない */
+  .geo-photo-wrap img[hidden] { display: none; }
   #geo-map { width: 100%; height: 360px; border-radius: var(--radius); margin-bottom: 14px; border: 1px solid var(--color-border); }
   .geo-hint { text-align: center; color: var(--color-text-muted); font-size: 0.88rem; margin: 0 0 14px; }
   .geo-guess-btn-wrap { text-align: center; }
@@ -97,7 +99,7 @@
       <p class="geo-progress"><span id="geo-progress-text"></span></p>
       <div class="geo-card">
         <div class="geo-photo-wrap">
-          <img id="geo-photo" src="" alt="">
+          <img id="geo-photo" alt="" hidden>
         </div>
         <div id="geo-map"></div>
         <p class="geo-hint">地図をクリックして、この写真が撮影された場所にピンを置いてください。</p>

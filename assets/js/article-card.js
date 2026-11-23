@@ -70,6 +70,15 @@
     return withDate.concat(without);
   }
 
+  // カードの下の1行は「◯年◯月◯日 掲載」(2026-11-23)。
+  // 前は出典と資料の年(「東京都立大学大学院 修士論文 2023.03」)を出していて、
+  // 記事のカードが論文や昔の記事に見えた。出典は記事の中(要点の箱の下と、記事の終わり)だけに置く。
+  // 区分(大洲のいま など)はカードの上の .story-cat に出ている。
+  function postedMeta(item) {
+    if (!item.date) return "";
+    return '<span class="story-meta">' + item.date.replace(/-/g, "/") + " 掲載</span>";
+  }
+
   // ── カード ─────────────────────────────────────────
   // 写真のある記事は写真つき、無い記事は文字だけ。
   // 文字だけのカードも「そういうデザイン」に見えるよう、別クラスで作り分ける。
@@ -78,7 +87,6 @@
     var photo = articlePhoto(item.slug, prefix);
     var href = (prefix || "") + "eachnews/" + item.slug + ".html";
     var note = opts.showNote && item.pickNote ? item.pickNote : "";
-    var ym = sourceYearMonth(item);
 
     // 写真のあるカードと無いカードが混ざると、写真の高さの分だけ
     // 文字の開始位置がずれて一覧がガタガタになる。
@@ -97,7 +105,7 @@
       '<span class="story-cat">' + escapeHtml(categoryLabel(item)) + "</span>" +
       '<h3 class="story-title">' + escapeHtml(item.title) + "</h3>" +
       (note ? '<p class="story-note">' + escapeHtml(note) + "</p>" : "") +
-      '<span class="story-meta">' + escapeHtml(item.source) + (ym ? '<span class="story-ym">' + ym + "</span>" : "") + "</span>" +
+      postedMeta(item) +
       "</div></a>"
     );
   }
@@ -126,9 +134,7 @@
       escapeHtml(item.title) +
       (isMain ? "</h2>" : "</h3>") +
       (isMain && item.pickNote ? '<p class="lead-note">' + escapeHtml(item.pickNote) + "</p>" : "") +
-      '<span class="story-meta">' + escapeHtml(item.source) +
-      (sourceYearMonth(item) ? '<span class="story-ym">' + sourceYearMonth(item) + "</span>" : "") +
-      "</span>" +
+      postedMeta(item) +
       "</div></a>"
     );
   }

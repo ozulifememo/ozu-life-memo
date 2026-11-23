@@ -37,6 +37,9 @@
       '<a href="' + prefix + 'search/" class="nav-search">さがす</a>' +
       '<a href="#" class="cta-btn" data-modal-open>お問い合わせ</a>' +
       "</nav>" +
+      // スマホ(メニューが≡に畳まれる幅)の頭にも、検索への入口を1つ出す(2026-11-23)。
+      // PCではナビの「さがす」があるので、CSS で隠している。
+      '<a href="' + prefix + 'search/" class="nav-search-m" aria-label="記事をさがす"></a>' +
       '<button class="nav-toggle" aria-label="メニューを開く"><span></span></button>' +
       "</div>"
     );

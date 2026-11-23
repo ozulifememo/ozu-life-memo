@@ -6115,3 +6115,66 @@ figure.zu.zu-photo {
     line-height: 44px;
   }
 }
+
+/* ── 入り口(2026-11-23) ────────────────────────────────────
+
+   スマホのトップでは「こんなときは」を、紹介の帯のすぐ下(主役の記事より上)に出す。PCの並びは今のまま */
+@media (max-width: 699px) {
+  .home-top {
+    display: flex;
+    flex-direction: column;
+  }
+  .home-top > .home-sakuin {
+    order: -1;
+  }
+}
+
+/* スマホの頭の検索(メニューが≡に畳まれる幅だけ)。虫めがねはナビの「さがす」と同じ形 */
+.nav-search-m {
+  display: none;
+}
+@media (max-width: 1089px) {
+  .nav-search-m {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    margin-left: auto;
+    color: var(--color-text);
+  }
+  .nav-search-m::before {
+    content: "";
+    width: 22px;
+    height: 22px;
+    background: currentColor;
+    -webkit-mask: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.4' stroke-linecap='round'%3E%3Ccircle cx='10.5' cy='10.5' r='6.5'/%3E%3Cpath d='M15.6 15.6 21 21'/%3E%3C/svg%3E") no-repeat center / contain;
+    mask: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2.4' stroke-linecap='round'%3E%3Ccircle cx='10.5' cy='10.5' r='6.5'/%3E%3Cpath d='M15.6 15.6 21 21'/%3E%3C/svg%3E") no-repeat center / contain;
+  }
+  .nav-search-m:hover {
+    color: var(--color-brand);
+  }
+  /* 検索を右端へ寄せたので、≡はそのすぐ右に並べる */
+  .nav-search-m + .nav-toggle {
+    margin-left: 0;
+  }
+}
+
+/* PCで本文の1行が長くなりすぎないように(1行40字前後)。表と図はそのまま */
+@media (min-width: 700px) {
+  .article-page blockquote p,
+  section > .wrap > p.commentary,
+  section > .wrap > blockquote p,
+  .teisei-list li p,
+  .gm-a,
+  .footer-feedback,
+  .article-srcline,
+  .jk-hero .wrap > p,
+  .jk-section > p:not(.jk-fig-caption),
+  section > .wrap.content-block > p,
+  .stub-note,
+  .tb-wrap > p,
+  .teiten-updated {
+    max-width: 40em;
+  }
+}

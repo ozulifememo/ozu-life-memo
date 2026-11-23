@@ -102,10 +102,18 @@ document.addEventListener("DOMContentLoaded", () => {
   // Mobile nav toggle
   const navToggle = document.querySelector(".nav-toggle");
   const mainNav = document.querySelector(".main-nav");
+  // 開いているかを、読み上げにも伝える(aria-expanded。2026-11-23)。閉じ方はほかに3つあるので、印の変化を見て合わせる
+  const syncToggle = () => {
+    if (!navToggle || !mainNav) return;
+    const open = mainNav.classList.contains("open");
+    navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+    navToggle.setAttribute("aria-label", open ? "メニューを閉じる" : "メニューを開く");
+  };
   if (navToggle && mainNav) {
     navToggle.addEventListener("click", () => {
       mainNav.classList.toggle("open");
     });
+    new MutationObserver(syncToggle).observe(mainNav, { attributes: true, attributeFilter: ["class"] });
   }
 
   // Nav dropdown (タップ/クリックでも開閉できるように。hoverが効かないタッチ端末向け)
@@ -121,6 +129,12 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   document.addEventListener("click", () => {
     dropdowns.forEach((d) => d.classList.remove("open"));
+  });
+  dropdowns.forEach((d) => {
+    const t = d.querySelector(".nav-dropdown-trigger");
+    if (!t) return;
+    new MutationObserver(() => t.setAttribute("aria-expanded", d.classList.contains("open") ? "true" : "false"))
+      .observe(d, { attributes: true, attributeFilter: ["class"] });
   });
 
   // Contact modal

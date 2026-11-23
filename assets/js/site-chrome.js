@@ -2,17 +2,19 @@
   function buildHeader(prefix) {
     var home = prefix === "" ? "./" : prefix;
     return (
+      // キーボードで来た人が、ナビを飛ばして本文へ行ける入口(2026-11-23)。ふだんは見えず、Tabで出る
+      '<a class="skip-link" href="#honbun">本文へ飛ぶ</a>' +
       '<div class="wrap">' +
       '<a href="' + home + '" class="logo">' +
       '<img src="' + prefix + 'assets/img/logo-mark.png" alt="" class="logo-mark" width="30" height="30" decoding="async">' +
       "<span>OZU LIFE MEMO</span></a>" +
-      '<nav class="main-nav">' +
+      '<nav class="main-nav" id="site-nav" aria-label="サイトのメニュー">' +
       '<a href="' + home + '">HOME</a>' +
       '<a href="' + prefix + 'concept/">サイト紹介</a>' +
       '<a href="' + prefix + 'link/">リンク集</a>' +
       '<a href="' + prefix + 'sakuin/">こんなときは</a>' +
       '<div class="nav-dropdown">' +
-      '<button type="button" class="nav-dropdown-trigger">読み物<span class="nav-caret">▾</span></button>' +
+      '<button type="button" class="nav-dropdown-trigger" aria-expanded="false">読み物<span class="nav-caret" aria-hidden="true">▾</span></button>' +
       '<div class="nav-dropdown-menu">' +
       '<a href="' + prefix + 'news/">大洲ノート</a>' +
       '<a href="' + prefix + 'best/">おすすめ10選</a>' +
@@ -27,7 +29,7 @@
       '<a href="' + prefix + 'photo/">フリー写真</a>' +
       '<a href="' + prefix + 'map/">大洲の地図</a>' +
       '<div class="nav-dropdown">' +
-      '<button type="button" class="nav-dropdown-trigger">遊ぶ<span class="nav-caret">▾</span></button>' +
+      '<button type="button" class="nav-dropdown-trigger" aria-expanded="false">遊ぶ<span class="nav-caret" aria-hidden="true">▾</span></button>' +
       '<div class="nav-dropdown-menu">' +
       '<a href="' + prefix + 'quiz/">大洲検定</a>' +
       '<a href="' + prefix + 'geoguess/">大洲ジオゲッサー</a>' +
@@ -40,7 +42,7 @@
       // スマホ(メニューが≡に畳まれる幅)の頭にも、検索への入口を1つ出す(2026-11-23)。
       // PCではナビの「さがす」があるので、CSS で隠している。
       '<a href="' + prefix + 'search/" class="nav-search-m" aria-label="記事をさがす"></a>' +
-      '<button class="nav-toggle" aria-label="メニューを開く"><span></span></button>' +
+      '<button type="button" class="nav-toggle" aria-label="メニューを開く" aria-controls="site-nav" aria-expanded="false"><span></span></button>' +
       "</div>"
     );
   }
@@ -175,6 +177,18 @@
   }
 
   markCurrentNav();
+
+  // 「本文へ飛ぶ」の行き先。記事なら本文の箱、ほかはヘッダーのすぐ下の区切り(2026-11-23)
+  var skip = document.querySelector(".skip-link");
+  if (skip && !document.getElementById("honbun")) {
+    var target = document.querySelector(".article-page, .jk-hero, .page-hero") ||
+      document.querySelector(".site-header ~ section, .site-header ~ main, .site-header ~ div section");
+    if (target) {
+      target.id = target.id || "honbun";
+      if (target.id !== "honbun") skip.setAttribute("href", "#" + target.id);
+      target.setAttribute("tabindex", "-1");
+    }
+  }
 
   // ── 読者の声(記事のページだけ。2026-10-18) ──────────────
   // assets/js/koe-data.js に、この記事への声があれば、フッターのすぐ上に3件まで出す。

@@ -5126,6 +5126,15 @@ figure.zu p.zu-note {
    色の並びは見分けを計算して決めたので変えず、字のほうを濃くする(比4.63) */
 .zu-seg[style*="--zu-c2"] .zu-seg-v,
 .zu-seg[style*="--zu-hl"] .zu-seg-v { color: var(--color-text); }
+/* 残りの色も同じ(2026-11-23)。青緑・梅・若草・薄い藍の帯は、白い字だと比3.29〜3.45。字を濃くする(比4.62〜4.85)。
+   紅は、白い字で4.40・濃い字で3.62と、どちらでも4.5に届かないので、帯の地だけ少し濃い紅にする(白い字で4.89)。
+   手順の「ここを見る」の丸い番号(地は柿)も、白い字で3.45だったので字を濃くする(4.63) */
+.zu-seg[style*="--zu-c3"] .zu-seg-v,
+.zu-seg[style*="--zu-c5"] .zu-seg-v,
+.zu-seg[style*="--zu-c6"] .zu-seg-v,
+.zu-seg[style*="--zu-o2"] .zu-seg-v { color: var(--color-text); }
+.zu-seg[style*="--zu-c8"] { background: #c4463e; }
+.zu-step.is-hl .zu-step-no { color: var(--color-text); }
 @media (max-width: 560px) {
   .zu-seg-v.is-wide { display: none; }
 }

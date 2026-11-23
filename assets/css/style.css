@@ -5830,6 +5830,53 @@ figure.zu .zu-chips li.is-hl {
   height: 100%;
   border: 0;
 }
+/* 動画は、押すまで YouTube を読まない(2026-11-23)。押すと main.js が iframe に入れかえて再生する */
+.zu-video-play {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--color-brand-dark);
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+.zu-video-play:hover,
+.zu-video-play:focus-visible {
+  background: var(--color-brand);
+}
+.zu-video-play-mark {
+  width: 64px;
+  height: 44px;
+  border-radius: 12px;
+  background: #fff;
+  position: relative;
+}
+.zu-video-play-mark::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-35%, -50%);
+  border-style: solid;
+  border-width: 10px 0 10px 17px;
+  border-color: transparent transparent transparent var(--color-brand-dark);
+}
+.zu-video-play-label {
+  font-weight: 700;
+  font-size: var(--text-base);
+}
+.zu-video-play-note {
+  font-size: var(--text-xs);
+  opacity: 0.9;
+}
 .zu-map-links {
   margin: 10px 0 0;
   font-size: var(--text-sm);
@@ -6218,4 +6265,13 @@ figure.zu.zu-photo {
     margin-top: -12px;
     margin-bottom: -12px;
   }
+}
+
+/* 長い一覧のページ(大洲の疑問・直した記録)は、画面の外の項目を描かずにおく(2026-11-23)。
+   描かない字の分は、字の形(Webフォントの一部)も取りに行かないので、読みこみが早く終わる。
+   取っておく高さは目安。一度描いた項目は、その高さを覚える(auto) */
+.teisei-list > li,
+.gm-kiji {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 180px;
 }

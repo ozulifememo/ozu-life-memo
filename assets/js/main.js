@@ -292,6 +292,22 @@ document.addEventListener("DOMContentLoaded", () => {
   // ── noteに転載した記事の案内 ───────────────────────
   // 台帳(news-data.js)の note: にURLが入っている記事だけ、出典欄のあとに1行出す。
   // 記事HTMLを1本ずつ手で直さなくてよいように、ここでまとめて面倒を見る。
+  // ── 動画は、押してから YouTube を読む(2026-11-23) ────────────
+  // 図の道具(tools/zuhyo.py の video)が「再生する」のボタンだけを置く。押したら動画の枠に入れかえて、
+  // そのまま再生を始める(押す回数は前と同じ1回)。開いただけで YouTube の部品を読まない。
+  document.querySelectorAll(".zu-video-play[data-src]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const src = btn.dataset.src;
+      const f = document.createElement("iframe");
+      f.src = src + (src.indexOf("?") >= 0 ? "&" : "?") + "autoplay=1";
+      f.title = btn.dataset.title || "YouTube";
+      f.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+      f.allowFullscreen = true;
+      btn.replaceWith(f);
+      f.focus();
+    });
+  });
+
   (function renderNoteCrosslink() {
     const page = document.querySelector(".article-page[data-slug]");
     if (!page || typeof OZU_NEWS === "undefined") return;

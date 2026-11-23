@@ -6304,3 +6304,245 @@ figure.zu.zu-photo {
 #honbun:focus {
   outline: none;
 }
+
+/* ── 夜の画面設定(ダークモード。2026-11-23) ─────────────────────────
+   端末が「ダーク」のときだけ、色の変数を入れかえる。ふだん(ライト)の見た目は変えない。
+   ・字に使う変数(--color-text・--color-brand など)は明るく、地に使う変数は暗くする
+   ・同じ変数を「白い字の載る地」にも使っている所(ボタン・濃紺の帯など)は、下で元の濃い色に戻す
+   ・図(.zu)・自由研究の図(.jk-diagram)・地図は、色を計算して決めた図なので、明るい紙のまま(下の「明るい島」)
+   測り方: 全ページを Playwright のダークで開き、字と背景の比が4.5(大きい字は3)未満の字を数える */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --color-bg: #11161b;
+    --color-surface: #182028;
+    --color-surface-alt: #1f2933;
+    --color-text: #e6e9ec;
+    --color-text-muted: #b2bcc6;
+    --color-text-faint: #a3adb8;
+    --color-brand: #8fbbe3;
+    --color-brand-dark: #b6d1ea;
+    --color-accent: #63c0b5;
+    --color-accent-dark: #8ad2c8;
+    --color-accent-on-dark: #8ad2c8;
+    --color-accent-btn: #5ec0b5;
+    --color-accent-btn-hover: #86d0c6;
+    --color-memou-bg: #272119;
+    --color-memou-border: #5b4a37;
+    --color-memou-ink: #e6b9a1;
+    --color-border: #2d3640;
+    --color-border-strong: #3c4754;
+    --color-warn-bg: #352d19;
+    --color-warn-text: #ead18c;
+    --color-warn-border: #6a5a2b;
+    --color-tag-indigo: #a3b7d8;
+    --color-tag-mikan: #e2aa7e;
+    --color-tag-moss: #adc391;
+    --color-tag-gold: #d5be88;
+    --color-tag-teal: #92c7bf;
+    --color-tag-slate: #adbbcc;
+    --color-tag-kakishibu: #dda792;
+    --color-tag-rose: #d8a8b9;
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 6px 16px rgba(0, 0, 0, 0.45);
+    --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.5);
+    /* 本文と同じ地に描く表の図の色(明るい島の中は、上の島の段で元に戻す) */
+    --zu-grid: #2d3640;
+    --zu-axis: #3c4754;
+    --zu-surface: #182028;
+    --zu-hl-bg: #3a2c1e;
+    --zu-track: #2a333d;
+  }
+
+  /* 白い字が載る地。ふだんの濃い色のまま */
+  .cta-btn,
+  .form-btn {
+    background: #0f7d78;
+  }
+  .cta-btn:hover,
+  .form-btn:hover {
+    background: #0c6560;
+  }
+  .hero-ctas a.primary,
+  .tag-chip.active,
+  .map-tab.active,
+  .home-tab.active,
+  .zu-video-play:hover,
+  .zu-video-play:focus-visible {
+    background: #2a5b82;
+    border-color: #2a5b82;
+  }
+  .hero-ctas a.primary:hover,
+  .news-tab.active,
+  .home-kenkyu,
+  .zu-video-play,
+  .skip-link {
+    background: #1e435f;
+    border-color: #1e435f;
+  }
+
+  /* 明るい島: 図・自由研究の図・地図は、ふだんの色の変数に戻して、明るい紙の上に描く。
+     表の図(.zu-table)と写真(.zu-photo)は箱を持たない(本文と同じ地)ので、島にしない */
+  .zu:not(.zu-table):not(.zu-photo),
+  .jk-diagram,
+  .leaflet-container {
+    --zu-grid: #ebe8e1;
+    --zu-axis: #cdc8bd;
+    --zu-surface: #ffffff;
+    --zu-hl-bg: #fcf1e6;
+    --zu-track: #e9e5dc;
+    color-scheme: light;
+    --color-bg: #f6f5f2;
+    --color-surface: #ffffff;
+    --color-surface-alt: #eef2f4;
+    --color-text: #16232f;
+    --color-text-muted: #5b6673;
+    --color-text-faint: #656b78;
+    --color-brand: #2a5b82;
+    --color-brand-dark: #1e435f;
+    --color-accent: #2e7f78;
+    --color-accent-dark: #1f5f5a;
+    --color-accent-btn: #0f7d78;
+    --color-border: #e4e2dc;
+    --color-border-strong: #d3d0c7;
+    --color-tag-indigo: #3d5473;
+    --color-tag-mikan: #9a6238;
+    --color-tag-moss: #566b45;
+    --color-tag-gold: #846f42;
+    --color-tag-teal: #3a6a64;
+    --color-tag-slate: #556678;
+    --color-tag-kakishibu: #8a5541;
+    --color-tag-rose: #7b5060;
+    color: var(--color-text);
+  }
+  .zu:not(.zu-table):not(.zu-photo),
+  .jk-diagram {
+    background-color: var(--color-surface);
+  }
+  .jk-diagram {
+    border-radius: var(--radius);
+    padding: 8px;
+  }
+
+}
+
+/* ダークモードの続き: 地や字の色をじかに書いてある部品(ページの中の <style> を含む)を、暗い地に合わせる。
+   ページの中の決まりより強くするため、頭に html を付けてある */
+@media (prefers-color-scheme: dark) {
+  html blockquote.article-quote.article-quote,
+  html blockquote.jk-quote.jk-quote,
+  html div.jk-quote.jk-quote,
+  html .article-page blockquote:not([class]),
+  html .jk-section blockquote:not([class]) {
+    background: var(--color-surface-alt);
+  }
+  html p.article-summary-label {
+    color: var(--color-accent-btn);
+  }
+  html .stub-note,
+  html .map-table th {
+    background: var(--color-surface-alt);
+  }
+  html .draft-note {
+    background: var(--color-warn-bg);
+    color: var(--color-warn-text);
+  }
+  html .home-hubs,
+  html .home-hubs-title {
+    color: var(--color-text-muted);
+  }
+  html .static-list li {
+    border-color: var(--color-border);
+  }
+  html .static-list .rdate {
+    color: var(--color-text-faint);
+  }
+  /* 入力の欄(ページの中で白い地を決めている所がある) */
+  html input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+  html select,
+  html textarea {
+    background-color: var(--color-surface) !important;
+    color: var(--color-text) !important;
+    border-color: var(--color-border-strong) !important;
+  }
+  /* 白いカード(検定・ジオゲッサー・疑問の目次) */
+  html .quiz-card,
+  html .geo-card,
+  html .gm-nav a {
+    background: var(--color-surface);
+    border-color: var(--color-border);
+  }
+  /* 白い字の載るボタン。ページの中で地を --color-brand(ダークでは明るい青)にしている所 */
+  html .quiz-card .cta-btn,
+  html .geo-card .cta-btn,
+  html p > a.cta-btn,
+  html .se-field button {
+    background-color: #2a5b82;
+  }
+  html .book-section-title .tag {
+    background: #0f7d78;
+    color: #fff;
+  }
+  /* 色をページにじかに書いてある見出し・番号(お金の教科書の「第◯回」、こんなときはの答えの見出し)は、白を混ぜて明るく */
+  html .kk-item .kk-no {
+    color: color-mix(in srgb, var(--c) 42%, #ffffff);
+  }
+  html .tb-ans h2 {
+    color: color-mix(in srgb, var(--tb) 42%, #ffffff);
+  }
+}
+
+/* 手描きの図(SVG)の、白い紙の上の薄い字(2026-11-23)。字と背景の比が4.5未満だった色を、同じ色合いのまま濃くする。
+   ふだんの画面にも効く。図の字・数字・形は変えていない(字の色だけ。CSS は図の中の fill の書き方より強い) */
+svg text[fill="#8a8a8a"], svg tspan[fill="#8a8a8a"],
+svg text[fill="#888888"], svg tspan[fill="#888888"],
+svg text[fill="#999999"], svg tspan[fill="#999999"] { fill: #6e6e6e; }
+svg text[fill="#c07820"], svg tspan[fill="#c07820"] { fill: #9a6019; }
+svg text[fill="#7a7a52"], svg tspan[fill="#7a7a52"] { fill: #6e6e4a; }
+svg text[fill="#3f7fb5"], svg tspan[fill="#3f7fb5"] { fill: #37719f; }
+svg text[fill="#5a9e6f"], svg tspan[fill="#5a9e6f"] { fill: #3d7a52; }
+svg text[fill="#a8781f"], svg tspan[fill="#a8781f"] { fill: #8a6318; }
+svg text[fill="#8a8577"], svg tspan[fill="#8a8577"] { fill: #6f6b60; }
+svg text[fill="#90a0ac"], svg tspan[fill="#90a0ac"] { fill: #6f7f8b; }
+
+/* ダークモードの続き: ページの中で style="background:var(--color-brand)" とじかに書いた白い字のボタン・帯。
+   ダークでは --color-brand が明るい青になるので、ふだんの濃い青に戻す(じかに書いた style より強くするため !important) */
+@media (prefers-color-scheme: dark) {
+  html [style*="background:var(--color-brand);"] {
+    background: #2a5b82 !important;
+  }
+  html [style*="background:var(--color-brand-dark);"] {
+    background: #1e435f !important;
+  }
+}
+
+/* ダークモードの続き: 記事の中で地の色を決めている箱(2026-11-23、全ページを測って残った物)。
+   手描きの図の枠(.fig-wrap・.river-diagram-wrap)は、図(.zu)と同じ明るい島にする */
+@media (prefers-color-scheme: dark) {
+  html .fig-wrap,
+  html .river-diagram-wrap {
+    color-scheme: light;
+    --color-bg: #f6f5f2;
+    --color-surface: #ffffff;
+    --color-surface-alt: #eef2f4;
+    --color-text: #16232f;
+    --color-text-muted: #5b6673;
+    --color-text-faint: #656b78;
+    --color-brand: #2a5b82;
+    --color-brand-dark: #1e435f;
+    --color-accent-btn: #0f7d78;
+    --color-border: #e4e2dc;
+    --color-border-strong: #d3d0c7;
+    background-color: #ffffff;
+    color: var(--color-text);
+    border-radius: var(--radius);
+  }
+  html .check-list,
+  html .naming-rule-box {
+    background: var(--color-surface-alt);
+  }
+  html [style*="background:#eaf3f6;"],
+  html [style*="background:#f6f6f4;"] {
+    background: var(--color-surface-alt) !important;
+  }
+}

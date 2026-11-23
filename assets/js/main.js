@@ -343,7 +343,10 @@ document.addEventListener("DOMContentLoaded", () => {
         ol.appendChild(li);
       });
       details.append(sum, ol);
-      summary.insertAdjacentElement("afterend", details);
+      // 要点の箱のすぐ下に出典の1行(.article-srcline。2026-11-23 に頭の行から移した)があれば、その下に置く
+      const after = summary.nextElementSibling && summary.nextElementSibling.classList.contains("article-srcline")
+        ? summary.nextElementSibling : summary;
+      after.insertAdjacentElement("afterend", details);
     }
 
     // いつ確かめたか。点検台帳から書き出した日付だけを読む(台帳そのものは公開していない)

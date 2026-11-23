@@ -5942,8 +5942,20 @@ figure.zu.zu-photo {
 
 /* 目次(見出しが4つ以上の記事に main.js が足す。閉じた高さ51px+下の余白24px)。
    足されるまでのあいだ、要点の箱の下にその分を空けておく。 */
-.article-page:has(> h2:nth-of-type(4)) > .article-summary:not(:has(+ .article-toc)) {
+.article-page:has(> h2:nth-of-type(4)) > .article-summary:not(:has(+ .article-toc)):not(:has(+ .article-srcline)),
+.article-page:has(> h2:nth-of-type(4)) > .article-srcline:not(:has(+ .article-toc)) {
   margin-bottom: calc(var(--space-6) + 51px + var(--space-5));
+}
+
+/* 頭の行から移した出典の1行(2026-11-23。tools/kiji_atama.py が書く)。
+   題の上が「掲載日・区分・約◯分」だけになり、スマホで題がすぐ目に入る。
+   「3行でいうと」の箱(「調べた資料 ◯本」)のすぐ下に、小さく置く。 */
+.article-srcline {
+  margin: calc(var(--space-2) - var(--space-6)) 0 var(--space-6);
+  font-size: var(--text-xs);
+  line-height: 1.8;
+  color: var(--color-text-muted);
+  overflow-wrap: anywhere;
 }
 
 /* 記事の横の「最新記事」6本(PC。article-related.js が入れる)。入れたあとの高さは約645px */
@@ -6003,7 +6015,8 @@ figure.zu.zu-photo {
     padding: 10px 0;
   }
   /* 目次が高くなった分(51px → 59px)、足されるまで空けておく高さもそろえる */
-  .article-page:has(> h2:nth-of-type(4)) > .article-summary:not(:has(+ .article-toc)) {
+  .article-page:has(> h2:nth-of-type(4)) > .article-summary:not(:has(+ .article-toc)):not(:has(+ .article-srcline)),
+  .article-page:has(> h2:nth-of-type(4)) > .article-srcline:not(:has(+ .article-toc)) {
     margin-bottom: calc(var(--space-6) + 59px + var(--space-5));
   }
   .news-intro > summary,

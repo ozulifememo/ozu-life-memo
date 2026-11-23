@@ -5916,3 +5916,55 @@ figure.zu.zu-photo {
 .kakidashi { margin: 18px 0 24px; padding: 2px 0 2px 16px; border-left: 3px solid var(--color-brand); }
 .kakidashi p { margin: 0 0 .5em; font-size: 1.05rem; line-height: 1.9; color: var(--color-text); }
 .kakidashi p:last-child { margin-bottom: 0; }
+
+/* ── 読みこみ中のずれ(CLS)を防ぐ(2026-11-23) ─────────────────────
+   JS があとから中身を入れる所は、入る分の高さを先に空けておく。
+   本文の下の JS(main.js など)は、遅い回線では最初の描画より後に走るため。 */
+
+/* 記事の題(PC)。1行に収める処理(main.js の fit)は字を小さくするだけにして、
+   はじめから1行で描いておく。縮めても入らない題だけ JS が .h1-wrap を付けて折り返す。 */
+@media (min-width: 700px) {
+  .article-page h1 > .h1-main,
+  .jk-hero h1 > .h1-main,
+  .article-page h1:not(:has(> .h1-main)),
+  .jk-hero h1:not(:has(> .h1-main)) {
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .article-page h1 > .h1-main.h1-wrap,
+  .jk-hero h1 > .h1-main.h1-wrap,
+  .article-page h1.h1-wrap,
+  .jk-hero h1.h1-wrap {
+    white-space: normal;
+    overflow: visible;
+  }
+}
+
+/* 目次(見出しが4つ以上の記事に main.js が足す。閉じた高さ51px+下の余白24px)。
+   足されるまでのあいだ、要点の箱の下にその分を空けておく。 */
+.article-page:has(> h2:nth-of-type(4)) > .article-summary:not(:has(+ .article-toc)) {
+  margin-bottom: calc(var(--space-6) + 51px + var(--space-5));
+}
+
+/* 記事の横の「最新記事」6本(PC。article-related.js が入れる)。入れたあとの高さは約645px */
+.sidebar-latest-list:empty {
+  min-height: 645px;
+}
+
+/* トップの主役3本(JS が日替わりで入れる)。入れたあとの高さ: 幅1180px以上 748px・1024px 694px。
+   それより狭い画面では1列になり、画面の高さより長くなるので、画面1つ分を空けておけば下はずれない */
+#home-lead:empty {
+  min-height: 100vh;
+}
+@media (min-width: 1024px) {
+  #home-lead:empty { min-height: 700px; }
+}
+@media (min-width: 1180px) {
+  #home-lead:empty { min-height: 748px; }
+}
+
+/* おすすめ10選・月間まとめの一覧(どちらも画面の高さより長い) */
+#best-list:empty,
+#monthly-list:empty {
+  min-height: 100vh;
+}

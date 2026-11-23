@@ -18,8 +18,9 @@
  * スマホ(幅700px未満)では詰めない。34字を1行に入れると11pxほどになり読めない。
  * 狭い画面では2〜3行で構わない。
  *
- * スクリプトは </body> の直前にあるので、この処理は最初の描画より前に走る。
- * だから28pxで出たあと縮む、というちらつきは起きない。
+ * (2026-11-23 に直した)「スクリプトは </body> の直前にあるので、最初の描画より前に走る」と
+ * 思っていたが、遅い回線では先に描かれてから走る。それで題の行の数が変わり、下がずれていた。
+ * いまは PC の題を CSS で最初から1行にしておき、ここでは字の大きさだけを変える(下の fit)。
  *
  * 2026-10-09: 題が2文以上あるときは、1つ目の文を大きい1行に、残りを小さい副題に
  * 分けて見せる(.h1-main と .h1-sub)。題の字は変えない。見せ方だけ。
@@ -62,19 +63,26 @@
   split();
   var target = h.querySelector(".h1-main") || h;
 
-  function lines() {
-    var cs = getComputedStyle(target);
-    var lh = parseFloat(cs.lineHeight) || parseFloat(cs.fontSize) * 1.4;
-    return Math.round(target.getBoundingClientRect().height / lh);
+  // 2026-11-23: PC(幅700px以上)では、題は CSS で最初から1行(折り返さない)にしてある。
+  // 前は「2行で描いてから、ここで1行に縮める」だったので、遅い回線では先に2行で描かれ、
+  // 縮んだときに下の本文が40pxほど上へずれた(読みこみ中のずれ CLS。PCで0.4前後)。
+  // いまは行の数ではなく「はみ出しているか」を見て縮める。高さは1行のまま変わらない。
+  // 下限まで縮めても入らない題だけ、.h1-wrap を付けて折り返しを許す(前と同じ見た目)。
+  // 題を2つに分ける(.h1-main/.h1-sub)のも、tools/kiji_atama.py が HTML に書いておく。
+  // 上の split() は、まだ書いていないページのための逃げ道。
+  function over() {
+    return target.scrollWidth > target.clientWidth + 1;
   }
   function fit() {
     target.style.removeProperty("font-size");
+    target.classList.remove("h1-wrap");
     if (window.innerWidth < MIN_WIDTH) return;
     var fs = parseFloat(getComputedStyle(target).fontSize);
-    while (fs > FLOOR && lines() > 1) {
+    while (fs > FLOOR && over()) {
       fs -= 0.5;
       target.style.setProperty("font-size", fs + "px", "important");
     }
+    if (over()) target.classList.add("h1-wrap");
   }
   fit();
   // 書体が届く前は代替フォントで組まれていて字幅が違う。そのままだと

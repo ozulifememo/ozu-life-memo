@@ -5968,3 +5968,137 @@ figure.zu.zu-photo {
 #monthly-list:empty {
   min-height: 100vh;
 }
+
+/* ── 指で押しやすく(2026-11-23) ──────────────────────────────
+   指で押す画面(幅860px以下か、指で操作する端末)では、押す物の高さを44pxにそろえる。
+   字の大きさは変えず、上下の余白を足す。文中のリンク(段落の字の途中)は触らない。
+   前後の行とくっついて並ぶ物は本物の余白を足す。1つだけ離れて置いてある物は、
+   上下の余白と同じだけ外側を引いて(margin を負に)、見た目の並びを変えずに押せる所だけ広げる。 */
+@media (max-width: 860px), (pointer: coarse) {
+  /* フッターの索引(高さ35px → 44px) */
+  .footer-col a {
+    padding: 10px 0;
+  }
+  /* トップの「こんなときは」の札(38px → 44px) */
+  .sakuin-strip a {
+    padding-top: 11.5px;
+    padding-bottom: 11.5px;
+  }
+  /* 絞り込み・並べ替え・区分のボタン(30〜36px → 44px) */
+  .tag-chip,
+  .news-tab,
+  .home-tab,
+  .map-tab {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  /* 左上のサイト名(32px → 44px。ヘッダーの高さは76pxのまま) */
+  .logo {
+    min-height: 44px;
+  }
+  /* 畳んだ目次・説明の開け閉め(37px → 44px) */
+  .article-toc summary {
+    padding: 10px 0;
+  }
+  /* 目次が高くなった分(51px → 59px)、足されるまで空けておく高さもそろえる */
+  .article-page:has(> h2:nth-of-type(4)) > .article-summary:not(:has(+ .article-toc)) {
+    margin-bottom: calc(var(--space-6) + 59px + var(--space-5));
+  }
+  .news-intro > summary,
+  .news-filter-more > summary {
+    min-height: 44px;
+  }
+  /* 出典の一覧のリンク(1行23px → 44px) */
+  .content-block .source-link,
+  .content-block.source-box .source-link {
+    padding: 10.5px 0;
+    margin-bottom: 0;
+  }
+  /* 目次(開いたとき)と、トップの文字だけの入口の一覧。縦に並ぶので本物の余白を足す */
+  .article-toc li a,
+  .jk-toc li a {
+    display: block;
+    padding: 10px 0;
+  }
+  .home-hubs li a {
+    display: inline-block;
+    padding: 12px 0;
+  }
+  /* 1つだけ離れて置いてあるリンク。並びは変えずに、押せる所だけ44pxに */
+  .section-more a {
+    border-bottom: none;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+  }
+  .section-more a,
+  .home-kenkyu-more,
+  .zu-map-links a,
+  .jk-series-note a,
+  .source-box-verified a,
+  .note-crosslink a {
+    display: inline-block;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    margin-top: -12px;
+    margin-bottom: -12px;
+  }
+  .site-intro-link {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: -10px;
+    margin-bottom: -10px;
+  }
+  /* 大洲の疑問(問いのリンクと記事名)・自由研究の一覧のカード・データの表の「記事」。
+     すぐ上下は字だけで、ほかに押す物が無いので、並びを変えずに押せる所だけ広げる */
+  .gm-q a,
+  .gm-title a,
+  .jk-card h3 > a,
+  td.src a {
+    display: inline-block;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    margin-top: -11px;
+    margin-bottom: -11px;
+  }
+  td.src a {
+    padding-top: 12.5px;
+    padding-bottom: 12.5px;
+    margin-top: -12.5px;
+    margin-bottom: -12.5px;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-left: -8px;
+    margin-right: -8px;
+  }
+  .gm-nav a,
+  .se-chips button,
+  .tagcloud a {
+    min-height: 44px;
+  }
+  .sk-rest .g li a {
+    display: block;
+    padding: 11px 0;
+  }
+  .related-list-plain li a,
+  .tb-back {
+    padding-top: 9px;
+    padding-bottom: 9px;
+  }
+  /* 記事一覧・月間まとめの題(1行のとき24px前後 → 44px)。上下は字だけで、ほかに押す物が無い */
+  .news-card .news-title,
+  .monthly-card li > a {
+    padding-top: 11px;
+    padding-bottom: 11px;
+    margin-top: -11px;
+    margin-bottom: -11px;
+  }
+  /* 地図の拡大・縮小(30px → 44px)。leaflet.css があとから読まれるので、1段くわしく書く */
+  .leaflet-container.leaflet-touch .leaflet-bar a {
+    width: 44px;
+    height: 44px;
+    line-height: 44px;
+  }
+}

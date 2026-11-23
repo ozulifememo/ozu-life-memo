@@ -273,6 +273,13 @@ document.addEventListener("DOMContentLoaded", () => {
     if (presetChip) presetChip.click();
   }
 
+  // ?cat=shiten のようなURLで来たとき(記事のパンくずの区分から。2026-11-23)、その区分のタブを選ぶ
+  const presetCat = new URLSearchParams(location.search).get("cat");
+  if (presetCat) {
+    const presetTab = [...tabs].find((t) => t.dataset.category === presetCat);
+    if (presetTab) presetTab.click();
+  }
+
   sourceChips.forEach((chip) => {
     chip.addEventListener("click", () => {
       sourceChips.forEach((c) => c.classList.remove("active"));

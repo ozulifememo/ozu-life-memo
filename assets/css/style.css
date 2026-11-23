@@ -6178,3 +6178,44 @@ figure.zu.zu-photo {
     max-width: 40em;
   }
 }
+
+/* パンくず「ホーム › 区分 › 記事」(2026-11-23。tools/kiji_atama.py が記事の頭に書く)。
+   検索の結果にも同じ道が出るよう、<head> に BreadcrumbList の JSON-LD も書いてある。
+   いまの記事の題は、すぐ下の題と同じなので1行で切る */
+.breadcrumb {
+  display: flex;
+  align-items: baseline;
+  gap: 0;
+  margin: 0 0 var(--space-2);
+  font-size: var(--text-xs);
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+}
+.breadcrumb a {
+  flex: 0 0 auto;
+  color: var(--color-brand);
+}
+.breadcrumb a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.breadcrumb > span[aria-hidden] {
+  flex: 0 0 auto;
+  padding: 0 0.35em;
+  color: var(--color-text-faint);
+}
+.breadcrumb > span[aria-current] {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media (max-width: 860px), (pointer: coarse) {
+  .breadcrumb a {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    margin-top: -12px;
+    margin-bottom: -12px;
+  }
+}

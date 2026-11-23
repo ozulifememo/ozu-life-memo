@@ -412,4 +412,53 @@ document.addEventListener("DOMContentLoaded", () => {
         .catch(() => {});
     }
   })();
+
+  // ── 長い記事の右下に「目次」「上へ」(2026-11-23) ─────────────────
+  // 目次は今の畳む形(details)のまま。「目次」を押すと、目次を開いてそこへ戻る。
+  // 目次の無いページでも、画面4つ分より長ければ「上へ」だけ出す。
+  // 位置は画面に貼りつける(position: fixed)ので、下の本文はずれない。
+  (function floatNav() {
+    const toc = document.querySelector(".article-toc, .jk-toc");
+    const long = () => document.documentElement.scrollHeight > window.innerHeight * 4;
+    if (!toc && !long()) return;
+    const box = document.createElement("div");
+    box.className = "float-nav";
+    box.hidden = true;
+    if (toc) {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "float-nav-btn";
+      b.textContent = "目次";
+      b.addEventListener("click", () => {
+        if (toc.tagName === "DETAILS") toc.open = true;
+        toc.scrollIntoView({ behavior: "smooth", block: "start" });
+        const first = toc.querySelector("summary, a");
+        if (first) first.focus({ preventScroll: true });
+      });
+      box.appendChild(b);
+    }
+    const up = document.createElement("button");
+    up.type = "button";
+    up.className = "float-nav-btn";
+    up.textContent = "上へ";
+    up.setAttribute("aria-label", "ページのいちばん上へ");
+    up.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      const skip = document.querySelector(".skip-link");
+      if (skip) skip.focus({ preventScroll: true });
+    });
+    box.appendChild(up);
+    document.body.appendChild(box);
+    // 目次(無ければ画面1つ分)より下まで読んだら出す
+    let ticking = false;
+    const check = () => {
+      ticking = false;
+      const line = toc ? toc.getBoundingClientRect().bottom : window.innerHeight - window.scrollY;
+      box.hidden = !(line < 0 && long());
+    };
+    window.addEventListener("scroll", () => {
+      if (!ticking) { ticking = true; requestAnimationFrame(check); }
+    }, { passive: true });
+    check();
+  })();
 });

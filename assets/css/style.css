@@ -6550,3 +6550,46 @@ svg text[fill="#90a0ac"], svg tspan[fill="#90a0ac"] { fill: #6f7f8b; }
     background: var(--color-surface-alt) !important;
   }
 }
+
+/* 長い記事の右下の「目次」「上へ」(2026-11-23。main.js の floatNav が足す)。
+   目次より下まで読んだら出る。画面に貼りつけるので、本文はずれない。小さく、角に寄せる */
+.float-nav {
+  position: fixed;
+  right: 12px;
+  bottom: 12px;
+  z-index: 90;
+  display: flex;
+  gap: 6px;
+}
+.float-nav[hidden] {
+  display: none;
+}
+.float-nav-btn {
+  min-width: 52px;
+  min-height: 44px;
+  padding: 0 12px;
+  border: 1px solid var(--color-border-strong);
+  border-radius: 999px;
+  background: var(--color-surface);
+  color: var(--color-text);
+  font: inherit;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  opacity: 0.94;
+}
+.float-nav-btn:hover {
+  color: var(--color-brand);
+  border-color: var(--color-brand);
+}
+@media print {
+  .float-nav {
+    display: none;
+  }
+}
+/* 「目次」で戻ったとき、上に貼りついた頭(ヘッダー)の下に隠れないように */
+.article-toc,
+.jk-toc {
+  scroll-margin-top: calc(var(--header-h) + 16px);
+}

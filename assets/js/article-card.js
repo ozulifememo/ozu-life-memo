@@ -11,6 +11,12 @@
 
   // ── 写真 ──────────────────────────────────────────
   // 記事にひもづいた写真を返す。無ければ null(ランダムな写真は絶対に出さない)。
+  function webpSrcset(file, prefix) {
+    var base = (prefix || "") + "assets/img/" + file.replace(/\.(jpe?g|png)$/i, "");
+    return base + "-480.webp 480w, " + base + "-960.webp 960w";
+  }
+  var CARD_SIZES = "(max-width: 700px) calc(100vw - 48px), 380px";
+
   function articlePhoto(slug, prefix) {
     if (typeof OZU_ARTICLE_IMAGES === "undefined") return null;
     var entry = OZU_ARTICLE_IMAGES[slug];
@@ -23,6 +29,9 @@
       // スマホ回線で一覧を開いたときに、元サイズ(200〜600KB)を
       // 何十枚も読ませないための仕組み。
       thumbSrc: (prefix || "") + "assets/img/thumbs/" + entry.file,
+      // 2026-11-23: 同じ写真の軽い版(WebP。幅480と960。tools/make_webp.py が元の写真の横に作る)。
+      // カードの <img> に srcset として書き、画面の幅に合う方だけを読ませる。src はサムネイル(jpg)のまま
+      srcset: webpSrcset(entry.file, prefix),
       alt: entry.caption || (meta ? meta.alt : "大洲市内で撮影した写真"),
       caption: entry.caption || (meta ? meta.alt : "")
     };
@@ -93,7 +102,8 @@
     // 写真が無いときは同じ大きさの色面を置き、カテゴリ名を大きく入れて
     // 「そういうカード」として成立させる(欠けた枠には見せない)。
     var media = photo
-      ? '<div class="story-media"><img src="' + photo.thumbSrc + '" alt="' + escapeHtml(photo.alt) +
+      ? '<div class="story-media"><img src="' + photo.thumbSrc + '" srcset="' + photo.srcset +
+        '" sizes="' + CARD_SIZES + '" alt="' + escapeHtml(photo.alt) +
         '" loading="lazy" decoding="async"></div>'
       : '<div class="story-media story-media--none"><span>' + escapeHtml(categoryLabel(item)) + "</span></div>";
 
@@ -118,6 +128,8 @@
     // トップの大写真は画質優先で元サイズ+先読み。サブ2本は軽量サムネイルで十分。
     var img = photo
       ? '<div class="lead-media"><img src="' + (isMain ? photo.src : photo.thumbSrc) +
+        '" srcset="' + photo.srcset + '" sizes="' +
+        (isMain ? "(max-width: 1023px) calc(100vw - 48px), 720px" : CARD_SIZES) +
         '" alt="' + escapeHtml(photo.alt) +
         (isMain
           ? '" width="1200" height="675" fetchpriority="high" decoding="async">'
@@ -156,6 +168,7 @@
 
   global.OzuCard = {
     articlePhoto: articlePhoto,
+    cardSizes: CARD_SIZES,
     sourceDateLabel: sourceDateLabel,
     sourceYearMonth: sourceYearMonth,
     sourceYmd: sourceYmd,

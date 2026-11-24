@@ -115,7 +115,7 @@
       const cat = typeof OZU_CATEGORY_LABELS !== "undefined" ? (OZU_CATEGORY_LABELS[item.category] || "") : "";
       const photo = typeof OzuCard !== "undefined" ? OzuCard.articlePhoto(b.slug, "../") : null;
       const thumb = photo
-        ? `<span class="best-thumb"><img src="${photo.thumbSrc}" alt="${OzuCard.escapeHtml(photo.alt)}" loading="lazy" decoding="async"></span>`
+        ? `<span class="best-thumb"><img src="${photo.thumbSrc}" srcset="${photo.srcset}" sizes="200px" alt="${OzuCard.escapeHtml(photo.alt)}" loading="lazy" decoding="async"></span>`
         : "";
       // noteのURLは記事台帳(news-data.js)の note: から引く。ここには書かない。
       const noteLink = item.note
